@@ -1,0 +1,30 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Aspendos TV Unit",
+
+  images: [
+    "/aspendostv-01.webp",
+    "/aspendostv-02.webp",
+  ],
+
+  prices: [
+    {
+      label: "Factory Direct Price",
+      price: "$900",
+      featured: true,
+    },
+    {
+      label: "TV Unit",
+      price: "Included",
+    },
+  ],
+
+  description:
+    "Discover the Aspendos Luxury TV Unit Collection by VIRELLAART, featuring elegant contemporary design, premium craftsmanship and luxurious materials. Designed for sophisticated interiors with timeless elegance and worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

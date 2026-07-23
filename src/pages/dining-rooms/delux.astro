@@ -1,0 +1,35 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Delux Dining",
+
+  images: [
+    "/deluxdiningroom-01.webp",
+    "/deluxdiningroom-02.webp",
+    "/deluxdiningroom-03.webp",
+    "/deluxdiningroom-04.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Dining Room Set",
+      price: "$4,550",
+      featured: true,
+    },
+    {
+      label: "Dining Table + 6 Chairs",
+      price: "$2,950",
+    },
+    {
+      label: "Console & Mirror",
+      price: "$1,600",
+    },
+  ],
+
+  description:
+    "Discover the Delux Luxury Dining Room Collection by VIRELLAART, combining refined contemporary design, premium craftsmanship and timeless elegance. Designed for sophisticated interiors, this exclusive dining collection offers worldwide delivery.",
+};
+---
+
+<ProductTemplate {product} />

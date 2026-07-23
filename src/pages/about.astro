@@ -1,0 +1,176 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About VIRELLAART | Luxury Furniture">
+
+  <section class="about-hero">
+    <div class="about-overlay"></div>
+
+    <div class="about-content">
+      <span>About VIRELLAART</span>
+
+      <h1>Luxury Furniture Beyond Imagination</h1>
+
+      <p>
+        VIRELLAART creates refined furniture collections for exceptional interiors,
+        combining elegant design, premium materials and distinctive craftsmanship.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <span>Our Story</span>
+
+        <h2>Designed in Istanbul. Created for the World.</h2>
+
+        <p>
+          VIRELLAART is a luxury furniture brand dedicated to creating timeless
+          living spaces. Every collection is developed with a strong focus on
+          proportion, craftsmanship, comfort and visual elegance.
+        </p>
+
+        <p>
+          From living rooms and dining rooms to bedrooms and TV units, each piece
+          is created to bring a distinctive luxury atmosphere into refined homes.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="/living-room.png" alt="VIRELLAART luxury living room" />
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .about-hero {
+    position: relative;
+    min-height: 78vh;
+    display: grid;
+    place-items: center;
+    padding: 140px 30px 80px;
+    text-align: center;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.58)),
+      url("/bedroom.png") center / cover no-repeat;
+  }
+
+  .about-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0) 24%,
+        rgba(0, 0, 0, 0.42) 100%
+      );
+  }
+
+  .about-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 920px);
+  }
+
+  .about-content span,
+  .about-text span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  .about-content h1 {
+    margin: 20px 0 28px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(50px, 8vw, 108px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .about-content p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.8;
+  }
+
+  .about-section {
+    width: min(100% - 64px, var(--container));
+    margin: 0 auto;
+    padding: 120px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .about-text h2 {
+    margin: 20px 0 28px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  .about-text p {
+    margin-bottom: 22px;
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .about-image {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 680px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 900px) {
+    .about-section {
+      width: min(100% - 36px, var(--container));
+      padding: 90px 0;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+
+    .about-image img {
+      height: 520px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .about-hero {
+      min-height: 70vh;
+      padding: 120px 20px 60px;
+    }
+
+    .about-section {
+      width: min(100% - 24px, var(--container));
+      padding: 72px 0;
+    }
+
+    .about-image img {
+      height: 420px;
+    }
+  }
+</style>

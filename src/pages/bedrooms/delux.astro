@@ -1,0 +1,45 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Delux Bedroom",
+
+  images: [
+    "/deluxbed-01.webp",
+    "/deluxbed-02.webp",
+    "/deluxbed-03.webp",
+    "/deluxbed-04.webp",
+    "/deluxbed-05.webp",
+  ],
+
+  prices: [
+    {
+      label: "Factory Direct Price",
+      price: "$4,600",
+      featured: true,
+    },
+    {
+      label: "Luxury Bed",
+      price: "Included",
+    },
+    {
+      label: "2 Nightstands",
+      price: "Included",
+    },
+    {
+      label: "Luxury Dressing Table & Mirror",
+      price: "Included",
+    },
+    {
+      label: "Luxury Wardrobe",
+      price: "Included",
+    },
+  ],
+
+  description:
+    "Discover the Delux Luxury Bedroom Collection by VIRELLAART. Designed for luxury interiors, this premium bedroom collection combines elegant contemporary design, exceptional craftsmanship and refined materials. The collection includes a luxury bed, two nightstands, a dressing table with mirror and a spacious wardrobe, offering timeless elegance with worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

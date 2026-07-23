@@ -1,0 +1,120 @@
+<nav class="navbar">
+  <div class="navbar-inner">
+
+    <a href="/" class="logo">
+      VIRELLAART
+    </a>
+
+    <ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li><a href="/#collections">Collections</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>
+</ul>
+
+    <button class="language" type="button">
+      EN
+    </button>
+
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(7, 7, 7, 0.58);
+    backdrop-filter: blur(16px);
+  }
+
+  .navbar-inner {
+    width: min(100% - 48px, 1600px);
+    height: 88px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 5px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    list-style: none;
+  }
+
+  .menu a {
+    position: relative;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+
+  .menu a:hover {
+    color: var(--gold);
+  }
+
+  .menu a:hover::after {
+    width: 100%;
+  }
+
+  .language {
+    min-width: 48px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #ffffff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+  }
+
+  .language:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  @media (max-width: 760px) {
+    .navbar-inner {
+      width: min(100% - 28px, 1600px);
+      height: 76px;
+    }
+
+    .logo {
+      font-size: 17px;
+      letter-spacing: 3px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .language {
+      min-width: 44px;
+      padding: 9px;
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Queen Living Room",
+
+  images: [
+    "/queen-01.webp",
+    "/queen-02.webp",
+    "/queen-03.webp",
+    "/queen-04.webp",
+    "/queen-05.webp",
+    "/queen-06.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$7,350",
+      featured: true,
+    },
+    {
+      label: "Sofa Set (4+3+1)",
+      price: "$4,350",
+    },
+    {
+      label: "TV Unit",
+      price: "$2,350",
+    },
+    {
+      label: "Center Table",
+      price: "$650",
+    },
+  ],
+
+  description:
+    "Discover the Queen Luxury Living Room Collection by VIRELLAART, featuring elegant contemporary styling, luxurious upholstery and premium craftsmanship. Designed for sophisticated interiors and luxury residences, the Queen collection offers timeless comfort with worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

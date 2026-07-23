@@ -1,0 +1,36 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Lugano Living Room",
+
+  images: [
+    "/lugano-01.webp",
+    "/lugano-02.webp",
+    "/lugano-03.webp",
+    "/lugano-04.webp",
+    "/lugano-05.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$4,900",
+      featured: true,
+    },
+    {
+      label: "3+3+1+1 Living Room Set",
+      price: "$4,500",
+    },
+    {
+      label: "Center Table",
+      price: "$400",
+    },
+  ],
+
+  description:
+    "Discover the Lugano Luxury Living Room Collection by VIRELLAART, combining elegant contemporary design, luxurious upholstery and exceptional craftsmanship. Designed for sophisticated residences and premium interiors, the Lugano collection delivers timeless comfort with worldwide delivery.",
+};
+---
+
+<ProductTemplate {product} />

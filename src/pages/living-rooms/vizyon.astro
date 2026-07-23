@@ -1,0 +1,37 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Vizyon Living Room",
+
+  images: [
+    "/vizyon01.webp",
+    "/vizyon02.webp",
+    "/vizyon03.webp",
+    "/vizyon04.webp",
+    "/vizyon05.webp",
+    "/vizyon06.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$5,600",
+      featured: true,
+    },
+    {
+      label: "3+3+1+1 Living Room Set",
+      price: "$4,950",
+    },
+    {
+      label: "Center Table",
+      price: "$650",
+    },
+  ],
+
+  description:
+    "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, combining elegant contemporary design, premium upholstery and exceptional craftsmanship. Designed for luxury residences and sophisticated interiors, the Vizyon collection delivers timeless comfort with worldwide delivery.",
+};
+---
+
+<ProductTemplate {product} />

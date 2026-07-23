@@ -1,0 +1,46 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Valencia Bedroom",
+
+  images: [
+    "/valenciabed-01.webp",
+    "/valenciabed-02.webp",
+    "/valenciabed-03.webp",
+    "/valenciabed-04.webp",
+    "/valenciabed-05.webp",
+    "/valenciabed-06.webp",
+  ],
+
+  prices: [
+    {
+      label: "Luxury Bedroom Collection",
+      price: "$5,450",
+      featured: true,
+    },
+    {
+      label: "Luxury Bed",
+      price: "Included",
+    },
+    {
+      label: "2 Designer Nightstands",
+      price: "Included",
+    },
+    {
+      label: "Luxury Dressing Table & Mirror",
+      price: "Included",
+    },
+    {
+      label: "Luxury Wardrobe",
+      price: "Included",
+    },
+  ],
+
+  description:
+    "Discover the Valencia Luxury Bedroom Collection by VIRELLAART, featuring refined contemporary design, premium materials and exceptional craftsmanship. This exclusive collection includes a luxury bed, two designer nightstands, a dressing table with mirror and a spacious wardrobe, created for elegant residences and sophisticated interiors with worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

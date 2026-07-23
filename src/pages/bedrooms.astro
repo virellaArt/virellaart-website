@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const models = [
+  {
+    number: "01",
+    name: "Aspendos Bedroom",
+    href: "/bedrooms/aspendos",
+    image: "/aspendosbedroom-01.webp",
+    alt: "Aspendos Luxury Bedroom Collection by VIRELLAART",
+  },
+  {
+  number: "02",
+  name: "Delux Bedroom",
+  href: "/bedrooms/delux",
+  image: "/deluxbed-01.webp",
+  alt: "Delux Luxury Bedroom Collection by VIRELLAART",
+},
+{
+  number: "03",
+  name: "Valencia Bedroom",
+  href: "/bedrooms/valencia",
+  image: "/valenciabed-01.webp",
+  alt: "Valencia Luxury Bedroom Collection by VIRELLAART",
+},
+];
+---
+
+<BaseLayout title="Bedroom Collections | VIRELLAART">
+  <main class="page">
+    <header class="page-header">
+      <span>VIRELLAART COLLECTIONS</span>
+
+      <h1>Bedrooms</h1>
+
+      <p>Select a model to view all photographs and product details.</p>
+    </header>
+
+    <section
+      class="model-grid"
+      aria-label="VIRELLAART bedroom collections"
+    >
+      {
+        models.map((model) => (
+          <a
+            href={model.href}
+            class="model-card"
+            aria-label={`View ${model.name} Collection`}
+          >
+            <div class="model-image">
+              <img
+                src={model.image}
+                alt={model.alt}
+                width="800"
+                height="600"
+                loading="eager"
+              />
+            </div>
+
+            <div class="model-info">
+              <span>{model.number}</span>
+              <h2>{model.name}</h2>
+              <p>View Collection</p>
+            </div>
+          </a>
+        ))
+      }
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .page {
+    width: min(100% - 48px, 1180px);
+    margin: 0 auto;
+    padding: 125px 0 90px;
+  }
+
+  .page-header {
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+
+  .page-header span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    margin: 12px 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 70px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .page-header p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  .model-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #0c0c0c;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .model-image {
+    height: 340px;
+    overflow: hidden;
+    background: #111111;
+  }
+
+  .model-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+  }
+
+  .model-info {
+    padding: 22px 24px 26px;
+  }
+
+  .model-info span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .model-info h2 {
+    margin: 9px 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .model-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .model-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  }
+
+  .model-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .model-card:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 5px;
+  }
+
+  @media (max-width: 800px) {
+    .page {
+      width: min(100% - 28px, 1180px);
+      padding: 110px 0 70px;
+    }
+
+    .model-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .model-image {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .model-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .model-image {
+      height: 330px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .page {
+      width: min(100% - 20px, 1180px);
+      padding: 100px 0 60px;
+    }
+
+    .page-header {
+      margin-bottom: 30px;
+    }
+
+    .model-grid {
+      gap: 16px;
+    }
+
+    .model-image {
+      height: 300px;
+    }
+
+    .model-info {
+      padding: 20px;
+    }
+
+    .model-info h2 {
+      font-size: 30px;
+    }
+  }
+</style>

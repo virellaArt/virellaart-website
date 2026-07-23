@@ -1,0 +1,42 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Aspendos Living Room",
+
+  images: [
+    "/aspendos-01.webp",
+    "/aspendos-02.webp",
+    "/aspendos-03.webp",
+    "/aspendos-04.webp",
+    "/aspendos-05.webp",
+    "/aspendos-06.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$5,650",
+      featured: true,
+    },
+    {
+      label: "3+3+1+1 Living Room Set",
+      price: "$4,300",
+    },
+    {
+      label: "Center Table",
+      price: "$450",
+    },
+    {
+      label: "TV Unit",
+      price: "$900",
+    },
+  ],
+
+  description:
+    "Discover the Aspendos Luxury Living Room Collection by VIRELLAART, featuring contemporary sofa designs, premium upholstery, refined decorative details and exceptional craftsmanship. Designed for luxury villas, modern residences and sophisticated interiors, this exclusive 3+3+1+1 living room set combines superior comfort, statement design and worldwide furniture delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

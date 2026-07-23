@@ -1,0 +1,36 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Bahar Living Room",
+
+  images: [
+    "/bahar-01.webp",
+    "/bahar-02.webp",
+    "/bahar-03.webp",
+    "/bahar-04.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$3,900",
+      featured: true,
+    },
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$3,500",
+    },
+    {
+      label: "Center Table",
+      price: "$400",
+    },
+  ],
+
+  description:
+    "Discover the Bahar Luxury Living Room Collection by VIRELLAART, featuring elegant contemporary styling, luxurious upholstery and exceptional craftsmanship. Designed for sophisticated residences and premium interiors, the Bahar collection delivers timeless comfort with worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />

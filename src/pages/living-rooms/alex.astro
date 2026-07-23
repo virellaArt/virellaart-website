@@ -1,0 +1,38 @@
+---
+import ProductTemplate from "../../components/ProductTemplate.astro";
+
+const product = {
+  name: "Alex Living Room",
+
+  images: [
+    "/alex-01.webp",
+    "/alex-02.webp",
+    "/alex-03.webp",
+    "/alex-04.webp",
+    "/alex-05.webp",
+    "/alex-06.webp",
+  ],
+
+  prices: [
+    {
+      label: "Complete Collection",
+      price: "$4,900",
+      featured: true,
+    },
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$4,500",
+    },
+    {
+      label: "Center Table",
+      price: "$400",
+    },
+  ],
+
+  description:
+    "Discover the Alex Luxury Living Room Collection by VIRELLAART, featuring elegant contemporary styling, luxurious upholstery and exceptional craftsmanship. Designed for sophisticated residences and premium interiors, the Alex collection delivers timeless comfort with worldwide delivery.",
+};
+
+---
+
+<ProductTemplate {product} />
