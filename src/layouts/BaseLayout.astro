@@ -68,7 +68,7 @@ const websiteSchema = {
 
 <head>
 
-  <!-- Google Analytics -->
+<!-- Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8YY6ZBD87"></script>
 
@@ -76,15 +76,17 @@ const websiteSchema = {
 
 window.dataLayer = window.dataLayer || [];
 
-function gtag(){
-dataLayer.push(arguments);
-}
+window.gtag = function(){
+window.dataLayer.push(arguments);
+};
 
-gtag('js', new Date());
+window.gtag('js', new Date());
 
-gtag('config', 'G-Y8YY6ZBD87');
+window.gtag('config','G-Y8YY6ZBD87');
 
 </script>
+
+
 
   <meta
 name="google-site-verification"
