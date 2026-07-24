@@ -371,14 +371,14 @@ valenciaBedroom: {
 
   category: "bedrooms",
 
-  images: [
-    "/valencia-bedroom-01.webp",
-    "/valencia-bedroom-02.webp",
-    "/valencia-bedroom-03.webp",
-    "/valencia-bedroom-04.webp",
-    "/valencia-bedroom-05.webp",
-    "/valencia-bedroom-06.webp",
-  ],
+images: [
+  "/valenciabed-01.webp",
+  "/valenciabed-02.webp",
+  "/valenciabed-03.webp",
+  "/valenciabed-04.webp",
+  "/valenciabed-05.webp",
+  "/valenciabed-06.webp",
+],
 
   description:
     "Discover the Valencia Luxury Bedroom Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated comfort for exclusive luxury interiors.",
@@ -420,14 +420,13 @@ aspendosBedroom: {
 
   category: "bedrooms",
 
-  images: [
-    "/aspendos-bedroom-01.webp",
-    "/aspendos-bedroom-02.webp",
-    "/aspendos-bedroom-03.webp",
-    "/aspendos-bedroom-04.webp",
-    "/aspendos-bedroom-05.webp",
-    "/aspendos-bedroom-06.webp",
-  ],
+ images: [
+  "/aspendosbedroom-01.webp",
+  "/aspendosbedroom-02.webp",
+  "/aspendosbedroom-03.webp",
+  "/aspendosbedroom-04.webp",
+  "/aspendosbedroom-05.webp",
+],
 
   description:
     "Discover the Aspendos Luxury Bedroom Collection by VIRELLAART, combining elegant design, premium craftsmanship and sophisticated comfort for refined luxury interiors.",
@@ -470,13 +469,12 @@ deluxBedroom: {
   category: "bedrooms",
 
   images: [
-    "/delux-bedroom-01.webp",
-    "/delux-bedroom-02.webp",
-    "/delux-bedroom-03.webp",
-    "/delux-bedroom-04.webp",
-    "/delux-bedroom-05.webp",
-    "/delux-bedroom-06.webp",
-  ],
+  "/deluxbed-01.webp",
+  "/deluxbed-02.webp",
+  "/deluxbed-03.webp",
+  "/deluxbed-04.webp",
+  "/deluxbed-05.webp",
+],
 
   description:
     "Discover the Delux Luxury Bedroom Collection by VIRELLAART, combining refined aesthetics, premium craftsmanship and timeless elegance for exclusive luxury interiors.",
@@ -517,14 +515,13 @@ aspendosDining: {
 
   category: "dining-rooms",
 
-  images: [
-    "/aspendos-dining-01.webp",
-    "/aspendos-dining-02.webp",
-    "/aspendos-dining-03.webp",
-    "/aspendos-dining-04.webp",
-    "/aspendos-dining-05.webp",
-    "/aspendos-dining-06.webp",
-  ],
+ images: [
+  "/aspendosdining-01.webp",
+  "/aspendosdining-02.webp",
+  "/aspendosdining-03.webp",
+  "/aspendosdining-04.webp",
+  "/aspendosdining-05.webp",
+],
 
   description:
     "Discover the Aspendos Luxury Dining Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and sophisticated details for exclusive dining interiors.",
@@ -562,14 +559,13 @@ deluxDining: {
 
   category: "dining-rooms",
 
-  images: [
-    "/delux-dining-01.webp",
-    "/delux-dining-02.webp",
-    "/delux-dining-03.webp",
-    "/delux-dining-04.webp",
-    "/delux-dining-05.webp",
-    "/delux-dining-06.webp",
-  ],
+images: [
+  "/deluxdiningroom-01.webp",
+  "/deluxdiningroom-02.webp",
+  "/deluxdiningroom-03.webp",
+  "/deluxdiningroom-04.webp",
+  "/deluxdiningroom-05.webp",
+],
 
   description:
     "Discover the Delux Luxury Dining Room Collection by VIRELLAART, combining refined aesthetics, premium craftsmanship and timeless elegance for sophisticated dining spaces.",
@@ -607,14 +603,11 @@ moonDining: {
 
   category: "dining-rooms",
 
-  images: [
-    "/moon-dining-01.webp",
-    "/moon-dining-02.webp",
-    "/moon-dining-03.webp",
-    "/moon-dining-04.webp",
-    "/moon-dining-05.webp",
-    "/moon-dining-06.webp",
-  ],
+ images: [
+  "/moondining-01.webp",
+  "/moondining-02.webp",
+  "/moondining-03.webp",
+],
 
   description:
     "Discover the Moon Luxury Dining Room Collection by VIRELLAART, combining contemporary elegance, premium craftsmanship and sophisticated details for exceptional dining interiors.",
@@ -652,14 +645,11 @@ queenDining: {
 
   category: "dining-rooms",
 
-  images: [
-    "/queen-dining-01.webp",
-    "/queen-dining-02.webp",
-    "/queen-dining-03.webp",
-    "/queen-dining-04.webp",
-    "/queen-dining-05.webp",
-    "/queen-dining-06.webp",
-  ],
+ images: [
+  "/queendining-01.webp",
+  "/queendining-02.webp",
+  "/queendining-03.webp",
+],
 
   description:
     "Discover the Queen Luxury Dining Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and timeless sophistication for refined dining interiors.",
@@ -698,13 +688,12 @@ valenciaDining: {
   category: "dining-rooms",
 
   images: [
-    "/valencia-dining-01.webp",
-    "/valencia-dining-02.webp",
-    "/valencia-dining-03.webp",
-    "/valencia-dining-04.webp",
-    "/valencia-dining-05.webp",
-    "/valencia-dining-06.webp",
-  ],
+  "/valenciadining-01.webp",
+  "/valenciadining-02.webp",
+  "/valenciadining-03.webp",
+  "/valenciadining-04.webp",
+  "/valenciadining-05.webp",
+],
 
   description:
     "Discover the Valencia Luxury Dining Room Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated details for exclusive dining interiors.",
@@ -741,14 +730,10 @@ aspendosTV: {
 
   category: "tv-units",
 
-  images: [
-    "/aspendos-tv-01.webp",
-    "/aspendos-tv-02.webp",
-    "/aspendos-tv-03.webp",
-    "/aspendos-tv-04.webp",
-    "/aspendos-tv-05.webp",
-    "/aspendos-tv-06.webp",
-  ],
+images: [
+  "/aspendostv-01.webp",
+  "/aspendostv-02.webp",
+],
 
   description:
     "Discover the Aspendos Luxury TV Unit Collection by VIRELLAART, combining elegant design, premium craftsmanship and sophisticated details for exclusive luxury interiors.",
@@ -770,14 +755,10 @@ deluxTV: {
 
   category: "tv-units",
 
-  images: [
-    "/delux-tv-01.webp",
-    "/delux-tv-02.webp",
-    "/delux-tv-03.webp",
-    "/delux-tv-04.webp",
-    "/delux-tv-05.webp",
-    "/delux-tv-06.webp",
-  ],
+images: [
+  "/deluxtv-01.webp",
+  "/deluxtv-02.webp",
+],
 
   description:
     "Discover the Delux Luxury TV Unit Collection by VIRELLAART, combining refined aesthetics, premium craftsmanship and elegant details for sophisticated living spaces.",
@@ -800,13 +781,9 @@ moontv: {
   category: "tv-units",
 
   images: [
-    "/moontv-01.webp",
-    "/moontv-02.webp",
-    "/moontv-03.webp",
-    "/moontv-04.webp",
-    "/moontv-05.webp",
-    "/moontv-06.webp",
-  ],
+  "/moontv-01.webp",
+  "/moontv-02.webp",
+],
 
   description:
     "Discover the Moon Luxury TV Unit Collection by VIRELLAART, combining contemporary elegance, premium craftsmanship and sophisticated details for exceptional living spaces.",
@@ -829,13 +806,9 @@ valenciaTV: {
   category: "tv-units",
 
   images: [
-    "/valencia-tv-01.webp",
-    "/valencia-tv-02.webp",
-    "/valencia-tv-03.webp",
-    "/valencia-tv-04.webp",
-    "/valencia-tv-05.webp",
-    "/valencia-tv-06.webp",
-  ],
+  "/valenciatv-01.webp",
+  "/valenciatv-02.webp",
+],
 
   description:
     "Discover the Valencia Luxury TV Unit Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated details for exclusive luxury interiors.",
