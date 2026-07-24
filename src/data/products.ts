@@ -43,25 +43,21 @@ export const products = {
 
 
   aspendos: {
-  },
-
-  alex: {
-    alex: {
-  name: "Alex Living Room",
+  name: "Aspendos Living Room",
 
   category: "living-rooms",
 
   images: [
-    "/alex-01.webp",
-    "/alex-02.webp",
-    "/alex-03.webp",
-    "/alex-04.webp",
-    "/alex-05.webp",
-    "/alex-06.webp",
+    "/aspendos-01.webp",
+    "/aspendos-02.webp",
+    "/aspendos-03.webp",
+    "/aspendos-04.webp",
+    "/aspendos-05.webp",
+    "/aspendos-06.webp",
   ],
 
   description:
-    "Discover the Alex Luxury Living Room Collection by VIRELLAART, designed with elegant details, premium craftsmanship and timeless comfort.",
+    "Discover the Aspendos Luxury Living Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and timeless comfort.",
 
   prices: [
     {
@@ -83,6 +79,43 @@ export const products = {
     },
   ],
 },
+
+  alex: {
+  name: "Alex Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/alex-01.webp",
+    "/alex-02.webp",
+    "/alex-03.webp",
+    "/alex-04.webp",
+    "/alex-05.webp",
+    "/alex-06.webp",
+  ],
+
+  description:
+    "Discover the Alex Luxury Living Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and timeless comfort.",
+
+  prices: [
+    {
+      label: "Luxury 3+3+1+1 Living Room Set",
+      price: "$4,950",
+      featured: true,
+    },
+    {
+      label: "3+3+1+1 Sofa Set",
+      price: "Included",
+    },
+    {
+      label: "Center Table",
+      price: "$750",
+    },
+    {
+      label: "TV Unit",
+      price: "$1,500",
+    },
+  ],
   },
 
   bahar: {
@@ -325,46 +358,43 @@ queen: {
 
 },
 
-  vizyon: {
+ vizyon: {
+  name: "Vizyon Living Room",
 
-    name: "Vizyon Living Room",
+  category: "living-rooms",
 
-    category: "living-rooms",
+  images: [
+    "/vizyon01.webp",
+    "/vizyon02.webp",
+    "/vizyon03.webp",
+    "/vizyon04.webp",
+    "/vizyon05.webp",
+    "/vizyon06.webp",
+  ],
 
-    images: [
-      "/vizyon-01.webp",
-      "/vizyon-02.webp",
-      "/vizyon-03.webp",
-      "/vizyon-04.webp",
-      "/vizyon-05.webp",
-      "/vizyon-06.webp",
-    ],
+  description:
+    "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, combining modern elegance, premium craftsmanship and sophisticated comfort for exceptional luxury interiors.",
 
-    description:
-      "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, combining modern elegance, premium craftsmanship and sophisticated comfort for exceptional luxury interiors.",
-
-    prices: [
-      {
-        label: "Luxury 3+3+1+1 Living Room Set",
-        price: "$4,950",
-        featured: true,
-      },
-      {
-        label: "3+3+1+1 Sofa Set",
-        price: "Included",
-      },
-      {
-        label: "Center Table",
-        price: "$750",
-      },
-      {
-        label: "TV Unit",
-        price: "$1,500",
-      },
-    ],
-
-  },
-
+  prices: [
+    {
+      label: "Luxury 3+3+1+1 Living Room Set",
+      price: "$4,950",
+      featured: true,
+    },
+    {
+      label: "3+3+1+1 Sofa Set",
+      price: "Included",
+    },
+    {
+      label: "Center Table",
+      price: "$750",
+    },
+    {
+      label: "TV Unit",
+      price: "$1,500",
+    },
+  ],
+},
 valenciaBedroom: {
 
   name: "Valencia Bedroom",
@@ -800,18 +830,17 @@ moontv: {
 
 
 valenciaTV: {
-
   name: "Valencia TV Unit",
 
   category: "tv-units",
 
   images: [
-  "/valenciatv-01.webp",
-  "/valenciatv-02.webp",
-],
+    "/valenciatv-01.webp",
+    "/valenciatv-02.webp",
+  ],
 
   description:
-    "Discover the Valencia Luxury TV Unit Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated details for exclusive luxury interiors.",
+    "Discover the Valencia Luxury TV Unit Collection by VIRELLAART.",
 
   prices: [
     {
@@ -820,7 +849,6 @@ valenciaTV: {
       featured: true,
     },
   ],
-
 },
 
 };
