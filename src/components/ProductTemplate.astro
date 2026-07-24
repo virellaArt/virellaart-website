@@ -1,4 +1,6 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const { product } = Astro.props;
 
 
@@ -125,6 +127,12 @@ whatsappMessage
 
 ---
 
+<BaseLayout
+title={product.name}
+description={pageDescription}
+image={images[0]}
+>
+
 <script
 type="application/ld+json"
 set:html={JSON.stringify(productSchema)}
@@ -132,7 +140,7 @@ set:html={JSON.stringify(productSchema)}
 
 
 
-<main class="product-page">
+<div class="product-page">
 
 
 <section class="product-container">
@@ -405,11 +413,6 @@ Made with carefully selected luxury materials.
 </div>
 
 
-
-
-
-
-
 <a
 href={whatsappUrl}
 class="whatsapp"
@@ -440,7 +443,7 @@ Contact our team for dimensions, fabric options, production and delivery informa
 </section>
 
 
-</main>
+</div>
 
 <div class="lightbox" id="lightbox">
 
@@ -1400,3 +1403,5 @@ overflow-x:hidden;
 
 
 </style>
+
+</BaseLayout>

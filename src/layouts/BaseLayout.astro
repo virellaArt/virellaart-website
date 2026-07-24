@@ -85,6 +85,27 @@ gtag('js', new Date());
 gtag('config', 'G-Y8YY6ZBD87');
 </script>
 
+<script is:inline>
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  const button =
+    target instanceof Element ? target.closest("a.whatsapp") : null;
+
+  if (!button) return;
+
+  console.log("WHATSAPP CLICK");
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "whatsapp_click", {
+      event_category: "engagement",
+      event_label: "WhatsApp Button"
+    });
+
+    console.log("GA4 WHATSAPP SENT");
+  }
+});
+</script>
+
 
   <meta
 name="google-site-verification"
