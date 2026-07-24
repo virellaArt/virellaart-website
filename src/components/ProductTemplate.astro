@@ -516,19 +516,29 @@ images[currentIndex];
 
 
 document
-.querySelector("#closeLightbox")
+.querySelector("#close")
 ?.addEventListener(
 
 "click",
 
 ()=>{
 
-
 lightbox?.classList.remove("open");
-
 
 }
 
+);
+lightbox?.addEventListener(
+"click",
+(event)=>{
+
+if(event.target === lightbox){
+
+lightbox.classList.remove("open");
+
+}
+
+}
 );
 
 
