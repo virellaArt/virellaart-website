@@ -14,7 +14,6 @@ const pages = [
   "/living-rooms/valencia",
   "/living-rooms/vizyon",
 
-
   "/dining-rooms",
   "/dining-rooms/aspendos",
   "/dining-rooms/delux",
@@ -22,19 +21,16 @@ const pages = [
   "/dining-rooms/queen",
   "/dining-rooms/valencia",
 
-
   "/bedrooms",
   "/bedrooms/aspendos",
   "/bedrooms/delux",
   "/bedrooms/valencia",
-
 
   "/tv-units",
   "/tv-units/aspendos",
   "/tv-units/delux",
   "/tv-units/moontv",
   "/tv-units/valencia",
-
 
   "/about",
   "/contact"
@@ -44,42 +40,23 @@ const pages = [
 
 export const GET = () => {
 
-
   const urls = pages
     .map(
-      (page) => `
-
-<url>
-
+      (page) =>
+`<url>
 <loc>https://www.virellaart.com${page}</loc>
-
-</url>
-
-`
+</url>`
     )
     .join("");
 
 
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
 
-  return new Response(
 
-`
-<?xml version="1.0" encoding="UTF-8"?>
-
-<urlset 
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-${urls}
-
-</urlset>
-`,
-
-{
-headers:{
-"Content-Type":"application/xml"
-}
-}
-
-);
+  return new Response(xml, {
+    headers:{
+      "Content-Type":"application/xml"
+    }
+  });
 
 };
