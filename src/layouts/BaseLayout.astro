@@ -68,35 +68,22 @@ const websiteSchema = {
 
 <head>
 
+
 <!-- Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8YY6ZBD87"></script>
 
 <script is:inline>
+window.dataLayer = window.dataLayer || [];
 
-document.addEventListener("click", function(e){
-
-const button = e.target.closest("[data-whatsapp]");
-
-if(!button) return;
-
-console.log("WhatsApp Click Detected");
-
-if(typeof gtag === "function"){
-
-gtag("event","whatsapp_click",{
-event_category:"engagement",
-event_label:"Product WhatsApp"
-});
-
-console.log("GA WhatsApp Event Sent");
-
+function gtag(){
+dataLayer.push(arguments);
 }
 
-});
+gtag('js', new Date());
 
+gtag('config', 'G-Y8YY6ZBD87');
 </script>
-
 
 
   <meta
