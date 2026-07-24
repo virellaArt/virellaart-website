@@ -12,7 +12,7 @@ const {
   description = "VIRELLAART creates luxury furniture collections crafted in Istanbul. Premium living rooms, dining rooms, bedrooms and TV units with worldwide delivery."
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, "https://www.virellaart.com").href;
 ---
 
 <!DOCTYPE html>
