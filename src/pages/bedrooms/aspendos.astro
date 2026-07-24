@@ -1,45 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Aspendos Bedroom",
-
-  images: [
-    "/aspendosbedroom-01.webp",
-    "/aspendosbedroom-02.webp",
-    "/aspendosbedroom-03.webp",
-    "/aspendosbedroom-04.webp",
-    "/aspendosbedroom-05.webp",
-  ],
-
-  prices: [
-    {
-      label: "Factory Direct Price",
-      price: "$4,400",
-      featured: true,
-    },
-    {
-      label: "Luxury Bed",
-      price: "Included",
-    },
-    {
-      label: "2 Nightstands",
-      price: "Included",
-    },
-    {
-      label: "Luxury Dressing Table & Mirror",
-      price: "Included",
-    },
-    {
-      label: "Luxury Wardrobe",
-      price: "Included",
-    },
-  ],
-
-  description:
-    "Discover the Aspendos Luxury Bedroom Collection by VIRELLAART. This premium bedroom set combines elegant contemporary design, exceptional craftsmanship and luxurious materials. The collection includes a luxury bed, two nightstands, a dressing table with mirror and a spacious wardrobe, offering timeless elegance with worldwide delivery.",
-};
-
+const product = products.aspendosBedroom;
 ---
 
 <ProductTemplate {product} />

@@ -1,36 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Sena Living Room",
-
-  images: [
-    "/sena-01.webp",
-    "/sena-02.webp",
-    "/sena-03.webp",
-    "/sena-04.webp",
-  ],
-
-  prices: [
-    {
-      label: "Complete Collection",
-      price: "$4,550",
-      featured: true,
-    },
-    {
-      label: "3+3+1+1 Living Room Set",
-      price: "$4,100",
-    },
-    {
-      label: "Center Table",
-      price: "$450",
-    },
-  ],
-
-  description:
-    "Discover the Sena Luxury Living Room Collection by VIRELLAART, featuring elegant contemporary styling, premium upholstery and exceptional craftsmanship. Designed for sophisticated residences and luxury interiors, the Sena collection combines timeless elegance with worldwide delivery.",
-};
-
+const product = products.sena;
 ---
 
 <ProductTemplate {product} />

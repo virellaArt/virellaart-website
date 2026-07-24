@@ -1,26 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Moon TV Unit",
-
-  images: [
-    "/moontv-01.webp",
-    "/moontv-02.webp",
-  ],
-
-  prices: [
-    {
-      label: "TV Stand (395 cm)",
-      price: "$3,700",
-      featured: true,
-    },
-  ],
-
-  description:
-    "Discover the Moon Luxury TV Unit Collection by VIRELLAART, featuring elegant contemporary design, premium craftsmanship and refined details. Designed for sophisticated interiors, this exclusive TV unit combines functionality with timeless luxury and worldwide delivery.",
-};
-
+const product = products.moontv;
 ---
 
 <ProductTemplate {product} />

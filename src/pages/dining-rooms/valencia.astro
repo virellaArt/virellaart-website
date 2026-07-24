@@ -1,34 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Valencia Dining",
-
-  images: [
-    "/valenciadining-01.webp",
-    "/valenciadining-02.webp",
-    "/valenciadining-03.webp",
-  ],
-
-  prices: [
-    {
-      label: "Complete Luxury Dining Room Set",
-      price: "$4,550",
-      featured: true,
-    },
-    {
-      label: "Luxury Dining Table + 6 Chairs",
-      price: "$2,950",
-    },
-    {
-      label: "Luxury Console & Mirror",
-      price: "$1,600",
-    },
-  ],
-
-  description:
-    "Discover the Valencia Luxury Dining Room Collection by VIRELLAART, combining refined contemporary styling, premium craftsmanship and timeless elegance. Designed for sophisticated interiors, this exclusive dining collection includes a luxury dining table with six chairs and a matching console with mirror, offering worldwide delivery.",
-};
+const product = products.valenciaDining;
 ---
 
 <ProductTemplate {product} />

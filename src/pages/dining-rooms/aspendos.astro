@@ -1,36 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Aspendos Dining",
-
-  images: [
-    "/aspendosdining-01.webp",
-    "/aspendosdining-02.webp",
-    "/aspendosdining-03.webp",
-    "/aspendosdining-04.webp",
-    "/aspendosdining-05.webp",
-  ],
-
-  prices: [
-    {
-      label: "Complete Dining Room Set",
-      price: "$4,200",
-      featured: true,
-    },
-    {
-      label: "Dining Table + 6 Chairs",
-      price: "$2,900",
-    },
-    {
-      label: "Console & Mirror",
-      price: "$1,500",
-    },
-  ],
-
-  description:
-    "Discover the Aspendos Luxury Dining Room Collection by VIRELLAART, combining elegant contemporary design, premium craftsmanship and timeless sophistication. Created for refined interiors, this exclusive dining collection represents luxury furniture craftsmanship with worldwide delivery.",
-};
+const product = products.aspendosDining;
 ---
 
 <ProductTemplate {product} />

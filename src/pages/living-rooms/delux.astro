@@ -1,41 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Delux Living Room",
-
-  images: [
-    "/delux-01.webp",
-    "/delux-02.webp",
-    "/delux-03.webp",
-    "/delux-04.webp",
-    "/delux-05.webp",
-  ],
-
-  prices: [
-    {
-      label: "Complete Collection",
-      price: "$7,150",
-      featured: true,
-    },
-    {
-      label: "3+3+1+1 Living Room Set",
-      price: "$4,800",
-    },
-    {
-      label: "Center Table",
-      price: "$750",
-    },
-    {
-      label: "TV Unit",
-      price: "$1,600",
-    },
-  ],
-
-  description:
-    "Discover the Delux Luxury Living Room Collection by VIRELLAART, featuring elegant contemporary lines, luxurious upholstery, premium craftsmanship and refined decorative details. Designed for luxury villas, modern residences and sophisticated interiors, this exclusive living room collection combines exceptional comfort, timeless design and worldwide furniture delivery.",
-};
-
+const product = products.delux;
 ---
 
 <ProductTemplate {product} />

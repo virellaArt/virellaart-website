@@ -1,44 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Valencia Living Room",
-
-  images: [
-    "/valencia-01.webp",
-    "/valencia-02.webp",
-    "/valencia-03.webp",
-    "/valencia-04.webp",
-    "/valencia-05.webp",
-    "/valencia-06.webp",
-    "/valencia-07.webp",
-    "/valencia-08.webp",
-  ],
-
-  prices: [
-    {
-      label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
-      featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
-    },
-    {
-      label: "Center Table",
-      price: "$750",
-    },
-    {
-      label: "TV Unit",
-      price: "$1,500",
-    },
-  ],
-
-  description:
-    "Discover the Valencia Luxury Living Room Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated comfort. Designed for luxury residences and exceptional interiors, this exclusive living room collection offers worldwide delivery.",
-};
-
+const product = products.valencia;
 ---
 
 <ProductTemplate {product} />

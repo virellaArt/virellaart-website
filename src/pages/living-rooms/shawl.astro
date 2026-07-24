@@ -1,44 +1,8 @@
 ---
 import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
 
-const product = {
-  name: "Shawl Living Room",
-
-  images: [
-    "/shawl-01.webp",
-    "/shawl-02.webp",
-    "/shawl-03.webp",
-    "/shawl-04.webp",
-    "/shawl-05.webp",
-    "/shawl-06.webp",
-    "/shawl-07.webp",
-    "/shawl-08.webp",
-  ],
-
-  prices: [
-    {
-      label: "Complete Collection",
-      price: "$9,300",
-      featured: true,
-    },
-    {
-      label: "3+3+1+1 Living Room Set",
-      price: "$6,450",
-    },
-    {
-      label: "Coffee Table",
-      price: "$850",
-    },
-    {
-      label: "TV Stand",
-      price: "$2,000",
-    },
-  ],
-
-  description:
-    "Discover the Shawl Luxury Living Room Collection by VIRELLAART, combining elegant contemporary design, premium upholstery, refined craftsmanship and exceptional comfort. Created for luxury villas, sophisticated residences and exclusive interiors, the Shawl collection delivers timeless elegance with worldwide delivery.",
-};
-
+const product = products.shawl;
 ---
 
 <ProductTemplate {product} />
