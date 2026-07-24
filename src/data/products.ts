@@ -588,7 +588,6 @@ images: [
   "/deluxdiningroom-02.webp",
   "/deluxdiningroom-03.webp",
   "/deluxdiningroom-04.webp",
-  "/deluxdiningroom-05.webp",
 ],
 
   description:
@@ -716,7 +715,6 @@ valenciaDining: {
   "/valenciadining-02.webp",
   "/valenciadining-03.webp",
   "/valenciadining-04.webp",
-  "/valenciadining-05.webp",
 ],
 
   description:
