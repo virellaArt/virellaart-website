@@ -411,13 +411,16 @@ Made with carefully selected luxury materials.
 
 
 <a
-  href={whatsappUrl}
-  onclick="window.gtag && window.gtag('event','whatsapp_click',{event_category:'engagement',event_label:'Product WhatsApp'})"
-  class="whatsapp"
-  target="_blank"
-  rel="noopener noreferrer"
+href={whatsappUrl}
+class="whatsapp"
+target="_blank"
+rel="noopener noreferrer"
+onclick="gtag('event','whatsapp_click',{
+event_category:'engagement',
+event_label:'Product WhatsApp'
+})"
 >
-  Contact Us on WhatsApp
+Contact Us on WhatsApp
 </a>
 
 

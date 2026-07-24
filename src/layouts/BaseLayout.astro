@@ -74,17 +74,22 @@ const websiteSchema = {
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8YY6ZBD87"></script>
 
 <script is:inline>
+document.addEventListener("click", function(e){
 
-window.dataLayer = window.dataLayer || [];
+const link = e.target.closest("[data-whatsapp]");
 
-window.gtag = function(){
-window.dataLayer.push(arguments);
-};
+if(!link) return;
 
-window.gtag('js', new Date());
+if(typeof gtag === "function"){
 
-window.gtag('config','G-Y8YY6ZBD87');
+gtag("event","whatsapp_click",{
+event_category:"engagement",
+event_label:"Product WhatsApp"
+});
 
+}
+
+});
 </script>
 
 
