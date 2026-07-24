@@ -21,8 +21,6 @@ const prices: {
    SEO DATA
 ========================= */
 
-const pageTitle =
-`${product.name} | VIRELLAART Luxury Furniture`;
 
 
 const pageDescription =
@@ -45,40 +43,64 @@ new URL(
 
 const productSchema = {
 
-"@context":"https://schema.org",
+"@context": "https://schema.org",
 
-"@type":"Product",
+"@type": "Product",
 
 "name": product.name,
+
+"sku": product.name
+.toLowerCase()
+.replaceAll(" ","-"),
+
+"category": product.category,
 
 "description": pageDescription,
 
 
-"brand":{
+"brand": {
 
-"@type":"Brand",
+  "@type": "Brand",
 
-"name":"VIRELLAART"
+  "name": "VIRELLAART"
 
 },
 
 
-"image": images,
+"image": images.map(
+(image)=>`https://www.virellaart.com${image}`
+),
 
 
-"offers":{
+"offers": {
 
-"@type":"Offer",
+  "@type": "Offer",
 
-"priceCurrency":"USD",
+  "url": canonicalURL,
 
-"availability":
-"https://schema.org/InStock"
+  "priceCurrency": "USD",
+
+"price":
+Number(
+prices[0]?.price
+.replace("$","")
+.replace(",","")
+) || 0, 
+
+  "availability":
+  "https://schema.org/InStock",
+
+  "seller": {
+
+    "@type": "Organization",
+
+    "name": "VIRELLAART"
+
+  }
 
 }
 
 };
-
 
 
 
@@ -103,32 +125,10 @@ whatsappMessage
 
 ---
 
-<head>
-
-<title>
-{pageTitle}
-</title>
-
-
-<meta
-name="description"
-content={pageDescription}
-/>
-
-
-<link
-rel="canonical"
-href={canonicalURL}
-/>
-
-
 <script
 type="application/ld+json"
 set:html={JSON.stringify(productSchema)}
 />
-
-
-</head>
 
 
 

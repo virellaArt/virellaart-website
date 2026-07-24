@@ -23,7 +23,45 @@ const imageURL = new URL(
   image,
   "https://www.virellaart.com"
 ).href;
+
+
+const organizationSchema = {
+
+  "@context": "https://schema.org",
+
+  "@type": "Organization",
+
+  "name": "VIRELLAART",
+
+  "url": "https://www.virellaart.com",
+
+  "logo": "https://www.virellaart.com/favicon.ico",
+
+  "description":
+  "VIRELLAART creates luxury furniture collections crafted in Istanbul with premium craftsmanship and worldwide delivery.",
+
+  "sameAs": [
+    "https://www.instagram.com/virellaart/",
+    "https://www.facebook.com/VirellaArtFurniture",
+    "https://tr.pinterest.com/virellaart/"
+  ]
+
+};
+
+
+const websiteSchema = {
+
+  "@context": "https://schema.org",
+
+  "@type": "WebSite",
+
+  "name": "VIRELLAART",
+
+  "url": "https://www.virellaart.com"
+
+};
 ---
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -134,6 +172,20 @@ content={description}
 <meta
 name="twitter:image"
 content={imageURL}
+/>
+
+
+
+
+<script
+type="application/ld+json"
+set:html={JSON.stringify(organizationSchema)}
+/>
+
+
+<script
+type="application/ld+json"
+set:html={JSON.stringify(websiteSchema)}
 />
 
 
