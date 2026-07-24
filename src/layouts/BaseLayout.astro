@@ -85,23 +85,16 @@ gtag('js', new Date());
 gtag('config', 'G-Y8YY6ZBD87');
 
 
-// WhatsApp Click Tracking
-
 document.addEventListener("click", function(e){
 
   const link = e.target.closest("[data-whatsapp]");
 
   if(!link) return;
 
-
-  if(typeof window.gtag === "function"){
-
-    window.gtag("event", "whatsapp_click", {
-      event_category: "engagement",
-      event_label: "Product WhatsApp"
-    });
-
-  }
+  gtag("event", "whatsapp_click", {
+    event_category: "engagement",
+    event_label: "Product WhatsApp"
+  });
 
 });
 
