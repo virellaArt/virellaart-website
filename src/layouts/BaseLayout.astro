@@ -74,27 +74,24 @@ const websiteSchema = {
 
 <script is:inline>
 
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-  window.dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-
-gtag('config', 'G-Y8YY6ZBD87');
-
-
 document.addEventListener("click", function(e){
 
-  const link = e.target.closest("[data-whatsapp]");
+const button = e.target.closest("[data-whatsapp]");
 
-  if(!link) return;
+if(!button) return;
 
-  gtag("event", "whatsapp_click", {
-    event_category: "engagement",
-    event_label: "Product WhatsApp"
-  });
+console.log("WhatsApp Click Detected");
+
+if(typeof gtag === "function"){
+
+gtag("event","whatsapp_click",{
+event_category:"engagement",
+event_label:"Product WhatsApp"
+});
+
+console.log("GA WhatsApp Event Sent");
+
+}
 
 });
 
