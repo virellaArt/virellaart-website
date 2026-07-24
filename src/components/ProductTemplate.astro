@@ -1,7 +1,13 @@
 ---
 const { product } = Astro.props;
 
+
+/* =========================
+   PRODUCT BASIC DATA
+========================= */
+
 const images: string[] = product.images ?? [];
+
 
 const prices: {
   label: string;
@@ -10,10 +16,84 @@ const prices: {
 }[] = product.prices ?? [];
 
 
-const whatsappNumber = "905539478608";
+
+/* =========================
+   SEO DATA
+========================= */
+
+const pageTitle =
+`${product.name} | VIRELLAART Luxury Furniture`;
+
+
+const pageDescription =
+product.description ??
+`${product.name} by VIRELLAART. Luxury furniture collection crafted in Istanbul with premium materials and worldwide delivery.`;
+
+
+
+const canonicalURL =
+new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com"
+).href;
+
+
+
+/* =========================
+   PRODUCT SCHEMA
+========================= */
+
+const productSchema = {
+
+"@context":"https://schema.org",
+
+"@type":"Product",
+
+"name": product.name,
+
+"description": pageDescription,
+
+
+"brand":{
+
+"@type":"Brand",
+
+"name":"VIRELLAART"
+
+},
+
+
+"image": images,
+
+
+"offers":{
+
+"@type":"Offer",
+
+"priceCurrency":"USD",
+
+"availability":
+"https://schema.org/InStock"
+
+}
+
+};
+
+
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+
+const whatsappNumber =
+"905539478608";
+
 
 const whatsappMessage =
 `Hello VIRELLAART, I would like to receive more information about the ${product.name} Collection.`;
+
 
 
 const whatsappUrl =
@@ -22,6 +102,34 @@ whatsappMessage
 )}`;
 
 ---
+
+<head>
+
+<title>
+{pageTitle}
+</title>
+
+
+<meta
+name="description"
+content={pageDescription}
+/>
+
+
+<link
+rel="canonical"
+href={canonicalURL}
+/>
+
+
+<script
+type="application/ld+json"
+set:html={JSON.stringify(productSchema)}
+/>
+
+
+</head>
+
 
 
 <main class="product-page">
