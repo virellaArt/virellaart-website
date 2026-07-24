@@ -129,8 +129,6 @@ export const products = {
     "/bahar-02.webp",
     "/bahar-03.webp",
     "/bahar-04.webp",
-    "/bahar-05.webp",
-    "/bahar-06.webp",
   ],
 
   description:
@@ -170,7 +168,6 @@ export const products = {
     "/delux-03.webp",
     "/delux-04.webp",
     "/delux-05.webp",
-    "/delux-06.webp",
   ],
 
   description:
@@ -210,7 +207,6 @@ export const products = {
     "/lugano-03.webp",
     "/lugano-04.webp",
     "/lugano-05.webp",
-    "/lugano-06.webp",
   ],
 
   description:
@@ -289,8 +285,6 @@ queen: {
     "/sena-02.webp",
     "/sena-03.webp",
     "/sena-04.webp",
-    "/sena-05.webp",
-    "/sena-06.webp",
   ],
 
   description:
