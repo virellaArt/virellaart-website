@@ -26,10 +26,6 @@ export const products = {
         featured: true,
       },
       {
-        label: "3+3+1+1 Sofa Set",
-        price: "Included",
-      },
-      {
         label: "Center Table",
         price: "$750",
       },
@@ -66,10 +62,6 @@ export const products = {
       featured: true,
     },
     {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
-    },
-    {
       label: "Center Table",
       price: "$750",
     },
@@ -100,21 +92,14 @@ export const products = {
   prices: [
     {
       label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      price: "$4,500",
       featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
     },
     {
       label: "Center Table",
       price: "$750",
     },
-    {
-      label: "TV Unit",
-      price: "$1,500",
-    },
+   
   ],
   },
 
@@ -141,17 +126,10 @@ export const products = {
       featured: true,
     },
     {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
-    },
-    {
       label: "Center Table",
       price: "$750",
     },
-    {
-      label: "TV Unit",
-      price: "$1,500",
-    },
+    
   ],
 
 },
@@ -178,10 +156,6 @@ export const products = {
       label: "Luxury 3+3+1+1 Living Room Set",
       price: "$4,950",
       featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
     },
     {
       label: "Center Table",
@@ -215,21 +189,14 @@ export const products = {
   prices: [
     {
       label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      price: "$4,650",
       featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
     },
     {
       label: "Center Table",
       price: "$750",
     },
-    {
-      label: "TV Unit",
-      price: "$1,500",
-    },
+    
   ],
 
 },
@@ -254,21 +221,17 @@ queen: {
 
   prices: [
     {
-      label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      label: "Luxury 4+3+1 Living Room Set",
+      price: "$5,350",
       featured: true,
     },
     {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
-    },
-    {
       label: "Center Table",
-      price: "$750",
+      price: "$650",
     },
     {
       label: "TV Unit",
-      price: "$1,500",
+      price: "$2,200",
     },
   ],
 
@@ -293,20 +256,12 @@ queen: {
   prices: [
     {
       label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      price: "$4,350",
       featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
     },
     {
       label: "Center Table",
       price: "$750",
-    },
-    {
-      label: "TV Unit",
-      price: "$1,500",
     },
   ],
 
@@ -333,20 +288,16 @@ queen: {
   prices: [
     {
       label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      price: "$6,450",
       featured: true,
     },
     {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
-    },
-    {
       label: "Center Table",
-      price: "$750",
+      price: "$900",
     },
     {
       label: "TV Unit",
-      price: "$1,500",
+      price: "$2,250",
     },
   ],
 
@@ -372,20 +323,12 @@ queen: {
   prices: [
     {
       label: "Luxury 3+3+1+1 Living Room Set",
-      price: "$4,950",
+      price: "$4,750",
       featured: true,
-    },
-    {
-      label: "3+3+1+1 Sofa Set",
-      price: "Included",
     },
     {
       label: "Center Table",
       price: "$750",
-    },
-    {
-      label: "TV Unit",
-      price: "$1,500",
     },
   ],
 },
@@ -410,29 +353,10 @@ images: [
   prices: [
     {
       label: "Luxury Bedroom Set",
-      price: "$6,300",
+      price: "$5,450",
       featured: true,
     },
-    {
-      label: "Bed",
-      price: "$1,450",
-    },
-    {
-      label: "Wardrobe",
-      price: "$1,900",
-    },
-    {
-      label: "Dresser & Mirror",
-      price: "$1,100",
-    },
-    {
-      label: "2 Nightstands",
-      price: "$1,200",
-    },
-    {
-      label: "Bench / Pouf",
-      price: "$450",
-    },
+    
   ],
 
 },
@@ -458,29 +382,10 @@ aspendosBedroom: {
   prices: [
     {
       label: "Luxury Bedroom Set",
-      price: "$6,300",
+      price: "$5,300",
       featured: true,
     },
-    {
-      label: "Bed",
-      price: "$1,450",
-    },
-    {
-      label: "Wardrobe",
-      price: "$1,900",
-    },
-    {
-      label: "Dresser & Mirror",
-      price: "$1,100",
-    },
-    {
-      label: "2 Nightstands",
-      price: "$1,200",
-    },
-    {
-      label: "Bench / Pouf",
-      price: "$450",
-    },
+    
   ],
 
 },
@@ -506,29 +411,10 @@ deluxBedroom: {
   prices: [
     {
       label: "Luxury Bedroom Set",
-      price: "$6,300",
+      price: "$5,500",
       featured: true,
     },
-    {
-      label: "Bed",
-      price: "$1,450",
-    },
-    {
-      label: "Wardrobe",
-      price: "$1,900",
-    },
-    {
-      label: "Dresser & Mirror",
-      price: "$1,100",
-    },
-    {
-      label: "2 Nightstands",
-      price: "$1,200",
-    },
-    {
-      label: "Bench / Pouf",
-      price: "$450",
-    },
+    
   ],
 
 },
@@ -553,25 +439,10 @@ aspendosDining: {
   prices: [
     {
       label: "Luxury Dining Room Set",
-      price: "$15,000",
+      price: "$4,800",
       featured: true,
     },
-    {
-      label: "Dining Table",
-      price: "$2,750",
-    },
-    {
-      label: "6 Chairs",
-      price: "$3,250",
-    },
-    {
-      label: "Console",
-      price: "$4,350",
-    },
-    {
-      label: "Showcase",
-      price: "$3,500",
-    },
+    
   ],
 
 },
@@ -596,25 +467,10 @@ images: [
   prices: [
     {
       label: "Luxury Dining Room Set",
-      price: "$15,000",
+      price: "$4,800",
       featured: true,
     },
-    {
-      label: "Dining Table",
-      price: "$2,750",
-    },
-    {
-      label: "6 Chairs",
-      price: "$3,250",
-    },
-    {
-      label: "Console",
-      price: "$4,350",
-    },
-    {
-      label: "Showcase",
-      price: "$3,500",
-    },
+    
   ],
 
 },
@@ -638,25 +494,10 @@ moonDining: {
   prices: [
     {
       label: "Luxury Dining Room Set",
-      price: "$15,000",
+      price: "$4,950",
       featured: true,
     },
-    {
-      label: "Dining Table",
-      price: "$2,750",
-    },
-    {
-      label: "6 Chairs",
-      price: "$3,250",
-    },
-    {
-      label: "Console",
-      price: "$4,350",
-    },
-    {
-      label: "Showcase",
-      price: "$3,500",
-    },
+    
   ],
 
 },
@@ -680,25 +521,10 @@ queenDining: {
   prices: [
     {
       label: "Luxury Dining Room Set",
-      price: "$15,000",
+      price: "$5,500",
       featured: true,
     },
-    {
-      label: "Dining Table",
-      price: "$2,750",
-    },
-    {
-      label: "6 Chairs",
-      price: "$3,250",
-    },
-    {
-      label: "Console",
-      price: "$4,350",
-    },
-    {
-      label: "Showcase",
-      price: "$3,500",
-    },
+    
   ],
 
 },
@@ -723,25 +549,10 @@ valenciaDining: {
   prices: [
     {
       label: "Luxury Dining Room Set",
-      price: "$15,000",
+      price: "$4,650",
       featured: true,
     },
-    {
-      label: "Dining Table",
-      price: "$2,750",
-    },
-    {
-      label: "6 Chairs",
-      price: "$3,250",
-    },
-    {
-      label: "Console",
-      price: "$4,350",
-    },
-    {
-      label: "Showcase",
-      price: "$3,500",
-    },
+    
   ],
 
 },
@@ -813,7 +624,7 @@ moontv: {
   prices: [
     {
       label: "Luxury TV Unit",
-      price: "$1,500",
+      price: "$3,750",
       featured: true,
     },
   ],
