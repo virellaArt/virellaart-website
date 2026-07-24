@@ -5,14 +5,24 @@ import Navbar from "../components/Navbar.astro";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { 
+const {
   title,
-  description = "VIRELLAART creates luxury furniture collections crafted in Istanbul. Premium living rooms, dining rooms, bedrooms and TV units with worldwide delivery."
+  description = "VIRELLAART creates luxury furniture collections crafted in Istanbul. Premium living rooms, dining rooms, bedrooms and TV units with worldwide delivery.",
+  image = "/living-room.webp"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://www.virellaart.com").href;
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com"
+).href;
+
+const imageURL = new URL(
+  image,
+  "https://www.virellaart.com"
+).href;
 ---
 
 <!DOCTYPE html>
@@ -20,84 +30,111 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.virellaart.com").h
 
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0" 
-  />
-
-  <title>{title} | VIRELLAART Luxury Furniture</title>
+<meta 
+name="viewport" 
+content="width=device-width, initial-scale=1.0"
+/>
 
 
-  <meta 
-    name="description" 
-    content={description}
-  />
+<title>
+{title} | VIRELLAART Luxury Furniture
+</title>
 
 
-  <meta 
-    name="keywords" 
-    content="
-    luxury furniture,
-    modern luxury furniture,
-    luxury living room,
-    luxury dining room,
-    luxury bedroom,
-    Turkish furniture manufacturer,
-    Istanbul furniture,
-    VIRELLAART
-    "
-  />
+<meta 
+name="description"
+content={description}
+/>
 
 
-  <link 
-    rel="canonical" 
-    href={canonicalURL}
-  />
+<meta 
+name="robots"
+content="index, follow"
+/>
 
 
-
-  <!-- Open Graph -->
-
-  <meta 
-    property="og:title"
-    content={`${title} | VIRELLAART Luxury Furniture`}
-  />
-
-  <meta 
-    property="og:description"
-    content={description}
-  />
-
-  <meta 
-    property="og:type"
-    content="website"
-  />
-
-  <meta 
-    property="og:site_name"
-    content="VIRELLAART"
-  />
+<meta 
+name="theme-color"
+content="#17130f"
+/>
 
 
+<link 
+rel="canonical"
+href={canonicalURL}
+/>
 
-  <!-- Twitter -->
 
-  <meta 
-    name="twitter:card"
-    content="summary_large_image"
-  />
+<link 
+rel="icon"
+href="/favicon.ico"
+/>
 
-  <meta 
-    name="twitter:title"
-    content={`${title} | VIRELLAART Luxury Furniture`}
-  />
 
-  <meta 
-    name="twitter:description"
-    content={description}
-  />
+<!-- Open Graph -->
+
+<meta
+property="og:title"
+content={`${title} | VIRELLAART Luxury Furniture`}
+/>
+
+
+<meta
+property="og:description"
+content={description}
+/>
+
+
+<meta
+property="og:type"
+content="website"
+/>
+
+
+<meta
+property="og:site_name"
+content="VIRELLAART"
+/>
+
+
+<meta
+property="og:url"
+content={canonicalURL}
+/>
+
+
+<meta
+property="og:image"
+content={imageURL}
+/>
+
+
+<!-- Twitter -->
+
+<meta
+name="twitter:card"
+content="summary_large_image"
+/>
+
+
+<meta
+name="twitter:title"
+content={`${title} | VIRELLAART Luxury Furniture`}
+/>
+
+
+<meta
+name="twitter:description"
+content={description}
+/>
+
+
+<meta
+name="twitter:image"
+content={imageURL}
+/>
 
 
 </head>
@@ -105,11 +142,11 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.virellaart.com").h
 
 <body>
 
-  <Navbar />
+<Navbar />
 
-  <main>
-    <slot />
-  </main>
+<main>
+<slot />
+</main>
 
 </body>
 
