@@ -8,6 +8,7 @@ export const productRoutes = {
   "living-rooms/sena": "sena",
   "living-rooms/shawl": "shawl",
   "living-rooms/valencia": "valencia",
+  "living-rooms/vanessa": "vanessa",
   "living-rooms/vizyon": "vizyon",
   "dining-rooms/aspendos": "aspendosDining",
   "dining-rooms/delux": "deluxDining",

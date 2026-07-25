@@ -36,7 +36,45 @@ export const products = {
     ],
 
   },
+  vanessa: {
+    name: "Vanessa Living Room",
 
+    category: "living-rooms",
+
+    images: [
+      "/vanessa-01.webp",
+      "/vanessa-02.webp",
+      "/vanessa-03.webp",
+      "/vanessa-04.webp",
+      "/vanessa-05.webp",
+      "/vanessa-06.webp",
+      "/vanessa-07.webp",
+      "/vanessa-08.webp",
+    ],
+
+    description:
+      "Discover the Vanessa Luxury Living Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and sophisticated comfort for luxury interiors.",
+
+    prices: [
+      {
+        label: "Luxury 3+3+1+1 Living Room Set",
+        price: "$5,700",
+        featured: true,
+      },
+      {
+        label: "Coffee Table",
+        price: "$450",
+      },
+      {
+        label: "Side Table",
+        price: "$250",
+      },
+      {
+        label: "TV Stand",
+        price: "$2,100",
+      },
+    ],
+  },
 
   aspendos: {
   name: "Aspendos Living Room",
