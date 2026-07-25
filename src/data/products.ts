@@ -716,4 +716,39 @@ vanessaDining: {
     },
   ],
 },
+valdera: {
+  name: "Valdera Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/valdera-01.webp",
+    "/valdera-02.webp",
+    "/valdera-03.webp",
+    "/valdera-04.webp",
+  ],
+
+  description:
+    "Discover the Valdera Luxury Living Room Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and refined comfort for sophisticated interiors.",
+
+  prices: [
+    {
+      label: "3+3+1+1 Sofa Set",
+      price: "$5,700",
+      featured: true,
+    },
+    {
+      label: "Coffee Table",
+      price: "$450",
+    },
+    {
+      label: "Side Table",
+      price: "$250",
+    },
+    {
+      label: "TV Stand",
+      price: "$2,450",
+    },
+  ],
+},
 };
