@@ -774,4 +774,28 @@ shawlDining: {
     },
   ],
 },
+valderaDining: {
+  name: "Valdera Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/valderadining-01.webp",
+    "/valderadining-02.webp",
+    "/valderadining-03.webp",
+    "/valderadining-04.webp",
+    "/valderadining-05.webp",
+  ],
+
+  description:
+    "Discover the Valdera Luxury Dining Room Collection by VIRELLAART, combining timeless elegance, refined craftsmanship and sophisticated details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Valdera Dining Room Set",
+      price: "$7,550",
+      featured: true,
+    },
+  ],
+},
 };
