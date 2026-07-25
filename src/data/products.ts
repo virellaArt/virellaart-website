@@ -929,5 +929,27 @@ zumrutTv: {
     },
   ],
 },
+milanoDining: {
+  name: "Milano Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/diningmilano-01.webp",
+    "/diningmilano-02.webp",
+    "/diningmilano-03.webp",
+  ],
+
+  description:
+    "Discover the Milano Luxury Dining Room Collection by VIRELLAART, combining sophisticated elegance, premium craftsmanship and refined details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Milano Dining Room Set",
+      price: "$7,500",
+      featured: true,
+    },
+  ],
+},
 
 };
