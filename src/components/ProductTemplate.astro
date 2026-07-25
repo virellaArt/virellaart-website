@@ -18,13 +18,16 @@ const categoryTranslationKey = {
   "dining-rooms": "diningRooms",
   "bedrooms": "bedrooms",
   "tv-units": "tvUnits",
-}[product.category] as
-  | "livingRooms"
-  | "diningRooms"
-  | "bedrooms"
-  | "tvUnits";
+} as const;
+
+const categoryKey =
+  product.category as keyof typeof categoryTranslationKey;
+
+const categoryTranslation =
+  categoryTranslationKey[categoryKey];
+
 const categoryName =
-  translations.category[categoryTranslationKey].title;
+  translations.category[categoryTranslation].title;
 const categoryURL = new URL(
   localizedPath(`/${product.category}`, language),
   "https://www.virellaart.com",

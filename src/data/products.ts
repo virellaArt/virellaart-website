@@ -36,6 +36,7 @@ export const products = {
     ],
 
   },
+  
   vanessa: {
     name: "Vanessa Living Room",
 
