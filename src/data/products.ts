@@ -853,5 +853,29 @@ zumrut: {
     },
   ],
 },
+zumrutDining: {
+  name: "Zümrüt Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/diningzumrut-01.webp",
+    "/diningzumrut-02.webp",
+    "/diningzumrut-03.webp",
+    "/diningzumrut-04.webp",
+    "/diningzumrut-05.webp",
+  ],
+
+  description:
+    "Discover the Zümrüt Luxury Dining Room Collection by VIRELLAART, combining refined elegance, premium craftsmanship and sophisticated details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Zümrüt Dining Room Set",
+      price: "$7,850",
+      featured: true,
+    },
+  ],
+},
 
 };
