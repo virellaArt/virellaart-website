@@ -822,4 +822,36 @@ versaceBedroom: {
     },
   ],
 },
+zumrut: {
+  name: "Zumrut Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/zumrut-01.webp",
+    "/zumrut-02.webp",
+    "/zumrut-03.webp",
+    "/zumrut-04.webp",
+  ],
+
+  description:
+    "Discover the Zumrut Luxury Living Room Collection by VIRELLAART, combining refined elegance, premium craftsmanship and sophisticated comfort for distinctive luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$5,100",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$500",
+    },
+    {
+      label: "TV Unit",
+      price: "$1,950",
+    },
+  ],
+},
+
 };
