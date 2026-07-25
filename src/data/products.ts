@@ -798,4 +798,28 @@ valderaDining: {
     },
   ],
 },
+versaceBedroom: {
+  name: "Versace Bedroom",
+
+  category: "bedrooms",
+
+  images: [
+    "/versacebedroom-01.webp",
+    "/versacebedroom-02.webp",
+    "/versacebedroom-03.webp",
+    "/versacebedroom-04.webp",
+    "/versacebedroom-05.webp",
+  ],
+
+  description:
+    "Discover the Versace Luxury Bedroom Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and sophisticated details for exceptional bedroom interiors.",
+
+  prices: [
+    {
+      label: "Luxury Bed",
+      price: "$4,700",
+      featured: true,
+    },
+  ],
+},
 };
