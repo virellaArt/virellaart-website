@@ -751,4 +751,27 @@ valdera: {
     },
   ],
 },
+shawlDining: {
+  name: "Shawl Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/diningshawl-01.webp",
+    "/diningshawl-02.webp",
+    "/diningshawl-03.webp",
+    "/diningshawl-04.webp",
+  ],
+
+  description:
+    "Discover the Shawl Luxury Dining Room Collection by VIRELLAART, combining refined elegance, premium craftsmanship and sophisticated details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Dining Room Set",
+      price: "$6,550",
+      featured: true,
+    },
+  ],
+},
 };
