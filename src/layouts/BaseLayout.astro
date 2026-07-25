@@ -1,6 +1,14 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  languageCodes,
+  languages,
+  localizedPath,
+  stripLanguagePrefix,
+} from "../i18n/config";
 
 interface Props {
   title: string;
@@ -10,9 +18,21 @@ interface Props {
 
 const {
   title,
-  description = "VIRELLAART creates luxury furniture collections crafted in Istanbul. Premium living rooms, dining rooms, bedrooms and TV units with worldwide delivery.",
+  description,
   image = "/living-room.webp"
 } = Astro.props;
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const pageDescription = description ?? translations.defaultDescription;
+const fullTitle = title.includes("VIRELLAART")
+  ? title
+  : `${title} | VIRELLAART`;
+const basePath = stripLanguagePrefix(Astro.url.pathname);
+const alternateURLs = languageCodes.map((code) => ({
+  language: code,
+  href: new URL(localizedPath(basePath, code), "https://www.virellaart.com").href,
+}));
 
 const canonicalURL = new URL(
   Astro.url.pathname,
@@ -38,7 +58,7 @@ const organizationSchema = {
   "logo": "https://www.virellaart.com/favicon.ico",
 
   "description":
-  "VIRELLAART creates luxury furniture collections crafted in Istanbul with premium craftsmanship and worldwide delivery.",
+  translations.defaultDescription,
 
   "sameAs": [
     "https://www.instagram.com/virellaart/",
@@ -58,17 +78,72 @@ const websiteSchema = {
 
   "name": "VIRELLAART",
 
-  "url": "https://www.virellaart.com"
+  "url": "https://www.virellaart.com",
+
+  "inLanguage": language
 
 };
 ---
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={language} dir={languages[language].dir}>
 
 <head>
 
+<meta charset="UTF-8" />
+
+<script
+  is:inline
+  define:vars={{
+    currentLanguage: language,
+    supportedLanguages: languageCodes,
+  }}
+>
+  (() => {
+    const storageKey = "virellaart-language";
+    const isBot = /bot|crawler|spider|crawling|google|bing|yandex/i.test(
+      navigator.userAgent,
+    );
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      const link =
+        target instanceof Element
+          ? target.closest("[data-language]")
+          : null;
+
+      if (link instanceof HTMLElement && link.dataset.language) {
+        localStorage.setItem(storageKey, link.dataset.language);
+      }
+    });
+
+    if (isBot || currentLanguage !== "en") {
+      return;
+    }
+
+    const savedLanguage = localStorage.getItem(storageKey);
+    const candidates = savedLanguage
+      ? [savedLanguage]
+      : [...navigator.languages, navigator.language];
+    const detectedLanguage = candidates
+      .map((candidate) => candidate?.toLowerCase().split("-")[0])
+      .find((candidate) => supportedLanguages.includes(candidate));
+
+    if (!detectedLanguage || detectedLanguage === "en") {
+      return;
+    }
+
+    const path =
+      window.location.pathname === "/"
+        ? `/${detectedLanguage}/`
+        : `/${detectedLanguage}${window.location.pathname}`;
+
+    window.location.replace(
+      `${path}${window.location.search}${window.location.hash}`,
+    );
+  })();
+</script>
 
 <!-- Google Analytics -->
 
@@ -113,8 +188,6 @@ name="google-site-verification"
 content="laUkxyOiCW63Ekw2HmTw3lFbpAiSx5qwdotv3ERgK-A"
 />
 
-<meta charset="UTF-8" />
-
 <meta 
 name="viewport" 
 content="width=device-width, initial-scale=1.0"
@@ -122,13 +195,13 @@ content="width=device-width, initial-scale=1.0"
 
 
 <title>
-{title} | VIRELLAART Luxury Furniture
+{fullTitle}
 </title>
 
 
 <meta 
 name="description"
-content={description}
+content={pageDescription}
 />
 
 
@@ -149,6 +222,22 @@ rel="canonical"
 href={canonicalURL}
 />
 
+{
+  alternateURLs.map((alternate) => (
+    <link
+      rel="alternate"
+      hreflang={alternate.language}
+      href={alternate.href}
+    />
+  ))
+}
+
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={new URL(basePath, "https://www.virellaart.com").href}
+/>
+
 
 <link 
 rel="icon"
@@ -160,13 +249,13 @@ href="/favicon.ico"
 
 <meta
 property="og:title"
-content={`${title} | VIRELLAART Luxury Furniture`}
+content={fullTitle}
 />
 
 
 <meta
 property="og:description"
-content={description}
+content={pageDescription}
 />
 
 
@@ -193,6 +282,22 @@ property="og:image"
 content={imageURL}
 />
 
+<meta
+property="og:locale"
+content={languages[language].locale}
+/>
+
+{
+  languageCodes
+    .filter((code) => code !== language)
+    .map((code) => (
+      <meta
+        property="og:locale:alternate"
+        content={languages[code].locale}
+      />
+    ))
+}
+
 
 <!-- Twitter -->
 
@@ -204,13 +309,13 @@ content="summary_large_image"
 
 <meta
 name="twitter:title"
-content={`${title} | VIRELLAART Luxury Furniture`}
+content={fullTitle}
 />
 
 
 <meta
 name="twitter:description"
-content={description}
+content={pageDescription}
 />
 
 

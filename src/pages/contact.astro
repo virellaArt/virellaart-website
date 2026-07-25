@@ -1,20 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getLanguageFromPath,
+  getTranslations,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const whatsappMessage = translations.product.whatsappMessage.replace(
+  "{product}",
+  "VIRELLAART",
+);
+const whatsappURL = `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<BaseLayout title="Contact VIRELLAART | Luxury Furniture">
+<BaseLayout
+  title={translations.contact.title}
+  description={translations.contact.description}
+>
 
   <section class="contact-hero">
     <div class="contact-overlay"></div>
 
     <div class="contact-content">
-      <span>Contact VIRELLAART</span>
+      <span>{translations.contact.eyebrow}</span>
 
-      <h1>Let’s Create an Exceptional Interior</h1>
+      <h1>{translations.contact.hero}</h1>
 
       <p>
-        Contact our team for product information, worldwide delivery details
-        and private luxury furniture consultation.
+        {translations.contact.lead}
       </p>
     </div>
   </section>
@@ -23,51 +37,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="contact-grid">
 
       <div class="contact-info">
-        <span>Get in Touch</span>
+        <span>{translations.contact.getInTouch}</span>
 
-        <h2>Worldwide Luxury Furniture Service</h2>
+        <h2>{translations.contact.heading}</h2>
 
         <p>
-          Our team assists international clients with collections, measurements,
-          customization, production, payment and worldwide delivery.
+          {translations.contact.paragraph}
         </p>
 
         <div class="contact-details">
 
           <div class="detail">
-            <small>Showroom</small>
-            <strong>Istanbul, Türkiye</strong>
+            <small>{translations.contact.business}</small>
+            <strong>{translations.contact.businessValue}</strong>
           </div>
 
           <div class="detail">
-            <small>WhatsApp</small>
-            <strong>Contact VIRELLAART</strong>
+            <small>{translations.contact.whatsapp}</small>
+            <strong>{translations.contact.whatsappValue}</strong>
           </div>
 
           <div class="detail">
-            <small>Service</small>
-            <strong>Worldwide Delivery</strong>
+            <small>{translations.contact.service}</small>
+            <strong>{translations.contact.serviceValue}</strong>
           </div>
 
           <div class="detail">
-            <small>Language</small>
-            <strong>International Customer Support</strong>
+            <small>{translations.contact.language}</small>
+            <strong>{translations.contact.languageValue}</strong>
           </div>
 
         </div>
 
         <a
           class="whatsapp-button"
-          href="https://wa.me/"
+          href={whatsappURL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Contact on WhatsApp
+          {translations.contact.button}
         </a>
       </div>
 
       <div class="contact-image">
-        <img src="/dining-room.webp" alt="VIRELLAART luxury furniture showroom" />
+        <img src="/dining-room.webp" alt={translations.contact.imageAlt} />
       </div>
 
     </div>

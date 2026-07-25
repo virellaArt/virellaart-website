@@ -1,20 +1,52 @@
+---
+import {
+  getLanguageFromPath,
+  getTranslations,
+  languageCodes,
+  languages,
+  localizedPath,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+---
+
 <nav class="navbar">
   <div class="navbar-inner">
 
-    <a href="/" class="logo">
+    <a href={localizedPath("/", language)} class="logo">
       VIRELLAART
     </a>
 
     <ul class="menu">
-  <li><a href="/">Home</a></li>
-  <li><a href="/#collections">Collections</a></li>
-  <li><a href="/about">About</a></li>
-  <li><a href="/contact">Contact</a></li>
+  <li><a href={localizedPath("/", language)}>{translations.nav.home}</a></li>
+  <li><a href={`${localizedPath("/", language)}#collections`}>{translations.nav.collections}</a></li>
+  <li><a href={localizedPath("/about", language)}>{translations.nav.about}</a></li>
+  <li><a href={localizedPath("/contact", language)}>{translations.nav.contact}</a></li>
 </ul>
 
-    <button class="language" type="button">
-      EN
-    </button>
+    <details class="language-picker">
+      <summary aria-label={translations.nav.language}>
+        {languages[language].short}
+      </summary>
+
+      <div class="language-menu">
+        {
+          languageCodes.map((code) => (
+            <a
+              href={localizedPath(Astro.url.pathname, code)}
+              lang={code}
+              dir={languages[code].dir}
+              data-language={code}
+              aria-current={code === language ? "page" : undefined}
+            >
+              <span>{languages[code].short}</span>
+              {languages[code].label}
+            </a>
+          ))
+        }
+      </div>
+    </details>
 
   </div>
 </nav>
@@ -82,19 +114,77 @@
     width: 100%;
   }
 
-  .language {
+  .language-picker {
+    position: relative;
+  }
+
+  .language-picker summary {
     min-width: 48px;
     padding: 10px 12px;
     border: 1px solid rgba(255, 255, 255, 0.24);
     color: #ffffff;
     font-size: 11px;
     letter-spacing: 2px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
     transition: 0.3s ease;
   }
 
-  .language:hover {
+  .language-picker summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .language-picker summary:hover,
+  .language-picker[open] summary {
     border-color: var(--gold);
     color: var(--gold);
+  }
+
+  .language-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 205px;
+    max-height: min(70vh, 430px);
+    overflow-y: auto;
+    border: 1px solid rgba(200, 169, 106, 0.38);
+    background: rgba(10, 9, 8, 0.98);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  :global(html[dir="rtl"]) .language-menu {
+    right: auto;
+    left: 0;
+  }
+
+  .language-menu a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: 0.25s ease;
+  }
+
+  .language-menu a:last-child {
+    border-bottom: 0;
+  }
+
+  .language-menu a:hover,
+  .language-menu a[aria-current="page"] {
+    background: rgba(200, 169, 106, 0.12);
+    color: var(--gold);
+  }
+
+  .language-menu span {
+    min-width: 27px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 1.5px;
   }
 
   @media (max-width: 760px) {
@@ -112,9 +202,13 @@
       display: none;
     }
 
-    .language {
+    .language-picker summary {
       min-width: 44px;
       padding: 9px;
+    }
+
+    .language-menu {
+      width: 190px;
     }
   }
 </style>

@@ -1,20 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getLanguageFromPath,
+  getTranslations,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
 ---
 
-<BaseLayout title="About VIRELLAART | Luxury Furniture">
+<BaseLayout
+  title={translations.about.title}
+  description={translations.about.description}
+>
 
   <section class="about-hero">
     <div class="about-overlay"></div>
 
     <div class="about-content">
-      <span>About VIRELLAART</span>
+      <span>{translations.about.eyebrow}</span>
 
-      <h1>Luxury Furniture Beyond Imagination</h1>
+      <h1>{translations.about.hero}</h1>
 
       <p>
-        VIRELLAART creates refined furniture collections for exceptional interiors,
-        combining elegant design, premium materials and distinctive craftsmanship.
+        {translations.about.lead}
       </p>
     </div>
   </section>
@@ -23,24 +32,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="about-grid">
 
       <div class="about-text">
-        <span>Our Story</span>
+        <span>{translations.about.story}</span>
 
-        <h2>Designed in Istanbul. Created for the World.</h2>
+        <h2>{translations.about.heading}</h2>
 
         <p>
-          VIRELLAART is a luxury furniture brand dedicated to creating timeless
-          living spaces. Every collection is developed with a strong focus on
-          proportion, craftsmanship, comfort and visual elegance.
+          {translations.about.paragraphOne}
         </p>
 
         <p>
-          From living rooms and dining rooms to bedrooms and TV units, each piece
-          is created to bring a distinctive luxury atmosphere into refined homes.
+          {translations.about.paragraphTwo}
         </p>
       </div>
 
       <div class="about-image">
-        <img src="/living-room.webp" alt="VIRELLAART luxury living room" />
+        <img src="/living-room.webp" alt={translations.about.imageAlt} />
       </div>
 
     </div>

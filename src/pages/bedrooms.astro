@@ -1,5 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+  translateProductName,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const categoryTranslations = translations.category.bedrooms;
 
 const models = [
   {
@@ -26,31 +36,34 @@ const models = [
 ];
 ---
 
-<BaseLayout title="Bedroom Collections | VIRELLAART">
+<BaseLayout
+  title={categoryTranslations.title}
+  description={categoryTranslations.description}
+>
   <main class="page">
     <header class="page-header">
-      <span>VIRELLAART COLLECTIONS</span>
+      <span>{translations.category.eyebrow}</span>
 
-      <h1>Bedrooms</h1>
+      <h1>{categoryTranslations.title}</h1>
 
-      <p>Select a model to view all photographs and product details.</p>
+      <p>{translations.category.selectModel}</p>
     </header>
 
     <section
       class="model-grid"
-      aria-label="VIRELLAART bedroom collections"
+      aria-label={categoryTranslations.title}
     >
       {
         models.map((model) => (
           <a
-            href={model.href}
+            href={localizedPath(model.href, language)}
             class="model-card"
-            aria-label={`View ${model.name} Collection`}
+            aria-label={`${translations.category.viewCollection}: ${translateProductName(model.name, language)}`}
           >
             <div class="model-image">
               <img
                 src={model.image}
-                alt={model.alt}
+                alt={`VIRELLAART ${translateProductName(model.name, language)}`}
                 width="800"
                 height="600"
                 loading="eager"
@@ -59,8 +72,8 @@ const models = [
 
             <div class="model-info">
               <span>{model.number}</span>
-              <h2>{model.name}</h2>
-              <p>View Collection</p>
+              <h2>{translateProductName(model.name, language)}</h2>
+              <p>{translations.category.viewCollection}</p>
             </div>
           </a>
         ))

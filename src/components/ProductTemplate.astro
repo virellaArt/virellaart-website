@@ -1,7 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getLanguageFromPath,
+  getProductDescription,
+  getTranslations,
+  translatePriceLabel,
+  translateProductName,
+} from "../i18n/config";
 
 const { product } = Astro.props;
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const translatedProductName = translateProductName(product.name, language);
 
 
 /* =========================
@@ -26,8 +36,7 @@ const prices: {
 
 
 const pageDescription =
-product.description ??
-`${product.name} by VIRELLAART. Luxury furniture collection crafted in Istanbul with premium materials and worldwide delivery.`;
+getProductDescription(product, language);
 
 
 
@@ -49,7 +58,7 @@ const productSchema = {
 
 "@type": "Product",
 
-"name": product.name,
+"name": translatedProductName,
 
 "sku": product.name
 .toLowerCase()
@@ -58,6 +67,8 @@ const productSchema = {
 "category": product.category,
 
 "description": pageDescription,
+
+"inLanguage": language,
 
 
 "brand": {
@@ -116,7 +127,10 @@ const whatsappNumber =
 
 
 const whatsappMessage =
-`Hello VIRELLAART, I would like to receive more information about the ${product.name} Collection.`;
+translations.product.whatsappMessage.replace(
+  "{product}",
+  translatedProductName,
+);
 
 
 
@@ -128,7 +142,7 @@ whatsappMessage
 ---
 
 <BaseLayout
-title={product.name}
+title={translatedProductName}
 description={pageDescription}
 image={images[0]}
 >
@@ -166,7 +180,7 @@ id="mainImage"
 
 src={images[0]}
 
-alt={product.name}
+alt={translatedProductName}
 
 />
 
@@ -206,7 +220,7 @@ type="button"
 
 src={image}
 
-alt={product.name}
+alt={translatedProductName}
 
 />
 
@@ -235,7 +249,7 @@ alt={product.name}
 
 <p class="collection-label">
 
-VIRELLAART LUXURY COLLECTION
+{translations.product.collectionLabel}
 
 </p>
 
@@ -244,7 +258,7 @@ VIRELLAART LUXURY COLLECTION
 
 <h1>
 
-{product.name}
+{translatedProductName}
 
 </h1>
 
@@ -268,7 +282,7 @@ VIRELLAART LUXURY COLLECTION
 
 <p class="product-description">
 
-{product.description}
+{pageDescription}
 
 </p>
 
@@ -285,7 +299,7 @@ VIRELLAART LUXURY COLLECTION
 
 <span>
 
-COLLECTION PRICES
+{translations.product.prices}
 
 </span>
 
@@ -333,7 +347,7 @@ class:list={[
 
 <span>
 
-{item.label}
+{translatePriceLabel(item.label, language)}
 
 </span>
 
@@ -372,14 +386,14 @@ class:list={[
 
 <strong>
 
-Worldwide Delivery
+{translations.product.worldwideDelivery}
 
 </strong>
 
 
 <p>
 
-International shipping support is available worldwide.
+{translations.product.worldwideDeliveryText}
 
 </p>
 
@@ -394,14 +408,14 @@ International shipping support is available worldwide.
 
 <strong>
 
-Premium Craftsmanship
+{translations.product.craftsmanship}
 
 </strong>
 
 
 <p>
 
-Made with carefully selected luxury materials.
+{translations.product.craftsmanshipText}
 
 </p>
 
@@ -419,14 +433,14 @@ class="whatsapp"
 target="_blank"
 rel="noopener noreferrer"
 >
-Contact Us on WhatsApp
+{translations.product.whatsapp}
 </a>
 
 
 
 <p class="note">
 
-Contact our team for dimensions, fabric options, production and delivery information.
+{translations.product.note}
 
 </p>
 
@@ -460,7 +474,7 @@ type="button"
 class="lightbox-arrow left"
 id="prevImage"
 type="button"
-aria-label="Previous image"
+aria-label={translations.product.previousImage}
 
 >
 <span>&#8249;</span>
@@ -470,7 +484,7 @@ aria-label="Previous image"
 <img
 id="lightboxImage"
 src={images[0]}
-alt={product.name}
+alt={translatedProductName}
 />
 
 
@@ -478,7 +492,7 @@ alt={product.name}
 class="lightbox-arrow right"
 id="nextImage"
 type="button"
-aria-label="Next image"
+aria-label={translations.product.nextImage}
 >
 <span>&#8250;</span>
 </button>
