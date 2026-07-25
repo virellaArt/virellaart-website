@@ -877,5 +877,38 @@ zumrutDining: {
     },
   ],
 },
+milano: {
+  name: "Milano Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/milano-01.webp",
+    "/milano-02.webp",
+    "/milano-03.webp",
+    "/milano-04.webp",
+    "/milano-05.webp",
+  ],
+
+  description:
+    "Discover the Milano Luxury Living Room Collection by VIRELLAART, combining sophisticated design, premium craftsmanship and refined comfort for exceptional luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$5,100",
+      featured: true,
+    },
+    {
+      label: "TV Stand",
+      price: "$1,950",
+    },
+    {
+      label: "Center Table",
+      price: "$900",
+    },
+  ],
+},
+
 
 };
