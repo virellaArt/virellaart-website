@@ -692,4 +692,28 @@ valenciaTV: {
     },
   ],
 },
+vanessaDining: {
+  name: "Vanessa Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/vanessadining-01.webp",
+    "/vanessadining-02.webp",
+    "/vanessadining-03.webp",
+    "/vanessadining-04.webp",
+    "/vanessadining-05.webp",
+  ],
+
+  description:
+    "Discover the Vanessa Luxury Dining Room Collection by VIRELLAART, combining refined elegance, premium craftsmanship and sophisticated details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Vanessa Dining Room Set",
+      price: "$6,550",
+      featured: true,
+    },
+  ],
+},
 };

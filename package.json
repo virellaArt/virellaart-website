@@ -11,10 +11,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-     "convert-images": "node scripts/convert-images.js"
+    "convert-images": "node scripts/convert-images.js"
   },
   "dependencies": {
-    "astro": "^7.1.3",
+    "astro": "^7.1.3"
+  },
+  "devDependencies": {
     "sharp": "^0.35.3"
   }
 }
