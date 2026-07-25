@@ -74,13 +74,21 @@ const whatsappURL = `https://wa.me/905539478608?text=${encodeURIComponent(whatsa
           href={whatsappURL}
           target="_blank"
           rel="noopener noreferrer"
+          data-whatsapp-context="contact-page"
         >
           {translations.contact.button}
         </a>
       </div>
 
       <div class="contact-image">
-        <img src="/dining-room.webp" alt={translations.contact.imageAlt} />
+        <img
+          src="/dining-room.webp"
+          alt={translations.contact.imageAlt}
+          width="1200"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
     </div>

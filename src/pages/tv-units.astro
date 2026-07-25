@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CollectionSchema from "../components/CollectionSchema.astro";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -47,6 +48,11 @@ const models = [
   title={categoryTranslations.title}
   description={categoryTranslations.description}
 >
+<CollectionSchema
+  categoryName={categoryTranslations.title}
+  description={categoryTranslations.description}
+  {models}
+/>
 
 <main class="page">
 
@@ -64,14 +70,18 @@ const models = [
     <div class="models-grid">
 
       {
-        models.map((model) => (
+        models.map((model, index) => (
           <a href={localizedPath(model.href, language)} class="model-card">
 
             <div class="image-wrapper">
               <img 
                 src={model.image}
                 alt={`VIRELLAART ${translateProductName(model.name, language)}`}
-                loading="lazy"
+                width="800"
+                height="600"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : undefined}
+                decoding="async"
               />
             </div>
 

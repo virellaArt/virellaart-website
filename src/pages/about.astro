@@ -46,7 +46,14 @@ const translations = getTranslations(language);
       </div>
 
       <div class="about-image">
-        <img src="/living-room.webp" alt={translations.about.imageAlt} />
+        <img
+          src="/living-room.webp"
+          alt={translations.about.imageAlt}
+          width="1200"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
     </div>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CollectionSchema from "../components/CollectionSchema.astro";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -54,6 +55,11 @@ const models = [
   title={categoryTranslations.title}
   description={categoryTranslations.description}
 >
+  <CollectionSchema
+    categoryName={categoryTranslations.title}
+    description={categoryTranslations.description}
+    {models}
+  />
   <main class="page">
     <header class="page-header">
       <span>{translations.category.eyebrow}</span>
@@ -65,7 +71,7 @@ const models = [
 
     <section class="model-grid" aria-label={categoryTranslations.title}>
       {
-        models.map((model) => (
+        models.map((model, index) => (
           <a
             href={localizedPath(model.href, language)}
             class="model-card"
@@ -77,7 +83,9 @@ const models = [
                 alt={`VIRELLAART ${translateProductName(model.name, language)}`}
                 width="800"
                 height="600"
-                loading="eager"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : undefined}
+                decoding="async"
               />
             </div>
 

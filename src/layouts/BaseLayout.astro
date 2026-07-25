@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import WhatsAppCTA from "../components/WhatsAppCTA.astro";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -14,21 +16,38 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
+  pageType?: "website" | "product";
 }
 
 const {
   title,
   description,
-  image = "/living-room.webp"
+  image = "/living-room.webp",
+  imageAlt,
+  pageType = "website",
 } = Astro.props;
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
+const skipToContent = {
+  en: "Skip to content",
+  tr: "İçeriğe geç",
+  de: "Zum Inhalt springen",
+  fr: "Aller au contenu",
+  it: "Vai al contenuto",
+  ru: "Перейти к содержанию",
+  ar: "انتقل إلى المحتوى",
+  bg: "Към съдържанието",
+  ro: "Sari la conținut",
+  el: "Μετάβαση στο περιεχόμενο",
+}[language];
 const pageDescription = description ?? translations.defaultDescription;
 const fullTitle = title.includes("VIRELLAART")
   ? title
   : `${title} | VIRELLAART`;
 const basePath = stripLanguagePrefix(Astro.url.pathname);
+const isHomePage = basePath === "/";
 const alternateURLs = languageCodes.map((code) => ({
   language: code,
   href: new URL(localizedPath(basePath, code), "https://www.virellaart.com").href,
@@ -46,42 +65,45 @@ const imageURL = new URL(
 
 
 const organizationSchema = {
-
   "@context": "https://schema.org",
-
   "@type": "Organization",
-
+  "@id": "https://www.virellaart.com/#organization",
   "name": "VIRELLAART",
-
+  "legalName": "VIRELLAART",
   "url": "https://www.virellaart.com",
-
-  "logo": "https://www.virellaart.com/favicon.ico",
-
-  "description":
-  translations.defaultDescription,
-
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.virellaart.com/favicon.svg",
+  },
+  "description": translations.defaultDescription,
+  "telephone": "+90 553 947 86 08",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+90 553 947 86 08",
+    "availableLanguage": languageCodes,
+    "areaServed": "Worldwide",
+  },
   "sameAs": [
     "https://www.instagram.com/virellaart/",
     "https://www.facebook.com/VirellaArtFurniture",
     "https://www.pinterest.com/virellaart/",
     "https://www.threads.com/@virellaart"
-  ]
-
+  ],
 };
 
 
 const websiteSchema = {
-
   "@context": "https://schema.org",
-
   "@type": "WebSite",
-
+  "@id": "https://www.virellaart.com/#website",
   "name": "VIRELLAART",
-
+  "alternateName": "VIRELLAART Luxury Furniture",
   "url": "https://www.virellaart.com",
-
-  "inLanguage": language
-
+  "inLanguage": language,
+  "publisher": {
+    "@id": "https://www.virellaart.com/#organization",
+  },
 };
 ---
 
@@ -165,19 +187,31 @@ gtag('config', 'G-Y8YY6ZBD87');
 document.addEventListener("click", (event) => {
   const target = event.target;
   const button =
-    target instanceof Element ? target.closest("a.whatsapp") : null;
+    target instanceof Element
+      ? target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]')
+      : null;
 
-  if (!button) return;
-
-  console.log("WHATSAPP CLICK");
+  if (!(button instanceof HTMLAnchorElement)) return;
 
   if (typeof window.gtag === "function") {
+    const eventData = {
+      cta_position: button.dataset.whatsappContext || "page",
+      product_name: button.dataset.product || undefined,
+      page_language: document.documentElement.lang,
+      link_url: button.href,
+      transport_type: "beacon"
+    };
+
     window.gtag("event", "whatsapp_click", {
       event_category: "engagement",
-      event_label: "WhatsApp Button"
+      event_label: "WhatsApp Button",
+      ...eventData
     });
 
-    console.log("GA4 WHATSAPP SENT");
+    window.gtag("event", "generate_lead", {
+      method: "WhatsApp",
+      ...eventData
+    });
   }
 });
 </script>
@@ -214,6 +248,11 @@ content="index, follow"
 <meta 
 name="theme-color"
 content="#17130f"
+/>
+
+<meta
+name="color-scheme"
+content="dark"
 />
 
 
@@ -261,7 +300,7 @@ content={pageDescription}
 
 <meta
 property="og:type"
-content="website"
+content={pageType}
 />
 
 
@@ -280,6 +319,11 @@ content={canonicalURL}
 <meta
 property="og:image"
 content={imageURL}
+/>
+
+<meta
+property="og:image:alt"
+content={imageAlt ?? fullTitle}
 />
 
 <meta
@@ -324,19 +368,28 @@ name="twitter:image"
 content={imageURL}
 />
 
-
-
-
-<script
-type="application/ld+json"
-set:html={JSON.stringify(organizationSchema)}
+<meta
+name="twitter:image:alt"
+content={imageAlt ?? fullTitle}
 />
 
 
-<script
-type="application/ld+json"
-set:html={JSON.stringify(websiteSchema)}
-/>
+
+
+{
+  isHomePage && (
+    <>
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(organizationSchema)}
+      />
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(websiteSchema)}
+      />
+    </>
+  )
+}
 
 
 </head>
@@ -344,11 +397,17 @@ set:html={JSON.stringify(websiteSchema)}
 
 <body>
 
+<a class="skip-link" href="#main-content">{skipToContent}</a>
+
 <Navbar />
 
-<main>
+<main id="main-content">
 <slot />
 </main>
+
+<Footer />
+
+<WhatsAppCTA />
 
 </body>
 

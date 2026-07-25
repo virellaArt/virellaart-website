@@ -26,6 +26,29 @@ body{
 
 }
 
+.skip-link{
+    position:fixed;
+    top:12px;
+    left:12px;
+    z-index:99999;
+    padding:12px 18px;
+    background:var(--gold-light);
+    color:#090909;
+    font-size:13px;
+    font-weight:700;
+    transform:translateY(-160%);
+    transition:transform .2s ease;
+}
+
+.skip-link:focus{
+    transform:translateY(0);
+}
+
+:focus-visible{
+    outline:2px solid var(--gold-light);
+    outline-offset:4px;
+}
+
 
 
 a{
@@ -75,6 +98,8 @@ button{
     --cream:#f5efe6;
 
     --text:#ddd3c5;
+
+    --gray:#bdb3a7;
 
     --container:1600px;
 

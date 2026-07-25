@@ -4,6 +4,7 @@ import {
   getLanguageFromPath,
   getProductDescription,
   getTranslations,
+  localizedPath,
   translatePriceLabel,
   translateProductName,
 } from "../i18n/config";
@@ -12,6 +13,22 @@ const { product } = Astro.props;
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const translatedProductName = translateProductName(product.name, language);
+const categoryTranslationKey = {
+  "living-rooms": "livingRooms",
+  "dining-rooms": "diningRooms",
+  "bedrooms": "bedrooms",
+  "tv-units": "tvUnits",
+}[product.category] as
+  | "livingRooms"
+  | "diningRooms"
+  | "bedrooms"
+  | "tvUnits";
+const categoryName =
+  translations.category[categoryTranslationKey].title;
+const categoryURL = new URL(
+  localizedPath(`/${product.category}`, language),
+  "https://www.virellaart.com",
+).href;
 
 
 /* =========================
@@ -45,6 +62,15 @@ new URL(
   Astro.url.pathname,
   "https://www.virellaart.com"
 ).href;
+const productID = product.name
+  .toLowerCase()
+  .replaceAll(" ", "-");
+const primaryPrice =
+  Number(
+    prices[0]?.price
+      .replace("$", "")
+      .replace(",", ""),
+  ) || 0;
 
 
 
@@ -60,9 +86,13 @@ const productSchema = {
 
 "name": translatedProductName,
 
-"sku": product.name
-.toLowerCase()
-.replaceAll(" ","-"),
+"@id": `${canonicalURL}#product`,
+
+"url": canonicalURL,
+
+"mainEntityOfPage": canonicalURL,
+
+"sku": productID,
 
 "category": product.category,
 
@@ -91,28 +121,66 @@ const productSchema = {
 
   "url": canonicalURL,
 
-  "priceCurrency": "USD",
+"priceCurrency": "USD",
 
-"price":
-Number(
-prices[0]?.price
-.replace("$","")
-.replace(",","")
-) || 0, 
+"price": primaryPrice,
+
+"itemCondition": "https://schema.org/NewCondition",
 
   "availability":
   "https://schema.org/InStock",
 
   "seller": {
 
-    "@type": "Organization",
-
-    "name": "VIRELLAART"
+    "@id": "https://www.virellaart.com/#organization"
 
   }
 
 }
 
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": translations.nav.home,
+      "item": new URL(
+        localizedPath("/", language),
+        "https://www.virellaart.com",
+      ).href,
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": categoryName,
+      "item": categoryURL,
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": translatedProductName,
+      "item": canonicalURL,
+    },
+  ],
+};
+
+const productEvent = {
+  currency: "USD",
+  value: primaryPrice,
+  items: [
+    {
+      item_id: productID,
+      item_name: translatedProductName,
+      item_brand: "VIRELLAART",
+      item_category: categoryName,
+      price: primaryPrice,
+      quantity: 1,
+    },
+  ],
 };
 
 
@@ -145,6 +213,8 @@ whatsappMessage
 title={translatedProductName}
 description={pageDescription}
 image={images[0]}
+imageAlt={translatedProductName}
+pageType="product"
 >
 
 <script
@@ -152,10 +222,28 @@ type="application/ld+json"
 set:html={JSON.stringify(productSchema)}
 />
 
+<script
+type="application/ld+json"
+set:html={JSON.stringify(breadcrumbSchema)}
+/>
 
+<script is:inline define:vars={{ productEvent }}>
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "view_item", productEvent);
+  }
+</script>
 
 <div class="product-page">
 
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href={localizedPath("/", language)}>{translations.nav.home}</a>
+  <span aria-hidden="true">/</span>
+  <a href={localizedPath(`/${product.category}`, language)}>
+    {categoryName}
+  </a>
+  <span aria-hidden="true">/</span>
+  <span aria-current="page">{translatedProductName}</span>
+</nav>
 
 <section class="product-container">
 
@@ -181,6 +269,14 @@ id="mainImage"
 src={images[0]}
 
 alt={translatedProductName}
+
+width="1600"
+
+height="1200"
+
+fetchpriority="high"
+
+decoding="async"
 
 />
 
@@ -220,7 +316,15 @@ type="button"
 
 src={image}
 
-alt={translatedProductName}
+alt={`${translatedProductName} ${index + 1}`}
+
+width="480"
+
+height="360"
+
+loading="lazy"
+
+decoding="async"
 
 />
 
@@ -265,11 +369,7 @@ alt={translatedProductName}
 
 
 
-<h2>
-
-{product.subtitle}
-
-</h2>
+{product.subtitle && <h2>{product.subtitle}</h2>}
 
 
 
@@ -432,6 +532,8 @@ href={whatsappUrl}
 class="whatsapp"
 target="_blank"
 rel="noopener noreferrer"
+data-whatsapp-context="product"
+data-product={translatedProductName}
 >
 {translations.product.whatsapp}
 </a>
@@ -790,6 +892,34 @@ color:white;
 
 padding:40px 30px 100px;
 
+}
+
+.breadcrumbs{
+width:min(1500px,100%);
+margin:70px auto 28px;
+display:flex;
+align-items:center;
+gap:10px;
+overflow:hidden;
+color:rgba(255,255,255,.5);
+font-size:11px;
+letter-spacing:1px;
+white-space:nowrap;
+}
+
+.breadcrumbs a{
+color:rgba(255,255,255,.72);
+transition:color .2s ease;
+}
+
+.breadcrumbs a:hover{
+color:var(--gold);
+}
+
+.breadcrumbs span[aria-current="page"]{
+overflow:hidden;
+color:var(--gold-light);
+text-overflow:ellipsis;
 }
 
 

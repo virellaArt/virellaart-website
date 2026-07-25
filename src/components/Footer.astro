@@ -1,0 +1,167 @@
+---
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href={localizedPath("/", language)}>VIRELLAART</a>
+      <p>{translations.defaultDescription}</p>
+    </div>
+
+    <div class="footer-column">
+      <span>{translations.nav.collections}</span>
+      <a href={localizedPath("/living-rooms", language)}>
+        {translations.home.livingRooms}
+      </a>
+      <a href={localizedPath("/dining-rooms", language)}>
+        {translations.home.diningRooms}
+      </a>
+      <a href={localizedPath("/bedrooms", language)}>
+        {translations.home.bedrooms}
+      </a>
+      <a href={localizedPath("/tv-units", language)}>
+        {translations.home.tvUnits}
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <span>VIRELLAART</span>
+      <a href={localizedPath("/about", language)}>
+        {translations.nav.about}
+      </a>
+      <a href={localizedPath("/contact", language)}>
+        {translations.nav.contact}
+      </a>
+      <a href="https://www.instagram.com/virellaart/" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+      <a href="https://www.pinterest.com/virellaart/" target="_blank" rel="noopener noreferrer">
+        Pinterest
+      </a>
+    </div>
+
+    <div class="footer-service">
+      <span>{translations.product.worldwideDelivery}</span>
+      <p>{translations.product.worldwideDeliveryText}</p>
+      <strong>{translations.contact.languageValue}</strong>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {year} VIRELLAART</p>
+    <p>{translations.product.craftsmanship}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0b0908;
+  }
+
+  .footer-inner {
+    width: min(100% - 64px, var(--container));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.8fr 1fr;
+    gap: 64px;
+    padding: 78px 0 62px;
+  }
+
+  .footer-brand > a {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .footer-brand p,
+  .footer-service p {
+    max-width: 440px;
+    color: rgba(245, 239, 230, 0.64);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer-column,
+  .footer-service {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .footer-column > span,
+  .footer-service > span {
+    margin-bottom: 9px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .footer-column a {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-column a:hover {
+    color: var(--gold-light);
+  }
+
+  .footer-service strong {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .footer-bottom {
+    width: min(100% - 64px, var(--container));
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 0 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .footer-inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .footer-inner,
+    .footer-bottom {
+      width: min(100% - 32px, var(--container));
+    }
+
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 38px;
+      padding: 60px 0 46px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
