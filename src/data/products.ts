@@ -909,6 +909,25 @@ milano: {
     },
   ],
 },
+zumrutTv: {
+  name: "Zümrüt TV Unit",
 
+  category: "tv-units",
+
+  images: [
+    "/zumruttv-01.webp",
+  ],
+
+  description:
+    "Discover the Zümrüt Luxury TV Unit Collection by VIRELLAART, combining elegant design, premium craftsmanship and refined details for sophisticated luxury interiors.",
+
+  prices: [
+    {
+      label: "TV Unit",
+      price: "$1,950",
+      featured: true,
+    },
+  ],
+},
 
 };
