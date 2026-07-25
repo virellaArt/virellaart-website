@@ -9,6 +9,12 @@ export const languages = {
   bg: { label: "Български", short: "BG", locale: "bg_BG", dir: "ltr" },
   ro: { label: "Română", short: "RO", locale: "ro_RO", dir: "ltr" },
   el: { label: "Ελληνικά", short: "EL", locale: "el_GR", dir: "ltr" },
+  es: { label: "Español", short: "ES", locale: "es_ES", dir: "ltr" },
+  sr: { label: "Srpski", short: "SR", locale: "sr_RS", dir: "ltr" },
+  kk: { label: "Қазақша", short: "KK", locale: "kk_KZ", dir: "ltr" },
+  uz: { label: "O‘zbekcha", short: "UZ", locale: "uz_UZ", dir: "ltr" },
+  pt: { label: "Português", short: "PT", locale: "pt_PT", dir: "ltr" },
+  pl: { label: "Polski", short: "PL", locale: "pl_PL", dir: "ltr" },
 } as const;
 
 export type Language = keyof typeof languages;
@@ -1096,6 +1102,666 @@ const translations = {
       whatsappMessage: "Γεια σας VIRELLAART, θα ήθελα περισσότερες πληροφορίες για τη συλλογή {product}.",
     },
   },
+  es: {
+    defaultDescription:
+      "VIRELLAART crea colecciones de muebles de lujo fabricadas en Türkiye con materiales premium, opciones a medida y entrega mundial.",
+    nav: {
+      home: "Inicio",
+      collections: "Colecciones",
+      about: "Nosotros",
+      contact: "Contacto",
+      language: "Seleccionar idioma",
+    },
+    home: {
+      title: "Muebles de lujo para interiores excepcionales",
+      description:
+        "Descubra salones, comedores, dormitorios y muebles de TV de lujo VIRELLAART, con opciones a medida y entrega mundial.",
+      eyebrow: "Fabricado en Türkiye",
+      lead: "Muebles de lujo atemporales creados para interiores excepcionales.",
+      button: "Explorar colecciones",
+      discover: "Descubra",
+      heading: "Nuestras colecciones",
+      intro:
+        "Explore cuatro categorías exclusivas de mobiliario diseñadas para interiores residenciales refinados.",
+      livingRooms: "Salones",
+      diningRooms: "Comedores",
+      bedrooms: "Dormitorios",
+      tvUnits: "Muebles de TV",
+      discoverCollection: "Descubrir colección",
+    },
+    category: {
+      eyebrow: "Colecciones VIRELLAART",
+      selectModel:
+        "Seleccione un modelo para ver todas las fotografías y los detalles del producto.",
+      viewCollection: "Ver colección",
+      livingRooms: {
+        title: "Salones",
+        description:
+          "Explore las colecciones de salones de lujo VIRELLAART, con diseño refinado, artesanía premium y entrega mundial.",
+      },
+      diningRooms: {
+        title: "Comedores",
+        description:
+          "Explore las colecciones de comedores de lujo VIRELLAART, creadas para reuniones elegantes e interiores excepcionales.",
+      },
+      bedrooms: {
+        title: "Dormitorios",
+        description:
+          "Explore las colecciones de dormitorios de lujo VIRELLAART, que combinan confort, artesanía y elegancia atemporal.",
+      },
+      tvUnits: {
+        title: "Muebles de TV",
+        description:
+          "Explore las colecciones de muebles de TV de lujo VIRELLAART, con elegante diseño contemporáneo y detalles refinados.",
+      },
+    },
+    about: {
+      title: "Sobre VIRELLAART",
+      description:
+        "Descubra VIRELLAART, una marca de muebles de lujo que crea colecciones refinadas en Türkiye para interiores distinguidos de todo el mundo.",
+      eyebrow: "Sobre VIRELLAART",
+      hero: "Muebles de lujo más allá de la imaginación",
+      lead:
+        "VIRELLAART crea colecciones refinadas para interiores excepcionales, combinando diseño elegante, materiales premium y artesanía distintiva.",
+      story: "Nuestra historia",
+      heading: "Diseñado en Türkiye. Creado para el mundo.",
+      paragraphOne:
+        "VIRELLAART es una marca de muebles de lujo dedicada a crear espacios atemporales. Cada colección se desarrolla con especial atención a la proporción, la artesanía, el confort y la elegancia visual.",
+      paragraphTwo:
+        "Desde salones y comedores hasta dormitorios y muebles de TV, cada pieza se crea para aportar una atmósfera de lujo singular a hogares refinados.",
+      imageAlt: "Muebles de salón de lujo VIRELLAART",
+    },
+    contact: {
+      title: "Contacto VIRELLAART",
+      description:
+        "Contacte con VIRELLAART para conocer nuestras colecciones de muebles de lujo, producción a medida y entrega mundial.",
+      eyebrow: "Contacto VIRELLAART",
+      hero: "Creemos juntos un interior excepcional",
+      lead:
+        "Contacte con nuestro equipo para obtener información sobre productos, entrega mundial y asesoramiento privado en mobiliario de lujo.",
+      getInTouch: "Póngase en contacto",
+      heading: "Servicio mundial de muebles de lujo",
+      paragraph:
+        "Nuestro equipo asiste a clientes internacionales con colecciones, medidas, personalización, producción, pagos y entrega mundial.",
+      business: "Empresa",
+      businessValue: "Muebles de lujo VIRELLAART",
+      whatsapp: "WhatsApp",
+      whatsappValue: "Contactar con VIRELLAART",
+      service: "Servicio",
+      serviceValue: "Entrega mundial",
+      language: "Idioma",
+      languageValue: "Atención internacional al cliente",
+      button: "Contactar por WhatsApp",
+      imageAlt: "Muebles de comedor de lujo VIRELLAART",
+    },
+    product: {
+      collectionLabel: "Colección de lujo VIRELLAART",
+      prices: "Precios de la colección",
+      worldwideDelivery: "Entrega mundial",
+      worldwideDeliveryText:
+        "Ofrecemos asistencia profesional para entregas internacionales en todo el mundo.",
+      craftsmanship: "Artesanía premium",
+      craftsmanshipText:
+        "Fabricado con materiales de lujo cuidadosamente seleccionados.",
+      whatsapp: "Contactar por WhatsApp",
+      note:
+        "Contacte con nuestro equipo para conocer medidas, tejidos, producción y opciones de entrega.",
+      previousImage: "Imagen anterior",
+      nextImage: "Imagen siguiente",
+      whatsappMessage:
+        "Hola VIRELLAART, me gustaría recibir más información sobre la colección {product}.",
+    },
+  },
+  sr: {
+    defaultDescription:
+      "VIRELLAART kreira kolekcije luksuznog nameštaja izrađene u Türkiye od vrhunskih materijala, sa opcijama po meri i dostavom širom sveta.",
+    nav: {
+      home: "Početna",
+      collections: "Kolekcije",
+      about: "O nama",
+      contact: "Kontakt",
+      language: "Izaberite jezik",
+    },
+    home: {
+      title: "Luksuzni nameštaj za izuzetne enterijere",
+      description:
+        "Otkrijte VIRELLAART luksuzne dnevne sobe, trpezarije, spavaće sobe i TV komode, sa opcijama po meri i dostavom širom sveta.",
+      eyebrow: "Proizvedeno u Türkiye",
+      lead: "Bezvremenski luksuzni nameštaj stvoren za izuzetne enterijere.",
+      button: "Istražite kolekcije",
+      discover: "Otkrijte",
+      heading: "Naše kolekcije",
+      intro:
+        "Istražite četiri prepoznatljive kategorije nameštaja dizajnirane za prefinjene stambene enterijere.",
+      livingRooms: "Dnevne sobe",
+      diningRooms: "Trpezarije",
+      bedrooms: "Spavaće sobe",
+      tvUnits: "TV komode",
+      discoverCollection: "Otkrijte kolekciju",
+    },
+    category: {
+      eyebrow: "VIRELLAART kolekcije",
+      selectModel:
+        "Izaberite model da biste videli sve fotografije i detalje proizvoda.",
+      viewCollection: "Pogledajte kolekciju",
+      livingRooms: {
+        title: "Dnevne sobe",
+        description:
+          "Istražite VIRELLAART kolekcije luksuznih dnevnih soba sa prefinjenim dizajnom, vrhunskom izradom i dostavom širom sveta.",
+      },
+      diningRooms: {
+        title: "Trpezarije",
+        description:
+          "Istražite VIRELLAART kolekcije luksuznih trpezarija stvorene za elegantna okupljanja i izuzetne enterijere.",
+      },
+      bedrooms: {
+        title: "Spavaće sobe",
+        description:
+          "Istražite VIRELLAART kolekcije luksuznih spavaćih soba koje spajaju udobnost, vrhunsku izradu i bezvremensku eleganciju.",
+      },
+      tvUnits: {
+        title: "TV komode",
+        description:
+          "Istražite VIRELLAART kolekcije luksuznih TV komoda sa elegantnim savremenim dizajnom i prefinjenim detaljima.",
+      },
+    },
+    about: {
+      title: "O kompaniji VIRELLAART",
+      description:
+        "Upoznajte VIRELLAART, brend luksuznog nameštaja koji u Türkiye stvara prefinjene kolekcije za izuzetne enterijere širom sveta.",
+      eyebrow: "O kompaniji VIRELLAART",
+      hero: "Luksuzni nameštaj iznad očekivanja",
+      lead:
+        "VIRELLAART stvara prefinjene kolekcije za izuzetne enterijere, spajajući elegantan dizajn, vrhunske materijale i prepoznatljivu izradu.",
+      story: "Naša priča",
+      heading: "Dizajnirano u Türkiye. Stvoreno za svet.",
+      paragraphOne:
+        "VIRELLAART je brend luksuznog nameštaja posvećen stvaranju bezvremenskih životnih prostora. Svaka kolekcija razvija se sa posebnim fokusom na proporcije, izradu, udobnost i vizuelnu eleganciju.",
+      paragraphTwo:
+        "Od dnevnih soba i trpezarija do spavaćih soba i TV komoda, svaki komad je stvoren da unese jedinstvenu luksuznu atmosferu u prefinjene domove.",
+      imageAlt: "VIRELLAART luksuzni nameštaj za dnevnu sobu",
+    },
+    contact: {
+      title: "Kontaktirajte VIRELLAART",
+      description:
+        "Kontaktirajte VIRELLAART za kolekcije luksuznog nameštaja, izradu po meri i dostavu širom sveta.",
+      eyebrow: "Kontakt VIRELLAART",
+      hero: "Stvorimo zajedno izuzetan enterijer",
+      lead:
+        "Kontaktirajte naš tim za informacije o proizvodima, dostavi širom sveta i privatnom savetovanju za luksuzni nameštaj.",
+      getInTouch: "Kontaktirajte nas",
+      heading: "Luksuzni nameštaj sa uslugom širom sveta",
+      paragraph:
+        "Naš tim pomaže međunarodnim klijentima pri izboru kolekcija, mera, personalizacije, proizvodnje, plaćanja i dostave širom sveta.",
+      business: "Kompanija",
+      businessValue: "VIRELLAART luksuzni nameštaj",
+      whatsapp: "WhatsApp",
+      whatsappValue: "Kontaktirajte VIRELLAART",
+      service: "Usluga",
+      serviceValue: "Dostava širom sveta",
+      language: "Jezik",
+      languageValue: "Međunarodna korisnička podrška",
+      button: "Kontaktirajte nas putem WhatsApp-a",
+      imageAlt: "VIRELLAART luksuzni nameštaj za trpezariju",
+    },
+    product: {
+      collectionLabel: "VIRELLAART luksuzna kolekcija",
+      prices: "Cene kolekcije",
+      worldwideDelivery: "Dostava širom sveta",
+      worldwideDeliveryText:
+        "Profesionalna podrška za međunarodnu dostavu dostupna je širom sveta.",
+      craftsmanship: "Vrhunska izrada",
+      craftsmanshipText:
+        "Izrađeno od pažljivo odabranih luksuznih materijala.",
+      whatsapp: "Kontaktirajte nas putem WhatsApp-a",
+      note:
+        "Kontaktirajte naš tim za informacije o merama, tkaninama, proizvodnji i dostavi.",
+      previousImage: "Prethodna slika",
+      nextImage: "Sledeća slika",
+      whatsappMessage:
+        "Zdravo VIRELLAART, želeo/la bih više informacija o kolekciji {product}.",
+    },
+  },
+  kk: {
+    defaultDescription:
+      "VIRELLAART Türkiye-де премиум материалдардан жасалатын, жеке тапсырыс мүмкіндіктері мен дүниежүзілік жеткізілімі бар сәнді жиһаз топтамаларын ұсынады.",
+    nav: {
+      home: "Басты бет",
+      collections: "Топтамалар",
+      about: "Біз туралы",
+      contact: "Байланыс",
+      language: "Тілді таңдаңыз",
+    },
+    home: {
+      title: "Ерекше интерьерлерге арналған сәнді жиһаз",
+      description:
+        "Жеке тапсырыс мүмкіндіктері және дүниежүзілік жеткізілімі бар VIRELLAART сәнді қонақ бөлме, асхана, жатын бөлме және теледидар жиһазы топтамаларын көріңіз.",
+      eyebrow: "Türkiye-де жасалған",
+      lead: "Ерекше интерьерлер үшін жасалған мәңгілік сәнді жиһаз.",
+      button: "Топтамаларды көру",
+      discover: "Танысыңыз",
+      heading: "Біздің топтамалар",
+      intro:
+        "Талғампаз тұрғын интерьерлерге арналған төрт ерекше жиһаз санатын зерттеңіз.",
+      livingRooms: "Қонақ бөлмелер",
+      diningRooms: "Асханалар",
+      bedrooms: "Жатын бөлмелер",
+      tvUnits: "Теледидар жиһазы",
+      discoverCollection: "Топтаманы көру",
+    },
+    category: {
+      eyebrow: "VIRELLAART топтамалары",
+      selectModel:
+        "Барлық фотосуреттер мен өнім мәліметтерін көру үшін модельді таңдаңыз.",
+      viewCollection: "Топтаманы көру",
+      livingRooms: {
+        title: "Қонақ бөлмелер",
+        description:
+          "Талғампаз дизайн, премиум шеберлік және дүниежүзілік жеткізілімі бар VIRELLAART сәнді қонақ бөлме топтамаларын көріңіз.",
+      },
+      diningRooms: {
+        title: "Асханалар",
+        description:
+          "Сәнді басқосулар мен ерекше интерьерлерге арналған VIRELLAART сәнді асхана топтамаларын көріңіз.",
+      },
+      bedrooms: {
+        title: "Жатын бөлмелер",
+        description:
+          "Жайлылықты, шеберлікті және мәңгілік әсемдікті үйлестіретін VIRELLAART сәнді жатын бөлме топтамаларын көріңіз.",
+      },
+      tvUnits: {
+        title: "Теледидар жиһазы",
+        description:
+          "Заманауи талғампаз дизайны мен нәзік бөлшектері бар VIRELLAART сәнді теледидар жиһазы топтамаларын көріңіз.",
+      },
+    },
+    about: {
+      title: "VIRELLAART туралы",
+      description:
+        "Әлемнің таңдаулы интерьерлеріне Türkiye-де сәнді топтамалар жасайтын VIRELLAART премиум жиһаз брендімен танысыңыз.",
+      eyebrow: "VIRELLAART туралы",
+      hero: "Қиялдан да асқан сәнді жиһаз",
+      lead:
+        "VIRELLAART талғампаз дизайнды, премиум материалдарды және ерекше шеберлікті үйлестіріп, айрықша интерьерлерге арналған топтамалар жасайды.",
+      story: "Біздің тарихымыз",
+      heading: "Türkiye-де жобаланған. Әлем үшін жасалған.",
+      paragraphOne:
+        "VIRELLAART — мәңгілік өмір кеңістіктерін жасауға арналған сәнді жиһаз бренді. Әр топтама пропорцияға, шеберлікке, жайлылыққа және көркем әсемдікке ерекше назар аударыла отырып әзірленеді.",
+      paragraphTwo:
+        "Қонақ бөлмелер мен асханалардан бастап жатын бөлмелер мен теледидар жиһазына дейін әр бұйым таңдаулы үйлерге бірегей сән-салтанат атмосферасын сыйлау үшін жасалады.",
+      imageAlt: "VIRELLAART сәнді қонақ бөлме жиһазы",
+    },
+    contact: {
+      title: "VIRELLAART-пен байланыс",
+      description:
+        "Сәнді жиһаз топтамалары, жеке өндіріс және дүниежүзілік жеткізілім туралы VIRELLAART-пен хабарласыңыз.",
+      eyebrow: "VIRELLAART-пен байланыс",
+      hero: "Бірге ерекше интерьер жасайық",
+      lead:
+        "Өнімдер, дүниежүзілік жеткізілім және сәнді жиһаз бойынша жеке кеңес алу үшін біздің командаға хабарласыңыз.",
+      getInTouch: "Бізбен байланысыңыз",
+      heading: "Дүниежүзілік сәнді жиһаз қызметі",
+      paragraph:
+        "Біздің команда халықаралық клиенттерге топтамалар, өлшемдер, жекелендіру, өндіріс, төлем және дүниежүзілік жеткізілім бойынша көмектеседі.",
+      business: "Компания",
+      businessValue: "VIRELLAART сәнді жиһазы",
+      whatsapp: "WhatsApp",
+      whatsappValue: "VIRELLAART-пен байланысу",
+      service: "Қызмет",
+      serviceValue: "Дүниежүзілік жеткізілім",
+      language: "Тіл",
+      languageValue: "Халықаралық клиенттерді қолдау",
+      button: "WhatsApp арқылы хабарласу",
+      imageAlt: "VIRELLAART сәнді асхана жиһазы",
+    },
+    product: {
+      collectionLabel: "VIRELLAART сәнді топтамасы",
+      prices: "Топтама бағалары",
+      worldwideDelivery: "Дүниежүзілік жеткізілім",
+      worldwideDeliveryText:
+        "Бүкіл әлем бойынша кәсіби халықаралық жеткізу қолдауы ұсынылады.",
+      craftsmanship: "Премиум шеберлік",
+      craftsmanshipText:
+        "Мұқият таңдалған сәнді материалдардан жасалған.",
+      whatsapp: "WhatsApp арқылы хабарласу",
+      note:
+        "Өлшемдер, мата нұсқалары, өндіріс және жеткізілім туралы ақпарат алу үшін біздің командаға хабарласыңыз.",
+      previousImage: "Алдыңғы сурет",
+      nextImage: "Келесі сурет",
+      whatsappMessage:
+        "Сәлеметсіз бе, VIRELLAART! {product} топтамасы туралы толық ақпарат алғым келеді.",
+    },
+  },
+  uz: {
+    defaultDescription:
+      "VIRELLAART Türkiye-da premium materiallardan tayyorlangan, individual variantlar va butun dunyo bo‘ylab yetkazib berishga ega hashamatli mebel kolleksiyalarini yaratadi.",
+    nav: {
+      home: "Bosh sahifa",
+      collections: "Kolleksiyalar",
+      about: "Biz haqimizda",
+      contact: "Aloqa",
+      language: "Tilni tanlang",
+    },
+    home: {
+      title: "Betakror interyerlar uchun hashamatli mebel",
+      description:
+        "Individual variantlar va butun dunyo bo‘ylab yetkazib berish bilan VIRELLAART hashamatli mehmonxona, ovqatlanish xonasi, yotoqxona va TV mebeli kolleksiyalarini kashf eting.",
+      eyebrow: "Türkiye-da ishlab chiqarilgan",
+      lead: "Betakror interyerlar uchun yaratilgan zamonaviy hashamatli mebel.",
+      button: "Kolleksiyalarni ko‘rish",
+      discover: "Kashf eting",
+      heading: "Bizning kolleksiyalarimiz",
+      intro:
+        "Nafis turar joy interyerlari uchun yaratilgan to‘rtta o‘ziga xos mebel turini ko‘ring.",
+      livingRooms: "Mehmonxonalar",
+      diningRooms: "Ovqatlanish xonalari",
+      bedrooms: "Yotoqxonalar",
+      tvUnits: "TV mebeli",
+      discoverCollection: "Kolleksiyani ko‘rish",
+    },
+    category: {
+      eyebrow: "VIRELLAART kolleksiyalari",
+      selectModel:
+        "Barcha fotosuratlar va mahsulot tafsilotlarini ko‘rish uchun modelni tanlang.",
+      viewCollection: "Kolleksiyani ko‘rish",
+      livingRooms: {
+        title: "Mehmonxonalar",
+        description:
+          "Nafis dizayn, yuqori sifatli hunarmandchilik va butun dunyo bo‘ylab yetkazib berishga ega VIRELLAART hashamatli mehmonxona kolleksiyalarini ko‘ring.",
+      },
+      diningRooms: {
+        title: "Ovqatlanish xonalari",
+        description:
+          "Nafis uchrashuvlar va betakror interyerlar uchun yaratilgan VIRELLAART hashamatli ovqatlanish xonasi kolleksiyalarini ko‘ring.",
+      },
+      bedrooms: {
+        title: "Yotoqxonalar",
+        description:
+          "Qulaylik, hunarmandchilik va boqiy nafislikni birlashtirgan VIRELLAART hashamatli yotoqxona kolleksiyalarini ko‘ring.",
+      },
+      tvUnits: {
+        title: "TV mebeli",
+        description:
+          "Zamonaviy nafis dizayn va nozik detallarga ega VIRELLAART hashamatli TV mebeli kolleksiyalarini ko‘ring.",
+      },
+    },
+    about: {
+      title: "VIRELLAART haqida",
+      description:
+        "Dunyoning nufuzli interyerlari uchun Türkiye-da nafis kolleksiyalar yaratadigan hashamatli mebel brendi VIRELLAART bilan tanishing.",
+      eyebrow: "VIRELLAART haqida",
+      hero: "Tasavvurdan ham yuksak hashamatli mebel",
+      lead:
+        "VIRELLAART nafis dizayn, premium materiallar va o‘ziga xos hunarmandchilikni birlashtirib, betakror interyerlar uchun kolleksiyalar yaratadi.",
+      story: "Bizning tariximiz",
+      heading: "Türkiye-da yaratilgan dizayn. Butun dunyo uchun ishlab chiqarilgan.",
+      paragraphOne:
+        "VIRELLAART — zamonaviy va boqiy yashash makonlarini yaratishga bag‘ishlangan hashamatli mebel brendi. Har bir kolleksiya mutanosiblik, hunarmandchilik, qulaylik va vizual nafislikka katta e’tibor bilan ishlab chiqiladi.",
+      paragraphTwo:
+        "Mehmonxona va ovqatlanish xonalaridan yotoqxona hamda TV mebeligacha har bir buyum nafis uylarga o‘ziga xos hashamat muhitini olib kirish uchun yaratiladi.",
+      imageAlt: "VIRELLAART hashamatli mehmonxona mebeli",
+    },
+    contact: {
+      title: "VIRELLAART bilan bog‘lanish",
+      description:
+        "Hashamatli mebel kolleksiyalari, individual ishlab chiqarish va butun dunyo bo‘ylab yetkazib berish bo‘yicha VIRELLAART bilan bog‘laning.",
+      eyebrow: "VIRELLAART bilan bog‘lanish",
+      hero: "Keling, birgalikda betakror interyer yarataylik",
+      lead:
+        "Mahsulotlar, butun dunyo bo‘ylab yetkazib berish va hashamatli mebel bo‘yicha individual maslahat uchun jamoamiz bilan bog‘laning.",
+      getInTouch: "Biz bilan bog‘laning",
+      heading: "Butun dunyo bo‘ylab hashamatli mebel xizmati",
+      paragraph:
+        "Jamoamiz xalqaro mijozlarga kolleksiya, o‘lcham, moslashtirish, ishlab chiqarish, to‘lov va butun dunyo bo‘ylab yetkazib berish jarayonlarida yordam beradi.",
+      business: "Kompaniya",
+      businessValue: "VIRELLAART hashamatli mebeli",
+      whatsapp: "WhatsApp",
+      whatsappValue: "VIRELLAART bilan bog‘lanish",
+      service: "Xizmat",
+      serviceValue: "Butun dunyo bo‘ylab yetkazib berish",
+      language: "Til",
+      languageValue: "Xalqaro mijozlarni qo‘llab-quvvatlash",
+      button: "WhatsApp orqali bog‘lanish",
+      imageAlt: "VIRELLAART hashamatli ovqatlanish xonasi mebeli",
+    },
+    product: {
+      collectionLabel: "VIRELLAART hashamatli kolleksiyasi",
+      prices: "Kolleksiya narxlari",
+      worldwideDelivery: "Butun dunyo bo‘ylab yetkazib berish",
+      worldwideDeliveryText:
+        "Butun dunyo bo‘ylab professional xalqaro yetkazib berish yordami mavjud.",
+      craftsmanship: "Yuqori sifatli hunarmandchilik",
+      craftsmanshipText:
+        "Sinchiklab tanlangan hashamatli materiallardan tayyorlangan.",
+      whatsapp: "WhatsApp orqali bog‘lanish",
+      note:
+        "O‘lchamlar, mato variantlari, ishlab chiqarish va yetkazib berish haqida ma’lumot olish uchun jamoamiz bilan bog‘laning.",
+      previousImage: "Oldingi rasm",
+      nextImage: "Keyingi rasm",
+      whatsappMessage:
+        "Salom VIRELLAART, {product} kolleksiyasi haqida batafsil ma’lumot olmoqchiman.",
+    },
+  },
+  pt: {
+    defaultDescription:
+      "A VIRELLAART cria coleções de mobiliário de luxo fabricadas em Türkiye com materiais premium, opções por medida e entrega mundial.",
+    nav: {
+      home: "Início",
+      collections: "Coleções",
+      about: "Sobre nós",
+      contact: "Contacto",
+      language: "Selecionar idioma",
+    },
+    home: {
+      title: "Mobiliário de luxo para interiores excecionais",
+      description:
+        "Descubra salas de estar, salas de jantar, quartos e móveis de TV de luxo VIRELLAART, com opções por medida e entrega mundial.",
+      eyebrow: "Fabricado em Türkiye",
+      lead: "Mobiliário de luxo intemporal criado para interiores excecionais.",
+      button: "Explorar coleções",
+      discover: "Descubra",
+      heading: "As nossas coleções",
+      intro:
+        "Explore quatro categorias exclusivas de mobiliário concebidas para interiores residenciais sofisticados.",
+      livingRooms: "Salas de estar",
+      diningRooms: "Salas de jantar",
+      bedrooms: "Quartos",
+      tvUnits: "Móveis de TV",
+      discoverCollection: "Descobrir coleção",
+    },
+    category: {
+      eyebrow: "Coleções VIRELLAART",
+      selectModel:
+        "Selecione um modelo para ver todas as fotografias e detalhes do produto.",
+      viewCollection: "Ver coleção",
+      livingRooms: {
+        title: "Salas de estar",
+        description:
+          "Explore as coleções de salas de estar de luxo VIRELLAART com design sofisticado, produção premium e entrega mundial.",
+      },
+      diningRooms: {
+        title: "Salas de jantar",
+        description:
+          "Explore as coleções de salas de jantar de luxo VIRELLAART, criadas para encontros elegantes e interiores excecionais.",
+      },
+      bedrooms: {
+        title: "Quartos",
+        description:
+          "Explore as coleções de quartos de luxo VIRELLAART, que combinam conforto, produção artesanal e elegância intemporal.",
+      },
+      tvUnits: {
+        title: "Móveis de TV",
+        description:
+          "Explore as coleções de móveis de TV de luxo VIRELLAART, com design contemporâneo elegante e detalhes sofisticados.",
+      },
+    },
+    about: {
+      title: "Sobre a VIRELLAART",
+      description:
+        "Descubra a VIRELLAART, uma marca de mobiliário de luxo que cria coleções sofisticadas em Türkiye para interiores distintos em todo o mundo.",
+      eyebrow: "Sobre a VIRELLAART",
+      hero: "Mobiliário de luxo além da imaginação",
+      lead:
+        "A VIRELLAART cria coleções sofisticadas para interiores excecionais, combinando design elegante, materiais premium e produção artesanal distinta.",
+      story: "A nossa história",
+      heading: "Concebido em Türkiye. Criado para o mundo.",
+      paragraphOne:
+        "A VIRELLAART é uma marca de mobiliário de luxo dedicada à criação de espaços intemporais. Cada coleção é desenvolvida com grande atenção à proporção, produção, conforto e elegância visual.",
+      paragraphTwo:
+        "Das salas de estar e jantar aos quartos e móveis de TV, cada peça é criada para proporcionar uma atmosfera de luxo única a casas sofisticadas.",
+      imageAlt: "Mobiliário de luxo para sala de estar VIRELLAART",
+    },
+    contact: {
+      title: "Contactar a VIRELLAART",
+      description:
+        "Contacte a VIRELLAART para conhecer as coleções de mobiliário de luxo, produção por medida e entrega mundial.",
+      eyebrow: "Contacto VIRELLAART",
+      hero: "Vamos criar juntos um interior excecional",
+      lead:
+        "Contacte a nossa equipa para informações sobre produtos, entrega mundial e consultoria privada de mobiliário de luxo.",
+      getInTouch: "Entre em contacto",
+      heading: "Serviço mundial de mobiliário de luxo",
+      paragraph:
+        "A nossa equipa apoia clientes internacionais na escolha de coleções, medidas, personalização, produção, pagamento e entrega mundial.",
+      business: "Empresa",
+      businessValue: "Mobiliário de luxo VIRELLAART",
+      whatsapp: "WhatsApp",
+      whatsappValue: "Contactar a VIRELLAART",
+      service: "Serviço",
+      serviceValue: "Entrega mundial",
+      language: "Idioma",
+      languageValue: "Apoio internacional ao cliente",
+      button: "Contactar pelo WhatsApp",
+      imageAlt: "Mobiliário de luxo para sala de jantar VIRELLAART",
+    },
+    product: {
+      collectionLabel: "Coleção de luxo VIRELLAART",
+      prices: "Preços da coleção",
+      worldwideDelivery: "Entrega mundial",
+      worldwideDeliveryText:
+        "Está disponível apoio profissional para entregas internacionais em todo o mundo.",
+      craftsmanship: "Produção premium",
+      craftsmanshipText:
+        "Fabricado com materiais de luxo cuidadosamente selecionados.",
+      whatsapp: "Contactar pelo WhatsApp",
+      note:
+        "Contacte a nossa equipa para informações sobre medidas, tecidos, produção e entrega.",
+      previousImage: "Imagem anterior",
+      nextImage: "Imagem seguinte",
+      whatsappMessage:
+        "Olá VIRELLAART, gostaria de receber mais informações sobre a coleção {product}.",
+    },
+  },
+  pl: {
+    defaultDescription:
+      "VIRELLAART tworzy kolekcje luksusowych mebli produkowane w Türkiye z materiałów premium, z opcjami personalizacji i dostawą na cały świat.",
+    nav: {
+      home: "Strona główna",
+      collections: "Kolekcje",
+      about: "O nas",
+      contact: "Kontakt",
+      language: "Wybierz język",
+    },
+    home: {
+      title: "Luksusowe meble do wyjątkowych wnętrz",
+      description:
+        "Odkryj luksusowe salony, jadalnie, sypialnie i szafki RTV VIRELLAART z opcjami personalizacji i dostawą na cały świat.",
+      eyebrow: "Wyprodukowano w Türkiye",
+      lead: "Ponadczasowe luksusowe meble stworzone do wyjątkowych wnętrz.",
+      button: "Odkryj kolekcje",
+      discover: "Odkryj",
+      heading: "Nasze kolekcje",
+      intro:
+        "Poznaj cztery wyjątkowe kategorie mebli zaprojektowane do eleganckich wnętrz mieszkalnych.",
+      livingRooms: "Salony",
+      diningRooms: "Jadalnie",
+      bedrooms: "Sypialnie",
+      tvUnits: "Szafki RTV",
+      discoverCollection: "Odkryj kolekcję",
+    },
+    category: {
+      eyebrow: "Kolekcje VIRELLAART",
+      selectModel:
+        "Wybierz model, aby zobaczyć wszystkie zdjęcia i szczegóły produktu.",
+      viewCollection: "Zobacz kolekcję",
+      livingRooms: {
+        title: "Salony",
+        description:
+          "Poznaj luksusowe kolekcje salonów VIRELLAART z wyrafinowanym wzornictwem, najwyższą jakością wykonania i dostawą na cały świat.",
+      },
+      diningRooms: {
+        title: "Jadalnie",
+        description:
+          "Poznaj luksusowe kolekcje jadalni VIRELLAART stworzone z myślą o eleganckich spotkaniach i wyjątkowych wnętrzach.",
+      },
+      bedrooms: {
+        title: "Sypialnie",
+        description:
+          "Poznaj luksusowe kolekcje sypialni VIRELLAART łączące komfort, kunszt wykonania i ponadczasową elegancję.",
+      },
+      tvUnits: {
+        title: "Szafki RTV",
+        description:
+          "Poznaj luksusowe kolekcje szafek RTV VIRELLAART o eleganckim współczesnym wzornictwie i dopracowanych detalach.",
+      },
+    },
+    about: {
+      title: "O VIRELLAART",
+      description:
+        "Poznaj VIRELLAART, markę luksusowych mebli tworzącą w Türkiye wyrafinowane kolekcje do wyjątkowych wnętrz na całym świecie.",
+      eyebrow: "O VIRELLAART",
+      hero: "Luksusowe meble poza granicami wyobraźni",
+      lead:
+        "VIRELLAART tworzy wyrafinowane kolekcje do wyjątkowych wnętrz, łącząc eleganckie wzornictwo, materiały premium i niepowtarzalne rzemiosło.",
+      story: "Nasza historia",
+      heading: "Zaprojektowano w Türkiye. Stworzono dla świata.",
+      paragraphOne:
+        "VIRELLAART to marka luksusowych mebli, której celem jest tworzenie ponadczasowych przestrzeni. Każda kolekcja powstaje ze szczególną dbałością o proporcje, jakość wykonania, komfort i wizualną elegancję.",
+      paragraphTwo:
+        "Od salonów i jadalni po sypialnie i szafki RTV — każdy mebel został stworzony, aby nadać eleganckim domom wyjątkową atmosferę luksusu.",
+      imageAlt: "Luksusowe meble do salonu VIRELLAART",
+    },
+    contact: {
+      title: "Kontakt z VIRELLAART",
+      description:
+        "Skontaktuj się z VIRELLAART w sprawie kolekcji luksusowych mebli, produkcji na zamówienie i dostawy na cały świat.",
+      eyebrow: "Kontakt z VIRELLAART",
+      hero: "Stwórzmy razem wyjątkowe wnętrze",
+      lead:
+        "Skontaktuj się z naszym zespołem, aby uzyskać informacje o produktach, dostawie na cały świat i prywatnym doradztwie w zakresie luksusowych mebli.",
+      getInTouch: "Skontaktuj się z nami",
+      heading: "Światowy serwis luksusowych mebli",
+      paragraph:
+        "Nasz zespół wspiera międzynarodowych klientów w zakresie kolekcji, wymiarów, personalizacji, produkcji, płatności i dostawy na cały świat.",
+      business: "Firma",
+      businessValue: "Luksusowe meble VIRELLAART",
+      whatsapp: "WhatsApp",
+      whatsappValue: "Skontaktuj się z VIRELLAART",
+      service: "Usługa",
+      serviceValue: "Dostawa na cały świat",
+      language: "Język",
+      languageValue: "Międzynarodowa obsługa klienta",
+      button: "Skontaktuj się przez WhatsApp",
+      imageAlt: "Luksusowe meble do jadalni VIRELLAART",
+    },
+    product: {
+      collectionLabel: "Luksusowa kolekcja VIRELLAART",
+      prices: "Ceny kolekcji",
+      worldwideDelivery: "Dostawa na cały świat",
+      worldwideDeliveryText:
+        "Profesjonalne wsparcie w zakresie dostawy międzynarodowej jest dostępne na całym świecie.",
+      craftsmanship: "Najwyższa jakość wykonania",
+      craftsmanshipText:
+        "Wykonano ze starannie wyselekcjonowanych luksusowych materiałów.",
+      whatsapp: "Skontaktuj się przez WhatsApp",
+      note:
+        "Skontaktuj się z naszym zespołem, aby uzyskać informacje o wymiarach, tkaninach, produkcji i dostawie.",
+      previousImage: "Poprzednie zdjęcie",
+      nextImage: "Następne zdjęcie",
+      whatsappMessage:
+        "Dzień dobry VIRELLAART, proszę o więcej informacji na temat kolekcji {product}.",
+    },
+  },
 } as const;
 
 export function getTranslations(language: Language) {
@@ -1168,6 +1834,48 @@ const productNameReplacements: Record<
     ["Dining", "Τραπεζαρία"],
     ["Bedroom", "Υπνοδωμάτιο"],
     ["TV Unit", "Έπιπλο τηλεόρασης"],
+  ],
+  es: [
+    ["Living Room", "Salón"],
+    ["Dining Room", "Comedor"],
+    ["Dining", "Comedor"],
+    ["Bedroom", "Dormitorio"],
+    ["TV Unit", "Mueble TV"],
+  ],
+  sr: [
+    ["Living Room", "Dnevna soba"],
+    ["Dining Room", "Trpezarija"],
+    ["Dining", "Trpezarija"],
+    ["Bedroom", "Spavaća soba"],
+    ["TV Unit", "TV komoda"],
+  ],
+  kk: [
+    ["Living Room", "Қонақ бөлме"],
+    ["Dining Room", "Асхана"],
+    ["Dining", "Асхана"],
+    ["Bedroom", "Жатын бөлме"],
+    ["TV Unit", "Теледидар жиһазы"],
+  ],
+  uz: [
+    ["Living Room", "Mehmonxona"],
+    ["Dining Room", "Ovqatlanish xonasi"],
+    ["Dining", "Ovqatlanish xonasi"],
+    ["Bedroom", "Yotoqxona"],
+    ["TV Unit", "TV mebeli"],
+  ],
+  pt: [
+    ["Living Room", "Sala de estar"],
+    ["Dining Room", "Sala de jantar"],
+    ["Dining", "Sala de jantar"],
+    ["Bedroom", "Quarto"],
+    ["TV Unit", "Móvel de TV"],
+  ],
+  pl: [
+    ["Living Room", "Salon"],
+    ["Dining Room", "Jadalnia"],
+    ["Dining", "Jadalnia"],
+    ["Bedroom", "Sypialnia"],
+    ["TV Unit", "Szafka RTV"],
   ],
 };
 
@@ -1267,6 +1975,60 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury Bedroom Set": "Πολυτελές σετ υπνοδωματίου",
     "Luxury Dining Room Set": "Πολυτελές σετ τραπεζαρίας",
     "Luxury TV Unit": "Πολυτελές έπιπλο τηλεόρασης",
+  },
+  es: {
+    "Luxury 3+3+1+1 Living Room Set": "Conjunto de salón de lujo 3+3+1+1",
+    "Luxury 4+3+1 Living Room Set": "Conjunto de salón de lujo 4+3+1",
+    "Center Table": "Mesa de centro",
+    "TV Unit": "Mueble TV",
+    "Luxury Bedroom Set": "Conjunto de dormitorio de lujo",
+    "Luxury Dining Room Set": "Conjunto de comedor de lujo",
+    "Luxury TV Unit": "Mueble TV de lujo",
+  },
+  sr: {
+    "Luxury 3+3+1+1 Living Room Set": "Luksuzni set za dnevnu sobu 3+3+1+1",
+    "Luxury 4+3+1 Living Room Set": "Luksuzni set za dnevnu sobu 4+3+1",
+    "Center Table": "Klub sto",
+    "TV Unit": "TV komoda",
+    "Luxury Bedroom Set": "Luksuzni set za spavaću sobu",
+    "Luxury Dining Room Set": "Luksuzni set za trpezariju",
+    "Luxury TV Unit": "Luksuzna TV komoda",
+  },
+  kk: {
+    "Luxury 3+3+1+1 Living Room Set": "3+3+1+1 сәнді қонақ бөлме жиынтығы",
+    "Luxury 4+3+1 Living Room Set": "4+3+1 сәнді қонақ бөлме жиынтығы",
+    "Center Table": "Орта үстел",
+    "TV Unit": "Теледидар жиһазы",
+    "Luxury Bedroom Set": "Сәнді жатын бөлме жиынтығы",
+    "Luxury Dining Room Set": "Сәнді асхана жиынтығы",
+    "Luxury TV Unit": "Сәнді теледидар жиһазы",
+  },
+  uz: {
+    "Luxury 3+3+1+1 Living Room Set": "3+3+1+1 hashamatli mehmonxona to‘plami",
+    "Luxury 4+3+1 Living Room Set": "4+3+1 hashamatli mehmonxona to‘plami",
+    "Center Table": "Markaziy stol",
+    "TV Unit": "TV mebeli",
+    "Luxury Bedroom Set": "Hashamatli yotoqxona to‘plami",
+    "Luxury Dining Room Set": "Hashamatli ovqatlanish xonasi to‘plami",
+    "Luxury TV Unit": "Hashamatli TV mebeli",
+  },
+  pt: {
+    "Luxury 3+3+1+1 Living Room Set": "Conjunto de sala de estar de luxo 3+3+1+1",
+    "Luxury 4+3+1 Living Room Set": "Conjunto de sala de estar de luxo 4+3+1",
+    "Center Table": "Mesa de centro",
+    "TV Unit": "Móvel de TV",
+    "Luxury Bedroom Set": "Conjunto de quarto de luxo",
+    "Luxury Dining Room Set": "Conjunto de sala de jantar de luxo",
+    "Luxury TV Unit": "Móvel de TV de luxo",
+  },
+  pl: {
+    "Luxury 3+3+1+1 Living Room Set": "Luksusowy zestaw do salonu 3+3+1+1",
+    "Luxury 4+3+1 Living Room Set": "Luksusowy zestaw do salonu 4+3+1",
+    "Center Table": "Stolik kawowy",
+    "TV Unit": "Szafka RTV",
+    "Luxury Bedroom Set": "Luksusowy zestaw do sypialni",
+    "Luxury Dining Room Set": "Luksusowy zestaw do jadalni",
+    "Luxury TV Unit": "Luksusowa szafka RTV",
   },
 };
 
@@ -1380,6 +2142,66 @@ const categoryDescriptionTemplates: Record<
       "Ανακαλύψτε την πολυτελή συλλογή υπνοδωματίου {product} της VIRELLAART, που συνδυάζει άνεση, δεξιοτεχνία και διαχρονική κομψότητα.",
     "tv-units":
       "Ανακαλύψτε την πολυτελή συλλογή επίπλων τηλεόρασης {product} της VIRELLAART με κομψό σύγχρονο σχεδιασμό και εκλεπτυσμένες λεπτομέρειες.",
+  },
+  es: {
+    "living-rooms":
+      "Descubra la colección de salón de lujo {product} de VIRELLAART, que combina diseño refinado, artesanía premium y un confort excepcional.",
+    "dining-rooms":
+      "Descubra la colección de comedor de lujo {product} de VIRELLAART, creada con diseño refinado y artesanía premium.",
+    bedrooms:
+      "Descubra la colección de dormitorio de lujo {product} de VIRELLAART, que combina confort, artesanía y elegancia atemporal.",
+    "tv-units":
+      "Descubra la colección de muebles de TV de lujo {product} de VIRELLAART, con elegante diseño contemporáneo y detalles refinados.",
+  },
+  sr: {
+    "living-rooms":
+      "Otkrijte luksuznu kolekciju za dnevnu sobu {product} kompanije VIRELLAART, koja spaja prefinjen dizajn, vrhunsku izradu i izuzetnu udobnost.",
+    "dining-rooms":
+      "Otkrijte luksuznu kolekciju za trpezariju {product} kompanije VIRELLAART, stvorenu uz prefinjen dizajn i vrhunsku izradu.",
+    bedrooms:
+      "Otkrijte luksuznu kolekciju za spavaću sobu {product} kompanije VIRELLAART, koja spaja udobnost, izradu i bezvremensku eleganciju.",
+    "tv-units":
+      "Otkrijte luksuznu kolekciju TV komoda {product} kompanije VIRELLAART, sa elegantnim savremenim dizajnom i prefinjenim detaljima.",
+  },
+  kk: {
+    "living-rooms":
+      "Талғампаз дизайнды, премиум шеберлікті және ерекше жайлылықты үйлестіретін VIRELLAART {product} сәнді қонақ бөлме топтамасын көріңіз.",
+    "dining-rooms":
+      "Талғампаз дизайн және премиум шеберлікпен жасалған VIRELLAART {product} сәнді асхана топтамасын көріңіз.",
+    bedrooms:
+      "Жайлылықты, шеберлікті және мәңгілік әсемдікті үйлестіретін VIRELLAART {product} сәнді жатын бөлме топтамасын көріңіз.",
+    "tv-units":
+      "Заманауи талғампаз дизайны мен нәзік бөлшектері бар VIRELLAART {product} сәнді теледидар жиһазы топтамасын көріңіз.",
+  },
+  uz: {
+    "living-rooms":
+      "Nafis dizayn, yuqori sifatli hunarmandchilik va ajoyib qulaylikni birlashtirgan VIRELLAART {product} hashamatli mehmonxona kolleksiyasini kashf eting.",
+    "dining-rooms":
+      "Nafis dizayn va yuqori sifatli hunarmandchilik bilan yaratilgan VIRELLAART {product} hashamatli ovqatlanish xonasi kolleksiyasini kashf eting.",
+    bedrooms:
+      "Qulaylik, hunarmandchilik va boqiy nafislikni birlashtirgan VIRELLAART {product} hashamatli yotoqxona kolleksiyasini kashf eting.",
+    "tv-units":
+      "Zamonaviy nafis dizayn va nozik detallarga ega VIRELLAART {product} hashamatli TV mebeli kolleksiyasini kashf eting.",
+  },
+  pt: {
+    "living-rooms":
+      "Descubra a coleção de sala de estar de luxo {product} da VIRELLAART, que combina design sofisticado, produção premium e conforto excecional.",
+    "dining-rooms":
+      "Descubra a coleção de sala de jantar de luxo {product} da VIRELLAART, criada com design sofisticado e produção premium.",
+    bedrooms:
+      "Descubra a coleção de quarto de luxo {product} da VIRELLAART, que combina conforto, produção artesanal e elegância intemporal.",
+    "tv-units":
+      "Descubra a coleção de móveis de TV de luxo {product} da VIRELLAART, com design contemporâneo elegante e detalhes sofisticados.",
+  },
+  pl: {
+    "living-rooms":
+      "Odkryj luksusową kolekcję do salonu {product} marki VIRELLAART, łączącą wyrafinowane wzornictwo, najwyższą jakość wykonania i wyjątkowy komfort.",
+    "dining-rooms":
+      "Odkryj luksusową kolekcję do jadalni {product} marki VIRELLAART, stworzoną z wyrafinowanym wzornictwem i najwyższą jakością wykonania.",
+    bedrooms:
+      "Odkryj luksusową kolekcję do sypialni {product} marki VIRELLAART, łączącą komfort, kunszt wykonania i ponadczasową elegancję.",
+    "tv-units":
+      "Odkryj luksusową kolekcję szafek RTV {product} marki VIRELLAART o eleganckim współczesnym wzornictwie i dopracowanych detalach.",
   },
 };
 
