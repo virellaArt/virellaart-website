@@ -951,5 +951,28 @@ milanoDining: {
     },
   ],
 },
+milanoBedroom: {
+  name: "Milano Bedroom",
 
+  category: "bedrooms",
+
+  images: [
+    "/bedroommilano-01.webp",
+    "/bedroommilano-02.webp",
+    "/bedroommilano-03.webp",
+    "/bedroommilano-04.webp",
+    "/bedroommilano-05.webp",
+  ],
+
+  description:
+    "Discover the Milano Luxury Bedroom Collection by VIRELLAART, combining refined elegance, premium craftsmanship and sophisticated comfort for exceptional bedroom interiors.",
+
+  prices: [
+    {
+      label: "Luxury Bedroom Collection",
+      price: "$7,450",
+      featured: true,
+    },
+  ],
+},
 };
