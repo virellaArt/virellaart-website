@@ -1031,4 +1031,28 @@ milanoBlueDining: {
     },
   ],
 },
+milanoBlueBedroom: {
+  name: "Milano Blue Bedroom",
+
+  category: "bedrooms",
+
+  images: [
+    "/bedroommilanoblue-01.webp",
+    "/bedroommilanoblue-02.webp",
+    "/bedroommilanoblue-03.webp",
+    "/bedroommilanoblue-04.webp",
+    "/bedroommilanoblue-05.webp",
+  ],
+
+  description:
+    "Discover the Milano Blue Luxury Bedroom Collection by VIRELLAART, combining sophisticated elegance, premium craftsmanship and refined comfort for exceptional bedroom interiors.",
+
+  prices: [
+    {
+      label: "Luxury Bedroom Collection",
+      price: "$7,450",
+      featured: true,
+    },
+  ],
+},
 };
