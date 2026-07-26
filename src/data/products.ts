@@ -1273,4 +1273,32 @@ saltanatDiningGreen: {
     },
   ],
 },
+saltanatLiving: {
+  name: "Saltanat Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/saltanatsofa-01.webp",
+    "/saltanatsofa-02.webp",
+    "/saltanatsofa-03.webp",
+    "/saltanatsofa-04.webp",
+    "/saltanatsofa-05.webp",
+  ],
+
+  description:
+    "Discover the Saltanat Luxury Living Room Collection by VIRELLAART, combining majestic elegance, exceptional craftsmanship and refined comfort for distinguished luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$9,800",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$1,450",
+    },
+  ],
+},
 };
