@@ -31,7 +31,7 @@ export function getStaticPaths() {
 const language = Astro.params.lang;
 const path = Astro.params.path ?? "";
 
-if (!isLanguage(language) || language === "en") {
+if (!isLanguage(language)) {
   throw new Error(`Unsupported language route: ${language}`);
 }
 
