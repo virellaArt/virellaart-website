@@ -1095,4 +1095,32 @@ milanoTv: {
     },
   ],
 },
+lina: {
+  name: "Lina Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/lina-01.webp",
+    "/lina-02.webp",
+    "/lina-03.webp",
+    "/lina-04.webp",
+    "/lina-05.webp",
+  ],
+
+  description:
+    "Discover the Lina Luxury Living Room Collection by VIRELLAART, combining graceful design, premium craftsmanship and refined comfort for sophisticated luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$5,100",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$500",
+    },
+  ],
+},
 };
