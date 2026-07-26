@@ -1171,5 +1171,33 @@ zerafetDining: {
     },
   ],
 },
+zerafetLiving: {
+  name: "Zerafet Living Room",
 
+  category: "living-rooms",
+
+  images: [
+    "/zerafetsofa-01.webp",
+    "/zerafetsofa-02.webp",
+    "/zerafetsofa-03.webp",
+    "/zerafetsofa-04.webp",
+    "/zerafetsofa-05.webp",
+    "/zerafetsofa-06.webp",
+  ],
+
+  description:
+    "Discover the Zerafet Luxury Living Room Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and refined comfort for sophisticated luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$4,450",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$750",
+    },
+  ],
+},
 };
