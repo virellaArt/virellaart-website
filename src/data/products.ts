@@ -1328,4 +1328,30 @@ saltanatGreenLiving: {
     },
   ],
 },
+sultanBedroom: {
+  name: "Sultan Bedroom",
+
+  category: "bedrooms",
+
+  images: [
+    "/sultanbedroom-01.webp",
+    "/sultanbedroom-02.webp",
+    "/sultanbedroom-03.webp",
+    "/sultanbedroom-04.webp",
+    "/sultanbedroom-05.webp",
+    "/sultanbedroom-06.webp",
+    "/sultanbedroom-07.webp",
+  ],
+
+  description:
+    "Discover the Sultan Luxury Bedroom Collection by VIRELLAART, combining regal elegance, exceptional craftsmanship and refined comfort for distinguished luxury interiors.",
+
+  prices: [
+    {
+      label: "Luxury Bedroom Collection",
+      price: "$12,800",
+      featured: true,
+    },
+  ],
+},
 };
