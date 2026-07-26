@@ -1279,7 +1279,6 @@ saltanatLiving: {
   category: "living-rooms",
 
   images: [
-    "/saltanatsofa-01.webp",
     "/saltanatsofa-02.webp",
     "/saltanatsofa-03.webp",
     "/saltanatsofa-04.webp",
