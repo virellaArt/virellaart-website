@@ -1249,4 +1249,28 @@ saltanatDining: {
     },
   ],
 },
+saltanatDiningGreen: {
+  name: "Saltanat Green Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/saltanatdininggreen-01.webp",
+    "/saltanatdininggreen-02.webp",
+    "/saltanatdininggreen-03.webp",
+    "/saltanatdininggreen-04.webp",
+    "/saltanatdininggreen-05.webp",
+  ],
+
+  description:
+    "Discover the Saltanat Green Luxury Dining Room Collection by VIRELLAART, combining majestic elegance, premium craftsmanship and refined details for distinguished dining interiors.",
+
+  prices: [
+    {
+      label: "Saltanat Green Dining Room Set",
+      price: "$13,950",
+      featured: true,
+    },
+  ],
+},
 };
