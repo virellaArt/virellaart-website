@@ -1147,4 +1147,29 @@ linaDining: {
     },
   ],
 },
+zerafetDining: {
+  name: "Zerafet Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/zerafet-01.webp",
+    "/zerafet-02.webp",
+    "/zerafet-03.webp",
+    "/zerafet-04.webp",
+    "/zerafet-05.webp",
+  ],
+
+  description:
+    "Discover the Zerafet Luxury Dining Room Collection by VIRELLAART, combining timeless elegance, premium craftsmanship and refined details for sophisticated dining interiors.",
+
+  prices: [
+    {
+      label: "Dining Room Set",
+      price: "$5,300",
+      featured: true,
+    },
+  ],
+},
+
 };
