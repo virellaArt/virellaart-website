@@ -1224,4 +1224,29 @@ saltanatBedroom: {
     },
   ],
 },
+saltanatDining: {
+  name: "Saltanat Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/saltanatdining-01.webp",
+    "/saltanatdining-02.webp",
+    "/saltanatdining-03.webp",
+    "/saltanatdining-04.webp",
+    "/saltanatdining-05.webp",
+    "/saltanatdining-06.webp",
+  ],
+
+  description:
+    "Discover the Saltanat Luxury Dining Room Collection by VIRELLAART, combining majestic elegance, exceptional craftsmanship and refined details for distinguished dining interiors.",
+
+  prices: [
+    {
+      label: "Saltanat Dining Room Set",
+      price: "$13,950",
+      featured: true,
+    },
+  ],
+},
 };
