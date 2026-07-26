@@ -975,4 +975,37 @@ milanoBedroom: {
     },
   ],
 },
+milanoBlue: {
+  name: "Milano Blue Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/milanoblue-01.webp",
+    "/milanoblue-02.webp",
+    "/milanoblue-03.webp",
+    "/milanoblue-04.webp",
+    "/milanoblue-05.webp",
+  ],
+
+  description:
+    "Discover the Milano Blue Luxury Living Room Collection by VIRELLAART, combining sophisticated design, premium craftsmanship and refined comfort for exceptional luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$5,100",
+      featured: true,
+    },
+    {
+      label: "TV Stand",
+      price: "$1,950",
+    },
+    {
+      label: "Center Table",
+      price: "$900",
+    },
+  ],
+},
+
 };
