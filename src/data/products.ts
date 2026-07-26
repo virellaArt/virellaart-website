@@ -1007,5 +1007,28 @@ milanoBlue: {
     },
   ],
 },
+milanoBlueDining: {
+  name: "Milano Blue Dining Room",
 
+  category: "dining-rooms",
+
+  images: [
+    "/diningmilanoblue-01.webp",
+    "/diningmilanoblue-02.webp",
+    "/diningmilanoblue-03.webp",
+    "/diningmilanoblue-04.webp",
+    "/diningmilanoblue-05.webp",
+  ],
+
+  description:
+    "Discover the Milano Blue Luxury Dining Room Collection by VIRELLAART, combining sophisticated elegance, premium craftsmanship and refined details for exceptional dining interiors.",
+
+  prices: [
+    {
+      label: "Milano Blue Dining Room Set",
+      price: "$7,500",
+      featured: true,
+    },
+  ],
+},
 };
