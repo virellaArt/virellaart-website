@@ -1200,4 +1200,28 @@ zerafetLiving: {
     },
   ],
 },
+saltanatBedroom: {
+  name: "Saltanat Bedroom",
+
+  category: "bedrooms",
+
+  images: [
+    "/saltanatbedroom-01.webp",
+    "/saltanatbedroom-02.webp",
+    "/saltanatbedroom-03.webp",
+    "/saltanatbedroom-04.webp",
+    "/saltanatbedroom-05.webp",
+  ],
+
+  description:
+    "Discover the Saltanat Luxury Bedroom Collection by VIRELLAART, combining majestic elegance, exceptional craftsmanship and refined luxury for distinguished bedroom interiors.",
+
+  prices: [
+    {
+      label: "Luxury Bedroom Collection",
+      price: "$12,500",
+      featured: true,
+    },
+  ],
+},
 };
