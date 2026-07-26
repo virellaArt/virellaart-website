@@ -1,28 +1,49 @@
-export const productRoutes = {
-  "living-rooms/alex": "alex",
-  "living-rooms/aspendos": "aspendos",
-  "living-rooms/bahar": "bahar",
-  "living-rooms/delux": "delux",
-  "living-rooms/lugano": "lugano",
-  "living-rooms/queen": "queen",
-  "living-rooms/sena": "sena",
-  "living-rooms/shawl": "shawl",
-  "living-rooms/valencia": "valencia",
-  "living-rooms/vanessa": "vanessa",
-  "living-rooms/vizyon": "vizyon",
-  "dining-rooms/aspendos": "aspendosDining",
-  "dining-rooms/delux": "deluxDining",
-  "dining-rooms/moon": "moonDining",
-  "dining-rooms/queen": "queenDining",
-  "dining-rooms/valencia": "valenciaDining",
-  "bedrooms/aspendos": "aspendosBedroom",
-  "bedrooms/delux": "deluxBedroom",
-  "bedrooms/valencia": "valenciaBedroom",
-  "tv-units/aspendos": "aspendosTV",
-  "tv-units/delux": "deluxTV",
-  "tv-units/moontv": "moontv",
-  "tv-units/valencia": "valenciaTV",
-} as const;
+import { products } from "../data/products";
+
+type ProductRouteMap = Record<string, string>;
+
+function createProductRoutes(): ProductRouteMap {
+  const routes: ProductRouteMap = {};
+
+  Object.entries(products).forEach(([key]) => {
+    let category = "";
+    let slug = "";
+
+    if (key.endsWith("Living")) {
+      category = "living-rooms";
+      slug = key.replace("Living", "");
+    }
+
+    else if (key.endsWith("Dining")) {
+      category = "dining-rooms";
+      slug = key.replace("Dining", "");
+    }
+
+    else if (key.endsWith("Bedroom")) {
+      category = "bedrooms";
+      slug = key.replace("Bedroom", "");
+    }
+
+    else if (key.endsWith("TV")) {
+      category = "tv-units";
+      slug = key.replace("TV", "");
+    }
+
+    if (!category || !slug) return;
+
+    const formattedSlug = slug
+      .replace(/([a-z])([A-Z])/g, "$1-$2")
+      .toLowerCase();
+
+    routes[`${category}/${formattedSlug}`] = key;
+  });
+
+  return routes;
+}
+
+
+export const productRoutes = createProductRoutes();
+
 
 export const staticRoutes = [
   "",
@@ -33,6 +54,7 @@ export const staticRoutes = [
   "about",
   "contact",
 ] as const;
+
 
 export const allRoutes = [
   "",
