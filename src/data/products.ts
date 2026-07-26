@@ -1055,4 +1055,24 @@ milanoBlueBedroom: {
     },
   ],
 },
+milanoBlueTv: {
+  name: "Milano Blue TV Unit",
+
+  category: "tv-units",
+
+  images: [
+    "/milanobluetv-01.webp",
+  ],
+
+  description:
+    "Discover the Milano Blue Luxury TV Unit Collection by VIRELLAART, combining sophisticated design, premium craftsmanship and refined details for elegant luxury interiors.",
+
+  prices: [
+    {
+      label: "TV Unit",
+      price: "$1,950",
+      featured: true,
+    },
+  ],
+},
 };
