@@ -1123,4 +1123,28 @@ lina: {
     },
   ],
 },
+linaDining: {
+  name: "Lina Dining Room",
+
+  category: "dining-rooms",
+
+  images: [
+    "/linadining-01.webp",
+    "/linadining-02.webp",
+    "/linadining-03.webp",
+    "/linadining-04.webp",
+    "/linadining-05.webp",
+  ],
+
+  description:
+    "Discover the Lina Luxury Dining Room Collection by VIRELLAART, combining elegant design, premium craftsmanship and refined details for sophisticated dining interiors.",
+
+  prices: [
+    {
+      label: "Dining Room Set",
+      price: "$7,500",
+      featured: true,
+    },
+  ],
+},
 };
