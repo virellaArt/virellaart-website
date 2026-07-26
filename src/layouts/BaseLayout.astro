@@ -59,8 +59,10 @@ const alternateURLs = languageCodes.map((code) => ({
   href: new URL(localizedPath(basePath, code), "https://www.virellaart.com").href,
 }));
 
+const canonicalPath = Astro.url.pathname.replace(/\/?$/, "/");
+
 const canonicalURL = new URL(
-  Astro.url.pathname,
+  canonicalPath,
   "https://www.virellaart.com"
 ).href;
 
@@ -280,9 +282,11 @@ href={canonicalURL}
 <link
   rel="alternate"
   hreflang="x-default"
-  href={new URL(basePath, "https://www.virellaart.com").href}
+  href={new URL(
+    `${basePath.replace(/\/?$/, "/")}`,
+    "https://www.virellaart.com"
+  ).href}
 />
-<link rel="icon" type="image/webp" href="/virellaart-favicon.webp" />
 
 <!-- Open Graph -->
 
