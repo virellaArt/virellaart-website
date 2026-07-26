@@ -1378,4 +1378,33 @@ sultanGreenBedroom: {
     },
   ],
 },
+sultanLiving: {
+  name: "Sultan Living Room",
+
+  category: "living-rooms",
+
+  images: [
+    "/sultansofa-01.webp",
+    "/sultansofa-02.webp",
+    "/sultansofa-03.webp",
+    "/sultansofa-04.webp",
+    "/sultansofa-05.webp",
+    "/sultansofa-06.webp",
+  ],
+
+  description:
+    "Discover the Sultan Luxury Living Room Collection by VIRELLAART, combining majestic elegance, exceptional craftsmanship and refined comfort for distinguished luxury interiors.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$9,800",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$1,450",
+    },
+  ],
+},
 };
