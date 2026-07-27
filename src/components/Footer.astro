@@ -14,20 +14,25 @@ const year = new Date().getFullYear();
   <div class="footer-inner">
     <div class="footer-brand">
       <a href={localizedPath("/", language)}>VIRELLAART</a>
+
       <p>{translations.defaultDescription}</p>
     </div>
 
     <div class="footer-column">
       <span>{translations.nav.collections}</span>
+
       <a href={localizedPath("/living-rooms", language)}>
         {translations.home.livingRooms}
       </a>
+
       <a href={localizedPath("/dining-rooms", language)}>
         {translations.home.diningRooms}
       </a>
+
       <a href={localizedPath("/bedrooms", language)}>
         {translations.home.bedrooms}
       </a>
+
       <a href={localizedPath("/tv-units", language)}>
         {translations.home.tvUnits}
       </a>
@@ -35,29 +40,64 @@ const year = new Date().getFullYear();
 
     <div class="footer-column">
       <span>VIRELLAART</span>
+
       <a href={localizedPath("/about", language)}>
         {translations.nav.about}
       </a>
+
       <a href={localizedPath("/contact", language)}>
         {translations.nav.contact}
       </a>
-      <a href="https://www.instagram.com/virellaart/" target="_blank" rel="noopener noreferrer">
+
+      <a
+        href="https://www.instagram.com/virellaart/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Instagram
       </a>
-      <a href="https://www.pinterest.com/virellaart/" target="_blank" rel="noopener noreferrer">
+
+      <a
+        href="https://www.pinterest.com/virellaart/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Pinterest
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <span>Policies</span>
+
+      <a href="/policies/shipping-policy/">
+        Shipping Policy
+      </a>
+
+      <a href="/policies/return-refund-policy/">
+        Return & Refund Policy
+      </a>
+
+      <a href="/policies/privacy-policy/">
+        Privacy Policy
+      </a>
+
+      <a href="/policies/terms-conditions/">
+        Terms & Conditions
       </a>
     </div>
 
     <div class="footer-service">
       <span>{translations.product.worldwideDelivery}</span>
+
       <p>{translations.product.worldwideDeliveryText}</p>
+
       <strong>{translations.contact.languageValue}</strong>
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>© {year} VIRELLAART</p>
+
     <p>{translations.product.craftsmanship}</p>
   </div>
 </footer>
@@ -72,8 +112,13 @@ const year = new Date().getFullYear();
     width: min(100% - 64px, var(--container));
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.6fr 0.8fr 0.8fr 1fr;
-    gap: 64px;
+    grid-template-columns:
+      minmax(260px, 1.5fr)
+      minmax(145px, 0.72fr)
+      minmax(145px, 0.72fr)
+      minmax(185px, 0.9fr)
+      minmax(210px, 1fr);
+    gap: 48px;
     padding: 78px 0 62px;
   }
 
@@ -113,6 +158,7 @@ const year = new Date().getFullYear();
   .footer-column a {
     color: rgba(255, 255, 255, 0.76);
     font-size: 13px;
+    line-height: 1.5;
     transition: color 0.2s ease;
   }
 
@@ -140,10 +186,24 @@ const year = new Date().getFullYear();
     text-transform: uppercase;
   }
 
+  @media (max-width: 1180px) {
+    .footer-inner {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 48px;
+    }
+
+    .footer-brand {
+      grid-column: span 2;
+    }
+  }
+
   @media (max-width: 900px) {
     .footer-inner {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 48px;
+    }
+
+    .footer-brand {
+      grid-column: span 2;
     }
   }
 
@@ -157,6 +217,10 @@ const year = new Date().getFullYear();
       grid-template-columns: 1fr;
       gap: 38px;
       padding: 60px 0 46px;
+    }
+
+    .footer-brand {
+      grid-column: auto;
     }
 
     .footer-bottom {
