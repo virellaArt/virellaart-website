@@ -12,19 +12,13 @@ function createProductRoutes(): ProductRouteMap {
     if (key.endsWith("Living")) {
       category = "living-rooms";
       slug = key.replace("Living", "");
-    }
-
-    else if (key.endsWith("Dining")) {
+    } else if (key.endsWith("Dining")) {
       category = "dining-rooms";
       slug = key.replace("Dining", "");
-    }
-
-    else if (key.endsWith("Bedroom")) {
+    } else if (key.endsWith("Bedroom")) {
       category = "bedrooms";
       slug = key.replace("Bedroom", "");
-    }
-
-    else if (key.endsWith("TV")) {
+    } else if (key.endsWith("TV")) {
       category = "tv-units";
       slug = key.replace("TV", "");
     }
@@ -41,9 +35,7 @@ function createProductRoutes(): ProductRouteMap {
   return routes;
 }
 
-
 export const productRoutes = createProductRoutes();
-
 
 export const staticRoutes = [
   "",
@@ -56,9 +48,7 @@ export const staticRoutes = [
   "contact",
 ] as const;
 
-
 export const allRoutes = [
-  "",
-  ...staticRoutes.filter((route) => route !== ""),
+  ...staticRoutes,
   ...Object.keys(productRoutes),
 ];

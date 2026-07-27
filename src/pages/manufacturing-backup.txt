@@ -1,11 +1,9 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 import {
   getLanguageFromPath,
   localizedPath,
 } from "../i18n/config";
-
 import {
   getManufacturingContent,
 } from "../i18n/manufacturing";
@@ -76,9 +74,7 @@ const ctaWhatsappURL =
           </strong>
         </h1>
 
-        <p>
-          {content.hero.description}
-        </p>
+        <p>{content.hero.description}</p>
 
         <div class="hero-buttons">
           <a
@@ -102,13 +98,8 @@ const ctaWhatsappURL =
       </div>
 
       <div class="hero-footer">
-        <span>
-          {content.hero.location}
-        </span>
-
-        <span>
-          {content.hero.manufacturer}
-        </span>
+        <span>{content.hero.location}</span>
+        <span>{content.hero.manufacturer}</span>
       </div>
     </section>
 
@@ -146,13 +137,8 @@ const ctaWhatsappURL =
               content.intro.facts.map(
                 (fact) => (
                   <div>
-                    <span>
-                      {fact.label}
-                    </span>
-
-                    <strong>
-                      {fact.value}
-                    </strong>
+                    <span>{fact.label}</span>
+                    <strong>{fact.value}</strong>
                   </div>
                 ),
               )
@@ -200,9 +186,7 @@ const ctaWhatsappURL =
           </strong>
         </h2>
 
-        <p>
-          {content.process.description}
-        </p>
+        <p>{content.process.description}</p>
       </div>
 
       <div class="process-grid">
@@ -219,23 +203,13 @@ const ctaWhatsappURL =
                   decoding="async"
                 />
 
-                <span>
-                  {process.number}
-                </span>
+                <span>{process.number}</span>
               </div>
 
               <div class="process-copy">
-                <small>
-                  {process.label}
-                </small>
-
-                <h3>
-                  {process.title}
-                </h3>
-
-                <p>
-                  {process.description}
-                </p>
+                <small>{process.label}</small>
+                <h3>{process.title}</h3>
+                <p>{process.description}</p>
               </div>
             </article>
           ))
@@ -262,17 +236,9 @@ const ctaWhatsappURL =
         {
           content.flow.steps.map((step) => (
             <article class="flow-card">
-              <span>
-                {step.number}
-              </span>
-
-              <h3>
-                {step.title}
-              </h3>
-
-              <p>
-                {step.description}
-              </p>
+              <span>{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
             </article>
           ))
         }
@@ -304,9 +270,7 @@ const ctaWhatsappURL =
           </strong>
         </h2>
 
-        <p>
-          {content.quality.description}
-        </p>
+        <p>{content.quality.description}</p>
 
         <ul>
           {
@@ -383,14 +347,8 @@ const ctaWhatsappURL =
             (benefit) => (
               <article class="benefit-card">
                 <span>V</span>
-
-                <h3>
-                  {benefit.title}
-                </h3>
-
-                <p>
-                  {benefit.description}
-                </p>
+                <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
               </article>
             ),
           )
@@ -412,9 +370,7 @@ const ctaWhatsappURL =
           </strong>
         </h2>
 
-        <p>
-          {content.cta.description}
-        </p>
+        <p>{content.cta.description}</p>
       </div>
 
       <div class="cta-actions">
@@ -632,7 +588,9 @@ const ctaWhatsappURL =
 
   .intro-layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(440px, 1.08fr);
+    grid-template-columns:
+      minmax(0, 0.92fr)
+      minmax(440px, 1.08fr);
     align-items: center;
     gap: 85px;
     margin-top: 65px;

@@ -7,17 +7,904 @@ import {
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
-const whatsappMessage = translations.product.whatsappMessage.replace(
-  "{product}",
-  "VIRELLAART",
-);
-const whatsappURL = `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
+
+type ExtraContent = {
+  projectButton: string;
+  overviewEyebrow: string;
+  overviewTitle: string;
+  overviewText: string;
+  manufacturerLabel: string;
+  manufacturerValue: string;
+  locationLabel: string;
+  locationValue: string;
+  deliveryLabel: string;
+  deliveryValue: string;
+  supportLabel: string;
+  supportValue: string;
+  briefEyebrow: string;
+  briefTitle: string;
+  briefText: string;
+  briefItems: string[];
+  processEyebrow: string;
+  processTitle: string;
+  steps: {
+    number: string;
+    title: string;
+    text: string;
+  }[];
+  finalEyebrow: string;
+  finalTitle: string;
+  finalText: string;
+  imageAlt: string;
+  shippingAlt: string;
+};
+
+const extraContent: Record<string, ExtraContent> = {
+  en: {
+    projectButton: "Prepare Your Request",
+    overviewEyebrow: "Direct Manufacturer Contact",
+    overviewTitle: "Speak Directly With VIRELLAART",
+    overviewText:
+      "Contact our team for collection prices, individual product inquiries, customization requests and international delivery information. Every request is reviewed according to the selected model and delivery destination.",
+    manufacturerLabel: "Manufacturer",
+    manufacturerValue: "VIRELLAART Luxury Furniture",
+    locationLabel: "Location",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Delivery",
+    deliveryValue: "Worldwide Delivery Support",
+    supportLabel: "Customer Support",
+    supportValue: "International Sales Assistance",
+    briefEyebrow: "Before Contacting Us",
+    briefTitle: "Send the Right Details for a Faster Quotation",
+    briefText:
+      "A clear request allows our team to prepare more accurate product and delivery information without unnecessary delays.",
+    briefItems: [
+      "The product model, page link or product photograph",
+      "The pieces and quantities you would like to order",
+      "Your delivery country and city",
+      "Any customization or project requirements",
+    ],
+    processEyebrow: "How It Works",
+    processTitle: "A Clear and Direct Consultation Process",
+    steps: [
+      {
+        number: "01",
+        title: "Send Your Request",
+        text: "Share the model, required pieces and delivery destination through WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Receive Product Information",
+        text: "Our team reviews your request and provides the relevant product, price and delivery details.",
+      },
+      {
+        number: "03",
+        title: "Confirm Your Project",
+        text: "Final requirements are reviewed directly with you before the order process begins.",
+      },
+    ],
+    finalEyebrow: "Begin Your Project",
+    finalTitle: "Luxury Furniture, Direct From the Manufacturer",
+    finalText:
+      "Tell us which VIRELLAART collection you are interested in and where your order will be delivered.",
+    imageAlt: "VIRELLAART luxury furniture interior",
+    shippingAlt: "VIRELLAART international furniture delivery preparation",
+  },
+
+  tr: {
+    projectButton: "Talebinizi Hazırlayın",
+    overviewEyebrow: "Doğrudan Üretici İletişimi",
+    overviewTitle: "VIRELLAART ile Doğrudan Görüşün",
+    overviewText:
+      "Koleksiyon fiyatları, tekil ürün talepleri, kişiselleştirme seçenekleri ve uluslararası teslimat bilgileri için ekibimizle iletişime geçin. Her talep seçilen model ve teslimat konumuna göre değerlendirilir.",
+    manufacturerLabel: "Üretici",
+    manufacturerValue: "VIRELLAART Lüks Mobilya",
+    locationLabel: "Konum",
+    locationValue: "İstanbul, Türkiye",
+    deliveryLabel: "Teslimat",
+    deliveryValue: "Dünya Geneli Teslimat Desteği",
+    supportLabel: "Müşteri Desteği",
+    supportValue: "Uluslararası Satış Desteği",
+    briefEyebrow: "İletişime Geçmeden Önce",
+    briefTitle: "Daha Hızlı Teklif İçin Doğru Bilgileri Gönderin",
+    briefText:
+      "Açık ve eksiksiz bir talep, ekibimizin ürün ve teslimat bilgilerini daha doğru hazırlamasını sağlar.",
+    briefItems: [
+      "Ürün modeli, ürün sayfası bağlantısı veya ürün fotoğrafı",
+      "Sipariş vermek istediğiniz parçalar ve adetleri",
+      "Teslimat yapılacak ülke ve şehir",
+      "Kişiselleştirme veya proje talepleriniz",
+    ],
+    processEyebrow: "Süreç Nasıl İşliyor?",
+    processTitle: "Açık ve Doğrudan Danışmanlık Süreci",
+    steps: [
+      {
+        number: "01",
+        title: "Talebinizi Gönderin",
+        text: "Modeli, istediğiniz parçaları ve teslimat konumunu WhatsApp üzerinden paylaşın.",
+      },
+      {
+        number: "02",
+        title: "Ürün Bilgilerini Alın",
+        text: "Ekibimiz talebinizi inceleyerek ürün, fiyat ve teslimat bilgilerini paylaşır.",
+      },
+      {
+        number: "03",
+        title: "Projenizi Netleştirin",
+        text: "Sipariş süreci başlamadan önce son detaylar sizinle doğrudan değerlendirilir.",
+      },
+    ],
+    finalEyebrow: "Projenizi Başlatın",
+    finalTitle: "Lüks Mobilya, Doğrudan Üreticiden",
+    finalText:
+      "İlgilendiğiniz VIRELLAART koleksiyonunu ve teslimat yapılacak konumu bize bildirin.",
+    imageAlt: "VIRELLAART lüks mobilya iç mekânı",
+    shippingAlt: "VIRELLAART uluslararası mobilya teslimat hazırlığı",
+  },
+
+  de: {
+    projectButton: "Anfrage vorbereiten",
+    overviewEyebrow: "Direkter Herstellerkontakt",
+    overviewTitle: "Sprechen Sie direkt mit VIRELLAART",
+    overviewText:
+      "Kontaktieren Sie unser Team für Kollektion Preise, einzelne Produkte, individuelle Wünsche und internationale Lieferinformationen.",
+    manufacturerLabel: "Hersteller",
+    manufacturerValue: "VIRELLAART Luxusmöbel",
+    locationLabel: "Standort",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Lieferung",
+    deliveryValue: "Weltweite Lieferunterstützung",
+    supportLabel: "Kundenservice",
+    supportValue: "Internationale Verkaufsberatung",
+    briefEyebrow: "Vor Ihrer Anfrage",
+    briefTitle: "Die richtigen Angaben für ein schnelleres Angebot",
+    briefText:
+      "Klare Angaben helfen unserem Team, Produkt- und Lieferinformationen präziser vorzubereiten.",
+    briefItems: [
+      "Produktmodell, Seitenlink oder Produktfoto",
+      "Gewünschte Teile und Mengen",
+      "Lieferland und Stadt",
+      "Individuelle Wünsche oder Projektanforderungen",
+    ],
+    processEyebrow: "So funktioniert es",
+    processTitle: "Ein klarer und direkter Beratungsprozess",
+    steps: [
+      {
+        number: "01",
+        title: "Anfrage senden",
+        text: "Senden Sie Modell, gewünschte Teile und Lieferort per WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Informationen erhalten",
+        text: "Unser Team prüft Ihre Anfrage und sendet Produkt-, Preis- und Lieferdetails.",
+      },
+      {
+        number: "03",
+        title: "Projekt bestätigen",
+        text: "Die letzten Anforderungen werden vor Beginn der Bestellung direkt abgestimmt.",
+      },
+    ],
+    finalEyebrow: "Projekt starten",
+    finalTitle: "Luxusmöbel direkt vom Hersteller",
+    finalText:
+      "Teilen Sie uns die gewünschte Kollektion und den Lieferort mit.",
+    imageAlt: "VIRELLAART Luxusmöbel Interieur",
+    shippingAlt: "Vorbereitung einer internationalen VIRELLAART Lieferung",
+  },
+
+  fr: {
+    projectButton: "Préparer votre demande",
+    overviewEyebrow: "Contact direct fabricant",
+    overviewTitle: "Échangez directement avec VIRELLAART",
+    overviewText:
+      "Contactez notre équipe pour les prix, les produits individuels, les demandes de personnalisation et les informations de livraison internationale.",
+    manufacturerLabel: "Fabricant",
+    manufacturerValue: "Mobilier de luxe VIRELLAART",
+    locationLabel: "Localisation",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Livraison",
+    deliveryValue: "Assistance de livraison mondiale",
+    supportLabel: "Service client",
+    supportValue: "Assistance commerciale internationale",
+    briefEyebrow: "Avant de nous contacter",
+    briefTitle: "Envoyez les bonnes informations pour un devis plus rapide",
+    briefText:
+      "Une demande claire permet à notre équipe de préparer des informations plus précises.",
+    briefItems: [
+      "Le modèle, le lien de la page ou une photo du produit",
+      "Les éléments et les quantités souhaités",
+      "Votre pays et votre ville de livraison",
+      "Vos demandes de personnalisation ou de projet",
+    ],
+    processEyebrow: "Comment ça fonctionne",
+    processTitle: "Un processus de consultation clair et direct",
+    steps: [
+      {
+        number: "01",
+        title: "Envoyez votre demande",
+        text: "Partagez le modèle, les éléments souhaités et la destination via WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Recevez les informations",
+        text: "Notre équipe vous transmet les informations sur le produit, le prix et la livraison.",
+      },
+      {
+        number: "03",
+        title: "Confirmez votre projet",
+        text: "Les derniers détails sont vérifiés directement avec vous avant la commande.",
+      },
+    ],
+    finalEyebrow: "Commencez votre projet",
+    finalTitle: "Mobilier de luxe directement du fabricant",
+    finalText:
+      "Indiquez-nous la collection VIRELLAART souhaitée et votre lieu de livraison.",
+    imageAlt: "Intérieur de mobilier de luxe VIRELLAART",
+    shippingAlt: "Préparation de livraison internationale VIRELLAART",
+  },
+
+  it: {
+    projectButton: "Prepara la richiesta",
+    overviewEyebrow: "Contatto diretto con il produttore",
+    overviewTitle: "Parla direttamente con VIRELLAART",
+    overviewText:
+      "Contatta il nostro team per prezzi, singoli prodotti, personalizzazioni e informazioni sulla consegna internazionale.",
+    manufacturerLabel: "Produttore",
+    manufacturerValue: "Arredamento di lusso VIRELLAART",
+    locationLabel: "Sede",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Consegna",
+    deliveryValue: "Supporto per consegne internazionali",
+    supportLabel: "Assistenza clienti",
+    supportValue: "Assistenza commerciale internazionale",
+    briefEyebrow: "Prima di contattarci",
+    briefTitle: "Invia le informazioni corrette per un preventivo più rapido",
+    briefText:
+      "Una richiesta chiara consente al nostro team di preparare informazioni più precise.",
+    briefItems: [
+      "Modello, link della pagina o fotografia del prodotto",
+      "Elementi e quantità desiderati",
+      "Paese e città di consegna",
+      "Richieste di personalizzazione o progetto",
+    ],
+    processEyebrow: "Come funziona",
+    processTitle: "Un processo di consulenza chiaro e diretto",
+    steps: [
+      {
+        number: "01",
+        title: "Invia la richiesta",
+        text: "Condividi modello, elementi richiesti e destinazione tramite WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Ricevi le informazioni",
+        text: "Il nostro team fornisce dettagli su prodotto, prezzo e consegna.",
+      },
+      {
+        number: "03",
+        title: "Conferma il progetto",
+        text: "I dettagli finali vengono verificati direttamente prima dell’ordine.",
+      },
+    ],
+    finalEyebrow: "Inizia il tuo progetto",
+    finalTitle: "Arredamento di lusso direttamente dal produttore",
+    finalText:
+      "Indicaci la collezione VIRELLAART e la destinazione di consegna.",
+    imageAlt: "Interno con arredamento di lusso VIRELLAART",
+    shippingAlt: "Preparazione della consegna internazionale VIRELLAART",
+  },
+
+  ru: {
+    projectButton: "Подготовить запрос",
+    overviewEyebrow: "Прямой контакт с производителем",
+    overviewTitle: "Свяжитесь напрямую с VIRELLAART",
+    overviewText:
+      "Свяжитесь с нашей командой для получения цен, информации об отдельных изделиях, персонализации и международной доставке.",
+    manufacturerLabel: "Производитель",
+    manufacturerValue: "Элитная мебель VIRELLAART",
+    locationLabel: "Местоположение",
+    locationValue: "Стамбул, Türkiye",
+    deliveryLabel: "Доставка",
+    deliveryValue: "Поддержка международной доставки",
+    supportLabel: "Поддержка клиентов",
+    supportValue: "Международная помощь в продажах",
+    briefEyebrow: "Перед обращением",
+    briefTitle: "Отправьте необходимые данные для быстрого расчёта",
+    briefText:
+      "Чёткий запрос поможет нашей команде подготовить точную информацию о товаре и доставке.",
+    briefItems: [
+      "Модель, ссылка на страницу или фотография товара",
+      "Необходимые предметы и количество",
+      "Страна и город доставки",
+      "Пожелания по персонализации или проекту",
+    ],
+    processEyebrow: "Как это работает",
+    processTitle: "Понятный и прямой процесс консультации",
+    steps: [
+      {
+        number: "01",
+        title: "Отправьте запрос",
+        text: "Сообщите модель, необходимые предметы и место доставки через WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Получите информацию",
+        text: "Наша команда предоставит информацию о товаре, цене и доставке.",
+      },
+      {
+        number: "03",
+        title: "Подтвердите проект",
+        text: "Финальные детали согласовываются с вами до начала оформления заказа.",
+      },
+    ],
+    finalEyebrow: "Начните свой проект",
+    finalTitle: "Элитная мебель напрямую от производителя",
+    finalText:
+      "Сообщите нам выбранную коллекцию VIRELLAART и место доставки.",
+    imageAlt: "Интерьер с элитной мебелью VIRELLAART",
+    shippingAlt: "Подготовка международной доставки VIRELLAART",
+  },
+
+  ar: {
+    projectButton: "تجهيز طلبك",
+    overviewEyebrow: "تواصل مباشر مع المصنّع",
+    overviewTitle: "تواصل مباشرة مع VIRELLAART",
+    overviewText:
+      "تواصل مع فريقنا لمعرفة الأسعار وتفاصيل المنتجات وخيارات التخصيص ومعلومات الشحن الدولي.",
+    manufacturerLabel: "المصنّع",
+    manufacturerValue: "أثاث VIRELLAART الفاخر",
+    locationLabel: "الموقع",
+    locationValue: "إسطنبول، Türkiye",
+    deliveryLabel: "التوصيل",
+    deliveryValue: "دعم التوصيل إلى مختلف دول العالم",
+    supportLabel: "دعم العملاء",
+    supportValue: "مساعدة المبيعات الدولية",
+    briefEyebrow: "قبل التواصل معنا",
+    briefTitle: "أرسل المعلومات الصحيحة للحصول على عرض أسرع",
+    briefText:
+      "يساعد الطلب الواضح فريقنا على إعداد معلومات دقيقة عن المنتج والتوصيل.",
+    briefItems: [
+      "اسم الموديل أو رابط الصفحة أو صورة المنتج",
+      "القطع والكميات المطلوبة",
+      "دولة ومدينة التوصيل",
+      "طلبات التخصيص أو متطلبات المشروع",
+    ],
+    processEyebrow: "كيف تتم العملية",
+    processTitle: "عملية استشارة واضحة ومباشرة",
+    steps: [
+      {
+        number: "01",
+        title: "أرسل طلبك",
+        text: "أرسل الموديل والقطع المطلوبة ومكان التوصيل عبر واتساب.",
+      },
+      {
+        number: "02",
+        title: "استلم المعلومات",
+        text: "يراجع فريقنا طلبك ويرسل تفاصيل المنتج والسعر والتوصيل.",
+      },
+      {
+        number: "03",
+        title: "أكد مشروعك",
+        text: "تتم مراجعة التفاصيل النهائية معك قبل بدء عملية الطلب.",
+      },
+    ],
+    finalEyebrow: "ابدأ مشروعك",
+    finalTitle: "أثاث فاخر مباشرة من المصنّع",
+    finalText:
+      "أخبرنا بمجموعة VIRELLAART التي تهمك ومكان التوصيل.",
+    imageAlt: "تصميم داخلي بأثاث VIRELLAART الفاخر",
+    shippingAlt: "تجهيز شحنة دولية من VIRELLAART",
+  },
+
+  bg: {
+    projectButton: "Подгответе запитването",
+    overviewEyebrow: "Директен контакт с производителя",
+    overviewTitle: "Свържете се директно с VIRELLAART",
+    overviewText:
+      "Свържете се с нашия екип за цени, отделни продукти, персонализация и международна доставка.",
+    manufacturerLabel: "Производител",
+    manufacturerValue: "Луксозни мебели VIRELLAART",
+    locationLabel: "Местоположение",
+    locationValue: "Истанбул, Türkiye",
+    deliveryLabel: "Доставка",
+    deliveryValue: "Поддръжка за международна доставка",
+    supportLabel: "Обслужване",
+    supportValue: "Международна търговска помощ",
+    briefEyebrow: "Преди да се свържете",
+    briefTitle: "Изпратете точните данни за по-бърза оферта",
+    briefText:
+      "Ясното запитване помага за изготвяне на точна информация.",
+    briefItems: [
+      "Модел, линк или снимка на продукта",
+      "Желани елементи и количества",
+      "Държава и град за доставка",
+      "Изисквания за персонализация или проект",
+    ],
+    processEyebrow: "Как работи",
+    processTitle: "Ясен и директен процес",
+    steps: [
+      {
+        number: "01",
+        title: "Изпратете запитване",
+        text: "Изпратете модела, елементите и адреса чрез WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Получете информация",
+        text: "Ще получите информация за продукта, цената и доставката.",
+      },
+      {
+        number: "03",
+        title: "Потвърдете проекта",
+        text: "Финалните детайли се уточняват преди поръчката.",
+      },
+    ],
+    finalEyebrow: "Започнете проекта",
+    finalTitle: "Луксозни мебели директно от производителя",
+    finalText:
+      "Посочете желаната колекция и мястото за доставка.",
+    imageAlt: "Интериор с луксозни мебели VIRELLAART",
+    shippingAlt: "Подготовка за международна доставка VIRELLAART",
+  },
+
+  ro: {
+    projectButton: "Pregătiți solicitarea",
+    overviewEyebrow: "Contact direct cu producătorul",
+    overviewTitle: "Discutați direct cu VIRELLAART",
+    overviewText:
+      "Contactați echipa noastră pentru prețuri, produse individuale, personalizare și livrare internațională.",
+    manufacturerLabel: "Producător",
+    manufacturerValue: "Mobilier de lux VIRELLAART",
+    locationLabel: "Locație",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Livrare",
+    deliveryValue: "Asistență pentru livrare internațională",
+    supportLabel: "Asistență clienți",
+    supportValue: "Asistență comercială internațională",
+    briefEyebrow: "Înainte de contact",
+    briefTitle: "Trimiteți informațiile corecte pentru o ofertă mai rapidă",
+    briefText:
+      "O solicitare clară permite pregătirea unor informații mai precise.",
+    briefItems: [
+      "Modelul, linkul paginii sau fotografia produsului",
+      "Produsele și cantitățile dorite",
+      "Țara și orașul de livrare",
+      "Cerințe de personalizare sau proiect",
+    ],
+    processEyebrow: "Cum funcționează",
+    processTitle: "Un proces clar și direct",
+    steps: [
+      {
+        number: "01",
+        title: "Trimiteți solicitarea",
+        text: "Trimiteți modelul, produsele și destinația prin WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Primiți informațiile",
+        text: "Echipa noastră oferă detalii despre produs, preț și livrare.",
+      },
+      {
+        number: "03",
+        title: "Confirmați proiectul",
+        text: "Detaliile finale sunt verificate înainte de comandă.",
+      },
+    ],
+    finalEyebrow: "Începeți proiectul",
+    finalTitle: "Mobilier de lux direct de la producător",
+    finalText:
+      "Comunicați-ne colecția dorită și destinația de livrare.",
+    imageAlt: "Interior cu mobilier de lux VIRELLAART",
+    shippingAlt: "Pregătirea livrării internaționale VIRELLAART",
+  },
+
+  el: {
+    projectButton: "Προετοιμάστε το αίτημα",
+    overviewEyebrow: "Άμεση επικοινωνία με τον κατασκευαστή",
+    overviewTitle: "Επικοινωνήστε απευθείας με τη VIRELLAART",
+    overviewText:
+      "Επικοινωνήστε για τιμές, μεμονωμένα προϊόντα, εξατομίκευση και διεθνή παράδοση.",
+    manufacturerLabel: "Κατασκευαστής",
+    manufacturerValue: "Πολυτελή έπιπλα VIRELLAART",
+    locationLabel: "Τοποθεσία",
+    locationValue: "Κωνσταντινούπολη, Türkiye",
+    deliveryLabel: "Παράδοση",
+    deliveryValue: "Υποστήριξη διεθνούς παράδοσης",
+    supportLabel: "Υποστήριξη",
+    supportValue: "Διεθνής εμπορική εξυπηρέτηση",
+    briefEyebrow: "Πριν επικοινωνήσετε",
+    briefTitle: "Στείλτε τα σωστά στοιχεία για ταχύτερη προσφορά",
+    briefText:
+      "Ένα σαφές αίτημα βοηθά στην προετοιμασία ακριβών πληροφοριών.",
+    briefItems: [
+      "Μοντέλο, σύνδεσμος ή φωτογραφία προϊόντος",
+      "Επιθυμητά τεμάχια και ποσότητες",
+      "Χώρα και πόλη παράδοσης",
+      "Απαιτήσεις εξατομίκευσης ή έργου",
+    ],
+    processEyebrow: "Πώς λειτουργεί",
+    processTitle: "Μια σαφής και άμεση διαδικασία",
+    steps: [
+      {
+        number: "01",
+        title: "Στείλτε το αίτημα",
+        text: "Στείλτε το μοντέλο, τα τεμάχια και τον προορισμό μέσω WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Λάβετε πληροφορίες",
+        text: "Η ομάδα μας παρέχει στοιχεία προϊόντος, τιμής και παράδοσης.",
+      },
+      {
+        number: "03",
+        title: "Επιβεβαιώστε το έργο",
+        text: "Οι τελικές λεπτομέρειες επιβεβαιώνονται πριν από την παραγγελία.",
+      },
+    ],
+    finalEyebrow: "Ξεκινήστε το έργο",
+    finalTitle: "Πολυτελή έπιπλα απευθείας από τον κατασκευαστή",
+    finalText:
+      "Ενημερώστε μας για τη συλλογή και τον τόπο παράδοσης.",
+    imageAlt: "Εσωτερικό με πολυτελή έπιπλα VIRELLAART",
+    shippingAlt: "Προετοιμασία διεθνούς παράδοσης VIRELLAART",
+  },
+
+  es: {
+    projectButton: "Preparar solicitud",
+    overviewEyebrow: "Contacto directo con el fabricante",
+    overviewTitle: "Hable directamente con VIRELLAART",
+    overviewText:
+      "Contacte con nuestro equipo para precios, productos individuales, personalización y entrega internacional.",
+    manufacturerLabel: "Fabricante",
+    manufacturerValue: "Muebles de lujo VIRELLAART",
+    locationLabel: "Ubicación",
+    locationValue: "Estambul, Türkiye",
+    deliveryLabel: "Entrega",
+    deliveryValue: "Asistencia de entrega internacional",
+    supportLabel: "Atención al cliente",
+    supportValue: "Asistencia comercial internacional",
+    briefEyebrow: "Antes de contactar",
+    briefTitle: "Envíe los datos correctos para una cotización más rápida",
+    briefText:
+      "Una solicitud clara permite preparar información más precisa.",
+    briefItems: [
+      "Modelo, enlace o fotografía del producto",
+      "Piezas y cantidades deseadas",
+      "País y ciudad de entrega",
+      "Requisitos de personalización o proyecto",
+    ],
+    processEyebrow: "Cómo funciona",
+    processTitle: "Un proceso claro y directo",
+    steps: [
+      {
+        number: "01",
+        title: "Envíe su solicitud",
+        text: "Comparta el modelo, las piezas y el destino por WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Reciba información",
+        text: "Nuestro equipo proporciona detalles de producto, precio y entrega.",
+      },
+      {
+        number: "03",
+        title: "Confirme el proyecto",
+        text: "Los detalles finales se revisan antes de iniciar el pedido.",
+      },
+    ],
+    finalEyebrow: "Comience su proyecto",
+    finalTitle: "Muebles de lujo directamente del fabricante",
+    finalText:
+      "Indíquenos la colección deseada y el lugar de entrega.",
+    imageAlt: "Interior con muebles de lujo VIRELLAART",
+    shippingAlt: "Preparación de entrega internacional VIRELLAART",
+  },
+
+  sr: {
+    projectButton: "Pripremite zahtev",
+    overviewEyebrow: "Direktan kontakt sa proizvođačem",
+    overviewTitle: "Razgovarajte direktno sa VIRELLAART",
+    overviewText:
+      "Kontaktirajte naš tim za cene, pojedinačne proizvode, prilagođavanje i međunarodnu isporuku.",
+    manufacturerLabel: "Proizvođač",
+    manufacturerValue: "VIRELLAART luksuzni nameštaj",
+    locationLabel: "Lokacija",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Isporuka",
+    deliveryValue: "Podrška za međunarodnu isporuku",
+    supportLabel: "Podrška kupcima",
+    supportValue: "Međunarodna prodajna podrška",
+    briefEyebrow: "Pre kontakta",
+    briefTitle: "Pošaljite tačne podatke za bržu ponudu",
+    briefText:
+      "Jasan zahtev omogućava pripremu preciznijih informacija.",
+    briefItems: [
+      "Model, link ili fotografija proizvoda",
+      "Željeni elementi i količine",
+      "Država i grad isporuke",
+      "Zahtevi za prilagođavanje ili projekat",
+    ],
+    processEyebrow: "Kako funkcioniše",
+    processTitle: "Jasan i direktan proces",
+    steps: [
+      {
+        number: "01",
+        title: "Pošaljite zahtev",
+        text: "Pošaljite model, elemente i destinaciju putem WhatsApp-a.",
+      },
+      {
+        number: "02",
+        title: "Primite informacije",
+        text: "Naš tim šalje detalje o proizvodu, ceni i isporuci.",
+      },
+      {
+        number: "03",
+        title: "Potvrdite projekat",
+        text: "Završni detalji se proveravaju pre početka porudžbine.",
+      },
+    ],
+    finalEyebrow: "Započnite projekat",
+    finalTitle: "Luksuzni nameštaj direktno od proizvođača",
+    finalText:
+      "Pošaljite željenu kolekciju i mesto isporuke.",
+    imageAlt: "Enterijer sa VIRELLAART luksuznim nameštajem",
+    shippingAlt: "Priprema međunarodne isporuke VIRELLAART",
+  },
+
+  kk: {
+    projectButton: "Сұранысты дайындау",
+    overviewEyebrow: "Өндірушімен тікелей байланыс",
+    overviewTitle: "VIRELLAART компаниясымен тікелей сөйлесіңіз",
+    overviewText:
+      "Бағалар, жеке өнімдер, бейімдеу және халықаралық жеткізу туралы ақпарат алу үшін хабарласыңыз.",
+    manufacturerLabel: "Өндіруші",
+    manufacturerValue: "VIRELLAART сәнді жиһазы",
+    locationLabel: "Орналасқан жері",
+    locationValue: "Стамбул, Türkiye",
+    deliveryLabel: "Жеткізу",
+    deliveryValue: "Халықаралық жеткізу қолдауы",
+    supportLabel: "Клиенттерді қолдау",
+    supportValue: "Халықаралық сату көмегі",
+    briefEyebrow: "Байланыс алдында",
+    briefTitle: "Жылдам ұсыныс үшін дұрыс ақпарат жіберіңіз",
+    briefText:
+      "Нақты сұраныс өнім мен жеткізу ақпаратын дұрыс дайындауға көмектеседі.",
+    briefItems: [
+      "Өнім моделі, сілтемесі немесе фотосуреті",
+      "Қажетті бөліктер мен саны",
+      "Жеткізу елі мен қаласы",
+      "Бейімдеу немесе жоба талаптары",
+    ],
+    processEyebrow: "Қалай жұмыс істейді",
+    processTitle: "Түсінікті және тікелей процесс",
+    steps: [
+      {
+        number: "01",
+        title: "Сұраныс жіберіңіз",
+        text: "Модельді, бөліктерді және жеткізу орнын WhatsApp арқылы жіберіңіз.",
+      },
+      {
+        number: "02",
+        title: "Ақпарат алыңыз",
+        text: "Команда өнім, баға және жеткізу туралы ақпарат береді.",
+      },
+      {
+        number: "03",
+        title: "Жобаны растаңыз",
+        text: "Соңғы мәліметтер тапсырыс басталғанға дейін тексеріледі.",
+      },
+    ],
+    finalEyebrow: "Жобаны бастаңыз",
+    finalTitle: "Сәнді жиһаз тікелей өндірушіден",
+    finalText:
+      "Қажетті коллекция мен жеткізу орнын хабарлаңыз.",
+    imageAlt: "VIRELLAART сәнді жиһаз интерьері",
+    shippingAlt: "VIRELLAART халықаралық жеткізу дайындығы",
+  },
+
+  uz: {
+    projectButton: "So‘rovni tayyorlash",
+    overviewEyebrow: "Ishlab chiqaruvchi bilan to‘g‘ridan-to‘g‘ri aloqa",
+    overviewTitle: "VIRELLAART bilan bevosita bog‘laning",
+    overviewText:
+      "Narxlar, alohida mahsulotlar, moslashtirish va xalqaro yetkazib berish haqida ma’lumot oling.",
+    manufacturerLabel: "Ishlab chiqaruvchi",
+    manufacturerValue: "VIRELLAART hashamatli mebellari",
+    locationLabel: "Manzil",
+    locationValue: "Istanbul, Türkiye",
+    deliveryLabel: "Yetkazib berish",
+    deliveryValue: "Xalqaro yetkazib berish yordami",
+    supportLabel: "Mijozlarni qo‘llab-quvvatlash",
+    supportValue: "Xalqaro savdo yordami",
+    briefEyebrow: "Bog‘lanishdan oldin",
+    briefTitle: "Tezroq taklif uchun to‘g‘ri ma’lumot yuboring",
+    briefText:
+      "Aniq so‘rov mahsulot va yetkazib berish ma’lumotlarini tayyorlashga yordam beradi.",
+    briefItems: [
+      "Mahsulot modeli, havolasi yoki rasmi",
+      "Kerakli qismlar va miqdorlar",
+      "Yetkazib berish mamlakati va shahri",
+      "Moslashtirish yoki loyiha talablari",
+    ],
+    processEyebrow: "Jarayon qanday ishlaydi",
+    processTitle: "Aniq va to‘g‘ridan-to‘g‘ri jarayon",
+    steps: [
+      {
+        number: "01",
+        title: "So‘rov yuboring",
+        text: "Model, qismlar va manzilni WhatsApp orqali yuboring.",
+      },
+      {
+        number: "02",
+        title: "Ma’lumot oling",
+        text: "Jamoamiz mahsulot, narx va yetkazib berish tafsilotlarini yuboradi.",
+      },
+      {
+        number: "03",
+        title: "Loyihani tasdiqlang",
+        text: "Buyurtmadan oldin yakuniy tafsilotlar tekshiriladi.",
+      },
+    ],
+    finalEyebrow: "Loyihani boshlang",
+    finalTitle: "Hashamatli mebel to‘g‘ridan-to‘g‘ri ishlab chiqaruvchidan",
+    finalText:
+      "Kerakli kolleksiya va yetkazib berish manzilini yuboring.",
+    imageAlt: "VIRELLAART hashamatli mebel interyeri",
+    shippingAlt: "VIRELLAART xalqaro yetkazib berish tayyorgarligi",
+  },
+
+  pt: {
+    projectButton: "Preparar pedido",
+    overviewEyebrow: "Contacto direto com o fabricante",
+    overviewTitle: "Fale diretamente com a VIRELLAART",
+    overviewText:
+      "Contacte a nossa equipa para preços, produtos individuais, personalização e entrega internacional.",
+    manufacturerLabel: "Fabricante",
+    manufacturerValue: "Mobiliário de luxo VIRELLAART",
+    locationLabel: "Localização",
+    locationValue: "Istambul, Türkiye",
+    deliveryLabel: "Entrega",
+    deliveryValue: "Apoio para entrega internacional",
+    supportLabel: "Apoio ao cliente",
+    supportValue: "Assistência comercial internacional",
+    briefEyebrow: "Antes de contactar",
+    briefTitle: "Envie os dados corretos para uma proposta mais rápida",
+    briefText:
+      "Um pedido claro permite preparar informações mais precisas.",
+    briefItems: [
+      "Modelo, ligação ou fotografia do produto",
+      "Peças e quantidades pretendidas",
+      "País e cidade de entrega",
+      "Requisitos de personalização ou projeto",
+    ],
+    processEyebrow: "Como funciona",
+    processTitle: "Um processo claro e direto",
+    steps: [
+      {
+        number: "01",
+        title: "Envie o pedido",
+        text: "Partilhe o modelo, as peças e o destino através do WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Receba as informações",
+        text: "A nossa equipa fornece detalhes do produto, preço e entrega.",
+      },
+      {
+        number: "03",
+        title: "Confirme o projeto",
+        text: "Os detalhes finais são revistos antes da encomenda.",
+      },
+    ],
+    finalEyebrow: "Comece o projeto",
+    finalTitle: "Mobiliário de luxo diretamente do fabricante",
+    finalText:
+      "Indique a coleção pretendida e o destino de entrega.",
+    imageAlt: "Interior com mobiliário de luxo VIRELLAART",
+    shippingAlt: "Preparação de entrega internacional VIRELLAART",
+  },
+
+  pl: {
+    projectButton: "Przygotuj zapytanie",
+    overviewEyebrow: "Bezpośredni kontakt z producentem",
+    overviewTitle: "Porozmawiaj bezpośrednio z VIRELLAART",
+    overviewText:
+      "Skontaktuj się z naszym zespołem w sprawie cen, pojedynczych produktów, personalizacji i dostawy międzynarodowej.",
+    manufacturerLabel: "Producent",
+    manufacturerValue: "Luksusowe meble VIRELLAART",
+    locationLabel: "Lokalizacja",
+    locationValue: "Stambuł, Türkiye",
+    deliveryLabel: "Dostawa",
+    deliveryValue: "Wsparcie dostaw międzynarodowych",
+    supportLabel: "Obsługa klienta",
+    supportValue: "Międzynarodowe wsparcie sprzedaży",
+    briefEyebrow: "Przed kontaktem",
+    briefTitle: "Prześlij właściwe dane, aby szybciej otrzymać ofertę",
+    briefText:
+      "Jasne zapytanie pozwala przygotować dokładniejsze informacje.",
+    briefItems: [
+      "Model, link do strony lub zdjęcie produktu",
+      "Wybrane elementy i liczby sztuk",
+      "Kraj i miasto dostawy",
+      "Wymagania dotyczące personalizacji lub projektu",
+    ],
+    processEyebrow: "Jak to działa",
+    processTitle: "Jasny i bezpośredni proces",
+    steps: [
+      {
+        number: "01",
+        title: "Wyślij zapytanie",
+        text: "Prześlij model, elementy i miejsce dostawy przez WhatsApp.",
+      },
+      {
+        number: "02",
+        title: "Otrzymaj informacje",
+        text: "Nasz zespół przekaże informacje o produkcie, cenie i dostawie.",
+      },
+      {
+        number: "03",
+        title: "Potwierdź projekt",
+        text: "Ostateczne szczegóły są sprawdzane przed rozpoczęciem zamówienia.",
+      },
+    ],
+    finalEyebrow: "Rozpocznij projekt",
+    finalTitle: "Luksusowe meble bezpośrednio od producenta",
+    finalText:
+      "Podaj wybraną kolekcję VIRELLAART oraz miejsce dostawy.",
+    imageAlt: "Wnętrze z luksusowymi meblami VIRELLAART",
+    shippingAlt: "Przygotowanie międzynarodowej dostawy VIRELLAART",
+  },
+};
+
+const extra = extraContent[language] ?? extraContent.en;
+
+const whatsappMessage =
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    "VIRELLAART",
+  );
+
+const whatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: translations.contact.title,
+  description: translations.contact.description,
+  url: new URL(
+    Astro.url.pathname,
+    "https://www.virellaart.com",
+  ).href,
+  about: {
+    "@type": "Organization",
+    name: "VIRELLAART",
+    url: "https://www.virellaart.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Istanbul",
+      addressCountry: "TR",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+90 553 947 86 08",
+      contactType: "sales",
+      areaServed: "Worldwide",
+    },
+  },
+};
 ---
 
 <BaseLayout
   title={translations.contact.title}
   description={translations.contact.description}
 >
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(structuredData)}
+  ></script>
 
   <section class="contact-hero">
     <div class="contact-overlay"></div>
@@ -27,85 +914,224 @@ const whatsappURL = `https://wa.me/905539478608?text=${encodeURIComponent(whatsa
 
       <h1>{translations.contact.hero}</h1>
 
-      <p>
-        {translations.contact.lead}
-      </p>
-    </div>
-  </section>
+      <p>{translations.contact.lead}</p>
 
-  <section class="contact-section">
-    <div class="contact-grid">
-
-      <div class="contact-info">
-        <span>{translations.contact.getInTouch}</span>
-
-        <h2>{translations.contact.heading}</h2>
-
-        <p>
-          {translations.contact.paragraph}
-        </p>
-
-        <div class="contact-details">
-
-          <div class="detail">
-            <small>{translations.contact.business}</small>
-            <strong>{translations.contact.businessValue}</strong>
-          </div>
-
-          <div class="detail">
-            <small>{translations.contact.whatsapp}</small>
-            <strong>{translations.contact.whatsappValue}</strong>
-          </div>
-
-          <div class="detail">
-            <small>{translations.contact.service}</small>
-            <strong>{translations.contact.serviceValue}</strong>
-          </div>
-
-          <div class="detail">
-            <small>{translations.contact.language}</small>
-            <strong>{translations.contact.languageValue}</strong>
-          </div>
-
-        </div>
-
+      <div class="hero-actions">
         <a
-          class="whatsapp-button"
+          class="primary-button"
           href={whatsappURL}
           target="_blank"
           rel="noopener noreferrer"
-          data-whatsapp-context="contact-page"
+          data-whatsapp-context="contact-hero"
+          data-cta-position="contact-hero"
+          data-product-name="VIRELLAART"
+          data-page-language={language}
         >
           {translations.contact.button}
         </a>
+
+        <a
+          class="secondary-button"
+          href="#project-brief"
+        >
+          {extra.projectButton}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-overview">
+    <div class="overview-grid">
+      <div class="overview-copy">
+        <span class="eyebrow">
+          {extra.overviewEyebrow}
+        </span>
+
+        <h2>{extra.overviewTitle}</h2>
+
+        <p>{extra.overviewText}</p>
+
+        <a
+          class="text-link"
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-whatsapp-context="contact-overview"
+          data-cta-position="contact-overview"
+          data-product-name="VIRELLAART"
+          data-page-language={language}
+        >
+          {translations.contact.button}
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
 
-      <div class="contact-image">
+      <div class="contact-details">
+        <article class="detail-card">
+          <small>{extra.manufacturerLabel}</small>
+          <strong>{extra.manufacturerValue}</strong>
+        </article>
+
+        <article class="detail-card">
+          <small>{translations.contact.whatsapp}</small>
+
+          <a
+            href={whatsappURL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {translations.contact.whatsappValue}
+          </a>
+        </article>
+
+        <article class="detail-card">
+          <small>{extra.locationLabel}</small>
+          <strong>{extra.locationValue}</strong>
+        </article>
+
+        <article class="detail-card">
+          <small>{extra.deliveryLabel}</small>
+          <strong>{extra.deliveryValue}</strong>
+        </article>
+
+        <article class="detail-card">
+          <small>{extra.supportLabel}</small>
+          <strong>{extra.supportValue}</strong>
+        </article>
+
+        <article class="detail-card">
+          <small>{translations.contact.language}</small>
+          <strong>{translations.contact.languageValue}</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="project-brief"
+    id="project-brief"
+  >
+    <div class="brief-grid">
+      <div class="brief-image">
         <img
-          src="/dining-room.webp"
-          alt={translations.contact.imageAlt}
+          src="/about-shipping.webp"
+          alt={extra.shippingAlt}
           width="1200"
-          height="1600"
+          height="1500"
           loading="lazy"
           decoding="async"
         />
       </div>
 
+      <div class="brief-copy">
+        <span class="eyebrow">
+          {extra.briefEyebrow}
+        </span>
+
+        <h2>{extra.briefTitle}</h2>
+
+        <p>{extra.briefText}</p>
+
+        <div class="brief-list">
+          {
+            extra.briefItems.map((item, index) => (
+              <div class="brief-item">
+                <span>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <p>{item}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <a
+          class="primary-button"
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-whatsapp-context="contact-project-brief"
+          data-cta-position="contact-project-brief"
+          data-product-name="VIRELLAART"
+          data-page-language={language}
+        >
+          {translations.contact.button}
+        </a>
+      </div>
     </div>
   </section>
 
+  <section class="contact-process">
+    <div class="section-heading">
+      <span class="eyebrow">
+        {extra.processEyebrow}
+      </span>
+
+      <h2>{extra.processTitle}</h2>
+    </div>
+
+    <div class="process-grid">
+      {
+        extra.steps.map((step) => (
+          <article class="process-card">
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="contact-visual">
+    <img
+      src="/dining-room.webp"
+      alt={extra.imageAlt}
+      width="1800"
+      height="1000"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <div class="visual-overlay"></div>
+
+    <div class="visual-content">
+      <span>{extra.finalEyebrow}</span>
+      <h2>{extra.finalTitle}</h2>
+      <p>{extra.finalText}</p>
+
+      <a
+        class="primary-button"
+        href={whatsappURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-whatsapp-context="contact-final-cta"
+        data-cta-position="contact-final-cta"
+        data-product-name="VIRELLAART"
+        data-page-language={language}
+      >
+        {translations.contact.button}
+      </a>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
   .contact-hero {
     position: relative;
-    min-height: 72vh;
+    min-height: 78vh;
     display: grid;
     place-items: center;
-    padding: 140px 30px 80px;
+    padding: 150px 30px 90px;
+    overflow: hidden;
     text-align: center;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.58)),
+      linear-gradient(
+        180deg,
+        rgba(17, 11, 8, 0.28),
+        rgba(12, 8, 6, 0.78)
+      ),
       url("/tv-unit.webp") center / cover no-repeat;
   }
 
@@ -115,174 +1141,474 @@ const whatsappURL = `https://wa.me/905539478608?text=${encodeURIComponent(whatsa
     background:
       radial-gradient(
         circle at center,
-        rgba(0, 0, 0, 0) 24%,
-        rgba(0, 0, 0, 0.42) 100%
+        transparent 18%,
+        rgba(8, 5, 4, 0.5) 100%
       );
   }
 
   .contact-content {
     position: relative;
     z-index: 2;
-    width: min(100%, 960px);
+    width: min(100%, 1000px);
   }
 
-  .contact-content span,
-  .contact-info > span {
+  .contact-content > span,
+  .eyebrow,
+  .visual-content > span {
     color: var(--gold);
     font-size: 11px;
     letter-spacing: 5px;
+    line-height: 1.6;
     text-transform: uppercase;
   }
 
   .contact-content h1 {
-    margin: 20px 0 28px;
+    margin: 22px 0 28px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(50px, 8vw, 108px);
+    font-size: clamp(52px, 8vw, 112px);
     font-weight: 400;
-    line-height: 1;
+    line-height: 0.98;
   }
 
-  .contact-content p {
+  .contact-content > p {
     max-width: 760px;
     margin: 0 auto;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.86);
     font-size: clamp(16px, 2vw, 20px);
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
-  .contact-section {
-    width: min(100% - 64px, var(--container));
-    margin: 0 auto;
-    padding: 120px 0;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 70px;
-  }
-
-  .contact-info h2 {
-    margin: 20px 0 28px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(40px, 5vw, 70px);
-    font-weight: 400;
-    line-height: 1.08;
-  }
-
-  .contact-info > p {
-    color: var(--gray);
-    font-size: 17px;
-    line-height: 1.9;
-  }
-
-  .contact-details {
-    margin: 42px 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .detail {
-    min-height: 130px;
+  .hero-actions {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 24px;
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 40px;
   }
 
-  .detail small {
-    margin-bottom: 10px;
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-
-  .detail strong {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
-  .whatsapp-button {
+  .primary-button,
+  .secondary-button {
+    min-height: 54px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 240px;
-    padding: 18px 28px;
-    border: 1px solid var(--gold);
-    background: var(--gold);
-    color: #090909;
-    font-size: 11px;
-    letter-spacing: 3px;
+    padding: 16px 28px;
+    font-size: 10px;
+    letter-spacing: 2.6px;
+    line-height: 1.4;
+    text-align: center;
     text-transform: uppercase;
     transition:
       transform 0.3s ease,
       background 0.3s ease,
+      border-color 0.3s ease,
       color 0.3s ease;
   }
 
-  .whatsapp-button:hover {
+  .primary-button {
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: #110c08;
+  }
+
+  .primary-button:hover {
     transform: translateY(-3px);
     background: transparent;
     color: var(--gold);
   }
 
-  .contact-image {
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+  .secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    color: #ffffff;
   }
 
-  .contact-image img {
+  .secondary-button:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .contact-overview,
+  .project-brief,
+  .contact-process {
+    width: min(100% - 64px, var(--container));
+    margin: 0 auto;
+  }
+
+  .contact-overview {
+    padding: 125px 0;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 0.88fr)
+      minmax(0, 1.12fr);
+    align-items: start;
+    gap: 80px;
+  }
+
+  .overview-copy {
+    position: sticky;
+    top: 130px;
+  }
+
+  .overview-copy h2,
+  .brief-copy h2,
+  .section-heading h2,
+  .visual-content h2 {
+    margin: 20px 0 26px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.06;
+  }
+
+  .overview-copy > p,
+  .brief-copy > p,
+  .section-heading > p {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+
+  .text-link span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .text-link:hover span {
+    transform: translateX(5px);
+  }
+
+  .contact-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(200, 169, 106, 0.24);
+    border-left: 1px solid rgba(200, 169, 106, 0.24);
+  }
+
+  .detail-card {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border-right: 1px solid rgba(200, 169, 106, 0.24);
+    border-bottom: 1px solid rgba(200, 169, 106, 0.24);
+    background:
+      linear-gradient(
+        145deg,
+        rgba(200, 169, 106, 0.045),
+        rgba(255, 255, 255, 0.01)
+      );
+  }
+
+  .detail-card small {
+    margin-bottom: 13px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 2.6px;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  .detail-card strong,
+  .detail-card a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .detail-card a:hover {
+    color: var(--gold);
+  }
+
+  .project-brief {
+    padding: 30px 0 130px;
+  }
+
+  .brief-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 0.92fr)
+      minmax(0, 1.08fr);
+    align-items: center;
+    gap: 80px;
+  }
+
+  .brief-image {
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 106, 0.22);
+  }
+
+  .brief-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 14px solid rgba(15, 10, 7, 0.16);
+    pointer-events: none;
+  }
+
+  .brief-image img {
     width: 100%;
     height: 760px;
     object-fit: cover;
-    object-position: center;
   }
 
-  @media (max-width: 900px) {
-    .contact-section {
-      width: min(100% - 36px, var(--container));
+  .brief-list {
+    margin: 38px 0 42px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .brief-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 21px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .brief-item span {
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+  }
+
+  .brief-item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .contact-process {
+    padding: 105px 0 135px;
+    border-top: 1px solid rgba(200, 169, 106, 0.18);
+  }
+
+  .section-heading {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    text-align: center;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid rgba(200, 169, 106, 0.24);
+    border-left: 1px solid rgba(200, 169, 106, 0.24);
+  }
+
+  .process-card {
+    min-height: 330px;
+    padding: 42px;
+    border-right: 1px solid rgba(200, 169, 106, 0.24);
+    border-bottom: 1px solid rgba(200, 169, 106, 0.24);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(200, 169, 106, 0.055),
+        rgba(16, 11, 8, 0)
+      );
+  }
+
+  .process-card > span {
+    display: block;
+    margin-bottom: 60px;
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+  }
+
+  .process-card h3 {
+    margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .process-card p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .contact-visual {
+    position: relative;
+    min-height: 680px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 90px 30px;
+  }
+
+  .contact-visual > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .visual-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10, 7, 5, 0.52),
+        rgba(10, 7, 5, 0.82)
+      );
+  }
+
+  .visual-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 880px);
+    text-align: center;
+  }
+
+  .visual-content p {
+    max-width: 720px;
+    margin: 0 auto 38px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  @media (max-width: 1000px) {
+    .overview-grid,
+    .brief-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .overview-copy {
+      position: static;
+    }
+
+    .brief-image {
+      min-height: 620px;
+    }
+
+    .brief-image img {
+      height: 620px;
+    }
+
+    .process-card {
+      padding: 34px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .contact-hero {
+      min-height: 72vh;
+      padding: 130px 22px 72px;
+    }
+
+    .contact-overview,
+    .project-brief,
+    .contact-process {
+      width: min(100% - 32px, var(--container));
+    }
+
+    .contact-overview {
       padding: 90px 0;
     }
 
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 44px;
+    .project-brief {
+      padding: 10px 0 95px;
     }
 
-    .contact-image img {
-      height: 540px;
+    .contact-process {
+      padding: 80px 0 95px;
+    }
+
+    .contact-details,
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .detail-card {
+      min-height: 135px;
+      padding: 25px;
+    }
+
+    .brief-image,
+    .brief-image img {
+      min-height: 500px;
+      height: 500px;
+    }
+
+    .process-card {
+      min-height: auto;
+      padding: 30px;
+    }
+
+    .process-card > span {
+      margin-bottom: 35px;
+    }
+
+    .contact-visual {
+      min-height: 600px;
+      padding: 80px 22px;
     }
   }
 
-  @media (max-width: 560px) {
-    .contact-hero {
-      min-height: 68vh;
-      padding: 120px 20px 60px;
+  @media (max-width: 520px) {
+    .contact-content h1 {
+      font-size: clamp(45px, 15vw, 68px);
     }
 
-    .contact-section {
-      width: min(100% - 24px, var(--container));
-      padding: 72px 0;
+    .hero-actions {
+      flex-direction: column;
     }
 
-    .contact-details {
-      grid-template-columns: 1fr;
+    .primary-button,
+    .secondary-button {
+      width: 100%;
     }
 
-    .contact-image img {
+    .overview-copy h2,
+    .brief-copy h2,
+    .section-heading h2,
+    .visual-content h2 {
+      font-size: clamp(36px, 11vw, 52px);
+    }
+
+    .brief-image,
+    .brief-image img {
+      min-height: 430px;
       height: 430px;
     }
 
-    .whatsapp-button {
-      width: 100%;
+    .brief-item {
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+    }
+
+    .contact-visual {
+      min-height: 560px;
     }
   }
 </style>
