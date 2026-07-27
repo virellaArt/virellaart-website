@@ -1,17 +1,21 @@
 ---
 import HomePage from "../index.astro";
 import AboutPage from "../about.astro";
+import ManufacturingPage from "../manufacturing.astro";
 import ContactPage from "../contact.astro";
 import LivingRoomsPage from "../living-rooms.astro";
 import DiningRoomsPage from "../dining-rooms.astro";
 import BedroomsPage from "../bedrooms.astro";
 import TVUnitsPage from "../tv-units.astro";
+
 import ProductTemplate from "../../components/ProductTemplate.astro";
 import { products } from "../../data/products";
+
 import {
   isLanguage,
   localizedLanguageCodes,
 } from "../../i18n/config";
+
 import {
   allRoutes,
   productRoutes,
@@ -37,6 +41,7 @@ if (!isLanguage(language)) {
 
 const productKey =
   productRoutes[path as keyof typeof productRoutes];
+
 const product = productKey
   ? products[productKey as keyof typeof products]
   : undefined;
@@ -44,6 +49,7 @@ const product = productKey
 
 {path === "" && <HomePage />}
 {path === "about" && <AboutPage />}
+{path === "manufacturing" && <ManufacturingPage />}
 {path === "contact" && <ContactPage />}
 {path === "living-rooms" && <LivingRoomsPage />}
 {path === "dining-rooms" && <DiningRoomsPage />}

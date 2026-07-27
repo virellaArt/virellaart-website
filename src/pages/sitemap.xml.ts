@@ -26,6 +26,7 @@ const staticRouteImages: Record<string, string[]> = {
   "bedrooms": ["/bedroom.webp"],
   "tv-units": ["/tv-unit.webp"],
   "about": ["/about-factory.webp"],
+  "manufacturing": ["/about-factory.webp"],
   "contact": ["/dining-room.webp"],
 };
 

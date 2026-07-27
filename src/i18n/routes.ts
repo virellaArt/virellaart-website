@@ -52,6 +52,7 @@ export const staticRoutes = [
   "bedrooms",
   "tv-units",
   "about",
+  "manufacturing",
   "contact",
 ] as const;
 

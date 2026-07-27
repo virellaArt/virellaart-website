@@ -9,21 +9,67 @@ import {
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
+
+const manufacturingLabels: Record<
+  (typeof languageCodes)[number],
+  string
+> = {
+  en: "Manufacturing",
+  tr: "Üretim",
+  de: "Produktion",
+  fr: "Fabrication",
+  it: "Produzione",
+  ru: "Производство",
+  ar: "التصنيع",
+  bg: "Производство",
+  ro: "Producție",
+  el: "Παραγωγή",
+  es: "Fabricación",
+  sr: "Proizvodnja",
+  kk: "Өндіріс",
+  uz: "Ishlab chiqarish",
+  pt: "Produção",
+  pl: "Produkcja",
+};
 ---
 
 <nav class="navbar">
   <div class="navbar-inner">
-
     <a href={localizedPath("/", language)} class="logo">
       VIRELLAART
     </a>
 
     <ul class="menu">
-  <li><a href={localizedPath("/", language)}>{translations.nav.home}</a></li>
-  <li><a href={`${localizedPath("/", language)}#collections`}>{translations.nav.collections}</a></li>
-  <li><a href={localizedPath("/about", language)}>{translations.nav.about}</a></li>
-  <li><a href={localizedPath("/contact", language)}>{translations.nav.contact}</a></li>
-</ul>
+      <li>
+        <a href={localizedPath("/", language)}>
+          {translations.nav.home}
+        </a>
+      </li>
+
+      <li>
+        <a href={`${localizedPath("/", language)}#collections`}>
+          {translations.nav.collections}
+        </a>
+      </li>
+
+      <li>
+        <a href={localizedPath("/about", language)}>
+          {translations.nav.about}
+        </a>
+      </li>
+
+      <li>
+        <a href={localizedPath("/manufacturing", language)}>
+          {manufacturingLabels[language]}
+        </a>
+      </li>
+
+      <li>
+        <a href={localizedPath("/contact", language)}>
+          {translations.nav.contact}
+        </a>
+      </li>
+    </ul>
 
     <details class="language-picker">
       <summary aria-label={translations.nav.language}>
@@ -47,7 +93,6 @@ const translations = getTranslations(language);
         }
       </div>
     </details>
-
   </div>
 </nav>
 
@@ -70,9 +115,11 @@ const translations = getTranslations(language);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
   }
 
   .logo {
+    flex-shrink: 0;
     color: #ffffff;
     font-size: 21px;
     font-weight: 500;
@@ -82,16 +129,24 @@ const translations = getTranslations(language);
   .menu {
     display: flex;
     align-items: center;
-    gap: 42px;
+    justify-content: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
     list-style: none;
+  }
+
+  .menu li {
+    flex-shrink: 0;
   }
 
   .menu a {
     position: relative;
     color: rgba(255, 255, 255, 0.88);
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 1.7px;
     text-transform: uppercase;
+    white-space: nowrap;
     transition: color 0.3s ease;
   }
 
@@ -116,6 +171,7 @@ const translations = getTranslations(language);
 
   .language-picker {
     position: relative;
+    flex-shrink: 0;
   }
 
   .language-picker summary {
@@ -185,6 +241,37 @@ const translations = getTranslations(language);
     color: var(--gold);
     font-size: 10px;
     letter-spacing: 1.5px;
+  }
+
+  @media (max-width: 1120px) {
+    .navbar-inner {
+      width: min(100% - 36px, 1600px);
+    }
+
+    .menu {
+      gap: 21px;
+    }
+
+    .menu a {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+    }
+
+    .logo {
+      font-size: 19px;
+      letter-spacing: 4px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .menu {
+      gap: 14px;
+    }
+
+    .menu a {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+    }
   }
 
   @media (max-width: 760px) {
