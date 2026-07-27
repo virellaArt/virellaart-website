@@ -1404,4 +1404,32 @@ sultanLiving: {
     },
   ],
 },
+sultanSofa: {
+  name: "Sultan Sofa",
+
+  category: "living-rooms",
+
+  images: [
+    "/sultansofagreen-01.webp",
+    "/sultansofagreen-02.webp",
+    "/sultansofagreen-03.webp",
+    "/sultansofagreen-04.webp",
+    "/sultansofagreen-05.webp",
+  ],
+
+  description:
+    "Sultan Sofa by VIRELLAART is a luxury classic living room collection designed for elegant villas and refined interiors. Featuring timeless proportions, sophisticated details and exceptional craftsmanship, this exclusive Turkish luxury furniture collection creates a distinguished atmosphere for premium residential spaces worldwide.",
+
+  prices: [
+    {
+      label: "Sofa Set (3+3+1+1)",
+      price: "$9,800",
+      featured: true,
+    },
+    {
+      label: "Center Table",
+      price: "$1,450",
+    },
+  ],
+},
 };
