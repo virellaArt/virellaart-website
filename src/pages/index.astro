@@ -8,28 +8,307 @@ import {
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
-const whatsappMessage = translations.product.whatsappMessage.replace(
-  "{product}",
-  "VIRELLAART",
-);
+
+const whatsappMessage =
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    "VIRELLAART",
+  );
+
 const whatsappURL =
   `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
+
+type WhyChooseContent = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  manufacturerTitle: string;
+  manufacturerText: string;
+  customizationTitle: string;
+  customizationText: string;
+  manufacturingButton: string;
+  contactButton: string;
+  location: string;
+};
+
+const whyChooseContent: Record<string, WhyChooseContent> = {
+  en: {
+    eyebrow: "Why Choose VIRELLAART",
+    title: "Created With Purpose. Made for Exceptional Interiors.",
+    intro:
+      "VIRELLAART combines distinctive furniture design, direct manufacturer communication and international project support for customers seeking refined and memorable interiors.",
+    manufacturerTitle: "Direct Manufacturer",
+    manufacturerText:
+      "Communicate directly with the VIRELLAART team in Istanbul for product information, collection pricing and order requirements.",
+    customizationTitle: "Customization Support",
+    customizationText:
+      "Selected models and project requirements can be reviewed according to your interior concept and order needs.",
+    manufacturingButton: "Explore Manufacturing",
+    contactButton: "Contact Our Team",
+    location: "Istanbul, Türkiye",
+  },
+
+  tr: {
+    eyebrow: "Neden VIRELLAART?",
+    title: "Özenle Tasarlanır. Seçkin Mekânlar İçin Üretilir.",
+    intro:
+      "VIRELLAART; özgün mobilya tasarımını, doğrudan üretici iletişimini ve uluslararası proje desteğini seçkin iç mekânlar arayan müşterilerle buluşturur.",
+    manufacturerTitle: "Doğrudan Üretici",
+    manufacturerText:
+      "Ürün bilgileri, koleksiyon fiyatları ve sipariş gereksinimleri için İstanbul’daki VIRELLAART ekibiyle doğrudan iletişim kurun.",
+    customizationTitle: "Kişiselleştirme Desteği",
+    customizationText:
+      "Seçilen modeller ve proje gereksinimleri, iç mekân konseptinize ve sipariş ihtiyaçlarınıza göre değerlendirilir.",
+    manufacturingButton: "Üretimimizi İnceleyin",
+    contactButton: "Ekibimizle İletişime Geçin",
+    location: "İstanbul, Türkiye",
+  },
+
+  de: {
+    eyebrow: "Warum VIRELLAART?",
+    title: "Mit Anspruch gestaltet. Für außergewöhnliche Räume gefertigt.",
+    intro:
+      "VIRELLAART verbindet unverwechselbares Möbeldesign, direkten Herstellerkontakt und internationale Projektunterstützung.",
+    manufacturerTitle: "Direkter Hersteller",
+    manufacturerText:
+      "Kontaktieren Sie das VIRELLAART-Team in Istanbul direkt für Produktinformationen, Preise und Bestellanforderungen.",
+    customizationTitle: "Individuelle Anpassung",
+    customizationText:
+      "Ausgewählte Modelle und Projektanforderungen können entsprechend Ihrem Einrichtungskonzept geprüft werden.",
+    manufacturingButton: "Produktion entdecken",
+    contactButton: "Unser Team kontaktieren",
+    location: "Istanbul, Türkiye",
+  },
+
+  fr: {
+    eyebrow: "Pourquoi VIRELLAART ?",
+    title: "Conçu avec intention. Fabriqué pour des intérieurs d’exception.",
+    intro:
+      "VIRELLAART associe design distinctif, communication directe avec le fabricant et accompagnement de projets internationaux.",
+    manufacturerTitle: "Fabricant direct",
+    manufacturerText:
+      "Échangez directement avec l’équipe VIRELLAART à Istanbul pour les informations, les prix et les exigences de commande.",
+    customizationTitle: "Personnalisation",
+    customizationText:
+      "Les modèles sélectionnés et les exigences du projet peuvent être étudiés selon votre concept intérieur.",
+    manufacturingButton: "Découvrir la fabrication",
+    contactButton: "Contacter notre équipe",
+    location: "Istanbul, Türkiye",
+  },
+
+  it: {
+    eyebrow: "Perché scegliere VIRELLAART",
+    title: "Progettato con intenzione. Realizzato per interni eccezionali.",
+    intro:
+      "VIRELLAART unisce design distintivo, contatto diretto con il produttore e supporto per progetti internazionali.",
+    manufacturerTitle: "Produttore diretto",
+    manufacturerText:
+      "Comunica direttamente con il team VIRELLAART di Istanbul per informazioni, prezzi e requisiti dell’ordine.",
+    customizationTitle: "Supporto alla personalizzazione",
+    customizationText:
+      "I modelli selezionati e le esigenze del progetto possono essere valutati in base al tuo concept.",
+    manufacturingButton: "Scopri la produzione",
+    contactButton: "Contatta il nostro team",
+    location: "Istanbul, Türkiye",
+  },
+
+  ru: {
+    eyebrow: "Почему VIRELLAART",
+    title: "Продуманный дизайн. Производство для исключительных интерьеров.",
+    intro:
+      "VIRELLAART объединяет выразительный дизайн мебели, прямое общение с производителем и поддержку международных проектов.",
+    manufacturerTitle: "Прямой производитель",
+    manufacturerText:
+      "Свяжитесь напрямую с командой VIRELLAART в Стамбуле для получения информации, цен и условий заказа.",
+    customizationTitle: "Поддержка персонализации",
+    customizationText:
+      "Выбранные модели и требования проекта рассматриваются с учётом концепции вашего интерьера.",
+    manufacturingButton: "Посмотреть производство",
+    contactButton: "Связаться с командой",
+    location: "Стамбул, Türkiye",
+  },
+
+  ar: {
+    eyebrow: "لماذا VIRELLAART",
+    title: "تصميم هادف وصناعة تليق بالمساحات الاستثنائية.",
+    intro:
+      "تجمع VIRELLAART بين تصميم الأثاث المميز والتواصل المباشر مع المصنّع ودعم المشاريع الدولية.",
+    manufacturerTitle: "تواصل مباشر مع المصنّع",
+    manufacturerText:
+      "تواصل مباشرة مع فريق VIRELLAART في إسطنبول للحصول على معلومات المنتجات والأسعار ومتطلبات الطلب.",
+    customizationTitle: "دعم التخصيص",
+    customizationText:
+      "يمكن مراجعة الموديلات المختارة ومتطلبات المشروع بما يتناسب مع مفهوم التصميم الداخلي.",
+    manufacturingButton: "اكتشف التصنيع",
+    contactButton: "تواصل مع فريقنا",
+    location: "إسطنبول، Türkiye",
+  },
+
+  bg: {
+    eyebrow: "Защо VIRELLAART",
+    title: "Създадено с идея. Произведено за изключителни интериори.",
+    intro:
+      "VIRELLAART съчетава отличителен дизайн, директен контакт с производителя и подкрепа за международни проекти.",
+    manufacturerTitle: "Директен производител",
+    manufacturerText:
+      "Свържете се директно с екипа на VIRELLAART в Истанбул за информация, цени и изисквания.",
+    customizationTitle: "Персонализация",
+    customizationText:
+      "Избраните модели и проектни изисквания могат да бъдат разгледани според вашия интериор.",
+    manufacturingButton: "Разгледайте производството",
+    contactButton: "Свържете се с нас",
+    location: "Истанбул, Türkiye",
+  },
+
+  ro: {
+    eyebrow: "De ce VIRELLAART",
+    title: "Creat cu intenție. Fabricat pentru interioare excepționale.",
+    intro:
+      "VIRELLAART combină designul distinctiv, contactul direct cu producătorul și sprijinul pentru proiecte internaționale.",
+    manufacturerTitle: "Producător direct",
+    manufacturerText:
+      "Comunicați direct cu echipa VIRELLAART din Istanbul pentru informații, prețuri și cerințe de comandă.",
+    customizationTitle: "Personalizare",
+    customizationText:
+      "Modelele selectate și cerințele proiectului pot fi evaluate în funcție de conceptul interior.",
+    manufacturingButton: "Descoperiți producția",
+    contactButton: "Contactați echipa",
+    location: "Istanbul, Türkiye",
+  },
+
+  el: {
+    eyebrow: "Γιατί VIRELLAART",
+    title: "Σχεδιασμένο με σκοπό. Κατασκευασμένο για εξαιρετικούς χώρους.",
+    intro:
+      "Η VIRELLAART συνδυάζει ιδιαίτερο σχεδιασμό, άμεση επικοινωνία με τον κατασκευαστή και διεθνή υποστήριξη έργων.",
+    manufacturerTitle: "Άμεσος κατασκευαστής",
+    manufacturerText:
+      "Επικοινωνήστε απευθείας με την ομάδα VIRELLAART στην Κωνσταντινούπολη για πληροφορίες και τιμές.",
+    customizationTitle: "Υποστήριξη εξατομίκευσης",
+    customizationText:
+      "Επιλεγμένα μοντέλα και απαιτήσεις έργου μπορούν να αξιολογηθούν σύμφωνα με τον χώρο σας.",
+    manufacturingButton: "Δείτε την παραγωγή",
+    contactButton: "Επικοινωνήστε μαζί μας",
+    location: "Κωνσταντινούπολη, Türkiye",
+  },
+
+  es: {
+    eyebrow: "Por qué elegir VIRELLAART",
+    title: "Diseñado con intención. Fabricado para interiores excepcionales.",
+    intro:
+      "VIRELLAART combina diseño distintivo, contacto directo con el fabricante y asistencia para proyectos internacionales.",
+    manufacturerTitle: "Fabricante directo",
+    manufacturerText:
+      "Comuníquese directamente con el equipo VIRELLAART en Estambul para información, precios y requisitos.",
+    customizationTitle: "Personalización",
+    customizationText:
+      "Los modelos seleccionados y las necesidades del proyecto pueden evaluarse según su concepto interior.",
+    manufacturingButton: "Descubrir la fabricación",
+    contactButton: "Contactar con el equipo",
+    location: "Estambul, Türkiye",
+  },
+
+  sr: {
+    eyebrow: "Zašto VIRELLAART",
+    title: "Dizajnirano sa namerom. Proizvedeno za izuzetne enterijere.",
+    intro:
+      "VIRELLAART kombinuje prepoznatljiv dizajn, direktan kontakt sa proizvođačem i podršku međunarodnim projektima.",
+    manufacturerTitle: "Direktan proizvođač",
+    manufacturerText:
+      "Kontaktirajte VIRELLAART tim u Istanbulu za informacije o proizvodima, cenama i zahtevima.",
+    customizationTitle: "Podrška za prilagođavanje",
+    customizationText:
+      "Odabrani modeli i zahtevi projekta mogu se razmotriti prema vašem konceptu enterijera.",
+    manufacturingButton: "Pogledajte proizvodnju",
+    contactButton: "Kontaktirajte naš tim",
+    location: "Istanbul, Türkiye",
+  },
+
+  kk: {
+    eyebrow: "Неліктен VIRELLAART",
+    title: "Мақсатпен жасалған. Ерекше интерьерлер үшін өндірілген.",
+    intro:
+      "VIRELLAART ерекше дизайнды, өндірушімен тікелей байланысты және халықаралық жоба қолдауын біріктіреді.",
+    manufacturerTitle: "Тікелей өндіруші",
+    manufacturerText:
+      "Өнім, баға және тапсырыс туралы ақпарат үшін Стамбулдағы VIRELLAART командасымен тікелей байланысыңыз.",
+    customizationTitle: "Бейімдеу қолдауы",
+    customizationText:
+      "Таңдалған модельдер мен жоба талаптары интерьер тұжырымдамасына сәйкес қарастырылады.",
+    manufacturingButton: "Өндірісті қараңыз",
+    contactButton: "Командамен байланысу",
+    location: "Стамбул, Türkiye",
+  },
+
+  uz: {
+    eyebrow: "Nega VIRELLAART",
+    title: "Maqsad bilan yaratiladi. Betakror interyerlar uchun ishlab chiqariladi.",
+    intro:
+      "VIRELLAART o‘ziga xos dizayn, ishlab chiqaruvchi bilan bevosita aloqa va xalqaro loyiha yordamini birlashtiradi.",
+    manufacturerTitle: "Bevosita ishlab chiqaruvchi",
+    manufacturerText:
+      "Mahsulot, narx va buyurtma ma’lumotlari uchun Istanbuldagi VIRELLAART jamoasi bilan bog‘laning.",
+    customizationTitle: "Moslashtirish yordami",
+    customizationText:
+      "Tanlangan modellar va loyiha talablari interyer konsepsiyasiga muvofiq ko‘rib chiqiladi.",
+    manufacturingButton: "Ishlab chiqarishni ko‘ring",
+    contactButton: "Jamoamiz bilan bog‘laning",
+    location: "Istanbul, Türkiye",
+  },
+
+  pt: {
+    eyebrow: "Porquê escolher a VIRELLAART",
+    title: "Criado com intenção. Produzido para interiores excecionais.",
+    intro:
+      "A VIRELLAART combina design distinto, contacto direto com o fabricante e apoio a projetos internacionais.",
+    manufacturerTitle: "Fabricante direto",
+    manufacturerText:
+      "Comunique diretamente com a equipa VIRELLAART em Istambul para informações, preços e requisitos.",
+    customizationTitle: "Personalização",
+    customizationText:
+      "Os modelos selecionados e requisitos do projeto podem ser avaliados de acordo com o seu conceito.",
+    manufacturingButton: "Conhecer a produção",
+    contactButton: "Contactar a equipa",
+    location: "Istambul, Türkiye",
+  },
+
+  pl: {
+    eyebrow: "Dlaczego VIRELLAART",
+    title: "Projektowane z myślą. Produkowane dla wyjątkowych wnętrz.",
+    intro:
+      "VIRELLAART łączy charakterystyczne wzornictwo, bezpośredni kontakt z producentem i wsparcie projektów międzynarodowych.",
+    manufacturerTitle: "Bezpośredni producent",
+    manufacturerText:
+      "Skontaktuj się bezpośrednio z zespołem VIRELLAART w Stambule w sprawie informacji, cen i zamówień.",
+    customizationTitle: "Personalizacja",
+    customizationText:
+      "Wybrane modele i wymagania projektu mogą zostać ocenione zgodnie z koncepcją wnętrza.",
+    manufacturingButton: "Poznaj produkcję",
+    contactButton: "Skontaktuj się z zespołem",
+    location: "Stambuł, Türkiye",
+  },
+};
+
+const why = whyChooseContent[language] ?? whyChooseContent.en;
 ---
 
 <BaseLayout
   title={translations.home.title}
   description={translations.home.description}
 >
-
   <section id="home" class="hero">
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <span class="eyebrow">{translations.home.eyebrow}</span>
+      <span class="eyebrow">
+        {translations.home.eyebrow}
+      </span>
 
       <h1>VIRELLAART</h1>
 
-      <p class="hero-title-keyword">{translations.home.title}</p>
+      <p class="hero-title-keyword">
+        {translations.home.title}
+      </p>
 
       <p class="hero-lead">
         {translations.home.lead}
@@ -39,12 +318,16 @@ const whatsappURL =
         <a href="#collections" class="hero-button">
           {translations.home.button}
         </a>
+
         <a
           href={whatsappURL}
           class="hero-button hero-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           data-whatsapp-context="home-hero"
+          data-cta-position="home-hero"
+          data-product-name="VIRELLAART"
+          data-page-language={language}
         >
           {translations.product.whatsapp}
         </a>
@@ -52,39 +335,55 @@ const whatsappURL =
     </div>
   </section>
 
-  <section class="sales-signals" aria-label={translations.contact.service}>
+  <section
+    class="sales-signals"
+    aria-label={translations.contact.service}
+  >
     <article>
       <span>01</span>
-      <strong>{translations.product.craftsmanship}</strong>
-      <p>{translations.product.craftsmanshipText}</p>
+      <strong>
+        {translations.product.craftsmanship}
+      </strong>
+      <p>
+        {translations.product.craftsmanshipText}
+      </p>
     </article>
+
     <article>
       <span>02</span>
-      <strong>{translations.product.worldwideDelivery}</strong>
-      <p>{translations.product.worldwideDeliveryText}</p>
+      <strong>
+        {translations.product.worldwideDelivery}
+      </strong>
+      <p>
+        {translations.product.worldwideDeliveryText}
+      </p>
     </article>
+
     <article>
       <span>03</span>
-      <strong>{translations.contact.languageValue}</strong>
-      <p>{translations.contact.paragraph}</p>
+      <strong>
+        {translations.contact.languageValue}
+      </strong>
+      <p>
+        {translations.contact.paragraph}
+      </p>
     </article>
   </section>
 
   <section id="collections" class="collections">
-
     <div class="section-heading">
       <span>{translations.home.discover}</span>
 
       <h2>{translations.home.heading}</h2>
 
-      <p>
-        {translations.home.intro}
-      </p>
+      <p>{translations.home.intro}</p>
     </div>
 
     <div class="collection-grid">
-
-      <a href={localizedPath("/living-rooms", language)} class="collection-card living-room">
+      <a
+        href={localizedPath("/living-rooms", language)}
+        class="collection-card living-room"
+      >
         <div class="card-overlay"></div>
 
         <div class="card-content">
@@ -94,7 +393,10 @@ const whatsappURL =
         </div>
       </a>
 
-      <a href={localizedPath("/dining-rooms", language)} class="collection-card dining-room">
+      <a
+        href={localizedPath("/dining-rooms", language)}
+        class="collection-card dining-room"
+      >
         <div class="card-overlay"></div>
 
         <div class="card-content">
@@ -104,7 +406,10 @@ const whatsappURL =
         </div>
       </a>
 
-      <a href={localizedPath("/bedrooms", language)} class="collection-card bedroom">
+      <a
+        href={localizedPath("/bedrooms", language)}
+        class="collection-card bedroom"
+      >
         <div class="card-overlay"></div>
 
         <div class="card-content">
@@ -114,7 +419,10 @@ const whatsappURL =
         </div>
       </a>
 
-      <a href={localizedPath("/tv-units", language)} class="collection-card tv-unit">
+      <a
+        href={localizedPath("/tv-units", language)}
+        class="collection-card tv-unit"
+      >
         <div class="card-overlay"></div>
 
         <div class="card-content">
@@ -123,7 +431,6 @@ const whatsappURL =
           <p>{translations.home.discoverCollection}</p>
         </div>
       </a>
-
     </div>
   </section>
 
@@ -141,31 +448,144 @@ const whatsappURL =
 
     <div class="brand-story-copy">
       <span>{translations.about.story}</span>
+
       <h2>{translations.about.heading}</h2>
+
       <p>{translations.about.paragraphOne}</p>
+
       <p>{translations.about.paragraphTwo}</p>
+
       <a href={localizedPath("/about", language)}>
         {translations.nav.about}
       </a>
     </div>
   </section>
 
+  <section class="why-choose">
+    <div class="why-grid">
+      <div class="why-image">
+        <img
+          src="/about-factory.webp"
+          alt={translations.about.imageAlt}
+          width="1200"
+          height="1500"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="why-image-overlay"></div>
+
+        <div class="why-location">
+          <span>VIRELLAART</span>
+          <strong>{why.location}</strong>
+        </div>
+      </div>
+
+      <div class="why-content">
+        <span class="why-eyebrow">
+          {why.eyebrow}
+        </span>
+
+        <h2>{why.title}</h2>
+
+        <p class="why-intro">
+          {why.intro}
+        </p>
+
+        <div class="why-list">
+          <article class="why-item">
+            <span>01</span>
+
+            <div>
+              <h3>{why.manufacturerTitle}</h3>
+              <p>{why.manufacturerText}</p>
+            </div>
+          </article>
+
+          <article class="why-item">
+            <span>02</span>
+
+            <div>
+              <h3>{why.customizationTitle}</h3>
+              <p>{why.customizationText}</p>
+            </div>
+          </article>
+
+          <article class="why-item">
+            <span>03</span>
+
+            <div>
+              <h3>
+                {translations.product.craftsmanship}
+              </h3>
+
+              <p>
+                {translations.product.craftsmanshipText}
+              </p>
+            </div>
+          </article>
+
+          <article class="why-item">
+            <span>04</span>
+
+            <div>
+              <h3>
+                {translations.product.worldwideDelivery}
+              </h3>
+
+              <p>
+                {translations.product.worldwideDeliveryText}
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="why-actions">
+          <a
+            class="why-primary"
+            href={localizedPath(
+              "/manufacturing",
+              language,
+            )}
+          >
+            {why.manufacturingButton}
+          </a>
+
+          <a
+            class="why-secondary"
+            href={localizedPath(
+              "/contact",
+              language,
+            )}
+          >
+            {why.contactButton}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="consultation">
     <div>
       <span>{translations.contact.eyebrow}</span>
+
       <h2>{translations.contact.hero}</h2>
+
       <p>{translations.contact.lead}</p>
     </div>
+
     <a
       href={whatsappURL}
       target="_blank"
       rel="noopener noreferrer"
       data-whatsapp-context="home-consultation"
+      data-cta-position="home-consultation"
+      data-product-name="VIRELLAART"
+      data-page-language={language}
     >
       {translations.contact.button}
     </a>
   </section>
-
 </BaseLayout>
 
 <style>
@@ -222,6 +642,16 @@ const whatsappURL =
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   }
 
+  .hero-title-keyword {
+    margin: -7px auto 20px;
+    color: var(--gold-light);
+    font-size: clamp(11px, 1.25vw, 15px);
+    font-weight: 500;
+    letter-spacing: 4px;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
   .hero-lead {
     max-width: 720px;
     margin: 0 auto 42px;
@@ -231,15 +661,23 @@ const whatsappURL =
     text-shadow: 0 3px 16px rgba(0, 0, 0, 0.65);
   }
 
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
   .hero-button {
+    min-width: 245px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 245px;
     padding: 18px 30px;
     border: 1px solid rgba(255, 255, 255, 0.72);
-    color: #ffffff;
     background: rgba(0, 0, 0, 0.18);
+    color: #ffffff;
     backdrop-filter: blur(5px);
     font-size: 11px;
     letter-spacing: 3px;
@@ -251,34 +689,23 @@ const whatsappURL =
       transform 0.35s ease;
   }
 
-  .hero-title-keyword {
-    margin: -7px auto 20px;
-    color: var(--gold-light);
-    font-size: clamp(11px, 1.25vw, 15px);
-    font-weight: 500;
-    letter-spacing: 4px;
-    line-height: 1.5;
-    text-transform: uppercase;
-  }
-
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
   .hero-whatsapp {
     border-color: #2ac66d;
     background: rgba(20, 132, 71, 0.82);
   }
 
+  .hero-button:hover {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #090909;
+    transform: translateY(-3px);
+  }
+
   .sales-signals {
-    width: min(100% - 64px, var(--container));
-    margin: -40px auto 0;
     position: relative;
     z-index: 3;
+    width: min(100% - 64px, var(--container));
+    margin: -40px auto 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border: 1px solid rgba(201, 164, 93, 0.3);
@@ -320,13 +747,6 @@ const whatsappURL =
     color: rgba(245, 239, 230, 0.62);
     font-size: 13px;
     line-height: 1.7;
-  }
-
-  .hero-button:hover {
-    border-color: var(--gold);
-    background: var(--gold);
-    color: #090909;
-    transform: translateY(-3px);
   }
 
   .collections {
@@ -375,11 +795,11 @@ const whatsappURL =
     align-items: flex-end;
     padding: 42px;
     overflow: hidden;
+    isolation: isolate;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background-color: #111111;
     background-position: center;
     background-size: cover;
-    isolation: isolate;
     transition:
       transform 0.5s ease,
       border-color 0.5s ease,
@@ -555,9 +975,201 @@ const whatsappURL =
     text-transform: uppercase;
   }
 
+  .why-choose {
+    padding: 130px 0;
+    border-top: 1px solid rgba(200, 169, 106, 0.16);
+    border-bottom: 1px solid rgba(200, 169, 106, 0.16);
+    background:
+      radial-gradient(
+        circle at 12% 50%,
+        rgba(200, 169, 106, 0.075),
+        transparent 33%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(27, 19, 14, 0.78),
+        rgba(13, 10, 8, 0.92)
+      );
+  }
+
+  .why-grid {
+    width: min(100% - 64px, var(--container));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(55px, 7vw, 110px);
+  }
+
+  .why-image {
+    position: relative;
+    min-height: 850px;
+    overflow: hidden;
+    border: 1px solid rgba(200, 169, 106, 0.25);
+  }
+
+  .why-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .why-image-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(9, 6, 4, 0.05),
+        rgba(9, 6, 4, 0.7)
+      );
+  }
+
+  .why-location {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10, 7, 5, 0.68);
+    backdrop-filter: blur(12px);
+  }
+
+  .why-location span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .why-location strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .why-eyebrow {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  .why-content > h2 {
+    margin: 20px 0 27px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 5.5vw, 78px);
+    font-weight: 400;
+    line-height: 1.04;
+  }
+
+  .why-intro {
+    max-width: 760px;
+    margin: 0;
+    color: rgba(245, 239, 230, 0.68);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .why-list {
+    margin-top: 45px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .why-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 22px;
+    padding: 27px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .why-item > span {
+    padding-top: 5px;
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+  }
+
+  .why-item h3 {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .why-item p {
+    max-width: 720px;
+    margin: 0;
+    color: rgba(245, 239, 230, 0.62);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .why-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 42px;
+  }
+
+  .why-primary,
+  .why-secondary {
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 26px;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .why-primary {
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: #100b08;
+  }
+
+  .why-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    color: #ffffff;
+  }
+
+  .why-primary:hover,
+  .why-secondary:hover {
+    transform: translateY(-3px);
+  }
+
+  .why-primary:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .why-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
   .consultation {
     width: min(100% - 64px, var(--container));
-    margin: 0 auto 130px;
+    margin: 130px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -565,7 +1177,11 @@ const whatsappURL =
     padding: clamp(44px, 7vw, 86px);
     border: 1px solid rgba(201, 164, 93, 0.34);
     background:
-      linear-gradient(110deg, rgba(12, 10, 8, 0.92), rgba(12, 10, 8, 0.58)),
+      linear-gradient(
+        110deg,
+        rgba(12, 10, 8, 0.92),
+        rgba(12, 10, 8, 0.58)
+      ),
       url("/dining-room.webp") center / cover no-repeat;
   }
 
@@ -601,6 +1217,16 @@ const whatsappURL =
     transform: translateY(-3px);
   }
 
+  @media (max-width: 1000px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-image {
+      min-height: 680px;
+    }
+  }
+
   @media (max-width: 900px) {
     .collections {
       width: min(100% - 36px, var(--container));
@@ -634,6 +1260,7 @@ const whatsappURL =
     .consultation {
       align-items: flex-start;
       flex-direction: column;
+      margin-top: 100px;
       margin-bottom: 100px;
     }
 
@@ -643,6 +1270,28 @@ const whatsappURL =
 
     .hero h1 {
       letter-spacing: 7px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .why-choose {
+      padding: 95px 0;
+    }
+
+    .why-grid {
+      width: min(100% - 32px, var(--container));
+      gap: 55px;
+    }
+
+    .why-image {
+      min-height: 570px;
+    }
+
+    .why-location {
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      padding: 20px;
     }
   }
 
@@ -662,7 +1311,8 @@ const whatsappURL =
     }
 
     .hero-button {
-      min-width: 215px;
+      width: 100%;
+      min-width: 0;
     }
 
     .collections {
@@ -682,15 +1332,6 @@ const whatsappURL =
 
     .brand-story {
       padding-top: 10px;
-    }
-
-    .consultation {
-      padding: 38px 26px;
-    }
-
-    .consultation > a {
-      width: 100%;
-      min-width: 0;
     }
 
     .section-heading {
@@ -713,6 +1354,42 @@ const whatsappURL =
     .card-content p {
       opacity: 1;
       transform: none;
+    }
+
+    .why-grid {
+      width: min(100% - 24px, var(--container));
+    }
+
+    .why-image {
+      min-height: 470px;
+    }
+
+    .why-content > h2 {
+      font-size: clamp(38px, 12vw, 55px);
+    }
+
+    .why-item {
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      padding: 24px 0;
+    }
+
+    .why-item h3 {
+      font-size: 22px;
+    }
+
+    .why-primary,
+    .why-secondary {
+      width: 100%;
+    }
+
+    .consultation {
+      padding: 38px 26px;
+    }
+
+    .consultation > a {
+      width: 100%;
+      min-width: 0;
     }
   }
 </style>
