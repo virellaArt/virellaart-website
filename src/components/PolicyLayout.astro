@@ -1,0 +1,304 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow?: string;
+  updated?: string;
+}
+
+const {
+  title,
+  description,
+  eyebrow = "VIRELLAART Policies",
+  updated = "Last updated: July 2026",
+} = Astro.props;
+---
+
+<BaseLayout {title} {description}>
+  <main class="policy-page">
+    <section class="policy-hero">
+      <div class="policy-hero-inner">
+        <span class="policy-eyebrow">{eyebrow}</span>
+
+        <h1>{title.replace(" | VIRELLAART", "")}</h1>
+
+        <p>{description}</p>
+
+        <div class="policy-meta">
+          <span>{updated}</span>
+          <span>VIRELLAART · Istanbul, Türkiye</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="policy-section">
+      <article class="policy-content">
+        <slot />
+      </article>
+
+      <aside class="policy-contact">
+        <span>Customer Support</span>
+
+        <h2>Questions About Our Policies?</h2>
+
+        <p>
+          Contact the VIRELLAART team for information about production,
+          customization, delivery and order conditions.
+        </p>
+
+        <a
+          href="https://wa.me/905539478608"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact on WhatsApp
+        </a>
+      </aside>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .policy-page {
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at 12% 16%,
+        rgba(196, 156, 83, 0.08),
+        transparent 430px
+      ),
+      #15120f;
+  }
+
+  .policy-hero {
+    padding: 190px 32px 95px;
+    border-bottom: 1px solid rgba(196, 156, 83, 0.22);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(196, 156, 83, 0.08),
+        transparent 56%
+      ),
+      #100e0c;
+  }
+
+  .policy-hero-inner {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+  }
+
+  .policy-eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .policy-hero h1 {
+    max-width: 950px;
+    margin: 22px 0 28px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 7vw, 84px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .policy-hero p {
+    max-width: 760px;
+    margin: 0;
+    color: rgba(245, 239, 230, 0.7);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .policy-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 30px;
+    margin-top: 38px;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .policy-section {
+    width: min(100% - 64px, 1180px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+    gap: 85px;
+    padding: 100px 0 120px;
+  }
+
+  .policy-content {
+    min-width: 0;
+  }
+
+  :global(.policy-content > p:first-child) {
+    color: #eee3d4;
+    font-size: 19px;
+    line-height: 1.9;
+  }
+
+  :global(.policy-content h2) {
+    margin: 56px 0 18px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(29px, 4vw, 41px);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  :global(.policy-content h2::before) {
+    content: "";
+    width: 34px;
+    height: 1px;
+    display: block;
+    margin-bottom: 20px;
+    background: var(--gold);
+  }
+
+  :global(.policy-content p) {
+    max-width: 780px;
+    margin: 0 0 22px;
+    color: rgba(245, 239, 230, 0.67);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  :global(.policy-content ul) {
+    display: grid;
+    gap: 12px;
+    margin: 22px 0 30px;
+    padding: 0;
+    list-style: none;
+  }
+
+  :global(.policy-content li) {
+    position: relative;
+    padding-left: 23px;
+    color: rgba(245, 239, 230, 0.7);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  :global(.policy-content li::before) {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .policy-contact {
+    position: sticky;
+    top: 120px;
+    padding: 34px;
+    border: 1px solid rgba(196, 156, 83, 0.28);
+    background:
+      linear-gradient(
+        145deg,
+        rgba(196, 156, 83, 0.08),
+        transparent 65%
+      ),
+      #1b1713;
+  }
+
+  .policy-contact > span {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .policy-contact h2 {
+    margin: 22px 0 18px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .policy-contact p {
+    margin: 0 0 28px;
+    color: rgba(245, 239, 230, 0.62);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .policy-contact a {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    padding: 15px 18px;
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: #11100e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: 0.25s ease;
+  }
+
+  .policy-contact a:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .policy-hero {
+      padding: 155px 24px 75px;
+    }
+
+    .policy-section {
+      width: min(100% - 40px, 1180px);
+      grid-template-columns: 1fr;
+      gap: 60px;
+      padding: 75px 0 90px;
+    }
+
+    .policy-contact {
+      position: static;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .policy-hero {
+      padding: 130px 18px 65px;
+    }
+
+    .policy-hero h1 {
+      font-size: clamp(42px, 13vw, 58px);
+    }
+
+    .policy-section {
+      width: min(100% - 28px, 1180px);
+      padding: 65px 0 75px;
+    }
+
+    :global(.policy-content > p:first-child) {
+      font-size: 17px;
+    }
+
+    :global(.policy-content h2) {
+      margin-top: 46px;
+    }
+
+    .policy-contact {
+      padding: 27px;
+    }
+  }
+</style>
