@@ -1405,7 +1405,7 @@ sultanLiving: {
   ],
 },
 sultanSofa: {
-  name: "Sultan Sofa",
+  name: "Sultan Sofa (Green)",
 
   category: "living-rooms",
 
@@ -1429,6 +1429,30 @@ sultanSofa: {
     {
       label: "Center Table",
       price: "$1,450",
+    },
+  ],
+},
+sultanGreenDining: {
+  name: "Sultan Green Dining Room Set",
+
+  category: "dining-rooms",
+
+  images: [
+    "/sultandininggreen-01.webp",
+    "/sultandininggreen-02.webp",
+    "/sultandininggreen-03.webp",
+    "/sultandininggreen-04.webp",
+    "/sultandininggreen-05.webp",
+  ],
+
+  description:
+    "Sultan Green Dining Room Set by VIRELLAART is a grand classic luxury dining collection designed for villas, formal dining rooms and distinguished interiors. Its coordinated table, sculptural chairs and ornate statement pieces create a cohesive atmosphere with richly carved detailing, elegant symmetry and manufacturer-direct craftsmanship from Istanbul, Türkiye.",
+
+  prices: [
+    {
+      label: "Sultan Green Dining Room Set",
+      price: "$13,950",
+      featured: true,
     },
   ],
 },
