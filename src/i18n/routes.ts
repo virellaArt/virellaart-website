@@ -1,41 +1,82 @@
-import { products } from "../data/products";
+﻿type ProductRouteMap = Record<string, string>;
 
-type ProductRouteMap = Record<string, string>;
+const productPageSources = import.meta.glob(
+  [
+    "../pages/living-rooms/*.astro",
+    "../pages/dining-rooms/*.astro",
+    "../pages/bedrooms/*.astro",
+    "../pages/tv-units/*.astro",
+  ],
+  {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  },
+) as Record<string, string>;
+
+function extractProductKey(
+  source: string,
+): string | undefined {
+  const dotNotation = source.match(
+    /products\.([A-Za-z0-9_]+)/,
+  );
+
+  if (dotNotation?.[1]) {
+    return dotNotation[1];
+  }
+
+  const bracketNotation = source.match(
+    /products\[['"]([^'"]+)['"]\]/,
+  );
+
+  return bracketNotation?.[1];
+}
 
 function createProductRoutes(): ProductRouteMap {
   const routes: ProductRouteMap = {};
 
-  Object.entries(products).forEach(([key]) => {
-    let category = "";
-    let slug = "";
+  for (
+    const [filePath, source]
+    of Object.entries(productPageSources)
+  ) {
+    const normalizedPath =
+      filePath.replaceAll("\\", "/");
 
-    if (key.endsWith("Living")) {
-      category = "living-rooms";
-      slug = key.replace("Living", "");
-    } else if (key.endsWith("Dining")) {
-      category = "dining-rooms";
-      slug = key.replace("Dining", "");
-    } else if (key.endsWith("Bedroom")) {
-      category = "bedrooms";
-      slug = key.replace("Bedroom", "");
-    } else if (key.endsWith("TV")) {
-      category = "tv-units";
-      slug = key.replace("TV", "");
+    const routeMatch = normalizedPath.match(
+      /\/pages\/(living-rooms|dining-rooms|bedrooms|tv-units)\/([^/]+)\.astro$/,
+    );
+
+    if (!routeMatch) {
+      continue;
     }
 
-    if (!category || !slug) return;
+    const category = routeMatch[1];
+    const slug = routeMatch[2];
 
-    const formattedSlug = slug
-      .replace(/([a-z])([A-Z])/g, "$1-$2")
-      .toLowerCase();
+    if (!category || !slug) {
+      continue;
+    }
 
-    routes[`${category}/${formattedSlug}`] = key;
-  });
+    const productKey =
+      extractProductKey(source);
+
+    if (!productKey) {
+      console.warn(
+        `[routes] Product key bulunamadı: ${normalizedPath}`,
+      );
+
+      continue;
+    }
+
+    routes[`${category}/${slug}`] =
+      productKey;
+  }
 
   return routes;
 }
 
-export const productRoutes = createProductRoutes();
+export const productRoutes =
+  createProductRoutes();
 
 export const staticRoutes = [
   "",
@@ -48,7 +89,9 @@ export const staticRoutes = [
   "contact",
 ] as const;
 
-export const allRoutes = [
-  ...staticRoutes,
-  ...Object.keys(productRoutes),
-];
+export const allRoutes = Array.from(
+  new Set([
+    ...staticRoutes,
+    ...Object.keys(productRoutes),
+  ]),
+);
