@@ -2,188 +2,888 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   getLanguageFromPath,
-  getTranslations,
+  localizedPath,
 } from "../i18n/config";
 
 const language = getLanguageFromPath(Astro.url.pathname);
-const translations = getTranslations(language);
+
+const collectionsURL = localizedPath(
+  "/living-rooms",
+  language,
+);
+
+const contactURL = localizedPath(
+  "/contact",
+  language,
+);
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About VIRELLAART",
+  url: new URL(
+    Astro.url.pathname,
+    "https://www.virellaart.com",
+  ).href,
+  description:
+    "Discover VIRELLAART, an Istanbul-based luxury furniture manufacturer creating refined living room, dining room, bedroom and TV unit collections for clients worldwide.",
+  mainEntity: {
+    "@type": "Organization",
+    "@id": "https://www.virellaart.com/#organization",
+    name: "VIRELLAART",
+    url: "https://www.virellaart.com",
+    description:
+      "Istanbul-based luxury furniture manufacturer serving private residences, villas and international interior projects.",
+    areaServed: "Worldwide",
+  },
+};
 ---
 
 <BaseLayout
-  title={translations.about.title}
-  description={translations.about.description}
+  title="About VIRELLAART | Luxury Furniture Manufacturer"
+  description="Discover VIRELLAART, an Istanbul-based luxury furniture manufacturer creating refined living room, dining room, bedroom and TV unit collections for clients worldwide."
+  image="/bedroom.webp"
+  imageAlt="VIRELLAART luxury furniture collection"
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(aboutPageSchema)}
+  />
 
   <section class="about-hero">
-    <div class="about-overlay"></div>
+    <div class="about-hero-overlay"></div>
 
-    <div class="about-content">
-      <span>{translations.about.eyebrow}</span>
+    <div class="about-hero-content">
+      <span class="eyebrow">
+        About VIRELLAART
+      </span>
 
-      <h1>{translations.about.hero}</h1>
+      <h1>
+        Crafting Timeless Luxury Furniture
+        <em>From Istanbul to the World</em>
+      </h1>
 
       <p>
-        {translations.about.lead}
+        VIRELLAART is an Istanbul-based luxury furniture
+        manufacturer creating distinctive collections for
+        refined residences, villas and international interiors.
       </p>
     </div>
   </section>
 
-  <section class="about-section">
-    <div class="about-grid">
+  <main class="about-page">
+    <section class="story-section">
+      <div class="story-copy">
+        <span class="section-label">
+          Our Story
+        </span>
 
-      <div class="about-text">
-        <span>{translations.about.story}</span>
+        <h2>
+          Designed with Purpose.
+          Created to Leave an Impression.
+        </h2>
 
-        <h2>{translations.about.heading}</h2>
-
-        <p>
-          {translations.about.paragraphOne}
+        <p class="story-intro">
+          VIRELLAART was created with a clear vision:
+          to produce luxury furniture that brings elegance,
+          character and lasting visual value to exceptional
+          interiors.
         </p>
 
         <p>
-          {translations.about.paragraphTwo}
+          Based in Istanbul, Türkiye, we develop living room,
+          dining room, bedroom and TV unit collections for
+          clients who expect more than ordinary furniture.
+          Every model is shaped around proportion, comfort,
+          distinctive details and a strong luxury identity.
+        </p>
+
+        <p>
+          Our collections are created for private residences,
+          prestigious villas and international interior
+          projects. From the first design decision to the
+          final presentation, our focus remains the same:
+          delivering furniture that gives each space a
+          refined and memorable presence.
         </p>
       </div>
 
-      <div class="about-image">
+      <div class="story-image">
         <img
           src="/living-room.webp"
-          alt={translations.about.imageAlt}
+          alt="VIRELLAART luxury living room furniture"
           width="1200"
-          height="1600"
+          height="1500"
           loading="lazy"
           decoding="async"
         />
+
+        <div class="image-caption">
+          <span>Istanbul, Türkiye</span>
+          <strong>Luxury Furniture Manufacturer</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise-section">
+      <div class="section-heading">
+        <span class="section-label">
+          Our Expertise
+        </span>
+
+        <h2>
+          Complete Collections for
+          Distinguished Interiors
+        </h2>
+
+        <p>
+          VIRELLAART brings a consistent luxury design
+          language across the most important areas of
+          an exceptional home.
+        </p>
       </div>
 
-    </div>
-  </section>
+      <div class="expertise-grid">
+        <article class="expertise-card">
+          <span class="card-number">01</span>
 
+          <h3>Luxury Living Rooms</h3>
+
+          <p>
+            Statement seating collections designed to create
+            an elegant and commanding atmosphere in refined
+            residences and villa interiors.
+          </p>
+        </article>
+
+        <article class="expertise-card">
+          <span class="card-number">02</span>
+
+          <h3>Dining Room Collections</h3>
+
+          <p>
+            Complete dining environments developed around
+            sophisticated proportions, visual harmony and
+            timeless luxury.
+          </p>
+        </article>
+
+        <article class="expertise-card">
+          <span class="card-number">03</span>
+
+          <h3>Luxury Bedrooms</h3>
+
+          <p>
+            Distinctive bedroom collections created to bring
+            comfort, elegance and a strong visual identity
+            to private spaces.
+          </p>
+        </article>
+
+        <article class="expertise-card">
+          <span class="card-number">04</span>
+
+          <h3>Custom Production</h3>
+
+          <p>
+            Personalized furniture solutions for clients and
+            interior projects seeking a more exclusive and
+            individual result.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="manufacturer-section">
+      <div class="manufacturer-panel">
+        <div class="manufacturer-heading">
+          <span class="section-label">
+            Our Identity
+          </span>
+
+          <h2>
+            More Than a Furniture Seller.
+            A Luxury Furniture Manufacturer.
+          </h2>
+        </div>
+
+        <div class="manufacturer-copy">
+          <p>
+            VIRELLAART represents the direct connection
+            between furniture production, luxury design and
+            international service. Our manufacturer identity
+            allows us to present complete collections with a
+            consistent visual character while supporting
+            clients throughout the selection and ordering
+            process.
+          </p>
+
+          <p>
+            From Istanbul, we serve customers around the
+            world who are looking for distinctive Turkish
+            luxury furniture, professional communication
+            and dependable international delivery support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-heading narrow">
+        <span class="section-label">
+          Why VIRELLAART
+        </span>
+
+        <h2>
+          Created for Clients Who Expect More
+        </h2>
+      </div>
+
+      <div class="why-grid">
+        <article>
+          <div class="why-icon" aria-hidden="true">
+            V
+          </div>
+
+          <h3>Manufacturer Expertise</h3>
+
+          <p>
+            Direct access to a furniture manufacturer with
+            experience across complete luxury collections.
+          </p>
+        </article>
+
+        <article>
+          <div class="why-icon" aria-hidden="true">
+            V
+          </div>
+
+          <h3>Distinctive Design</h3>
+
+          <p>
+            Collections developed to create a recognizable
+            and premium identity in exceptional interiors.
+          </p>
+        </article>
+
+        <article>
+          <div class="why-icon" aria-hidden="true">
+            V
+          </div>
+
+          <h3>Complete Collections</h3>
+
+          <p>
+            Coordinated living room, dining room, bedroom
+            and TV unit solutions for visually harmonious
+            spaces.
+          </p>
+        </article>
+
+        <article>
+          <div class="why-icon" aria-hidden="true">
+            V
+          </div>
+
+          <h3>Worldwide Service</h3>
+
+          <p>
+            Professional communication and international
+            delivery support for customers across global
+            markets.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="world-section">
+      <div class="world-content">
+        <span class="section-label">
+          Istanbul to the World
+        </span>
+
+        <h2>
+          Turkish Furniture Craftsmanship
+          for International Interiors
+        </h2>
+
+        <p>
+          VIRELLAART brings the character of Istanbul-based
+          luxury furniture production to private customers,
+          designers and international projects around the
+          world.
+        </p>
+
+        <div class="world-actions">
+          <a
+            class="primary-action"
+            href={collectionsURL}
+          >
+            Explore Collections
+          </a>
+
+          <a
+            class="secondary-action"
+            href={contactURL}
+          >
+            Contact VIRELLAART
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
 
 <style>
   .about-hero {
     position: relative;
-    min-height: 78vh;
+    min-height: 82vh;
     display: grid;
     place-items: center;
-    padding: 140px 30px 80px;
+    padding: 150px 28px 90px;
+    overflow: hidden;
     text-align: center;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.58)),
-      url("/bedroom.webp") center / cover no-repeat;
+      linear-gradient(
+        180deg,
+        rgba(13, 10, 8, 0.26),
+        rgba(13, 10, 8, 0.78)
+      ),
+      url("/bedroom.webp") center 56% / cover no-repeat;
   }
 
-  .about-overlay {
+  .about-hero-overlay {
     position: absolute;
     inset: 0;
     background:
       radial-gradient(
         circle at center,
-        rgba(0, 0, 0, 0) 24%,
-        rgba(0, 0, 0, 0.42) 100%
+        rgba(0, 0, 0, 0) 15%,
+        rgba(0, 0, 0, 0.52) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(14, 11, 9, 0.38),
+        transparent 34%,
+        transparent 66%,
+        rgba(14, 11, 9, 0.38)
       );
   }
 
-  .about-content {
+  .about-hero-content {
     position: relative;
     z-index: 2;
-    width: min(100%, 920px);
+    width: min(100%, 1100px);
   }
 
-  .about-content span,
-  .about-text span {
+  .eyebrow,
+  .section-label {
     color: var(--gold);
     font-size: 11px;
+    font-weight: 700;
     letter-spacing: 5px;
     text-transform: uppercase;
   }
 
-  .about-content h1 {
-    margin: 20px 0 28px;
+  .about-hero h1 {
+    max-width: 1050px;
+    margin: 22px auto 30px;
+    color: #fff;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(50px, 8vw, 108px);
+    font-size: clamp(48px, 7vw, 96px);
     font-weight: 400;
-    line-height: 1;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
   }
 
-  .about-content p {
-    max-width: 760px;
+  .about-hero h1 em {
+    display: block;
+    color: #e2c282;
+    font-style: normal;
+  }
+
+  .about-hero p {
+    max-width: 780px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.88);
-    font-size: clamp(16px, 2vw, 20px);
-    line-height: 1.8;
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.85;
   }
 
-  .about-section {
-    width: min(100% - 64px, var(--container));
+  .about-page {
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 8% 24%,
+        rgba(184, 144, 76, 0.08),
+        transparent 420px
+      ),
+      #171411;
+  }
+
+  .story-section,
+  .expertise-section,
+  .why-section,
+  .world-section {
+    width: min(100% - 64px, 1380px);
     margin: 0 auto;
-    padding: 120px 0;
   }
 
-  .about-grid {
+  .story-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    gap: 70px;
+    gap: 90px;
+    padding: 130px 0;
   }
 
-  .about-text h2 {
-    margin: 20px 0 28px;
+  .story-copy h2,
+  .section-heading h2,
+  .manufacturer-heading h2,
+  .world-content h2 {
+    margin: 20px 0 30px;
+    color: #fff;
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(40px, 5vw, 70px);
     font-weight: 400;
-    line-height: 1.08;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
   }
 
-  .about-text p {
-    margin-bottom: 22px;
-    color: var(--gray);
-    font-size: 17px;
-    line-height: 1.9;
+  .story-copy p,
+  .manufacturer-copy p,
+  .world-content p {
+    margin: 0 0 22px;
+    color: #bdb2a5;
+    font-size: 16px;
+    line-height: 1.95;
   }
 
-  .about-image {
+  .story-copy .story-intro {
+    color: #e0d6c8;
+    font-size: 19px;
+  }
+
+  .story-image {
+    position: relative;
+    min-height: 720px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(201, 165, 91, 0.24);
+    background: #100e0c;
   }
 
-  .about-image img {
+  .story-image img {
     width: 100%;
-    height: 680px;
+    height: 720px;
+    display: block;
     object-fit: cover;
-    object-position: center;
+  }
+
+  .image-caption {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 20px;
+    border: 1px solid rgba(201, 165, 91, 0.34);
+    background: rgba(15, 12, 10, 0.82);
+    backdrop-filter: blur(12px);
+  }
+
+  .image-caption span {
+    color: #b7aa9a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .image-caption strong {
+    color: #ddbd78;
+    font-size: 13px;
+  }
+
+  .expertise-section {
+    padding: 30px 0 130px;
+  }
+
+  .section-heading {
+    max-width: 850px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading p {
+    max-width: 700px;
+    margin: 0;
+    color: #a99e91;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(201, 165, 91, 0.28);
+    border-left: 1px solid rgba(201, 165, 91, 0.28);
+  }
+
+  .expertise-card {
+    min-height: 340px;
+    padding: 38px 30px;
+    border-right: 1px solid rgba(201, 165, 91, 0.28);
+    border-bottom: 1px solid rgba(201, 165, 91, 0.28);
+    background:
+      linear-gradient(
+        145deg,
+        rgba(201, 165, 91, 0.08),
+        transparent 58%
+      ),
+      #1d1915;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .expertise-card:hover {
+    transform: translateY(-5px);
+    background:
+      linear-gradient(
+        145deg,
+        rgba(201, 165, 91, 0.15),
+        transparent 65%
+      ),
+      #211c17;
+  }
+
+  .card-number {
+    color: rgba(218, 183, 113, 0.58);
+    font-family: Georgia, serif;
+    font-size: 42px;
+  }
+
+  .expertise-card h3,
+  .why-grid h3 {
+    margin: 60px 0 17px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .expertise-card p,
+  .why-grid p {
+    margin: 0;
+    color: #a99d90;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .manufacturer-section {
+    padding: 0 32px 130px;
+  }
+
+  .manufacturer-panel {
+    width: min(100%, 1500px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 100px;
+    padding: 90px;
+    border: 1px solid rgba(201, 165, 91, 0.32);
+    background:
+      linear-gradient(
+        110deg,
+        rgba(12, 10, 8, 0.96),
+        rgba(41, 32, 23, 0.88)
+      ),
+      url("/dining-room.webp") center / cover;
+    box-shadow: inset 0 0 0 1000px rgba(15, 12, 10, 0.68);
+  }
+
+  .manufacturer-heading h2 {
+    margin-bottom: 0;
+  }
+
+  .manufacturer-copy {
+    padding-top: 35px;
+  }
+
+  .why-section {
+    padding: 0 0 130px;
+  }
+
+  .section-heading.narrow {
+    max-width: 760px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .why-grid article {
+    min-height: 280px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: #1c1814;
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(201, 165, 91, 0.56);
+    border-radius: 50%;
+    color: #d8b66d;
+    font-family: Georgia, serif;
+    font-size: 21px;
+  }
+
+  .why-grid h3 {
+    margin-top: 42px;
+  }
+
+  .world-section {
+    padding: 0 0 140px;
+  }
+
+  .world-content {
+    padding: 100px 70px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 165, 91, 0.26);
+    border-bottom: 1px solid rgba(201, 165, 91, 0.26);
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(201, 165, 91, 0.12),
+        transparent 60%
+      );
+  }
+
+  .world-content h2 {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .world-content p {
+    max-width: 730px;
+    margin: 0 auto;
+  }
+
+  .world-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 38px;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-width: 210px;
+    padding: 17px 24px;
+    border: 1px solid #bc9856;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .primary-action {
+    background: #bc9856;
+    color: #111;
+  }
+
+  .secondary-action {
+    background: transparent;
+    color: #d6b46e;
+  }
+
+  .primary-action:hover {
+    background: #d0ae68;
+  }
+
+  .secondary-action:hover {
+    background: #bc9856;
+    color: #111;
+  }
+
+  @media (max-width: 1100px) {
+    .expertise-grid,
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .manufacturer-panel {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 70px 55px;
+    }
+
+    .manufacturer-copy {
+      max-width: 780px;
+      padding-top: 0;
+    }
   }
 
   @media (max-width: 900px) {
-    .about-section {
-      width: min(100% - 36px, var(--container));
-      padding: 90px 0;
+    .about-hero {
+      min-height: 72vh;
+      padding: 130px 22px 75px;
     }
 
-    .about-grid {
+    .story-section,
+    .expertise-section,
+    .why-section,
+    .world-section {
+      width: min(100% - 36px, 1380px);
+    }
+
+    .story-section {
       grid-template-columns: 1fr;
-      gap: 44px;
+      gap: 50px;
+      padding: 95px 0;
     }
 
-    .about-image img {
-      height: 520px;
+    .story-image,
+    .story-image img {
+      min-height: 0;
+      height: 570px;
+    }
+
+    .manufacturer-section {
+      padding: 0 18px 95px;
+    }
+
+    .manufacturer-panel {
+      padding: 60px 36px;
+    }
+
+    .expertise-section,
+    .why-section {
+      padding-bottom: 95px;
+    }
+
+    .world-section {
+      padding-bottom: 100px;
+    }
+
+    .world-content {
+      padding: 75px 35px;
     }
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 620px) {
     .about-hero {
-      min-height: 70vh;
-      padding: 120px 20px 60px;
+      min-height: 68vh;
+      padding: 120px 18px 65px;
+      background-position: 56% center;
     }
 
-    .about-section {
-      width: min(100% - 24px, var(--container));
-      padding: 72px 0;
+    .about-hero h1 {
+      font-size: clamp(43px, 13vw, 62px);
     }
 
-    .about-image img {
-      height: 420px;
+    .about-hero h1 em {
+      margin-top: 7px;
+    }
+
+    .story-section,
+    .expertise-section,
+    .why-section,
+    .world-section {
+      width: min(100% - 28px, 1380px);
+    }
+
+    .story-section {
+      padding: 75px 0;
+    }
+
+    .story-copy h2,
+    .section-heading h2,
+    .manufacturer-heading h2,
+    .world-content h2 {
+      font-size: clamp(36px, 11vw, 50px);
+    }
+
+    .story-copy p,
+    .manufacturer-copy p,
+    .world-content p {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .story-copy .story-intro {
+      font-size: 17px;
+    }
+
+    .story-image,
+    .story-image img {
+      height: 440px;
+    }
+
+    .image-caption {
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: grid;
+      gap: 5px;
+      padding: 14px;
+    }
+
+    .expertise-grid,
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expertise-card {
+      min-height: 275px;
+    }
+
+    .expertise-card h3 {
+      margin-top: 40px;
+    }
+
+    .manufacturer-section {
+      padding-right: 14px;
+      padding-bottom: 80px;
+      padding-left: 14px;
+    }
+
+    .manufacturer-panel {
+      padding: 48px 24px;
+    }
+
+    .why-grid article {
+      min-height: 240px;
+    }
+
+    .world-section {
+      padding-bottom: 80px;
+    }
+
+    .world-content {
+      padding: 60px 20px;
+    }
+
+    .world-actions {
+      flex-direction: column;
+    }
+
+    .primary-action,
+    .secondary-action {
+      width: 100%;
     }
   }
 </style>

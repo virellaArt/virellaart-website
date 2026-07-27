@@ -49,11 +49,18 @@ export function stripLanguagePrefix(pathname: string): string {
 export function localizedPath(pathname: string, language: Language): string {
   const basePath = stripLanguagePrefix(pathname);
 
+  const normalizeTrailingSlash = (path: string) => {
+    if (path === "/") return "/";
+    return path.endsWith("/") ? path : `${path}/`;
+  };
+
   if (language === defaultLanguage) {
-    return basePath;
+    return normalizeTrailingSlash(basePath);
   }
 
-  return basePath === "/" ? `/${language}/` : `/${language}${basePath}`;
+  return basePath === "/"
+    ? `/${language}/`
+    : `/${language}${normalizeTrailingSlash(basePath)}`;
 }
 
 const translations = {
