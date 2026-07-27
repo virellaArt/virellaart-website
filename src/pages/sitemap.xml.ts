@@ -10,9 +10,14 @@ import {
   productRoutes,
 } from "../i18n/routes";
 
-
 const site = "https://www.virellaart.com";
 
+const policyRoutes = [
+  "policies/shipping-policy",
+  "policies/return-refund-policy",
+  "policies/privacy-policy",
+  "policies/terms-conditions",
+] as const;
 
 const staticRouteImages: Record<string, string[]> = {
   "": ["/living-room.webp"],
@@ -20,46 +25,43 @@ const staticRouteImages: Record<string, string[]> = {
   "dining-rooms": ["/dining-room.webp"],
   "bedrooms": ["/bedroom.webp"],
   "tv-units": ["/tv-unit.webp"],
-  "about": ["/living-room.webp"],
+  "about": ["/about-factory.webp"],
   "contact": ["/dining-room.webp"],
 };
-
-
 
 function absoluteURL(
   route: string,
   language: (typeof languageCodes)[number],
 ) {
-
   const path = route
     ? `/${route}/`
     : "/";
-
 
   const localized = localizedPath(
     path,
     language,
   );
 
-
   return new URL(
     localized.replace(/\/?$/, "/"),
     site,
   ).href;
-
 }
 
-
+function englishURL(route: string) {
+  return new URL(
+    `/${route.replace(/^\/+|\/+$/g, "")}/`,
+    site,
+  ).href;
+}
 
 function routeImages(
   route: string,
 ): string[] {
-
   const productKey =
     productRoutes[
       route as keyof typeof productRoutes
     ];
-
 
   if (productKey) {
     return products[
@@ -67,22 +69,13 @@ function routeImages(
     ].images;
   }
 
-
   return staticRouteImages[route] ?? [];
-
 }
 
-
-
 export const GET = () => {
-
-
-  const urls = allRoutes
+  const localizedUrls = allRoutes
     .flatMap((route) =>
-
       languageCodes.map((language) => {
-
-
         const alternates = languageCodes
           .map(
             (alternateLanguage) =>
@@ -90,12 +83,8 @@ export const GET = () => {
           )
           .join("");
 
-
-
         const xDefault =
           `<xhtml:link rel="alternate" hreflang="x-default" href="${absoluteURL(route, "en")}" />`;
-
-
 
         const images = routeImages(route)
           .map(
@@ -103,8 +92,6 @@ export const GET = () => {
               `<image:image><image:loc>${new URL(image, site).href}</image:loc></image:image>`,
           )
           .join("");
-
-
 
         return `
         <url>
@@ -114,24 +101,30 @@ export const GET = () => {
           ${images}
         </url>
         `;
-
       }),
     )
     .join("");
 
-
+  const policyUrls = policyRoutes
+    .map(
+      (route) => `
+      <url>
+        <loc>${englishURL(route)}</loc>
+      </url>
+      `,
+    )
+    .join("");
 
   const xml =
     `<?xml version="1.0" encoding="UTF-8"?>` +
-    `<urlset 
+    `<urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     >
-    ${urls}
+      ${localizedUrls}
+      ${policyUrls}
     </urlset>`;
-
-
 
   return new Response(
     xml,
@@ -142,5 +135,4 @@ export const GET = () => {
       },
     },
   );
-
 };
