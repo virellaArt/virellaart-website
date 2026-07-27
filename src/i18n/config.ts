@@ -47,6 +47,18 @@ export function stripLanguagePrefix(pathname: string): string {
 }
 
 export function localizedPath(pathname: string, language: Language): string {
+
+  // English-only routes must never be localized.
+  const englishOnlyPath =
+    stripLanguagePrefix(pathname);
+
+  if (
+    englishOnlyPath === "/policies" ||
+    englishOnlyPath.startsWith("/policies/")
+  ) {
+    return englishOnlyPath.replace(/\/?$/, "/");
+  }
+
   const basePath = stripLanguagePrefix(pathname);
 
   const normalizeTrailingSlash = (path: string) => {

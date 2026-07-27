@@ -8,10 +8,13 @@
   "scripts": {
     "admin": "node scripts/virella-admin.mjs",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run build:astro && npm run check:links",
     "preview": "astro preview",
     "astro": "astro",
-    "convert-images": "node scripts/convert-images.js"
+    "convert-images": "node scripts/convert-images.js",
+    "check:links": "node scripts/check-internal-links.mjs",
+    "build:astro": "astro build",
+    "verify:site": "npm run build"
   },
   "dependencies": {
     "astro": "^7.1.3"

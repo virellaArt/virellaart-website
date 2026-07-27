@@ -1456,4 +1456,26 @@ sultanGreenDining: {
     },
   ],
 },
+
+  marsilyaBedroom: {
+    name: "Luxury Bedroom Set",
+    category: "bedrooms",
+    subtitle: "Contemporary Luxury Bedroom Collection",
+    description:
+      "The Luxury Bedroom Set combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Designed for luxury villas, premium residences, and sophisticated bedroom interiors, this harmonious collection is available directly from VIRELLAART with international delivery support and project assistance via WhatsApp.",
+    images: [
+      "/marsilyabedroom-01.webp",
+      "/marsilyabedroom-02.webp",
+      "/marsilyabedroom-03.webp",
+      "/marsilyabedroom-04.webp",
+    ],
+    prices: [
+      {
+        label: "Luxury Bedroom Set",
+        price: "$5,300",
+        featured: true,
+      },
+    ],
+  },
+
 };
