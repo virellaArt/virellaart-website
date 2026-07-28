@@ -289,6 +289,46 @@ const whyChooseContent: Record<string, WhyChooseContent> = {
   },
 };
 
+
+const manufacturingImageDisclosure: Record<string, string> = {
+  en:
+    "Representative manufacturing image. Original VIRELLAART production photography will be added when available.",
+  tr:
+    "Temsili üretim görselidir. Orijinal VIRELLAART üretim fotoğrafları hazır olduğunda eklenecektir.",
+  de:
+    "Repräsentatives Produktionsbild. Originale VIRELLAART-Produktionsfotos werden ergänzt, sobald sie verfügbar sind.",
+  fr:
+    "Image de production représentative. Les photos originales de la production VIRELLAART seront ajoutées dès qu’elles seront disponibles.",
+  it:
+    "Immagine rappresentativa della produzione. Le foto originali della produzione VIRELLAART saranno aggiunte quando disponibili.",
+  ru:
+    "Репрезентативное изображение производства. Оригинальные фотографии производства VIRELLAART будут добавлены, когда станут доступны.",
+  ar:
+    "صورة تمثيلية لعملية الإنتاج. ستتم إضافة صور أصلية لإنتاج VIRELLAART عند توفرها.",
+  bg:
+    "Представително изображение на производството. Оригинални снимки от производството на VIRELLAART ще бъдат добавени, когато са налични.",
+  ro:
+    "Imagine reprezentativă a producției. Fotografiile originale din producția VIRELLAART vor fi adăugate când vor fi disponibile.",
+  el:
+    "Αντιπροσωπευτική εικόνα παραγωγής. Πρωτότυπες φωτογραφίες από την παραγωγή της VIRELLAART θα προστεθούν όταν είναι διαθέσιμες.",
+  es:
+    "Imagen representativa de producción. Las fotografías originales de la producción de VIRELLAART se añadirán cuando estén disponibles.",
+  sr:
+    "Reprezentativna slika proizvodnje. Originalne fotografije proizvodnje VIRELLAART biće dodate kada budu dostupne.",
+  kk:
+    "Өндірістің көрнекі бейнесі. VIRELLAART өндірісінің түпнұсқа фотосуреттері қолжетімді болғанда қосылады.",
+  uz:
+    "Ishlab chiqarish jarayonining namunaviy tasviri. VIRELLAART ishlab chiqarishining asl suratlari mavjud bo‘lganda qo‘shiladi.",
+  pt:
+    "Imagem representativa da produção. Fotografias originais da produção VIRELLAART serão adicionadas quando estiverem disponíveis.",
+  pl:
+    "Reprezentacyjne zdjęcie produkcji. Oryginalne fotografie produkcji VIRELLAART zostaną dodane, gdy będą dostępne.",
+};
+
+const factoryImageDisclosure =
+  manufacturingImageDisclosure[language] ??
+  manufacturingImageDisclosure.en;
+
 const why = whyChooseContent[language] ?? whyChooseContent.en;
 ---
 
@@ -478,6 +518,10 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
         <div class="why-location">
           <span>VIRELLAART</span>
           <strong>{why.location}</strong>
+
+          <small class="why-disclosure">
+            {factoryImageDisclosure}
+          </small>
         </div>
       </div>
 
@@ -1215,6 +1259,20 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
   .consultation > a:hover {
     background: #1aa65b;
     transform: translateY(-3px);
+  }
+
+
+  .why-disclosure {
+    display: block;
+    max-width: 520px;
+    margin-top: 13px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+    line-height: 1.65;
   }
 
   @media (max-width: 1000px) {

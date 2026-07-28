@@ -1,0 +1,9 @@
+
+Kontrol edilen dosya: 9
+Geçersiz UTF-8 dosyası: 0
+Şüpheli satır: 0
+VIRELLAART ENCODING DENETIMI
+================================
+
+SONUC: Kaynak dosyalarda encoding bozukluğu bulunmadı.
+guven-denetimi.txt hazırlanırken karakterler bozulmuş.
