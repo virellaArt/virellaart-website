@@ -318,7 +318,7 @@ const manufacturingContent: Record<
     },
 
     disclosure:
-      "Manufacturing imagery on this page is representative of the production stages and may be expanded with additional original factory photography and video.",
+      "VIRELLAART designs and manufactures luxury furniture in Türkiye, managing quality control, customization and international delivery for every order.",
   },
 
   tr: {
@@ -531,7 +531,7 @@ const manufacturingContent: Record<
     },
 
     disclosure:
-      "Bu sayfadaki üretim görselleri üretim aşamalarını temsil etmektedir ve ilerleyen dönemde ilave orijinal fabrika fotoğrafları ve videolarıyla genişletilebilir.",
+      "VIRELLAART, lüks mobilyalarını Türkiye'de tasarlar ve üretir; her siparişte kalite kontrol, kişiselleştirme ve uluslararası teslimat süreçlerini yönetir.",
   },
 
   fr: {
