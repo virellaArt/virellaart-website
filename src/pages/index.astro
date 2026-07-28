@@ -361,8 +361,19 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
         {translations.home.lead}
       </p>
 
+      <div class="hero-proof">
+        <span>{why.manufacturerTitle}</span>
+        <i aria-hidden="true"></i>
+        <span>
+          {translations.product.worldwideDelivery}
+        </span>
+      </div>
+
       <div class="hero-actions">
-        <a href="#collections" class="hero-button">
+        <a
+          href="#collections"
+          class="hero-button"
+        >
           {translations.home.button}
         </a>
 
@@ -382,7 +393,7 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
     </div>
   </section>
 
-  <section
+<section
     class="sales-signals"
     aria-label={translations.contact.service}
   >
@@ -1457,4 +1468,804 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
       min-width: 0;
     }
   }
+
+  /* VIRELLAART MOBILE HOME CONVERSION */
+
+  .hero {
+    min-height: 820px;
+    padding-top: 132px;
+    background-position: center 44%;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow:
+      inset 0 0 100px rgba(0, 0, 0, 0.18),
+      inset 0 -100px 120px rgba(7, 5, 4, 0.28);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 6, 5, 0.9) 0%,
+        rgba(8, 6, 5, 0.56) 46%,
+        rgba(8, 6, 5, 0.12) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(7, 5, 4, 0.15),
+        transparent 54%
+      );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+  }
+
+  .hero h1 {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    font-size: clamp(54px, 8vw, 104px);
+    letter-spacing: 8px;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .hero-title-keyword {
+    margin: 0 auto 18px;
+  }
+
+  .hero-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: -18px auto 30px;
+    color: var(--gold-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .hero-proof i {
+    width: 30px;
+    height: 1px;
+    display: block;
+    background: rgba(225, 199, 138, 0.78);
+  }
+
+  .hero-button:first-child {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #100b08;
+    box-shadow: 0 14px 34px rgba(201, 164, 93, 0.16);
+  }
+
+  .hero-whatsapp {
+    border-color: rgba(255, 255, 255, 0.72);
+    background: rgba(10, 8, 7, 0.36);
+    backdrop-filter: blur(8px);
+  }
+
+  .home-quick-nav {
+    position: relative;
+    z-index: 4;
+    width: min(100% - 64px, var(--container));
+    margin: -34px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid rgba(201, 164, 93, 0.32);
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(201, 164, 93, 0.08),
+        transparent 48%
+      ),
+      rgba(18, 14, 11, 0.98);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  }
+
+  .home-quick-nav a {
+    position: relative;
+    min-height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    overflow: hidden;
+    padding: 20px 46px 20px 18px;
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.15;
+    text-align: center;
+    transition:
+      background 220ms ease,
+      border-color 220ms ease;
+  }
+
+  .home-quick-nav a::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201, 164, 93, 0.08);
+    pointer-events: none;
+  }
+
+  .home-quick-nav a::after {
+    content: "→";
+    position: absolute;
+    right: 18px;
+    bottom: 17px;
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(201, 164, 93, 0.38);
+    border-radius: 50%;
+    color: var(--gold-light);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .home-quick-nav a:last-child {
+    border-right: 0;
+  }
+
+  .home-quick-nav span {
+    color: var(--gold);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .sales-signals {
+    margin-top: 24px;
+  }
+
+  .home-floating-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(14px) scale(0.9) !important;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease !important;
+  }
+
+  .home-floating-whatsapp.is-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1) !important;
+  }
+
+  @media (hover: hover) {
+    .home-quick-nav a:hover {
+      background: rgba(201, 164, 93, 0.08);
+      border-color: rgba(201, 164, 93, 0.4);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      min-height: max(650px, 76svh);
+      place-items: end start;
+      padding: 102px 18px 38px;
+      text-align: left;
+      background-position: 53% 42%;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(
+          0deg,
+          rgba(8, 6, 5, 0.92) 0%,
+          rgba(8, 6, 5, 0.58) 47%,
+          rgba(8, 6, 5, 0.07) 100%
+        );
+    }
+
+    .hero::after {
+      box-shadow:
+        inset 0 -70px 90px rgba(7, 5, 4, 0.26);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 {
+      max-width: 100%;
+      margin: 0 0 15px;
+      font-size: clamp(37px, 11vw, 52px);
+      letter-spacing: 3px;
+      line-height: 0.98;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-title-keyword {
+      margin: 0 0 12px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+
+    .hero-lead {
+      max-width: 520px;
+      margin: 0 0 15px;
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .hero-proof {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      margin: 0 0 22px;
+      font-size: 8px;
+      letter-spacing: 1.3px;
+    }
+
+    .hero-proof i {
+      width: 18px;
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+
+    .hero-button {
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+      padding: 14px 15px;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .hero-button:hover {
+      transform: none;
+    }
+
+    .home-quick-nav {
+      width: 100%;
+      margin: 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      padding: 14px;
+      border-right: 0;
+      border-left: 0;
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(201, 164, 93, 0.08),
+          transparent 52%
+        ),
+        #100c09;
+      box-shadow: none;
+    }
+
+    .home-quick-nav a {
+      min-height: 114px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 17px 50px 17px 17px;
+      border: 1px solid rgba(201, 164, 93, 0.3);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(201, 164, 93, 0.06),
+          transparent 58%
+        );
+      font-size: 18px;
+      line-height: 1.12;
+      text-align: left;
+    }
+
+    .home-quick-nav a::before {
+      inset: 7px;
+      border-color: rgba(201, 164, 93, 0.1);
+    }
+
+    .home-quick-nav a::after {
+      right: 15px;
+      bottom: 15px;
+      width: 31px;
+      height: 31px;
+    }
+
+    .home-quick-nav a:last-child {
+      border-right: 1px solid rgba(201, 164, 93, 0.3);
+    }
+
+    .home-quick-nav span {
+      font-size: 9px;
+      letter-spacing: 2.5px;
+    }
+
+    .sales-signals {
+      width: calc(100% - 28px);
+      margin: 15px auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      border: 0;
+      background: transparent;
+    }
+
+    .sales-signals article {
+      min-height: 78px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      grid-template-rows: auto auto;
+      align-items: center;
+      column-gap: 13px;
+      padding: 13px 16px;
+      border: 1px solid rgba(201, 164, 93, 0.22);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(201, 164, 93, 0.06),
+          transparent 50%
+        ),
+        rgba(15, 11, 9, 0.78);
+      text-align: left;
+    }
+
+    .sales-signals span {
+      grid-row: 1 / 3;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      border: 1px solid rgba(201, 164, 93, 0.32);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-size: 8px;
+      letter-spacing: 1px;
+    }
+
+    .sales-signals strong {
+      align-self: end;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .sales-signals p {
+      display: -webkit-box;
+      align-self: start;
+      margin: 3px 0 0;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 10px;
+      line-height: 1.35;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+
+    .collections {
+      width: calc(100% - 28px);
+      padding: 56px 0 66px;
+    }
+
+    .section-heading {
+      margin: 0 0 24px;
+      text-align: left;
+    }
+
+    .section-heading h2 {
+      margin: 10px 0 0;
+      font-size: 38px;
+    }
+
+    .section-heading p {
+      display: none;
+    }
+
+    .collection-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .collection-card {
+      min-height: 220px;
+      padding: 15px;
+    }
+
+    .card-content {
+      transform: none;
+    }
+
+    .card-content h3 {
+      font-size: clamp(22px, 6.3vw, 30px);
+      line-height: 1;
+    }
+
+    .card-content p {
+      display: none;
+    }
+
+    .home-floating-whatsapp {
+      right: 14px !important;
+      bottom: calc(
+        16px + env(safe-area-inset-bottom)
+      ) !important;
+      width: 52px !important;
+      height: 52px !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero h1 {
+      font-size: 36px;
+      letter-spacing: 2px;
+    }
+
+    .home-quick-nav a {
+      min-height: 108px;
+      font-size: 16px;
+    }
+  }
+
+
+  /* VIRELLAART MOBILE FINAL OVERRIDE */
+
+  @media (max-width: 760px) {
+    .hero {
+      min-height: 640px !important;
+      padding:
+        98px
+        16px
+        24px !important;
+      background-position:
+        52% 38% !important;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(
+          0deg,
+          rgba(7, 5, 4, 0.8) 0%,
+          rgba(7, 5, 4, 0.36) 54%,
+          rgba(7, 5, 4, 0.02) 100%
+        ) !important;
+    }
+
+    .hero::after {
+      box-shadow:
+        inset 0 -80px 110px
+        rgba(7, 5, 4, 0.2) !important;
+    }
+
+    .hero-content {
+      width: 100% !important;
+      max-width: 580px !important;
+      padding:
+        20px
+        18px
+        19px !important;
+      border-left:
+        2px solid
+        var(--gold);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(9, 7, 5, 0.84) 0%,
+          rgba(9, 7, 5, 0.55) 72%,
+          rgba(9, 7, 5, 0.18) 100%
+        );
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(3px);
+    }
+
+    .eyebrow {
+      margin-bottom: 10px !important;
+      font-size: 8px !important;
+      letter-spacing: 2.8px !important;
+    }
+
+    .hero h1 {
+      margin:
+        0
+        0
+        13px !important;
+      font-size:
+        clamp(
+          35px,
+          10.4vw,
+          46px
+        ) !important;
+      letter-spacing: 2px !important;
+      line-height: 0.96 !important;
+      text-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-title-keyword {
+      margin:
+        0
+        0
+        10px !important;
+      font-size: 9px !important;
+      letter-spacing: 1.8px !important;
+    }
+
+    .hero-lead {
+      max-width: 350px !important;
+      margin:
+        0
+        0
+        13px !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+    }
+
+    .hero-proof {
+      margin:
+        0
+        0
+        17px !important;
+      font-size: 7px !important;
+      letter-spacing: 1.15px !important;
+    }
+
+    .hero-actions {
+      gap: 8px !important;
+    }
+
+    .hero-button {
+      min-height: 48px !important;
+      padding:
+        12px
+        13px !important;
+      font-size: 8px !important;
+      letter-spacing: 1.8px !important;
+    }
+
+    .sales-signals {
+      width:
+        calc(100% - 28px) !important;
+      margin:
+        16px
+        auto
+        0 !important;
+      gap: 7px !important;
+    }
+
+    .sales-signals article {
+      min-height: 72px !important;
+      padding:
+        11px
+        14px !important;
+    }
+
+    .sales-signals span {
+      width: 35px !important;
+      height: 35px !important;
+    }
+
+    .sales-signals strong {
+      font-size: 13px !important;
+    }
+
+    .sales-signals p {
+      font-size: 9px !important;
+    }
+
+    .collections {
+      padding:
+        43px
+        0
+        66px !important;
+    }
+
+    .section-heading {
+      margin-bottom: 21px !important;
+    }
+
+    .section-heading h2 {
+      font-size: 36px !important;
+    }
+  }
+
+
+  /* VIRELLAART MOBILE HERO SPLIT */
+
+  @media (max-width: 760px) {
+    .hero {
+      display: block !important;
+      min-height: 0 !important;
+      padding:
+        520px
+        14px
+        28px !important;
+      background-color: #100c09 !important;
+      background-position:
+        center top !important;
+      background-repeat:
+        no-repeat !important;
+      background-size:
+        100% 520px !important;
+      text-align: left !important;
+    }
+
+    .hero-overlay {
+      inset:
+        0
+        0
+        auto
+        0 !important;
+      height: 520px !important;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 6, 5, 0.04) 0%,
+          rgba(8, 6, 5, 0.02) 55%,
+          rgba(8, 6, 5, 0.25) 100%
+        ) !important;
+    }
+
+    .hero::after {
+      inset:
+        0
+        0
+        auto
+        0 !important;
+      height: 520px !important;
+      box-shadow:
+        inset 0 -45px 65px
+        rgba(7, 5, 4, 0.2) !important;
+    }
+
+    .hero-content {
+      position: relative !important;
+      z-index: 4 !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding:
+        26px
+        20px
+        21px !important;
+      border:
+        1px solid
+        rgba(201, 164, 93, 0.3) !important;
+      border-top:
+        2px solid
+        var(--gold) !important;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(201, 164, 93, 0.08),
+          transparent 52%
+        ),
+        linear-gradient(
+          145deg,
+          #17110d,
+          #0d0907
+        ) !important;
+      box-shadow:
+        0 22px 45px
+        rgba(0, 0, 0, 0.35) !important;
+      backdrop-filter: none !important;
+    }
+
+    .eyebrow {
+      margin-bottom: 9px !important;
+      font-size: 8px !important;
+      letter-spacing: 2.7px !important;
+    }
+
+    .hero h1 {
+      margin:
+        0
+        0
+        12px !important;
+      font-size:
+        clamp(
+          31px,
+          8.8vw,
+          38px
+        ) !important;
+      letter-spacing: 2px !important;
+      line-height: 1 !important;
+      text-shadow: none !important;
+    }
+
+    .hero-title-keyword {
+      margin:
+        0
+        0
+        11px !important;
+      font-size: 9px !important;
+      letter-spacing: 1.7px !important;
+      line-height: 1.5 !important;
+    }
+
+    .hero-lead {
+      max-width: 100% !important;
+      margin:
+        0
+        0
+        15px !important;
+      color:
+        rgba(255, 255, 255, 0.8) !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+    }
+
+    .hero-proof {
+      margin:
+        0
+        0
+        18px !important;
+      padding-top: 13px;
+      border-top:
+        1px solid
+        rgba(201, 164, 93, 0.16);
+      font-size: 7px !important;
+      letter-spacing: 1.15px !important;
+    }
+
+    .hero-actions {
+      gap: 8px !important;
+    }
+
+    .hero-button {
+      min-height: 48px !important;
+      padding:
+        12px
+        13px !important;
+      font-size: 8px !important;
+      letter-spacing: 1.8px !important;
+    }
+
+    .sales-signals {
+      margin-top: 0 !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero {
+      padding-top: 500px !important;
+      background-size:
+        100% 500px !important;
+    }
+
+    .hero-overlay,
+    .hero::after {
+      height: 500px !important;
+    }
+
+    .hero-content {
+      padding:
+        23px
+        17px
+        19px !important;
+    }
+  }
+
 </style>

@@ -109,4 +109,97 @@ const whatsappURL =
       transition: none;
     }
   }
+
+  /* FLOATING WHATSAPP VISIBILITY */
+
+  .whatsapp-float {
+    opacity: 0;
+    pointer-events: none;
+    transform:
+      translateY(14px)
+      scale(0.92);
+    transition:
+      opacity 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .whatsapp-float.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
 </style>
+
+<script is:inline>
+  /* FLOATING WHATSAPP VISIBILITY */
+  (() => {
+    const initialize = () => {
+      const button =
+        document.querySelector(
+          ".whatsapp-float"
+        );
+
+      if (!(button instanceof HTMLElement)) {
+        return;
+      }
+
+      const updateVisibility = () => {
+        const collections =
+          document.querySelector(
+            "#collections"
+          );
+
+        let shouldShow = false;
+
+        if (
+          collections instanceof HTMLElement
+        ) {
+          const showAfter =
+            collections.offsetTop +
+            collections.offsetHeight -
+            60;
+
+          shouldShow =
+            window.scrollY > showAfter;
+        } else {
+          shouldShow =
+            window.scrollY > 450;
+        }
+
+        button.classList.toggle(
+          "is-visible",
+          shouldShow,
+        );
+      };
+
+      updateVisibility();
+
+      window.addEventListener(
+        "scroll",
+        updateVisibility,
+        { passive: true },
+      );
+
+      window.addEventListener(
+        "resize",
+        updateVisibility,
+      );
+    };
+
+    if (
+      document.readyState === "loading"
+    ) {
+      document.addEventListener(
+        "DOMContentLoaded",
+        initialize,
+      );
+    } else {
+      initialize();
+    }
+  })();
+</script>
