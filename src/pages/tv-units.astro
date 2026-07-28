@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
+import { tvUnitModels } from "../data/tv-unit-catalog";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -8,61 +9,16 @@ import {
   translateProductName,
 } from "../i18n/config";
 
-const language = getLanguageFromPath(Astro.url.pathname);
-const translations = getTranslations(language);
-const categoryTranslations = translations.category.tvUnits;
+const language =
+  getLanguageFromPath(Astro.url.pathname);
 
-const models = [
-  {
-    number: "01",
-    name: "Moon TV Unit",
-    href: "/tv-units/moontv",
-    image: "/moontv-01.webp",
-    alt: "Moon Luxury TV Unit Collection by VIRELLAART",
-  },
-  {
-  number: "02",
-  name: "Aspendos TV Unit",
-  href: "/tv-units/aspendos",
-  image: "/aspendostv-01.webp",
-  alt: "Aspendos Luxury TV Unit Collection by VIRELLAART",
-},
-{
-  number: "03",
-  name: "Delux TV Unit",
-  href: "/tv-units/delux",
-  image: "/deluxtv-01.webp",
-  alt: "Delux Luxury TV Unit Collection by VIRELLAART",
-},
-{
-  number: "04",
-  name: "Valencia TV Unit",
-  href: "/tv-units/valencia",
-  image: "/valenciatv-01.webp",
-  alt: "Valencia Luxury TV Unit Collection by VIRELLAART",
-},
-{
-  number: "05",
-  name: "Zümrüt",
-  href: "/tv-units/zumrut",
-  image: "/zumruttv-01.webp",
-  alt: "Zumrut Luxury TV Unit Collection",
-},
-{
-  number: "06",
-  name: "Milano Blue",
-  href: "/tv-units/milano-blue",
-  image: "/milanobluetv-01.webp",
-  alt: "Milano Blue Luxury TV Unit Collection",
-},
-{
-  number: "07",
-  name: "Milano",
-  href: "/tv-units/milano",
-  image: "/milanotv-01.webp",
-  alt: "Milano Luxury TV Unit Collection",
-},
-];
+const translations =
+  getTranslations(language);
+
+const categoryTranslations =
+  translations.category.tvUnits;
+
+const models = tvUnitModels;
 ---
 
 <BaseLayout
