@@ -17,7 +17,7 @@ export const products = {
     ],
 
     description:
-      "Discover the Valencia Luxury Living Room Collection by VIRELLAART, distinguished by sculptural curves, ornate detailing and a refined, commanding presence. Created for grand villas and elegant residences, this luxury sofa set brings timeless character and visual prestige to the interior. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+      "Discover the Valencia Luxury Living Room Collection by VIRELLAART, distinguished by sculptural curves, ornate detailing and a refined, commanding presence. Created for grand villas and elegant residences, this luxury sofa set brings timeless character and visual prestige to the interior. Speak with the VIRELLAART team on WhatsApp about Valencia Living Room pricing, sofa-set options and delivery planning for your interior project.",
     prices: [
       {
         label: "Luxury 3+3+1+1 Living Room Set",
@@ -53,7 +53,7 @@ export const products = {
     ],
 
     description:
-      "Meet the Vanessa Luxury Living Room Collection by VIRELLAART, defined by formal silhouettes, tailored seating and bold geometric tables that create a polished, high-contrast interior. Ideal for sophisticated villas and statement lounges, this luxury living room furniture delivers strong visual identity. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+      "Meet the Vanessa Luxury Living Room Collection by VIRELLAART, defined by formal silhouettes, tailored seating and bold geometric tables that create a polished, high-contrast interior. Ideal for sophisticated villas and statement lounges, this luxury living room furniture delivers strong visual identity. Speak with the VIRELLAART team on WhatsApp about Vanessa Living Room pricing, sofa-set options and delivery planning for your interior project.",
 
     prices: [
       {
@@ -91,7 +91,7 @@ export const products = {
   ],
 
   description:
-  "Experience the Aspendos Luxury Living Room Collection by VIRELLAART, shaped by softly rounded seating, balanced proportions and a calm contemporary elegance. Designed for refined villas and spacious residences, this luxury sofa set creates a welcoming yet prestigious atmosphere. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery information.",
+  "Experience the Aspendos Luxury Living Room Collection by VIRELLAART, shaped by softly rounded seating, balanced proportions and a calm contemporary elegance. Designed for refined villas and spacious residences, this luxury sofa set creates a welcoming yet prestigious atmosphere. Connect with VIRELLAART via WhatsApp for Aspendos Living Room availability, customization possibilities and worldwide delivery information.",
  
   prices: [
     {
@@ -125,7 +125,7 @@ export const products = {
   ],
 
   description:
-  "Discover the Alex Luxury Living Room Collection by VIRELLAART, defined by dramatic tufted seating, formal proportions and a bold classical character. Created for grand villas and statement interiors, this luxury living room furniture brings depth, prestige and unmistakable presence. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Alex Luxury Living Room Collection by VIRELLAART, defined by dramatic tufted seating, formal proportions and a bold classical character. Created for grand villas and statement interiors, this luxury living room furniture brings depth, prestige and unmistakable presence. Message VIRELLAART on WhatsApp for Alex Living Room pricing, customization options and worldwide delivery planning.",
  
   prices: [
     {
@@ -155,7 +155,7 @@ export const products = {
   ],
 
  description:
-  "Explore the Bahar Luxury Living Room Collection by VIRELLAART, shaped by clean architectural lines, balanced seating and a confident contemporary character. Designed for modern villas and refined residences, this luxury sofa set creates an elegant, composed atmosphere with strong visual clarity. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Explore the Bahar Luxury Living Room Collection by VIRELLAART, shaped by clean architectural lines, balanced seating and a confident contemporary character. Designed for modern villas and refined residences, this luxury sofa set creates an elegant, composed atmosphere with strong visual clarity. Message VIRELLAART on WhatsApp for Bahar Living Room pricing, customization options and worldwide delivery planning.",
  
   prices: [
     {
@@ -187,7 +187,7 @@ export const products = {
   ],
 
  description:
-  "Discover the Delux Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Delux Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Message VIRELLAART on WhatsApp for Delux Living Room pricing, customization options and worldwide delivery planning.",
  
   prices: [
     {
@@ -222,7 +222,7 @@ export const products = {
   ],
 
  description:
-  "Discover the Lugano Luxury Living Room Collection by VIRELLAART, defined by graceful silhouettes, decorative framing and a rich, formal presence. Designed for grand residences and sophisticated lounge spaces, this luxury living room furniture brings timeless elegance and visual distinction. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Lugano Luxury Living Room Collection by VIRELLAART, defined by graceful silhouettes, decorative framing and a rich, formal presence. Designed for grand residences and sophisticated lounge spaces, this luxury living room furniture brings timeless elegance and visual distinction. Request a private Lugano Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
 
   prices: [
     {
@@ -255,7 +255,7 @@ queen: {
   ],
 
   description:
-  "Discover the Queen Luxury Living Room Collection by VIRELLAART, where softly rounded seating, sculptural tables and an architectural layout create a calm, contemporary statement. Designed for refined villas and modern residences, this luxury sofa set brings visual harmony and understated prestige. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Queen Luxury Living Room Collection by VIRELLAART, where softly rounded seating, sculptural tables and an architectural layout create a calm, contemporary statement. Designed for refined villas and modern residences, this luxury sofa set brings visual harmony and understated prestige. Send your luxury living room requirements on WhatsApp to receive Queen Living Room prices, personalized options and delivery assistance from VIRELLAART.",
  
   prices: [
     {
@@ -289,7 +289,7 @@ queen: {
   ],
 
   description:
-  "Discover the Sena Luxury Living Room Collection by VIRELLAART, defined by formal symmetry, graceful curved profiles and a distinguished classical presence. Designed for grand villas and elegant reception spaces, this luxury living room furniture creates a refined, ceremonial atmosphere with strong visual authority. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Sena Luxury Living Room Collection by VIRELLAART, defined by formal symmetry, graceful curved profiles and a distinguished classical presence. Designed for grand villas and elegant reception spaces, this luxury living room furniture creates a refined, ceremonial atmosphere with strong visual authority. Connect with VIRELLAART via WhatsApp for Sena Living Room availability, customization possibilities and worldwide delivery information.",
  
   prices: [
     {
@@ -321,7 +321,7 @@ queen: {
   ],
 
   description:
-  "Discover the Shawl Luxury Living Room Collection by VIRELLAART, distinguished by bold geometric detailing, sculptural seating and a dramatic contemporary presence. Ideal for statement villas and refined interiors, this luxury living room furniture delivers striking character and visual sophistication. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Shawl Luxury Living Room Collection by VIRELLAART, distinguished by bold geometric detailing, sculptural seating and a dramatic contemporary presence. Ideal for statement villas and refined interiors, this luxury living room furniture delivers striking character and visual sophistication. Connect with VIRELLAART via WhatsApp for Shawl Living Room availability, customization possibilities and worldwide delivery information.",
 
   prices: [
     {
@@ -356,7 +356,7 @@ queen: {
   ],
 
   description:
-  "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, distinguished by ornate detailing, sculpted profiles and a formal, palace-inspired character. Designed for grand villas and elegant reception spaces, this luxury sofa set creates a commanding focal point with refined visual drama. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, distinguished by ornate detailing, sculpted profiles and a formal, palace-inspired character. Designed for grand villas and elegant reception spaces, this luxury sofa set creates a commanding focal point with refined visual drama. Connect with VIRELLAART via WhatsApp for Vizyon Living Room availability, customization possibilities and worldwide delivery information.",
 
   prices: [
     {
@@ -386,7 +386,7 @@ images: [
 ],
 
   description:
-  "Discover the Valencia Luxury Bedroom Collection by VIRELLAART, distinguished by a sculptural headboard, elegant symmetry and refined decorative detailing. Designed for sophisticated villas and serene master suites, this luxury bedroom furniture creates a graceful, prestigious atmosphere with strong visual harmony. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Valencia Luxury Bedroom Collection by VIRELLAART, distinguished by a sculptural headboard, elegant symmetry and refined decorative detailing. Designed for sophisticated villas and serene master suites, this luxury bedroom furniture creates a graceful, prestigious atmosphere with strong visual harmony. Request a private Valencia Bedroom quotation via WhatsApp, including bedroom-set options and international shipping details.",
 
   prices: [
     {
@@ -415,7 +415,7 @@ aspendosBedroom: {
 ],
 
   description:
-  "Discover the Aspendos Luxury Bedroom Collection by VIRELLAART, where bold architectural framing, layered symmetry and a statement headboard create a refined contemporary retreat. Designed for upscale villas and elegant master suites, this luxury bedroom furniture delivers strong visual balance and a serene sense of prestige. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Aspendos Luxury Bedroom Collection by VIRELLAART, where bold architectural framing, layered symmetry and a statement headboard create a refined contemporary retreat. Designed for upscale villas and elegant master suites, this luxury bedroom furniture delivers strong visual balance and a serene sense of prestige. Message VIRELLAART on WhatsApp to explore Aspendos Bedroom prices, customization possibilities and worldwide delivery information.",
 
   prices: [
     {
@@ -444,7 +444,7 @@ deluxBedroom: {
 ],
 
   description:
-  "The Delux Luxury Bedroom Collection by VIRELLAART presents sweeping curves, layered symmetry and a polished architectural composition that feels both grand and inviting. Created for elegant master suites and luxury bedroom furniture settings, it brings visual harmony and lasting prestige. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Delux Luxury Bedroom Collection by VIRELLAART presents sweeping curves, layered symmetry and a polished architectural composition that feels both grand and inviting. Created for elegant master suites and luxury bedroom furniture settings, it brings visual harmony and lasting prestige. Connect with VIRELLAART on WhatsApp for Delux Bedroom set pricing, customization choices and worldwide delivery support.",
 
   prices: [
     {
@@ -472,7 +472,7 @@ aspendosDining: {
 ],
 
   description:
-  "The Aspendos Luxury Dining Room Collection by VIRELLAART combines an architectural pedestal table, sculptural curved seating and a calm, balanced composition. Created for elegant villas and contemporary dining spaces, this luxury dining room furniture delivers refined presence without excess. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Aspendos Luxury Dining Room Collection by VIRELLAART combines an architectural pedestal table, sculptural curved seating and a calm, balanced composition. Created for elegant villas and contemporary dining spaces, this luxury dining room furniture delivers refined presence without excess. Discuss your dining interior with VIRELLAART on WhatsApp and receive Aspendos Dining Room pricing, configuration guidance and delivery planning.",
 
   prices: [
     {
@@ -500,7 +500,7 @@ images: [
 ],
 
   description:
-  "The Delux Luxury Dining Room Collection by VIRELLAART pairs an elegant oval dining table with sculptural storage pieces and formal symmetry for a polished, prestigious interior. Designed for grand villas and refined entertaining spaces, this luxury dining room furniture creates a confident sense of occasion. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Delux Luxury Dining Room Collection by VIRELLAART pairs an elegant oval dining table with sculptural storage pieces and formal symmetry for a polished, prestigious interior. Designed for grand villas and refined entertaining spaces, this luxury dining room furniture creates a confident sense of occasion. Request a detailed Delux Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
 
   prices: [
     {
@@ -527,7 +527,7 @@ moonDining: {
 ],
 
   description:
-  "The Moon Luxury Dining Room Collection by VIRELLAART expresses contemporary elegance through flowing silhouettes, sculptural cabinetry and a balanced dining composition. Designed for refined villas and modern entertaining spaces, this luxury dining room furniture creates a distinctive focal point with graceful visual movement. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Moon Luxury Dining Room Collection by VIRELLAART expresses contemporary elegance through flowing silhouettes, sculptural cabinetry and a balanced dining composition. Designed for refined villas and modern entertaining spaces, this luxury dining room furniture creates a distinctive focal point with graceful visual movement. Contact VIRELLAART on WhatsApp for Moon Dining Room set pricing, customization options and worldwide delivery assistance.",
 
   prices: [
     {
@@ -554,7 +554,7 @@ queenDining: {
 ],
 
   description:
-  "Discover the Queen Luxury Dining Room Collection by VIRELLAART, shaped by fluid silhouettes, sculptural furniture forms and softly rounded seating. Designed for contemporary villas and elegant entertaining spaces, this luxury dining room furniture creates a sophisticated focal point with confident visual character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Discover the Queen Luxury Dining Room Collection by VIRELLAART, shaped by fluid silhouettes, sculptural furniture forms and softly rounded seating. Designed for contemporary villas and elegant entertaining spaces, this luxury dining room furniture creates a sophisticated focal point with confident visual character. Request a detailed Queen Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
 
   prices: [
     {
@@ -582,7 +582,7 @@ valenciaDining: {
 ],
 
   description:
-  "The Valencia Luxury Dining Room Collection by VIRELLAART combines a sculptural dining table, refined symmetry and elegant storage elements to create a polished, prestigious interior. Designed for sophisticated villas and formal entertaining spaces, this luxury dining room furniture delivers timeless visual harmony. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Valencia Luxury Dining Room Collection by VIRELLAART combines a sculptural dining table, refined symmetry and elegant storage elements to create a polished, prestigious interior. Designed for sophisticated villas and formal entertaining spaces, this luxury dining room furniture delivers timeless visual harmony. Send your project requirements on WhatsApp for Valencia Dining Room collection pricing, tailored options and international delivery support.",
 
   prices: [
     {
@@ -607,7 +607,7 @@ images: [
 ],
 
  description:
-  "The Aspendos Luxury TV Unit by VIRELLAART features a streamlined low profile, softened edges and sculptural support details that create a refined architectural focal point. Designed for elegant villas and contemporary living spaces, this designer TV unit brings balance, prestige and visual calm. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Aspendos Luxury TV Unit by VIRELLAART features a streamlined low profile, softened edges and sculptural support details that create a refined architectural focal point. Designed for elegant villas and contemporary living spaces, this designer TV unit brings balance, prestige and visual calm. Speak with our WhatsApp team for a private Aspendos TV Unit offer, TV-unit customization and shipping guidance.",
 
   prices: [
     {
@@ -632,7 +632,7 @@ images: [
 ],
 
  description:
-  "The Delux Luxury TV Unit by VIRELLAART combines a sweeping curved profile, vertical detailing and a balanced mix of display and storage elements. Created for elegant villas and sophisticated living spaces, this designer TV unit adds refined structure and a polished focal point. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Delux Luxury TV Unit by VIRELLAART combines a sweeping curved profile, vertical detailing and a balanced mix of display and storage elements. Created for elegant villas and sophisticated living spaces, this designer TV unit adds refined structure and a polished focal point. Share your living-room project on WhatsApp to receive Delux TV Unit prices, personalized options and delivery planning from VIRELLAART.",
 
   prices: [
     {
@@ -657,7 +657,7 @@ moontv: {
 ],
 
   description:
-  "The Moon Luxury TV Unit by VIRELLAART combines an architectural wall composition, integrated display shelving and a streamlined low cabinet for a polished contemporary interior. Designed for refined villas and modern living spaces, this designer TV unit creates strong visual structure and elegant presentation. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Moon Luxury TV Unit by VIRELLAART combines an architectural wall composition, integrated display shelving and a streamlined low cabinet for a polished contemporary interior. Designed for refined villas and modern living spaces, this designer TV unit creates strong visual structure and elegant presentation. Message VIRELLAART on WhatsApp for Moon TV Unit availability, customization possibilities and worldwide delivery support.",
 
   prices: [
     {
@@ -681,7 +681,7 @@ valenciaTV: {
   ],
 
   description:
-  "The Valencia Luxury TV Unit by VIRELLAART presents a sculptural arched frame, graceful curves and refined decorative accents that create a distinctive statement. Designed for elegant villas and formal living spaces, this designer TV unit brings visual prestige and architectural balance. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Valencia Luxury TV Unit by VIRELLAART presents a sculptural arched frame, graceful curves and refined decorative accents that create a distinctive statement. Designed for elegant villas and formal living spaces, this designer TV unit brings visual prestige and architectural balance. Request a detailed Valencia TV Unit quotation on WhatsApp, including TV-unit options and international shipping assistance.",
 
   prices: [
     {
@@ -705,7 +705,7 @@ vanessaDining: {
   ],
 
   description:
-  "The Vanessa Luxury Dining Room Collection by VIRELLAART is defined by high-back seating, crisp geometric lines and a formal, tailored character. Designed for elegant villas and sophisticated entertaining spaces, this luxury dining room furniture creates a confident sense of occasion and refined visual order. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Vanessa Luxury Dining Room Collection by VIRELLAART is defined by high-back seating, crisp geometric lines and a formal, tailored character. Designed for elegant villas and sophisticated entertaining spaces, this luxury dining room furniture creates a confident sense of occasion and refined visual order. Contact VIRELLAART on WhatsApp for Vanessa Dining Room set pricing, customization options and worldwide delivery assistance.",
 
   prices: [
     {
@@ -728,7 +728,7 @@ valdera: {
   ],
 
   description:
-  "The Valdera Luxury Living Room Collection by VIRELLAART blends sculpted classical silhouettes, formal symmetry and a commanding lounge composition. Created for grand villas and distinguished reception spaces, this luxury living room furniture delivers timeless prestige with a strong architectural presence. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Valdera Luxury Living Room Collection by VIRELLAART blends sculpted classical silhouettes, formal symmetry and a commanding lounge composition. Created for grand villas and distinguished reception spaces, this luxury living room furniture delivers timeless prestige with a strong architectural presence. Speak with the VIRELLAART team on WhatsApp about Valdera Living Room pricing, sofa-set options and delivery planning for your interior project.",
   prices: [
     {
       label: "3+3+1+1 Sofa Set",
@@ -762,7 +762,7 @@ shawlDining: {
   ],
 
   description:
-  "The Shawl Luxury Dining Room Collection by VIRELLAART brings together a sculptural table, sweeping chair profiles and a dramatic formal composition. Designed for statement villas and elegant entertaining spaces, this luxury dining room furniture creates a bold sense of prestige and visual depth. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Shawl Luxury Dining Room Collection by VIRELLAART brings together a sculptural table, sweeping chair profiles and a dramatic formal composition. Designed for statement villas and elegant entertaining spaces, this luxury dining room furniture creates a bold sense of prestige and visual depth. Contact VIRELLAART on WhatsApp for Shawl Dining Room set pricing, customization options and worldwide delivery assistance.",
   prices: [
     {
       label: "Dining Room Set",
@@ -785,7 +785,7 @@ valderaDining: {
   ],
 
   description:
-  "The Valdera Luxury Dining Room Collection by VIRELLAART is defined by ornate silhouettes, formal symmetry and a stately classical presence. Designed for grand residences and sophisticated dining interiors, this luxury dining room furniture creates a distinguished atmosphere with strong visual character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Valdera Luxury Dining Room Collection by VIRELLAART is defined by ornate silhouettes, formal symmetry and a stately classical presence. Designed for grand residences and sophisticated dining interiors, this luxury dining room furniture creates a distinguished atmosphere with strong visual character. Contact VIRELLAART on WhatsApp for Valdera Dining Room set pricing, customization options and worldwide delivery assistance.",
 
   prices: [
     {
@@ -809,7 +809,7 @@ versaceBedroom: {
   ],
 
   description:
-  "The Versace Luxury Bedroom Collection by VIRELLAART combines a tall statement headboard, balanced proportions and refined vertical detailing to create a polished, contemporary retreat. Designed for elegant villas and sophisticated master suites, this luxury bedroom furniture brings visual harmony and a strong sense of prestige. Contact VIRELLAART on WhatsApp for pricing and delivery details.",
+  "The Versace Luxury Bedroom Collection by VIRELLAART combines a tall statement headboard, balanced proportions and refined vertical detailing to create a polished, contemporary retreat. Designed for elegant villas and sophisticated master suites, this luxury bedroom furniture brings visual harmony and a strong sense of prestige. Speak with our WhatsApp team for Versace Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
 
   prices: [
     {
@@ -832,7 +832,7 @@ zumrut: {
   ],
 
  description:
-  "The Zumrut Luxury Living Room Collection by VIRELLAART is defined by ornate framing, tufted seating and a richly layered classical composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates a commanding atmosphere of prestige and decorative elegance. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Zumrut Luxury Living Room Collection by VIRELLAART is defined by ornate framing, tufted seating and a richly layered classical composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates a commanding atmosphere of prestige and decorative elegance. Speak with the VIRELLAART team on WhatsApp about Zumrut Living Room pricing, sofa-set options and delivery planning for your interior project.",
 
   prices: [
     {
@@ -864,7 +864,7 @@ zumrutDining: {
   ],
 
   description:
-  "The Zümrüt Luxury Dining Room Collection by VIRELLAART combines ornate silhouettes, high-back seating and formal symmetry to create a richly composed classical interior. Designed for grand residences and elegant entertaining spaces, this luxury dining room furniture delivers ceremonial presence and refined visual drama. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Zümrüt Luxury Dining Room Collection by VIRELLAART combines ornate silhouettes, high-back seating and formal symmetry to create a richly composed classical interior. Designed for grand residences and elegant entertaining spaces, this luxury dining room furniture delivers ceremonial presence and refined visual drama. Send your project requirements on WhatsApp for Zümrüt Dining Room collection pricing, tailored options and international delivery support.",
 
   prices: [
     {
@@ -888,7 +888,7 @@ milano: {
   ],
 
   description:
-  "Milano Luxury Living Room Collection by VIRELLAART presents an opulent classical composition with tufted seating, elaborate decorative framing and a richly layered salon atmosphere. Created for grand villas and formal reception interiors, this luxury living room furniture delivers unmistakable prestige and ceremonial elegance. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "Milano Luxury Living Room Collection by VIRELLAART presents an opulent classical composition with tufted seating, elaborate decorative framing and a richly layered salon atmosphere. Created for grand villas and formal reception interiors, this luxury living room furniture delivers unmistakable prestige and ceremonial elegance. Request a private Milano Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
 
   prices: [
     {
@@ -916,7 +916,7 @@ zumrutTv: {
   ],
 
   description:
-  "The Zümrüt Luxury TV Unit by VIRELLAART combines an ornate arched composition, decorative paneling and a commanding classical presence. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with rich visual character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Zümrüt Luxury TV Unit by VIRELLAART combines an ornate arched composition, decorative paneling and a commanding classical presence. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with rich visual character. Request a detailed Zümrüt TV Unit quotation on WhatsApp, including TV-unit options and international shipping assistance.",
 
   prices: [
     {
@@ -938,7 +938,7 @@ milanoDining: {
   ],
 
   description:
-  "The Milano Luxury Dining Room Collection by VIRELLAART presents an opulent classical setting with a sculptural dining table, high-back chairs and richly framed display furniture. Created for grand villas and formal entertaining, this luxury dining room furniture transforms meals into an elegant occasion. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Luxury Dining Room Collection by VIRELLAART presents an opulent classical setting with a sculptural dining table, high-back chairs and richly framed display furniture. Created for grand villas and formal entertaining, this luxury dining room furniture transforms meals into an elegant occasion. Request a detailed Milano Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
 
   prices: [
     {
@@ -962,7 +962,7 @@ milanoBedroom: {
   ],
 
   description:
-  "The Milano Luxury Bedroom Collection by VIRELLAART brings grand classical elegance to refined interiors with its ornate bed, statement wardrobe and richly decorative presence. Designed for clients seeking luxury bedroom furniture with timeless character, Milano creates a prestigious atmosphere. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Luxury Bedroom Collection by VIRELLAART brings grand classical elegance to refined interiors with its ornate bed, statement wardrobe and richly decorative presence. Designed for clients seeking luxury bedroom furniture with timeless character, Milano creates a prestigious atmosphere. Connect with VIRELLAART on WhatsApp for Milano Bedroom set pricing, customization choices and worldwide delivery support.",
 
   prices: [
     {
@@ -986,7 +986,7 @@ milanoBlue: {
   ],
 
   description:
-  "The Milano Blue Luxury Living Room Collection by VIRELLAART showcases sculpted classical seating, intricate decorative framing and a dramatic salon composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates an atmosphere of prestige, depth and timeless character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Blue Luxury Living Room Collection by VIRELLAART showcases sculpted classical seating, intricate decorative framing and a dramatic salon composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates an atmosphere of prestige, depth and timeless character. Message VIRELLAART on WhatsApp for Milano Blue Living Room pricing, customization options and worldwide delivery planning.",
 
   prices: [
     {
@@ -1018,7 +1018,7 @@ milanoBlueDining: {
   ],
 
   description:
-  "The Milano Blue Luxury Dining Room Collection by VIRELLAART creates a commanding classical setting through an elaborately framed table, high-back chairs and richly coordinated display pieces. Ideal for grand villas and formal entertaining, this luxury dining room furniture brings ceremonial presence and enduring visual prestige. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Blue Luxury Dining Room Collection by VIRELLAART creates a commanding classical setting through an elaborately framed table, high-back chairs and richly coordinated display pieces. Ideal for grand villas and formal entertaining, this luxury dining room furniture brings ceremonial presence and enduring visual prestige. Message VIRELLAART via WhatsApp to explore Milano Blue Dining Room prices, customization possibilities and worldwide delivery details.",
 
   prices: [
     {
@@ -1042,7 +1042,7 @@ milanoBlueBedroom: {
   ],
 
   description:
-  "The Milano Blue Luxury Bedroom Collection by VIRELLAART presents a grand classical retreat with a tufted statement bed, richly framed wardrobe and coordinated decorative pieces. Designed for elegant villas and formal master suites, this luxury bedroom furniture creates a prestigious, harmonious atmosphere. Request pricing, customization and delivery details directly through WhatsApp.",
+  "The Milano Blue Luxury Bedroom Collection by VIRELLAART presents a grand classical retreat with a tufted statement bed, richly framed wardrobe and coordinated decorative pieces. Designed for elegant villas and formal master suites, this luxury bedroom furniture creates a prestigious, harmonious atmosphere. Discuss the Milano Blue Bedroom collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
 
   prices: [
     {
@@ -1062,7 +1062,7 @@ milanoBlueTv: {
   ],
 
   description:
-  "The Milano Blue Luxury TV Unit by VIRELLAART combines an elongated classical silhouette, richly ornamental framing and a commanding low-profile composition. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with strong decorative character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Blue Luxury TV Unit by VIRELLAART combines an elongated classical silhouette, richly ornamental framing and a commanding low-profile composition. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with strong decorative character. Contact VIRELLAART via WhatsApp for Milano Blue TV Unit pricing, customization details and worldwide delivery information.",
 
   prices: [
     {
@@ -1082,7 +1082,7 @@ milanoTv: {
   ],
 
   description:
-  "The Milano Luxury TV Unit by VIRELLAART is defined by an ornate architectural frame, balanced symmetry and a richly decorative low cabinet. Designed for grand villas and formal living spaces, this designer TV unit creates an elegant focal point with timeless classical character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Milano Luxury TV Unit by VIRELLAART is defined by an ornate architectural frame, balanced symmetry and a richly decorative low cabinet. Designed for grand villas and formal living spaces, this designer TV unit creates an elegant focal point with timeless classical character. Share your living-room project on WhatsApp to receive Milano TV Unit prices, personalized options and delivery planning from VIRELLAART.",
 
   prices: [
     {
@@ -1106,7 +1106,7 @@ lina: {
   ],
 
   description:
-  "The Lina Luxury Living Room Collection by VIRELLAART balances tailored seating, sculpted arm profiles and a substantial architectural coffee table for a composed, elegant interior. Suited to refined villas and sophisticated reception spaces, this luxury sofa set delivers polished comfort and strong visual order. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Lina Luxury Living Room Collection by VIRELLAART balances tailored seating, sculpted arm profiles and a substantial architectural coffee table for a composed, elegant interior. Suited to refined villas and sophisticated reception spaces, this luxury sofa set delivers polished comfort and strong visual order. Message VIRELLAART on WhatsApp for Lina Living Room pricing, customization options and worldwide delivery planning.",
 
   prices: [
     {
@@ -1134,7 +1134,7 @@ linaDining: {
   ],
 
   description:
-  "The Lina Luxury Dining Room Collection by VIRELLAART pairs a strong architectural table, tailored high-back chairs and disciplined vertical detailing for a polished formal setting. Designed for sophisticated villas and elegant entertaining spaces, this luxury dining room furniture brings visual balance, prestige and refined structure. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Lina Luxury Dining Room Collection by VIRELLAART pairs a strong architectural table, tailored high-back chairs and disciplined vertical detailing for a polished formal setting. Designed for sophisticated villas and elegant entertaining spaces, this luxury dining room furniture brings visual balance, prestige and refined structure. Message VIRELLAART via WhatsApp to explore Lina Dining Room prices, customization possibilities and worldwide delivery details.",
 
   prices: [
     {
@@ -1158,7 +1158,7 @@ zerafetDining: {
   ],
 
   description:
-  "The Zerafet Luxury Dining Room Collection by VIRELLAART evokes graceful classical elegance through curved chair silhouettes, formal symmetry and richly composed display pieces. Created for distinguished villas and refined entertaining spaces, this luxury dining room furniture brings warmth, ceremony and timeless character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Zerafet Luxury Dining Room Collection by VIRELLAART evokes graceful classical elegance through curved chair silhouettes, formal symmetry and richly composed display pieces. Created for distinguished villas and refined entertaining spaces, this luxury dining room furniture brings warmth, ceremony and timeless character. Contact VIRELLAART on WhatsApp for Zerafet Dining Room set pricing, customization options and worldwide delivery assistance.",
 
   prices: [
     {
@@ -1183,7 +1183,7 @@ zerafetLiving: {
   ],
 
   description:
-  "The Zerafet Luxury Living Room Collection by VIRELLAART blends graceful classical silhouettes, balanced seating and an inviting salon composition. Designed for elegant villas and formal reception spaces, this luxury sofa set brings warmth, symmetry and timeless refinement to the interior. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Zerafet Luxury Living Room Collection by VIRELLAART blends graceful classical silhouettes, balanced seating and an inviting salon composition. Designed for elegant villas and formal reception spaces, this luxury sofa set brings warmth, symmetry and timeless refinement to the interior. Request a private Zerafet Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
 
   prices: [
     {
@@ -1211,7 +1211,7 @@ saltanatBedroom: {
   ],
 
  description:
-  "The Saltanat Luxury Bedroom Collection by VIRELLAART commands attention with an ornate statement headboard, deep tufting and a richly layered classical composition. Created for palatial villas and distinguished master suites, this luxury bedroom furniture delivers ceremonial grandeur and unmistakable prestige. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Saltanat Luxury Bedroom Collection by VIRELLAART commands attention with an ornate statement headboard, deep tufting and a richly layered classical composition. Created for palatial villas and distinguished master suites, this luxury bedroom furniture delivers ceremonial grandeur and unmistakable prestige. Discuss the Saltanat Bedroom collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
 
   prices: [
     {
@@ -1236,7 +1236,7 @@ saltanatDining: {
   ],
 
   description:
-  "The Saltanat Luxury Dining Room Collection by VIRELLAART creates a palatial statement through sculptural forms, commanding symmetry and richly ornate detailing. Designed for grand villas and formal entertaining spaces, this luxury dining room furniture delivers ceremonial elegance and unmistakable prestige. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Saltanat Luxury Dining Room Collection by VIRELLAART creates a palatial statement through sculptural forms, commanding symmetry and richly ornate detailing. Designed for grand villas and formal entertaining spaces, this luxury dining room furniture delivers ceremonial elegance and unmistakable prestige. Speak with VIRELLAART on WhatsApp for a private Saltanat Dining Room offer, dining-set customization and shipping assistance.",
 
   prices: [
     {
@@ -1260,7 +1260,7 @@ saltanatDiningGreen: {
   ],
 
   description:
-  "The Saltanat Green Luxury Dining Room Collection by VIRELLAART presents a dramatic classical composition with sculptural seating, ornate framing and a richly ceremonial atmosphere. Designed for palatial villas and distinguished entertaining spaces, this luxury dining room furniture creates commanding visual impact and lasting prestige. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Saltanat Green Luxury Dining Room Collection by VIRELLAART presents a dramatic classical composition with sculptural seating, ornate framing and a richly ceremonial atmosphere. Designed for palatial villas and distinguished entertaining spaces, this luxury dining room furniture creates commanding visual impact and lasting prestige. Send your project requirements on WhatsApp for Saltanat Green Dining Room collection pricing, tailored options and international delivery support.",
 
   prices: [
     {
@@ -1283,7 +1283,7 @@ saltanatLiving: {
   ],
 
   description:
-  "The Saltanat Luxury Living Room Collection by VIRELLAART brings palatial character to grand interiors through sculptural seating, sweeping ornamental lines and a richly balanced salon composition. Designed for formal villas and distinguished reception spaces, this luxury sofa set creates ceremonial elegance and commanding visual prestige. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Saltanat Luxury Living Room Collection by VIRELLAART brings palatial character to grand interiors through sculptural seating, sweeping ornamental lines and a richly balanced salon composition. Designed for formal villas and distinguished reception spaces, this luxury sofa set creates ceremonial elegance and commanding visual prestige. Connect with VIRELLAART via WhatsApp for Saltanat Living Room availability, customization possibilities and worldwide delivery information.",
 
   prices: [
     {
@@ -1311,7 +1311,7 @@ saltanatGreenLiving: {
 ],
 
   description:
-  "The Saltanat Green Luxury Living Room Collection by VIRELLAART combines sculptural classical seating, elaborate ornamental framing and dramatic contrast for an unmistakably regal interior. Designed for palatial villas and formal reception spaces, this luxury living room furniture creates commanding presence and ceremonial elegance. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Saltanat Green Luxury Living Room Collection by VIRELLAART combines sculptural classical seating, elaborate ornamental framing and dramatic contrast for an unmistakably regal interior. Designed for palatial villas and formal reception spaces, this luxury living room furniture creates commanding presence and ceremonial elegance. Send your luxury living room requirements on WhatsApp to receive Saltanat Green Living Room prices, personalized options and delivery assistance from VIRELLAART.",
   
   prices: [
     {
@@ -1341,7 +1341,7 @@ sultanBedroom: {
   ],
 
   description:
-    "Discover the Sultan Luxury Bedroom Collection by VIRELLAART, combining regal elegance, exceptional craftsmanship and refined comfort for distinguished luxury interiors.",
+    "The Sultan Luxury Bedroom Collection by VIRELLAART features a crowned statement headboard, formal symmetry and coordinated classical furniture for an impressive master suite. Designed for luxury villas and distinguished residences, this luxury bedroom set creates regal comfort with a commanding visual identity. Speak with our WhatsApp team for Sultan Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
 
   prices: [
     {
@@ -1365,7 +1365,7 @@ sultanGreenBedroom: {
   ],
 
   description:
-  "The Sultan Green Luxury Bedroom Collection by VIRELLAART showcases a regal classical composition with a crowned headboard, ornate framing and coordinated statement pieces. Designed for palatial villas and formal master suites, this luxury bedroom furniture creates refined symmetry and commanding visual prestige. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The Sultan Green Luxury Bedroom Collection by VIRELLAART showcases a regal classical composition with a crowned headboard, ornate framing and coordinated statement pieces. Designed for palatial villas and formal master suites, this luxury bedroom furniture creates refined symmetry and commanding visual prestige. Share your master-bedroom requirements on WhatsApp to receive Sultan Green Bedroom pricing, personalized options and delivery planning from VIRELLAART.",
 
   prices: [
     {
@@ -1390,7 +1390,7 @@ sultanLiving: {
   ],
 
   description:
-  "The Sultan Luxury Living Room Collection by VIRELLAART presents a regal salon composition with crowned silhouettes, elaborate ornamental framing and balanced formal seating. Created for palatial villas and distinguished reception spaces, this luxury living room furniture delivers ceremonial grandeur with refined visual harmony. Contact VIRELLAART on WhatsApp for pricing, customization and worldwide delivery details.",
+  "The Sultan Luxury Living Room Collection by VIRELLAART presents a regal salon composition with crowned silhouettes, elaborate ornamental framing and balanced formal seating. Created for palatial villas and distinguished reception spaces, this luxury living room furniture delivers ceremonial grandeur with refined visual harmony. Message VIRELLAART on WhatsApp for Sultan Sofa pricing, customization options and worldwide delivery planning.",
   
   prices: [
     {
@@ -1418,7 +1418,7 @@ sultanSofa: {
   ],
 
   description:
-    "Sultan Sofa by VIRELLAART is a luxury classic living room collection designed for elegant villas and refined interiors. Featuring timeless proportions, sophisticated details and exceptional craftsmanship, this exclusive Turkish luxury furniture collection creates a distinguished atmosphere for premium residential spaces worldwide.",
+    "Sultan Sofa Green by VIRELLAART is a classical luxury living room collection with timeless proportions, sophisticated detailing and a refined formal character. Designed for elegant villas and premium residential interiors, this luxury sofa set creates a distinguished atmosphere with manufacturer-direct support from Istanbul. Send your luxury living room requirements on WhatsApp to receive Sultan Sofa (Green) prices, personalized options and delivery assistance from VIRELLAART.",
 
   prices: [
     {
@@ -1446,7 +1446,7 @@ sultanGreenDining: {
   ],
 
   description:
-    "Sultan Green Dining Room Set by VIRELLAART is a grand classic luxury dining collection designed for villas, formal dining rooms and distinguished interiors. Its coordinated table, sculptural chairs and ornate statement pieces create a cohesive atmosphere with richly carved detailing, elegant symmetry and manufacturer-direct craftsmanship from Istanbul, Türkiye.",
+    "The Sultan Green Luxury Dining Room Set by VIRELLAART combines a coordinated statement table, sculptural chairs and ornate classical pieces. Designed for villas, formal dining rooms and distinguished interiors, this luxury dining furniture creates elegant symmetry with a commanding presence. Speak with VIRELLAART on WhatsApp for a private Sultan Green Dining Room Set offer, dining-set customization and shipping assistance.",
 
   prices: [
     {
@@ -1462,7 +1462,7 @@ sultanGreenDining: {
     category: "bedrooms",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
-      "The Luxury Bedroom Set combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Designed for luxury villas, premium residences, and sophisticated bedroom interiors, this harmonious collection is available directly from VIRELLAART with international delivery support and project assistance via WhatsApp.",
+      "The Luxury Bedroom Set combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Share your master-bedroom requirements on WhatsApp to receive Luxury Bedroom Set pricing, personalized options and delivery planning from VIRELLAART.",
     images: [
       "/marsilyabedroom-01.webp",
       "/marsilyabedroom-02.webp",
