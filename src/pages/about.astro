@@ -262,6 +262,78 @@ const detailedCopy = {
   },
 } as const;
 
+const aboutSeo = {
+  "en": {
+    "title": "About VIRELLAART | Luxury Furniture Manufacturer",
+    "description": "Discover VIRELLAART, an Istanbul-based luxury furniture manufacturer combining design expertise, refined craftsmanship, quality control and worldwide delivery."
+  },
+  "tr": {
+    "title": "VIRELLAART Hakkında | Lüks Mobilya Üreticisi",
+    "description": "İstanbul merkezli lüks mobilya üreticisi VIRELLAART'ı; tasarım uzmanlığı, detaylı işçilik, kalite kontrol ve dünya çapında teslimat desteğiyle keşfedin."
+  },
+  "de": {
+    "title": "Über VIRELLAART | Luxusmöbelhersteller aus Istanbul",
+    "description": "Entdecken Sie VIRELLAART, einen Luxusmöbelhersteller aus Istanbul mit Designkompetenz, feiner Verarbeitung, Qualitätskontrolle und weltweiter Lieferung."
+  },
+  "fr": {
+    "title": "À Propos de VIRELLAART | Fabricant de Mobilier de Luxe",
+    "description": "Découvrez VIRELLAART, fabricant de mobilier de luxe à Istanbul, alliant expertise du design, savoir-faire raffiné, contrôle qualité et livraison mondiale."
+  },
+  "it": {
+    "title": "Chi è VIRELLAART | Produttore di Mobili di Lusso",
+    "description": "Scopri VIRELLAART, produttore di mobili di lusso a Istanbul, con competenza nel design, lavorazioni raffinate, controllo qualità e consegna internazionale."
+  },
+  "ru": {
+    "title": "О VIRELLAART | Производитель Элитной Мебели",
+    "description": "Познакомьтесь с VIRELLAART — производителем элитной мебели в Стамбуле, объединяющим дизайн, точное мастерство, контроль качества и международную доставку."
+  },
+  "ar": {
+    "title": "عن VIRELLAART | مُصنّع الأثاث الفاخر في إسطنبول",
+    "description": "تعرّف على VIRELLAART، مُصنّع الأثاث الفاخر في إسطنبول، حيث تجتمع خبرة التصميم والحرفية الدقيقة وفحص الجودة ودعم التوصيل إلى مختلف أنحاء العالم."
+  },
+  "bg": {
+    "title": "За VIRELLAART | Производител на Луксозни Мебели",
+    "description": "Открийте VIRELLAART, производител на луксозни мебели в Истанбул, който съчетава дизайнерски опит, прецизна изработка, качествен контрол и международна доставка."
+  },
+  "ro": {
+    "title": "Despre VIRELLAART | Producător de Mobilier de Lux",
+    "description": "Descoperiți VIRELLAART, producător de mobilier de lux din Istanbul, cu expertiză în design, măiestrie rafinată, control al calității și livrare internațională."
+  },
+  "el": {
+    "title": "Σχετικά με τη VIRELLAART | Κατασκευαστής Πολυτελών Επίπλων",
+    "description": "Γνωρίστε τη VIRELLAART, κατασκευαστή πολυτελών επίπλων στην Κωνσταντινούπολη, με σχεδιαστική γνώση, λεπτομερή κατασκευή, έλεγχο ποιότητας και διεθνή παράδοση."
+  },
+  "es": {
+    "title": "Sobre VIRELLAART | Fabricante de Muebles de Lujo",
+    "description": "Descubra VIRELLAART, fabricante de muebles de lujo en Estambul, con experiencia en diseño, acabados refinados, control de calidad y entrega internacional."
+  },
+  "sr": {
+    "title": "О Компанији VIRELLAART | Произвођач Луксузног Намештаја",
+    "description": "Упознајте VIRELLAART, произвођача луксузног намештаја из Истанбула који спаја дизајнерско знање, прецизну израду, контролу квалитета и међународну испоруку."
+  },
+  "kk": {
+    "title": "VIRELLAART Туралы | Сәнді Жиһаз Өндірушісі",
+    "description": "Стамбұлдағы сәнді жиһаз өндірушісі VIRELLAART туралы біліңіз: дизайн тәжірибесі, ұқыпты шеберлік, сапаны бақылау және халықаралық жеткізу қолдауы."
+  },
+  "uz": {
+    "title": "VIRELLAART Haqida | Hashamatli Mebel Ishlab Chiqaruvchi",
+    "description": "Istanbuldagi hashamatli mebel ishlab chiqaruvchi VIRELLAART bilan tanishing: dizayn tajribasi, nozik mahorat, sifat nazorati va xalqaro yetkazib berish."
+  },
+  "pt": {
+    "title": "Sobre a VIRELLAART | Fabricante de Móveis de Luxo",
+    "description": "Conheça a VIRELLAART, fabricante de móveis de luxo em Istambul, com experiência em design, acabamentos refinados, controle de qualidade e entrega internacional."
+  },
+  "pl": {
+    "title": "O VIRELLAART | Producent Luksusowych Mebli",
+    "description": "Poznaj VIRELLAART, producenta luksusowych mebli ze Stambułu, łączącego wiedzę projektową, precyzyjne wykonanie, kontrolę jakości i dostawę międzynarodową."
+  }
+} as const;
+
+const aboutSeoEntry =
+  aboutSeo[
+    language as keyof typeof aboutSeo
+  ] ?? aboutSeo.en;
+
 const detailed = isDetailedLanguage
   ? detailedCopy[language as "en" | "tr"]
   : null;
@@ -282,9 +354,8 @@ const whatsappURL =
     whatsappMessage,
   )}`;
 
-const pageTitle = detailed?.metaTitle ?? translations.about.title;
-const pageDescription =
-  detailed?.metaDescription ?? translations.about.description;
+const pageTitle = aboutSeoEntry.title;
+const pageDescription = aboutSeoEntry.description;
 const imageAlt = detailed?.alts.factory ?? translations.about.imageAlt;
 
 const siteOrigin = "https://www.virellaart.com";

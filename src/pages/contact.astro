@@ -857,6 +857,84 @@ const extraContent: Record<string, ExtraContent> = {
   },
 };
 
+const contactSeo = {
+  "en": {
+    "title": "Contact VIRELLAART | Luxury Furniture Manufacturer",
+    "description": "Contact VIRELLAART for luxury furniture prices, individual product inquiries, customization options and worldwide delivery support directly from Istanbul."
+  },
+  "tr": {
+    "title": "VIRELLAART İletişim | Lüks Mobilya Üreticisi",
+    "description": "Lüks mobilya fiyatları, ürün talepleri, kişiselleştirme seçenekleri ve dünya çapında teslimat desteği için VIRELLAART ile doğrudan iletişime geçin."
+  },
+  "de": {
+    "title": "VIRELLAART Kontakt | Luxusmöbel aus Istanbul",
+    "description": "Kontaktieren Sie VIRELLAART für Luxusmöbelpreise, Produktanfragen, individuelle Optionen und weltweite Lieferunterstützung direkt aus Istanbul."
+  },
+  "fr": {
+    "title": "Contacter VIRELLAART | Mobilier de Luxe à Istanbul",
+    "description": "Contactez VIRELLAART pour les prix du mobilier de luxe, les demandes de produits, les options personnalisées et la livraison internationale depuis Istanbul."
+  },
+  "it": {
+    "title": "Contatta VIRELLAART | Mobili di Lusso da Istanbul",
+    "description": "Contatta VIRELLAART per prezzi di mobili di lusso, richieste sui prodotti, opzioni personalizzate e assistenza per consegne internazionali da Istanbul."
+  },
+  "ru": {
+    "title": "Связаться с VIRELLAART | Элитная Мебель из Стамбула",
+    "description": "Свяжитесь с VIRELLAART, чтобы узнать цены на элитную мебель, варианты персонализации, сведения о коллекциях и международной доставке из Стамбула."
+  },
+  "ar": {
+    "title": "تواصل مع VIRELLAART | أثاث فاخر من إسطنبول",
+    "description": "تواصل مع VIRELLAART لمعرفة أسعار الأثاث الفاخر وتفاصيل المنتجات وخيارات التخصيص والحصول على دعم التوصيل الدولي مباشرة من إسطنبول."
+  },
+  "bg": {
+    "title": "Контакт с VIRELLAART | Луксозни Мебели от Истанбул",
+    "description": "Свържете се с VIRELLAART за цени на луксозни мебели, продуктови запитвания, персонализирани опции и международна доставка директно от Истанбул."
+  },
+  "ro": {
+    "title": "Contact VIRELLAART | Mobilier de Lux din Istanbul",
+    "description": "Contactați VIRELLAART pentru prețuri, întrebări despre produse, opțiuni de personalizare și asistență pentru livrare internațională din Istanbul."
+  },
+  "el": {
+    "title": "Επικοινωνία με VIRELLAART | Πολυτελή Έπιπλα από Κωνσταντινούπολη",
+    "description": "Επικοινωνήστε με τη VIRELLAART για τιμές πολυτελών επίπλων, πληροφορίες προϊόντων, επιλογές προσαρμογής και διεθνή παράδοση από την Κωνσταντινούπολη."
+  },
+  "es": {
+    "title": "Contactar con VIRELLAART | Muebles de Lujo de Estambul",
+    "description": "Contacte con VIRELLAART para consultar precios, productos, opciones de personalización y asistencia de entrega internacional directamente desde Estambul."
+  },
+  "sr": {
+    "title": "Контакт VIRELLAART | Луксузни Намештај из Истанбула",
+    "description": "Контактирајте VIRELLAART за цене луксузног намештаја, питања о производима, опције прилагођавања и међународну испоруку директно из Истанбула."
+  },
+  "kk": {
+    "title": "VIRELLAART Байланыс | Стамбұлдан Сәнді Жиһаз",
+    "description": "Сәнді жиһаз бағалары, өнім сұрақтары, жекелендіру нұсқалары және Стамбұлдан халықаралық жеткізу қолдауы үшін VIRELLAART компаниясына хабарласыңыз."
+  },
+  "uz": {
+    "title": "VIRELLAART Bilan Aloqa | Istanbuldan Hashamatli Mebel",
+    "description": "Hashamatli mebel narxlari, mahsulot savollari, moslashtirish imkoniyatlari va Istanbuldan xalqaro yetkazib berish bo‘yicha VIRELLAART bilan bog‘laning."
+  },
+  "pt": {
+    "title": "Contato VIRELLAART | Móveis de Luxo de Istambul",
+    "description": "Fale com a VIRELLAART para preços de móveis de luxo, dúvidas sobre produtos, opções personalizadas e suporte de entrega internacional direto de Istambul."
+  },
+  "pl": {
+    "title": "Kontakt VIRELLAART | Luksusowe Meble ze Stambułu",
+    "description": "Skontaktuj się z VIRELLAART w sprawie cen luksusowych mebli, pytań o produkty, opcji personalizacji i międzynarodowej dostawy bezpośrednio ze Stambułu."
+  }
+} as const;
+
+const contactSeoEntry =
+  contactSeo[
+    language as keyof typeof contactSeo
+  ] ?? contactSeo.en;
+
+const pageTitle =
+  contactSeoEntry.title;
+
+const pageDescription =
+  contactSeoEntry.description;
+
 const extra = extraContent[language] ?? extraContent.en;
 
 const whatsappMessage =
@@ -871,8 +949,8 @@ const whatsappURL =
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: translations.contact.title,
-  description: translations.contact.description,
+  name: pageTitle,
+  description: pageDescription,
   url: new URL(
     Astro.url.pathname,
     "https://www.virellaart.com",
@@ -897,8 +975,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title={translations.contact.title}
-  description={translations.contact.description}
+  title={pageTitle}
+  description={pageDescription}
 >
   <script
     type="application/ld+json"
