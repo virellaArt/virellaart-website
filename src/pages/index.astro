@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
+  getSeoDescription,
   getLanguageFromPath,
   getTranslations,
   localizedPath,
@@ -8,6 +9,12 @@ import {
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
+
+const pageDescription =
+  getSeoDescription(
+    translations.home.description,
+    language,
+  );
 
 const whatsappMessage =
   translations.product.whatsappMessage.replace(
@@ -334,7 +341,7 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
 
 <BaseLayout
   title={translations.home.title}
-  description={translations.home.description}
+  description={pageDescription}
 >
   <section id="home" class="hero">
     <div class="hero-overlay"></div>

@@ -2058,6 +2058,128 @@ export function translatePriceLabel(
   return priceLabelTranslations[language][label] ?? label;
 }
 
+const seoDescriptionSuffixes: Record<
+  Language,
+  readonly [string, string]
+> = {
+  en: [
+    "View pricing and delivery options.",
+    "Contact VIRELLAART for pricing, customization and worldwide delivery.",
+  ],
+  tr: [
+    "Fiyat ve teslimat seçeneklerini inceleyin.",
+    "Fiyat, kişiselleştirme ve dünya çapında teslimat için VIRELLAART ile iletişime geçin.",
+  ],
+  de: [
+    "Preise und Lieferoptionen ansehen.",
+    "Kontaktieren Sie VIRELLAART für Preise, individuelle Optionen und weltweite Lieferung.",
+  ],
+  fr: [
+    "Consultez les prix et options de livraison.",
+    "Contactez VIRELLAART pour les prix, la personnalisation et la livraison internationale.",
+  ],
+  it: [
+    "Scopri prezzi e opzioni di consegna.",
+    "Contatta VIRELLAART per prezzi, personalizzazione e consegna internazionale.",
+  ],
+  ru: [
+    "Узнайте цены и варианты доставки.",
+    "Свяжитесь с VIRELLAART для уточнения цен, персонализации и международной доставки.",
+  ],
+  ar: [
+    "اطلب الأسعار وخيارات التوصيل.",
+    "تواصل مع VIRELLAART لمعرفة الأسعار وخيارات التخصيص والتوصيل الدولي.",
+  ],
+  bg: [
+    "Вижте цени и опции за доставка.",
+    "Свържете се с VIRELLAART за цени, персонализация и международна доставка.",
+  ],
+  ro: [
+    "Consultați prețurile și opțiunile de livrare.",
+    "Contactați VIRELLAART pentru prețuri, personalizare și livrare internațională.",
+  ],
+  el: [
+    "Δείτε τιμές και επιλογές παράδοσης.",
+    "Επικοινωνήστε με τη VIRELLAART για τιμές, προσαρμογή και διεθνή παράδοση.",
+  ],
+  es: [
+    "Consulte precios y opciones de entrega.",
+    "Contacte con VIRELLAART para precios, personalización y entrega internacional.",
+  ],
+  sr: [
+    "Pogledajte cene i opcije isporuke.",
+    "Kontaktirajte VIRELLAART za cene, prilagođavanje i međunarodnu isporuku.",
+  ],
+  kk: [
+    "Бағалар мен жеткізу нұсқаларын қараңыз.",
+    "Бағалар, жекелендіру және халықаралық жеткізу үшін VIRELLAART компаниясына хабарласыңыз.",
+  ],
+  uz: [
+    "Narxlar va yetkazib berish variantlarini ko‘ring.",
+    "Narxlar, moslashtirish va xalqaro yetkazib berish uchun VIRELLAART bilan bog‘laning.",
+  ],
+  pt: [
+    "Consulte preços e opções de entrega.",
+    "Fale com a VIRELLAART para preços, personalização e entrega internacional.",
+  ],
+  pl: [
+    "Sprawdź ceny i opcje dostawy.",
+    "Skontaktuj się z VIRELLAART w sprawie cen, personalizacji i dostawy międzynarodowej.",
+  ],
+};
+
+function truncateMetaDescription(
+  description: string,
+): string {
+  if (description.length <= 160) {
+    return description;
+  }
+
+  const shortened = description
+    .slice(0, 157)
+    .replace(/\s+\S*$/, "");
+
+  return `${shortened || description.slice(0, 157)}...`;
+}
+
+export function getSeoDescription(
+  description: string,
+  language: Language,
+): string {
+  const normalized = description
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (normalized.length > 160) {
+    return truncateMetaDescription(normalized);
+  }
+
+  if (normalized.length >= 120) {
+    return normalized;
+  }
+
+  const suffixes =
+    seoDescriptionSuffixes[language] ??
+    seoDescriptionSuffixes.en;
+
+  for (const suffix of suffixes) {
+    const candidate =
+      `${normalized} ${suffix}`;
+
+    if (
+      candidate.length >= 120 &&
+      candidate.length <= 160
+    ) {
+      return candidate;
+    }
+  }
+
+  const fallback =
+    `${normalized} ${suffixes[suffixes.length - 1]}`;
+
+  return truncateMetaDescription(fallback);
+}
+
 const categoryDescriptionTemplates: Record<
   Language,
   Record<string, string>

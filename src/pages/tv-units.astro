@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
 import { tvUnitModels } from "../data/tv-unit-catalog";
 import {
+  getSeoDescription,
   getLanguageFromPath,
   getTranslations,
   localizedPath,
@@ -18,16 +19,22 @@ const translations =
 const categoryTranslations =
   translations.category.tvUnits;
 
+const pageDescription =
+  getSeoDescription(
+    categoryTranslations.description,
+    language,
+  );
+
 const models = tvUnitModels;
 ---
 
 <BaseLayout
   title={categoryTranslations.title}
-  description={categoryTranslations.description}
+  description={pageDescription}
 >
 <CollectionSchema
   categoryName={categoryTranslations.title}
-  description={categoryTranslations.description}
+  description={pageDescription}
   {models}
 />
 

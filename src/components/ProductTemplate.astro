@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
+  getSeoDescription,
   getLanguageFromPath,
   getProductDescription,
   getTranslations,
@@ -59,11 +60,10 @@ const productDescription =
   getProductDescription(product, language);
 
 const pageDescription =
-  productDescription.length > 160
-    ? `${productDescription
-        .slice(0, 157)
-        .replace(/\s+\S*$/, "")}...`
-    : productDescription;
+  getSeoDescription(
+    productDescription,
+    language,
+  );
 
 const canonicalURL = new URL(
   Astro.url.pathname,

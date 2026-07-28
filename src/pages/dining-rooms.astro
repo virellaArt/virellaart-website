@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
 import { diningRoomModels } from "../data/dining-room-catalog";
 import {
+  getSeoDescription,
   getLanguageFromPath,
   getTranslations,
   localizedPath,
@@ -13,16 +14,22 @@ const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const categoryTranslations = translations.category.diningRooms;
 
+const pageDescription =
+  getSeoDescription(
+    categoryTranslations.description,
+    language,
+  );
+
 const models = diningRoomModels;
 ---
 
 <BaseLayout
   title={categoryTranslations.title}
-  description={categoryTranslations.description}
+  description={pageDescription}
 >
   <CollectionSchema
     categoryName={categoryTranslations.title}
-    description={categoryTranslations.description}
+    description={pageDescription}
     {models}
   />
   <main class="page">
