@@ -10,25 +10,31 @@ import {
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 
+const mobileMenuLabel =
+  language === "tr" ? "MEN\u00dc" : "MENU";
+
+const mobileCloseLabel =
+  language === "tr" ? "KAPAT" : "CLOSE";
+
 const manufacturingLabels: Record<
   (typeof languageCodes)[number],
   string
 > = {
   en: "Manufacturing",
-  tr: "Üretim",
+  tr: "Ãœretim",
   de: "Produktion",
   fr: "Fabrication",
   it: "Produzione",
-  ru: "Производство",
-  ar: "التصنيع",
-  bg: "Производство",
-  ro: "Producție",
-  el: "Παραγωγή",
-  es: "Fabricación",
+  ru: "ĞŸÑ€Ğ¾Ğ¸Ğ·Ğ²Ğ¾Ğ´ÑÑ‚Ğ²Ğ¾",
+  ar: "Ø§Ù„ØªØµÙ†ÙŠØ¹",
+  bg: "ĞŸÑ€Ğ¾Ğ¸Ğ·Ğ²Ğ¾Ğ´ÑÑ‚Ğ²Ğ¾",
+  ro: "ProducÈ›ie",
+  el: "Î Î±ÏÎ±Î³Ï‰Î³Î®",
+  es: "FabricaciÃ³n",
   sr: "Proizvodnja",
-  kk: "Өндіріс",
+  kk: "Ó¨Ğ½Ğ´Ñ–Ñ€Ñ–Ñ",
   uz: "Ishlab chiqarish",
-  pt: "Produção",
+  pt: "ProduÃ§Ã£o",
   pl: "Produkcja",
 };
 ---
@@ -93,8 +99,182 @@ const manufacturingLabels: Record<
         }
       </div>
     </details>
+
+    <details class="mobile-navigation">
+      <summary
+        aria-label={mobileMenuLabel}
+        title={mobileMenuLabel}
+      >
+        <span class="mobile-menu-label">
+          <span class="mobile-menu-label-open">
+            {mobileMenuLabel}
+          </span>
+
+          <span class="mobile-menu-label-close">
+            {mobileCloseLabel}
+          </span>
+        </span>
+
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <i></i>
+          <i></i>
+        </span>
+      </summary>
+
+      <button
+        type="button"
+        class="mobile-menu-backdrop"
+        aria-label="Close"
+      ></button>
+
+      <div class="mobile-panel">
+        <div class="mobile-panel-brand">
+          <strong>VIRELLAART</strong>
+          <span>{translations.home.eyebrow}</span>
+        </div>
+
+        <div class="mobile-section">
+          <p class="mobile-section-title">
+            {translations.nav.collections}
+          </p>
+
+          <div class="mobile-collection-links">
+            <a href={localizedPath("/living-rooms", language)}>
+              <span>01</span>
+              <strong>{translations.home.livingRooms}</strong>
+              <i aria-hidden="true">&#8594;</i>
+            </a>
+
+            <a href={localizedPath("/dining-rooms", language)}>
+              <span>02</span>
+              <strong>{translations.home.diningRooms}</strong>
+              <i aria-hidden="true">&#8594;</i>
+            </a>
+
+            <a href={localizedPath("/bedrooms", language)}>
+              <span>03</span>
+              <strong>{translations.home.bedrooms}</strong>
+              <i aria-hidden="true">&#8594;</i>
+            </a>
+
+            <a href={localizedPath("/tv-units", language)}>
+              <span>04</span>
+              <strong>{translations.home.tvUnits}</strong>
+              <i aria-hidden="true">&#8594;</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-section">
+          <p class="mobile-section-title">
+            VIRELLAART
+          </p>
+
+          <div class="mobile-company-links">
+            <a href={localizedPath("/", language)}>
+              {translations.nav.home}
+            </a>
+
+            <a href={localizedPath("/about", language)}>
+              {translations.nav.about}
+            </a>
+
+            <a href={localizedPath("/manufacturing", language)}>
+              {manufacturingLabels[language]}
+            </a>
+
+            <a href={localizedPath("/contact", language)}>
+              {translations.nav.contact}
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-section">
+          <p class="mobile-section-title">
+            {translations.nav.language}
+          </p>
+
+          <div class="mobile-language-grid">
+            {
+              languageCodes.map((code) => (
+                <a
+                  href={localizedPath(Astro.url.pathname, code)}
+                  lang={code}
+                  dir={languages[code].dir}
+                  data-language={code}
+                  aria-current={code === language ? "page" : undefined}
+                >
+                  <span>{languages[code].short}</span>
+                  <small>{languages[code].label}</small>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 </nav>
+
+
+<script is:inline>
+  (() => {
+    const navigation =
+      document.querySelector(".mobile-navigation");
+
+    if (!(navigation instanceof HTMLDetailsElement)) {
+      return;
+    }
+
+    const backdrop =
+      navigation.querySelector(".mobile-menu-backdrop");
+
+    const closeMenu = () => {
+      navigation.open = false;
+    };
+
+    const updatePageLock = () => {
+      document.documentElement.classList.toggle(
+        "mobile-menu-open",
+        navigation.open,
+      );
+    };
+
+    navigation.addEventListener(
+      "toggle",
+      updatePageLock,
+    );
+
+    navigation
+      .querySelectorAll("a")
+      .forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+    backdrop?.addEventListener(
+      "click",
+      closeMenu,
+    );
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      },
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        if (window.innerWidth > 760) {
+          closeMenu();
+        }
+      },
+    );
+  })();
+</script>
 
 <style>
   .navbar {
@@ -296,6 +476,495 @@ const manufacturingLabels: Record<
 
     .language-menu {
       width: 190px;
+    }
+  }
+
+  /* VIRELLAART PREMIUM MOBILE NAVIGATION */
+
+  .mobile-navigation {
+    display: none;
+  }
+
+  :global(html.mobile-menu-open),
+  :global(html.mobile-menu-open body) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 760px) {
+    .navbar {
+      border-bottom:
+        1px solid
+        rgba(201, 164, 93, 0.38);
+      background:
+        rgba(14, 10, 8, 0.92);
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .navbar-inner {
+      width: calc(100% - 28px);
+      height: 68px;
+      gap: 15px;
+    }
+
+    .logo {
+      position: relative;
+      z-index: 4;
+      font-size: 16px;
+      letter-spacing: 3.4px;
+    }
+
+    .menu,
+    .language-picker {
+      display: none;
+    }
+
+    .mobile-navigation {
+      position: relative;
+      z-index: 3;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .mobile-navigation summary {
+      position: relative;
+      z-index: 4;
+      min-width: 110px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 0 14px;
+      border:
+        1px solid
+        rgba(201, 164, 93, 0.36);
+      background:
+        rgba(201, 164, 93, 0.04);
+      color: #ffffff;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .mobile-navigation summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu-label {
+      min-width: 47px;
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .mobile-menu-label-close {
+      display: none;
+    }
+
+    .mobile-navigation[open]
+      .mobile-menu-label-open {
+      display: none;
+    }
+
+    .mobile-navigation[open]
+      .mobile-menu-label-close {
+      display: inline;
+    }
+
+    .mobile-menu-icon {
+      position: relative;
+      width: 20px;
+      height: 14px;
+      display: block;
+    }
+
+    .mobile-menu-icon i {
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 1px;
+      display: block;
+      background: #ffffff;
+      transition:
+        top 220ms ease,
+        transform 220ms ease;
+    }
+
+    .mobile-menu-icon i:first-child {
+      top: 3px;
+    }
+
+    .mobile-menu-icon i:last-child {
+      top: 10px;
+    }
+
+    .mobile-navigation[open]
+      .mobile-menu-icon
+      i:first-child {
+      top: 7px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-navigation[open]
+      .mobile-menu-icon
+      i:last-child {
+      top: 7px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu-backdrop {
+      position: fixed;
+      z-index: 1;
+      inset: 68px 0 0;
+      width: 100%;
+      height: calc(100dvh - 68px);
+      padding: 0;
+      border: 0;
+      background:
+        rgba(0, 0, 0, 0.68);
+      backdrop-filter: blur(3px);
+    }
+
+    .mobile-panel {
+      position: fixed;
+      z-index: 2;
+      top: 68px;
+      right: 0;
+      width: min(92vw, 430px);
+      height: calc(100dvh - 68px);
+      overflow-y: auto;
+      padding:
+        27px
+        20px
+        calc(
+          34px +
+          env(safe-area-inset-bottom)
+        );
+      border-left:
+        1px solid
+        rgba(201, 164, 93, 0.34);
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(201, 164, 93, 0.11),
+          transparent 34%
+        ),
+        linear-gradient(
+          155deg,
+          #1a120e 0%,
+          #0c0806 72%
+        );
+      box-shadow:
+        -24px 0 70px
+        rgba(0, 0, 0, 0.48);
+      overscroll-behavior: contain;
+      animation:
+        mobileMenuEnter
+        240ms ease both;
+    }
+
+    :global(html[dir="rtl"]) .mobile-panel {
+      right: auto;
+      left: 0;
+      border-right:
+        1px solid
+        rgba(201, 164, 93, 0.34);
+      border-left: 0;
+    }
+
+    .mobile-navigation:not([open])
+      .mobile-menu-backdrop,
+    .mobile-navigation:not([open])
+      .mobile-panel {
+      display: none;
+    }
+
+    .mobile-panel-brand {
+      padding-bottom: 23px;
+      border-bottom:
+        1px solid
+        rgba(201, 164, 93, 0.2);
+    }
+
+    .mobile-panel-brand strong {
+      display: block;
+      color: #ffffff;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 3px;
+    }
+
+    .mobile-panel-brand span {
+      display: block;
+      margin-top: 8px;
+      color:
+        rgba(255, 255, 255, 0.52);
+      font-size: 8px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .mobile-section {
+      padding-top: 25px;
+    }
+
+    .mobile-section-title {
+      margin: 0 0 13px;
+      color: var(--gold-light);
+      font-size: 8px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+    }
+
+    .mobile-collection-links {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .mobile-collection-links a {
+      position: relative;
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding:
+        15px
+        43px
+        15px
+        14px;
+      overflow: hidden;
+      border:
+        1px solid
+        rgba(201, 164, 93, 0.24);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(201, 164, 93, 0.09),
+          transparent 60%
+        );
+      color: #ffffff;
+    }
+
+    .mobile-collection-links a > span {
+      position: absolute;
+      top: 13px;
+      left: 14px;
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
+
+    .mobile-collection-links strong {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .mobile-collection-links i {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border:
+        1px solid
+        rgba(201, 164, 93, 0.34);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-style: normal;
+    }
+
+    :global(html[dir="rtl"])
+      .mobile-collection-links
+      a {
+      padding:
+        15px
+        14px
+        15px
+        43px;
+    }
+
+    :global(html[dir="rtl"])
+      .mobile-collection-links
+      a > span {
+      right: 14px;
+      left: auto;
+    }
+
+    :global(html[dir="rtl"])
+      .mobile-collection-links
+      i {
+      right: auto;
+      left: 13px;
+      transform: rotate(180deg);
+    }
+
+    .mobile-company-links {
+      display: grid;
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-company-links a {
+      position: relative;
+      display: block;
+      padding: 15px 30px 15px 0;
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+      color:
+        rgba(255, 255, 255, 0.86);
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 17px;
+    }
+
+    .mobile-company-links a::after {
+      content: "\2192";
+      position: absolute;
+      right: 3px;
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    :global(html[dir="rtl"])
+      .mobile-company-links
+      a {
+      padding:
+        15px
+        0
+        15px
+        30px;
+    }
+
+    :global(html[dir="rtl"])
+      .mobile-company-links
+      a::after {
+      right: auto;
+      left: 3px;
+      transform: rotate(180deg);
+    }
+
+    .mobile-language-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .mobile-language-grid a {
+      min-height: 50px;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 10px;
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+      color:
+        rgba(255, 255, 255, 0.7);
+    }
+
+    .mobile-language-grid a[aria-current="page"] {
+      border-color:
+        rgba(201, 164, 93, 0.52);
+      background:
+        rgba(201, 164, 93, 0.1);
+      color: #ffffff;
+    }
+
+    .mobile-language-grid span {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 1.2px;
+    }
+
+    .mobile-language-grid small {
+      overflow: hidden;
+      font-size: 10px;
+      font-weight: 400;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @keyframes mobileMenuEnter {
+      from {
+        opacity: 0;
+        transform: translateX(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media (max-width: 380px) {
+    .mobile-navigation summary {
+      min-width: 104px;
+      padding-right: 11px;
+      padding-left: 11px;
+    }
+
+    .mobile-menu-label {
+      min-width: 43px;
+      font-size: 8px;
+      letter-spacing: 1.5px;
+    }
+
+    .mobile-panel {
+      width: 94vw;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .mobile-collection-links strong {
+      font-size: 15px;
+    }
+  }
+
+
+  /* MOBILE MENU LABEL VISIBILITY FIX */
+
+  @media (max-width: 760px) {
+    .mobile-menu-label-open,
+    .mobile-menu-label-close {
+      display: none !important;
+    }
+
+    .mobile-navigation:not([open])
+      .mobile-menu-label-open {
+      display: inline !important;
+    }
+
+    .mobile-navigation[open]
+      .mobile-menu-label-close {
+      display: inline !important;
     }
   }
 </style>
