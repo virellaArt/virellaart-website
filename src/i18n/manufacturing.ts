@@ -1602,11 +1602,87 @@ const manufacturingContent: Record<
   },
 };
 
+const manufacturingSeoContent: Record<
+  string,
+  ManufacturingContent["seo"]
+> = {
+  "en": {
+    "title": "Luxury Furniture Manufacturing in Istanbul | VIRELLAART",
+    "description": "Explore VIRELLAART luxury furniture manufacturing in Istanbul, from design and upholstery to quality control, protective packaging and worldwide delivery."
+  },
+  "tr": {
+    "title": "İstanbul Lüks Mobilya Üretimi | VIRELLAART",
+    "description": "VIRELLAART İstanbul lüks mobilya üretimini keşfedin: tasarım geliştirme, dekoratif işçilik, döşeme, kalite kontrol, koruyucu paketleme ve uluslararası teslimat."
+  },
+  "fr": {
+    "title": "Fabrication de Mobilier de Luxe à Istanbul | VIRELLAART",
+    "description": "Découvrez la fabrication de mobilier de luxe VIRELLAART à Istanbul : conception, finitions, rembourrage, qualité, emballage et livraison internationale."
+  },
+  "it": {
+    "title": "Produzione di Mobili di Lusso a Istanbul | VIRELLAART",
+    "description": "Scopri la produzione di mobili di lusso VIRELLAART a Istanbul: design, finiture, tappezzeria, controllo qualità, imballaggio e consegna internazionale."
+  },
+  "ru": {
+    "title": "Производство Элитной Мебели в Стамбуле | VIRELLAART",
+    "description": "Узнайте о производстве элитной мебели VIRELLAART в Стамбуле: дизайн, декоративная отделка, обивка, контроль качества, упаковка и международная доставка."
+  },
+  "ar": {
+    "title": "تصنيع الأثاث الفاخر في إسطنبول | VIRELLAART",
+    "description": "اكتشف تصنيع الأثاث الفاخر لدى VIRELLAART في إسطنبول، من تطوير التصميم والتفاصيل الزخرفية والتنجيد إلى فحص الجودة والتغليف والتوصيل الدولي."
+  },
+  "ro": {
+    "title": "Producție de Mobilier de Lux în Istanbul | VIRELLAART",
+    "description": "Descoperiți producția de mobilier de lux VIRELLAART în Istanbul: design, detalii decorative, tapițerie, controlul calității, ambalare și livrare internațională."
+  },
+  "de": {
+    "title": "Luxusmöbelherstellung in Istanbul | VIRELLAART",
+    "description": "Entdecken Sie die Luxusmöbelherstellung von VIRELLAART in Istanbul: Design, Verarbeitung, Polsterung, Qualitätskontrolle, Verpackung und weltweite Lieferung."
+  },
+  "bg": {
+    "title": "Производство на Луксозни Мебели в Истанбул | VIRELLAART",
+    "description": "Открийте производството на луксозни мебели VIRELLAART в Истанбул: дизайн, декорация, тапицерия, контрол на качеството, опаковане и международна доставка."
+  },
+  "el": {
+    "title": "Κατασκευή Πολυτελών Επίπλων στην Κωνσταντινούπολη | VIRELLAART",
+    "description": "Ανακαλύψτε την κατασκευή πολυτελών επίπλων VIRELLAART στην Κωνσταντινούπολη: σχεδιασμός, ταπετσαρία, έλεγχος ποιότητας, συσκευασία και διεθνής παράδοση."
+  },
+  "es": {
+    "title": "Fabricación de Muebles de Lujo en Estambul | VIRELLAART",
+    "description": "Descubra la fabricación de muebles de lujo VIRELLAART en Estambul: diseño, acabados, tapicería, control de calidad, embalaje y entrega internacional."
+  },
+  "kk": {
+    "title": "Стамбұлдағы Сәнді Жиһаз Өндірісі | VIRELLAART",
+    "description": "Стамбұлдағы VIRELLAART сәнді жиһаз өндірісін таныңыз: дизайн әзірлеу, сәндік өңдеу, қаптау, сапаны бақылау, қорғаныш орау және халықаралық жеткізу."
+  },
+  "pl": {
+    "title": "Produkcja Luksusowych Mebli w Stambule | VIRELLAART",
+    "description": "Poznaj produkcję luksusowych mebli VIRELLAART w Stambule: projektowanie, wykończenia, tapicerowanie, kontrola jakości, pakowanie i dostawa międzynarodowa."
+  },
+  "pt": {
+    "title": "Fabricação de Móveis de Luxo em Istambul | VIRELLAART",
+    "description": "Descubra a fabricação de móveis de luxo VIRELLAART em Istambul: design, acabamentos, estofamento, controle de qualidade, embalagem e entrega internacional."
+  },
+  "sr": {
+    "title": "Производња Луксузног Намештаја у Истанбулу | VIRELLAART",
+    "description": "Откријте производњу луксузног намештаја VIRELLAART у Истанбулу: дизајн, декоративна обрада, тапацирање, контрола квалитета, паковање и међународна испорука."
+  },
+  "uz": {
+    "title": "Istanbulda Hashamatli Mebel Ishlab Chiqarish | VIRELLAART",
+    "description": "Istanbuldagi VIRELLAART hashamatli mebel ishlab chiqarishini kashf eting: dizayn, bezak, qoplama, sifat nazorati, qadoqlash va xalqaro yetkazib berish."
+  }
+};
+
 export function getManufacturingContent(
   language: string,
 ): ManufacturingContent {
-  return (
+  const baseContent =
     manufacturingContent[language] ??
-    manufacturingContent.en
-  );
+    manufacturingContent.en;
+
+  return {
+    ...baseContent,
+    seo:
+      manufacturingSeoContent[language] ??
+      manufacturingSeoContent.en,
+  };
 }
