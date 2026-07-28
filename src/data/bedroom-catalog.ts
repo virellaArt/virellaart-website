@@ -11,6 +11,7 @@ const bedroomCatalog = [
   { key: "sultanBedroom", slug: "sultan" },
   { key: "sultanGreenBedroom", slug: "sultan-green" },
   { key: "marsilyaBedroom", slug: "marsilya" },
+  { key: "rioBedroom", slug: "rio" },
 ] as const;
 
 export const bedroomModels = bedroomCatalog.map(

@@ -1478,4 +1478,26 @@ sultanGreenDining: {
     ],
   },
 
+  rioBedroom: {
+    name: "rio Luxury Bedroom Set",
+    category: "bedrooms",
+    subtitle: "Contemporary Luxury Bedroom Collection",
+    description:
+      "The rio Luxury Bedroom Set by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for rio Luxury Bedroom Set pricing, customization guidance and worldwide delivery planning.",
+    images: [
+      "/riobedroom-01.webp",
+      "/riobedroom-02.webp",
+      "/riobedroom-03.webp",
+      "/riobedroom-04.webp",
+      "/riobedroom-05.webp",
+    ],
+    prices: [
+      {
+        label: "rio Luxury Bedroom Set",
+        price: "$5,300",
+        featured: true,
+      },
+    ],
+  },
+
 };
