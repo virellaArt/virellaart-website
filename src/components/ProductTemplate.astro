@@ -105,7 +105,11 @@ const productSchema = {
     priceCurrency: "USD",
     price: primaryPrice,
     itemCondition: "https://schema.org/NewCondition",
-    availability: "https://schema.org/InStock",
+    /*
+     * Availability intentionally omitted.
+     * It must only be added when the real product-level
+     * stock or order status has been verified.
+     */
 
     seller: {
       "@id": "https://www.virellaart.com/#organization",
