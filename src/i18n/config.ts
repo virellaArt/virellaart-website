@@ -2058,6 +2058,39 @@ export function translatePriceLabel(
   return priceLabelTranslations[language][label] ?? label;
 }
 
+const categorySeoTitleDescriptors: Record<
+  Language,
+  string
+> = {
+  en: "Luxury Furniture",
+  tr: "Lüks Mobilya",
+  de: "Luxusmöbel",
+  fr: "Mobilier de Luxe",
+  it: "Mobili di Lusso",
+  ru: "Элитная Мебель",
+  ar: "أثاث فاخر",
+  bg: "Луксозни Мебели",
+  ro: "Mobilier de Lux",
+  el: "Πολυτελή Έπιπλα",
+  es: "Muebles de Lujo",
+  sr: "Luksuzni Nameštaj",
+  kk: "Сәнді Жиһаз",
+  uz: "Hashamatli Mebel",
+  pt: "Móveis de Luxo",
+  pl: "Luksusowe Meble",
+};
+
+export function getCategorySeoTitle(
+  categoryTitle: string,
+  language: Language,
+): string {
+  const descriptor =
+    categorySeoTitleDescriptors[language] ??
+    categorySeoTitleDescriptors.en;
+
+  return `${categoryTitle} | ${descriptor} | VIRELLAART`;
+}
+
 const seoDescriptionSuffixes: Record<
   Language,
   readonly [string, string]
