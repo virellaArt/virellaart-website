@@ -55,8 +55,15 @@ const prices: {
    SEO DATA
 ========================= */
 
-const pageDescription =
+const productDescription =
   getProductDescription(product, language);
+
+const pageDescription =
+  productDescription.length > 160
+    ? `${productDescription
+        .slice(0, 157)
+        .replace(/\s+\S*$/, "")}...`
+    : productDescription;
 
 const canonicalURL = new URL(
   Astro.url.pathname,
@@ -608,7 +615,7 @@ const productTrust =
           <div class="decorative-line"></div>
 
           <p class="product-description">
-            {pageDescription}
+            {productDescription}
           </p>
 
           <div class="price-card">
