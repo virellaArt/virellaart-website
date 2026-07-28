@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
+import { bedroomModels } from "../data/bedroom-catalog";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -8,82 +9,16 @@ import {
   translateProductName,
 } from "../i18n/config";
 
-const language = getLanguageFromPath(Astro.url.pathname);
-const translations = getTranslations(language);
-const categoryTranslations = translations.category.bedrooms;
+const language =
+  getLanguageFromPath(Astro.url.pathname);
 
-const models = [
-  {
-    number: "01",
-    name: "Aspendos Bedroom",
-    href: "/bedrooms/aspendos",
-    image: "/aspendosbedroom-01.webp",
-    alt: "Aspendos Luxury Bedroom Collection by VIRELLAART",
-  },
-  {
-  number: "02",
-  name: "Delux Bedroom",
-  href: "/bedrooms/delux",
-  image: "/deluxbed-01.webp",
-  alt: "Delux Luxury Bedroom Collection by VIRELLAART",
-},
-{
-  number: "03",
-  name: "Valencia Bedroom",
-  href: "/bedrooms/valencia",
-  image: "/valenciabed-01.webp",
-  alt: "Valencia Luxury Bedroom Collection by VIRELLAART",
-},
-{
-  number: "04",
-  name: "Versace",
-  href: "/bedrooms/versace",
-  image: "/versacebedroom-01.webp",
-  alt: "Versace Luxury Bedroom Collection",
-},
-{
-  number: "05",
-  name: "Milano",
-  href: "/bedrooms/milano",
-  image: "/bedroommilano-01.webp",
-  alt: "Milano Luxury Bedroom Collection",
-},
-{
-  number: "06",
-  name: "Milano Blue",
-  href: "/bedrooms/milano-blue",
-  image: "/bedroommilanoblue-01.webp",
-  alt: "Milano Blue Luxury Bedroom Collection",
-},
-{
-  number: "07",
-  name: "Saltanat",
-  href: "/bedrooms/saltanat",
-  image: "/saltanatbedroom-01.webp",
-  alt: "Saltanat Luxury Bedroom Collection",
-},
-{
-  number: "08",
-  name: "Sultan",
-  href: "/bedrooms/sultan",
-  image: "/sultanbedroom-01.webp",
-  alt: "Sultan Luxury Bedroom Collection",
-},
-{
-  number: "09",
-  name: "Sultan Green",
-  href: "/bedrooms/sultan-green",
-  image: "/sultangreenbedroom-01.webp",
-  alt: "Sultan Green Luxury Bedroom Collection",
-},
-  {
-    number: "10",
-    name: "Luxury Bedroom Set",
-    href: "/bedrooms/marsilya",
-    image: "/marsilyabedroom-01.webp",
-    alt: "Luxury Bedroom Set by VIRELLAART",
-  },
-];
+const translations =
+  getTranslations(language);
+
+const categoryTranslations =
+  translations.category.bedrooms;
+
+const models = bedroomModels;
 ---
 
 <BaseLayout
