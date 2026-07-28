@@ -23,62 +23,138 @@ const {
   description,
   models,
 } = Astro.props;
-const language = getLanguageFromPath(Astro.url.pathname);
-const translations = getTranslations(language);
-const canonicalURL = new URL(
-  Astro.url.pathname,
-  "https://www.virellaart.com",
-).href;
-const homeURL = new URL(
-  localizedPath("/", language),
-  "https://www.virellaart.com",
-).href;
+
+const language =
+  getLanguageFromPath(Astro.url.pathname);
+
+const translations =
+  getTranslations(language);
+
+const siteURL =
+  "https://www.virellaart.com";
+
+function normalizePath(value: string): string {
+  return value.replace(/\/?$/, "/");
+}
+
+const canonicalPath =
+  normalizePath(Astro.url.pathname);
+
+const canonicalURL =
+  new URL(
+    canonicalPath,
+    siteURL,
+  ).href;
+
+const homeURL =
+  new URL(
+    normalizePath(
+      localizedPath("/", language),
+    ),
+    siteURL,
+  ).href;
+
+const collectionID =
+  `${canonicalURL}#collection`;
+
+const itemListID =
+  `${canonicalURL}#item-list`;
+
+const breadcrumbID =
+  `${canonicalURL}#breadcrumb`;
+
+const itemListElement =
+  models.map((model, index) => {
+    const itemURL =
+      new URL(
+        normalizePath(
+          localizedPath(
+            model.href,
+            language,
+          ),
+        ),
+        siteURL,
+      ).href;
+
+    const imageURL =
+      new URL(
+        model.image,
+        siteURL,
+      ).href;
+
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+
+      item: {
+        "@type": "WebPage",
+        "@id": itemURL,
+        url: itemURL,
+
+        name:
+          translateProductName(
+            model.name,
+            language,
+          ),
+
+        image: imageURL,
+      },
+    };
+  });
 
 const schema = {
   "@context": "https://schema.org",
+
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": `${canonicalURL}#collection`,
-      "url": canonicalURL,
-      "name": categoryName,
-      "description": description,
-      "inLanguage": language,
-      "isPartOf": {
-        "@id": "https://www.virellaart.com/#website",
+      "@id": collectionID,
+
+      url: canonicalURL,
+      name: categoryName,
+      description,
+      inLanguage: language,
+
+      isPartOf: {
+        "@id":
+          "https://www.virellaart.com/#website",
       },
-      "mainEntity": {
-        "@type": "ItemList",
-        "numberOfItems": models.length,
-        "itemListElement": models.map((model, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "url": new URL(
-            localizedPath(model.href, language),
-            "https://www.virellaart.com",
-          ).href,
-          "name": translateProductName(model.name, language),
-          "image": new URL(
-            model.image,
-            "https://www.virellaart.com",
-          ).href,
-        })),
+
+      mainEntity: {
+        "@id": itemListID,
       },
     },
+
+    {
+      "@type": "ItemList",
+      "@id": itemListID,
+
+      name: categoryName,
+      numberOfItems: models.length,
+
+      itemListOrder:
+        "https://schema.org/ItemListOrderAscending",
+
+      itemListElement,
+    },
+
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@id": breadcrumbID,
+
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": translations.nav.home,
-          "item": homeURL,
+          position: 1,
+          name: translations.nav.home,
+          item: homeURL,
         },
+
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": categoryName,
-          "item": canonicalURL,
+          position: 2,
+          name: categoryName,
+          item: canonicalURL,
         },
       ],
     },
