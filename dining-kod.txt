@@ -1,7 +1,6 @@
----
+﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
-import { diningRoomModels } from "../data/dining-room-catalog";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -13,7 +12,120 @@ const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const categoryTranslations = translations.category.diningRooms;
 
-const models = diningRoomModels;
+const models = [
+  {
+    number: "01",
+    name: "Valencia Dining",
+    href: "/dining-rooms/valencia",
+    image: "/valenciadining-01.webp",
+    alt: "Valencia Luxury Dining Room Collection by VIRELLAART",
+  },
+  {
+  number: "02",
+  name: "Delux Dining",
+  href: "/dining-rooms/delux",
+  image: "/deluxdiningroom-01.webp",
+  alt: "Delux Luxury Dining Room Collection by VIRELLAART",
+},
+{
+  number: "03",
+  name: "Aspendos Dining",
+  href: "/dining-rooms/aspendos",
+  image: "/aspendosdining-01.webp",
+  alt: "Aspendos Luxury Dining Room Collection by VIRELLAART",
+},
+{
+    number: "04",
+    name: "Queen Dining",
+    href: "/dining-rooms/queen",
+    image: "/queendining-01.webp",
+    alt: "Queen Luxury Dining Room Collection by VIRELLAART",
+  },
+  {
+  number: "05",
+  name: "Moon Dining",
+  href: "/dining-rooms/moon",
+  image: "/moondining-01.webp",
+  alt: "Moon Luxury Dining Room Collection by VIRELLAART",
+},
+{
+  number: "06",
+  name: "Vanessa",
+  href: "/dining-rooms/vanessa",
+  image: "/vanessadining-01.webp",
+  alt: "Vanessa Luxury Dining Room Collection",
+},
+{
+  number: "07",
+  name: "Shawl",
+  href: "/dining-rooms/shawl",
+  image: "/diningshawl-01.webp",
+  alt: "Shawl Luxury Dining Room Collection",
+},
+{
+  number: "08",
+  name: "Valdera",
+  href: "/dining-rooms/valdera",
+  image: "/valderadining-01.webp",
+  alt: "Valdera Luxury Dining Room Collection",
+},
+{
+  number: "09",
+  name: "ZÃ¼mrÃ¼t",
+  href: "/dining-rooms/zumrut",
+  image: "/diningzumrut-01.webp",
+  alt: "Zumrut Luxury Dining Room Collection",
+},
+{
+  number: "10",
+  name: "Milano",
+  href: "/dining-rooms/milano",
+  image: "/diningmilano-01.webp",
+  alt: "Milano Luxury Dining Room Collection",
+},
+{
+  number: "11",
+  name: "Milano Blue",
+  href: "/dining-rooms/milano-blue",
+  image: "/diningmilanoblue-01.webp",
+  alt: "Milano Blue Luxury Dining Room Collection",
+},
+{
+  number: "12",
+  name: "Lina",
+  href: "/dining-rooms/lina",
+  image: "/linadining-01.webp",
+  alt: "Lina Luxury Dining Room Collection",
+},
+{
+  number: "13",
+  name: "Zerafet",
+  href: "/dining-rooms/zerafet",
+  image: "/zerafet-01.webp",
+  alt: "Zerafet Luxury Dining Room Collection",
+},
+{
+  number: "14",
+  name: "Saltanat",
+  href: "/dining-rooms/saltanat",
+  image: "/saltanatdining-01.webp",
+  alt: "Saltanat Luxury Dining Room Collection",
+},
+{
+  number: "15",
+  name: "Saltanat Green",
+  href: "/dining-rooms/saltanat-green",
+  image: "/saltanatdininggreen-01.webp",
+  alt: "Saltanat Green Luxury Dining Room Collection",
+},
+{
+  number: "16",
+  name: "Sultan Green Dining Room Set",
+  href: "/dining-rooms/sultan-green",
+  image: "/sultandininggreen-01.webp",
+  alt: "Sultan Green Dining Room Set by VIRELLAART",
+},
+];
 ---
 
 <BaseLayout

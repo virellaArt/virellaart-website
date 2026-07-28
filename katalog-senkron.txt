@@ -1,3 +1,457 @@
+﻿
+================ .\src\pages\living-rooms.astro ================
+
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CollectionSchema from "../components/CollectionSchema.astro";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+  translateProductName,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const categoryTranslations = translations.category.livingRooms;
+
+const models = [
+  {
+    number: "01",
+    name: "Valencia",
+    href: "/living-rooms/valencia",
+    image: "/valencia-05.webp",
+    alt: "Valencia Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "02",
+    name: "Aspendos",
+    href: "/living-rooms/aspendos",
+    image: "/aspendos-02.webp",
+    alt: "Aspendos Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "03",
+    name: "Delux",
+    href: "/living-rooms/delux",
+    image: "/delux-01.webp",
+    alt: "Delux Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "04",
+    name: "Shawl",
+    href: "/living-rooms/shawl",
+    image: "/shawl-01.webp",
+    alt: "Shawl Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "05",
+    name: "Queen",
+    href: "/living-rooms/queen",
+    image: "/queen-01.webp",
+    alt: "Queen Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "06",
+    name: "Vizyon",
+    href: "/living-rooms/vizyon",
+    image: "/vizyon01.webp",
+    alt: "Vizyon Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "07",
+    name: "Sena",
+    href: "/living-rooms/sena",
+    image: "/sena-01.webp",
+    alt: "Sena Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "08",
+    name: "Lugano",
+    href: "/living-rooms/lugano",
+    image: "/lugano-01.webp",
+    alt: "Lugano Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "09",
+    name: "Bahar",
+    href: "/living-rooms/bahar",
+    image: "/bahar-01.webp",
+    alt: "Bahar Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "10",
+    name: "Alex",
+    href: "/living-rooms/alex",
+    image: "/alex-01.webp",
+    alt: "Alex Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+    number: "11",
+    name: "Vanessa",
+    href: "/living-rooms/vanessa",
+    image: "/vanessa-01.webp",
+    alt: "Vanessa Luxury Living Room Collection by VIRELLAART",
+  },
+  {
+  number: "12",
+  name: "Valdera",
+  href: "/living-rooms/valdera",
+  image: "/valdera-01.webp",
+  alt: "Valdera Luxury Living Room Collection",
+  },
+  {
+  number: "13",
+  name: "ZÃ¼mrÃ¼t",
+  href: "/living-rooms/zumrut",
+  image: "/zumrut-01.webp",
+  alt: "Zumrut Luxury Living Room Collection",
+  },
+{
+  number: "14",
+  name: "Milano",
+  href: "/living-rooms/milano",
+  image: "/milano-01.webp",
+  alt: "Milano Luxury Living Room Collection",
+},
+{
+  number: "15",
+  name: "Milano Blue",
+  href: "/living-rooms/milano-blue",
+  image: "/milanoblue-01.webp",
+  alt: "Milano Blue Luxury Living Room Collection",
+},
+{
+  number: "16",
+  name: "Lina",
+  href: "/living-rooms/lina",
+  image: "/lina-01.webp",
+  alt: "Lina Luxury Living Room Collection",
+},
+{
+  number: "17",
+  name: "Zerafet",
+  href: "/living-rooms/zerafet",
+  image: "/zerafetsofa-01.webp",
+  alt: "Zerafet Luxury Living Room Collection",
+},
+{
+  number: "18",
+  name: "Saltanat",
+  href: "/living-rooms/saltanat",
+image: "/saltanatsofa-02.webp",
+  alt: "Saltanat Luxury Living Room Collection",
+},
+{
+  number: "19",
+  name: "Saltanat Green",
+  href: "/living-rooms/saltanat-green",
+  image: "/saltanatgreensofa-01.webp",
+  alt: "Saltanat Green Luxury Living Room Collection",
+},
+{
+  number: "19",
+  name: "Sultan",
+  href: "/living-rooms/sultan",
+  image: "/sultansofa-01.webp",
+  alt: "Sultan Luxury Living Room Collection",
+},
+{
+  number: "20",
+  name: "Sultan Sofa",
+  href: "/living-rooms/sultan-sofa",
+  image: "/sultansofagreen-01.webp",
+  alt: "Sultan Sofa Luxury Living Room Collection",
+}
+];
+---
+
+<BaseLayout
+  title={categoryTranslations.title}
+  description={categoryTranslations.description}
+>
+  <CollectionSchema
+    categoryName={categoryTranslations.title}
+    description={categoryTranslations.description}
+    {models}
+  />
+  <main class="page">
+    <header class="page-header">
+      <span>{translations.category.eyebrow}</span>
+
+      <h1>{categoryTranslations.title}</h1>
+
+      <p>
+        {translations.category.selectModel}
+      </p>
+    </header>
+
+    <section
+      class="model-grid"
+      aria-label={categoryTranslations.title}
+    >
+      {
+        models.map((model, index) => (
+          <a
+            href={localizedPath(model.href, language)}
+            class="model-card"
+            aria-label={`${translations.category.viewCollection}: ${translateProductName(model.name, language)}`}
+          >
+            <div class="model-image">
+              <img
+                src={model.image}
+                alt={`VIRELLAART ${translateProductName(model.name, language)}`}
+                width="800"
+                height="600"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : undefined}
+                decoding="async"
+              />
+            </div>
+
+            <div class="model-info">
+              <span>{model.number}</span>
+
+              <h2>{translateProductName(model.name, language)}</h2>
+
+              <p>{translations.category.viewCollection}</p>
+            </div>
+          </a>
+        ))
+      }
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .page {
+    width: min(100% - 48px, 1180px);
+    margin: 0 auto;
+    padding: 125px 0 90px;
+  }
+
+  .page-header {
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+
+  .page-header span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    margin: 12px 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 70px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .page-header p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  .model-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #0c0c0c;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .model-image {
+    height: 340px;
+    overflow: hidden;
+    background: #111111;
+  }
+
+  .model-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+  }
+
+  .model-info {
+    padding: 22px 24px 26px;
+  }
+
+  .model-info span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .model-info h2 {
+    margin: 9px 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .model-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .model-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  }
+
+  .model-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .model-card:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 5px;
+  }
+
+  @media (max-width: 800px) {
+    .page {
+      width: min(100% - 28px, 1180px);
+      padding: 110px 0 70px;
+    }
+
+    .model-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .model-image {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .model-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .model-image {
+      height: 330px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .page {
+      width: min(100% - 20px, 1180px);
+      padding: 100px 0 60px;
+    }
+
+    .page-header {
+      margin-bottom: 30px;
+    }
+
+    .model-grid {
+      gap: 16px;
+    }
+
+    .model-image {
+      height: 300px;
+    }
+
+    .model-info {
+      padding: 20px;
+    }
+
+    .model-info h2 {
+      font-size: 30px;
+    }
+  }
+</style>
+
+
+================ .\src\pages\[lang]\[...path].astro ================
+
+---
+import HomePage from "../index.astro";
+import AboutPage from "../about.astro";
+import ManufacturingPage from "../manufacturing.astro";
+import ContactPage from "../contact.astro";
+import LivingRoomsPage from "../living-rooms.astro";
+import DiningRoomsPage from "../dining-rooms.astro";
+import BedroomsPage from "../bedrooms.astro";
+import TVUnitsPage from "../tv-units.astro";
+
+import ProductTemplate from "../../components/ProductTemplate.astro";
+import { products } from "../../data/products";
+
+import {
+  isLanguage,
+  localizedLanguageCodes,
+} from "../../i18n/config";
+
+import {
+  allRoutes,
+  productRoutes,
+} from "../../i18n/routes";
+
+export function getStaticPaths() {
+  return localizedLanguageCodes.flatMap((lang) =>
+    allRoutes.map((route) => ({
+      params: {
+        lang,
+        path: route || undefined,
+      },
+    })),
+  );
+}
+
+const language = Astro.params.lang;
+const path = Astro.params.path ?? "";
+
+if (!isLanguage(language)) {
+  throw new Error(`Unsupported language route: ${language}`);
+}
+
+const productKey =
+  productRoutes[path as keyof typeof productRoutes];
+
+const product = productKey
+  ? products[productKey as keyof typeof products]
+  : undefined;
+---
+
+{path === "" && <HomePage />}
+{path === "about" && <AboutPage />}
+{path === "manufacturing" && <ManufacturingPage />}
+{path === "contact" && <ContactPage />}
+{path === "living-rooms" && <LivingRoomsPage />}
+{path === "dining-rooms" && <DiningRoomsPage />}
+{path === "bedrooms" && <BedroomsPage />}
+{path === "tv-units" && <TVUnitsPage />}
+{product && <ProductTemplate {product} />}
+
+================ .\src\data\products.ts ================
+
 export const products = {
 
   valencia: {
@@ -851,7 +1305,7 @@ zumrut: {
   ],
 },
 zumrutDining: {
-  name: "Zümrüt Dining Room",
+  name: "ZÃ¼mrÃ¼t Dining Room",
 
   category: "dining-rooms",
 
@@ -864,11 +1318,11 @@ zumrutDining: {
   ],
 
   description:
-  "The Zümrüt Luxury Dining Room Collection by VIRELLAART combines ornate silhouettes, high-back seating and formal symmetry to create a richly composed classical interior. Designed for grand residences and elegant entertaining spaces, this luxury dining room furniture delivers ceremonial presence and refined visual drama. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The ZÃ¼mrÃ¼t Luxury Dining Room Collection by VIRELLAART combines ornate silhouettes, high-back seating and formal symmetry to create a richly composed classical interior. Designed for grand residences and elegant entertaining spaces, this luxury dining room furniture delivers ceremonial presence and refined visual drama. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
 
   prices: [
     {
-      label: "Zümrüt Dining Room Set",
+      label: "ZÃ¼mrÃ¼t Dining Room Set",
       price: "$7,850",
       featured: true,
     },
@@ -907,7 +1361,7 @@ milano: {
   ],
 },
 zumrutTv: {
-  name: "Zümrüt TV Unit",
+  name: "ZÃ¼mrÃ¼t TV Unit",
 
   category: "tv-units",
 
@@ -916,7 +1370,7 @@ zumrutTv: {
   ],
 
   description:
-  "The Zümrüt Luxury TV Unit by VIRELLAART combines an ornate arched composition, decorative paneling and a commanding classical presence. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with rich visual character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
+  "The ZÃ¼mrÃ¼t Luxury TV Unit by VIRELLAART combines an ornate arched composition, decorative paneling and a commanding classical presence. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with rich visual character. Contact VIRELLAART on WhatsApp for pricing, customization and delivery details.",
 
   prices: [
     {
@@ -1376,7 +1830,7 @@ sultanGreenBedroom: {
   ],
 },
 sultanLiving: {
-  name: "Sultan Sofa",
+  name: "Sultan Living Room",
 
   category: "living-rooms",
 
@@ -1446,7 +1900,7 @@ sultanGreenDining: {
   ],
 
   description:
-    "Sultan Green Dining Room Set by VIRELLAART is a grand classic luxury dining collection designed for villas, formal dining rooms and distinguished interiors. Its coordinated table, sculptural chairs and ornate statement pieces create a cohesive atmosphere with richly carved detailing, elegant symmetry and manufacturer-direct craftsmanship from Istanbul, Türkiye.",
+    "Sultan Green Dining Room Set by VIRELLAART is a grand classic luxury dining collection designed for villas, formal dining rooms and distinguished interiors. Its coordinated table, sculptural chairs and ornate statement pieces create a cohesive atmosphere with richly carved detailing, elegant symmetry and manufacturer-direct craftsmanship from Istanbul, TÃ¼rkiye.",
 
   prices: [
     {
@@ -1479,3 +1933,104 @@ sultanGreenDining: {
   },
 
 };
+
+================ .\src\i18n\routes.ts ================
+
+type ProductRouteMap = Record<string, string>;
+
+const productPageSources = import.meta.glob(
+  [
+    "../pages/living-rooms/*.astro",
+    "../pages/dining-rooms/*.astro",
+    "../pages/bedrooms/*.astro",
+    "../pages/tv-units/*.astro",
+  ],
+  {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  },
+) as Record<string, string>;
+
+function extractProductKey(
+  source: string,
+): string | undefined {
+  const dotNotation = source.match(
+    /products\.([A-Za-z0-9_]+)/,
+  );
+
+  if (dotNotation?.[1]) {
+    return dotNotation[1];
+  }
+
+  const bracketNotation = source.match(
+    /products\[['"]([^'"]+)['"]\]/,
+  );
+
+  return bracketNotation?.[1];
+}
+
+function createProductRoutes(): ProductRouteMap {
+  const routes: ProductRouteMap = {};
+
+  for (
+    const [filePath, source]
+    of Object.entries(productPageSources)
+  ) {
+    const normalizedPath =
+      filePath.replaceAll("\\", "/");
+
+    const routeMatch = normalizedPath.match(
+      /\/pages\/(living-rooms|dining-rooms|bedrooms|tv-units)\/([^/]+)\.astro$/,
+    );
+
+    if (!routeMatch) {
+      continue;
+    }
+
+    const category = routeMatch[1];
+    const slug = routeMatch[2];
+
+    if (!category || !slug) {
+      continue;
+    }
+
+    const productKey =
+      extractProductKey(source);
+
+    if (!productKey) {
+      console.warn(
+        `[routes] Product key bulunamadı: ${normalizedPath}`,
+      );
+
+      continue;
+    }
+
+    routes[`${category}/${slug}`] =
+      productKey;
+  }
+
+  return routes;
+}
+
+export const productRoutes =
+  createProductRoutes();
+
+export const staticRoutes = [
+  "",
+  "living-rooms",
+  "dining-rooms",
+  "bedrooms",
+  "tv-units",
+  "about",
+  "manufacturing",
+  "contact",
+] as const;
+
+export const allRoutes = Array.from(
+  new Set([
+    ...staticRoutes,
+    ...Object.keys(productRoutes),
+  ]),
+);
+
