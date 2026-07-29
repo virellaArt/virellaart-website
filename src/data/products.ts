@@ -399,6 +399,16 @@ queen: {
     "/shawl-05.webp",
     "/shawl-06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Shawl living room arrangement with gray sofas, two sculptural armchairs, a glossy black center table and matching TV unit",
+        "Rear three-quarter view of the Shawl gray sofa with layered bronze-tone detailing and matching geometric armchairs",
+        "Shawl living room set with two gray sofas, two sculptural armchairs and a glossy black center table in a dark luxury interior",
+        "Shawl black TV unit with sweeping bronze-tone decorative bands, matching framed wall panel and glossy center table",
+        "Complete Shawl living room set with gray sofas, geometric armchairs, glossy center table and matching TV unit",
+        "Front view of the Shawl collection with gray sofas, two rounded geometric armchairs, center table and black TV unit",
+      ],
+    },
 
   description:
   "Discover the Shawl Luxury Living Room Collection by VIRELLAART, distinguished by bold geometric detailing, sculptural seating and a dramatic contemporary presence. Ideal for statement villas and refined interiors, this luxury living room furniture delivers striking character and visual sophistication. Connect with VIRELLAART via WhatsApp for Shawl Living Room availability, customization possibilities and worldwide delivery information.",
