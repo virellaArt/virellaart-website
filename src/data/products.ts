@@ -784,6 +784,12 @@ images: [
   "/aspendostv-01.webp",
   "/aspendostv-02.webp",
 ],
+imageAlts: {
+  en: [
+    "Aspendos taupe TV console with rounded corners, marble-look top, textured side panels and sculptural cylindrical pedestal bases in a luxury living room",
+    "Close-up of the Aspendos TV console showing its pale marble-look top, smooth taupe doors, textured side panel and cylindrical pedestal base",
+  ],
+},
 
  description:
   "The Aspendos Luxury TV Unit by VIRELLAART features a streamlined low profile, softened edges and sculptural support details that create a refined architectural focal point. Designed for elegant villas and contemporary living spaces, this designer TV unit brings balance, prestige and visual calm. Speak with our WhatsApp team for a private Aspendos TV Unit offer, TV-unit customization and shipping guidance.",
