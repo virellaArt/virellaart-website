@@ -723,6 +723,14 @@ valenciaDining: {
   "/valenciadining-03.webp",
   "/valenciadining-04.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Valencia dining room set with a rounded cream table, six upholstered chairs, matching sideboard, twin mirrors and glass display cabinet",
+        "Close-up of the Valencia dining table with a cream marble-look top, fluted taupe pedestal bases, gold-tone carved details and upholstered chairs",
+        "Valencia cream dining sideboard with curved center doors, mirrored side panels, gold-tone details and two ornate oval wall mirrors",
+        "Valencia cream dining chair with vertical channel stitching, patterned upholstery, curved tapered legs and a gold-tone front ornament",
+      ],
+    },
 
   description:
   "The Valencia Luxury Dining Room Collection by VIRELLAART combines a sculptural dining table, refined symmetry and elegant storage elements to create a polished, prestigious interior. Designed for sophisticated villas and formal entertaining spaces, this luxury dining room furniture delivers timeless visual harmony. Send your project requirements on WhatsApp for Valencia Dining Room collection pricing, tailored options and international delivery support.",
