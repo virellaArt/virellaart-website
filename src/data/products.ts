@@ -1456,6 +1456,16 @@ saltanatDining: {
     "/saltanatdining-05.webp",
     "/saltanatdining-06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Saltanat dining room composition with an oval cream table, ornate carved chairs, matching sideboard and glass display cabinet",
+        "Front view of the Saltanat dining sideboard with cream cabinet doors, dark wood panels, elaborate gold-tone carving and a three-part mirror",
+        "Saltanat oval dining table with cream marble-look top, sculptural carved base and high-back tufted chairs beside the glass display cabinet",
+        "Saltanat glass display cabinet with cream doors, dark fluted side panels and elaborate gold-tone carved crown and base",
+        "Three-quarter view of the Saltanat dining sideboard with cream panels, dark wood sections and an ornate three-part carved mirror",
+        "Front view of the Saltanat oval dining table with six tufted high-back chairs and an elaborate cream, dark wood and gold-tone carved base",
+      ],
+    },
 
   description:
   "The Saltanat Luxury Dining Room Collection by VIRELLAART creates a palatial statement through sculptural forms, commanding symmetry and richly ornate detailing. Designed for grand villas and formal entertaining spaces, this luxury dining room furniture delivers ceremonial elegance and unmistakable prestige. Speak with VIRELLAART on WhatsApp for a private Saltanat Dining Room offer, dining-set customization and shipping assistance.",
