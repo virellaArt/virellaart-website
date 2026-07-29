@@ -1538,6 +1538,15 @@ saltanatBedroom: {
     "/saltanatbedroom-04.webp",
     "/saltanatbedroom-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Saltanat bedroom with a deep taupe button-tufted bed, elaborate gold-tone carved frame, matching nightstands and round upholstered bench",
+      "Saltanat dressing table with glossy dark and gold-tone cabinetry, richly carved statement mirror and round tufted stool",
+      "Saltanat bedroom wardrobe with gold-tone doors, glossy dark fluted side panels and an elaborate carved crown and base",
+      "Close-up of the Saltanat nightstand with glossy dark marble-look top, gold-tone carved body, decorative mirror and crystal table lamp",
+      "Close-up of the Saltanat deep taupe tufted headboard framed by intricate dark and gold-tone baroque carving",
+    ],
+  },
 
  description:
   "The Saltanat Luxury Bedroom Collection by VIRELLAART commands attention with an ornate statement headboard, deep tufting and a richly layered classical composition. Created for palatial villas and distinguished master suites, this luxury bedroom furniture delivers ceremonial grandeur and unmistakable prestige. Discuss the Saltanat Bedroom collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
