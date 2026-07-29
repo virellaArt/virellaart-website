@@ -654,6 +654,13 @@ moonDining: {
   "/moondining-02.webp",
   "/moondining-03.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Moon dining room set with a cream marble-look table, upholstered chairs and a sculptural taupe console with organic mirror",
+        "Overhead view of the Moon dining table with a rounded cream marble-look top, gold-tone pedestal base and coordinated upholstered chairs",
+        "Moon taupe dining console with sculpted wave-pattern doors, cream marble-look top, gold-tone base details and an organic wall mirror",
+      ],
+    },
 
   description:
   "The Moon Luxury Dining Room Collection by VIRELLAART expresses contemporary elegance through flowing silhouettes, sculptural cabinetry and a balanced dining composition. Designed for refined villas and modern entertaining spaces, this luxury dining room furniture creates a distinctive focal point with graceful visual movement. Contact VIRELLAART on WhatsApp for Moon Dining Room set pricing, customization options and worldwide delivery assistance.",
