@@ -1216,6 +1216,15 @@ milanoBedroom: {
     "/bedroommilano-04.webp",
     "/bedroommilano-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Milano bedroom set with an ornate cream tufted bed, matching nightstands and a large cream wardrobe with elaborate gold-tone carving",
+      "Milano cream dressing table with richly carved gold-tone framing, three decorative mirrors and a matching upholstered stool",
+      "Close-up of the Milano cream nightstand with curved top, intricate gold-tone scrollwork and ornate carved legs beside the tufted bed",
+      "Milano cream wardrobe with rounded side doors, elaborate gold-tone ornaments, carved crown and decorative base trim",
+      "Close view of the Milano bed with a tall cream button-tufted headboard, sculpted gold-tone crest and ornate carved footboard",
+    ],
+  },
 
   description:
   "The Milano Luxury Bedroom Collection by VIRELLAART brings grand classical elegance to refined interiors with its ornate bed, statement wardrobe and richly decorative presence. Designed for clients seeking luxury bedroom furniture with timeless character, Milano creates a prestigious atmosphere. Connect with VIRELLAART on WhatsApp for Milano Bedroom set pricing, customization choices and worldwide delivery support.",
