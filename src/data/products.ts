@@ -563,6 +563,15 @@ deluxBedroom: {
   "/deluxbed-04.webp",
   "/deluxbed-05.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Delux bedroom set with a cream upholstered bed, mirrored wardrobe, matching nightstands and padded storage bench",
+        "Front view of the Delux cream bed with a tall curved upholstered headboard, mirrored side panels, matching nightstands and padded bench",
+        "Delux bedroom arrangement with cream upholstered bed, coordinated nightstands, padded bench and matching mirrored dresser",
+        "Delux cream bedroom dresser with ribbed curved doors, gold-tone details, three-part mirror and matching upholstered stool",
+        "Delux cream wardrobe with curved ribbed side doors, central full-length mirrors and polished gold-tone trim",
+      ],
+    },
 
   description:
   "The Delux Luxury Bedroom Collection by VIRELLAART presents sweeping curves, layered symmetry and a polished architectural composition that feels both grand and inviting. Created for elegant master suites and luxury bedroom furniture settings, it brings visual harmony and lasting prestige. Connect with VIRELLAART on WhatsApp for Delux Bedroom set pricing, customization choices and worldwide delivery support.",
