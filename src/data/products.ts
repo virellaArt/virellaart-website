@@ -273,6 +273,15 @@ export const products = {
     "/lugano-04.webp",
     "/lugano-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Lugano living room arrangement with two ivory sofas, a matching armchair and a dark wood center table in a chandelier-lit interior",
+        "Lugano ivory sofa three-quarter view with a curved back, dark carved wood frame and metallic brown patterned cushions",
+        "Lugano ivory three-seat sofa front view with a dark carved wood frame, patterned cushions and matching center table",
+        "Lugano ivory armchair with a curved back, dark carved wood arms and brown abstract patterned outer upholstery",
+        "Close-up of the Lugano ivory armchair with a dark carved wood frame, patterned outer upholstery and matching accent cushion",
+      ],
+    },
 
  description:
   "Discover the Lugano Luxury Living Room Collection by VIRELLAART, defined by graceful silhouettes, decorative framing and a rich, formal presence. Designed for grand residences and sophisticated lounge spaces, this luxury living room furniture brings timeless elegance and visual distinction. Request a private Lugano Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
