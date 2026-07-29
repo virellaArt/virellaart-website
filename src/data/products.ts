@@ -1091,6 +1091,13 @@ milanoDining: {
     "/diningmilano-02.webp",
     "/diningmilano-03.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Milano dining room with an oval cream table, black marble-look inlays, tufted high-back chairs, carved sideboard and glass display cabinet",
+        "Milano dining table detail collage showing the cream top, black marble-look inlays, ornate bronze-tone edge and sculptural carved pedestal base",
+        "Milano dining chair detail collage with cream tufted upholstery, patterned fabric and an elaborate bronze-tone carved frame",
+      ],
+    },
 
   description:
   "The Milano Luxury Dining Room Collection by VIRELLAART presents an opulent classical setting with a sculptural dining table, high-back chairs and richly framed display furniture. Created for grand villas and formal entertaining, this luxury dining room furniture transforms meals into an elegant occasion. Request a detailed Milano Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
