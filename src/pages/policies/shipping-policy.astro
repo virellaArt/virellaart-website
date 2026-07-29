@@ -13,6 +13,7 @@ import greekPolicy from "../../i18n/policies/shipping-policy-el.json";
 import spanishPolicy from "../../i18n/policies/shipping-policy-es.json";
 import serbianPolicy from "../../i18n/policies/shipping-policy-sr.json";
 import kazakhPolicy from "../../i18n/policies/shipping-policy-kk.json";
+import uzbekPolicy from "../../i18n/policies/shipping-policy-uz.json";
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const policy =
@@ -40,7 +41,9 @@ const policy =
                         ? serbianPolicy
                         : language === "kk"
                           ? kazakhPolicy
-                          : null;
+                          : language === "uz"
+                            ? uzbekPolicy
+                            : null;
 ---
 
 <PolicyLayout
@@ -145,6 +148,7 @@ const policy =
     )
   }
 </PolicyLayout>
+
 
 
 
