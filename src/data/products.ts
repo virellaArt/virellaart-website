@@ -1305,6 +1305,15 @@ linaDining: {
     "/linadining-04.webp",
     "/linadining-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Lina dining room set with a rectangular cream marble-look table, six upholstered chairs and a matching fluted console beneath a crystal chandelier",
+        "Close-up of the Lina dining table corner with a glossy cream top, dark wood trim, fluted pedestal base and gold-tone decorative accents",
+        "Lina rectangular dining table with dual fluted pedestal bases, upholstered high-back chairs and matching console in the background",
+        "Front view of the Lina dining console with dark wood framing, vertically fluted cream doors, diamond accents and slender decorative legs",
+        "Three-quarter view of the Lina dining console with cream fluted panels, dark wood framing, gold-tone handles and decorative tapered legs",
+      ],
+    },
 
   description:
   "The Lina Luxury Dining Room Collection by VIRELLAART pairs a strong architectural table, tailored high-back chairs and disciplined vertical detailing for a polished formal setting. Designed for sophisticated villas and elegant entertaining spaces, this luxury dining room furniture brings visual balance, prestige and refined structure. Message VIRELLAART via WhatsApp to explore Lina Dining Room prices, customization possibilities and worldwide delivery details.",
