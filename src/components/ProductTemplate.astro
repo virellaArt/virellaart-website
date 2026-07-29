@@ -78,14 +78,18 @@ const prices: {
   featured?: boolean;
 }[] = product.prices ?? [];
 
-/* VIRELLAART DINING INCLUDED PRICE */
+/* VIRELLAART DINING AND BEDROOM INCLUDED PRICE */
 
 type IncludedItemKey =
   | "diningTable"
   | "chairs"
   | "console"
   | "mirror"
-  | "showcase";
+  | "showcase"
+  | "bed"
+  | "nightstands"
+  | "wardrobe"
+  | "dresser";
 
 type IncludedPriceContent = {
   title: string;
@@ -103,7 +107,11 @@ const includedPriceContent: Record<
       "chairs": "6 dining chairs",
       "console": "Console",
       "mirror": "Mirror",
-      "showcase": "Showcase"
+      "showcase": "Showcase",
+      "bed": "Bed",
+      "nightstands": "2 nightstands",
+      "wardrobe": "Wardrobe",
+      "dresser": "Dresser"
     }
   },
   "tr": {
@@ -113,7 +121,11 @@ const includedPriceContent: Record<
       "chairs": "6 yemek sandalyesi",
       "console": "Konsol",
       "mirror": "Ayna",
-      "showcase": "Vitrin"
+      "showcase": "Vitrin",
+      "bed": "Yatak",
+      "nightstands": "2 komodin",
+      "wardrobe": "Gardırop",
+      "dresser": "Şifonyer"
     }
   },
   "de": {
@@ -123,7 +135,11 @@ const includedPriceContent: Record<
       "chairs": "6 Esszimmerstühle",
       "console": "Konsole",
       "mirror": "Spiegel",
-      "showcase": "Vitrine"
+      "showcase": "Vitrine",
+      "bed": "Bett",
+      "nightstands": "2 Nachttische",
+      "wardrobe": "Kleiderschrank",
+      "dresser": "Kommode"
     }
   },
   "fr": {
@@ -133,7 +149,11 @@ const includedPriceContent: Record<
       "chairs": "6 chaises de salle à manger",
       "console": "Console",
       "mirror": "Miroir",
-      "showcase": "Vitrine"
+      "showcase": "Vitrine",
+      "bed": "Lit",
+      "nightstands": "2 tables de chevet",
+      "wardrobe": "Armoire",
+      "dresser": "Commode"
     }
   },
   "it": {
@@ -143,7 +163,11 @@ const includedPriceContent: Record<
       "chairs": "6 sedie da pranzo",
       "console": "Consolle",
       "mirror": "Specchio",
-      "showcase": "Vetrina"
+      "showcase": "Vetrina",
+      "bed": "Letto",
+      "nightstands": "2 comodini",
+      "wardrobe": "Armadio",
+      "dresser": "Comò"
     }
   },
   "ru": {
@@ -153,7 +177,11 @@ const includedPriceContent: Record<
       "chairs": "6 обеденных стульев",
       "console": "Консоль",
       "mirror": "Зеркало",
-      "showcase": "Витрина"
+      "showcase": "Витрина",
+      "bed": "Кровать",
+      "nightstands": "2 прикроватные тумбы",
+      "wardrobe": "Шкаф",
+      "dresser": "Комод"
     }
   },
   "ar": {
@@ -163,7 +191,11 @@ const includedPriceContent: Record<
       "chairs": "6 كراسي طعام",
       "console": "كونسول",
       "mirror": "مرآة",
-      "showcase": "خزانة عرض"
+      "showcase": "خزانة عرض",
+      "bed": "سرير",
+      "nightstands": "طاولتا سرير",
+      "wardrobe": "خزانة ملابس",
+      "dresser": "تسريحة"
     }
   },
   "bg": {
@@ -173,7 +205,11 @@ const includedPriceContent: Record<
       "chairs": "6 трапезни стола",
       "console": "Конзола",
       "mirror": "Огледало",
-      "showcase": "Витрина"
+      "showcase": "Витрина",
+      "bed": "Легло",
+      "nightstands": "2 нощни шкафчета",
+      "wardrobe": "Гардероб",
+      "dresser": "Скрин"
     }
   },
   "ro": {
@@ -183,7 +219,11 @@ const includedPriceContent: Record<
       "chairs": "6 scaune de dining",
       "console": "Consolă",
       "mirror": "Oglindă",
-      "showcase": "Vitrină"
+      "showcase": "Vitrină",
+      "bed": "Pat",
+      "nightstands": "2 noptiere",
+      "wardrobe": "Dulap",
+      "dresser": "Comodă"
     }
   },
   "el": {
@@ -193,7 +233,11 @@ const includedPriceContent: Record<
       "chairs": "6 καρέκλες τραπεζαρίας",
       "console": "Κονσόλα",
       "mirror": "Καθρέφτης",
-      "showcase": "Βιτρίνα"
+      "showcase": "Βιτρίνα",
+      "bed": "Κρεβάτι",
+      "nightstands": "2 κομοδίνα",
+      "wardrobe": "Ντουλάπα",
+      "dresser": "Συρταριέρα"
     }
   },
   "es": {
@@ -203,7 +247,11 @@ const includedPriceContent: Record<
       "chairs": "6 sillas de comedor",
       "console": "Consola",
       "mirror": "Espejo",
-      "showcase": "Vitrina"
+      "showcase": "Vitrina",
+      "bed": "Cama",
+      "nightstands": "2 mesitas de noche",
+      "wardrobe": "Armario",
+      "dresser": "Cómoda"
     }
   },
   "sr": {
@@ -213,7 +261,11 @@ const includedPriceContent: Record<
       "chairs": "6 trpezarijskih stolica",
       "console": "Konzola",
       "mirror": "Ogledalo",
-      "showcase": "Vitrina"
+      "showcase": "Vitrina",
+      "bed": "Krevet",
+      "nightstands": "2 noćna ormarića",
+      "wardrobe": "Garderober",
+      "dresser": "Komoda"
     }
   },
   "kk": {
@@ -223,7 +275,11 @@ const includedPriceContent: Record<
       "chairs": "6 асхана орындығы",
       "console": "Консоль",
       "mirror": "Айна",
-      "showcase": "Витрина"
+      "showcase": "Витрина",
+      "bed": "Кереует",
+      "nightstands": "2 тумба",
+      "wardrobe": "Киім шкафы",
+      "dresser": "Комод"
     }
   },
   "uz": {
@@ -233,7 +289,11 @@ const includedPriceContent: Record<
       "chairs": "6 ta ovqatlanish stuli",
       "console": "Konsol",
       "mirror": "Ko‘zgu",
-      "showcase": "Vitrina"
+      "showcase": "Vitrina",
+      "bed": "Karavot",
+      "nightstands": "2 ta karavot yonidagi tumba",
+      "wardrobe": "Kiyim shkafi",
+      "dresser": "Komod"
     }
   },
   "pt": {
@@ -243,7 +303,11 @@ const includedPriceContent: Record<
       "chairs": "6 cadeiras de jantar",
       "console": "Consola",
       "mirror": "Espelho",
-      "showcase": "Vitrine"
+      "showcase": "Vitrine",
+      "bed": "Cama",
+      "nightstands": "2 mesas de cabeceira",
+      "wardrobe": "Roupeiro",
+      "dresser": "Cómoda"
     }
   },
   "pl": {
@@ -253,7 +317,11 @@ const includedPriceContent: Record<
       "chairs": "6 krzeseł do jadalni",
       "console": "Konsola",
       "mirror": "Lustro",
-      "showcase": "Witryna"
+      "showcase": "Witryna",
+      "bed": "Łóżko",
+      "nightstands": "2 szafki nocne",
+      "wardrobe": "Szafa",
+      "dresser": "Komoda"
     }
   }
 };
@@ -268,6 +336,14 @@ const diningItemsWithoutShowcase: IncludedItemKey[] = [
 const diningItemsWithShowcase: IncludedItemKey[] = [
   ...diningItemsWithoutShowcase,
   "showcase",
+];
+
+const bedroomIncludedItems: IncludedItemKey[] = [
+  "bed",
+  "nightstands",
+  "wardrobe",
+  "dresser",
+  "mirror",
 ];
 
 const diningProductsWithoutShowcase =
@@ -301,7 +377,9 @@ const includedItemKeys: IncludedItemKey[] =
       : diningProductsWithoutShowcase.has(product.name)
         ? diningItemsWithoutShowcase
         : []
-    : [];
+    : product.category === "bedrooms"
+      ? bedroomIncludedItems
+      : [];
 
 const includedPrice =
   includedPriceContent[language] ??
