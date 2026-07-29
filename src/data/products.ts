@@ -1713,6 +1713,17 @@ sultanBedroom: {
     "/sultanbedroom-06.webp",
     "/sultanbedroom-07.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Sultan bedroom collection with a turquoise tufted bed, ornate wardrobe, matching dressing table, nightstands and upholstered stool",
+      "Sultan bedroom arrangement with a crowned turquoise tufted bed, coordinated nightstands and a large cream wardrobe with gold-tone carving",
+      "Front view of the Sultan turquoise tufted bed with an elaborate gold-tone carved crown, patterned bedding and matching bedside cabinets",
+      "Sultan dressing table with cream and dark brown cabinetry, elaborate gold-tone carving, sculptural three-part mirror and turquoise stool",
+      "Close-up of the Sultan bedside cabinet with cream panels, dark brown framing, gold-tone ornament and a mirrored display niche",
+      "Sultan cream wardrobe with dark brown framing, ornate gold-tone door decoration, crowned top and richly carved base",
+      "Three-quarter view of the Sultan turquoise tufted bed with ornate gold-tone framing, patterned bedding and coordinated bedside cabinets",
+    ],
+  },
 
   description:
     "The Sultan Luxury Bedroom Collection by VIRELLAART features a crowned statement headboard, formal symmetry and coordinated classical furniture for an impressive master suite. Designed for luxury villas and distinguished residences, this luxury bedroom set creates regal comfort with a commanding visual identity. Speak with our WhatsApp team for Sultan Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
