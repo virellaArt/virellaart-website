@@ -1020,6 +1020,15 @@ versaceBedroom: {
     "/versacebedroom-04.webp",
     "/versacebedroom-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Versace bedroom set with a cream upholstered bed, mirrored wardrobe, matching dresser, nightstands and quilted bench in a luxury interior",
+      "Versace cream wardrobe with textured outer door panels, central full-length mirrors, gold-tone handles and rounded framing",
+      "Versace cream dressing table with asymmetrical drawers, large rounded rectangular mirror, gold-tone details and matching round stool",
+      "Front view of the Versace upholstered bed with geometric panelled headboard, gold-tone vertical accents, matching nightstands and quilted footboard",
+      "Close-up of the Versace cream nightstand with textured drawer front, gold-tone handle and tapered decorative leg beside the upholstered bed",
+    ],
+  },
 
   description:
   "The Versace Luxury Bedroom Collection by VIRELLAART combines a tall statement headboard, balanced proportions and refined vertical detailing to create a polished, contemporary retreat. Designed for elegant villas and sophisticated master suites, this luxury bedroom furniture brings visual harmony and a strong sense of prestige. Speak with our WhatsApp team for Versace Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
