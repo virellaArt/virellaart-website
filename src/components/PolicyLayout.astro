@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLanguageFromPath, getTranslations, languages } from "../i18n/config";
+
+/* VIRELLAART POLICY LAYOUT I18N */
+const policyLabels = {"en":"Policies","tr":"Politikalar","de":"Richtlinien","fr":"Politiques","it":"Politiche","ru":"Политики","ar":"السياسات","bg":"Политики","ro":"Politici","el":"Πολιτικές","es":"Políticas","sr":"Politike","kk":"Саясаттар","uz":"Siyosatlar","pt":"Políticas","pl":"Polityki"} as const;
 
 interface Props {
   title: string;
@@ -8,26 +12,26 @@ interface Props {
   updated?: string;
 }
 
-const {
-  title,
-  description,
-  eyebrow = "VIRELLAART Policies",
-  updated = "Last updated: July 2026",
-} = Astro.props;
+const { title, description, eyebrow, updated } = Astro.props;
+const language = getLanguageFromPath(Astro.url.pathname);
+const t = getTranslations(language);
+const locale = languages[language].locale.replace("_", "-");
+const policyEyebrow = eyebrow ?? `VIRELLAART ${policyLabels[language]}`;
+const policyUpdated = updated ?? new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(new Date("2026-07-01T00:00:00Z"));
 ---
 
 <BaseLayout {title} {description}>
   <main class="policy-page">
     <section class="policy-hero">
       <div class="policy-hero-inner">
-        <span class="policy-eyebrow">{eyebrow}</span>
+        <span class="policy-eyebrow">{policyEyebrow}</span>
 
         <h1>{title.replace(" | VIRELLAART", "")}</h1>
 
         <p>{description}</p>
 
         <div class="policy-meta">
-          <span>{updated}</span>
+          <span>{policyUpdated}</span>
           <span>VIRELLAART · Istanbul, Türkiye</span>
         </div>
       </div>
@@ -39,21 +43,18 @@ const {
       </article>
 
       <aside class="policy-contact">
-        <span>Customer Support</span>
+        <span>{t.contact.languageValue}</span>
 
-        <h2>Questions About Our Policies?</h2>
+        <h2>{t.contact.heading}</h2>
 
-        <p>
-          Contact the VIRELLAART team for information about production,
-          customization, delivery and order conditions.
-        </p>
+        <p>{t.contact.paragraph}</p>
 
         <a
           href="https://wa.me/905539478608"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Contact on WhatsApp
+          {t.contact.button}
         </a>
       </aside>
     </section>
