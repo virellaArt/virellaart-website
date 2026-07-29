@@ -1825,6 +1825,14 @@ sultanGreenDining: {
       "/marsilyabedroom-03.webp",
       "/marsilyabedroom-04.webp",
     ],
+    imageAlts: {
+      en: [
+        "Complete Marsilya bedroom set with a cream upholstered bed, mirrored wardrobe, curved dresser, nightstands and padded bench in a dark luxury interior",
+        "Front view of the Marsilya cream bed with a quilted curved headboard, champagne-tone trim, matching nightstands and padded foot bench",
+        "Marsilya cream wardrobe with rounded corners, fluted outer doors, central full-length mirrors and champagne-tone trim",
+        "Marsilya cream bedroom dresser with curved cabinet sides, illuminated sculptural mirror, champagne-tone trim and matching upholstered stool",
+      ],
+    },
     prices: [
       {
         label: "Luxury Bedroom Set",
