@@ -456,6 +456,16 @@ queen: {
     "/vizyon05.webp",
     "/vizyon06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Vizyon ivory loveseat and matching armchair with dark wood framing, gold-tone ornament and a black center table",
+        "Complete Vizyon living room arrangement with two ivory sofas, a matching armchair and an ornate black center table",
+        "Vizyon ivory sofa and armchair displayed around a glossy black center table in a warm contemporary interior",
+        "Vizyon ivory three-seat sofa front view with dark wood side panels, gold-tone carved details and tasselled cushions",
+        "Vizyon ivory armchair close-up with a curved dark wood frame, patterned outer upholstery and gold-tone ornament",
+        "Vizyon ivory sofa and armchair arrangement with a rectangular black center table and gold-tone carved details",
+      ],
+    },
 
   description:
   "Discover the Vizyon Luxury Living Room Collection by VIRELLAART, distinguished by ornate detailing, sculpted profiles and a formal, palace-inspired character. Designed for grand villas and elegant reception spaces, this luxury sofa set creates a commanding focal point with refined visual drama. Connect with VIRELLAART via WhatsApp for Vizyon Living Room availability, customization possibilities and worldwide delivery information.",
