@@ -336,47 +336,102 @@ const factoryImageDisclosure =
   manufacturingImageDisclosure[language] ??
   manufacturingImageDisclosure.en;
 
-const why = whyChooseContent[language] ?? whyChooseContent.en;
+const why =
+  whyChooseContent[language] ??
+  whyChooseContent.en;
+
+/* VIRELLAART CONVERSION HERO FINAL */
+
+const conversionHero =
+  language === "en"
+    ? {
+        eyebrow:
+          "Manufacturer Direct · Istanbul, Türkiye",
+        title:
+          "Luxury Furniture Made in Istanbul, Delivered Worldwide",
+        brandLine:
+          "VIRELLAART · ISTANBUL",
+        lead:
+          "Manufacturer-direct living room, dining room, bedroom and TV unit collections, crafted in Türkiye with custom finishes and delivered worldwide.",
+        primaryButton:
+          "Get Price & Delivery Quote",
+        secondaryButton:
+          "Explore Collections",
+        proofOne:
+          "Manufacturer Direct",
+        proofTwo:
+          "Custom Finishes",
+        proofThree:
+          "Worldwide Delivery",
+      }
+    : {
+        eyebrow:
+          translations.home.eyebrow,
+        title:
+          translations.home.title,
+        brandLine:
+          "VIRELLAART · ISTANBUL",
+        lead:
+          translations.home.lead,
+        primaryButton:
+          translations.product.whatsapp,
+        secondaryButton:
+          translations.home.button,
+        proofOne:
+          why.manufacturerTitle,
+        proofTwo:
+          translations.product.craftsmanship,
+        proofThree:
+          translations.product.worldwideDelivery,
+      };
+
+const homePageTitle =
+  language === "en"
+    ? "Luxury Furniture Manufacturer in Istanbul | VIRELLAART"
+    : translations.home.title;
+
+const homePageDescription =
+  language === "en"
+    ? "Discover manufacturer-direct luxury furniture made in Istanbul, with custom finishes and worldwide delivery for living rooms, dining rooms, bedrooms and interior projects."
+    : pageDescription;
+
 ---
 
 <BaseLayout
-  title={translations.home.title}
-  description={pageDescription}
+  title={homePageTitle}
+  description={homePageDescription}
 >
   <section id="home" class="hero">
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
       <span class="eyebrow">
-        {translations.home.eyebrow}
+        {conversionHero.eyebrow}
       </span>
 
-      <h1>VIRELLAART</h1>
+      <h1>{conversionHero.title}</h1>
 
       <p class="hero-title-keyword">
-        {translations.home.title}
+        {conversionHero.brandLine}
       </p>
 
       <p class="hero-lead">
-        {translations.home.lead}
+        {conversionHero.lead}
       </p>
 
       <div class="hero-proof">
-        <span>{why.manufacturerTitle}</span>
+        <span>{conversionHero.proofOne}</span>
+
         <i aria-hidden="true"></i>
-        <span>
-          {translations.product.worldwideDelivery}
-        </span>
+
+        <span>{conversionHero.proofTwo}</span>
+
+        <i aria-hidden="true"></i>
+
+        <span>{conversionHero.proofThree}</span>
       </div>
 
       <div class="hero-actions">
-        <a
-          href="#collections"
-          class="hero-button"
-        >
-          {translations.home.button}
-        </a>
-
         <a
           href={whatsappURL}
           class="hero-button hero-whatsapp"
@@ -387,7 +442,14 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
           data-product-name="VIRELLAART"
           data-page-language={language}
         >
-          {translations.product.whatsapp}
+          {conversionHero.primaryButton}
+        </a>
+
+        <a
+          href="#collections"
+          class="hero-button"
+        >
+          {conversionHero.secondaryButton}
         </a>
       </div>
     </div>
@@ -2769,6 +2831,120 @@ const why = whyChooseContent[language] ?? whyChooseContent.en;
       color: #100b08 !important;
       font-size: 8px !important;
       letter-spacing: 2px !important;
+    }
+  }
+
+
+  /* VIRELLAART MOBILE HERO CONVERSION FIT */
+
+  @media (max-width: 760px) {
+    .hero-content {
+      padding:
+        21px
+        18px
+        19px !important;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 12px !important;
+      font-size: 8px !important;
+      line-height: 1.4 !important;
+      letter-spacing: 2.1px !important;
+      white-space: nowrap;
+    }
+
+    .hero h1 {
+      max-width: 100% !important;
+      margin:
+        0
+        0
+        14px !important;
+      font-size:
+        clamp(
+          42px,
+          10.8vw,
+          46px
+        ) !important;
+      line-height: 0.99 !important;
+      letter-spacing: -1px !important;
+    }
+
+    .hero-title-keyword {
+      display: none !important;
+    }
+
+    .hero-lead {
+      margin:
+        0
+        0
+        15px !important;
+      font-size: 14px !important;
+      line-height: 1.48 !important;
+    }
+
+    .hero-proof {
+      display: grid !important;
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        ) !important;
+      gap: 6px !important;
+      margin:
+        0
+        0
+        14px !important;
+      padding-top: 11px !important;
+    }
+
+    .hero-proof i {
+      display: none !important;
+    }
+
+    .hero-proof span {
+      min-height: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding:
+        4px
+        3px;
+      border:
+        1px solid
+        rgba(201, 164, 93, 0.24);
+      font-size: 6.5px !important;
+      line-height: 1.25 !important;
+      letter-spacing: 0.75px !important;
+      text-align: center;
+    }
+
+    .hero-actions {
+      gap: 8px !important;
+    }
+
+    .hero-button {
+      min-height: 47px !important;
+      padding:
+        12px
+        13px !important;
+      font-size: 8px !important;
+      letter-spacing: 1.55px !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero h1 {
+      font-size: 41px !important;
+    }
+
+    .hero .eyebrow {
+      font-size: 7px !important;
+      letter-spacing: 1.7px !important;
+    }
+
+    .hero-proof span {
+      font-size: 6px !important;
+      letter-spacing: 0.55px !important;
     }
   }
 </style>
