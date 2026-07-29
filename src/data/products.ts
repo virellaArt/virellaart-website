@@ -911,6 +911,14 @@ shawlDining: {
     "/diningshawl-03.webp",
     "/diningshawl-04.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Shawl dining room set with a glossy dark rectangular table, six taupe upholstered chairs and a matching sculptural sideboard",
+        "Close-up of the Shawl glossy dark dining table with rounded corners, gold-tone trim, sweeping sculptural pedestal and taupe chairs",
+        "Shawl dark dining sideboard with sweeping layered front panels, gold-tone handles and two geometric framed wall mirrors",
+        "Rear view of the Shawl taupe dining chair with textured upholstery, sweeping stitched lines, gold-tone crest and metallic tapered legs",
+      ],
+    },
 
   description:
   "The Shawl Luxury Dining Room Collection by VIRELLAART brings together a sculptural table, sweeping chair profiles and a dramatic formal composition. Designed for statement villas and elegant entertaining spaces, this luxury dining room furniture creates a bold sense of prestige and visual depth. Contact VIRELLAART on WhatsApp for Shawl Dining Room set pricing, customization options and worldwide delivery assistance.",
