@@ -854,6 +854,15 @@ vanessaDining: {
     "/vanessadining-04.webp",
     "/vanessadining-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Vanessa glossy dark dining table with taupe high-back chairs, gold-tone place settings and a sculptural pedestal base",
+        "Full view of the Vanessa rectangular dining table with six taupe upholstered chairs, gold-tone inlay and decorative corner details",
+        "Vanessa glossy dark dining sideboard with a curved front, gold-tone ornament and two matching rectangular wall mirrors",
+        "Complete Vanessa dining arrangement with six taupe high-back chairs around a glossy dark rectangular table",
+        "Close-up of the Vanessa curved dining sideboard with glossy dark brown doors, gold-tone medallion and polished top",
+      ],
+    },
 
   description:
   "The Vanessa Luxury Dining Room Collection by VIRELLAART is defined by high-back seating, crisp geometric lines and a formal, tailored character. Designed for elegant villas and sophisticated entertaining spaces, this luxury dining room furniture creates a confident sense of occasion and refined visual order. Contact VIRELLAART on WhatsApp for Vanessa Dining Room set pricing, customization options and worldwide delivery assistance.",
