@@ -582,6 +582,15 @@ aspendosDining: {
   "/aspendosdining-04.webp",
   "/aspendosdining-05.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Aspendos dining room set with a rounded rectangular table, six ivory chairs and a matching console with round mirror",
+        "Aspendos dining table close-up with a taupe top, bronze-tone trim, sculptural pedestal bases and ivory upholstered chairs",
+        "Aspendos taupe console cabinet with textured side panels, sculptural pedestal base and a large illuminated round mirror",
+        "Aspendos ivory dining chair with a curved upholstered back, rounded seat and slender taupe frame",
+        "Aspendos dining table and six ivory chairs viewed from above with bronze-tone trim and twin sculptural pedestal bases",
+      ],
+    },
 
   description:
   "The Aspendos Luxury Dining Room Collection by VIRELLAART combines an architectural pedestal table, sculptural curved seating and a calm, balanced composition. Created for elegant villas and contemporary dining spaces, this luxury dining room furniture delivers refined presence without excess. Discuss your dining interior with VIRELLAART on WhatsApp and receive Aspendos Dining Room pricing, configuration guidance and delivery planning.",
