@@ -846,6 +846,12 @@ moontv: {
   "/moontv-01.webp",
   "/moontv-02.webp",
 ],
+  imageAlts: {
+    en: [
+      "Complete Moon TV wall unit with a taupe media panel, integrated display shelving, tall side towers and a coordinated low console with gold-tone details",
+      "Close-up of the Moon taupe TV console with a pale marble-look top, curved embossed door lines, gold-tone handles and slim metallic legs",
+    ],
+  },
 
   description:
   "The Moon Luxury TV Unit by VIRELLAART combines an architectural wall composition, integrated display shelving and a streamlined low cabinet for a polished contemporary interior. Designed for refined villas and modern living spaces, this designer TV unit creates strong visual structure and elegant presentation. Message VIRELLAART on WhatsApp for Moon TV Unit availability, customization possibilities and worldwide delivery support.",
