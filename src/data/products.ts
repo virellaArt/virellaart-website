@@ -64,6 +64,18 @@ export const products = {
       "/vanessa-07.webp",
       "/vanessa-08.webp",
     ],
+    imageAlts: {
+      en: [
+        "Vanessa champagne-toned three-seat sofa with a glossy dark frame, gold-tone accents and coordinated patterned cushions",
+        "Pair of Vanessa champagne-toned armchairs with curved glossy dark frames, patterned outer panels and a round side table",
+        "Close-up of the Vanessa sofa arm with a patterned outer panel, glossy dark frame, gold-tone joint and decorative cushions",
+        "Front view of the Vanessa armchair with a channelled back, champagne-toned upholstery, glossy dark frame and gold-tone accents",
+        "Pair of Vanessa armchairs arranged behind a rectangular black center table with a matching round side table",
+        "Vanessa champagne-toned armchair beside a round dark side table, showing its curved frame and patterned outer upholstery",
+        "Vanessa dark console cabinet with a curved front, glossy black framing, gold-tone details and an oversized matching mirror",
+        "Wide view of the Vanessa console and framed mirror with curved dark cabinet doors and decorative gold-tone accents",
+      ],
+    },
 
     description:
       "Meet the Vanessa Luxury Living Room Collection by VIRELLAART, defined by formal silhouettes, tailored seating and bold geometric tables that create a polished, high-contrast interior. Ideal for sophisticated villas and statement lounges, this luxury living room furniture delivers strong visual identity. Speak with the VIRELLAART team on WhatsApp about Vanessa Living Room pricing, sofa-set options and delivery planning for your interior project.",
