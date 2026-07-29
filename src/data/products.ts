@@ -359,6 +359,14 @@ queen: {
     "/sena-03.webp",
     "/sena-04.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Sena living room arrangement with ivory sofas and armchairs around a dark wood center table beneath a crystal chandelier",
+        "Sena ivory three-seat sofa front view with a curved dark wood frame, geometric brown cushions and turned legs",
+        "Sena ivory sofas arranged at a right angle around a rectangular dark wood center table in a classical interior",
+        "Pair of Sena ivory armchairs with curved dark wood frames, turned legs and geometric brown accent cushions",
+      ],
+    },
 
   description:
   "Discover the Sena Luxury Living Room Collection by VIRELLAART, defined by formal symmetry, graceful curved profiles and a distinguished classical presence. Designed for grand villas and elegant reception spaces, this luxury living room furniture creates a refined, ceremonial atmosphere with strong visual authority. Connect with VIRELLAART via WhatsApp for Sena Living Room availability, customization possibilities and worldwide delivery information.",
