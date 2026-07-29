@@ -815,6 +815,12 @@ images: [
   "/deluxtv-01.webp",
   "/deluxtv-02.webp",
 ],
+imageAlts: {
+  en: [
+    "Front view of the Delux cream TV console with rounded fluted side cabinets, mirrored center drawers and gold-tone lattice pedestal bases",
+    "Angled view of the Delux TV console showing its cream marble-look top, fluted curved doors, mirrored storage sections and gold-tone lattice bases",
+  ],
+},
 
  description:
   "The Delux Luxury TV Unit by VIRELLAART combines a sweeping curved profile, vertical detailing and a balanced mix of display and storage elements. Created for elegant villas and sophisticated living spaces, this designer TV unit adds refined structure and a polished focal point. Share your living-room project on WhatsApp to receive Delux TV Unit prices, personalized options and delivery planning from VIRELLAART.",
