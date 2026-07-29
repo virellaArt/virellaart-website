@@ -951,6 +951,15 @@ zumrut: {
     "/zumrut-04.webp",
   ],
 
+    imageAlts: {
+      en: [
+        "Complete Zumrut living room set with taupe seating, ornate black framing, a center table, side table and matching mirrored console",
+        "Zumrut taupe three-seat sofa with a tufted back, patterned cushions, mirrored side panels and elaborate black carved framing",
+        "Zumrut taupe armchair with a tufted back, patterned upholstery and an ornate black carved frame",
+        "Zumrut black and taupe console cabinet with mirrored details, elaborate carved ornament and a large matching framed mirror",
+      ],
+    },
+
  description:
   "The Zumrut Luxury Living Room Collection by VIRELLAART is defined by ornate framing, tufted seating and a richly layered classical composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates a commanding atmosphere of prestige and decorative elegance. Speak with the VIRELLAART team on WhatsApp about Zumrut Living Room pricing, sofa-set options and delivery planning for your interior project.",
 
