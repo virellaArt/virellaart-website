@@ -8,6 +8,155 @@ import {
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const year = new Date().getFullYear();
+
+/* VIRELLAART FOOTER I18N */
+
+type FooterTranslation = {
+  manufacturing: string;
+  policies: string;
+  shipping: string;
+  returns: string;
+  privacy: string;
+  terms: string;
+};
+
+const footerTranslations: Record<
+  string,
+  FooterTranslation
+> = {
+  "en": {
+    "manufacturing": "Manufacturing",
+    "policies": "Policies",
+    "shipping": "Shipping Policy",
+    "returns": "Return & Refund Policy",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "tr": {
+    "manufacturing": "Üretim",
+    "policies": "Politikalar",
+    "shipping": "Teslimat Politikası",
+    "returns": "İade ve Geri Ödeme Politikası",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Şartlar ve Koşullar"
+  },
+  "de": {
+    "manufacturing": "Herstellung",
+    "policies": "Richtlinien",
+    "shipping": "Versandrichtlinie",
+    "returns": "Rückgabe- und Erstattungsrichtlinie",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Allgemeine Geschäftsbedingungen"
+  },
+  "fr": {
+    "manufacturing": "Fabrication",
+    "policies": "Politiques",
+    "shipping": "Politique d’expédition",
+    "returns": "Politique de retour et de remboursement",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales"
+  },
+  "it": {
+    "manufacturing": "Produzione",
+    "policies": "Politiche",
+    "shipping": "Politica di spedizione",
+    "returns": "Politica di reso e rimborso",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini e condizioni"
+  },
+  "ru": {
+    "manufacturing": "Производство",
+    "policies": "Политики",
+    "shipping": "Политика доставки",
+    "returns": "Политика возврата и возмещения",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия использования"
+  },
+  "ar": {
+    "manufacturing": "التصنيع",
+    "policies": "السياسات",
+    "shipping": "سياسة الشحن",
+    "returns": "سياسة الإرجاع والاسترداد",
+    "privacy": "سياسة الخصوصية",
+    "terms": "الشروط والأحكام"
+  },
+  "bg": {
+    "manufacturing": "Производство",
+    "policies": "Политики",
+    "shipping": "Политика за доставка",
+    "returns": "Политика за връщане и възстановяване",
+    "privacy": "Политика за поверителност",
+    "terms": "Общи условия"
+  },
+  "ro": {
+    "manufacturing": "Producție",
+    "policies": "Politici",
+    "shipping": "Politica de livrare",
+    "returns": "Politica de retur și rambursare",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni și condiții"
+  },
+  "el": {
+    "manufacturing": "Κατασκευή",
+    "policies": "Πολιτικές",
+    "shipping": "Πολιτική αποστολών",
+    "returns": "Πολιτική επιστροφών και επιστροφής χρημάτων",
+    "privacy": "Πολιτική απορρήτου",
+    "terms": "Όροι και προϋποθέσεις"
+  },
+  "es": {
+    "manufacturing": "Fabricación",
+    "policies": "Políticas",
+    "shipping": "Política de envíos",
+    "returns": "Política de devoluciones y reembolsos",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones"
+  },
+  "sr": {
+    "manufacturing": "Proizvodnja",
+    "policies": "Politike",
+    "shipping": "Politika dostave",
+    "returns": "Politika povrata i refundacije",
+    "privacy": "Politika privatnosti",
+    "terms": "Uslovi korišćenja"
+  },
+  "kk": {
+    "manufacturing": "Өндіріс",
+    "policies": "Саясаттар",
+    "shipping": "Жеткізу саясаты",
+    "returns": "Қайтару және ақшаны өтеу саясаты",
+    "privacy": "Құпиялық саясаты",
+    "terms": "Шарттар мен талаптар"
+  },
+  "uz": {
+    "manufacturing": "Ishlab chiqarish",
+    "policies": "Siyosatlar",
+    "shipping": "Yetkazib berish siyosati",
+    "returns": "Qaytarish va pulni qaytarish siyosati",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Shartlar va qoidalar"
+  },
+  "pt": {
+    "manufacturing": "Fabrico",
+    "policies": "Políticas",
+    "shipping": "Política de envio",
+    "returns": "Política de devolução e reembolso",
+    "privacy": "Política de privacidade",
+    "terms": "Termos e condições"
+  },
+  "pl": {
+    "manufacturing": "Produkcja",
+    "policies": "Polityki",
+    "shipping": "Polityka wysyłki",
+    "returns": "Polityka zwrotów i refundacji",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin"
+  }
+};
+
+const footerText =
+  footerTranslations[language] ??
+  footerTranslations.en;
 ---
 
 <footer class="site-footer">
@@ -26,7 +175,7 @@ const year = new Date().getFullYear();
   </a>
 
   <a href={localizedPath("/manufacturing", language)}>
-    Manufacturing
+    {footerText.manufacturing}
   </a>
 
   <a href={localizedPath("/contact", language)}>
@@ -50,22 +199,22 @@ const year = new Date().getFullYear();
   </a>
 </div>
     <div class="footer-column">
-      <span>Policies</span>
+      <span>{footerText.policies}</span>
 
       <a href="/policies/shipping-policy/">
-        Shipping Policy
+        {footerText.shipping}
       </a>
 
       <a href="/policies/return-refund-policy/">
-        Return & Refund Policy
+        {footerText.returns}
       </a>
 
       <a href="/policies/privacy-policy/">
-        Privacy Policy
+        {footerText.privacy}
       </a>
 
       <a href="/policies/terms-conditions/">
-        Terms & Conditions
+        {footerText.terms}
       </a>
     </div>
 
