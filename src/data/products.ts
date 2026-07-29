@@ -619,6 +619,14 @@ images: [
   "/deluxdiningroom-03.webp",
   "/deluxdiningroom-04.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Delux dining room set with an oval ivory table, cream and charcoal chairs, matching cabinets and mirrored wall panels",
+        "Delux ivory dining chair close-up with a rounded upholstered back, patterned fabric and polished gold-tone sled base",
+        "Delux ivory console with fluted curved doors, mirrored center panels, gold-tone cylindrical legs and a large framed mirror",
+        "Delux oval ivory dining table with a fluted pedestal base, cream and charcoal chairs and matching console in the background",
+      ],
+    },
 
   description:
   "The Delux Luxury Dining Room Collection by VIRELLAART pairs an elegant oval dining table with sculptural storage pieces and formal symmetry for a polished, prestigious interior. Designed for grand villas and refined entertaining spaces, this luxury dining room furniture creates a confident sense of occasion. Request a detailed Delux Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
