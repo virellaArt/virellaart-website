@@ -1522,6 +1522,16 @@ sultanLiving: {
     "/sultansofa-05.webp",
     "/sultansofa-06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Sultan Sofa living room arrangement with a turquoise sofa, matching armchairs and an ornate oval center table in a neoclassical interior",
+        "Sultan turquoise three-seat sofa with a tufted back, patterned upholstery, cream accent cushions and an elaborate gold-tone carved frame",
+        "Close-up of the Sultan sofa arm and base with turquoise upholstery, dark wood edging and dense gold-tone floral carving",
+        "Sultan turquoise tufted armchair with patterned upholstery, an ornate gold-tone carved frame and matching round side table",
+        "Front view of the Sultan turquoise three-seat sofa with patterned seating, decorative cushions and an elaborate gold-tone frame",
+        "Sultan oval center table with an ivory and dark brown finish, glass inset and elaborate gold-tone carved ornament",
+      ],
+    },
 
   description:
   "The Sultan Luxury Living Room Collection by VIRELLAART presents a regal salon composition with crowned silhouettes, elaborate ornamental framing and balanced formal seating. Created for palatial villas and distinguished reception spaces, this luxury living room furniture delivers ceremonial grandeur with refined visual harmony. Message VIRELLAART on WhatsApp for Sultan Sofa pricing, customization options and worldwide delivery planning.",
