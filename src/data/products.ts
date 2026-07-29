@@ -816,6 +816,14 @@ valdera: {
     "/valdera-03.webp",
     "/valdera-04.webp",
   ],
+    imageAlts: {
+      en: [
+        "Valdera living room display with two ivory armchairs, a dark wood center table and matching TV unit in a neoclassical interior",
+        "Valdera ivory three-seat sofa front view with a curved dark wood frame, turned legs and coordinated decorative cushions",
+        "Complete Valdera seating arrangement with an ivory sofa, two armchairs and a dark wood center table beneath a crystal chandelier",
+        "Valdera ivory armchair with a sculpted dark wood frame, turned legs and a patterned champagne accent cushion",
+      ],
+    },
 
   description:
   "The Valdera Luxury Living Room Collection by VIRELLAART blends sculpted classical silhouettes, formal symmetry and a commanding lounge composition. Created for grand villas and distinguished reception spaces, this luxury living room furniture delivers timeless prestige with a strong architectural presence. Speak with the VIRELLAART team on WhatsApp about Valdera Living Room pricing, sofa-set options and delivery planning for your interior project.",
