@@ -1187,6 +1187,11 @@ zumrutTv: {
   images: [
     "/zumruttv-01.webp",
   ],
+  imageAlts: {
+    en: [
+      "Zümrüt black and champagne TV unit with an arched cream marble-look panel, mirrored side sections, ornate carved details and decorative cabriole legs",
+    ],
+  },
 
   description:
   "The Zümrüt Luxury TV Unit by VIRELLAART combines an ornate arched composition, decorative paneling and a commanding classical presence. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with rich visual character. Request a detailed Zümrüt TV Unit quotation on WhatsApp, including TV-unit options and international shipping assistance.",
