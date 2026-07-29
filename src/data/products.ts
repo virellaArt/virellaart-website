@@ -1406,6 +1406,11 @@ milanoTv: {
   images: [
     "/milanotv-01.webp",
   ],
+  imageAlts: {
+    en: [
+      "Milano cream and gold-tone TV console with richly carved classical framing, decorative panel doors and cabriole legs beneath a large marble-look wall panel",
+    ],
+  },
 
   description:
   "The Milano Luxury TV Unit by VIRELLAART is defined by an ornate architectural frame, balanced symmetry and a richly decorative low cabinet. Designed for grand villas and formal living spaces, this designer TV unit creates an elegant focal point with timeless classical character. Share your living-room project on WhatsApp to receive Milano TV Unit prices, personalized options and delivery planning from VIRELLAART.",
