@@ -1402,6 +1402,15 @@ zerafetDining: {
     "/zerafet-04.webp",
     "/zerafet-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Zerafet dining room arrangement with a glossy walnut-toned oval table, ivory tufted chairs and matching sideboard with gold-framed mirror",
+        "Close-up of the Zerafet oval dining table with a glossy walnut-toned top, black carved apron, ornate legs and formal table setting",
+        "Zerafet walnut-toned dining sideboard with glossy black carved framing, oval panel details and an elaborate gold-framed wall mirror",
+        "Zerafet ivory tufted dining armchair with a glossy black carved frame, brass nailhead trim and patterned lumbar cushion",
+        "Front view of the Zerafet walnut-toned sideboard with black oval frame details, carved trim and a large gold-framed mirror",
+      ],
+    },
 
   description:
   "The Zerafet Luxury Dining Room Collection by VIRELLAART evokes graceful classical elegance through curved chair silhouettes, formal symmetry and richly composed display pieces. Created for distinguished villas and refined entertaining spaces, this luxury dining room furniture brings warmth, ceremony and timeless character. Contact VIRELLAART on WhatsApp for Zerafet Dining Room set pricing, customization options and worldwide delivery assistance.",
