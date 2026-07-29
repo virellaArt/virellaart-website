@@ -688,6 +688,13 @@ queenDining: {
   "/queendining-02.webp",
   "/queendining-03.webp",
 ],
+    imageAlts: {
+      en: [
+        "Overhead view of the complete Queen dining room set with a glossy black table, eight cream chairs and a curved console with organic mirror",
+        "Complete Queen dining room arrangement with a glossy black rounded table, eight cream upholstered chairs and a sculptural black pedestal base",
+        "Close-up of Queen cream upholstered dining chairs beside the glossy black tabletop and sculptural pedestal base",
+      ],
+    },
 
   description:
   "Discover the Queen Luxury Dining Room Collection by VIRELLAART, shaped by fluid silhouettes, sculptural furniture forms and softly rounded seating. Designed for contemporary villas and elegant entertaining spaces, this luxury dining room furniture creates a sophisticated focal point with confident visual character. Request a detailed Queen Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
