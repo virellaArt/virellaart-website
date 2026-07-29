@@ -1157,6 +1157,15 @@ lina: {
     "/lina-04.webp",
     "/lina-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Lina living room set with ivory sofas and armchairs arranged around a rectangular center table in a luxury interior",
+        "Close-up of the Lina ivory sofa with a tufted back, dark sculpted frame, gold-tone trim and patterned cushions",
+        "Lina ivory three-seat sofa front view with a tufted back, dark frame, gold-tone details and matching side table",
+        "Lina ivory armchair with a high tufted back, curved dark frame, gold-tone trim and decorative turned legs",
+        "Lina ivory sofa and armchair arrangement with a rectangular center table in a warm luxury living room",
+      ],
+    },
 
   description:
   "The Lina Luxury Living Room Collection by VIRELLAART balances tailored seating, sculpted arm profiles and a substantial architectural coffee table for a composed, elegant interior. Suited to refined villas and sophisticated reception spaces, this luxury sofa set delivers polished comfort and strong visual order. Message VIRELLAART on WhatsApp for Lina Living Room pricing, customization options and worldwide delivery planning.",
