@@ -1323,6 +1323,15 @@ milanoBlueBedroom: {
     "/bedroommilanoblue-04.webp",
     "/bedroommilanoblue-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Milano Blue bedroom set with an ornate cream tufted bed, matching nightstands and a large cream wardrobe with dark carved framing",
+      "Milano Blue bedroom arrangement with a cream tufted bed, ornate nightstands and a matching dressing table with three decorative mirrors",
+      "Milano Blue cream wardrobe with curved side panels, elaborate dark carved ornaments, crowned top and coordinated decorative base",
+      "Close-up of the Milano Blue bed with a tall cream button-tufted headboard, dark carved frame, matching nightstands and ornate footboard",
+      "Milano Blue cream dressing table with elaborate dark carved framing, three decorative mirrors and a matching round tufted stool",
+    ],
+  },
 
   description:
   "The Milano Blue Luxury Bedroom Collection by VIRELLAART presents a grand classical retreat with a tufted statement bed, richly framed wardrobe and coordinated decorative pieces. Designed for elegant villas and formal master suites, this luxury bedroom furniture creates a prestigious, harmonious atmosphere. Discuss the Milano Blue Bedroom collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
