@@ -315,6 +315,16 @@ queen: {
     "/queen-05.webp",
     "/queen-06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Queen living room arrangement with rounded ivory and taupe seating, a sculptural center table and matching TV unit",
+        "Queen taupe sofa with two rounded ivory armchairs and a circular center table beside floor-to-ceiling windows",
+        "Queen sculptural two-tier center table with a bronze-tone base positioned between rounded ivory and taupe seating",
+        "Queen low-profile TV unit with rounded brown cabinets, ivory drawers and a curved decorative wall shelf",
+        "Queen ivory three-seat sofa with rounded arms, patterned cushions and a dark sculptural center table",
+        "Pair of Queen ivory armchairs with rounded wraparound backs, patterned cushions and a slim side table",
+      ],
+    },
 
   description:
   "Discover the Queen Luxury Living Room Collection by VIRELLAART, where softly rounded seating, sculptural tables and an architectural layout create a calm, contemporary statement. Designed for refined villas and modern residences, this luxury sofa set brings visual harmony and understated prestige. Send your luxury living room requirements on WhatsApp to receive Queen Living Room prices, personalized options and delivery assistance from VIRELLAART.",
