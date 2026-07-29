@@ -1381,6 +1381,11 @@ milanoBlueTv: {
   images: [
     "/milanobluetv-01.webp",
   ],
+  imageAlts: {
+    en: [
+      "Milano Blue dark blue and cream TV console with a pale marble-look top and doors, ornate classical carving and inset close-ups of panel, surface and leg details",
+    ],
+  },
 
   description:
   "The Milano Blue Luxury TV Unit by VIRELLAART combines an elongated classical silhouette, richly ornamental framing and a commanding low-profile composition. Designed for grand villas and formal living spaces, this designer TV unit creates a prestigious focal point with strong decorative character. Contact VIRELLAART via WhatsApp for Milano Blue TV Unit pricing, customization details and worldwide delivery information.",
