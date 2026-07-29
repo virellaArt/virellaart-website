@@ -876,6 +876,12 @@ valenciaTV: {
     "/valenciatv-01.webp",
     "/valenciatv-02.webp",
   ],
+  imageAlts: {
+    en: [
+      "Front view of the Valencia cream TV console with curved fluted doors, mirrored side panels and a large arched gold-tone decorative frame",
+      "Angled view of the Valencia TV console showing its cream top, rounded cabinet front, gold-tone handles, mirrored panels and ornate crowned arch",
+    ],
+  },
 
   description:
   "The Valencia Luxury TV Unit by VIRELLAART presents a sculptural arched frame, graceful curves and refined decorative accents that create a distinctive statement. Designed for elegant villas and formal living spaces, this designer TV unit brings visual prestige and architectural balance. Request a detailed Valencia TV Unit quotation on WhatsApp, including TV-unit options and international shipping assistance.",
