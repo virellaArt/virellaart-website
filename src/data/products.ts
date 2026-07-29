@@ -1056,6 +1056,15 @@ zumrutDining: {
     "/diningzumrut-04.webp",
     "/diningzumrut-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Zumrut dining room set with a glossy dark table, six tufted chairs, mirrored sideboard, twin ornate mirrors and glass display cabinet",
+        "Close-up of the Zumrut rectangular dining table with a glossy dark top, carved silver-tone trim, twin pedestal bases and tufted chairs",
+        "Zumrut high-back dining chair with tufted taupe upholstery, patterned seat and an ornate black and silver-tone carved frame",
+        "Zumrut mirrored dining sideboard with silver-tone scrollwork, glossy black framing and two matching ornate wall mirrors",
+        "Zumrut glass display cabinet with glossy black framing, silver-tone carved ornament, glass shelves and decorative gold-tone objects",
+      ],
+    },
 
   description:
   "The Zümrüt Luxury Dining Room Collection by VIRELLAART combines ornate silhouettes, high-back seating and formal symmetry to create a richly composed classical interior. Designed for grand residences and elegant entertaining spaces, this luxury dining room furniture delivers ceremonial presence and refined visual drama. Send your project requirements on WhatsApp for Zümrüt Dining Room collection pricing, tailored options and international delivery support.",
