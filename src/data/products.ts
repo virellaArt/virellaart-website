@@ -1380,6 +1380,14 @@ saltanatLiving: {
     "/saltanatsofa-04.webp",
     "/saltanatsofa-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Saltanat living room set with a cream carved sofa, ornate armchairs, oval center table and matching side tables",
+        "Rear view of a Saltanat armchair with elaborate gold-tone carving beside a round side table and matching console",
+        "Saltanat tufted armchair with floral upholstery, elaborate gold-tone carved frame and matching round side table",
+        "Saltanat cream three-seat sofa with floral upholstery, fringed trim, decorative cushions and an ornate gold-tone carved frame",
+      ],
+    },
 
   description:
   "The Saltanat Luxury Living Room Collection by VIRELLAART brings palatial character to grand interiors through sculptural seating, sweeping ornamental lines and a richly balanced salon composition. Designed for formal villas and distinguished reception spaces, this luxury sofa set creates ceremonial elegance and commanding visual prestige. Connect with VIRELLAART via WhatsApp for Saltanat Living Room availability, customization possibilities and worldwide delivery information.",
