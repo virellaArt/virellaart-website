@@ -942,6 +942,15 @@ valderaDining: {
     "/valderadining-04.webp",
     "/valderadining-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Valdera walnut-toned dining sideboard with glossy black carved trim, tapered legs and two tall matching wall mirrors",
+        "Complete Valdera dining room arrangement with a glossy walnut-toned rectangular table, eight cream upholstered chairs and crystal chandelier",
+        "Close-up of the Valdera dining table corner with a glossy walnut-toned top, black carved edge, turned leg and cream upholstered chair",
+        "Overhead view of the Valdera rectangular dining table set for eight with cream upholstered chairs and a glossy walnut-toned top",
+        "Valdera cream upholstered dining armchair with curved dark wood arms, turned front posts and matching sideboard in the background",
+      ],
+    },
 
   description:
   "The Valdera Luxury Dining Room Collection by VIRELLAART is defined by ornate silhouettes, formal symmetry and a stately classical presence. Designed for grand residences and sophisticated dining interiors, this luxury dining room furniture creates a distinguished atmosphere with strong visual character. Contact VIRELLAART on WhatsApp for Valdera Dining Room set pricing, customization options and worldwide delivery assistance.",
