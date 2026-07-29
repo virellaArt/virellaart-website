@@ -525,6 +525,15 @@ aspendosBedroom: {
   "/aspendosbedroom-04.webp",
   "/aspendosbedroom-05.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Aspendos bedroom set with a cream upholstered bed, mirrored wardrobe, matching dresser, nightstands and quilted storage bench",
+        "Aspendos taupe bedroom dresser with textured side panels, cylindrical pedestal bases and a large illuminated round mirror",
+        "Three-quarter view of the Aspendos cream upholstered bed with quilted headboard, matching nightstands and padded storage bench",
+        "Close-up of the Aspendos bedside table with a marble-look top, textured taupe panel and the quilted cream headboard behind",
+        "Aspendos taupe wardrobe with textured door panels, gold-tone handles and central full-length mirrored doors",
+      ],
+    },
 
   description:
   "Discover the Aspendos Luxury Bedroom Collection by VIRELLAART, where bold architectural framing, layered symmetry and a statement headboard create a refined contemporary retreat. Designed for upscale villas and elegant master suites, this luxury bedroom furniture delivers strong visual balance and a serene sense of prestige. Message VIRELLAART on WhatsApp to explore Aspendos Bedroom prices, customization possibilities and worldwide delivery information.",
