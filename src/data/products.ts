@@ -16,6 +16,19 @@ export const products = {
       "/valencia-08.webp",
     ],
 
+    imageAlts: {
+      en: [
+        "Valencia ivory armchair rear view with a curved metallic frame and carved base in a luxury living room",
+        "Pair of Valencia ivory armchairs with rounded seats, curved frames and ornate carved bases",
+        "Valencia three-seat ivory sofa with curved arms, decorative base and matching center table",
+        "Valencia ivory sofa front view with sculptural curved arms and coordinated cushions",
+        "Complete Valencia living room set with two sofas, two armchairs and a center table in a luxury interior",
+        "Valencia TV unit with a curved white cabinet, gold-tone details and decorative upper frame",
+        "Valencia living room collection viewed from behind the sofa with matching TV unit and center table",
+        "Symmetrical Valencia living room arrangement with two sofas, two armchairs, center table and TV unit",
+      ],
+    },
+
     description:
       "Discover the Valencia Luxury Living Room Collection by VIRELLAART, distinguished by sculptural curves, ornate detailing and a refined, commanding presence. Created for grand villas and elegant residences, this luxury sofa set brings timeless character and visual prestige to the interior. Speak with the VIRELLAART team on WhatsApp about Valencia Living Room pricing, sofa-set options and delivery planning for your interior project.",
     prices: [

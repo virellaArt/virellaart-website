@@ -46,6 +46,32 @@ const categoryURL = new URL(
 
 const images: string[] = product.images ?? [];
 
+/* VIRELLAART PRODUCT IMAGE ALTS */
+
+type ProductImageAltMap =
+  Partial<Record<string, string[]>>;
+
+const productImageAltMap =
+  (
+    product as {
+      imageAlts?: ProductImageAltMap;
+    }
+  ).imageAlts ?? {};
+
+const manualImageAlts =
+  productImageAltMap[language] ?? [];
+
+const resolvedImageAlts =
+  images.map(
+    (_image, index) =>
+      manualImageAlts[index] ??
+      (
+        index === 0
+          ? translatedProductName
+          : `${translatedProductName} ${index + 1}`
+      ),
+  );
+
 const prices: {
   label: string;
   price: string;
@@ -501,7 +527,7 @@ const productTrust =
   title={translatedProductName}
   description={pageDescription}
   image={images[0]}
-  imageAlt={translatedProductName}
+  imageAlt={resolvedImageAlts[0]}
   pageType="product"
 >
   <script
@@ -559,7 +585,7 @@ const productTrust =
             <img
               id="mainImage"
               src={images[0]}
-              alt={translatedProductName}
+              alt={resolvedImageAlts[0]}
               width="1600"
               height="1200"
               fetchpriority="high"
@@ -582,11 +608,11 @@ const productTrust =
                     ]}
                     data-index={index}
                     type="button"
-                    aria-label={`View image ${index + 1}`}
+                    aria-label={`View ${resolvedImageAlts[index]}`}
                   >
                     <img
                       src={image}
-                      alt={`${translatedProductName} ${index + 1}`}
+                      alt={resolvedImageAlts[index]}
                       width="480"
                       height="360"
                       loading="lazy"
@@ -829,7 +855,7 @@ const productTrust =
       <img
         id="lightboxImage"
         src={images[0]}
-        alt={translatedProductName}
+        alt={resolvedImageAlts[0]}
         width="1600"
         height="1200"
       />
@@ -865,6 +891,7 @@ const productTrust =
     is:inline
     define:vars={{
       images,
+      resolvedImageAlts,
       translatedProductName,
     }}
   >
@@ -924,13 +951,15 @@ const productTrust =
       if (mainImage) {
         mainImage.src = selectedImage;
         mainImage.alt =
-          `${translatedProductName} ${currentIndex + 1}`;
+          resolvedImageAlts[currentIndex] ??
+          translatedProductName;
       }
 
       if (lightboxImage) {
         lightboxImage.src = selectedImage;
         lightboxImage.alt =
-          `${translatedProductName} ${currentIndex + 1}`;
+          resolvedImageAlts[currentIndex] ??
+          translatedProductName;
       }
 
       thumbnails.forEach((item, index2) => {
