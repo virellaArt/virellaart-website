@@ -948,6 +948,15 @@ milano: {
     "/milano-04.webp",
     "/milano-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Milano living room set with an ivory tufted sofa, three matching armchairs and an ornate oval center table",
+        "Milano ivory console cabinet with elaborate gold-tone ornament, framed wall panel and matching oval center table",
+        "Milano ivory armchair close-up with tufted upholstery, patterned cushions and an elaborate gold-tone carved frame",
+        "Milano ivory three-seat sofa with a tufted back, patterned cushions and an ornate gold-tone carved frame",
+        "Milano oval center table with ivory and dark decorative panels, ornate gold-tone trim and matching seating in the background",
+      ],
+    },
 
   description:
   "Milano Luxury Living Room Collection by VIRELLAART presents an opulent classical composition with tufted seating, elaborate decorative framing and a richly layered salon atmosphere. Created for grand villas and formal reception interiors, this luxury living room furniture delivers unmistakable prestige and ceremonial elegance. Request a private Milano Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
