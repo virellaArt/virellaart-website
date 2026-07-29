@@ -8,6 +8,12 @@ import DiningRoomsPage from "../dining-rooms.astro";
 import BedroomsPage from "../bedrooms.astro";
 import TVUnitsPage from "../tv-units.astro";
 
+/* VIRELLAART LOCALIZED POLICY IMPORTS */
+import ShippingPolicyPage from "../policies/shipping-policy.astro";
+import ReturnRefundPolicyPage from "../policies/return-refund-policy.astro";
+import PrivacyPolicyPage from "../policies/privacy-policy.astro";
+import TermsConditionsPage from "../policies/terms-conditions.astro";
+
 import ProductTemplate from "../../components/ProductTemplate.astro";
 import { products } from "../../data/products";
 
@@ -55,4 +61,26 @@ const product = productKey
 {path === "dining-rooms" && <DiningRoomsPage />}
 {path === "bedrooms" && <BedroomsPage />}
 {path === "tv-units" && <TVUnitsPage />}
+
+{/* VIRELLAART LOCALIZED POLICY PAGES */}
+{
+  path === "policies/shipping-policy" && (
+    <ShippingPolicyPage />
+  )
+}
+{
+  path === "policies/return-refund-policy" && (
+    <ReturnRefundPolicyPage />
+  )
+}
+{
+  path === "policies/privacy-policy" && (
+    <PrivacyPolicyPage />
+  )
+}
+{
+  path === "policies/terms-conditions" && (
+    <TermsConditionsPage />
+  )
+}
 {product && <ProductTemplate {product} />}

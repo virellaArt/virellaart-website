@@ -201,19 +201,19 @@ const footerText =
     <div class="footer-column">
       <span>{footerText.policies}</span>
 
-      <a href="/policies/shipping-policy/">
+      <a href={localizedPath("/policies/shipping-policy", language)}>
         {footerText.shipping}
       </a>
 
-      <a href="/policies/return-refund-policy/">
+      <a href={localizedPath("/policies/return-refund-policy", language)}>
         {footerText.returns}
       </a>
 
-      <a href="/policies/privacy-policy/">
+      <a href={localizedPath("/policies/privacy-policy", language)}>
         {footerText.privacy}
       </a>
 
-      <a href="/policies/terms-conditions/">
+      <a href={localizedPath("/policies/terms-conditions", language)}>
         {footerText.terms}
       </a>
     </div>

@@ -87,6 +87,11 @@ export const staticRoutes = [
   "about",
   "manufacturing",
   "contact",
+  /* VIRELLAART LOCALIZED POLICY ROUTES */
+  "policies/shipping-policy",
+  "policies/return-refund-policy",
+  "policies/privacy-policy",
+  "policies/terms-conditions",
 ] as const;
 
 export const allRoutes = Array.from(

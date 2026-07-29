@@ -54,17 +54,14 @@ const fullTitle = title.includes("VIRELLAART")
   : `${title} | VIRELLAART`;
 const basePath = stripLanguagePrefix(Astro.url.pathname);
 const isHomePage = basePath === "/";
-const isEnglishOnlyPage = basePath.startsWith("/policies/");
-
-const alternateURLs = isEnglishOnlyPage
-  ? []
-  : languageCodes.map((code) => ({
-      language: code,
-      href: new URL(
-        localizedPath(basePath, code),
-        "https://www.virellaart.com"
-      ).href,
-    }));
+/* VIRELLAART LOCALIZED POLICY SEO */
+const alternateURLs = languageCodes.map((code) => ({
+  language: code,
+  href: new URL(
+    localizedPath(basePath, code),
+    "https://www.virellaart.com"
+  ).href,
+}));
 
 const canonicalPath = Astro.url.pathname.replace(/\/?$/, "/");
 
@@ -134,10 +131,7 @@ const websiteSchema = {
   is:inline
   define:vars={{
     currentLanguage: language,
-    supportedLanguages: isEnglishOnlyPage
-      ? ["en"]
-      : languageCodes,
-    englishOnlyPage: isEnglishOnlyPage,
+    supportedLanguages: languageCodes,
   }}
 >
   (() => {
@@ -158,7 +152,7 @@ const websiteSchema = {
       }
     });
 
-    if (isBot || currentLanguage !== "en" || englishOnlyPage) {
+    if (isBot || currentLanguage !== "en") {
       return;
     }
 
@@ -346,7 +340,7 @@ content={languages[language].locale}
 />
 
 {
-  (isEnglishOnlyPage ? [] : languageCodes)
+  languageCodes
     .filter((code) => code !== language)
     .map((code) => (
       <meta
