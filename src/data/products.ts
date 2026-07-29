@@ -1729,6 +1729,15 @@ sultanGreenDining: {
     "/sultandininggreen-04.webp",
     "/sultandininggreen-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Sultan Green dining room set with an ornate oval table, six high-back chairs, glass display cabinet and matching mirrored sideboard",
+        "Sultan Green dining sideboard with cream panels, dark green marble-look accents, elaborate gold-tone carving and a crowned matching mirror",
+        "Sultan Green oval dining table with six ornate upholstered chairs, sculptural carved pedestal and matching mirrored sideboard",
+        "Sultan Green glass display cabinet with curved side sections, dark green marble-look panels and elaborate gold-tone carved crown and base",
+        "Close view of the Sultan Green oval dining table with cream top, dark green inlays, ornate carved pedestal and coordinated high-back chairs",
+      ],
+    },
 
   description:
     "The Sultan Green Luxury Dining Room Set by VIRELLAART combines a coordinated statement table, sculptural chairs and ornate classical pieces. Designed for villas, formal dining rooms and distinguished interiors, this luxury dining furniture creates elegant symmetry with a commanding presence. Speak with VIRELLAART on WhatsApp for a private Sultan Green Dining Room Set offer, dining-set customization and shipping assistance.",
