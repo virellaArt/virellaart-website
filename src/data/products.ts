@@ -1408,6 +1408,15 @@ saltanatGreenLiving: {
   "/saltanatgreensofa-04.webp",
   "/saltanatgreensofa-05.webp",
 ],
+    imageAlts: {
+      en: [
+        "Complete Saltanat Green living room set with an ivory sofa, ornate armchairs and an oval center table in a neoclassical interior",
+        "Saltanat Green ivory tufted armchair with dark green carved framing, gold-tone ornament and a matching round side table",
+        "Saltanat Green ivory three-seat sofa with a tufted back, green striped cushions and elaborate dark green carved framing",
+        "Rear view of the Saltanat Green ivory sofa with ornate dark green and gold-tone carving and matching seating in the background",
+        "Front view of the Saltanat Green ivory sofa with green striped cushions and an elaborate dark green and gold-tone carved frame",
+      ],
+    },
 
   description:
   "The Saltanat Green Luxury Living Room Collection by VIRELLAART combines sculptural classical seating, elaborate ornamental framing and dramatic contrast for an unmistakably regal interior. Designed for palatial villas and formal reception spaces, this luxury living room furniture creates commanding presence and ceremonial elegance. Send your luxury living room requirements on WhatsApp to receive Saltanat Green Living Room prices, personalized options and delivery assistance from VIRELLAART.",
