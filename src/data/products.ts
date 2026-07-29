@@ -1046,6 +1046,15 @@ milanoBlue: {
     "/milanoblue-04.webp",
     "/milanoblue-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Milano Blue living room set with an ivory tufted sofa, three matching armchairs and an oval center table in a formal luxury interior",
+        "Milano Blue ivory armchair with a tufted back, patterned seat and intricate dark carved frame shown with decorative detail panels",
+        "Milano Blue living room viewed from behind the sofa with two armchairs, an oval center table and matching console",
+        "Milano Blue console cabinet with ivory panels, intricate dark carved ornament and a light stone-look top",
+        "Milano Blue ivory tufted three-seat sofa with a patterned seat, round accent cushions and an intricate dark carved frame",
+      ],
+    },
 
   description:
   "The Milano Blue Luxury Living Room Collection by VIRELLAART showcases sculpted classical seating, intricate decorative framing and a dramatic salon composition. Designed for grand villas and formal reception spaces, this luxury living room furniture creates an atmosphere of prestige, depth and timeless character. Message VIRELLAART on WhatsApp for Milano Blue Living Room pricing, customization options and worldwide delivery planning.",
