@@ -2,9 +2,15 @@
 import PolicyLayout from "../../components/PolicyLayout.astro";
 import { getLanguageFromPath } from "../../i18n/config";
 import turkishPolicy from "../../i18n/policies/shipping-policy-tr.json";
+import germanPolicy from "../../i18n/policies/shipping-policy-de.json";
 
 const language = getLanguageFromPath(Astro.url.pathname);
-const policy = language === "tr" ? turkishPolicy : null;
+const policy =
+  language === "tr"
+    ? turkishPolicy
+    : language === "de"
+      ? germanPolicy
+      : null;
 ---
 
 <PolicyLayout
