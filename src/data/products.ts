@@ -1855,6 +1855,15 @@ sultanGreenDining: {
       "/riobedroom-04.webp",
       "/riobedroom-05.webp",
     ],
+    imageAlts: {
+      en: [
+        "Complete rio luxury bedroom set with a cream upholstered bed, mirrored wardrobe, curved dresser, matching nightstands and padded bench",
+        "Close-up of the rio cream bed with a vertically channelled headboard, layered marble-look frame, gold-tone accents and rounded nightstand",
+        "Front view of the rio upholstered bed with layered statement headboard, matching nightstands and a rounded padded bench with gold-tone bands",
+        "rio cream bedroom wardrobe with central full-length mirrored doors, fluted upper panels, rounded corners and gold-tone handles",
+        "rio cream bedroom dresser with rounded drawer towers, marble-look top, illuminated layered mirror and matching upholstered stool",
+      ],
+    },
     prices: [
       {
         label: "rio Luxury Bedroom Set",
