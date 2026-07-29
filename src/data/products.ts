@@ -1560,6 +1560,15 @@ sultanSofa: {
     "/sultansofagreen-04.webp",
     "/sultansofagreen-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Sultan Sofa (Green) living room set with green upholstered seating and a coordinated center table in a luxury interior",
+      "Sultan Sofa (Green) three-seat sofa with green upholstery, decorative cushions and ornate carved framing",
+      "Close-up of the Sultan Sofa (Green) arm and carved base with green upholstery and decorative detailing",
+      "Sultan Sofa (Green) armchair with green upholstery, a carved frame and coordinating accent cushion",
+      "Sultan Sofa (Green) seating arrangement with matching sofa, armchairs and center table",
+    ],
+  },
 
   description:
     "Sultan Sofa Green by VIRELLAART is a classical luxury living room collection with timeless proportions, sophisticated detailing and a refined formal character. Designed for elegant villas and premium residential interiors, this luxury sofa set creates a distinguished atmosphere with manufacturer-direct support from Istanbul. Send your luxury living room requirements on WhatsApp to receive Sultan Sofa (Green) prices, personalized options and delivery assistance from VIRELLAART.",
