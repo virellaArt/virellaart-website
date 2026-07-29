@@ -78,6 +78,235 @@ const prices: {
   featured?: boolean;
 }[] = product.prices ?? [];
 
+/* VIRELLAART DINING INCLUDED PRICE */
+
+type IncludedItemKey =
+  | "diningTable"
+  | "chairs"
+  | "console"
+  | "mirror"
+  | "showcase";
+
+type IncludedPriceContent = {
+  title: string;
+  items: Record<IncludedItemKey, string>;
+};
+
+const includedPriceContent: Record<
+  string,
+  IncludedPriceContent
+> = {
+  "en": {
+    "title": "Included in this price",
+    "items": {
+      "diningTable": "Dining table",
+      "chairs": "6 dining chairs",
+      "console": "Console",
+      "mirror": "Mirror",
+      "showcase": "Showcase"
+    }
+  },
+  "tr": {
+    "title": "Bu fiyata dahil",
+    "items": {
+      "diningTable": "Yemek masası",
+      "chairs": "6 yemek sandalyesi",
+      "console": "Konsol",
+      "mirror": "Ayna",
+      "showcase": "Vitrin"
+    }
+  },
+  "de": {
+    "title": "In diesem Preis enthalten",
+    "items": {
+      "diningTable": "Esstisch",
+      "chairs": "6 Esszimmerstühle",
+      "console": "Konsole",
+      "mirror": "Spiegel",
+      "showcase": "Vitrine"
+    }
+  },
+  "fr": {
+    "title": "Inclus dans ce prix",
+    "items": {
+      "diningTable": "Table à manger",
+      "chairs": "6 chaises de salle à manger",
+      "console": "Console",
+      "mirror": "Miroir",
+      "showcase": "Vitrine"
+    }
+  },
+  "it": {
+    "title": "Incluso in questo prezzo",
+    "items": {
+      "diningTable": "Tavolo da pranzo",
+      "chairs": "6 sedie da pranzo",
+      "console": "Consolle",
+      "mirror": "Specchio",
+      "showcase": "Vetrina"
+    }
+  },
+  "ru": {
+    "title": "В эту цену входит",
+    "items": {
+      "diningTable": "Обеденный стол",
+      "chairs": "6 обеденных стульев",
+      "console": "Консоль",
+      "mirror": "Зеркало",
+      "showcase": "Витрина"
+    }
+  },
+  "ar": {
+    "title": "مشمول في هذا السعر",
+    "items": {
+      "diningTable": "طاولة طعام",
+      "chairs": "6 كراسي طعام",
+      "console": "كونسول",
+      "mirror": "مرآة",
+      "showcase": "خزانة عرض"
+    }
+  },
+  "bg": {
+    "title": "Включено в тази цена",
+    "items": {
+      "diningTable": "Трапезна маса",
+      "chairs": "6 трапезни стола",
+      "console": "Конзола",
+      "mirror": "Огледало",
+      "showcase": "Витрина"
+    }
+  },
+  "ro": {
+    "title": "Inclus în acest preț",
+    "items": {
+      "diningTable": "Masă de dining",
+      "chairs": "6 scaune de dining",
+      "console": "Consolă",
+      "mirror": "Oglindă",
+      "showcase": "Vitrină"
+    }
+  },
+  "el": {
+    "title": "Περιλαμβάνονται σε αυτή την τιμή",
+    "items": {
+      "diningTable": "Τραπέζι φαγητού",
+      "chairs": "6 καρέκλες τραπεζαρίας",
+      "console": "Κονσόλα",
+      "mirror": "Καθρέφτης",
+      "showcase": "Βιτρίνα"
+    }
+  },
+  "es": {
+    "title": "Incluido en este precio",
+    "items": {
+      "diningTable": "Mesa de comedor",
+      "chairs": "6 sillas de comedor",
+      "console": "Consola",
+      "mirror": "Espejo",
+      "showcase": "Vitrina"
+    }
+  },
+  "sr": {
+    "title": "Uključeno u ovu cenu",
+    "items": {
+      "diningTable": "Trpezarijski sto",
+      "chairs": "6 trpezarijskih stolica",
+      "console": "Konzola",
+      "mirror": "Ogledalo",
+      "showcase": "Vitrina"
+    }
+  },
+  "kk": {
+    "title": "Осы бағаға кіреді",
+    "items": {
+      "diningTable": "Асхана үстелі",
+      "chairs": "6 асхана орындығы",
+      "console": "Консоль",
+      "mirror": "Айна",
+      "showcase": "Витрина"
+    }
+  },
+  "uz": {
+    "title": "Ushbu narxga kiritilgan",
+    "items": {
+      "diningTable": "Ovqatlanish stoli",
+      "chairs": "6 ta ovqatlanish stuli",
+      "console": "Konsol",
+      "mirror": "Ko‘zgu",
+      "showcase": "Vitrina"
+    }
+  },
+  "pt": {
+    "title": "Incluído neste preço",
+    "items": {
+      "diningTable": "Mesa de jantar",
+      "chairs": "6 cadeiras de jantar",
+      "console": "Consola",
+      "mirror": "Espelho",
+      "showcase": "Vitrine"
+    }
+  },
+  "pl": {
+    "title": "W cenie zawarto",
+    "items": {
+      "diningTable": "Stół jadalniany",
+      "chairs": "6 krzeseł do jadalni",
+      "console": "Konsola",
+      "mirror": "Lustro",
+      "showcase": "Witryna"
+    }
+  }
+};
+
+const diningItemsWithoutShowcase: IncludedItemKey[] = [
+  "diningTable",
+  "chairs",
+  "console",
+  "mirror",
+];
+
+const diningItemsWithShowcase: IncludedItemKey[] = [
+  ...diningItemsWithoutShowcase,
+  "showcase",
+];
+
+const diningProductsWithoutShowcase =
+  new Set<string>([
+  "Delux Dining Room",
+  "Aspendos Dining Room",
+  "Queen Dining Room",
+  "Moon Dining Room",
+  "Vanessa Dining Room",
+  "Shawl Dining Room",
+  "Valdera Dining Room",
+  "Lina Dining Room",
+  "Zerafet Dining Room",
+  "Valencia Dining Room"
+]);
+
+const diningProductsWithShowcase =
+  new Set<string>([
+  "Sultan Green Dining Room Set",
+  "Saltanat Green Dining Room",
+  "Saltanat Dining Room",
+  "Milano Blue Dining Room",
+  "Milano Dining Room",
+  "Zümrüt Dining Room"
+]);
+
+const includedItemKeys: IncludedItemKey[] =
+  product.category === "dining-rooms"
+    ? diningProductsWithShowcase.has(product.name)
+      ? diningItemsWithShowcase
+      : diningProductsWithoutShowcase.has(product.name)
+        ? diningItemsWithoutShowcase
+        : []
+    : [];
+
+const includedPrice =
+  includedPriceContent[language] ??
+  includedPriceContent.en;
+
 /* =========================
    SEO DATA
 ========================= */
@@ -684,6 +913,31 @@ const productTrust =
               )
             }
           </div>
+
+          {
+            includedItemKeys.length > 0 && (
+              <section
+                class="included-price"
+                aria-labelledby="includedPriceTitle"
+              >
+                <h2 id="includedPriceTitle">
+                  {includedPrice.title}
+                </h2>
+
+                <ul>
+                  {
+                    includedItemKeys.map(
+                      (key: IncludedItemKey) => (
+                        <li>
+                          {includedPrice.items[key]}
+                        </li>
+                      ),
+                    )
+                  }
+                </ul>
+              </section>
+            )
+          }
 
           <div class="services">
             <div>
@@ -1350,6 +1604,59 @@ const productTrust =
     .price-row.featured strong {
       color: #d4ad62;
       font-size: 22px;
+    }
+
+    /* DINING INCLUDED PRICE */
+
+    .included-price {
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid rgba(201, 165, 91, 0.38);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(201, 165, 91, 0.08),
+          transparent 68%
+        ),
+        #18130f;
+    }
+
+    .included-price h2 {
+      margin: 0 0 16px;
+      color: #d3ae63;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .included-price ul {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .included-price li {
+      position: relative;
+      padding-inline-start: 20px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .included-price li::before {
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0.56em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c9a55b;
+      content: "";
+      transform: translateY(-50%);
     }
 
     /* SERVICES */
@@ -2049,6 +2356,28 @@ const productTrust =
         color: #ffffff !important;
         font-size: 14px !important;
         white-space: nowrap;
+      }
+
+      /* DINING INCLUDED PRICE MOBILE */
+
+      .included-price {
+        margin-top: 14px !important;
+        padding: 16px !important;
+      }
+
+      .included-price h2 {
+        margin-bottom: 12px !important;
+        font-size: 12px !important;
+      }
+
+      .included-price ul {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+
+      .included-price li {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
       }
 
       .services {
