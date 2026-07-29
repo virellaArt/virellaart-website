@@ -1328,6 +1328,16 @@ zerafetLiving: {
     "/zerafetsofa-05.webp",
     "/zerafetsofa-06.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Zerafet living room set with a beige sofa, two carved armchairs and a round dark wood center table overlooking the Bosphorus",
+        "Zerafet beige sofa three-quarter view with a glossy dark carved frame, tufted back and coordinated decorative cushions",
+        "Front view of the Zerafet beige three-seat sofa with a tufted back, dark carved frame and round wood center table",
+        "Zerafet high-back beige armchair with tufted upholstery, a glossy dark carved frame and matching round side table",
+        "Zerafet living room collage showing the complete seating set, sofa details, armchair and round dark wood side table",
+        "Pair of Zerafet beige carved armchairs arranged around a round dark wood side table in a windowed luxury interior",
+      ],
+    },
 
   description:
   "The Zerafet Luxury Living Room Collection by VIRELLAART blends graceful classical silhouettes, balanced seating and an inviting salon composition. Designed for elegant villas and formal reception spaces, this luxury sofa set brings warmth, symmetry and timeless refinement to the interior. Request a private Zerafet Living Room quotation on WhatsApp, including customization choices and international delivery support from VIRELLAART.",
