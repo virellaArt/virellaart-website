@@ -1748,6 +1748,15 @@ sultanGreenBedroom: {
     "/sultangreenbedroom-04.webp",
     "/sultangreenbedroom-05.webp",
   ],
+  imageAlts: {
+    en: [
+      "Complete Sultan Green bedroom collection with an ivory tufted bed, ornate wardrobe, mirrored dressing table, nightstands and upholstered stool",
+      "Sultan Green bedroom arrangement with an ivory button-tufted bed, matching nightstand and large wardrobe with dark green marble-look accents",
+      "Close-up of the Sultan Green bedside cabinet with cream panels, dark green marble-look framing, ornate gold-tone carving and mirrored display niche",
+      "Sultan Green dressing table with cream cabinetry, dark green marble-look trim, elaborate gold-tone mirror and matching upholstered stool",
+      "Sultan Green cream wardrobe with dark green marble-look framing, elaborate gold-tone door ornaments, carved crown and decorative base",
+    ],
+  },
 
   description:
   "The Sultan Green Luxury Bedroom Collection by VIRELLAART showcases a regal classical composition with a crowned headboard, ornate framing and coordinated statement pieces. Designed for palatial villas and formal master suites, this luxury bedroom furniture creates refined symmetry and commanding visual prestige. Share your master-bedroom requirements on WhatsApp to receive Sultan Green Bedroom pricing, personalized options and delivery planning from VIRELLAART.",
