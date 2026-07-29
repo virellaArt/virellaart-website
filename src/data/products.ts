@@ -1180,6 +1180,15 @@ milanoBlueDining: {
     "/diningmilanoblue-04.webp",
     "/diningmilanoblue-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Milano Blue dining room set with an oval cream and black table, six tufted chairs, ornate sideboard, matching mirrors and display cabinet",
+        "Close-up of the Milano Blue oval dining table with a cream marble-look top, curved black inlays, carved pedestal base and tufted chairs",
+        "Milano Blue cream sideboard with elaborate black and gold-tone carved panels, decorative objects and two matching framed wall mirrors",
+        "Milano Blue high-back dining chair with cream tufted upholstery, patterned seat and an ornate black carved frame",
+        "Front view of the Milano Blue oval dining table with six cream chairs, carved black pedestal bases and matching sideboard behind",
+      ],
+    },
 
   description:
   "The Milano Blue Luxury Dining Room Collection by VIRELLAART creates a commanding classical setting through an elaborately framed table, high-back chairs and richly coordinated display pieces. Ideal for grand villas and formal entertaining, this luxury dining room furniture brings ceremonial presence and enduring visual prestige. Message VIRELLAART via WhatsApp to explore Milano Blue Dining Room prices, customization possibilities and worldwide delivery details.",
