@@ -496,6 +496,16 @@ images: [
   "/valenciabed-05.webp",
   "/valenciabed-06.webp",
 ],
+imageAlts: {
+  en: [
+    "Complete Valencia bedroom arrangement with a cream upholstered bed, ornate wardrobe, matching nightstands and coordinated dressing table",
+    "Front view of the Valencia cream bed with a sculptural gold-tone headboard frame, matching nightstands, dressing table and round stool",
+    "Close-up of the Valencia padded headboard with sweeping channel panels, central fan-shaped detail and ornate gold-tone crest",
+    "Valencia cream dressing table with curved cabinet fronts, gold-tone carved side panels and a large rounded decorative mirror",
+    "Valencia cream wardrobe with central fluted doors, mirrored side sections, ornate gold-tone trim and crowned top",
+    "Close-up of the Valencia cream nightstand with fluted drawer, curved cabinet front, gold-tone carved sides and crystal table lamp",
+  ],
+},
 
   description:
   "Discover the Valencia Luxury Bedroom Collection by VIRELLAART, distinguished by a sculptural headboard, elegant symmetry and refined decorative detailing. Designed for sophisticated villas and serene master suites, this luxury bedroom furniture creates a graceful, prestigious atmosphere with strong visual harmony. Request a private Valencia Bedroom quotation via WhatsApp, including bedroom-set options and international shipping details.",
