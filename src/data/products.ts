@@ -1490,6 +1490,15 @@ saltanatDiningGreen: {
     "/saltanatdininggreen-04.webp",
     "/saltanatdininggreen-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Saltanat Green dining room set with an oval cream table, ornate high-back chairs, glass display cabinet and matching mirrored console",
+        "Saltanat Green oval dining table with a cream marble-look top, dark green and gold-tone carved base, high-back chairs and matching console",
+        "Saltanat Green dining console with cream fluted doors, dark green framing, gold-tone carved ornament and an elaborate three-part mirror",
+        "Saltanat Green glass display cabinet with cream fluted panels, dark green framing and elaborate gold-tone carved crown and base",
+        "Wide view of the complete Saltanat Green dining collection with oval table, carved chairs, glass display cabinet and mirrored console",
+      ],
+    },
 
   description:
   "The Saltanat Green Luxury Dining Room Collection by VIRELLAART presents a dramatic classical composition with sculptural seating, ornate framing and a richly ceremonial atmosphere. Designed for palatial villas and distinguished entertaining spaces, this luxury dining room furniture creates commanding visual impact and lasting prestige. Send your project requirements on WhatsApp for Saltanat Green Dining Room collection pricing, tailored options and international delivery support.",
