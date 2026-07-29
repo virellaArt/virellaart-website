@@ -103,6 +103,17 @@ export const products = {
     "/aspendos-06.webp",
   ],
 
+  imageAlts: {
+    en: [
+      "Aspendos ivory armchair close-up with rounded arms, bronze-tone side panels and a sculpted base",
+      "Complete Aspendos living room set with two sofas, two armchairs, center table and TV unit in an illuminated luxury interior",
+      "Aspendos living room arrangement with ivory sofas, armchairs, center table, side table and matching TV unit",
+      "Aspendos ivory three-seat sofa front view with curved arms, quilted lower trim and patterned cushions",
+      "Rear three-quarter view of an Aspendos ivory sofa beside the center table and matching TV unit",
+      "Aspendos bronze-tone TV unit with rounded corners and a light stone-look top against an illuminated feature wall",
+    ],
+  },
+
   description:
   "Experience the Aspendos Luxury Living Room Collection by VIRELLAART, shaped by softly rounded seating, balanced proportions and a calm contemporary elegance. Designed for refined villas and spacious residences, this luxury sofa set creates a welcoming yet prestigious atmosphere. Connect with VIRELLAART via WhatsApp for Aspendos Living Room availability, customization possibilities and worldwide delivery information.",
  
@@ -137,6 +148,17 @@ export const products = {
     "/alex-06.webp",
   ],
 
+    imageAlts: {
+      en: [
+        "Complete Alex living room set with burgundy and black sofas, two patterned armchairs and a round black center table",
+        "Alex black tufted sofa close-up with rolled arms, patterned seat upholstery and decorative cushions",
+        "Alex burgundy patterned sofa close-up with rounded arms, black frame and turned front legs",
+        "Alex black floral armchair with rolled arms, patterned upholstery and black turned legs",
+        "Alex burgundy patterned sofa three-quarter view with black frame, decorative cushions and matching armchair",
+        "Alex black tufted sofa three-quarter view with patterned seat upholstery and round black center table",
+      ],
+    },
+
   description:
   "Discover the Alex Luxury Living Room Collection by VIRELLAART, defined by dramatic tufted seating, formal proportions and a bold classical character. Created for grand villas and statement interiors, this luxury living room furniture brings depth, prestige and unmistakable presence. Message VIRELLAART on WhatsApp for Alex Living Room pricing, customization options and worldwide delivery planning.",
  
@@ -166,6 +188,15 @@ export const products = {
     "/bahar-03.webp",
     "/bahar-04.webp",
   ],
+
+    imageAlts: {
+      en: [
+        "Complete Bahar living room set with ivory sofas, matching armchairs, a black center table and an illuminated TV wall",
+        "Close-up of the Bahar ivory sofa arm with black piping, cylindrical bolster and textured beige cushions",
+        "Bahar ivory three-seat sofa front view with black piping, cylindrical bolster cushions and black turned legs",
+        "Bahar ivory armchair with a curved black frame, gold-tone corner accents and a textured beige cushion",
+      ],
+    },
 
  description:
   "Explore the Bahar Luxury Living Room Collection by VIRELLAART, shaped by clean architectural lines, balanced seating and a confident contemporary character. Designed for modern villas and refined residences, this luxury sofa set creates an elegant, composed atmosphere with strong visual clarity. Message VIRELLAART on WhatsApp for Bahar Living Room pricing, customization options and worldwide delivery planning.",
