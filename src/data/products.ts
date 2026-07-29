@@ -229,6 +229,15 @@ export const products = {
     "/delux-04.webp",
     "/delux-05.webp",
   ],
+    imageAlts: {
+      en: [
+        "Complete Delux living room set with ivory and charcoal sofas, two matching armchairs, a light stone-look center table and TV unit",
+        "Pair of Delux ivory armchairs with curved backs, gold-tone trim and charcoal accent cushions",
+        "Delux ivory three-seat sofa with layered cushions, rounded side panels and a polished gold-tone base",
+        "Delux charcoal curved sofa with layered ivory cushions and a polished gold-tone base",
+        "Delux ivory TV unit with rounded cabinets, reflective center drawers and decorative gold-tone lattice legs",
+      ],
+    },
 
  description:
   "Discover the Delux Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Message VIRELLAART on WhatsApp for Delux Living Room pricing, customization options and worldwide delivery planning.",
