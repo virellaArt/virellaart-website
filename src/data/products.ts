@@ -31,7 +31,7 @@ export const products = {
     },
 
     description:
-      "Discover the Valencia Luxury Living Room Collection by VIRELLAART, distinguished by sculptural curves, ornate detailing and a refined, commanding presence. Created for grand villas and elegant residences, this luxury sofa set brings timeless character and visual prestige to the interior. Speak with the VIRELLAART team on WhatsApp about Valencia Living Room pricing, sofa-set options and delivery planning for your interior project.",
+      "Valencia pairs ivory upholstery with sculpted arms, curved metallic framing and a carved base that remains visible from every angle. The balanced 3+3+1+1 arrangement works especially well in large, formal living rooms, creating a bright and symmetrical atmosphere without feeling heavy. Ask the VIRELLAART team on WhatsApp for the Valencia set price, finish options and delivery details for your city.",
     prices: [
       {
         label: "Luxury 3+3+1+1 Living Room Set",
@@ -176,7 +176,7 @@ export const products = {
     },
 
   description:
-  "Discover the Alex Luxury Living Room Collection by VIRELLAART, defined by dramatic tufted seating, formal proportions and a bold classical character. Created for grand villas and statement interiors, this luxury living room furniture brings depth, prestige and unmistakable presence. Message VIRELLAART on WhatsApp for Alex Living Room pricing, customization options and worldwide delivery planning.",
+  "Alex uses burgundy patterned upholstery against deep black tufted seating, giving the room a deliberate high-contrast focal point. Rolled arms and compact classical proportions suit formal salons and medium-to-large reception rooms, where the palette creates a warm, theatrical atmosphere. Request the Alex set price, fabric options and delivery details from VIRELLAART on WhatsApp.",
  
   prices: [
     {
@@ -216,7 +216,7 @@ export const products = {
     },
 
  description:
-  "Explore the Bahar Luxury Living Room Collection by VIRELLAART, shaped by clean architectural lines, balanced seating and a confident contemporary character. Designed for modern villas and refined residences, this luxury sofa set creates an elegant, composed atmosphere with strong visual clarity. Message VIRELLAART on WhatsApp for Bahar Living Room pricing, customization options and worldwide delivery planning.",
+  "Bahar combines ivory upholstery, crisp black piping and cylindrical bolster cushions, with dark legs and curved armchair frames adding clear definition. It fits contemporary living rooms that need a light neutral base with sharper architectural contrast, creating a calm but tailored atmosphere. Contact VIRELLAART on WhatsApp for the Bahar set price, upholstery choices and delivery details.",
  
   prices: [
     {
@@ -258,7 +258,7 @@ export const products = {
     },
 
  description:
-  "Discover the Deluxe Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Message VIRELLAART on WhatsApp for Deluxe Living Room pricing, customization options and worldwide delivery planning.",
+  "The contrasting ivory and charcoal seating gives the Deluxe collection a balanced two-tone composition, while its curved profiles soften large contemporary living rooms. Layered cushions and polished gold-tone bases add warmth without interrupting the clean arrangement. Ask VIRELLAART on WhatsApp for the Deluxe set price, color options and delivery details for your project.",
  
   prices: [
     {
@@ -1922,7 +1922,7 @@ sultanSofa: {
   },
 
   description:
-    "Sultan Sofa Green by VIRELLAART is a classical luxury living room collection with timeless proportions, sophisticated detailing and a refined formal character. Designed for elegant villas and premium residential interiors, this luxury sofa set creates a distinguished atmosphere with manufacturer-direct support from Istanbul. Send your luxury living room requirements on WhatsApp to receive Sultan Sofa (Green) prices, personalized options and delivery assistance from VIRELLAART.",
+    "Sultan Sofa Green combines saturated green upholstery with carved classical framing and coordinated accent cushions, making the seating the clear center of the room. Its formal 3+3+1+1 layout suits generous salons and reception rooms, where the deep color creates a rich, composed atmosphere. Ask VIRELLAART on WhatsApp for the Sultan Sofa set price, finish options and delivery details.",
 
   prices: [
     {
@@ -1960,7 +1960,7 @@ sultanGreenDining: {
     },
 
   description:
-    "The Sultan Green Luxury Dining Room Set by VIRELLAART combines a coordinated statement table, sculptural chairs and ornate classical pieces. Designed for villas, formal dining rooms and distinguished interiors, this luxury dining furniture creates elegant symmetry with a commanding presence. Speak with VIRELLAART on WhatsApp for a private Sultan Green Dining Room Set offer, dining-set customization and shipping assistance.",
+    "Sultan Green centers the dining room around an oval table with dark-green inlays, a sculpted pedestal and six high-back chairs. Cream panels, green marble-look surfaces and gold-tone carving continue across the sideboard and display cabinet, creating a ceremonial atmosphere for large formal dining rooms. Contact VIRELLAART on WhatsApp for the complete set price, finish options and delivery details.",
 
   prices: [
     {

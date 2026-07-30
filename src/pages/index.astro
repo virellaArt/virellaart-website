@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedCollections from "../components/FeaturedCollections.astro";
 import {
   getSeoDescription,
   getLanguageFromPath,
@@ -537,6 +538,8 @@ const homePageDescription =
       </a>
     </div>
   </section>
+
+  <FeaturedCollections {language} />
 
   <section class="brand-story">
     <div class="brand-story-image">

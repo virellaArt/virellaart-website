@@ -1419,7 +1419,7 @@ const manufacturingContent: Record<
       lead:
         "VIRELLAART este un producător de mobilier de lux din Istanbul care dezvoltă colecții complete pentru reședințe, vile și interioare private.",
       paragraphs: [
-        "Activitatea noastră depășește prezentarea produselor individuale. Dezvoltăm colecții coordonate pentru living, dining, dormitor și unități TV.",
+        "Activitatea noastră depășește prezentarea produselor individuale. Dezvoltăm colecții coordonate pentru sufragerie, sala de mese, dormitor și unități TV.",
         "Echipa noastră asistă clienții de la prima solicitare până la pregătirea producției, verificarea calității, ambalarea și livrarea internațională.",
       ],
       facts: [
@@ -1570,7 +1570,7 @@ const manufacturingContent: Record<
         {
           title: "Colecții Complete și Coordonate",
           description:
-            "Colecții de living, dining, dormitor și unități TV cu o identitate de design coerentă.",
+            "Colecții pentru sufragerie, sala de mese, dormitor și unități TV, cu o identitate de design coerentă.",
         },
         {
           title: "Asistență pentru Personalizare",

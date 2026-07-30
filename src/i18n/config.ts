@@ -917,15 +917,15 @@ const translations = {
     home: {
       title: "Mobilier de lux pentru interioare excepționale",
       description:
-        "Descoperiți livinguri, dininguri, dormitoare și comode TV de lux VIRELLAART cu opțiuni personalizate și livrare internațională.",
+        "Descoperiți sufragerii, săli de mese, dormitoare și comode TV de lux VIRELLAART, cu opțiuni personalizate și livrare internațională.",
       eyebrow: "Fabricat în Türkiye",
       lead: "Mobilier de lux atemporal, creat pentru interioare excepționale.",
       button: "Descoperă colecțiile",
       discover: "Descoperă",
       heading: "Colecțiile noastre",
       intro: "Explorați patru categorii de mobilier reprezentative, create pentru interioare rafinate.",
-      livingRooms: "Livinguri",
-      diningRooms: "Dininguri",
+      livingRooms: "Sufragerii",
+      diningRooms: "Săli de mese",
       bedrooms: "Dormitoare",
       tvUnits: "Comode TV",
       discoverCollection: "Descoperă colecția",
@@ -935,14 +935,14 @@ const translations = {
       selectModel: "Selectați un model pentru a vedea toate fotografiile și detaliile produsului.",
       viewCollection: "Vezi colecția",
       livingRooms: {
-        title: "Livinguri",
+        title: "Sufragerii",
         description:
-          "Descoperiți colecțiile de living de lux VIRELLAART cu design rafinat, măiestrie premium și livrare internațională.",
+          "Descoperiți colecțiile de mobilier pentru sufragerie VIRELLAART, cu design rafinat, măiestrie premium și livrare internațională.",
       },
       diningRooms: {
-        title: "Dininguri",
+        title: "Săli de mese",
         description:
-          "Descoperiți colecțiile de dining de lux VIRELLAART, create pentru întâlniri elegante și interioare excepționale.",
+          "Descoperiți colecțiile de mobilier pentru sala de mese VIRELLAART, create pentru reuniuni elegante și interioare deosebite.",
       },
       bedrooms: {
         title: "Dormitoare",
@@ -968,8 +968,8 @@ const translations = {
       paragraphOne:
         "VIRELLAART este un brand de mobilier de lux dedicat creării unor spații de locuit atemporale. Fiecare colecție este dezvoltată cu accent pe proporții, măiestrie, confort și eleganță vizuală.",
       paragraphTwo:
-        "De la livinguri și dininguri la dormitoare și comode TV, fiecare piesă este creată pentru a aduce o atmosferă distinctă de lux în locuințele rafinate.",
-      imageAlt: "Mobilier de living de lux VIRELLAART",
+        "De la sufragerii și săli de mese la dormitoare și comode TV, fiecare piesă este creată pentru a aduce o atmosferă distinctă de lux în locuințele rafinate.",
+      imageAlt: "Mobilier de lux pentru sufragerie VIRELLAART",
     },
     contact: {
       title: "Contactați VIRELLAART",
@@ -992,7 +992,7 @@ const translations = {
       language: "Limbă",
       languageValue: "Asistență internațională",
       button: "Contact prin WhatsApp",
-      imageAlt: "Mobilier de dining de lux VIRELLAART",
+      imageAlt: "Mobilier de lux pentru sala de mese VIRELLAART",
     },
     product: {
       collectionLabel: "Colecția de lux VIRELLAART",
@@ -1832,9 +1832,10 @@ const productNameReplacements: Record<
     ["TV Unit", "ТВ модул"],
   ],
   ro: [
-    ["Living Room", "Living"],
-    ["Dining Room", "Dining"],
-    ["Dining", "Dining"],
+    ["Living Room", "Sufragerie"],
+    ["Dining Room Set", "Set pentru sala de mese"],
+    ["Dining Room", "Sală de mese"],
+    ["Dining", "Sală de mese"],
     ["Bedroom", "Dormitor"],
     ["TV Unit", "Comodă TV"],
   ],
@@ -1969,12 +1970,12 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Луксозен ТВ модул",
   },
   ro: {
-    "Luxury 3+3+1+1 Living Room Set": "Set living de lux 3+3+1+1",
-    "Luxury 4+3+1 Living Room Set": "Set living de lux 4+3+1",
+    "Luxury 3+3+1+1 Living Room Set": "Set de lux pentru sufragerie 3+3+1+1",
+    "Luxury 4+3+1 Living Room Set": "Set de lux pentru sufragerie 4+3+1",
     "Center Table": "Măsuță de cafea",
     "TV Unit": "Comodă TV",
     "Luxury Bedroom Set": "Set dormitor de lux",
-    "Luxury Dining Room Set": "Set dining de lux",
+    "Luxury Dining Room Set": "Set de lux pentru sala de mese",
     "Luxury TV Unit": "Comodă TV de lux",
   },
   el: {
@@ -2293,9 +2294,9 @@ const categoryDescriptionTemplates: Record<
   },
   ro: {
     "living-rooms":
-      "Descoperiți colecția de living de lux {product} de la VIRELLAART, care combină designul rafinat, măiestria premium și confortul excepțional.",
+      "Descoperiți colecția de lux pentru sufragerie {product} de la VIRELLAART, care combină designul rafinat, măiestria premium și confortul excepțional.",
     "dining-rooms":
-      "Descoperiți colecția de dining de lux {product} de la VIRELLAART, creată cu design rafinat și măiestrie premium.",
+      "Descoperiți colecția de lux pentru sala de mese {product} de la VIRELLAART, creată cu design rafinat și măiestrie premium.",
     bedrooms:
       "Descoperiți colecția de dormitor de lux {product} de la VIRELLAART, care combină confortul, măiestria și eleganța atemporală.",
     "tv-units":

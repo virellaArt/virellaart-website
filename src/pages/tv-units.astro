@@ -1,227 +1,42 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CollectionCatalog from "../components/CollectionCatalog.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
 import { tvUnitModels } from "../data/tv-unit-catalog";
 import {
   getCategorySeoTitle,
-  getSeoDescription,
   getLanguageFromPath,
+  getSeoDescription,
   getTranslations,
-  localizedPath,
-  translateProductName,
 } from "../i18n/config";
 
-const language =
-  getLanguageFromPath(Astro.url.pathname);
-
-const translations =
-  getTranslations(language);
-
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
 const categoryTranslations =
   translations.category.tvUnits;
-
-const pageTitle =
-  getCategorySeoTitle(
-    categoryTranslations.title,
-    language,
-  );
-
-const pageDescription =
-  getSeoDescription(
-    categoryTranslations.description,
-    language,
-  );
-
+const pageTitle = getCategorySeoTitle(
+  categoryTranslations.title,
+  language,
+);
+const pageDescription = getSeoDescription(
+  categoryTranslations.description,
+  language,
+);
 const models = tvUnitModels;
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={pageDescription}
->
-<CollectionSchema
-  categoryName={categoryTranslations.title}
-  description={pageDescription}
-  {models}
-/>
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <CollectionSchema
+    categoryName={categoryTranslations.title}
+    description={pageDescription}
+    {models}
+  />
 
-<div class="page">
-
-  <section class="category-section">
-
-    <div class="category-intro">
-      <span>{translations.category.eyebrow}</span>
-      <h1>{categoryTranslations.title}</h1>
-      <p>
-        {categoryTranslations.description}
-      </p>
-    </div>
-
-
-    <div class="models-grid">
-
-      {
-        models.map((model, index) => (
-          <a href={localizedPath(model.href, language)} class="model-card">
-
-            <div class="image-wrapper">
-              <img 
-                src={model.image}
-                alt={`VIRELLAART ${translateProductName(model.name, language)}`}
-                width="800"
-                height="600"
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchpriority={index === 0 ? "high" : undefined}
-                decoding="async"
-              />
-            </div>
-
-            <div class="card-content">
-
-              <small>{model.number}</small>
-
-              <h2>
-                {translateProductName(model.name, language)}
-              </h2>
-
-              <span>
-                {translations.category.viewCollection}
-              </span>
-
-            </div>
-
-          </a>
-        ))
-      }
-
-    </div>
-
-  </section>
-
-</div>
-
-
-<style>
-
-.page {
-  min-height: 100vh;
-}
-
-
-.category-section {
-  width: min(100% - 64px, 1200px);
-  margin: 0 auto;
-  padding: 120px 0;
-}
-
-
-.category-intro {
-  max-width: 780px;
-  margin-bottom: 70px;
-}
-
-
-.category-intro span {
-  letter-spacing: 5px;
-  font-size: 12px;
-}
-
-
-.category-intro h1 {
-  margin: 20px 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(42px, 6vw, 76px);
-  font-weight: 400;
-}
-
-
-.category-intro p {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-
-.models-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-
-.model-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: 0.4s ease;
-}
-
-
-.model-card:hover {
-  transform: translateY(-6px);
-}
-
-
-.image-wrapper {
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-}
-
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s ease;
-}
-
-
-.model-card:hover img {
-  transform: scale(1.04);
-}
-
-
-.card-content {
-  padding: 25px;
-}
-
-
-.card-content small {
-  letter-spacing: 4px;
-  font-size: 11px;
-}
-
-
-.card-content h2 {
-  margin: 15px 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 36px;
-  font-weight: 400;
-}
-
-
-.card-content span {
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-
-@media(max-width:768px){
-
-.models-grid {
-  grid-template-columns:1fr;
-}
-
-.category-section {
-  padding:80px 0;
-}
-
-.card-content h2 {
-  font-size:30px;
-}
-
-}
-
-</style>
-
+  <CollectionCatalog
+    {models}
+    {language}
+    categoryName={categoryTranslations.title}
+    categoryDescription={categoryTranslations.description}
+    eyebrow={translations.category.eyebrow}
+  />
 </BaseLayout>

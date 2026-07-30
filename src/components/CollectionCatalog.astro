@@ -1,0 +1,664 @@
+---
+import {
+  getCatalogMerchandising,
+  type ProductKey,
+} from "../data/catalog-merchandising";
+import { catalogCopy } from "../i18n/catalog";
+import {
+  type Language,
+  localizedPath,
+  translateProductName,
+} from "../i18n/config";
+
+type CatalogModel = {
+  key: ProductKey;
+  number: string;
+  name: string;
+  href: string;
+  image: string;
+  alt: string;
+};
+
+type Props = {
+  models: CatalogModel[];
+  language: Language;
+  categoryName: string;
+  categoryDescription: string;
+  eyebrow: string;
+};
+
+const {
+  models,
+  language,
+  categoryName,
+  categoryDescription,
+  eyebrow,
+} = Astro.props;
+
+const copy = catalogCopy[language];
+
+const cards = models.map((model, index) => ({
+  ...model,
+  ...getCatalogMerchandising(model.key),
+  index,
+}));
+
+function compositionFor(
+  category: string,
+  priceLabel: string | undefined,
+) {
+  if (category === "living-rooms") {
+    if (priceLabel?.includes("4+3+1")) {
+      return copy.living431Composition;
+    }
+
+    return copy.livingComposition;
+  }
+
+  if (category === "dining-rooms") {
+    return copy.diningComposition;
+  }
+
+  if (category === "bedrooms") {
+    return copy.bedroomComposition;
+  }
+
+  return copy.tvComposition;
+}
+
+function badgeLabel(
+  badge: ReturnType<
+    typeof getCatalogMerchandising
+  >["badge"],
+) {
+  if (badge === "bestSeller") return copy.bestSeller;
+  if (badge === "signature") return copy.signature;
+  if (badge === "newArrival") return copy.newArrival;
+  return "";
+}
+---
+
+<div class="catalog-page" data-collection-catalog>
+  <header class="catalog-header">
+    <span>{eyebrow}</span>
+
+    <h1>{categoryName}</h1>
+
+    <p>{categoryDescription}</p>
+  </header>
+
+  <div class="catalog-toolbar">
+    <fieldset class="catalog-filters">
+      <legend>{copy.filterLabel}</legend>
+
+      <button
+        type="button"
+        data-catalog-filter="all"
+        aria-pressed="true"
+      >
+        {copy.all}
+      </button>
+
+      <button
+        type="button"
+        data-catalog-filter="classic"
+        aria-pressed="false"
+      >
+        {copy.classic}
+      </button>
+
+      <button
+        type="button"
+        data-catalog-filter="contemporary"
+        aria-pressed="false"
+      >
+        {copy.contemporary}
+      </button>
+    </fieldset>
+
+    <label class="catalog-sort">
+      <span>{copy.sortLabel}</span>
+
+      <select data-catalog-sort>
+        <option value="featured">
+          {copy.sortFeatured}
+        </option>
+        <option value="price-asc">
+          {copy.sortPriceLowHigh}
+        </option>
+        <option value="price-desc">
+          {copy.sortPriceHighLow}
+        </option>
+        <option value="name">
+          {copy.sortName}
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <p class="catalog-count" aria-live="polite">
+    <strong data-catalog-count>{cards.length}</strong>
+    {" "}
+    {copy.results}
+  </p>
+
+  <section
+    class="catalog-grid"
+    aria-label={categoryName}
+    data-catalog-grid
+  >
+    {
+      cards.map((card) => {
+        const translatedName = translateProductName(
+          card.product.name,
+          language,
+        );
+        const badge = badgeLabel(card.badge);
+
+        return (
+          <article
+            class="catalog-card"
+            data-catalog-card
+            data-character={card.character}
+            data-price={card.priceValue}
+            data-name={translatedName}
+            data-rank={card.index}
+          >
+            <a
+              class="catalog-image"
+              href={localizedPath(card.href, language)}
+              aria-label={`${copy.viewCollection}: ${translatedName}`}
+            >
+              <img
+                src={card.image}
+                alt={`VIRELLAART ${translatedName}`}
+                width="800"
+                height="600"
+                loading={card.index === 0 ? "eager" : "lazy"}
+                fetchpriority={card.index === 0 ? "high" : undefined}
+                decoding="async"
+              />
+
+              {badge && <span class="catalog-badge">{badge}</span>}
+            </a>
+
+            <div class="catalog-info">
+              <div class="catalog-meta">
+                <span>{card.number}</span>
+                <span>
+                  {card.character === "classic"
+                    ? copy.classic
+                    : copy.contemporary}
+                </span>
+                <span>
+                  {card.imageCount} {copy.photos}
+                </span>
+              </div>
+
+              <h2>{translatedName}</h2>
+
+              <p class="catalog-price">
+                <span>{copy.from}</span>
+                <strong>{card.featuredPrice?.price}</strong>
+              </p>
+
+              <div class="catalog-composition">
+                <span>{copy.included}</span>
+                <p>
+                  {compositionFor(
+                    card.product.category,
+                    card.featuredPrice?.label,
+                  )}
+                </p>
+              </div>
+
+              <a
+                class="catalog-link"
+                href={localizedPath(card.href, language)}
+              >
+                {copy.viewCollection}
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        );
+      })
+    }
+  </section>
+
+  <p class="catalog-empty" data-catalog-empty hidden>
+    {copy.noResults}
+  </p>
+</div>
+
+<script>
+  document
+    .querySelectorAll("[data-collection-catalog]")
+    .forEach((catalog) => {
+      const grid = catalog.querySelector(
+        "[data-catalog-grid]",
+      );
+      const cards = Array.from(
+        catalog.querySelectorAll("[data-catalog-card]"),
+      );
+      const filters = Array.from(
+        catalog.querySelectorAll("[data-catalog-filter]"),
+      );
+      const sort = catalog.querySelector(
+        "[data-catalog-sort]",
+      );
+      const count = catalog.querySelector(
+        "[data-catalog-count]",
+      );
+      const empty = catalog.querySelector(
+        "[data-catalog-empty]",
+      );
+
+      if (
+        !(grid instanceof HTMLElement) ||
+        !(sort instanceof HTMLSelectElement)
+      ) {
+        return;
+      }
+
+      let activeFilter = "all";
+
+      const applyCatalogState = () => {
+        const visible = cards.filter((card) => {
+          if (!(card instanceof HTMLElement)) return false;
+
+          const isVisible =
+            activeFilter === "all" ||
+            card.dataset.character === activeFilter;
+
+          card.hidden = !isVisible;
+          return isVisible;
+        });
+
+        const sorted = [...cards].sort((first, second) => {
+          if (
+            !(first instanceof HTMLElement) ||
+            !(second instanceof HTMLElement)
+          ) {
+            return 0;
+          }
+
+          if (sort.value === "price-asc") {
+            return (
+              Number(first.dataset.price) -
+              Number(second.dataset.price)
+            );
+          }
+
+          if (sort.value === "price-desc") {
+            return (
+              Number(second.dataset.price) -
+              Number(first.dataset.price)
+            );
+          }
+
+          if (sort.value === "name") {
+            return (first.dataset.name ?? "").localeCompare(
+              second.dataset.name ?? "",
+              document.documentElement.lang,
+            );
+          }
+
+          return (
+            Number(first.dataset.rank) -
+            Number(second.dataset.rank)
+          );
+        });
+
+        sorted.forEach((card) => grid.append(card));
+
+        if (count) count.textContent = String(visible.length);
+        if (empty instanceof HTMLElement) {
+          empty.hidden = visible.length > 0;
+        }
+      };
+
+      filters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          if (!(filter instanceof HTMLButtonElement)) return;
+
+          activeFilter = filter.dataset.catalogFilter ?? "all";
+          filters.forEach((button) =>
+            button.setAttribute(
+              "aria-pressed",
+              String(button === filter),
+            ),
+          );
+          applyCatalogState();
+        });
+      });
+
+      sort.addEventListener("change", applyCatalogState);
+    });
+</script>
+
+<style>
+  .catalog-page {
+    width: min(100% - 48px, 1220px);
+    margin: 0 auto;
+    padding: 125px 0 96px;
+  }
+
+  .catalog-header {
+    max-width: 760px;
+    margin-bottom: 38px;
+  }
+
+  .catalog-header > span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .catalog-header h1 {
+    margin: 12px 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 0.98;
+  }
+
+  .catalog-header p {
+    max-width: 680px;
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .catalog-toolbar {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 14px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .catalog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .catalog-filters legend,
+  .catalog-sort span {
+    display: block;
+    width: 100%;
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .catalog-filters button,
+  .catalog-sort select {
+    min-height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0;
+    background: #0c0c0c;
+    color: rgba(255, 255, 255, 0.78);
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 1.1px;
+  }
+
+  .catalog-filters button {
+    padding: 0 16px;
+    cursor: pointer;
+  }
+
+  .catalog-filters button[aria-pressed="true"] {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #090909;
+  }
+
+  .catalog-sort {
+    flex: 0 0 230px;
+  }
+
+  .catalog-sort select {
+    width: 100%;
+    padding: 0 38px 0 13px;
+    cursor: pointer;
+  }
+
+  .catalog-count {
+    margin: 0 0 16px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  .catalog-count strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .catalog-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #0c0c0c;
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .catalog-card[hidden] {
+    display: none;
+  }
+
+  .catalog-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  }
+
+  .catalog-image {
+    position: relative;
+    display: block;
+    height: 350px;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .catalog-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+  }
+
+  .catalog-card:hover .catalog-image img {
+    transform: scale(1.025);
+  }
+
+  .catalog-badge {
+    position: absolute;
+    top: 16px;
+    inset-inline-start: 16px;
+    padding: 9px 11px;
+    background: rgba(8, 8, 8, 0.88);
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .catalog-info {
+    padding: 22px 24px 25px;
+  }
+
+  .catalog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  .catalog-info h2 {
+    margin: 11px 0 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 3.1vw, 36px);
+    font-weight: 400;
+    line-height: 1.06;
+  }
+
+  .catalog-price {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin: 0 0 16px;
+  }
+
+  .catalog-price span {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  .catalog-price strong {
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .catalog-composition {
+    min-height: 65px;
+    padding: 13px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .catalog-composition span {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .catalog-composition p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .catalog-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .catalog-link span {
+    color: var(--gold);
+    font-size: 17px;
+    transition: transform 0.25s ease;
+  }
+
+  .catalog-link:hover span {
+    transform: translateX(4px);
+  }
+
+  .catalog-image:focus-visible,
+  .catalog-link:focus-visible,
+  .catalog-filters button:focus-visible,
+  .catalog-sort select:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  .catalog-empty {
+    margin: 44px 0 0;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--gray);
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .catalog-page {
+      width: min(100% - 28px, 1220px);
+      padding: 110px 0 72px;
+    }
+
+    .catalog-toolbar {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .catalog-sort {
+      flex-basis: auto;
+      width: min(100%, 330px);
+    }
+
+    .catalog-image {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .catalog-page {
+      width: min(100% - 20px, 1220px);
+      padding-top: 100px;
+    }
+
+    .catalog-header {
+      margin-bottom: 28px;
+    }
+
+    .catalog-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .catalog-image {
+      height: min(76vw, 345px);
+    }
+
+    .catalog-info {
+      padding: 20px;
+    }
+  }
+</style>
