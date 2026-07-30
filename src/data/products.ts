@@ -2124,4 +2124,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  ibizaSofaSet: {
+    name: "Ibiza Sofa Set",
+    slug: "ibiza-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Soft Geometry for Contemporary Living",
+    description:
+      "Ibiza Sofa Set pairs soft architectural curves with a calm, contemporary profile. Its balanced 3+3+1+1 composition creates a refined living room setting that feels generous without appearing heavy. Designed for modern interiors, Ibiza delivers strong visual presence, inviting comfort and a clean luxury character, completed by the coordinated center table.",
+    images: [
+      "/ibiza-sofa-set-01.webp",
+      "/ibiza-sofa-set-02.webp",
+      "/ibiza-sofa-set-03.webp",
+      "/ibiza-sofa-set-04.webp",
+      "/ibiza-sofa-set-05.webp",
+      "/ibiza-sofa-set-06.webp",
+      "/ibiza-sofa-set-07.webp",
+      "/ibiza-sofa-set-08.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Ibiza Sofa Set in a contemporary luxury living room setting",
+        "Ibiza three-seat sofa front view with sculptural modern form",
+        "Ibiza Sofa Set rear upholstery and curved silhouette detail",
+        "Ibiza modern sofa collection with coordinated center table",
+        "Ibiza single armchair in a refined contemporary interior",
+        "Ibiza armchair side profile and curved seating detail",
+        "Ibiza three-seat sofa isolated angled product view",
+        "Ibiza three-seat sofa isolated front product view",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,450",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
