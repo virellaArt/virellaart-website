@@ -2446,4 +2446,49 @@ sultanGreenDining: {
       },
     ],
   },
+
+  dubaiSofaSet: {
+    name: "DUBAİ Sofa Set",
+    slug: "dubai-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Generous Seating with a Relaxed Architectural Profile",
+    description:
+      "DUBAİ Sofa Set creates an inviting contemporary living room through deep seating, broad upholstered arms and generously layered back cushions. Its complete 3+3+1+1 composition combines a refined light grey palette with distinctive blue accents for a spacious and balanced modern interior. An elegant choice for customers searching for a luxury grey sofa set, contemporary four-piece living room furniture and premium modern seating from VIRELLAART.",
+    images: [
+      "/dubai-sofa-set-01.webp",
+      "/dubai-sofa-set-02.webp",
+      "/dubai-sofa-set-03.webp",
+      "/dubai-sofa-set-04.webp",
+      "/dubai-sofa-set-05.webp",
+      "/dubai-sofa-set-06.webp",
+      "/dubai-sofa-set-07.webp",
+      "/dubai-sofa-set-08.webp",
+      "/dubai-sofa-set-09.webp",
+      "/dubai-sofa-set-10.webp",
+      "/dubai-sofa-set-11.webp",
+    ],
+    imageAlts: {
+      en: [
+        "DUBAİ modern light grey sofa set in a bright contemporary living room",
+        "DUBAİ 3+3+1+1 luxury sofa set with blue accent cushions and deep seating",
+        "DUBAİ contemporary living room furniture shown in a refined lifestyle interior",
+        "DUBAİ three-seat modern sofa with broad arms and layered back cushions",
+        "DUBAİ luxury grey sofa set viewed from an elevated interior angle",
+        "DUBAİ modern seating arrangement with coordinated coffee tables and blue accents",
+        "DUBAİ contemporary sofa collection with broad seats and relaxed proportions",
+        "DUBAİ modern grey sofa viewed from above with deep square seat cushions",
+        "DUBAİ 3+3+1+1 living room set styled in a bright minimalist interior",
+        "DUBAİ sofa close-up showing the deep seat and substantial upholstered arm",
+        "DUBAİ contemporary three-seat sofa side view with clean architectural lines",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$5,450",
+        featured: true,
+      },
+    ],
+  },
 };
