@@ -12,13 +12,6 @@ import {
 
 const site = "https://www.virellaart.com";
 
-const policyRoutes = [
-  "policies/shipping-policy",
-  "policies/return-refund-policy",
-  "policies/privacy-policy",
-  "policies/terms-conditions",
-] as const;
-
 const staticRouteImages: Record<string, string[]> = {
   "": ["/living-room.webp"],
   "living-rooms": ["/living-room.webp"],
@@ -45,13 +38,6 @@ function absoluteURL(
 
   return new URL(
     localized.replace(/\/?$/, "/"),
-    site,
-  ).href;
-}
-
-function englishURL(route: string) {
-  return new URL(
-    `/${route.replace(/^\/+|\/+$/g, "")}/`,
     site,
   ).href;
 }
@@ -105,17 +91,6 @@ export const GET = () => {
       }),
     )
     .join("");
-
-  const policyUrls = policyRoutes
-    .map(
-      (route) => `
-      <url>
-        <loc>${englishURL(route)}</loc>
-      </url>
-      `,
-    )
-    .join("");
-
   const xml =
     `<?xml version="1.0" encoding="UTF-8"?>` +
     `<urlset
@@ -124,7 +99,6 @@ export const GET = () => {
       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     >
       ${localizedUrls}
-      ${policyUrls}
     </urlset>`;
 
   return new Response(
