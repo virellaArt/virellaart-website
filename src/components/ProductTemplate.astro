@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
+  collectionCategorySlugs,
+  type CollectionCategory,
+} from "../data/collection-taxonomy";
+import { collectionMenuCopy } from "../i18n/collection-menu";
+import {
   getSeoDescription,
   getLanguageFromPath,
   getProductDescription,
@@ -151,15 +156,36 @@ const categoryTranslationKey = {
 
 const categoryKey =
   product.category as keyof typeof categoryTranslationKey;
+const productStyle =
+  product.style ?? "luxury-classic";
+const collectionCopy =
+  collectionMenuCopy[language];
+const productCollectionLabel =
+  productStyle === "modern"
+    ? collectionCopy.categoryEyebrow
+    : translations.product.collectionLabel;
 
 const categoryTranslation =
   categoryTranslationKey[categoryKey];
 
 const categoryName =
-  translations.category[categoryTranslation].title;
+  productStyle === "modern" &&
+  categoryKey === "living-rooms"
+    ? collectionCopy.sofaSets
+    : translations.category[categoryTranslation]
+        .title;
+
+const categoryPath =
+  productStyle === "modern"
+    ? `/collections/modern/${
+        collectionCategorySlugs[
+          categoryKey as CollectionCategory
+        ]
+      }`
+    : `/${product.category}`;
 
 const categoryURL = new URL(
-  localizedPath(`/${product.category}`, language),
+  localizedPath(categoryPath, language),
   "https://www.virellaart.com",
 ).href;
 
@@ -571,7 +597,10 @@ const productSchema = {
   url: canonicalURL,
   mainEntityOfPage: canonicalURL,
   sku: productID,
-  category: product.category,
+  category:
+    productStyle === "modern"
+      ? `${collectionCopy.modern} / ${categoryName}`
+      : categoryName,
   description: productDescription,
   inLanguage: language,
 
@@ -1331,7 +1360,7 @@ const productTrust =
 
       <a
         href={localizedPath(
-          `/${product.category}`,
+          categoryPath,
           language,
         )}
       >
@@ -1409,7 +1438,7 @@ const productTrust =
 
         <section class="product-information">
           <p class="collection-label">
-            {translations.product.collectionLabel}
+            {productCollectionLabel}
           </p>
 
           <h1>{translatedProductName}</h1>

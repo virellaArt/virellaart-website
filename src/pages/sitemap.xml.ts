@@ -30,6 +30,12 @@ const staticRouteImages: Record<string, string[]> = {
     "/bedroom.webp",
     "/tv-unit.webp",
   ],
+  "collections/modern": [
+    "/aura-corner-01.webp",
+  ],
+  "collections/modern/sofa-sets": [
+    "/aura-corner-01.webp",
+  ],
   "about": ["/about-factory.webp"],
   "manufacturing": ["/about-factory.webp"],
   "contact": ["/dining-room.webp"],

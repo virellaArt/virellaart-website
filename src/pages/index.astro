@@ -18,6 +18,10 @@ const luxuryClassicProductCount =
     (product) =>
       product.style === "luxury-classic",
   ).length;
+const modernProductCount =
+  Object.values(products).filter(
+    (product) => product.style === "modern",
+  ).length;
 
 const pageDescription =
   getSeoDescription(
@@ -535,7 +539,15 @@ const homePageDescription =
 
         <span class="collection-style-copy">
           <strong>{collectionCopy.modern}</strong>
-          <small>{collectionCopy.modelsSoon}</small>
+          <small>
+            {modernProductCount > 0
+              ? `${modernProductCount} ${
+                  modernProductCount === 1
+                    ? collectionCopy.modelSingular
+                    : collectionCopy.modelLabel
+                }`
+              : collectionCopy.modelsSoon}
+          </small>
         </span>
 
         <span

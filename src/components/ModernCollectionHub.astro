@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { products } from "../data/products";
 import { collectionMenuCopy } from "../i18n/collection-menu";
 import {
   getLanguageFromPath,
@@ -13,33 +14,66 @@ const copy = collectionMenuCopy[language];
 
 const categories = [
   {
+    key: "living-rooms",
     slug: "sofa-sets",
     title: copy.sofaSets,
     image: "/living-room.webp",
   },
   {
+    key: "dining-rooms",
     slug: "dining-rooms",
     title: translations.home.diningRooms,
     image: "/dining-room.webp",
   },
   {
+    key: "bedrooms",
     slug: "bedrooms",
     title: translations.home.bedrooms,
     image: "/bedroom.webp",
   },
   {
+    key: "tv-units",
     slug: "tv-units",
     title: translations.home.tvUnits,
     image: "/tv-unit.webp",
   },
 ] as const;
+
+const modernProducts = Object.values(products).filter(
+  (product) => product.style === "modern",
+);
+
+const populatedCategories = categories.map(
+  (category) => {
+    const categoryProducts = modernProducts.filter(
+      (product) =>
+        product.category === category.key,
+    );
+
+    return {
+      ...category,
+      image:
+        categoryProducts[0]?.images[0] ??
+        category.image,
+      productCount: categoryProducts.length,
+    };
+  },
+);
+
+const hubImage =
+  modernProducts[0]?.images[0] ??
+  "/living-room.webp";
 ---
 
 <BaseLayout
   title={copy.hubTitle}
   description={copy.hubDescription}
-  image="/living-room.webp"
-  robots="noindex, follow"
+  image={hubImage}
+  robots={
+    modernProducts.length > 0
+      ? "index, follow"
+      : "noindex, follow"
+  }
 >
   <section class="modern-hub">
     <header>
@@ -50,7 +84,7 @@ const categories = [
 
     <div class="modern-hub-grid">
       {
-        categories.map((category, index) => (
+        populatedCategories.map((category, index) => (
           <a
             href={localizedPath(
               `/collections/modern/${category.slug}`,
@@ -70,7 +104,14 @@ const categories = [
             </div>
 
             <div class="modern-card-copy">
-              <small>0 · {copy.modelsSoon}</small>
+              <small>
+                {category.productCount} ·{" "}
+                {category.productCount > 0
+                  ? category.productCount === 1
+                    ? copy.modelSingular
+                    : copy.modelLabel
+                  : copy.modelsSoon}
+              </small>
               <h2>{category.title}</h2>
               <strong>{copy.exploreCategory} →</strong>
             </div>

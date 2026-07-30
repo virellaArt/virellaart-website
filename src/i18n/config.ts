@@ -1783,6 +1783,7 @@ const productNameReplacements: Record<
   Array<[string, string]>
 > = {
   tr: [
+    ["Corner Sofa Set", "Köşe Koltuk Takımı"],
     ["Living Room", "Oturma Odası"],
     ["Dining Room", "Yemek Odası"],
     ["Dining", "Yemek Odası"],
@@ -1790,6 +1791,7 @@ const productNameReplacements: Record<
     ["TV Unit", "TV Ünitesi"],
   ],
   de: [
+    ["Corner Sofa Set", "Ecksofa-Set"],
     ["Living Room", "Wohnzimmer"],
     ["Dining Room", "Esszimmer"],
     ["Dining", "Esszimmer"],
@@ -1797,6 +1799,7 @@ const productNameReplacements: Record<
     ["TV Unit", "TV-Möbel"],
   ],
   fr: [
+    ["Corner Sofa Set", "Ensemble canapé d’angle"],
     ["Living Room", "Salon"],
     ["Dining Room", "Salle à manger"],
     ["Dining", "Salle à manger"],
@@ -1804,6 +1807,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Meuble TV"],
   ],
   it: [
+    ["Corner Sofa Set", "Set divano angolare"],
     ["Living Room", "Soggiorno"],
     ["Dining Room", "Sala da pranzo"],
     ["Dining", "Sala da pranzo"],
@@ -1811,6 +1815,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Mobile TV"],
   ],
   ru: [
+    ["Corner Sofa Set", "Комплект углового дивана"],
     ["Living Room", "Гостиная"],
     ["Dining Room", "Столовая"],
     ["Dining", "Столовая"],
@@ -1818,6 +1823,7 @@ const productNameReplacements: Record<
     ["TV Unit", "ТВ-модуль"],
   ],
   ar: [
+    ["Corner Sofa Set", "طقم أريكة زاوية"],
     ["Living Room", "غرفة معيشة"],
     ["Dining Room", "غرفة طعام"],
     ["Dining", "غرفة طعام"],
@@ -1825,6 +1831,7 @@ const productNameReplacements: Record<
     ["TV Unit", "وحدة تلفزيون"],
   ],
   bg: [
+    ["Corner Sofa Set", "Комплект ъглов диван"],
     ["Living Room", "Дневна"],
     ["Dining Room", "Трапезария"],
     ["Dining", "Трапезария"],
@@ -1832,6 +1839,7 @@ const productNameReplacements: Record<
     ["TV Unit", "ТВ модул"],
   ],
   ro: [
+    ["Corner Sofa Set", "Set canapea de colț"],
     ["Living Room", "Sufragerie"],
     ["Dining Room Set", "Set pentru sala de mese"],
     ["Dining Room", "Sală de mese"],
@@ -1840,6 +1848,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Comodă TV"],
   ],
   el: [
+    ["Corner Sofa Set", "Σετ γωνιακού καναπέ"],
     ["Living Room", "Σαλόνι"],
     ["Dining Room", "Τραπεζαρία"],
     ["Dining", "Τραπεζαρία"],
@@ -1847,6 +1856,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Έπιπλο τηλεόρασης"],
   ],
   es: [
+    ["Corner Sofa Set", "Conjunto de sofá esquinero"],
     ["Living Room", "Salón"],
     ["Dining Room", "Comedor"],
     ["Dining", "Comedor"],
@@ -1854,6 +1864,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Mueble TV"],
   ],
   sr: [
+    ["Corner Sofa Set", "Set ugaone garniture"],
     ["Living Room", "Dnevna soba"],
     ["Dining Room", "Trpezarija"],
     ["Dining", "Trpezarija"],
@@ -1861,6 +1872,7 @@ const productNameReplacements: Record<
     ["TV Unit", "TV komoda"],
   ],
   kk: [
+    ["Corner Sofa Set", "Бұрыштық диван жиынтығы"],
     ["Living Room", "Қонақ бөлме"],
     ["Dining Room", "Асхана"],
     ["Dining", "Асхана"],
@@ -1868,6 +1880,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Теледидар жиһазы"],
   ],
   uz: [
+    ["Corner Sofa Set", "Burchakli divan to‘plami"],
     ["Living Room", "Mehmonxona"],
     ["Dining Room", "Ovqatlanish xonasi"],
     ["Dining", "Ovqatlanish xonasi"],
@@ -1875,6 +1888,7 @@ const productNameReplacements: Record<
     ["TV Unit", "TV mebeli"],
   ],
   pt: [
+    ["Corner Sofa Set", "Conjunto de sofá de canto"],
     ["Living Room", "Sala de estar"],
     ["Dining Room", "Sala de jantar"],
     ["Dining", "Sala de jantar"],
@@ -1882,6 +1896,7 @@ const productNameReplacements: Record<
     ["TV Unit", "Móvel de TV"],
   ],
   pl: [
+    ["Corner Sofa Set", "Zestaw narożny"],
     ["Living Room", "Salon"],
     ["Dining Room", "Jadalnia"],
     ["Dining", "Jadalnia"],
@@ -1907,6 +1922,8 @@ export function translateProductName(
 const priceLabelTranslations: Record<Language, Record<string, string>> = {
   en: {},
   tr: {
+    "Corner Sofa (375 × 350 cm)": "Köşe Koltuk (375 × 350 cm)",
+    "Armchair": "Berjer",
     "Luxury 3+3+1+1 Living Room Set": "Lüks 3+3+1+1 Oturma Odası Takımı",
     "Luxury 4+3+1 Living Room Set": "Lüks 4+3+1 Oturma Odası Takımı",
     "Center Table": "Orta Sehpa",
@@ -1916,6 +1933,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Lüks TV Ünitesi",
   },
   de: {
+    "Corner Sofa (375 × 350 cm)": "Ecksofa (375 × 350 cm)",
+    "Armchair": "Sessel",
     "Luxury 3+3+1+1 Living Room Set": "Luxus-Wohnzimmerset 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Luxus-Wohnzimmerset 4+3+1",
     "Center Table": "Couchtisch",
@@ -1925,6 +1944,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Luxus-TV-Möbel",
   },
   fr: {
+    "Corner Sofa (375 × 350 cm)": "Canapé d’angle (375 × 350 cm)",
+    "Armchair": "Fauteuil",
     "Luxury 3+3+1+1 Living Room Set": "Ensemble salon de luxe 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Ensemble salon de luxe 4+3+1",
     "Center Table": "Table basse",
@@ -1934,6 +1955,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Meuble TV de luxe",
   },
   it: {
+    "Corner Sofa (375 × 350 cm)": "Divano angolare (375 × 350 cm)",
+    "Armchair": "Poltrona",
     "Luxury 3+3+1+1 Living Room Set": "Set soggiorno di lusso 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Set soggiorno di lusso 4+3+1",
     "Center Table": "Tavolino",
@@ -1943,6 +1966,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Mobile TV di lusso",
   },
   ru: {
+    "Corner Sofa (375 × 350 cm)": "Угловой диван (375 × 350 см)",
+    "Armchair": "Кресло",
     "Luxury 3+3+1+1 Living Room Set": "Комплект для гостиной 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Комплект для гостиной 4+3+1",
     "Center Table": "Журнальный стол",
@@ -1952,6 +1977,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Элитный ТВ-модуль",
   },
   ar: {
+    "Corner Sofa (375 × 350 cm)": "أريكة زاوية (375 × 350 سم)",
+    "Armchair": "كرسي بذراعين",
     "Luxury 3+3+1+1 Living Room Set": "طقم غرفة معيشة فاخر 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "طقم غرفة معيشة فاخر 4+3+1",
     "Center Table": "طاولة وسط",
@@ -1961,6 +1988,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "وحدة تلفزيون فاخرة",
   },
   bg: {
+    "Corner Sofa (375 × 350 cm)": "Ъглов диван (375 × 350 см)",
+    "Armchair": "Фотьойл",
     "Luxury 3+3+1+1 Living Room Set": "Луксозен комплект за дневна 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Луксозен комплект за дневна 4+3+1",
     "Center Table": "Холна маса",
@@ -1970,6 +1999,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Луксозен ТВ модул",
   },
   ro: {
+    "Corner Sofa (375 × 350 cm)": "Canapea de colț (375 × 350 cm)",
+    "Armchair": "Fotoliu",
     "Luxury 3+3+1+1 Living Room Set": "Set de lux pentru sufragerie 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Set de lux pentru sufragerie 4+3+1",
     "Center Table": "Măsuță de cafea",
@@ -1979,6 +2010,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Comodă TV de lux",
   },
   el: {
+    "Corner Sofa (375 × 350 cm)": "Γωνιακός καναπές (375 × 350 cm)",
+    "Armchair": "Πολυθρόνα",
     "Luxury 3+3+1+1 Living Room Set": "Πολυτελές σετ σαλονιού 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Πολυτελές σετ σαλονιού 4+3+1",
     "Center Table": "Τραπεζάκι σαλονιού",
@@ -1988,6 +2021,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Πολυτελές έπιπλο τηλεόρασης",
   },
   es: {
+    "Corner Sofa (375 × 350 cm)": "Sofá esquinero (375 × 350 cm)",
+    "Armchair": "Sillón",
     "Luxury 3+3+1+1 Living Room Set": "Conjunto de salón de lujo 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Conjunto de salón de lujo 4+3+1",
     "Center Table": "Mesa de centro",
@@ -1997,6 +2032,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Mueble TV de lujo",
   },
   sr: {
+    "Corner Sofa (375 × 350 cm)": "Ugaona garnitura (375 × 350 cm)",
+    "Armchair": "Fotelja",
     "Luxury 3+3+1+1 Living Room Set": "Luksuzni set za dnevnu sobu 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Luksuzni set za dnevnu sobu 4+3+1",
     "Center Table": "Klub sto",
@@ -2006,6 +2043,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Luksuzna TV komoda",
   },
   kk: {
+    "Corner Sofa (375 × 350 cm)": "Бұрыштық диван (375 × 350 см)",
+    "Armchair": "Кресло",
     "Luxury 3+3+1+1 Living Room Set": "3+3+1+1 сәнді қонақ бөлме жиынтығы",
     "Luxury 4+3+1 Living Room Set": "4+3+1 сәнді қонақ бөлме жиынтығы",
     "Center Table": "Орта үстел",
@@ -2015,6 +2054,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Сәнді теледидар жиһазы",
   },
   uz: {
+    "Corner Sofa (375 × 350 cm)": "Burchakli divan (375 × 350 cm)",
+    "Armchair": "Kreslo",
     "Luxury 3+3+1+1 Living Room Set": "3+3+1+1 hashamatli mehmonxona to‘plami",
     "Luxury 4+3+1 Living Room Set": "4+3+1 hashamatli mehmonxona to‘plami",
     "Center Table": "Markaziy stol",
@@ -2024,6 +2065,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Hashamatli TV mebeli",
   },
   pt: {
+    "Corner Sofa (375 × 350 cm)": "Sofá de canto (375 × 350 cm)",
+    "Armchair": "Poltrona",
     "Luxury 3+3+1+1 Living Room Set": "Conjunto de sala de estar de luxo 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Conjunto de sala de estar de luxo 4+3+1",
     "Center Table": "Mesa de centro",
@@ -2033,6 +2076,8 @@ const priceLabelTranslations: Record<Language, Record<string, string>> = {
     "Luxury TV Unit": "Móvel de TV de luxo",
   },
   pl: {
+    "Corner Sofa (375 × 350 cm)": "Narożnik (375 × 350 cm)",
+    "Armchair": "Fotel",
     "Luxury 3+3+1+1 Living Room Set": "Luksusowy zestaw do salonu 3+3+1+1",
     "Luxury 4+3+1 Living Room Set": "Luksusowy zestaw do salonu 4+3+1",
     "Center Table": "Stolik kawowy",

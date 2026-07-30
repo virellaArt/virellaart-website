@@ -2033,4 +2033,52 @@ sultanGreenDining: {
     ],
   },
 
+  auraCornerSofaSet: {
+    name: "Aura Corner Sofa Set",
+    slug: "aura-corner-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Contemporary Modular Corner Sofa Collection",
+    description:
+      "The Aura Corner Sofa Set brings generous modular comfort to contemporary interiors with a 375 × 350 cm corner composition, softly sculpted upholstery and a calm neutral palette. Complete the setting with the coordinated statement armchair and center table. Contact VIRELLAART on WhatsApp for upholstery options, production details and worldwide delivery planning.",
+    images: [
+      "/aura-corner-01.webp",
+      "/aura-corner-02.webp",
+      "/aura-corner-03.webp",
+      "/aura-corner-04.webp",
+      "/aura-corner-05.webp",
+      "/aura-corner-06.webp",
+      "/aura-corner-07.webp",
+      "/aura-corner-08.webp",
+      "/aura-corner-09.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Aura modern white modular corner sofa with sculptural armchair and marble-look center table in a bright contemporary living room",
+        "Wide view of the Aura corner sofa set with rounded modular seating, patterned swivel armchair and square center table",
+        "Aura corner sofa composition showing its soft curved backrests, deep seats and coordinated contemporary living room pieces",
+        "Front perspective of the Aura modular corner sofa with neutral textured upholstery and layered scatter cushions",
+        "Aura modern living room set featuring a large white corner sofa, statement armchair and marble-look center table",
+        "Side perspective of the Aura corner sofa highlighting its generous proportions and softly rounded modular form",
+        "Detailed view of the Aura sofa upholstery, curved arm profile and coordinated neutral cushions",
+        "Aura swivel armchair with graphic patterned upholstery beside the modular corner sofa and center table",
+        "Complete Aura Corner Sofa Set arranged in a refined contemporary interior with warm architectural lighting",
+      ],
+    },
+    prices: [
+      {
+        label: "Corner Sofa (375 × 350 cm)",
+        price: "$2,700",
+        featured: true,
+      },
+      {
+        label: "Armchair",
+        price: "$450",
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };

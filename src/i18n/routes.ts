@@ -6,6 +6,7 @@ const productPageSources = import.meta.glob(
     "../pages/dining-rooms/*.astro",
     "../pages/bedrooms/*.astro",
     "../pages/tv-units/*.astro",
+    "../pages/collections/modern/*/*.astro",
   ],
   {
     eager: true,
@@ -43,7 +44,7 @@ function createProductRoutes(): ProductRouteMap {
       filePath.replaceAll("\\", "/");
 
     const routeMatch = normalizedPath.match(
-      /\/pages\/(living-rooms|dining-rooms|bedrooms|tv-units)\/([^/]+)\.astro$/,
+      /\/pages\/((?:living-rooms|dining-rooms|bedrooms|tv-units|collections\/modern\/(?:sofa-sets|dining-rooms|bedrooms|tv-units)))\/([^/]+)\.astro$/,
     );
 
     if (!routeMatch) {
@@ -78,6 +79,31 @@ function createProductRoutes(): ProductRouteMap {
 export const productRoutes =
   createProductRoutes();
 
+const modernCategoryRoutes = [
+  "collections/modern/sofa-sets",
+  "collections/modern/dining-rooms",
+  "collections/modern/bedrooms",
+  "collections/modern/tv-units",
+] as const;
+
+const indexableModernCategoryRoutes =
+  modernCategoryRoutes.filter((categoryRoute) =>
+    Object.keys(productRoutes).some((productRoute) =>
+      productRoute.startsWith(`${categoryRoute}/`),
+    ),
+  );
+
+const noindexModernCategoryRoutes =
+  modernCategoryRoutes.filter(
+    (categoryRoute) =>
+      !indexableModernCategoryRoutes.includes(
+        categoryRoute,
+      ),
+  );
+
+const hasModernProducts =
+  indexableModernCategoryRoutes.length > 0;
+
 export const staticRoutes = [
   "",
   "living-rooms",
@@ -88,6 +114,10 @@ export const staticRoutes = [
   "about",
   "manufacturing",
   "contact",
+  ...(hasModernProducts
+    ? ["collections/modern"]
+    : []),
+  ...indexableModernCategoryRoutes,
   /* VIRELLAART LOCALIZED POLICY ROUTES */
   "policies/shipping-policy",
   "policies/return-refund-policy",
@@ -96,11 +126,10 @@ export const staticRoutes = [
 ] as const;
 
 export const noindexStaticRoutes = [
-  "collections/modern",
-  "collections/modern/sofa-sets",
-  "collections/modern/dining-rooms",
-  "collections/modern/bedrooms",
-  "collections/modern/tv-units",
+  ...(!hasModernProducts
+    ? ["collections/modern"]
+    : []),
+  ...noindexModernCategoryRoutes,
 ] as const;
 
 export const indexableRoutes = Array.from(

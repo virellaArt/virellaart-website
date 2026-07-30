@@ -8,6 +8,7 @@ export type CollectionMenuCopy = {
   hubDescription: string;
   hubEyebrow: string;
   hubIntro: string;
+  modelSingular: string;
   modelLabel: string;
   modelsSoon: string;
   exploreCategory: string;
@@ -30,17 +31,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Modern Furniture Collections",
     hubDescription:
-      "Explore the VIRELLAART modern furniture structure for sofa sets, dining rooms, bedrooms and TV units.",
+      "Explore VIRELLAART modern sofa sets, dining rooms, bedrooms and TV units, crafted in Türkiye for refined contemporary interiors.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "The Modern collection structure is ready. New models will be published here after their product details, photography and prices are confirmed.",
+      "Discover sculptural forms, refined comfort and contemporary craftsmanship. Every published model includes verified photography, product details and pricing.",
+    modelSingular: "model",
     modelLabel: "models",
     modelsSoon: "Models coming soon",
     exploreCategory: "Explore category",
     categoryEyebrow: "VIRELLAART Modern Collection",
     categoryTitle: "Modern {category}",
     categoryDescription:
-      "The VIRELLAART Modern {category} category is ready for upcoming models.",
+      "Explore VIRELLAART Modern {category}, presented with verified photography, product details and pricing.",
     emptyTitle: "Modern models are being prepared",
     emptyText:
       "No products are published in this category yet. Every model will be added with verified photographs, configuration details and pricing.",
@@ -53,17 +55,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Modern Mobilya Koleksiyonları",
     hubDescription:
-      "Koltuk takımları, yemek odaları, yatak odaları ve TV üniteleri için hazırlanan VIRELLAART Modern koleksiyon yapısını inceleyin.",
+      "Türkiye’de seçkin çağdaş mekanlar için üretilen VIRELLAART modern koltuk takımlarını, yemek odalarını, yatak odalarını ve TV ünitelerini keşfedin.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Modern koleksiyon altyapısı hazırdır. Yeni modeller; ürün detayları, fotoğrafları ve fiyatları doğrulandıktan sonra burada yayınlanacaktır.",
+      "Heykelsi formları, rafine konforu ve çağdaş işçiliği keşfedin. Yayınlanan her model doğrulanmış fotoğraflar, ürün detayları ve fiyat bilgileriyle sunulur.",
+    modelSingular: "model",
     modelLabel: "model",
     modelsSoon: "Modeller yakında",
     exploreCategory: "Kategoriyi incele",
     categoryEyebrow: "VIRELLAART Modern Koleksiyon",
     categoryTitle: "Modern {category}",
     categoryDescription:
-      "VIRELLAART Modern {category} kategorisi yeni modeller için hazırdır.",
+      "Doğrulanmış fotoğraflar, ürün detayları ve fiyat bilgileriyle sunulan VIRELLAART Modern {category} koleksiyonunu keşfedin.",
     emptyTitle: "Modern modeller hazırlanıyor",
     emptyText:
       "Bu kategoride henüz yayınlanmış ürün bulunmuyor. Her model doğrulanmış fotoğraflar, takım içeriği ve fiyat bilgisiyle eklenecektir.",
@@ -76,17 +79,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Moderne Möbelkollektionen",
     hubDescription:
-      "Entdecken Sie die moderne VIRELLAART Struktur für Sofagarnituren, Esszimmer, Schlafzimmer und TV-Möbel.",
+      "Entdecken Sie moderne Sofagarnituren, Esszimmer, Schlafzimmer und TV-Möbel von VIRELLAART, gefertigt in Türkiye für anspruchsvolle Interieurs.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Die Struktur der Modern-Kollektion ist vorbereitet. Neue Modelle werden nach Bestätigung von Produktdetails, Fotos und Preisen veröffentlicht.",
+      "Entdecken Sie skulpturale Formen, raffinierten Komfort und zeitgemäße Handwerkskunst. Jedes veröffentlichte Modell enthält geprüfte Fotos, Produktdetails und Preise.",
+    modelSingular: "Modell",
     modelLabel: "Modelle",
     modelsSoon: "Modelle folgen in Kürze",
     exploreCategory: "Kategorie ansehen",
     categoryEyebrow: "VIRELLAART Modern-Kollektion",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Die VIRELLAART Kategorie Modern · {category} ist für kommende Modelle vorbereitet.",
+      "Entdecken Sie VIRELLAART Modern · {category} mit geprüften Fotos, Produktdetails und Preisen.",
     emptyTitle: "Moderne Modelle werden vorbereitet",
     emptyText:
       "In dieser Kategorie sind noch keine Produkte veröffentlicht. Jedes Modell wird mit geprüften Fotos, Konfiguration und Preis ergänzt.",
@@ -99,17 +103,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Collections de mobilier moderne",
     hubDescription:
-      "Découvrez la structure VIRELLAART Modern pour les ensembles de canapés, salles à manger, chambres et meubles TV.",
+      "Découvrez les canapés, salles à manger, chambres et meubles TV modernes VIRELLAART, fabriqués en Türkiye pour des intérieurs raffinés.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "La structure de la collection Modern est prête. Les nouveaux modèles seront publiés après validation des détails, photos et prix.",
+      "Découvrez des formes sculpturales, un confort raffiné et un savoir-faire contemporain. Chaque modèle publié présente des photos, détails et prix vérifiés.",
+    modelSingular: "modèle",
     modelLabel: "modèles",
     modelsSoon: "Modèles prochainement",
     exploreCategory: "Voir la catégorie",
     categoryEyebrow: "Collection VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "La catégorie VIRELLAART Modern · {category} est prête à accueillir les prochains modèles.",
+      "Découvrez VIRELLAART Modern · {category}, présenté avec photos, détails produits et prix vérifiés.",
     emptyTitle: "Les modèles modernes sont en préparation",
     emptyText:
       "Aucun produit n’est encore publié dans cette catégorie. Chaque modèle sera ajouté avec photos, composition et prix vérifiés.",
@@ -122,17 +127,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Collezioni di mobili moderni",
     hubDescription:
-      "Scopri la struttura VIRELLAART Modern per set di divani, sale da pranzo, camere da letto e mobili TV.",
+      "Scopri divani, sale da pranzo, camere da letto e mobili TV moderni VIRELLAART, realizzati in Türkiye per interni raffinati.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "La struttura della collezione Modern è pronta. I nuovi modelli saranno pubblicati dopo la verifica di dettagli, fotografie e prezzi.",
+      "Scopri forme scultoree, comfort raffinato e artigianalità contemporanea. Ogni modello pubblicato include fotografie, dettagli e prezzi verificati.",
+    modelSingular: "modello",
     modelLabel: "modelli",
     modelsSoon: "Modelli in arrivo",
     exploreCategory: "Vedi la categoria",
     categoryEyebrow: "Collezione VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "La categoria VIRELLAART Modern · {category} è pronta per i prossimi modelli.",
+      "Scopri VIRELLAART Modern · {category}, presentata con fotografie, dettagli e prezzi verificati.",
     emptyTitle: "I modelli moderni sono in preparazione",
     emptyText:
       "Non sono ancora presenti prodotti pubblicati. Ogni modello sarà aggiunto con fotografie, configurazione e prezzo verificati.",
@@ -145,17 +151,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Современные коллекции мебели",
     hubDescription:
-      "Ознакомьтесь со структурой VIRELLAART Modern для комплектов диванов, столовых, спален и ТВ-модулей.",
+      "Откройте для себя современные диваны, столовые, спальни и ТВ-модули VIRELLAART, изготовленные в Türkiye для изысканных интерьеров.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Структура коллекции Modern готова. Новые модели будут опубликованы после подтверждения характеристик, фотографий и цен.",
+      "Откройте для себя выразительные формы, изысканный комфорт и современное мастерство. Каждая модель представлена с проверенными фото, характеристиками и ценами.",
+    modelSingular: "модель",
     modelLabel: "моделей",
     modelsSoon: "Модели скоро появятся",
     exploreCategory: "Открыть категорию",
     categoryEyebrow: "Коллекция VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Категория VIRELLAART Modern · {category} готова для новых моделей.",
+      "Откройте VIRELLAART Modern · {category} с проверенными фотографиями, характеристиками и ценами.",
     emptyTitle: "Современные модели готовятся",
     emptyText:
       "В этой категории пока нет опубликованных товаров. Каждая модель будет добавлена с проверенными фото, комплектацией и ценой.",
@@ -168,17 +175,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "مجموعات الأثاث العصري",
     hubDescription:
-      "استكشف بنية VIRELLAART Modern لأطقم الأرائك وغرف الطعام وغرف النوم ووحدات التلفزيون.",
+      "استكشف أطقم الأرائك وغرف الطعام وغرف النوم ووحدات التلفزيون العصرية من VIRELLAART، المصنوعة في Türkiye للديكورات الراقية.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "بنية مجموعة Modern جاهزة. ستُنشر الموديلات الجديدة بعد اعتماد التفاصيل والصور والأسعار.",
+      "اكتشف الأشكال النحتية والراحة الراقية والحرفية المعاصرة. يُعرض كل موديل منشور بصور وتفاصيل وأسعار معتمدة.",
+    modelSingular: "موديل",
     modelLabel: "موديلًا",
     modelsSoon: "الموديلات قريبًا",
     exploreCategory: "استكشف الفئة",
     categoryEyebrow: "مجموعة VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "فئة VIRELLAART Modern · {category} جاهزة للموديلات القادمة.",
+      "استكشف VIRELLAART Modern · {category} مع صور وتفاصيل وأسعار معتمدة.",
     emptyTitle: "يجري تجهيز الموديلات العصرية",
     emptyText:
       "لا توجد منتجات منشورة في هذه الفئة بعد. سيُضاف كل موديل مع صور وتكوين وسعر تم التحقق منها.",
@@ -191,17 +199,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Модерни мебелни колекции",
     hubDescription:
-      "Разгледайте структурата VIRELLAART Modern за холни гарнитури, трапезарии, спални и ТВ модули.",
+      "Разгледайте модерни холни гарнитури, трапезарии, спални и ТВ модули VIRELLAART, произведени в Türkiye за изискани интериори.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Структурата на колекция Modern е готова. Новите модели ще бъдат публикувани след потвърждение на детайлите, снимките и цените.",
+      "Открийте скулптурни форми, изискан комфорт и съвременна изработка. Всеки публикуван модел включва проверени снимки, детайли и цени.",
+    modelSingular: "модел",
     modelLabel: "модела",
     modelsSoon: "Модели очаквайте скоро",
     exploreCategory: "Разгледайте категорията",
     categoryEyebrow: "Колекция VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Категорията VIRELLAART Modern · {category} е готова за предстоящите модели.",
+      "Разгледайте VIRELLAART Modern · {category} с проверени снимки, детайли и цени.",
     emptyTitle: "Подготвяме модерните модели",
     emptyText:
       "Все още няма публикувани продукти. Всеки модел ще бъде добавен с проверени снимки, конфигурация и цена.",
@@ -214,17 +223,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Colecții de mobilier modern",
     hubDescription:
-      "Descoperiți structura VIRELLAART Modern pentru seturi de canapele, săli de mese, dormitoare și comode TV.",
+      "Descoperiți canapele, săli de mese, dormitoare și comode TV moderne VIRELLAART, realizate în Türkiye pentru interioare rafinate.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Structura colecției Modern este pregătită. Modelele noi vor fi publicate după confirmarea detaliilor, fotografiilor și prețurilor.",
+      "Descoperiți forme sculpturale, confort rafinat și măiestrie contemporană. Fiecare model publicat include fotografii, detalii și prețuri verificate.",
+    modelSingular: "model",
     modelLabel: "modele",
     modelsSoon: "Modele în curând",
     exploreCategory: "Vezi categoria",
     categoryEyebrow: "Colecția VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Categoria VIRELLAART Modern · {category} este pregătită pentru modelele viitoare.",
+      "Descoperiți VIRELLAART Modern · {category}, prezentată cu fotografii, detalii și prețuri verificate.",
     emptyTitle: "Modelele moderne sunt în pregătire",
     emptyText:
       "Nu există încă produse publicate. Fiecare model va fi adăugat cu fotografii, configurație și preț verificate.",
@@ -237,17 +247,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Σύγχρονες συλλογές επίπλων",
     hubDescription:
-      "Εξερευνήστε τη δομή VIRELLAART Modern για σετ καναπέδων, τραπεζαρίες, υπνοδωμάτια και έπιπλα TV.",
+      "Ανακαλύψτε σύγχρονα σετ καναπέδων, τραπεζαρίες, υπνοδωμάτια και έπιπλα TV VIRELLAART, κατασκευασμένα στην Türkiye για εκλεπτυσμένους χώρους.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Η δομή της συλλογής Modern είναι έτοιμη. Τα νέα μοντέλα θα δημοσιευτούν μετά την επιβεβαίωση στοιχείων, φωτογραφιών και τιμών.",
+      "Ανακαλύψτε γλυπτικές φόρμες, εκλεπτυσμένη άνεση και σύγχρονη δεξιοτεχνία. Κάθε δημοσιευμένο μοντέλο περιλαμβάνει επιβεβαιωμένες φωτογραφίες, λεπτομέρειες και τιμές.",
+    modelSingular: "μοντέλο",
     modelLabel: "μοντέλα",
     modelsSoon: "Μοντέλα σύντομα",
     exploreCategory: "Δείτε την κατηγορία",
     categoryEyebrow: "Συλλογή VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Η κατηγορία VIRELLAART Modern · {category} είναι έτοιμη για τα επόμενα μοντέλα.",
+      "Ανακαλύψτε VIRELLAART Modern · {category} με επιβεβαιωμένες φωτογραφίες, λεπτομέρειες και τιμές.",
     emptyTitle: "Τα σύγχρονα μοντέλα ετοιμάζονται",
     emptyText:
       "Δεν υπάρχουν ακόμη δημοσιευμένα προϊόντα. Κάθε μοντέλο θα προστεθεί με επιβεβαιωμένες φωτογραφίες, σύνθεση και τιμή.",
@@ -260,17 +271,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Colecciones de muebles modernos",
     hubDescription:
-      "Explore la estructura VIRELLAART Modern para conjuntos de sofás, comedores, dormitorios y muebles TV.",
+      "Explore sofás, comedores, dormitorios y muebles TV modernos VIRELLAART, fabricados en Türkiye para interiores refinados.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "La estructura de la colección Modern está preparada. Los nuevos modelos se publicarán tras confirmar detalles, fotografías y precios.",
+      "Descubra formas escultóricas, confort refinado y artesanía contemporánea. Cada modelo publicado incluye fotografías, detalles y precios verificados.",
+    modelSingular: "modelo",
     modelLabel: "modelos",
     modelsSoon: "Modelos próximamente",
     exploreCategory: "Ver categoría",
     categoryEyebrow: "Colección VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "La categoría VIRELLAART Modern · {category} está preparada para los próximos modelos.",
+      "Explore VIRELLAART Modern · {category}, presentada con fotografías, detalles y precios verificados.",
     emptyTitle: "Los modelos modernos están en preparación",
     emptyText:
       "Todavía no hay productos publicados. Cada modelo se añadirá con fotografías, configuración y precio verificados.",
@@ -283,17 +295,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Moderne kolekcije nameštaja",
     hubDescription:
-      "Istražite VIRELLAART Modern strukturu za garniture, trpezarije, spavaće sobe i TV komode.",
+      "Istražite moderne VIRELLAART garniture, trpezarije, spavaće sobe i TV komode, izrađene u Türkiye za prefinjene enterijere.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Struktura kolekcije Modern je spremna. Novi modeli biće objavljeni nakon potvrde detalja, fotografija i cena.",
+      "Otkrijte skulpturalne forme, prefinjenu udobnost i savremenu izradu. Svaki objavljeni model sadrži proverene fotografije, detalje i cene.",
+    modelSingular: "model",
     modelLabel: "modela",
     modelsSoon: "Modeli uskoro",
     exploreCategory: "Pogledajte kategoriju",
     categoryEyebrow: "VIRELLAART Modern kolekcija",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "VIRELLAART Modern · {category} kategorija spremna je za predstojeće modele.",
+      "Istražite VIRELLAART Modern · {category} sa proverenim fotografijama, detaljima i cenama.",
     emptyTitle: "Moderni modeli su u pripremi",
     emptyText:
       "U ovoj kategoriji još nema objavljenih proizvoda. Svaki model biće dodat sa proverenim fotografijama, konfiguracijom i cenom.",
@@ -306,17 +319,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Заманауи жиһаз топтамалары",
     hubDescription:
-      "Диван жиынтықтары, асханалар, жатын бөлмелер және TV жиһазы үшін VIRELLAART Modern құрылымын қараңыз.",
+      "Талғампаз интерьерлерге арналған Türkiye-де жасалған VIRELLAART заманауи дивандарын, асханаларын, жатын бөлмелерін және TV жиһазын қараңыз.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Modern топтамасының құрылымы дайын. Жаңа модельдер сипаттамалары, фотолары және бағалары расталғаннан кейін жарияланады.",
+      "Мүсіндік пішіндерді, талғампаз жайлылықты және заманауи шеберлікті ашыңыз. Әр жарияланған модель тексерілген фотолармен, сипаттамалармен және бағалармен ұсынылады.",
+    modelSingular: "модель",
     modelLabel: "модель",
     modelsSoon: "Модельдер жақында",
     exploreCategory: "Санатты қарау",
     categoryEyebrow: "VIRELLAART Modern топтамасы",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "VIRELLAART Modern · {category} санаты жаңа модельдерге дайын.",
+      "Тексерілген фотолармен, сипаттамалармен және бағалармен ұсынылған VIRELLAART Modern · {category} топтамасын қараңыз.",
     emptyTitle: "Заманауи модельдер дайындалуда",
     emptyText:
       "Бұл санатта әзірге жарияланған өнім жоқ. Әр модель тексерілген фото, жиынтық және бағамен қосылады.",
@@ -329,17 +343,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Zamonaviy mebel kolleksiyalari",
     hubDescription:
-      "Divan to‘plamlari, ovqatlanish xonalari, yotoqxonalar va TV mebellari uchun VIRELLAART Modern tuzilmasini ko‘ring.",
+      "Nafis interyerlar uchun Türkiye-da ishlab chiqarilgan VIRELLAART zamonaviy divanlari, ovqatlanish xonalari, yotoqxonalar va TV mebellarini kashf eting.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Modern kolleksiyasi tuzilmasi tayyor. Yangi modellar tafsilotlari, rasmlari va narxlari tasdiqlangach e’lon qilinadi.",
+      "Haykaltaroshlik shakllari, nafis qulaylik va zamonaviy mahoratni kashf eting. Har bir e’lon qilingan model tekshirilgan rasmlar, tafsilotlar va narxlar bilan taqdim etiladi.",
+    modelSingular: "model",
     modelLabel: "model",
     modelsSoon: "Modellar tez orada",
     exploreCategory: "Kategoriyani ko‘rish",
     categoryEyebrow: "VIRELLAART Modern kolleksiyasi",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "VIRELLAART Modern · {category} kategoriyasi yangi modellar uchun tayyor.",
+      "Tekshirilgan rasmlar, mahsulot tafsilotlari va narxlar bilan taqdim etilgan VIRELLAART Modern · {category} kolleksiyasini ko‘ring.",
     emptyTitle: "Zamonaviy modellar tayyorlanmoqda",
     emptyText:
       "Bu kategoriyada hozircha mahsulot e’lon qilinmagan. Har bir model tekshirilgan rasm, tarkib va narx bilan qo‘shiladi.",
@@ -352,17 +367,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Coleções de mobiliário moderno",
     hubDescription:
-      "Explore a estrutura VIRELLAART Modern para conjuntos de sofás, salas de jantar, quartos e móveis TV.",
+      "Explore sofás, salas de jantar, quartos e móveis TV modernos VIRELLAART, fabricados na Türkiye para interiores refinados.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "A estrutura da coleção Modern está pronta. Os novos modelos serão publicados após confirmação dos detalhes, fotografias e preços.",
+      "Descubra formas esculturais, conforto refinado e artesanato contemporâneo. Cada modelo publicado inclui fotografias, detalhes e preços verificados.",
+    modelSingular: "modelo",
     modelLabel: "modelos",
     modelsSoon: "Modelos em breve",
     exploreCategory: "Ver categoria",
     categoryEyebrow: "Coleção VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "A categoria VIRELLAART Modern · {category} está pronta para os próximos modelos.",
+      "Explore VIRELLAART Modern · {category}, apresentada com fotografias, detalhes e preços verificados.",
     emptyTitle: "Os modelos modernos estão em preparação",
     emptyText:
       "Ainda não existem produtos publicados. Cada modelo será adicionado com fotografias, configuração e preço verificados.",
@@ -375,17 +391,18 @@ export const collectionMenuCopy: Record<
     modern: "Modern",
     hubTitle: "Nowoczesne kolekcje mebli",
     hubDescription:
-      "Poznaj strukturę VIRELLAART Modern dla zestawów wypoczynkowych, jadalni, sypialni i szafek RTV.",
+      "Poznaj nowoczesne zestawy wypoczynkowe, jadalnie, sypialnie i szafki RTV VIRELLAART, produkowane w Türkiye do wyrafinowanych wnętrz.",
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
-      "Struktura kolekcji Modern jest gotowa. Nowe modele zostaną opublikowane po potwierdzeniu szczegółów, zdjęć i cen.",
+      "Odkryj rzeźbiarskie formy, wyrafinowany komfort i współczesne rzemiosło. Każdy opublikowany model zawiera zweryfikowane zdjęcia, szczegóły i ceny.",
+    modelSingular: "model",
     modelLabel: "modeli",
     modelsSoon: "Modele wkrótce",
     exploreCategory: "Zobacz kategorię",
     categoryEyebrow: "Kolekcja VIRELLAART Modern",
     categoryTitle: "Modern · {category}",
     categoryDescription:
-      "Kategoria VIRELLAART Modern · {category} jest gotowa na nadchodzące modele.",
+      "Poznaj VIRELLAART Modern · {category}, prezentowaną ze zweryfikowanymi zdjęciami, szczegółami i cenami.",
     emptyTitle: "Nowoczesne modele są przygotowywane",
     emptyText:
       "W tej kategorii nie ma jeszcze opublikowanych produktów. Każdy model zostanie dodany ze zweryfikowanymi zdjęciami, konfiguracją i ceną.",
