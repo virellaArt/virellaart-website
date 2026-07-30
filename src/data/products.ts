@@ -2323,4 +2323,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  beyrutSofaSet: {
+    name: "BEYRUT Sofa Set",
+    slug: "beyrut-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Bold Geometry for a Distinctive Modern Interior",
+    description:
+      "BEYRUT Sofa Set brings a confident architectural presence to contemporary interiors through its dark-toned composition, broad geometric arms and precisely segmented back design. The complete 3+3+1+1 arrangement creates a balanced luxury living room with contrasting accent cushions that sharpen its modern identity. An expressive choice for customers searching for a dark grey sofa set, contemporary living room furniture and a modern four-piece seating collection from VIRELLAART.",
+    images: [
+      "/beyrut-sofa-set-01.webp",
+      "/beyrut-sofa-set-02.webp",
+      "/beyrut-sofa-set-03.webp",
+      "/beyrut-sofa-set-04.webp",
+      "/beyrut-sofa-set-05.webp",
+      "/beyrut-sofa-set-06.webp",
+      "/beyrut-sofa-set-07.webp",
+      "/beyrut-sofa-set-08.webp",
+      "/beyrut-sofa-set-09.webp",
+      "/beyrut-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "BEYRUT dark grey modern sofa set in a spacious contemporary living room",
+        "BEYRUT 3+3+1+1 luxury sofa set with structured seating and yellow accent cushions",
+        "BEYRUT contemporary three-seat sofa and armchair collection viewed from an elevated angle",
+        "BEYRUT modern dark sofa with segmented back design and contrasting decorative cushions",
+        "BEYRUT single armchair with broad geometric arms in a luxury living room interior",
+        "BEYRUT contemporary armchair and three-seat sofa with bold architectural proportions",
+        "BEYRUT dark grey accent chair with structured back and modern box-shaped arms",
+        "BEYRUT sofa rear profile showing the clean horizontal back structure",
+        "BEYRUT modern sofa cushion detail with dark upholstery and yellow accent pillow",
+        "BEYRUT sofa arm detail showing the strong geometric side profile",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,300",
+        featured: true,
+      },
+    ],
+  },
 };
