@@ -2491,4 +2491,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  eftelyaSofaSet: {
+    name: "EFTELYA Sofa Set",
+    slug: "eftelya-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Sculpted Wings with Tailored Channel Detailing",
+    description:
+      "EFTELYA Sofa Set brings a distinctive sculptural character to contemporary interiors through its winged side profile, channeled back detailing and generously layered cushions. The complete 3+3+1+1 arrangement creates a sophisticated grey living room composition with strong visual depth and elegant proportions. A refined choice for customers searching for a modern grey sofa set, luxury four-piece living room furniture and designer contemporary seating from VIRELLAART.",
+    images: [
+      "/eftelya-sofa-set-01.webp",
+      "/eftelya-sofa-set-02.webp",
+      "/eftelya-sofa-set-03.webp",
+      "/eftelya-sofa-set-04.webp",
+      "/eftelya-sofa-set-05.webp",
+      "/eftelya-sofa-set-06.webp",
+      "/eftelya-sofa-set-07.webp",
+      "/eftelya-sofa-set-08.webp",
+      "/eftelya-sofa-set-09.webp",
+      "/eftelya-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "EFTELYA modern grey sofa set in a sophisticated contemporary living room",
+        "EFTELYA 3+3+1+1 sofa set with sculpted armchair and channel-detailed seating",
+        "EFTELYA contemporary sofa and armchair collection with refined grey upholstery",
+        "EFTELYA luxury modern living room set with coordinated sofas and center table",
+        "EFTELYA sofa close-up showing the channeled back detail and layered arm design",
+        "EFTELYA three-seat modern sofa with sculpted side profile and tailored cushions",
+        "EFTELYA luxury grey sofa set with distinctive winged arms and elevated base",
+        "EFTELYA sofa side detail showing the upholstered arm structure and dark tapered leg",
+        "EFTELYA contemporary 3+3+1+1 living room furniture in an elegant neutral interior",
+        "EFTELYA sofa rear and side detail highlighting its sculptural modern silhouette",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,100",
+        featured: true,
+      },
+    ],
+  },
 };
