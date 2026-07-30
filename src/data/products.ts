@@ -4,6 +4,7 @@ export const products = {
     name: "Valencia Living Room",
 
     category: "living-rooms",
+    style: "luxury-classic",
 
     images: [
       "/valencia-01.webp",
@@ -53,6 +54,7 @@ export const products = {
     name: "Vanessa Living Room",
 
     category: "living-rooms",
+    style: "luxury-classic",
 
     images: [
       "/vanessa-01.webp",
@@ -105,6 +107,7 @@ export const products = {
   name: "Aspendos Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/aspendos-01.webp",
@@ -150,6 +153,7 @@ export const products = {
   name: "Alex Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/alex-01.webp",
@@ -193,6 +197,7 @@ export const products = {
   name: "Bahar Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/bahar-01.webp",
@@ -233,6 +238,7 @@ export const products = {
   name: "Deluxe Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/delux-01.webp",
@@ -277,6 +283,7 @@ export const products = {
   name: "Lugano Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/lugano-01.webp",
@@ -318,6 +325,7 @@ queen: {
   name: "Queen Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/queen-01.webp",
@@ -364,6 +372,7 @@ queen: {
   name: "Sena Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/sena-01.webp",
@@ -402,6 +411,7 @@ queen: {
   name: "Shawl Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/shawl-01.webp",
@@ -447,6 +457,7 @@ queen: {
   name: "Vizyon Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/vizyon01.webp",
@@ -487,6 +498,7 @@ valenciaBedroom: {
   name: "Valencia Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
 images: [
   "/valenciabed-01.webp",
@@ -527,6 +539,7 @@ aspendosBedroom: {
   name: "Aspendos Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
  images: [
   "/aspendosbedroom-01.webp",
@@ -565,6 +578,7 @@ deluxBedroom: {
   name: "Deluxe Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
   "/deluxbed-01.webp",
@@ -602,6 +616,7 @@ aspendosDining: {
   name: "Aspendos Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
  images: [
   "/aspendosdining-01.webp",
@@ -640,6 +655,7 @@ deluxDining: {
   name: "Deluxe Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
 images: [
   "/deluxdiningroom-01.webp",
@@ -676,6 +692,7 @@ moonDining: {
   name: "Moon Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
  images: [
   "/moondining-01.webp",
@@ -710,6 +727,7 @@ queenDining: {
   name: "Queen Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
  images: [
   "/queendining-01.webp",
@@ -744,6 +762,7 @@ valenciaDining: {
   name: "Valencia Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
   "/valenciadining-01.webp",
@@ -779,6 +798,7 @@ aspendosTV: {
   name: "Aspendos TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
 images: [
   "/aspendostv-01.webp",
@@ -810,6 +830,7 @@ deluxTV: {
   name: "Deluxe TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
 images: [
   "/deluxtv-01.webp",
@@ -841,6 +862,7 @@ moontv: {
   name: "Moon TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
   images: [
   "/moontv-01.webp",
@@ -871,6 +893,7 @@ valenciaTV: {
   name: "Valencia TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
   images: [
     "/valenciatv-01.webp",
@@ -898,6 +921,7 @@ vanessaDining: {
   name: "Vanessa Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/vanessadining-01.webp",
@@ -931,6 +955,7 @@ valdera: {
   name: "Valdera Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/valdera-01.webp",
@@ -973,6 +998,7 @@ shawlDining: {
   name: "Shawl Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/diningshawl-01.webp",
@@ -1003,6 +1029,7 @@ valderaDining: {
   name: "Valdera Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/valderadining-01.webp",
@@ -1036,6 +1063,7 @@ versaceBedroom: {
   name: "Verona Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/versacebedroom-01.webp",
@@ -1069,6 +1097,7 @@ zumrut: {
   name: "Zumrut Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/zumrut-01.webp",
@@ -1109,6 +1138,7 @@ zumrutDining: {
   name: "Zümrüt Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/diningzumrut-01.webp",
@@ -1142,6 +1172,7 @@ milano: {
   name: "Milano Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/milano-01.webp",
@@ -1183,6 +1214,7 @@ zumrutTv: {
   name: "Zümrüt TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
   images: [
     "/zumruttv-01.webp",
@@ -1208,6 +1240,7 @@ milanoDining: {
   name: "Milano Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/diningmilano-01.webp",
@@ -1237,6 +1270,7 @@ milanoBedroom: {
   name: "Milano Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/bedroommilano-01.webp",
@@ -1270,6 +1304,7 @@ milanoBlue: {
   name: "Milano Blue Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/milanoblue-01.webp",
@@ -1311,6 +1346,7 @@ milanoBlueDining: {
   name: "Milano Blue Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/diningmilanoblue-01.webp",
@@ -1344,6 +1380,7 @@ milanoBlueBedroom: {
   name: "Milano Bedroom (Blue Edition)",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/bedroommilanoblue-01.webp",
@@ -1377,6 +1414,7 @@ milanoBlueTv: {
   name: "Milano Blue TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
   images: [
     "/milanobluetv-01.webp",
@@ -1402,6 +1440,7 @@ milanoTv: {
   name: "Milano TV Unit",
 
   category: "tv-units",
+  style: "luxury-classic",
 
   images: [
     "/milanotv-01.webp",
@@ -1427,6 +1466,7 @@ lina: {
   name: "Lina Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/lina-01.webp",
@@ -1464,6 +1504,7 @@ linaDining: {
   name: "Lina Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/linadining-01.webp",
@@ -1497,6 +1538,7 @@ zerafetDining: {
   name: "Zerafet Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/zerafet-01.webp",
@@ -1530,6 +1572,7 @@ zerafetLiving: {
   name: "Zerafet Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/zerafetsofa-01.webp",
@@ -1569,6 +1612,7 @@ saltanatBedroom: {
   name: "Saltanat Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/saltanatbedroom-01.webp",
@@ -1602,6 +1646,7 @@ saltanatDining: {
   name: "Saltanat Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/saltanatdining-01.webp",
@@ -1637,6 +1682,7 @@ saltanatDiningGreen: {
   name: "Saltanat Green Dining Room",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/saltanatdininggreen-01.webp",
@@ -1670,6 +1716,7 @@ saltanatLiving: {
   name: "Saltanat Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/saltanatsofa-02.webp",
@@ -1705,6 +1752,7 @@ saltanatGreenLiving: {
   name: "Saltanat Green Living Room",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
   "/saltanatgreensofa-01.webp",
@@ -1742,6 +1790,7 @@ sultanBedroom: {
   name: "Sultan Bedroom",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/sultanbedroom-01.webp",
@@ -1779,6 +1828,7 @@ sultanGreenBedroom: {
   name: "Sultan Bedroom (Green Edition)",
 
   category: "bedrooms",
+  style: "luxury-classic",
 
   images: [
     "/sultangreenbedroom-01.webp",
@@ -1812,6 +1862,7 @@ sultanLiving: {
   name: "Sultan Sofa",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/sultansofa-01.webp",
@@ -1851,6 +1902,7 @@ sultanSofa: {
   name: "Sultan Sofa (Green)",
 
   category: "living-rooms",
+  style: "luxury-classic",
 
   images: [
     "/sultansofagreen-01.webp",
@@ -1888,6 +1940,7 @@ sultanGreenDining: {
   name: "Sultan Green Dining Room Set",
 
   category: "dining-rooms",
+  style: "luxury-classic",
 
   images: [
     "/sultandininggreen-01.webp",
@@ -1921,6 +1974,7 @@ sultanGreenDining: {
   marsilyaBedroom: {
     name: "Marsilya Bedroom",
     category: "bedrooms",
+    style: "luxury-classic",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
       "The Marsilya Bedroom combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Share your master-bedroom requirements on WhatsApp to receive Marsilya Bedroom pricing, personalized options and delivery planning from VIRELLAART.",
@@ -1950,6 +2004,7 @@ sultanGreenDining: {
   rioBedroom: {
     name: "rio Marsilya Bedroom",
     category: "bedrooms",
+    style: "luxury-classic",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
       "The rio Marsilya Bedroom by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for rio Marsilya Bedroom pricing, customization guidance and worldwide delivery planning.",
