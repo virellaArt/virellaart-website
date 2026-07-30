@@ -2167,4 +2167,39 @@ sultanGreenDining: {
       },
     ],
   },
+
+  pradaSofaSet: {
+    name: "PRADA Sofa Set",
+    slug: "prada-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Organic Curves with a Refined Modern Presence",
+    description:
+      "PRADA Sofa Set defines a contemporary living room through low-profile proportions, rounded seating forms and a balanced architectural composition. The 3+3+1+1 arrangement creates an elegant conversation area for spacious modern interiors, while the coordinated center table completes the setting. A distinctive choice for customers searching for a modern curved sofa set, luxury contemporary seating and designer living room furniture from VIRELLAART.",
+    images: [
+      "/prada-sofa-set-01.webp",
+      "/prada-sofa-set-02.webp",
+      "/prada-sofa-set-03.webp",
+      "/prada-sofa-set-04.webp",
+    ],
+    imageAlts: {
+      en: [
+        "PRADA modern curved sofa set in a luxury neutral living room with coordinated round center table",
+        "PRADA 3+3+1+1 living room sofa set with rounded seats and low-profile contemporary design",
+        "PRADA luxury contemporary sofa collection with organic curves viewed from a side angle",
+        "PRADA Sofa Set presentation showing sculptural seating forms and matching modern coffee table",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,100",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
