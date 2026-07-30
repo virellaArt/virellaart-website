@@ -12,7 +12,7 @@ import {
 } from "../data/market-pages";
 
 import {
-  allRoutes,
+  indexableRoutes,
   productRoutes,
 } from "../i18n/routes";
 
@@ -72,7 +72,7 @@ function routeImages(
 }
 
 export const GET = () => {
-  const localizedUrls = allRoutes
+  const localizedUrls = indexableRoutes
     .flatMap((route) =>
       languageCodes.map((language) => {
         const alternates = languageCodes

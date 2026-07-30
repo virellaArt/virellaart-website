@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { collectionMenuCopy } from "../i18n/collection-menu";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const copy = collectionMenuCopy[language];
+
+const categories = [
+  {
+    slug: "sofa-sets",
+    title: copy.sofaSets,
+    image: "/living-room.webp",
+  },
+  {
+    slug: "dining-rooms",
+    title: translations.home.diningRooms,
+    image: "/dining-room.webp",
+  },
+  {
+    slug: "bedrooms",
+    title: translations.home.bedrooms,
+    image: "/bedroom.webp",
+  },
+  {
+    slug: "tv-units",
+    title: translations.home.tvUnits,
+    image: "/tv-unit.webp",
+  },
+] as const;
+---
+
+<BaseLayout
+  title={copy.hubTitle}
+  description={copy.hubDescription}
+  image="/living-room.webp"
+  robots="noindex, follow"
+>
+  <section class="modern-hub">
+    <header>
+      <span>{copy.hubEyebrow}</span>
+      <h1>{copy.hubTitle}</h1>
+      <p>{copy.hubIntro}</p>
+    </header>
+
+    <div class="modern-hub-grid">
+      {
+        categories.map((category, index) => (
+          <a
+            href={localizedPath(
+              `/collections/modern/${category.slug}`,
+              language,
+            )}
+          >
+            <div class="modern-card-image">
+              <img
+                src={category.image}
+                alt={category.title}
+                width="900"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>{String(index + 1).padStart(2, "0")}</span>
+            </div>
+
+            <div class="modern-card-copy">
+              <small>0 · {copy.modelsSoon}</small>
+              <h2>{category.title}</h2>
+              <strong>{copy.exploreCategory} →</strong>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .modern-hub {
+    width: min(100% - 56px, 1380px);
+    margin: 0 auto;
+    padding: 155px 0 110px;
+  }
+
+  .modern-hub > header {
+    max-width: 920px;
+    margin-bottom: 65px;
+  }
+
+  .modern-hub > header span,
+  .modern-card-copy small {
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+  }
+
+  .modern-hub h1 {
+    margin: 22px 0 26px;
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 92px);
+    line-height: 0.98;
+  }
+
+  .modern-hub > header p {
+    max-width: 760px;
+    color: #ddd3c5;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .modern-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .modern-hub-grid > a {
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 93, 0.27);
+    background: #18130f;
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .modern-hub-grid > a:hover {
+    border-color: rgba(201, 164, 93, 0.62);
+    transform: translateY(-5px);
+  }
+
+  .modern-card-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modern-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 6, 5, 0.06),
+        rgba(8, 6, 5, 0.55)
+      );
+  }
+
+  .modern-card-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.72);
+    transition: transform 0.55s ease;
+  }
+
+  .modern-hub-grid > a:hover img {
+    transform: scale(1.025);
+  }
+
+  .modern-card-image > span {
+    position: absolute;
+    z-index: 1;
+    right: 22px;
+    bottom: 18px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .modern-card-copy {
+    padding: clamp(26px, 4vw, 42px);
+  }
+
+  .modern-card-copy h2 {
+    margin: 17px 0 25px;
+    color: #ffffff;
+    font-size: clamp(34px, 4vw, 52px);
+  }
+
+  .modern-card-copy strong {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .modern-hub {
+      width: min(100% - 30px, 1380px);
+      padding: 125px 0 80px;
+    }
+
+    .modern-hub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

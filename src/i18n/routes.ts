@@ -95,9 +95,24 @@ export const staticRoutes = [
   "policies/terms-conditions",
 ] as const;
 
-export const allRoutes = Array.from(
+export const noindexStaticRoutes = [
+  "collections/modern",
+  "collections/modern/sofa-sets",
+  "collections/modern/dining-rooms",
+  "collections/modern/bedrooms",
+  "collections/modern/tv-units",
+] as const;
+
+export const indexableRoutes = Array.from(
   new Set([
     ...staticRoutes,
     ...Object.keys(productRoutes),
+  ]),
+);
+
+export const allRoutes = Array.from(
+  new Set([
+    ...indexableRoutes,
+    ...noindexStaticRoutes,
   ]),
 );

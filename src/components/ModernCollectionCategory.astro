@@ -1,0 +1,233 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { collectionMenuCopy } from "../i18n/collection-menu";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+} from "../i18n/config";
+
+type ModernCategory =
+  | "sofa-sets"
+  | "dining-rooms"
+  | "bedrooms"
+  | "tv-units";
+
+interface Props {
+  category: ModernCategory;
+}
+
+const { category } = Astro.props;
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+const copy = collectionMenuCopy[language];
+
+const categoryDetails = {
+  "sofa-sets": {
+    title: copy.sofaSets,
+    image: "/living-room.webp",
+  },
+  "dining-rooms": {
+    title: translations.home.diningRooms,
+    image: "/dining-room.webp",
+  },
+  bedrooms: {
+    title: translations.home.bedrooms,
+    image: "/bedroom.webp",
+  },
+  "tv-units": {
+    title: translations.home.tvUnits,
+    image: "/tv-unit.webp",
+  },
+} as const;
+
+const details = categoryDetails[category];
+const pageTitle = copy.categoryTitle.replace(
+  "{category}",
+  details.title,
+);
+const pageDescription = copy.categoryDescription.replace(
+  "{category}",
+  details.title,
+);
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  image={details.image}
+  robots="noindex, follow"
+>
+  <section class="modern-category">
+    <div class="modern-category-copy">
+      <span>{copy.categoryEyebrow}</span>
+      <h1>{pageTitle}</h1>
+      <p>{pageDescription}</p>
+    </div>
+
+    <div class="modern-category-visual">
+      <img
+        src={details.image}
+        alt={details.title}
+        width="1200"
+        height="900"
+        decoding="async"
+      />
+      <span aria-hidden="true">MODERN</span>
+    </div>
+
+    <div class="modern-empty-state">
+      <span>0</span>
+      <div>
+        <h2>{copy.emptyTitle}</h2>
+        <p>{copy.emptyText}</p>
+
+        <div class="modern-empty-actions">
+          <a
+            href={localizedPath(
+              "/collections/modern",
+              language,
+            )}
+          >
+            ← {copy.backToModern}
+          </a>
+          <a href={localizedPath("/contact", language)}>
+            {copy.contact} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .modern-category {
+    width: min(100% - 56px, 1380px);
+    margin: 0 auto;
+    padding: 155px 0 110px;
+  }
+
+  .modern-category-copy {
+    max-width: 920px;
+    margin-bottom: 55px;
+  }
+
+  .modern-category-copy > span {
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+  }
+
+  .modern-category h1 {
+    margin: 22px 0 26px;
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 92px);
+    line-height: 0.98;
+  }
+
+  .modern-category-copy p {
+    max-width: 760px;
+    color: #ddd3c5;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .modern-category-visual {
+    position: relative;
+    max-height: 580px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 93, 0.27);
+  }
+
+  .modern-category-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 6, 5, 0.08),
+        rgba(8, 6, 5, 0.62)
+      );
+  }
+
+  .modern-category-visual img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.7);
+  }
+
+  .modern-category-visual > span {
+    position: absolute;
+    z-index: 1;
+    right: 28px;
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .modern-empty-state {
+    display: grid;
+    grid-template-columns: minmax(110px, 0.25fr) 1fr;
+    gap: clamp(24px, 5vw, 80px);
+    margin-top: 20px;
+    padding: clamp(34px, 6vw, 72px);
+    border: 1px solid rgba(201, 164, 93, 0.27);
+    background: #18130f;
+  }
+
+  .modern-empty-state > span {
+    color: var(--gold-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(64px, 9vw, 118px);
+    line-height: 0.82;
+  }
+
+  .modern-empty-state h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 48px);
+  }
+
+  .modern-empty-state p {
+    max-width: 720px;
+    color: #d4cabe;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .modern-empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 32px;
+    margin-top: 30px;
+  }
+
+  .modern-empty-actions a {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .modern-category {
+      width: min(100% - 30px, 1380px);
+      padding: 125px 0 80px;
+    }
+
+    .modern-empty-state {
+      grid-template-columns: 1fr;
+    }
+
+    .modern-category-visual img {
+      min-height: 260px;
+    }
+  }
+</style>

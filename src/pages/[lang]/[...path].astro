@@ -8,6 +8,11 @@ import DiningRoomsPage from "../dining-rooms.astro";
 import BedroomsPage from "../bedrooms.astro";
 import TVUnitsPage from "../tv-units.astro";
 import LuxuryClassicPage from "../collections/luxury-classic.astro";
+import ModernPage from "../collections/modern.astro";
+import ModernSofaSetsPage from "../collections/modern/sofa-sets.astro";
+import ModernDiningRoomsPage from "../collections/modern/dining-rooms.astro";
+import ModernBedroomsPage from "../collections/modern/bedrooms.astro";
+import ModernTVUnitsPage from "../collections/modern/tv-units.astro";
 
 /* VIRELLAART LOCALIZED POLICY IMPORTS */
 import ShippingPolicyPage from "../policies/shipping-policy.astro";
@@ -65,6 +70,27 @@ const product = productKey
 {
   path === "collections/luxury-classic" && (
     <LuxuryClassicPage />
+  )
+}
+{path === "collections/modern" && <ModernPage />}
+{
+  path === "collections/modern/sofa-sets" && (
+    <ModernSofaSetsPage />
+  )
+}
+{
+  path === "collections/modern/dining-rooms" && (
+    <ModernDiningRoomsPage />
+  )
+}
+{
+  path === "collections/modern/bedrooms" && (
+    <ModernBedroomsPage />
+  )
+}
+{
+  path === "collections/modern/tv-units" && (
+    <ModernTVUnitsPage />
   )
 }
 
