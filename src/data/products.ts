@@ -2280,4 +2280,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  baharSofaSet: {
+    name: "BAHAR Sofa Set",
+    slug: "bahar-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Architectural Simplicity with a Calm Contemporary Rhythm",
+    description:
+      "BAHAR Sofa Set brings a crisp architectural character to modern interiors through broad squared arms, structured cushions and a calm low-profile silhouette. Its 3+3+1+1 arrangement combines light-toned sofas with contrasting accent chairs to create a balanced contemporary living room. A distinctive choice for customers searching for a modern white sofa set, luxury minimalist seating and designer living room furniture from VIRELLAART.",
+    images: [
+      "/bahar-sofa-set-01.webp",
+      "/bahar-sofa-set-02.webp",
+      "/bahar-sofa-set-03.webp",
+      "/bahar-sofa-set-04.webp",
+      "/bahar-sofa-set-05.webp",
+      "/bahar-sofa-set-06.webp",
+      "/bahar-sofa-set-07.webp",
+      "/bahar-sofa-set-08.webp",
+      "/bahar-sofa-set-09.webp",
+      "/bahar-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "BAHAR modern white sofa set arranged in a warm minimalist luxury living room",
+        "BAHAR 3+3+1+1 contemporary sofa set with a contrasting dark accent armchair",
+        "BAHAR modern living room seating composition with clean geometric proportions",
+        "BAHAR sofa side detail showing broad squared arm and structured seat cushions",
+        "BAHAR luxury light-toned sofa collection viewed from an elevated room angle",
+        "BAHAR three-seat modern sofa with tailored cushions and architectural arm design",
+        "BAHAR contemporary sofa set arranged around a dark rectangular center table",
+        "BAHAR minimalist white sofa set in a refined neutral living room interior",
+        "BAHAR sofa back cushion close-up with crisp rectangular tailoring",
+        "BAHAR modern 3+3+1+1 living room set with coordinated sofas and accent chairs",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,400",
+        featured: true,
+      },
+    ],
+  },
 };
