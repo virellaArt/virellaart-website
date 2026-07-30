@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 .vercel/
 .env.local
+
+# local product import workspace
+product-import.json
+public/incoming/
