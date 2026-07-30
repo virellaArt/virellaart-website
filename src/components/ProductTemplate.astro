@@ -78,6 +78,28 @@ const prices: {
   featured?: boolean;
 }[] = product.prices ?? [];
 
+const featuredPriceIndex =
+  prices.findIndex((item) => item.featured);
+
+const defaultPriceIndex =
+  featuredPriceIndex >= 0
+    ? featuredPriceIndex
+    : 0;
+
+const defaultPrice =
+  prices[defaultPriceIndex];
+
+const defaultConfiguration =
+  defaultPrice
+    ? translatePriceLabel(
+        defaultPrice.label,
+        language,
+      )
+    : translatedProductName;
+
+const defaultPriceValue =
+  defaultPrice?.price ?? "";
+
 /* VIRELLAART DINING AND BEDROOM INCLUDED PRICE */
 
 type IncludedItemKey =
@@ -502,22 +524,325 @@ const productEvent = {
   ],
 };
 
+/* VIRELLAART PRODUCT QUOTE ENGINE */
+
 /* =========================
-   WHATSAPP
+   WHATSAPP QUOTE ENGINE
 ========================= */
+
+type ProductQuoteContent = {
+  title: string;
+  intro: string;
+  selected: string;
+  price: string;
+  country: string;
+  city: string;
+  customization: string;
+  page: string;
+  button: string;
+  trustButton: string;
+  selectAria: string;
+  closing: string;
+};
+
+const productQuoteContent: Record<
+  string,
+  ProductQuoteContent
+> = {
+  "en": {
+    "title": "Prepare Your Price & Delivery Request",
+    "intro": "Select a configuration and add your delivery details. Your WhatsApp quotation message will be prepared automatically.",
+    "selected": "Selected configuration",
+    "price": "Displayed collection price",
+    "country": "Delivery country",
+    "city": "Delivery city",
+    "customization": "Customization or project notes",
+    "page": "Product page",
+    "button": "Get Price & Delivery Quote",
+    "trustButton": "Prepare WhatsApp Quote",
+    "selectAria": "Select configuration",
+    "closing": "Please send me the final product and shipping quotation."
+  },
+  "tr": {
+    "title": "Fiyat ve Teslimat Talebinizi Hazırlayın",
+    "intro": "Set seçeneğini belirleyin ve teslimat bilgilerinizi ekleyin. WhatsApp teklif mesajınız otomatik hazırlanacaktır.",
+    "selected": "Seçilen konfigürasyon",
+    "price": "Görüntülenen koleksiyon fiyatı",
+    "country": "Teslimat ülkesi",
+    "city": "Teslimat şehri",
+    "customization": "Kişiselleştirme veya proje notları",
+    "page": "Ürün sayfası",
+    "button": "Fiyat ve Teslimat Teklifi Alın",
+    "trustButton": "WhatsApp Teklifi Hazırlayın",
+    "selectAria": "Konfigürasyon seçin",
+    "closing": "Lütfen nihai ürün ve nakliye teklifini gönderin."
+  },
+  "de": {
+    "title": "Preis- und Lieferanfrage vorbereiten",
+    "intro": "Wählen Sie eine Konfiguration und ergänzen Sie Ihre Lieferdaten. Ihre WhatsApp-Anfrage wird automatisch vorbereitet.",
+    "selected": "Ausgewählte Konfiguration",
+    "price": "Angezeigter Kollektionpreis",
+    "country": "Lieferland",
+    "city": "Lieferstadt",
+    "customization": "Anpassungs- oder Projektnotizen",
+    "page": "Produktseite",
+    "button": "Preis- und Lieferangebot anfordern",
+    "trustButton": "WhatsApp-Angebot vorbereiten",
+    "selectAria": "Konfiguration auswählen",
+    "closing": "Bitte senden Sie mir das endgültige Produkt- und Versandangebot."
+  },
+  "fr": {
+    "title": "Préparez votre demande de prix et de livraison",
+    "intro": "Sélectionnez une configuration et ajoutez vos informations de livraison. Votre demande WhatsApp sera préparée automatiquement.",
+    "selected": "Configuration sélectionnée",
+    "price": "Prix affiché de la collection",
+    "country": "Pays de livraison",
+    "city": "Ville de livraison",
+    "customization": "Personnalisation ou notes de projet",
+    "page": "Page du produit",
+    "button": "Obtenir un devis prix et livraison",
+    "trustButton": "Préparer le devis WhatsApp",
+    "selectAria": "Sélectionner la configuration",
+    "closing": "Merci de m’envoyer le devis final du produit et de la livraison."
+  },
+  "it": {
+    "title": "Prepara la richiesta di prezzo e consegna",
+    "intro": "Seleziona una configurazione e aggiungi i dati di consegna. Il messaggio WhatsApp verrà preparato automaticamente.",
+    "selected": "Configurazione selezionata",
+    "price": "Prezzo della collezione visualizzato",
+    "country": "Paese di consegna",
+    "city": "Città di consegna",
+    "customization": "Personalizzazione o note del progetto",
+    "page": "Pagina prodotto",
+    "button": "Richiedi prezzo e preventivo di consegna",
+    "trustButton": "Prepara il preventivo WhatsApp",
+    "selectAria": "Seleziona configurazione",
+    "closing": "Invia il preventivo finale del prodotto e della spedizione."
+  },
+  "ru": {
+    "title": "Подготовьте запрос цены и доставки",
+    "intro": "Выберите комплектацию и укажите данные доставки. Сообщение для WhatsApp будет подготовлено автоматически.",
+    "selected": "Выбранная комплектация",
+    "price": "Указанная цена коллекции",
+    "country": "Страна доставки",
+    "city": "Город доставки",
+    "customization": "Персонализация или примечания к проекту",
+    "page": "Страница товара",
+    "button": "Получить расчёт цены и доставки",
+    "trustButton": "Подготовить запрос в WhatsApp",
+    "selectAria": "Выбрать комплектацию",
+    "closing": "Пожалуйста, отправьте итоговое предложение на товар и доставку."
+  },
+  "ar": {
+    "title": "جهّز طلب السعر والتوصيل",
+    "intro": "اختر التكوين وأضف معلومات التوصيل. سيتم إعداد رسالة عرض السعر عبر واتساب تلقائياً.",
+    "selected": "التكوين المحدد",
+    "price": "سعر المجموعة المعروض",
+    "country": "دولة التوصيل",
+    "city": "مدينة التوصيل",
+    "customization": "ملاحظات التخصيص أو المشروع",
+    "page": "صفحة المنتج",
+    "button": "احصل على عرض السعر والتوصيل",
+    "trustButton": "إعداد عرض واتساب",
+    "selectAria": "اختر التكوين",
+    "closing": "يرجى إرسال عرض السعر النهائي للمنتج والشحن."
+  },
+  "bg": {
+    "title": "Подгответе заявка за цена и доставка",
+    "intro": "Изберете конфигурация и добавете данните за доставка. WhatsApp съобщението ще бъде подготвено автоматично.",
+    "selected": "Избрана конфигурация",
+    "price": "Показана цена на колекцията",
+    "country": "Държава за доставка",
+    "city": "Град за доставка",
+    "customization": "Персонализация или бележки за проекта",
+    "page": "Страница на продукта",
+    "button": "Получете оферта за цена и доставка",
+    "trustButton": "Подгответе WhatsApp оферта",
+    "selectAria": "Изберете конфигурация",
+    "closing": "Моля, изпратете крайната оферта за продукта и доставката."
+  },
+  "ro": {
+    "title": "Pregătiți solicitarea de preț și livrare",
+    "intro": "Selectați configurația și adăugați detaliile de livrare. Mesajul WhatsApp va fi pregătit automat.",
+    "selected": "Configurație selectată",
+    "price": "Prețul afișat al colecției",
+    "country": "Țara de livrare",
+    "city": "Orașul de livrare",
+    "customization": "Personalizare sau note de proiect",
+    "page": "Pagina produsului",
+    "button": "Solicitați oferta de preț și livrare",
+    "trustButton": "Pregătiți oferta WhatsApp",
+    "selectAria": "Selectați configurația",
+    "closing": "Vă rog să îmi trimiteți oferta finală pentru produs și transport."
+  },
+  "el": {
+    "title": "Προετοιμάστε το αίτημα τιμής και παράδοσης",
+    "intro": "Επιλέξτε διαμόρφωση και προσθέστε τα στοιχεία παράδοσης. Το μήνυμα WhatsApp θα ετοιμαστεί αυτόματα.",
+    "selected": "Επιλεγμένη διαμόρφωση",
+    "price": "Εμφανιζόμενη τιμή συλλογής",
+    "country": "Χώρα παράδοσης",
+    "city": "Πόλη παράδοσης",
+    "customization": "Εξατομίκευση ή σημειώσεις έργου",
+    "page": "Σελίδα προϊόντος",
+    "button": "Λάβετε προσφορά τιμής και παράδοσης",
+    "trustButton": "Προετοιμασία προσφοράς WhatsApp",
+    "selectAria": "Επιλέξτε διαμόρφωση",
+    "closing": "Παρακαλώ στείλτε την τελική προσφορά προϊόντος και μεταφοράς."
+  },
+  "es": {
+    "title": "Prepare su solicitud de precio y entrega",
+    "intro": "Seleccione una configuración y añada los datos de entrega. El mensaje de WhatsApp se preparará automáticamente.",
+    "selected": "Configuración seleccionada",
+    "price": "Precio mostrado de la colección",
+    "country": "País de entrega",
+    "city": "Ciudad de entrega",
+    "customization": "Personalización o notas del proyecto",
+    "page": "Página del producto",
+    "button": "Solicitar precio y presupuesto de entrega",
+    "trustButton": "Preparar presupuesto por WhatsApp",
+    "selectAria": "Seleccionar configuración",
+    "closing": "Envíeme el presupuesto final del producto y del transporte."
+  },
+  "sr": {
+    "title": "Pripremite zahtev za cenu i dostavu",
+    "intro": "Izaberite konfiguraciju i dodajte podatke za dostavu. WhatsApp poruka će biti automatski pripremljena.",
+    "selected": "Izabrana konfiguracija",
+    "price": "Prikazana cena kolekcije",
+    "country": "Država dostave",
+    "city": "Grad dostave",
+    "customization": "Prilagođavanje ili napomene projekta",
+    "page": "Stranica proizvoda",
+    "button": "Zatražite cenu i ponudu dostave",
+    "trustButton": "Pripremite WhatsApp ponudu",
+    "selectAria": "Izaberite konfiguraciju",
+    "closing": "Molim vas pošaljite konačnu ponudu za proizvod i dostavu."
+  },
+  "kk": {
+    "title": "Баға және жеткізу сұранысын дайындаңыз",
+    "intro": "Жинақ нұсқасын таңдап, жеткізу мәліметтерін енгізіңіз. WhatsApp хабарламасы автоматты түрде дайындалады.",
+    "selected": "Таңдалған жинақ",
+    "price": "Көрсетілген топтама бағасы",
+    "country": "Жеткізу елі",
+    "city": "Жеткізу қаласы",
+    "customization": "Жекелендіру немесе жоба ескертпелері",
+    "page": "Өнім беті",
+    "button": "Баға және жеткізу ұсынысын алу",
+    "trustButton": "WhatsApp ұсынысын дайындау",
+    "selectAria": "Жинақты таңдау",
+    "closing": "Өнім мен жеткізудің соңғы ұсынысын жіберіңіз."
+  },
+  "uz": {
+    "title": "Narx va yetkazib berish so‘rovini tayyorlang",
+    "intro": "To‘plam variantini tanlang va yetkazib berish ma’lumotlarini kiriting. WhatsApp xabari avtomatik tayyorlanadi.",
+    "selected": "Tanlangan konfiguratsiya",
+    "price": "Ko‘rsatilgan kolleksiya narxi",
+    "country": "Yetkazib berish mamlakati",
+    "city": "Yetkazib berish shahri",
+    "customization": "Moslashtirish yoki loyiha izohlari",
+    "page": "Mahsulot sahifasi",
+    "button": "Narx va yetkazib berish taklifini oling",
+    "trustButton": "WhatsApp taklifini tayyorlang",
+    "selectAria": "Konfiguratsiyani tanlang",
+    "closing": "Mahsulot va yetkazib berish bo‘yicha yakuniy taklifni yuboring."
+  },
+  "pt": {
+    "title": "Prepare o pedido de preço e entrega",
+    "intro": "Selecione uma configuração e adicione os dados de entrega. A mensagem de WhatsApp será preparada automaticamente.",
+    "selected": "Configuração selecionada",
+    "price": "Preço apresentado da coleção",
+    "country": "País de entrega",
+    "city": "Cidade de entrega",
+    "customization": "Personalização ou notas do projeto",
+    "page": "Página do produto",
+    "button": "Pedir preço e orçamento de entrega",
+    "trustButton": "Preparar orçamento por WhatsApp",
+    "selectAria": "Selecionar configuração",
+    "closing": "Envie o orçamento final do produto e do transporte."
+  },
+  "pl": {
+    "title": "Przygotuj zapytanie o cenę i dostawę",
+    "intro": "Wybierz konfigurację i dodaj dane dostawy. Wiadomość WhatsApp zostanie przygotowana automatycznie.",
+    "selected": "Wybrana konfiguracja",
+    "price": "Wyświetlana cena kolekcji",
+    "country": "Kraj dostawy",
+    "city": "Miasto dostawy",
+    "customization": "Personalizacja lub uwagi projektowe",
+    "page": "Strona produktu",
+    "button": "Uzyskaj wycenę produktu i dostawy",
+    "trustButton": "Przygotuj wycenę WhatsApp",
+    "selectAria": "Wybierz konfigurację",
+    "closing": "Proszę przesłać końcową wycenę produktu i transportu."
+  }
+};
+
+const productQuote =
+  productQuoteContent[language] ??
+  productQuoteContent.en;
 
 const whatsappNumber = "905539478608";
 
-const whatsappMessage =
+const quoteGreeting =
   translations.product.whatsappMessage.replace(
     "{product}",
     translatedProductName,
   );
 
+const quoteMessageTemplate = [
+  quoteGreeting,
+  "",
+  productQuote.selected + ":",
+  "{configuration}",
+  "",
+  productQuote.price + ":",
+  "{price}",
+  "",
+  productQuote.country + ":",
+  "{country}",
+  "",
+  productQuote.city + ":",
+  "{city}",
+  "",
+  productQuote.customization + ":",
+  "{customization}",
+  "",
+  productQuote.page + ":",
+  "{url}",
+  "",
+  productQuote.closing,
+].join("\n");
+
+function fillQuoteTemplate(
+  template: string,
+  values: Record<string, string>,
+) {
+  return Object.entries(values).reduce(
+    (message, [key, value]) =>
+      message.replaceAll(
+        "{" + key + "}",
+        value,
+      ),
+    template,
+  );
+}
+
+const defaultWhatsappMessage =
+  fillQuoteTemplate(
+    quoteMessageTemplate,
+    {
+      configuration: defaultConfiguration,
+      price: defaultPriceValue,
+      country: "",
+      city: "",
+      customization: "",
+      url: canonicalURL,
+    },
+  );
+
 const whatsappUrl =
-  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage,
-  )}`;
+  "https://wa.me/" +
+  whatsappNumber +
+  "?text=" +
+  encodeURIComponent(defaultWhatsappMessage);
 
 type ProductTrustContent = {
   eyebrow: string;
@@ -971,25 +1296,45 @@ const productTrust =
                     featured?: boolean;
                   },
                   index: number,
-                ) => (
-                  <div
-                    class:list={[
-                      "price-row",
-                      (index === 0 ||
-                        item.featured) &&
-                        "featured",
-                    ]}
-                  >
-                    <span>
-                      {translatePriceLabel(
-                        item.label,
-                        language,
-                      )}
-                    </span>
+                ) => {
+                  const configuration =
+                    translatePriceLabel(
+                      item.label,
+                      language,
+                    );
 
-                    <strong>{item.price}</strong>
-                  </div>
-                ),
+                  const selected =
+                    index === defaultPriceIndex;
+
+                  return (
+                    <button
+                      class:list={[
+                        "price-row",
+                        "quote-option",
+                        selected && "featured",
+                      ]}
+                      type="button"
+                      data-quote-option
+                      data-price-index={index}
+                      data-configuration={configuration}
+                      data-price={item.price}
+                      aria-pressed={
+                        selected
+                          ? "true"
+                          : "false"
+                      }
+                      aria-label={
+                        productQuote.selectAria +
+                        ": " +
+                        configuration
+                      }
+                    >
+                      <span>{configuration}</span>
+
+                      <strong>{item.price}</strong>
+                    </button>
+                  );
+                },
               )
             }
           </div>
@@ -1018,6 +1363,81 @@ const productTrust =
               </section>
             )
           }
+
+          <section
+            class="quote-builder"
+            aria-labelledby="quoteBuilderTitle"
+            data-quote-builder
+          >
+            <div class="quote-builder-heading">
+              <h3 id="quoteBuilderTitle">
+                {productQuote.title}
+              </h3>
+
+              <p>{productQuote.intro}</p>
+            </div>
+
+            <div
+              class="quote-selection"
+              aria-live="polite"
+            >
+              <span>{productQuote.selected}</span>
+
+              <strong id="quoteSelectedConfiguration">
+                {defaultConfiguration}
+              </strong>
+
+              <small id="quoteSelectedPrice">
+                {defaultPriceValue}
+              </small>
+            </div>
+
+            <div class="quote-fields">
+              <label class="quote-field">
+                <span>{productQuote.country}</span>
+
+                <input
+                  id="quoteCountry"
+                  name="delivery-country"
+                  type="text"
+                  autocomplete="country-name"
+                  maxlength="80"
+                  placeholder={productQuote.country}
+                />
+              </label>
+
+              <label class="quote-field">
+                <span>{productQuote.city}</span>
+
+                <input
+                  id="quoteCity"
+                  name="delivery-city"
+                  type="text"
+                  autocomplete="address-level2"
+                  maxlength="80"
+                  placeholder={productQuote.city}
+                />
+              </label>
+
+              <label
+                class="quote-field quote-field-wide"
+              >
+                <span>
+                  {productQuote.customization}
+                </span>
+
+                <textarea
+                  id="quoteCustomization"
+                  name="customization"
+                  rows="3"
+                  maxlength="500"
+                  placeholder={
+                    productQuote.customization
+                  }
+                ></textarea>
+              </label>
+            </div>
+          </section>
 
           <div class="services">
             <div>
@@ -1052,13 +1472,18 @@ const productTrust =
 
           <a
             href={whatsappUrl}
-            class="whatsapp"
+            class="whatsapp js-product-quote"
             target="_blank"
             rel="noopener noreferrer"
-            data-whatsapp-context="product"
+            data-whatsapp-context="product-quote"
             data-product={translatedProductName}
+            data-product-category={categoryName}
+            data-configuration={defaultConfiguration}
+            data-price={defaultPriceValue}
+            data-page-url={canonicalURL}
+            data-quote-engine="product-quote-v1"
           >
-            {translations.product.whatsapp}
+            {productQuote.button}
           </a>
 
           <p class="note">
@@ -1139,14 +1564,19 @@ const productTrust =
           </a>
 
           <a
-            class="product-trust-whatsapp"
+            class="product-trust-whatsapp js-product-quote"
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            data-whatsapp-context="product-trust"
+            data-whatsapp-context="product-trust-quote"
             data-product={translatedProductName}
+            data-product-category={categoryName}
+            data-configuration={defaultConfiguration}
+            data-price={defaultPriceValue}
+            data-page-url={canonicalURL}
+            data-quote-engine="product-quote-v1"
           >
-            {translations.product.whatsapp}
+            {productQuote.trustButton}
           </a>
         </div>
       </div>
@@ -1220,6 +1650,213 @@ const productTrust =
       )
     }
   </div>
+
+  <script
+    is:inline
+    define:vars={{
+      quoteMessageTemplate,
+      whatsappNumber,
+      translatedProductName,
+      categoryName,
+      canonicalURL,
+      language,
+      defaultConfiguration,
+      defaultPriceValue,
+    }}
+  >
+    (() => {
+      const optionButtons = Array.from(
+        document.querySelectorAll(
+          "[data-quote-option]",
+        ),
+      ).filter(
+        (item) =>
+          item instanceof HTMLButtonElement,
+      );
+
+      const quoteLinks = Array.from(
+        document.querySelectorAll(
+          ".js-product-quote",
+        ),
+      ).filter(
+        (item) =>
+          item instanceof HTMLAnchorElement,
+      );
+
+      const countryInput =
+        document.querySelector("#quoteCountry");
+
+      const cityInput =
+        document.querySelector("#quoteCity");
+
+      const customizationInput =
+        document.querySelector(
+          "#quoteCustomization",
+        );
+
+      const selectedConfigurationElement =
+        document.querySelector(
+          "#quoteSelectedConfiguration",
+        );
+
+      const selectedPriceElement =
+        document.querySelector(
+          "#quoteSelectedPrice",
+        );
+
+      let selectedConfiguration =
+        defaultConfiguration;
+
+      let selectedPrice =
+        defaultPriceValue;
+
+      function fieldValue(element) {
+        if (
+          element instanceof HTMLInputElement ||
+          element instanceof HTMLTextAreaElement
+        ) {
+          return element.value.trim();
+        }
+
+        return "";
+      }
+
+      function fillTemplate(values) {
+        return Object.entries(values).reduce(
+          (message, [key, value]) =>
+            message.replaceAll(
+              "{" + key + "}",
+              value,
+            ),
+          quoteMessageTemplate,
+        );
+      }
+
+      function buildMessage() {
+        return fillTemplate({
+          configuration:
+            selectedConfiguration,
+          price: selectedPrice,
+          country: fieldValue(countryInput),
+          city: fieldValue(cityInput),
+          customization:
+            fieldValue(customizationInput),
+          url: canonicalURL,
+        });
+      }
+
+      function updateQuoteLinks() {
+        const message = buildMessage();
+
+        const href =
+          "https://wa.me/" +
+          whatsappNumber +
+          "?text=" +
+          encodeURIComponent(message);
+
+        quoteLinks.forEach((link) => {
+          link.href = href;
+          link.dataset.product =
+            translatedProductName;
+          link.dataset.productCategory =
+            categoryName;
+          link.dataset.configuration =
+            selectedConfiguration;
+          link.dataset.price =
+            selectedPrice;
+          link.dataset.pageUrl =
+            canonicalURL;
+          link.dataset.quoteEngine =
+            "product-quote-v1";
+        });
+      }
+
+      function selectOption(button) {
+        optionButtons.forEach((option) => {
+          const selected =
+            option === button;
+
+          option.classList.toggle(
+            "featured",
+            selected,
+          );
+
+          option.setAttribute(
+            "aria-pressed",
+            selected ? "true" : "false",
+          );
+        });
+
+        selectedConfiguration =
+          button.dataset.configuration ||
+          defaultConfiguration;
+
+        selectedPrice =
+          button.dataset.price ||
+          defaultPriceValue;
+
+        if (selectedConfigurationElement) {
+          selectedConfigurationElement.textContent =
+            selectedConfiguration;
+        }
+
+        if (selectedPriceElement) {
+          selectedPriceElement.textContent =
+            selectedPrice;
+        }
+
+        updateQuoteLinks();
+
+        if (typeof window.gtag === "function") {
+          window.gtag(
+            "event",
+            "select_configuration",
+            {
+              product_name:
+                translatedProductName,
+              product_category:
+                categoryName,
+              selected_configuration:
+                selectedConfiguration,
+              selected_price:
+                selectedPrice,
+              page_language:
+                language,
+              page_url:
+                canonicalURL,
+            },
+          );
+        }
+      }
+
+      optionButtons.forEach((button) => {
+        button.addEventListener(
+          "click",
+          () => selectOption(button),
+        );
+      });
+
+      [
+        countryInput,
+        cityInput,
+        customizationInput,
+      ].forEach((field) => {
+        field?.addEventListener(
+          "input",
+          updateQuoteLinks,
+        );
+      });
+
+      quoteLinks.forEach((link) => {
+        link.addEventListener(
+          "click",
+          updateQuoteLinks,
+        );
+      });
+
+      updateQuoteLinks();
+    })();
+  </script>
 
   <script
     is:inline
@@ -1737,6 +2374,221 @@ const productTrust =
       background: #c9a55b;
       content: "";
       transform: translateY(-50%);
+    }
+
+    /* WHATSAPP QUOTE ENGINE */
+
+    .price-row.quote-option {
+      width: 100%;
+      appearance: none;
+      border: 0;
+      border-bottom: 1px solid #403327;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .price-row.quote-option:last-child {
+      border-bottom: 0;
+    }
+
+    .price-row.quote-option:hover {
+      background:
+        rgba(201, 165, 91, 0.08);
+    }
+
+    .price-row.quote-option[aria-pressed="true"] {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(201, 165, 91, 0.16),
+          rgba(201, 165, 91, 0.03)
+        );
+      box-shadow:
+        inset 3px 0 0 #c9a55b;
+    }
+
+    .price-row.quote-option:focus-visible {
+      position: relative;
+      z-index: 2;
+      outline: 2px solid #d4ad62;
+      outline-offset: -3px;
+    }
+
+    .quote-builder {
+      margin-top: 24px;
+      padding: 24px;
+      border:
+        1px solid
+        rgba(201, 165, 91, 0.34);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(43, 34, 27, 0.96),
+          rgba(24, 19, 16, 0.98)
+        );
+      box-shadow:
+        0 18px 46px
+        rgba(0, 0, 0, 0.2);
+    }
+
+    .quote-builder-heading h3 {
+      margin: 0;
+      color: #f4ead8;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .quote-builder-heading p {
+      margin: 10px 0 0;
+      color: #a99d8f;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .quote-selection {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+      gap: 5px 18px;
+      margin-top: 20px;
+      padding: 15px 17px;
+      border:
+        1px solid
+        rgba(201, 165, 91, 0.2);
+      background:
+        rgba(255, 255, 255, 0.025);
+    }
+
+    .quote-selection span {
+      grid-column: 1 / -1;
+      color: #b89555;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .quote-selection strong {
+      color: #f2eadf;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .quote-selection small {
+      align-self: center;
+      color: #d4ad62;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .quote-fields {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 14px;
+    }
+
+    .quote-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .quote-field-wide {
+      grid-column: 1 / -1;
+    }
+
+    .quote-field > span {
+      color: #c9b89f;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .quote-field input,
+    .quote-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border:
+        1px solid
+        rgba(201, 165, 91, 0.23);
+      border-radius: 0;
+      outline: 0;
+      background:
+        rgba(8, 7, 6, 0.48);
+      color: #ffffff;
+      font: inherit;
+      font-size: 13px;
+      line-height: 1.5;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .quote-field input {
+      min-height: 48px;
+      padding: 0 13px;
+    }
+
+    .quote-field textarea {
+      min-height: 88px;
+      padding: 12px 13px;
+      resize: vertical;
+    }
+
+    .quote-field input::placeholder,
+    .quote-field textarea::placeholder {
+      color:
+        rgba(255, 255, 255, 0.35);
+    }
+
+    .quote-field input:focus,
+    .quote-field textarea:focus {
+      border-color: #c9a55b;
+      box-shadow:
+        0 0 0 3px
+        rgba(201, 165, 91, 0.1);
+    }
+
+    @media (max-width: 620px) {
+      .quote-builder {
+        padding: 19px 16px;
+      }
+
+      .quote-fields {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-field-wide {
+        grid-column: auto;
+      }
+
+      .quote-selection {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-selection small {
+        margin-top: 3px;
+      }
     }
 
     /* SERVICES */

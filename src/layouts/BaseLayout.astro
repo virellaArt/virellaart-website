@@ -207,12 +207,34 @@ document.addEventListener("click", (event) => {
 
   if (typeof window.gtag === "function") {
     const eventData = {
-      cta_position: button.dataset.whatsappContext || "page",
-      product_name: button.dataset.product || undefined,
-      page_language: document.documentElement.lang,
-      link_url: button.href,
-      transport_type: "beacon"
-    };
+      cta_position:
+        button.dataset.whatsappContext ||
+        "page",
+      product_name:
+        button.dataset.product ||
+        undefined,
+      product_category:
+        button.dataset.productCategory ||
+        undefined,
+      selected_configuration:
+        button.dataset.configuration ||
+        undefined,
+      selected_price:
+        button.dataset.price ||
+        undefined,
+      page_language:
+        document.documentElement.lang,
+      page_url:
+        button.dataset.pageUrl ||
+        window.location.href,
+      quote_engine:
+        button.dataset.quoteEngine ||
+        undefined,
+      link_url:
+        button.href,
+      transport_type:
+        "beacon"
+    }
 
     window.gtag("event", "whatsapp_click", {
       event_category: "engagement",
