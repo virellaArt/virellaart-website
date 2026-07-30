@@ -230,7 +230,7 @@ export const products = {
 
  delux: {
 
-  name: "Delux Living Room",
+  name: "Deluxe Living Room",
 
   category: "living-rooms",
 
@@ -243,16 +243,16 @@ export const products = {
   ],
     imageAlts: {
       en: [
-        "Complete Delux living room set with ivory and charcoal sofas, two matching armchairs, a light stone-look center table and TV unit",
-        "Pair of Delux ivory armchairs with curved backs, gold-tone trim and charcoal accent cushions",
-        "Delux ivory three-seat sofa with layered cushions, rounded side panels and a polished gold-tone base",
-        "Delux charcoal curved sofa with layered ivory cushions and a polished gold-tone base",
-        "Delux ivory TV unit with rounded cabinets, reflective center drawers and decorative gold-tone lattice legs",
+        "Complete Deluxe living room set with ivory and charcoal sofas, two matching armchairs, a light stone-look center table and TV unit",
+        "Pair of Deluxe ivory armchairs with curved backs, gold-tone trim and charcoal accent cushions",
+        "Deluxe ivory three-seat sofa with layered cushions, rounded side panels and a polished gold-tone base",
+        "Deluxe charcoal curved sofa with layered ivory cushions and a polished gold-tone base",
+        "Deluxe ivory TV unit with rounded cabinets, reflective center drawers and decorative gold-tone lattice legs",
       ],
     },
 
  description:
-  "Discover the Delux Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Message VIRELLAART on WhatsApp for Delux Living Room pricing, customization options and worldwide delivery planning.",
+  "Discover the Deluxe Luxury Living Room Collection by VIRELLAART, distinguished by graceful curves, layered seating and a refined contemporary character. Created for elegant villas and sophisticated residences, this luxury living room furniture brings balance, comfort and visual prestige to the interior. Message VIRELLAART on WhatsApp for Deluxe Living Room pricing, customization options and worldwide delivery planning.",
  
   prices: [
     {
@@ -512,7 +512,7 @@ imageAlts: {
 
   prices: [
     {
-      label: "Luxury Bedroom Set",
+      label: "Marsilya Bedroom",
       price: "$5,450",
       featured: true,
     },
@@ -550,7 +550,7 @@ aspendosBedroom: {
 
   prices: [
     {
-      label: "Luxury Bedroom Set",
+      label: "Marsilya Bedroom",
       price: "$5,300",
       featured: true,
     },
@@ -562,7 +562,7 @@ aspendosBedroom: {
 
 deluxBedroom: {
 
-  name: "Delux Bedroom",
+  name: "Deluxe Bedroom",
 
   category: "bedrooms",
 
@@ -575,20 +575,20 @@ deluxBedroom: {
 ],
     imageAlts: {
       en: [
-        "Complete Delux bedroom set with a cream upholstered bed, mirrored wardrobe, matching nightstands and padded storage bench",
-        "Front view of the Delux cream bed with a tall curved upholstered headboard, mirrored side panels, matching nightstands and padded bench",
-        "Delux bedroom arrangement with cream upholstered bed, coordinated nightstands, padded bench and matching mirrored dresser",
-        "Delux cream bedroom dresser with ribbed curved doors, gold-tone details, three-part mirror and matching upholstered stool",
-        "Delux cream wardrobe with curved ribbed side doors, central full-length mirrors and polished gold-tone trim",
+        "Complete Deluxe bedroom set with a cream upholstered bed, mirrored wardrobe, matching nightstands and padded storage bench",
+        "Front view of the Deluxe cream bed with a tall curved upholstered headboard, mirrored side panels, matching nightstands and padded bench",
+        "Deluxe bedroom arrangement with cream upholstered bed, coordinated nightstands, padded bench and matching mirrored dresser",
+        "Deluxe cream bedroom dresser with ribbed curved doors, gold-tone details, three-part mirror and matching upholstered stool",
+        "Deluxe cream wardrobe with curved ribbed side doors, central full-length mirrors and polished gold-tone trim",
       ],
     },
 
   description:
-  "The Delux Luxury Bedroom Collection by VIRELLAART presents sweeping curves, layered symmetry and a polished architectural composition that feels both grand and inviting. Created for elegant master suites and luxury bedroom furniture settings, it brings visual harmony and lasting prestige. Connect with VIRELLAART on WhatsApp for Delux Bedroom set pricing, customization choices and worldwide delivery support.",
+  "The Deluxe Luxury Bedroom Collection by VIRELLAART presents sweeping curves, layered symmetry and a polished architectural composition that feels both grand and inviting. Created for elegant master suites and luxury bedroom furniture settings, it brings visual harmony and lasting prestige. Connect with VIRELLAART on WhatsApp for Deluxe Bedroom set pricing, customization choices and worldwide delivery support.",
 
   prices: [
     {
-      label: "Luxury Bedroom Set",
+      label: "Marsilya Bedroom",
       price: "$5,500",
       featured: true,
     },
@@ -637,7 +637,7 @@ aspendosDining: {
 
 deluxDining: {
 
-  name: "Delux Dining Room",
+  name: "Deluxe Dining Room",
 
   category: "dining-rooms",
 
@@ -649,15 +649,15 @@ images: [
 ],
     imageAlts: {
       en: [
-        "Complete Delux dining room set with an oval ivory table, cream and charcoal chairs, matching cabinets and mirrored wall panels",
-        "Delux ivory dining chair close-up with a rounded upholstered back, patterned fabric and polished gold-tone sled base",
-        "Delux ivory console with fluted curved doors, mirrored center panels, gold-tone cylindrical legs and a large framed mirror",
-        "Delux oval ivory dining table with a fluted pedestal base, cream and charcoal chairs and matching console in the background",
+        "Complete Deluxe dining room set with an oval ivory table, cream and charcoal chairs, matching cabinets and mirrored wall panels",
+        "Deluxe ivory dining chair close-up with a rounded upholstered back, patterned fabric and polished gold-tone sled base",
+        "Deluxe ivory console with fluted curved doors, mirrored center panels, gold-tone cylindrical legs and a large framed mirror",
+        "Deluxe oval ivory dining table with a fluted pedestal base, cream and charcoal chairs and matching console in the background",
       ],
     },
 
   description:
-  "The Delux Luxury Dining Room Collection by VIRELLAART pairs an elegant oval dining table with sculptural storage pieces and formal symmetry for a polished, prestigious interior. Designed for grand villas and refined entertaining spaces, this luxury dining room furniture creates a confident sense of occasion. Request a detailed Delux Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
+  "The Deluxe Luxury Dining Room Collection by VIRELLAART pairs an elegant oval dining table with sculptural storage pieces and formal symmetry for a polished, prestigious interior. Designed for grand villas and refined entertaining spaces, this luxury dining room furniture creates a confident sense of occasion. Request a detailed Deluxe Dining Room quotation through WhatsApp, including personalized dining-set options and international shipping information.",
 
   prices: [
     {
@@ -807,7 +807,7 @@ imageAlts: {
 
 deluxTV: {
 
-  name: "Delux TV Unit",
+  name: "Deluxe TV Unit",
 
   category: "tv-units",
 
@@ -817,13 +817,13 @@ images: [
 ],
 imageAlts: {
   en: [
-    "Front view of the Delux cream TV console with rounded fluted side cabinets, mirrored center drawers and gold-tone lattice pedestal bases",
-    "Angled view of the Delux TV console showing its cream marble-look top, fluted curved doors, mirrored storage sections and gold-tone lattice bases",
+    "Front view of the Deluxe cream TV console with rounded fluted side cabinets, mirrored center drawers and gold-tone lattice pedestal bases",
+    "Angled view of the Deluxe TV console showing its cream marble-look top, fluted curved doors, mirrored storage sections and gold-tone lattice bases",
   ],
 },
 
  description:
-  "The Delux Luxury TV Unit by VIRELLAART combines a sweeping curved profile, vertical detailing and a balanced mix of display and storage elements. Created for elegant villas and sophisticated living spaces, this designer TV unit adds refined structure and a polished focal point. Share your living-room project on WhatsApp to receive Delux TV Unit prices, personalized options and delivery planning from VIRELLAART.",
+  "The Deluxe Luxury TV Unit by VIRELLAART combines a sweeping curved profile, vertical detailing and a balanced mix of display and storage elements. Created for elegant villas and sophisticated living spaces, this designer TV unit adds refined structure and a polished focal point. Share your living-room project on WhatsApp to receive Deluxe TV Unit prices, personalized options and delivery planning from VIRELLAART.",
 
   prices: [
     {
@@ -1033,7 +1033,7 @@ valderaDining: {
   ],
 },
 versaceBedroom: {
-  name: "Versace Bedroom",
+  name: "Verona Bedroom",
 
   category: "bedrooms",
 
@@ -1046,16 +1046,16 @@ versaceBedroom: {
   ],
   imageAlts: {
     en: [
-      "Complete Versace bedroom set with a cream upholstered bed, mirrored wardrobe, matching dresser, nightstands and quilted bench in a luxury interior",
-      "Versace cream wardrobe with textured outer door panels, central full-length mirrors, gold-tone handles and rounded framing",
-      "Versace cream dressing table with asymmetrical drawers, large rounded rectangular mirror, gold-tone details and matching round stool",
-      "Front view of the Versace upholstered bed with geometric panelled headboard, gold-tone vertical accents, matching nightstands and quilted footboard",
-      "Close-up of the Versace cream nightstand with textured drawer front, gold-tone handle and tapered decorative leg beside the upholstered bed",
+      "Complete Verona bedroom set with a cream upholstered bed, mirrored wardrobe, matching dresser, nightstands and quilted bench in a luxury interior",
+      "Verona cream wardrobe with textured outer door panels, central full-length mirrors, gold-tone handles and rounded framing",
+      "Verona cream dressing table with asymmetrical drawers, large rounded rectangular mirror, gold-tone details and matching round stool",
+      "Front view of the Verona upholstered bed with geometric panelled headboard, gold-tone vertical accents, matching nightstands and quilted footboard",
+      "Close-up of the Verona cream nightstand with textured drawer front, gold-tone handle and tapered decorative leg beside the upholstered bed",
     ],
   },
 
   description:
-  "The Versace Luxury Bedroom Collection by VIRELLAART combines a tall statement headboard, balanced proportions and refined vertical detailing to create a polished, contemporary retreat. Designed for elegant villas and sophisticated master suites, this luxury bedroom furniture brings visual harmony and a strong sense of prestige. Speak with our WhatsApp team for Versace Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
+  "The Verona Luxury Bedroom Collection by VIRELLAART combines a tall statement headboard, balanced proportions and refined vertical detailing to create a polished, contemporary retreat. Designed for elegant villas and sophisticated master suites, this luxury bedroom furniture brings visual harmony and a strong sense of prestige. Speak with our WhatsApp team for Verona Bedroom availability, bedroom customization and shipping assistance for your residence.",
 
   prices: [
     {
@@ -1341,7 +1341,7 @@ milanoBlueDining: {
   ],
 },
 milanoBlueBedroom: {
-  name: "Milano Blue Bedroom",
+  name: "Milano Bedroom (Blue Edition)",
 
   category: "bedrooms",
 
@@ -1354,8 +1354,8 @@ milanoBlueBedroom: {
   ],
   imageAlts: {
     en: [
-      "Complete Milano Blue bedroom set with an ornate cream tufted bed, matching nightstands and a large cream wardrobe with dark carved framing",
-      "Milano Blue bedroom arrangement with a cream tufted bed, ornate nightstands and a matching dressing table with three decorative mirrors",
+      "Complete Milano Bedroom (Blue Edition) set with an ornate cream tufted bed, matching nightstands and a large cream wardrobe with dark carved framing",
+      "Milano Bedroom (Blue Edition) arrangement with a cream tufted bed, ornate nightstands and a matching dressing table with three decorative mirrors",
       "Milano Blue cream wardrobe with curved side panels, elaborate dark carved ornaments, crowned top and coordinated decorative base",
       "Close-up of the Milano Blue bed with a tall cream button-tufted headboard, dark carved frame, matching nightstands and ornate footboard",
       "Milano Blue cream dressing table with elaborate dark carved framing, three decorative mirrors and a matching round tufted stool",
@@ -1363,7 +1363,7 @@ milanoBlueBedroom: {
   },
 
   description:
-  "The Milano Blue Luxury Bedroom Collection by VIRELLAART presents a grand classical retreat with a tufted statement bed, richly framed wardrobe and coordinated decorative pieces. Designed for elegant villas and formal master suites, this luxury bedroom furniture creates a prestigious, harmonious atmosphere. Discuss the Milano Blue Bedroom collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
+  "The Milano Bedroom (Blue Edition) Luxury Collection by VIRELLAART presents a grand classical retreat with a tufted statement bed, richly framed wardrobe and coordinated decorative pieces. Designed for elegant villas and formal master suites, this luxury bedroom furniture creates a prestigious, harmonious atmosphere. Discuss the Milano Bedroom (Blue Edition) collection with VIRELLAART via WhatsApp and receive tailored guidance for pricing, options and international delivery.",
 
   prices: [
     {
@@ -1765,7 +1765,7 @@ sultanBedroom: {
   },
 
   description:
-    "The Sultan Luxury Bedroom Collection by VIRELLAART features a crowned statement headboard, formal symmetry and coordinated classical furniture for an impressive master suite. Designed for luxury villas and distinguished residences, this luxury bedroom set creates regal comfort with a commanding visual identity. Speak with our WhatsApp team for Sultan Bedroom availability, bedroom-set customization and shipping assistance for your residence.",
+    "The Sultan Bedroom Collection by VIRELLAART features a crowned statement headboard, formal symmetry and coordinated classical furniture for an impressive master suite. Designed for luxury villas and distinguished residences, this Sultan bedroom collection creates regal comfort with a commanding visual identity. Speak with our WhatsApp team for Sultan Bedroom availability, bedroom customization and shipping assistance for your residence.",
 
   prices: [
     {
@@ -1776,7 +1776,7 @@ sultanBedroom: {
   ],
 },
 sultanGreenBedroom: {
-  name: "Sultan Green Bedroom",
+  name: "Sultan Bedroom (Green Edition)",
 
   category: "bedrooms",
 
@@ -1789,8 +1789,8 @@ sultanGreenBedroom: {
   ],
   imageAlts: {
     en: [
-      "Complete Sultan Green bedroom collection with an ivory tufted bed, ornate wardrobe, mirrored dressing table, nightstands and upholstered stool",
-      "Sultan Green bedroom arrangement with an ivory button-tufted bed, matching nightstand and large wardrobe with dark green marble-look accents",
+      "Complete Sultan Bedroom (Green Edition) collection with an ivory tufted bed, ornate wardrobe, mirrored dressing table, nightstands and upholstered stool",
+      "Sultan Bedroom (Green Edition) arrangement with an ivory button-tufted bed, matching nightstand and large wardrobe with dark green marble-look accents",
       "Close-up of the Sultan Green bedside cabinet with cream panels, dark green marble-look framing, ornate gold-tone carving and mirrored display niche",
       "Sultan Green dressing table with cream cabinetry, dark green marble-look trim, elaborate gold-tone mirror and matching upholstered stool",
       "Sultan Green cream wardrobe with dark green marble-look framing, elaborate gold-tone door ornaments, carved crown and decorative base",
@@ -1798,7 +1798,7 @@ sultanGreenBedroom: {
   },
 
   description:
-  "The Sultan Green Luxury Bedroom Collection by VIRELLAART showcases a regal classical composition with a crowned headboard, ornate framing and coordinated statement pieces. Designed for palatial villas and formal master suites, this luxury bedroom furniture creates refined symmetry and commanding visual prestige. Share your master-bedroom requirements on WhatsApp to receive Sultan Green Bedroom pricing, personalized options and delivery planning from VIRELLAART.",
+  "The Sultan Bedroom (Green Edition) Luxury Collection by VIRELLAART showcases a regal classical composition with a crowned headboard, ornate framing and coordinated statement pieces. Designed for palatial villas and formal master suites, this luxury bedroom furniture creates refined symmetry and commanding visual prestige. Share your master-bedroom requirements on WhatsApp to receive Sultan Bedroom (Green Edition) pricing, personalized options and delivery planning from VIRELLAART.",
 
   prices: [
     {
@@ -1919,11 +1919,11 @@ sultanGreenDining: {
 },
 
   marsilyaBedroom: {
-    name: "Luxury Bedroom Set",
+    name: "Marsilya Bedroom",
     category: "bedrooms",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
-      "The Luxury Bedroom Set combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Share your master-bedroom requirements on WhatsApp to receive Luxury Bedroom Set pricing, personalized options and delivery planning from VIRELLAART.",
+      "The Marsilya Bedroom combines refined contemporary styling with a softly upholstered bed, sculptural wardrobe, coordinated dressing area, warm neutral tones, and elegant champagne-gold accents. Share your master-bedroom requirements on WhatsApp to receive Marsilya Bedroom pricing, personalized options and delivery planning from VIRELLAART.",
     images: [
       "/marsilyabedroom-01.webp",
       "/marsilyabedroom-02.webp",
@@ -1940,7 +1940,7 @@ sultanGreenDining: {
     },
     prices: [
       {
-        label: "Luxury Bedroom Set",
+        label: "Marsilya Bedroom",
         price: "$5,300",
         featured: true,
       },
@@ -1948,11 +1948,11 @@ sultanGreenDining: {
   },
 
   rioBedroom: {
-    name: "rio Luxury Bedroom Set",
+    name: "rio Marsilya Bedroom",
     category: "bedrooms",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
-      "The rio Luxury Bedroom Set by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for rio Luxury Bedroom Set pricing, customization guidance and worldwide delivery planning.",
+      "The rio Marsilya Bedroom by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for rio Marsilya Bedroom pricing, customization guidance and worldwide delivery planning.",
     images: [
       "/riobedroom-01.webp",
       "/riobedroom-02.webp",
@@ -1962,7 +1962,7 @@ sultanGreenDining: {
     ],
     imageAlts: {
       en: [
-        "Complete rio luxury bedroom set with a cream upholstered bed, mirrored wardrobe, curved dresser, matching nightstands and padded bench",
+        "Complete Rio Royale Bedroom with a cream upholstered bed, mirrored wardrobe, curved dresser, matching nightstands and padded bench",
         "Close-up of the rio cream bed with a vertically channelled headboard, layered marble-look frame, gold-tone accents and rounded nightstand",
         "Front view of the rio upholstered bed with layered statement headboard, matching nightstands and a rounded padded bench with gold-tone bands",
         "rio cream bedroom wardrobe with central full-length mirrored doors, fluted upper panels, rounded corners and gold-tone handles",
@@ -1971,7 +1971,7 @@ sultanGreenDining: {
     },
     prices: [
       {
-        label: "rio Luxury Bedroom Set",
+        label: "rio Marsilya Bedroom",
         price: "$5,300",
         featured: true,
       },
