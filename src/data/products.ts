@@ -2202,4 +2202,41 @@ sultanGreenDining: {
       },
     ],
   },
+
+  vitoSofaSet: {
+    name: "VITO Sofa Set",
+    slug: "vito-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Contemporary Elegance for Sophisticated Interiors",
+    description:
+      "VITO Sofa Set creates a refined modern living atmosphere with its balanced 3+3+1+1 seating composition and clean contemporary silhouette. Designed for elegant residential spaces, this luxury sofa collection combines visual harmony with a spacious arrangement ideal for modern living rooms. Completed with a two-piece center table set, VITO represents a sophisticated choice for customers searching for premium contemporary living room furniture.",
+    images: [
+      "/vito-sofa-set-01.webp",
+      "/vito-sofa-set-02.webp",
+      "/vito-sofa-set-03.webp",
+      "/vito-sofa-set-04.webp",
+      "/vito-sofa-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "VITO modern sofa set in a luxury contemporary living room interior",
+        "VITO 3+3+1+1 sofa set with elegant modern seating composition",
+        "VITO luxury living room furniture arrangement with center table",
+        "VITO contemporary sofa collection side view in premium interior",
+        "VITO modern designer sofa set product presentation",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,750",
+        featured: true,
+      },
+      {
+        label: "2 Piece Center Table",
+        price: "$650",
+      },
+    ],
+  },
 };
