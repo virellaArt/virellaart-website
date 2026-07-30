@@ -2239,4 +2239,45 @@ sultanGreenDining: {
       },
     ],
   },
+
+  ayIsigiSofaSet: {
+    name: "AY IŞIĞI Sofa Set",
+    slug: "ay-isigi-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Tailored Structure on a Light Architectural Frame",
+    description:
+      "AY IŞIĞI Sofa Set introduces a crisp, tailored character to contemporary interiors through structured back cushions, slim elevated legs and contrasting accent chairs. Its balanced 3+3+1+1 configuration creates a complete modern living room arrangement with a visually light profile. A distinctive choice for customers searching for a modern grey sofa set, luxury four-piece living room set and contemporary designer furniture from VIRELLAART.",
+    images: [
+      "/ay-isigi-sofa-set-01.webp",
+      "/ay-isigi-sofa-set-02.webp",
+      "/ay-isigi-sofa-set-03.webp",
+      "/ay-isigi-sofa-set-04.webp",
+      "/ay-isigi-sofa-set-05.webp",
+      "/ay-isigi-sofa-set-06.webp",
+      "/ay-isigi-sofa-set-07.webp",
+      "/ay-isigi-sofa-set-08.webp",
+      "/ay-isigi-sofa-set-09.webp",
+    ],
+    imageAlts: {
+      en: [
+        "AY IŞIĞI modern grey sofa set in a bright contemporary living room",
+        "AY IŞIĞI accent armchair with slim legs beside the coordinated modern sofa",
+        "AY IŞIĞI three-seat contemporary sofa viewed from an elegant side angle",
+        "AY IŞIĞI dark armchair lower frame and elevated leg design detail",
+        "AY IŞIĞI modern sofa with structured cushions and clean tailored arm lines",
+        "AY IŞIĞI luxury grey sofa set with refined back cushion detailing",
+        "AY IŞIĞI 3+3+1+1 living room set arranged around a modern coffee table",
+        "AY IŞIĞI three-seat sofa side profile with slim arm and raised frame",
+        "AY IŞIĞI sofa upholstery and segmented back cushion close-up",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$4,150",
+        featured: true,
+      },
+    ],
+  },
 };
