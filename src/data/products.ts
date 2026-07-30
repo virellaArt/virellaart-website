@@ -2081,4 +2081,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  floridaSofaSet: {
+    name: "Florida Sofa Set",
+    slug: "florida-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Sculptural Comfort for Modern Living",
+    description:
+      "Florida Sofa Set brings a clean modern presence with soft curves, balanced proportions and a refined luxury feel. Designed for elegant contemporary interiors, this collection offers a welcoming seating experience while maintaining a sophisticated silhouette. A strong choice for customers seeking modern living room furniture with premium visual impact.",
+    images: [
+      "/florida-sofa-set-01.webp",
+      "/florida-sofa-set-02.webp",
+      "/florida-sofa-set-03.webp",
+      "/florida-sofa-set-04.webp",
+      "/florida-sofa-set-05.webp",
+      "/florida-sofa-set-06.webp",
+      "/florida-sofa-set-07.webp",
+      "/florida-sofa-set-08.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 1",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 2",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 3",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 4",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 5",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 6",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 7",
+        "Florida Sofa Set modern sofa collection by VIRELLAART - product view 8",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,950",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
