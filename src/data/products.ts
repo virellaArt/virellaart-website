@@ -2534,4 +2534,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  gizemSofaSet: {
+    name: "GIZEM Sofa Set",
+    slug: "gizem-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Smart Reclining Comfort with a Clean Modern Profile",
+    description:
+      "GIZEM Sofa Set combines a streamlined contemporary silhouette with adjustable headrests and reclining footrest sections designed for flexible modern living. Its complete 3+3+1+1 arrangement features refined grey seating, structured cushions and elevated dark frames, while the integrated control detail adds a technology-focused character. A distinctive choice for customers searching for a modern recliner sofa set, luxury grey living room furniture and premium reclining seating from VIRELLAART.",
+    images: [
+      "/gizem-sofa-set-01.webp",
+      "/gizem-sofa-set-02.webp",
+      "/gizem-sofa-set-03.webp",
+      "/gizem-sofa-set-04.webp",
+      "/gizem-sofa-set-05.webp",
+      "/gizem-sofa-set-06.webp",
+      "/gizem-sofa-set-07.webp",
+      "/gizem-sofa-set-08.webp",
+      "/gizem-sofa-set-09.webp",
+      "/gizem-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "GIZEM modern reclining sofa set in a luxury glass-walled living room",
+        "GIZEM 3+3+1+1 grey sofa set with adjustable headrests and contemporary metal legs",
+        "GIZEM three-seat modern recliner sofa with structured cushions and raised headrests",
+        "GIZEM contemporary sofa with adjustable headrests shown in an elevated position",
+        "GIZEM luxury grey three-seat sofa with clean arms and tailored seat cushions",
+        "GIZEM reclining sofa with extended footrest and adjustable head support",
+        "GIZEM modern three-seat sofa with dual reclining footrests fully extended",
+        "GIZEM complete reclining living room set with adjustable seating positions",
+        "GIZEM sofa integrated control and charging panel with circular speaker grilles",
+        "GIZEM reclining seat close-up showing the cushioned footrest and tailored upholstery",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$4,500",
+        featured: true,
+      },
+    ],
+  },
 };
