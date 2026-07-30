@@ -8,6 +8,7 @@ export type CollectionMenuCopy = {
   hubDescription: string;
   hubEyebrow: string;
   hubIntro: string;
+  modelLabel: string;
   modelsSoon: string;
   exploreCategory: string;
   categoryEyebrow: string;
@@ -33,6 +34,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "The Modern collection structure is ready. New models will be published here after their product details, photography and prices are confirmed.",
+    modelLabel: "models",
     modelsSoon: "Models coming soon",
     exploreCategory: "Explore category",
     categoryEyebrow: "VIRELLAART Modern Collection",
@@ -55,6 +57,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Modern koleksiyon altyapısı hazırdır. Yeni modeller; ürün detayları, fotoğrafları ve fiyatları doğrulandıktan sonra burada yayınlanacaktır.",
+    modelLabel: "model",
     modelsSoon: "Modeller yakında",
     exploreCategory: "Kategoriyi incele",
     categoryEyebrow: "VIRELLAART Modern Koleksiyon",
@@ -77,6 +80,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Die Struktur der Modern-Kollektion ist vorbereitet. Neue Modelle werden nach Bestätigung von Produktdetails, Fotos und Preisen veröffentlicht.",
+    modelLabel: "Modelle",
     modelsSoon: "Modelle folgen in Kürze",
     exploreCategory: "Kategorie ansehen",
     categoryEyebrow: "VIRELLAART Modern-Kollektion",
@@ -99,6 +103,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "La structure de la collection Modern est prête. Les nouveaux modèles seront publiés après validation des détails, photos et prix.",
+    modelLabel: "modèles",
     modelsSoon: "Modèles prochainement",
     exploreCategory: "Voir la catégorie",
     categoryEyebrow: "Collection VIRELLAART Modern",
@@ -121,6 +126,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "La struttura della collezione Modern è pronta. I nuovi modelli saranno pubblicati dopo la verifica di dettagli, fotografie e prezzi.",
+    modelLabel: "modelli",
     modelsSoon: "Modelli in arrivo",
     exploreCategory: "Vedi la categoria",
     categoryEyebrow: "Collezione VIRELLAART Modern",
@@ -143,6 +149,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Структура коллекции Modern готова. Новые модели будут опубликованы после подтверждения характеристик, фотографий и цен.",
+    modelLabel: "моделей",
     modelsSoon: "Модели скоро появятся",
     exploreCategory: "Открыть категорию",
     categoryEyebrow: "Коллекция VIRELLAART Modern",
@@ -165,6 +172,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "بنية مجموعة Modern جاهزة. ستُنشر الموديلات الجديدة بعد اعتماد التفاصيل والصور والأسعار.",
+    modelLabel: "موديلًا",
     modelsSoon: "الموديلات قريبًا",
     exploreCategory: "استكشف الفئة",
     categoryEyebrow: "مجموعة VIRELLAART Modern",
@@ -187,6 +195,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Структурата на колекция Modern е готова. Новите модели ще бъдат публикувани след потвърждение на детайлите, снимките и цените.",
+    modelLabel: "модела",
     modelsSoon: "Модели очаквайте скоро",
     exploreCategory: "Разгледайте категорията",
     categoryEyebrow: "Колекция VIRELLAART Modern",
@@ -209,6 +218,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Structura colecției Modern este pregătită. Modelele noi vor fi publicate după confirmarea detaliilor, fotografiilor și prețurilor.",
+    modelLabel: "modele",
     modelsSoon: "Modele în curând",
     exploreCategory: "Vezi categoria",
     categoryEyebrow: "Colecția VIRELLAART Modern",
@@ -231,6 +241,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Η δομή της συλλογής Modern είναι έτοιμη. Τα νέα μοντέλα θα δημοσιευτούν μετά την επιβεβαίωση στοιχείων, φωτογραφιών και τιμών.",
+    modelLabel: "μοντέλα",
     modelsSoon: "Μοντέλα σύντομα",
     exploreCategory: "Δείτε την κατηγορία",
     categoryEyebrow: "Συλλογή VIRELLAART Modern",
@@ -253,6 +264,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "La estructura de la colección Modern está preparada. Los nuevos modelos se publicarán tras confirmar detalles, fotografías y precios.",
+    modelLabel: "modelos",
     modelsSoon: "Modelos próximamente",
     exploreCategory: "Ver categoría",
     categoryEyebrow: "Colección VIRELLAART Modern",
@@ -275,6 +287,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Struktura kolekcije Modern je spremna. Novi modeli biće objavljeni nakon potvrde detalja, fotografija i cena.",
+    modelLabel: "modela",
     modelsSoon: "Modeli uskoro",
     exploreCategory: "Pogledajte kategoriju",
     categoryEyebrow: "VIRELLAART Modern kolekcija",
@@ -297,6 +310,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Modern топтамасының құрылымы дайын. Жаңа модельдер сипаттамалары, фотолары және бағалары расталғаннан кейін жарияланады.",
+    modelLabel: "модель",
     modelsSoon: "Модельдер жақында",
     exploreCategory: "Санатты қарау",
     categoryEyebrow: "VIRELLAART Modern топтамасы",
@@ -319,6 +333,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Modern kolleksiyasi tuzilmasi tayyor. Yangi modellar tafsilotlari, rasmlari va narxlari tasdiqlangach e’lon qilinadi.",
+    modelLabel: "model",
     modelsSoon: "Modellar tez orada",
     exploreCategory: "Kategoriyani ko‘rish",
     categoryEyebrow: "VIRELLAART Modern kolleksiyasi",
@@ -341,6 +356,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "A estrutura da coleção Modern está pronta. Os novos modelos serão publicados após confirmação dos detalhes, fotografias e preços.",
+    modelLabel: "modelos",
     modelsSoon: "Modelos em breve",
     exploreCategory: "Ver categoria",
     categoryEyebrow: "Coleção VIRELLAART Modern",
@@ -363,6 +379,7 @@ export const collectionMenuCopy: Record<
     hubEyebrow: "VIRELLAART · Modern",
     hubIntro:
       "Struktura kolekcji Modern jest gotowa. Nowe modele zostaną opublikowane po potwierdzeniu szczegółów, zdjęć i cen.",
+    modelLabel: "modeli",
     modelsSoon: "Modele wkrótce",
     exploreCategory: "Zobacz kategorię",
     categoryEyebrow: "Kolekcja VIRELLAART Modern",
