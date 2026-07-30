@@ -84,6 +84,7 @@ export const staticRoutes = [
   "dining-rooms",
   "bedrooms",
   "tv-units",
+  "collections/luxury-classic",
   "about",
   "manufacturing",
   "contact",

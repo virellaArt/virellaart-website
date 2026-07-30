@@ -2,8 +2,13 @@
 import {
   getLanguageFromPath,
   getTranslations,
+  languages,
   localizedPath,
 } from "../i18n/config";
+import {
+  getMarketFooterPages,
+  marketPagePath,
+} from "../data/market-pages";
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
@@ -157,6 +162,38 @@ const footerTranslations: Record<
 const footerText =
   footerTranslations[language] ??
   footerTranslations.en;
+
+const marketHeadings = {
+  en: "International Markets",
+  tr: "Uluslararası Pazarlar",
+  de: "Internationale Märkte",
+  fr: "Marchés internationaux",
+  it: "Mercati internazionali",
+  ru: "Международные рынки",
+  ar: "الأسواق الدولية",
+  bg: "Международни пазари",
+  ro: "Piețe internaționale",
+  el: "Διεθνείς αγορές",
+  es: "Mercados internacionales",
+  sr: "Međunarodna tržišta",
+  kk: "Халықаралық нарықтар",
+  uz: "Xalqaro bozorlar",
+  pt: "Mercados internacionais",
+  pl: "Rynki międzynarodowe",
+} as const;
+
+const regionNames = new Intl.DisplayNames(
+  [languages[language].locale.replace("_", "-")],
+  { type: "region" },
+);
+
+const footerMarkets =
+  getMarketFooterPages(language).map((market) => ({
+    href: marketPagePath(market),
+    label:
+      regionNames.of(market.countryCode) ??
+      market.marketName,
+  }));
 ---
 
 <footer class="site-footer">
@@ -218,6 +255,16 @@ const footerText =
       </a>
     </div>
 
+    <div class="footer-column footer-markets">
+      <span>{marketHeadings[language]}</span>
+
+      {
+        footerMarkets.map((market) => (
+          <a href={market.href}>{market.label}</a>
+        ))
+      }
+    </div>
+
     <div class="footer-service">
       <span>{translations.product.worldwideDelivery}</span>
 
@@ -265,7 +312,7 @@ const footerText =
   .footer-brand p,
   .footer-service p {
     max-width: 440px;
-    color: rgba(245, 239, 230, 0.64);
+    color: rgba(245, 239, 230, 0.78);
     font-size: 14px;
     line-height: 1.8;
   }
@@ -288,7 +335,7 @@ const footerText =
   }
 
   .footer-column a {
-    color: rgba(255, 255, 255, 0.76);
+    color: rgba(255, 255, 255, 0.84);
     font-size: 13px;
     line-height: 1.5;
     transition: color 0.2s ease;
@@ -312,7 +359,7 @@ const footerText =
     gap: 24px;
     padding: 22px 0 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 10px;
     letter-spacing: 1.8px;
     text-transform: uppercase;

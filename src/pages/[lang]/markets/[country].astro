@@ -1,0 +1,27 @@
+---
+import MarketPageComponent from "../../../components/MarketPage.astro";
+import {
+  localizedMarketPages,
+  type MarketPage,
+} from "../../../data/market-pages";
+
+export function getStaticPaths() {
+  return localizedMarketPages.map((market) => ({
+    params: {
+      lang: market.language,
+      country: market.slug,
+    },
+    props: {
+      market,
+    },
+  }));
+}
+
+interface Props {
+  market: MarketPage;
+}
+
+const { market } = Astro.props;
+---
+
+<MarketPageComponent {market} />

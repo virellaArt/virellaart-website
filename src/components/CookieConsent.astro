@@ -1,0 +1,419 @@
+---
+import {
+  getLanguageFromPath,
+  languageCodes,
+  localizedPath,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+
+type ConsentTranslation = {
+  title: string;
+  description: string;
+  privacy: string;
+  accept: string;
+  reject: string;
+  settings: string;
+};
+
+const consentTranslations: Record<
+  (typeof languageCodes)[number],
+  ConsentTranslation
+> = {
+  en: {
+    title: "Your privacy",
+    description:
+      "We use optional analytics cookies to understand site usage and improve your experience. Analytics is activated only with your permission.",
+    privacy: "Privacy policy",
+    accept: "Allow analytics",
+    reject: "Only necessary",
+    settings: "Cookie settings",
+  },
+  tr: {
+    title: "Gizliliğiniz",
+    description:
+      "Site kullanımını anlamak ve deneyiminizi iyileştirmek için isteğe bağlı analiz çerezleri kullanıyoruz. Analytics yalnızca izninizle etkinleşir.",
+    privacy: "Gizlilik politikası",
+    accept: "Analize izin ver",
+    reject: "Yalnızca gerekli",
+    settings: "Çerez ayarları",
+  },
+  de: {
+    title: "Ihre Privatsphäre",
+    description:
+      "Wir verwenden optionale Analyse-Cookies, um die Nutzung der Website zu verstehen und Ihr Erlebnis zu verbessern. Analytics wird nur mit Ihrer Einwilligung aktiviert.",
+    privacy: "Datenschutzerklärung",
+    accept: "Analytics erlauben",
+    reject: "Nur erforderlich",
+    settings: "Cookie-Einstellungen",
+  },
+  fr: {
+    title: "Votre confidentialité",
+    description:
+      "Nous utilisons des cookies d’analyse facultatifs pour comprendre l’utilisation du site et améliorer votre expérience. Analytics n’est activé qu’avec votre accord.",
+    privacy: "Politique de confidentialité",
+    accept: "Autoriser l’analyse",
+    reject: "Nécessaires uniquement",
+    settings: "Paramètres des cookies",
+  },
+  it: {
+    title: "La tua privacy",
+    description:
+      "Utilizziamo cookie analitici facoltativi per comprendere l’uso del sito e migliorare la tua esperienza. Analytics viene attivato solo con il tuo consenso.",
+    privacy: "Informativa sulla privacy",
+    accept: "Consenti analytics",
+    reject: "Solo necessari",
+    settings: "Impostazioni cookie",
+  },
+  ru: {
+    title: "Ваша конфиденциальность",
+    description:
+      "Мы используем необязательные аналитические файлы cookie, чтобы понимать использование сайта и улучшать его. Analytics включается только с вашего согласия.",
+    privacy: "Политика конфиденциальности",
+    accept: "Разрешить аналитику",
+    reject: "Только необходимые",
+    settings: "Настройки cookie",
+  },
+  ar: {
+    title: "خصوصيتك",
+    description:
+      "نستخدم ملفات تعريف ارتباط تحليلية اختيارية لفهم استخدام الموقع وتحسين تجربتك. لا يتم تفعيل التحليلات إلا بعد موافقتك.",
+    privacy: "سياسة الخصوصية",
+    accept: "السماح بالتحليلات",
+    reject: "الضرورية فقط",
+    settings: "إعدادات ملفات الارتباط",
+  },
+  bg: {
+    title: "Вашата поверителност",
+    description:
+      "Използваме незадължителни аналитични бисквитки, за да разбираме използването на сайта и да подобряваме изживяването. Analytics се активира само с ваше съгласие.",
+    privacy: "Политика за поверителност",
+    accept: "Разреши анализите",
+    reject: "Само необходимите",
+    settings: "Настройки за бисквитки",
+  },
+  ro: {
+    title: "Confidențialitatea dvs.",
+    description:
+      "Folosim cookie-uri analitice opționale pentru a înțelege utilizarea site-ului și a îmbunătăți experiența. Analytics este activat numai cu acordul dvs.",
+    privacy: "Politica de confidențialitate",
+    accept: "Permite analiza",
+    reject: "Doar necesare",
+    settings: "Setări cookie",
+  },
+  el: {
+    title: "Το απόρρητό σας",
+    description:
+      "Χρησιμοποιούμε προαιρετικά cookies ανάλυσης για να κατανοούμε τη χρήση του ιστότοπου και να βελτιώνουμε την εμπειρία σας. Το Analytics ενεργοποιείται μόνο με τη συγκατάθεσή σας.",
+    privacy: "Πολιτική απορρήτου",
+    accept: "Αποδοχή ανάλυσης",
+    reject: "Μόνο απαραίτητα",
+    settings: "Ρυθμίσεις cookies",
+  },
+  es: {
+    title: "Tu privacidad",
+    description:
+      "Usamos cookies analíticas opcionales para comprender el uso del sitio y mejorar tu experiencia. Analytics solo se activa con tu permiso.",
+    privacy: "Política de privacidad",
+    accept: "Permitir analíticas",
+    reject: "Solo necesarias",
+    settings: "Configuración de cookies",
+  },
+  sr: {
+    title: "Vaša privatnost",
+    description:
+      "Koristimo opcione analitičke kolačiće da bismo razumeli korišćenje sajta i poboljšali iskustvo. Analytics se aktivira samo uz vašu saglasnost.",
+    privacy: "Politika privatnosti",
+    accept: "Dozvoli analitiku",
+    reject: "Samo neophodni",
+    settings: "Podešavanja kolačića",
+  },
+  kk: {
+    title: "Құпиялылығыңыз",
+    description:
+      "Сайттың пайдаланылуын түсіну және тәжірибеңізді жақсарту үшін қосымша талдау cookie файлдарын қолданамыз. Analytics тек рұқсатыңызбен қосылады.",
+    privacy: "Құпиялық саясаты",
+    accept: "Талдауға рұқсат беру",
+    reject: "Тек қажеттілері",
+    settings: "Cookie баптаулары",
+  },
+  uz: {
+    title: "Maxfiyligingiz",
+    description:
+      "Saytdan foydalanishni tushunish va tajribangizni yaxshilash uchun ixtiyoriy tahlil cookie-fayllaridan foydalanamiz. Analytics faqat roziligingiz bilan yoqiladi.",
+    privacy: "Maxfiylik siyosati",
+    accept: "Tahlilga ruxsat berish",
+    reject: "Faqat zarur",
+    settings: "Cookie sozlamalari",
+  },
+  pt: {
+    title: "A sua privacidade",
+    description:
+      "Utilizamos cookies analíticos opcionais para compreender a utilização do site e melhorar a sua experiência. O Analytics só é ativado com a sua autorização.",
+    privacy: "Política de privacidade",
+    accept: "Permitir análise",
+    reject: "Apenas necessários",
+    settings: "Definições de cookies",
+  },
+  pl: {
+    title: "Twoja prywatność",
+    description:
+      "Używamy opcjonalnych analitycznych plików cookie, aby rozumieć korzystanie z witryny i ulepszać doświadczenie. Analytics jest aktywowany wyłącznie za zgodą.",
+    privacy: "Polityka prywatności",
+    accept: "Zezwól na analitykę",
+    reject: "Tylko niezbędne",
+    settings: "Ustawienia cookies",
+  },
+};
+
+const consent = consentTranslations[language];
+---
+
+<section
+  class="cookie-consent"
+  data-cookie-consent
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-description"
+  hidden
+>
+  <div>
+    <strong id="cookie-consent-title">{consent.title}</strong>
+    <p id="cookie-consent-description">
+      {consent.description}
+      <a href={localizedPath("/policies/privacy-policy", language)}>
+        {consent.privacy}
+      </a>
+    </p>
+  </div>
+
+  <div class="cookie-actions">
+    <button type="button" data-cookie-reject>{consent.reject}</button>
+    <button type="button" class="cookie-accept" data-cookie-accept>
+      {consent.accept}
+    </button>
+  </div>
+</section>
+
+<button
+  type="button"
+  class="cookie-settings"
+  data-cookie-settings
+  hidden
+>
+  {consent.settings}
+</button>
+
+<script is:inline>
+  (() => {
+    const storageKey = "virellaart-analytics-consent";
+    const measurementId = "G-Y8YY6ZBD87";
+    const banner = document.querySelector("[data-cookie-consent]");
+    const acceptButton = document.querySelector("[data-cookie-accept]");
+    const rejectButton = document.querySelector("[data-cookie-reject]");
+    const settingsButton = document.querySelector("[data-cookie-settings]");
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(arguments);
+      };
+
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500,
+    });
+
+    function loadAnalytics() {
+      if (document.querySelector("[data-virella-analytics]")) {
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src =
+        "https://www.googletagmanager.com/gtag/js?id=" +
+        encodeURIComponent(measurementId);
+      script.dataset.virellaAnalytics = "true";
+      document.head.append(script);
+
+      window.gtag("js", new Date());
+      window.gtag("config", measurementId, {
+        anonymize_ip: true,
+      });
+    }
+
+    function readStoredConsent() {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch {
+        return null;
+      }
+    }
+
+    function persistConsent(choice) {
+      try {
+        localStorage.setItem(storageKey, choice);
+      } catch {
+        // Consent remains valid for the current page session.
+      }
+    }
+
+    function setConsent(choice, persist = true) {
+      const granted = choice === "granted";
+      window.virellaAnalyticsAllowed = granted;
+
+      window.gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: granted ? "granted" : "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      if (persist) {
+        persistConsent(choice);
+      }
+
+      if (banner instanceof HTMLElement) {
+        banner.hidden = true;
+      }
+
+      if (settingsButton instanceof HTMLElement) {
+        settingsButton.hidden = false;
+      }
+
+      if (granted) {
+        loadAnalytics();
+        document.dispatchEvent(
+          new CustomEvent("virella:analytics-ready"),
+        );
+      }
+    }
+
+    const storedChoice = readStoredConsent();
+
+    if (storedChoice === "granted" || storedChoice === "denied") {
+      setConsent(storedChoice, false);
+    } else if (banner instanceof HTMLElement) {
+      banner.hidden = false;
+      acceptButton?.focus();
+    }
+
+    acceptButton?.addEventListener("click", () => {
+      setConsent("granted");
+    });
+
+    rejectButton?.addEventListener("click", () => {
+      setConsent("denied");
+    });
+
+    settingsButton?.addEventListener("click", () => {
+      if (banner instanceof HTMLElement) {
+        banner.hidden = false;
+        acceptButton?.focus();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .cookie-consent {
+    position: fixed;
+    z-index: 100000;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    width: min(calc(100% - 44px), 880px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+    padding: 24px;
+    border: 1px solid rgba(225, 199, 138, 0.55);
+    background: rgba(16, 13, 11, 0.98);
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  }
+
+  .cookie-consent[hidden],
+  .cookie-settings[hidden] {
+    display: none;
+  }
+
+  .cookie-consent strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 400;
+  }
+
+  .cookie-consent p {
+    margin: 0;
+    color: #ded6cb;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .cookie-consent a {
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .cookie-actions button {
+    min-height: 44px;
+    padding: 11px 16px;
+    border: 1px solid rgba(225, 199, 138, 0.7);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  .cookie-actions .cookie-accept {
+    background: var(--gold-light);
+    color: #17120e;
+  }
+
+  .cookie-settings {
+    position: fixed;
+    z-index: 9999;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 10px;
+    border: 1px solid rgba(225, 199, 138, 0.45);
+    background: rgba(16, 13, 11, 0.94);
+    color: #f5efe6;
+    font-size: 10px;
+  }
+
+  @media (max-width: 720px) {
+    .cookie-consent {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 20px;
+    }
+
+    .cookie-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .cookie-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

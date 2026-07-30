@@ -21,7 +21,7 @@ const policyUpdated = updated ?? new Intl.DateTimeFormat(locale, { month: "long"
 ---
 
 <BaseLayout {title} {description}>
-  <main class="policy-page">
+  <div class="policy-page">
     <section class="policy-hero">
       <div class="policy-hero-inner">
         <span class="policy-eyebrow">{policyEyebrow}</span>
@@ -58,7 +58,7 @@ const policyUpdated = updated ?? new Intl.DateTimeFormat(locale, { month: "long"
         </a>
       </aside>
     </section>
-  </main>
+  </div>
 </BaseLayout>
 
 <style>

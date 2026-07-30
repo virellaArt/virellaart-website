@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import WhatsAppCTA from "../components/WhatsAppCTA.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import {
   getLanguageFromPath,
   getTranslations,
@@ -18,6 +19,13 @@ interface Props {
   image?: string;
   imageAlt?: string;
   pageType?: "website" | "product";
+  robots?: string;
+  alternateURLs?: {
+    language: string;
+    href: string;
+  }[];
+  xDefaultURL?: string;
+  includeCanonical?: boolean;
 }
 
 const {
@@ -26,6 +34,10 @@ const {
   image = "/living-room.webp",
   imageAlt,
   pageType = "website",
+  robots = "index, follow",
+  alternateURLs: customAlternateURLs,
+  xDefaultURL: customXDefaultURL,
+  includeCanonical = true,
 } = Astro.props;
 
 const language = getLanguageFromPath(Astro.url.pathname);
@@ -48,20 +60,46 @@ const skipToContent = {
   pt: "Ir para o conteúdo",
   pl: "Przejdź do treści",
 }[language];
-const pageDescription = description ?? translations.defaultDescription;
-const fullTitle = title.includes("VIRELLAART")
-  ? title
-  : `${title} | VIRELLAART`;
+const rawDescription =
+  description ?? translations.defaultDescription;
+const pageDescription =
+  rawDescription.length <= 160
+    ? rawDescription
+    : `${rawDescription
+        .slice(0, 159)
+        .replace(/\s+\S*$/, "")
+        .replace(/[,;:\s]+$/, "")}.`;
+const brandSuffix = " | VIRELLAART";
+const titleWithoutBrand = title
+  .replace(/\s*\|\s*VIRELLAART\s*$/i, "")
+  .trim();
+const titleAlreadyIncludesBrand =
+  /\bVIRELLAART\b/i.test(titleWithoutBrand);
+const effectiveBrandSuffix =
+  titleAlreadyIncludesBrand ? "" : brandSuffix;
+const maximumTitleBaseLength =
+  60 - effectiveBrandSuffix.length;
+const optimizedTitleBase =
+  titleWithoutBrand.length <= maximumTitleBaseLength
+    ? titleWithoutBrand
+    : titleWithoutBrand
+        .slice(0, maximumTitleBaseLength)
+        .replace(/\s+\S*$/, "")
+        .trim();
+const fullTitle =
+  `${optimizedTitleBase}${effectiveBrandSuffix}`;
 const basePath = stripLanguagePrefix(Astro.url.pathname);
 const isHomePage = basePath === "/";
 /* VIRELLAART LOCALIZED POLICY SEO */
-const alternateURLs = languageCodes.map((code) => ({
+const defaultAlternateURLs = languageCodes.map((code) => ({
   language: code,
   href: new URL(
     localizedPath(basePath, code),
     "https://www.virellaart.com"
   ).href,
 }));
+const alternateURLs =
+  customAlternateURLs ?? defaultAlternateURLs;
 
 const canonicalPath = Astro.url.pathname.replace(/\/?$/, "/");
 
@@ -69,6 +107,44 @@ const canonicalURL = new URL(
   canonicalPath,
   "https://www.virellaart.com"
 ).href;
+const xDefaultURL =
+  customXDefaultURL ??
+  new URL(
+    `${basePath.replace(/\/?$/, "/")}`,
+    "https://www.virellaart.com"
+  ).href;
+const languageLinks = Object.fromEntries(
+  languageCodes.map((code) => {
+    if (basePath === "/404") {
+      return [code, localizedPath("/", code)];
+    }
+
+    if (customAlternateURLs) {
+      if (code === language) {
+        return [code, canonicalURL];
+      }
+
+      const matchingAlternate =
+        customAlternateURLs.find(
+          (alternate) =>
+            alternate.language
+              .toLowerCase()
+              .split("-")[0] === code,
+        );
+
+      return [
+        code,
+        matchingAlternate?.href ??
+          localizedPath("/", code),
+      ];
+    }
+
+    return [
+      code,
+      localizedPath(basePath, code),
+    ];
+  }),
+);
 
 const imageURL = new URL(
   image,
@@ -152,7 +228,11 @@ const websiteSchema = {
       }
     });
 
-    if (isBot || currentLanguage !== "en") {
+    if (
+      isBot ||
+      currentLanguage !== "en" ||
+      window.location.pathname !== "/"
+    ) {
       return;
     }
 
@@ -168,31 +248,12 @@ const websiteSchema = {
       return;
     }
 
-    const path =
-      window.location.pathname === "/"
-        ? `/${detectedLanguage}/`
-        : `/${detectedLanguage}${window.location.pathname}`;
+    const path = `/${detectedLanguage}/`;
 
     window.location.replace(
       `${path}${window.location.search}${window.location.hash}`,
     );
   })();
-</script>
-
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8YY6ZBD87"></script>
-
-<script is:inline>
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-
-gtag('config', 'G-Y8YY6ZBD87');
 </script>
 
 <script is:inline>
@@ -205,7 +266,10 @@ document.addEventListener("click", (event) => {
 
   if (!(button instanceof HTMLAnchorElement)) return;
 
-  if (typeof window.gtag === "function") {
+  if (
+    window.virellaAnalyticsAllowed === true &&
+    typeof window.gtag === "function"
+  ) {
     const eventData = {
       cta_position:
         button.dataset.whatsappContext ||
@@ -275,7 +339,7 @@ content={pageDescription}
 
 <meta 
 name="robots"
-content="index, follow"
+content={robots}
 />
 
 
@@ -289,11 +353,27 @@ name="color-scheme"
 content="dark"
 />
 
+{
+  isHomePage && (
+    <link
+      rel="preload"
+      as="image"
+      href="/living-room.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
+  )
+}
 
-<link 
-rel="canonical"
-href={canonicalURL}
-/>
+
+{
+  includeCanonical && (
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+  )
+}
 
 {
   alternateURLs.map((alternate) => (
@@ -308,10 +388,7 @@ href={canonicalURL}
 <link
   rel="alternate"
   hreflang="x-default"
-  href={new URL(
-    `${basePath.replace(/\/?$/, "/")}`,
-    "https://www.virellaart.com"
-  ).href}
+  href={xDefaultURL}
 />
 
 <!-- Open Graph -->
@@ -429,7 +506,7 @@ content={imageAlt ?? fullTitle}
 
 <a class="skip-link" href="#main-content">{skipToContent}</a>
 
-<Navbar />
+<Navbar {languageLinks} />
 
 <main id="main-content">
 <slot />
@@ -438,6 +515,8 @@ content={imageAlt ?? fullTitle}
 <Footer />
 
 <WhatsAppCTA />
+
+<CookieConsent />
 
 </body>
 

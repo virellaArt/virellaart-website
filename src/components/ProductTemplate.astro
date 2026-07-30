@@ -19,6 +19,129 @@ const translatedProductName = translateProductName(
   language,
 );
 
+const galleryTranslations = {
+  en: {
+    open: "View {product} gallery",
+    image: "View {image}",
+    dialog: "{product} image gallery",
+    close: "Close image gallery",
+    breadcrumb: "Breadcrumb",
+  },
+  tr: {
+    open: "{product} galerisini görüntüle",
+    image: "{image} görselini görüntüle",
+    dialog: "{product} görsel galerisi",
+    close: "Görsel galerisini kapat",
+    breadcrumb: "Sayfa yolu",
+  },
+  de: {
+    open: "Galerie von {product} ansehen",
+    image: "{image} ansehen",
+    dialog: "Bildergalerie von {product}",
+    close: "Bildergalerie schließen",
+    breadcrumb: "Brotkrümelnavigation",
+  },
+  fr: {
+    open: "Voir la galerie {product}",
+    image: "Voir {image}",
+    dialog: "Galerie d’images {product}",
+    close: "Fermer la galerie",
+    breadcrumb: "Fil d’Ariane",
+  },
+  it: {
+    open: "Visualizza la galleria {product}",
+    image: "Visualizza {image}",
+    dialog: "Galleria immagini {product}",
+    close: "Chiudi la galleria",
+    breadcrumb: "Percorso di navigazione",
+  },
+  ru: {
+    open: "Открыть галерею {product}",
+    image: "Посмотреть {image}",
+    dialog: "Галерея изображений {product}",
+    close: "Закрыть галерею",
+    breadcrumb: "Навигационная цепочка",
+  },
+  ar: {
+    open: "عرض معرض {product}",
+    image: "عرض {image}",
+    dialog: "معرض صور {product}",
+    close: "إغلاق معرض الصور",
+    breadcrumb: "مسار التنقل",
+  },
+  bg: {
+    open: "Вижте галерията на {product}",
+    image: "Вижте {image}",
+    dialog: "Галерия със снимки на {product}",
+    close: "Затвори галерията",
+    breadcrumb: "Навигационна пътека",
+  },
+  ro: {
+    open: "Vezi galeria {product}",
+    image: "Vezi {image}",
+    dialog: "Galerie de imagini {product}",
+    close: "Închide galeria",
+    breadcrumb: "Traseu de navigare",
+  },
+  el: {
+    open: "Προβολή συλλογής {product}",
+    image: "Προβολή {image}",
+    dialog: "Συλλογή εικόνων {product}",
+    close: "Κλείσιμο συλλογής εικόνων",
+    breadcrumb: "Διαδρομή πλοήγησης",
+  },
+  es: {
+    open: "Ver la galería de {product}",
+    image: "Ver {image}",
+    dialog: "Galería de imágenes de {product}",
+    close: "Cerrar la galería",
+    breadcrumb: "Ruta de navegación",
+  },
+  sr: {
+    open: "Pogledajte galeriju {product}",
+    image: "Pogledajte {image}",
+    dialog: "Galerija slika {product}",
+    close: "Zatvori galeriju",
+    breadcrumb: "Putanja navigacije",
+  },
+  kk: {
+    open: "{product} галереясын көру",
+    image: "{image} суретін көру",
+    dialog: "{product} суреттер галереясы",
+    close: "Суреттер галереясын жабу",
+    breadcrumb: "Навигация жолы",
+  },
+  uz: {
+    open: "{product} galereyasini ko‘rish",
+    image: "{image} rasmini ko‘rish",
+    dialog: "{product} rasmlar galereyasi",
+    close: "Rasmlar galereyasini yopish",
+    breadcrumb: "Navigatsiya yo‘li",
+  },
+  pt: {
+    open: "Ver a galeria de {product}",
+    image: "Ver {image}",
+    dialog: "Galeria de imagens de {product}",
+    close: "Fechar a galeria",
+    breadcrumb: "Percurso de navegação",
+  },
+  pl: {
+    open: "Zobacz galerię {product}",
+    image: "Zobacz {image}",
+    dialog: "Galeria zdjęć {product}",
+    close: "Zamknij galerię",
+    breadcrumb: "Ścieżka nawigacji",
+  },
+} as const;
+
+const galleryText = galleryTranslations[language];
+
+const fillGalleryLabel = (
+  template: string,
+  value: string,
+  token: "product" | "image",
+) => template.replace(`{${token}}`, value);
+
 const categoryTranslationKey = {
   "living-rooms": "livingRooms",
   "dining-rooms": "diningRooms",
@@ -1173,15 +1296,32 @@ const productTrust =
   />
 
   <script is:inline define:vars={{ productEvent }}>
-    if (typeof window.gtag === "function") {
+    const sendViewItem = () => {
+      if (
+        window.virellaAnalyticsAllowed !== true ||
+        typeof window.gtag !== "function"
+      ) {
+        return;
+      }
+
       window.gtag("event", "view_item", productEvent);
+    };
+
+    if (window.virellaAnalyticsAllowed === true) {
+      sendViewItem();
+    } else {
+      document.addEventListener(
+        "virella:analytics-ready",
+        sendViewItem,
+        { once: true },
+      );
     }
   </script>
 
   <div class="product-page">
     <nav
       class="breadcrumbs"
-      aria-label="Breadcrumb"
+      aria-label={galleryText.breadcrumb}
     >
       <a href={localizedPath("/", language)}>
         {translations.nav.home}
@@ -1212,7 +1352,11 @@ const productTrust =
             class="main-image-button"
             id="mainImageButton"
             type="button"
-            aria-label={`View ${translatedProductName} gallery`}
+            aria-label={fillGalleryLabel(
+              galleryText.open,
+              translatedProductName,
+              "product",
+            )}
           >
             <img
               id="mainImage"
@@ -1241,7 +1385,11 @@ const productTrust =
                     ]}
                     data-index={index}
                     type="button"
-                    aria-label={`View ${resolvedImageAlts[index]}`}
+                    aria-label={fillGalleryLabel(
+                      galleryText.image,
+                      resolvedImageAlts[index],
+                      "image",
+                    )}
                   >
                     <img
                       src={image}
@@ -1370,9 +1518,9 @@ const productTrust =
             data-quote-builder
           >
             <div class="quote-builder-heading">
-              <h3 id="quoteBuilderTitle">
+              <h2 id="quoteBuilderTitle">
                 {productQuote.title}
-              </h3>
+              </h2>
 
               <p>{productQuote.intro}</p>
             </div>
@@ -1589,13 +1737,17 @@ const productTrust =
     role="dialog"
     aria-modal="true"
     aria-hidden="true"
-    aria-label={`${translatedProductName} image gallery`}
+    aria-label={fillGalleryLabel(
+      galleryText.dialog,
+      translatedProductName,
+      "product",
+    )}
   >
     <button
       class="lightbox-close"
       id="close"
       type="button"
-      aria-label="Close image gallery"
+      aria-label={galleryText.close}
     >
       <span aria-hidden="true">&#215;</span>
     </button>
@@ -1807,7 +1959,10 @@ const productTrust =
 
         updateQuoteLinks();
 
-        if (typeof window.gtag === "function") {
+        if (
+          window.virellaAnalyticsAllowed === true &&
+          typeof window.gtag === "function"
+        ) {
           window.gtag(
             "event",
             "select_configuration",
@@ -1869,6 +2024,7 @@ const productTrust =
     let currentIndex = 0;
     let touchStartX = 0;
     let touchStartY = 0;
+    let previouslyFocusedElement = null;
 
     const mainImage =
       document.querySelector("#mainImage");
@@ -1957,6 +2113,10 @@ const productTrust =
       }
 
       changeImage(currentIndex);
+      previouslyFocusedElement =
+        document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
 
       lightbox.classList.add("open");
       lightbox.setAttribute(
@@ -1986,7 +2146,11 @@ const productTrust =
         "lightbox-open",
       );
 
-      mainImageButton?.focus();
+      if (previouslyFocusedElement instanceof HTMLElement) {
+        previouslyFocusedElement.focus();
+      } else {
+        mainImageButton?.focus();
+      }
     }
 
     thumbnails.forEach((button) => {
@@ -2040,6 +2204,40 @@ const productTrust =
         if (event.key === "Escape") {
           event.preventDefault();
           closeLightbox();
+        }
+
+        if (event.key === "Tab") {
+          const focusableElements = [
+            closeButton,
+            previousButton,
+            nextButton,
+          ].filter(
+            (element) =>
+              element instanceof HTMLElement &&
+              !element.hasAttribute("disabled"),
+          );
+
+          if (!focusableElements.length) {
+            return;
+          }
+
+          const firstElement = focusableElements[0];
+          const lastElement =
+            focusableElements[focusableElements.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === firstElement
+          ) {
+            event.preventDefault();
+            lastElement.focus();
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === lastElement
+          ) {
+            event.preventDefault();
+            firstElement.focus();
+          }
         }
 
         if (event.key === "ArrowRight") {
@@ -2438,7 +2636,7 @@ const productTrust =
         rgba(0, 0, 0, 0.2);
     }
 
-    .quote-builder-heading h3 {
+    .quote-builder-heading h2 {
       margin: 0;
       color: #f4ead8;
       font-family:

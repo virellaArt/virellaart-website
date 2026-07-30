@@ -1,0 +1,414 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getMarketAlternates,
+  getMarketXDefault,
+  marketPagePath,
+  type MarketPage,
+} from "../data/market-pages";
+import {
+  getTranslations,
+  localizedPath,
+} from "../i18n/config";
+
+interface Props {
+  market: MarketPage;
+}
+
+const { market } = Astro.props;
+const translations = getTranslations(market.language);
+const whatsappMessage =
+  `${market.cta}: ${market.marketName} — ${marketPagePath(market)}`;
+const whatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
+const canonicalURL = new URL(
+  marketPagePath(market),
+  "https://www.virellaart.com",
+).href;
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${canonicalURL}#service`,
+  name: market.heading,
+  description: market.description,
+  serviceType: "Luxury furniture manufacturing and delivery planning",
+  areaServed: {
+    "@type": "Country",
+    name: market.marketName,
+  },
+  provider: {
+    "@id": "https://www.virellaart.com/#organization",
+  },
+  url: canonicalURL,
+};
+---
+
+<BaseLayout
+  title={market.title}
+  description={market.description}
+  image="/queen-02.webp"
+  imageAlt={market.heading}
+  alternateURLs={getMarketAlternates(market)}
+  xDefaultURL={getMarketXDefault(market)}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(serviceSchema)}
+  />
+
+  <article class="market-page">
+    <header class="market-hero">
+      <div>
+        <span>{market.eyebrow}</span>
+        <h1>{market.heading}</h1>
+        <p>{market.intro}</p>
+
+        <div class="market-actions">
+          <a
+            class="market-primary"
+            href={whatsappURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-whatsapp-context={`market-${market.countryCode.toLowerCase()}`}
+          >
+            {market.cta}
+          </a>
+          <a href="#market-collections">
+            {translations.home.button}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="market-service">
+      <div>
+        <span>01</span>
+        <h2>{market.serviceHeading}</h2>
+        <p>{market.serviceText}</p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <h2>{market.planningHeading}</h2>
+        <p>{market.planningText}</p>
+      </div>
+    </section>
+
+    <section
+      class="market-proof"
+      aria-label={translations.contact.service}
+    >
+      {
+        market.details.map((detail, index) => (
+          <div>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{detail}</strong>
+          </div>
+        ))
+      }
+    </section>
+
+    <section id="market-collections" class="market-collections">
+      <div class="market-heading">
+        <span>{translations.home.discover}</span>
+        <h2>{market.collectionHeading}</h2>
+        <p>{market.collectionText}</p>
+      </div>
+
+      <div class="market-grid">
+        <a href={localizedPath("/living-rooms", market.language)}>
+          <img
+            src="/living-room.webp"
+            alt={translations.category.livingRooms.title}
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+          <strong>{translations.category.livingRooms.title}</strong>
+        </a>
+        <a href={localizedPath("/dining-rooms", market.language)}>
+          <img
+            src="/dining-room.webp"
+            alt={translations.category.diningRooms.title}
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+          <strong>{translations.category.diningRooms.title}</strong>
+        </a>
+        <a href={localizedPath("/bedrooms", market.language)}>
+          <img
+            src="/bedroom.webp"
+            alt={translations.category.bedrooms.title}
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+          <strong>{translations.category.bedrooms.title}</strong>
+        </a>
+        <a href={localizedPath("/tv-units", market.language)}>
+          <img
+            src="/tv-unit.webp"
+            alt={translations.category.tvUnits.title}
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+          <strong>{translations.category.tvUnits.title}</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="market-cta">
+      <p>{market.ctaNote}</p>
+      <a
+        href={whatsappURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-whatsapp-context={`market-footer-${market.countryCode.toLowerCase()}`}
+      >
+        {market.cta}
+      </a>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .market-page {
+    background: #120f0d;
+  }
+
+  .market-hero {
+    min-height: 78vh;
+    display: grid;
+    align-items: end;
+    padding: 170px max(28px, calc((100vw - 1420px) / 2)) 90px;
+    background:
+      linear-gradient(90deg, rgba(10, 8, 7, 0.96), rgba(10, 8, 7, 0.45)),
+      image-set(
+        url("/queen-02.avif") type("image/avif"),
+        url("/queen-02.webp") type("image/webp")
+      ) center 42% / cover no-repeat;
+  }
+
+  .market-hero > div {
+    max-width: 900px;
+  }
+
+  .market-hero span,
+  .market-heading > span {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .market-hero h1 {
+    max-width: 950px;
+    margin: 22px 0 26px;
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 96px);
+    line-height: 0.98;
+  }
+
+  .market-hero p {
+    max-width: 760px;
+    color: #ede4d8;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .market-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .market-actions a,
+  .market-cta a {
+    min-width: 220px;
+    padding: 16px 20px;
+    border: 1px solid rgba(225, 199, 138, 0.72);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .market-actions .market-primary,
+  .market-cta a {
+    background: #0d6b3b;
+    border-color: #0d6b3b;
+  }
+
+  .market-service {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    padding: 110px 0 70px;
+  }
+
+  .market-service > div {
+    padding: clamp(32px, 5vw, 62px);
+    border: 1px solid rgba(201, 164, 93, 0.24);
+    background: #18130f;
+  }
+
+  .market-service span,
+  .market-proof span {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .market-service h2,
+  .market-heading h2 {
+    margin: 22px 0;
+    color: #ffffff;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.05;
+  }
+
+  .market-service p,
+  .market-heading p,
+  .market-cta p {
+    color: #d9d0c4;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .market-proof {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto 110px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .market-proof div {
+    min-height: 150px;
+    display: grid;
+    align-content: space-between;
+    gap: 24px;
+    padding: 27px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .market-proof div:last-child {
+    border-right: 0;
+  }
+
+  .market-proof strong {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  .market-collections {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+
+  .market-heading {
+    max-width: 780px;
+    margin-bottom: 45px;
+  }
+
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .market-grid a {
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 93, 0.25);
+    background: #18130f;
+  }
+
+  .market-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .market-grid strong {
+    display: block;
+    padding: 22px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .market-cta {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: clamp(32px, 5vw, 60px);
+    border: 1px solid rgba(201, 164, 93, 0.34);
+    background: #18130f;
+  }
+
+  .market-cta p {
+    max-width: 760px;
+  }
+
+  @media (max-width: 900px) {
+    .market-service,
+    .market-proof,
+    .market-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .market-proof div:nth-child(2) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .market-hero {
+      min-height: 84vh;
+      padding: 145px 22px 65px;
+    }
+
+    .market-hero h1 {
+      font-size: clamp(43px, 13vw, 62px);
+    }
+
+    .market-service,
+    .market-proof,
+    .market-grid {
+      width: min(100% - 30px, 1320px);
+      grid-template-columns: 1fr;
+    }
+
+    .market-proof div,
+    .market-proof div:nth-child(2) {
+      border-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .market-cta {
+      width: min(100% - 30px, 1320px);
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

@@ -1,0 +1,304 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const errorCopy = {
+  en: {
+    eyebrow: "Page not found",
+    title: "Let us guide you back.",
+    text: "The address may have changed, but the VIRELLAART collections are ready to explore.",
+    home: "Go to homepage",
+    collections: "Explore collections",
+    contact: "Contact on WhatsApp",
+  },
+  tr: {
+    eyebrow: "Sayfa bulunamadı",
+    title: "Sizi doğru yere yönlendirelim.",
+    text: "Adres değişmiş olabilir; VIRELLAART koleksiyonlarını keşfetmeye devam edebilirsiniz.",
+    home: "Ana sayfaya git",
+    collections: "Koleksiyonları incele",
+    contact: "WhatsApp ile iletişim",
+  },
+  de: {
+    eyebrow: "Seite nicht gefunden",
+    title: "Wir führen Sie zurück.",
+    text: "Die Adresse hat sich möglicherweise geändert. Entdecken Sie weiterhin die VIRELLAART-Kollektionen.",
+    home: "Zur Startseite",
+    collections: "Kollektionen entdecken",
+    contact: "Über WhatsApp kontaktieren",
+  },
+  fr: {
+    eyebrow: "Page introuvable",
+    title: "Laissez-nous vous guider.",
+    text: "L’adresse a peut-être changé. Les collections VIRELLAART restent à découvrir.",
+    home: "Retour à l’accueil",
+    collections: "Découvrir les collections",
+    contact: "Contacter sur WhatsApp",
+  },
+  it: {
+    eyebrow: "Pagina non trovata",
+    title: "Ti guidiamo noi.",
+    text: "L’indirizzo potrebbe essere cambiato. Le collezioni VIRELLAART sono pronte da scoprire.",
+    home: "Vai alla home",
+    collections: "Scopri le collezioni",
+    contact: "Contatta su WhatsApp",
+  },
+  ru: {
+    eyebrow: "Страница не найдена",
+    title: "Мы поможем вернуться.",
+    text: "Адрес мог измениться. Продолжите знакомство с коллекциями VIRELLAART.",
+    home: "На главную",
+    collections: "Смотреть коллекции",
+    contact: "Связаться в WhatsApp",
+  },
+  bg: {
+    eyebrow: "Страницата не е намерена",
+    title: "Нека ви насочим обратно.",
+    text: "Адресът може да е променен. Разгледайте колекциите VIRELLAART.",
+    home: "Към началната страница",
+    collections: "Разгледайте колекциите",
+    contact: "Контакт чрез WhatsApp",
+  },
+  ro: {
+    eyebrow: "Pagina nu a fost găsită",
+    title: "Vă ghidăm înapoi.",
+    text: "Este posibil ca adresa să se fi schimbat. Descoperiți colecțiile VIRELLAART.",
+    home: "Mergi la pagina principală",
+    collections: "Descoperă colecțiile",
+    contact: "Contact pe WhatsApp",
+  },
+  ar: {
+    eyebrow: "الصفحة غير موجودة",
+    title: "دعنا نرشدك إلى الوجهة الصحيحة.",
+    text: "ربما تغير العنوان، ويمكنك متابعة استكشاف مجموعات VIRELLAART.",
+    home: "العودة إلى الرئيسية",
+    collections: "استكشف المجموعات",
+    contact: "تواصل عبر واتساب",
+  },
+  el: {
+    eyebrow: "Η σελίδα δεν βρέθηκε",
+    title: "Ας σας καθοδηγήσουμε.",
+    text: "Η διεύθυνση μπορεί να άλλαξε. Συνεχίστε με τις συλλογές VIRELLAART.",
+    home: "Μετάβαση στην αρχική",
+    collections: "Ανακαλύψτε τις συλλογές",
+    contact: "Επικοινωνία μέσω WhatsApp",
+  },
+  es: {
+    eyebrow: "Página no encontrada",
+    title: "Te ayudamos a volver.",
+    text: "Es posible que la dirección haya cambiado. Sigue explorando las colecciones VIRELLAART.",
+    home: "Ir a la página principal",
+    collections: "Explorar colecciones",
+    contact: "Contactar por WhatsApp",
+  },
+  sr: {
+    eyebrow: "Stranica nije pronađena",
+    title: "Pomoći ćemo vam da se vratite.",
+    text: "Adresa je možda promenjena. Nastavite da istražujete VIRELLAART kolekcije.",
+    home: "Idi na početnu",
+    collections: "Istražite kolekcije",
+    contact: "Kontakt putem WhatsApp-a",
+  },
+  kk: {
+    eyebrow: "Бет табылмады",
+    title: "Дұрыс бағытты көрсетейік.",
+    text: "Мекенжай өзгерген болуы мүмкін. VIRELLAART топтамаларын қарауды жалғастырыңыз.",
+    home: "Басты бетке өту",
+    collections: "Топтамаларды көру",
+    contact: "WhatsApp арқылы байланысу",
+  },
+  uz: {
+    eyebrow: "Sahifa topilmadi",
+    title: "Sizni to‘g‘ri yo‘naltiramiz.",
+    text: "Manzil o‘zgargan bo‘lishi mumkin. VIRELLAART kolleksiyalarini ko‘rishda davom eting.",
+    home: "Bosh sahifaga o‘tish",
+    collections: "Kolleksiyalarni ko‘rish",
+    contact: "WhatsApp orqali bog‘lanish",
+  },
+  pt: {
+    eyebrow: "Página não encontrada",
+    title: "Vamos ajudá-lo a regressar.",
+    text: "O endereço pode ter mudado. Continue a explorar as coleções VIRELLAART.",
+    home: "Ir para a página inicial",
+    collections: "Explorar coleções",
+    contact: "Contactar por WhatsApp",
+  },
+  pl: {
+    eyebrow: "Nie znaleziono strony",
+    title: "Pomożemy Ci wrócić.",
+    text: "Adres mógł się zmienić. Kontynuuj odkrywanie kolekcji VIRELLAART.",
+    home: "Przejdź na stronę główną",
+    collections: "Odkryj kolekcje",
+    contact: "Kontakt przez WhatsApp",
+  },
+} as const;
+---
+
+<BaseLayout
+  title="Page Not Found | VIRELLAART"
+  description="Return to VIRELLAART luxury furniture collections and international customer support."
+  robots="noindex, follow"
+  alternateURLs={[]}
+  xDefaultURL="https://www.virellaart.com/"
+  includeCanonical={false}
+>
+  <section
+    class="error-page"
+    data-error-page
+    data-copy={JSON.stringify(errorCopy)}
+  >
+    <div>
+      <span data-error-eyebrow>{errorCopy.en.eyebrow}</span>
+      <strong aria-hidden="true">404</strong>
+      <h1 data-error-title>{errorCopy.en.title}</h1>
+      <p data-error-text>{errorCopy.en.text}</p>
+
+      <nav aria-label="Page recovery">
+        <a href="/" data-error-home>{errorCopy.en.home}</a>
+        <a href="/#collections" data-error-collections>
+          {errorCopy.en.collections}
+        </a>
+        <a
+          href="https://wa.me/905539478608"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-error-contact
+          data-whatsapp-context="404"
+        >
+          {errorCopy.en.contact}
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const page = document.querySelector("[data-error-page]");
+
+      if (!(page instanceof HTMLElement)) {
+        return;
+      }
+
+      const copy = JSON.parse(page.dataset.copy || "{}");
+      const language =
+        window.location.pathname
+          .split("/")
+          .filter(Boolean)[0]
+          ?.toLowerCase() || "en";
+      const resolved =
+        copy[language] || copy.en;
+      const prefix =
+        language !== "en" && copy[language]
+          ? "/" + language
+          : "";
+
+      document.documentElement.lang =
+        copy[language] ? language : "en";
+
+      const values = {
+        "[data-error-eyebrow]": resolved.eyebrow,
+        "[data-error-title]": resolved.title,
+        "[data-error-text]": resolved.text,
+        "[data-error-home]": resolved.home,
+        "[data-error-collections]": resolved.collections,
+        "[data-error-contact]": resolved.contact,
+      };
+
+      Object.entries(values).forEach(([selector, value]) => {
+        const element = page.querySelector(selector);
+
+        if (element) {
+          element.textContent = value;
+        }
+      });
+
+      const home = page.querySelector("[data-error-home]");
+      const collections =
+        page.querySelector("[data-error-collections]");
+
+      if (home instanceof HTMLAnchorElement) {
+        home.href = prefix + "/";
+      }
+
+      if (collections instanceof HTMLAnchorElement) {
+        collections.href = prefix + "/#collections";
+      }
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .error-page {
+    min-height: 78vh;
+    display: grid;
+    place-items: center;
+    padding: 150px 28px 90px;
+    background:
+      radial-gradient(
+        circle at 50% 20%,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #120f0d;
+    text-align: center;
+  }
+
+  .error-page > div {
+    width: min(100%, 880px);
+  }
+
+  .error-page span {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .error-page strong {
+    display: block;
+    margin: 20px 0 -22px;
+    color: rgba(225, 199, 138, 0.16);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(110px, 24vw, 250px);
+    font-weight: 400;
+    line-height: 0.9;
+  }
+
+  .error-page h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1;
+  }
+
+  .error-page p {
+    max-width: 650px;
+    margin: 28px auto 38px;
+    color: #ddd3c5;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .error-page nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .error-page a {
+    min-width: 190px;
+    padding: 15px 20px;
+    border: 1px solid rgba(225, 199, 138, 0.65);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .error-page a:last-child {
+    background: #0d6b3b;
+    border-color: #0d6b3b;
+  }
+</style>

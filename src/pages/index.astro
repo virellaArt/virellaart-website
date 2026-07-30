@@ -542,11 +542,12 @@ const homePageDescription =
     <div class="brand-story-image">
       <img
         src="/queen-02.webp"
+        srcset="/queen-02-640.webp 640w, /queen-02-900.webp 900w, /queen-02.webp 1086w"
+        sizes="(max-width: 900px) 100vw, 50vw"
         alt={translations.about.imageAlt}
-        width="1200"
-        height="900"
-        loading="eager"
-        fetchpriority="high"
+        width="1086"
+        height="1448"
+        loading="lazy"
         decoding="async"
       />
     </div>
@@ -571,9 +572,11 @@ const homePageDescription =
       <div class="why-image">
         <img
           src="/about-factory.webp"
+          srcset="/about-factory-640.webp 640w, /about-factory-1000.webp 1000w, /about-factory.webp 1448w"
+          sizes="(max-width: 900px) 100vw, 50vw"
           alt={translations.about.imageAlt}
-          width="1200"
-          height="1500"
+          width="1448"
+          height="1086"
           loading="lazy"
           decoding="async"
         />
@@ -711,7 +714,10 @@ const homePageDescription =
         rgba(0, 0, 0, 0.14),
         rgba(0, 0, 0, 0.38)
       ),
-      url("/living-room.webp") center center / cover no-repeat,
+      image-set(
+        url("/living-room.avif") type("image/avif"),
+        url("/living-room.webp") type("image/webp")
+      ) center center / cover no-repeat,
       #090909;
   }
 
@@ -921,7 +927,10 @@ const homePageDescription =
         rgba(0, 0, 0, 0.04),
         rgba(0, 0, 0, 0.18)
       ),
-      url("/living-room.webp");
+      image-set(
+        url("/living-room.avif") type("image/avif"),
+        url("/living-room.webp") type("image/webp")
+      );
   }
 
   .dining-room {
@@ -930,7 +939,10 @@ const homePageDescription =
         rgba(0, 0, 0, 0.04),
         rgba(0, 0, 0, 0.18)
       ),
-      url("/dining-room.webp");
+      image-set(
+        url("/dining-room.avif") type("image/avif"),
+        url("/dining-room.webp") type("image/webp")
+      );
   }
 
   .bedroom {
@@ -939,7 +951,10 @@ const homePageDescription =
         rgba(0, 0, 0, 0.04),
         rgba(0, 0, 0, 0.18)
       ),
-      url("/bedroom.webp");
+      image-set(
+        url("/bedroom.avif") type("image/avif"),
+        url("/bedroom.webp") type("image/webp")
+      );
   }
 
   .tv-unit {
@@ -948,7 +963,10 @@ const homePageDescription =
         rgba(0, 0, 0, 0.04),
         rgba(0, 0, 0, 0.18)
       ),
-      url("/tv-unit.webp");
+      image-set(
+        url("/tv-unit.avif") type("image/avif"),
+        url("/tv-unit.webp") type("image/webp")
+      );
   }
 
   .collection-card::before {
@@ -1309,7 +1327,7 @@ const homePageDescription =
     flex: 0 0 auto;
     min-width: 250px;
     padding: 19px 26px;
-    background: #178c4e;
+    background: #0d6b3b;
     color: #ffffff;
     font-size: 11px;
     font-weight: 600;
@@ -1322,7 +1340,7 @@ const homePageDescription =
   }
 
   .consultation > a:hover {
-    background: #1aa65b;
+    background: #0f7d45;
     transform: translateY(-3px);
   }
 

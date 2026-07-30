@@ -7,6 +7,7 @@ import LivingRoomsPage from "../living-rooms.astro";
 import DiningRoomsPage from "../dining-rooms.astro";
 import BedroomsPage from "../bedrooms.astro";
 import TVUnitsPage from "../tv-units.astro";
+import LuxuryClassicPage from "../collections/luxury-classic.astro";
 
 /* VIRELLAART LOCALIZED POLICY IMPORTS */
 import ShippingPolicyPage from "../policies/shipping-policy.astro";
@@ -61,6 +62,11 @@ const product = productKey
 {path === "dining-rooms" && <DiningRoomsPage />}
 {path === "bedrooms" && <BedroomsPage />}
 {path === "tv-units" && <TVUnitsPage />}
+{
+  path === "collections/luxury-classic" && (
+    <LuxuryClassicPage />
+  )
+}
 
 {/* VIRELLAART LOCALIZED POLICY PAGES */}
 {

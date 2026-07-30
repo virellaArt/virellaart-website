@@ -1,0 +1,385 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { products } from "../../data/products";
+import {
+  collectionCategories,
+  getCollectionProductCount,
+} from "../../data/collection-taxonomy";
+import {
+  getLanguageFromPath,
+  getTranslations,
+  localizedPath,
+} from "../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const translations = getTranslations(language);
+
+const hubCopy = {
+  en: {
+    title: "Luxury & Classic Furniture Collections",
+    description:
+      "Explore 55 VIRELLAART luxury and classic furniture collections for living rooms, dining rooms, bedrooms and TV areas.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Discover statement collections defined by sculptural forms, refined details and coordinated pieces for exceptional residences and interior projects.",
+    models: "models",
+    view: "Explore collection",
+  },
+  tr: {
+    title: "Luxury & Classic Mobilya Koleksiyonları",
+    description:
+      "Oturma odası, yemek odası, yatak odası ve TV alanları için 55 VIRELLAART lüks ve klasik mobilya koleksiyonunu keşfedin.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Seçkin konutlar ve iç mimari projeler için heykelsi formlar, rafine detaylar ve uyumlu parçalardan oluşan koleksiyonları keşfedin.",
+    models: "model",
+    view: "Koleksiyonu incele",
+  },
+  de: {
+    title: "Luxury & Classic Möbelkollektionen",
+    description:
+      "Entdecken Sie 55 Luxus- und Klassik-Kollektionen von VIRELLAART für Wohn-, Ess-, Schlaf- und TV-Bereiche.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Ausdrucksstarke Kollektionen mit skulpturalen Formen, feinen Details und abgestimmten Elementen für exklusive Residenzen und Projekte.",
+    models: "Modelle",
+    view: "Kollektion entdecken",
+  },
+  fr: {
+    title: "Collections de mobilier Luxury & Classic",
+    description:
+      "Découvrez 55 collections VIRELLAART de mobilier luxueux et classique pour salons, salles à manger, chambres et espaces TV.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Des collections de caractère aux formes sculpturales, détails raffinés et pièces coordonnées pour résidences et projets d’exception.",
+    models: "modèles",
+    view: "Découvrir la collection",
+  },
+  it: {
+    title: "Collezioni di mobili Luxury & Classic",
+    description:
+      "Scopri 55 collezioni VIRELLAART di mobili di lusso e classici per soggiorni, sale da pranzo, camere e zone TV.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Collezioni distintive con forme scultoree, dettagli raffinati ed elementi coordinati per residenze e progetti eccezionali.",
+    models: "modelli",
+    view: "Scopri la collezione",
+  },
+  ru: {
+    title: "Коллекции мебели Luxury & Classic",
+    description:
+      "Откройте 55 коллекций VIRELLAART в стиле luxury и classic для гостиных, столовых, спален и ТВ-зон.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Выразительные коллекции со скульптурными формами, изысканными деталями и согласованными предметами для резиденций и проектов.",
+    models: "моделей",
+    view: "Смотреть коллекцию",
+  },
+  ar: {
+    title: "مجموعات أثاث Luxury & Classic",
+    description:
+      "اكتشف 55 مجموعة أثاث فاخرة وكلاسيكية من VIRELLAART لغرف المعيشة والطعام والنوم ومناطق التلفاز.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "مجموعات مميزة بأشكال نحتية وتفاصيل راقية وقطع متناسقة للمساكن والمشاريع الاستثنائية.",
+    models: "موديلات",
+    view: "اكتشف المجموعة",
+  },
+  bg: {
+    title: "Колекции мебели Luxury & Classic",
+    description:
+      "Разгледайте 55 луксозни и класически колекции VIRELLAART за дневни, трапезарии, спални и ТВ зони.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Отличителни колекции със скулптурни форми, фини детайли и координирани елементи за изключителни домове и проекти.",
+    models: "модела",
+    view: "Разгледайте колекцията",
+  },
+  ro: {
+    title: "Colecții de mobilier Luxury & Classic",
+    description:
+      "Descoperiți 55 de colecții VIRELLAART de lux și clasice pentru living, dining, dormitor și zone TV.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Colecții expresive, cu forme sculpturale, detalii rafinate și piese coordonate pentru reședințe și proiecte excepționale.",
+    models: "modele",
+    view: "Descoperă colecția",
+  },
+  el: {
+    title: "Συλλογές επίπλων Luxury & Classic",
+    description:
+      "Ανακαλύψτε 55 πολυτελείς και κλασικές συλλογές VIRELLAART για σαλόνια, τραπεζαρίες, υπνοδωμάτια και χώρους TV.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Ξεχωριστές συλλογές με γλυπτικές φόρμες, εκλεπτυσμένες λεπτομέρειες και συντονισμένα κομμάτια.",
+    models: "μοντέλα",
+    view: "Ανακαλύψτε τη συλλογή",
+  },
+  es: {
+    title: "Colecciones de muebles Luxury & Classic",
+    description:
+      "Descubre 55 colecciones VIRELLAART de lujo y clásicas para salones, comedores, dormitorios y zonas de televisión.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Colecciones con formas escultóricas, detalles refinados y piezas coordinadas para residencias y proyectos excepcionales.",
+    models: "modelos",
+    view: "Explorar la colección",
+  },
+  sr: {
+    title: "Luxury & Classic kolekcije nameštaja",
+    description:
+      "Otkrijte 55 VIRELLAART luksuznih i klasičnih kolekcija za dnevne sobe, trpezarije, spavaće sobe i TV zone.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Upečatljive kolekcije sa skulpturalnim formama, prefinjenim detaljima i usklađenim komadima za izuzetne enterijere.",
+    models: "modela",
+    view: "Istražite kolekciju",
+  },
+  kk: {
+    title: "Luxury & Classic жиһаз топтамалары",
+    description:
+      "Қонақ, ас, жатын бөлмелер мен TV аймақтарына арналған 55 VIRELLAART сәнді және классикалық топтамасын көріңіз.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Ерекше резиденциялар мен жобаларға арналған мүсіндік пішіндері, нәзік бөлшектері және үйлесімді жиһаздары бар топтамалар.",
+    models: "модель",
+    view: "Топтаманы көру",
+  },
+  uz: {
+    title: "Luxury & Classic mebel kolleksiyalari",
+    description:
+      "Mehmonxona, ovqatlanish xonasi, yotoqxona va TV hududlari uchun 55 ta VIRELLAART hashamatli va klassik kolleksiyasini ko‘ring.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Ajoyib uylar va loyihalar uchun haykaltarosh shakllar, nafis detallar va uyg‘un mebellardan iborat kolleksiyalar.",
+    models: "model",
+    view: "Kolleksiyani ko‘rish",
+  },
+  pt: {
+    title: "Coleções de mobiliário Luxury & Classic",
+    description:
+      "Descubra 55 coleções VIRELLAART de luxo e clássicas para salas de estar, jantar, quartos e zonas de TV.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Coleções marcantes com formas esculturais, detalhes sofisticados e peças coordenadas para residências e projetos excecionais.",
+    models: "modelos",
+    view: "Explorar a coleção",
+  },
+  pl: {
+    title: "Kolekcje mebli Luxury & Classic",
+    description:
+      "Odkryj 55 luksusowych i klasycznych kolekcji VIRELLAART do salonów, jadalni, sypialni i stref telewizyjnych.",
+    eyebrow: "VIRELLAART · Luxury & Classic",
+    intro:
+      "Wyraziste kolekcje o rzeźbiarskich formach, dopracowanych detalach i spójnych elementach do wyjątkowych rezydencji i projektów.",
+    models: "modeli",
+    view: "Odkryj kolekcję",
+  },
+} as const;
+
+const copy = hubCopy[language];
+const productValues = Object.values(products);
+const cards = collectionCategories.map((category) => {
+  const translationKey = {
+    "living-rooms": "livingRooms",
+    "dining-rooms": "diningRooms",
+    bedrooms: "bedrooms",
+    "tv-units": "tvUnits",
+  }[category] as
+    | "livingRooms"
+    | "diningRooms"
+    | "bedrooms"
+    | "tvUnits";
+  const image = {
+    "living-rooms": "/living-room.webp",
+    "dining-rooms": "/dining-room.webp",
+    bedrooms: "/bedroom.webp",
+    "tv-units": "/tv-unit.webp",
+  }[category];
+
+  return {
+    category,
+    title: translations.category[translationKey].title,
+    description:
+      translations.category[translationKey].description,
+    image,
+    count: getCollectionProductCount(
+      productValues,
+      "luxury-classic",
+      category,
+    ),
+  };
+});
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: copy.title,
+  description: copy.description,
+  url: new URL(
+    localizedPath("/collections/luxury-classic", language),
+    "https://www.virellaart.com",
+  ).href,
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: cards.reduce(
+      (total, card) => total + card.count,
+      0,
+    ),
+    itemListElement: cards.map((card, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: card.title,
+      url: new URL(
+        localizedPath(`/${card.category}`, language),
+        "https://www.virellaart.com",
+      ).href,
+    })),
+  },
+};
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  image="/living-room.webp"
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(collectionSchema)}
+  />
+
+  <section class="collection-hub">
+    <header>
+      <span>{copy.eyebrow}</span>
+      <h1>{copy.title}</h1>
+      <p>{copy.intro}</p>
+    </header>
+
+    <div class="collection-hub-grid">
+      {
+        cards.map((card) => (
+          <a href={localizedPath(`/${card.category}`, language)}>
+            <img
+              src={card.image}
+              alt={card.title}
+              width="900"
+              height="675"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <div>
+              <span>
+                {card.count} {copy.models}
+              </span>
+              <h2>{card.title}</h2>
+              <p>{card.description}</p>
+              <strong>{copy.view} →</strong>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .collection-hub {
+    width: min(100% - 56px, 1380px);
+    margin: 0 auto;
+    padding: 155px 0 110px;
+  }
+
+  .collection-hub > header {
+    max-width: 920px;
+    margin-bottom: 65px;
+  }
+
+  .collection-hub > header span,
+  .collection-hub-grid > a > div > span {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .collection-hub h1 {
+    margin: 22px 0 26px;
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 92px);
+    line-height: 0.98;
+  }
+
+  .collection-hub > header p {
+    max-width: 760px;
+    color: #ddd3c5;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .collection-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .collection-hub-grid > a {
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 93, 0.27);
+    background: #18130f;
+    transition: transform 0.3s ease;
+  }
+
+  .collection-hub-grid > a:hover {
+    transform: translateY(-5px);
+  }
+
+  .collection-hub-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .collection-hub-grid > a > div {
+    padding: clamp(26px, 4vw, 42px);
+  }
+
+  .collection-hub-grid h2 {
+    margin: 17px 0;
+    color: #ffffff;
+    font-size: clamp(34px, 4vw, 52px);
+  }
+
+  .collection-hub-grid p {
+    min-height: 58px;
+    color: #d4cabe;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .collection-hub-grid strong {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .collection-hub {
+      width: min(100% - 30px, 1380px);
+      padding: 125px 0 80px;
+    }
+
+    .collection-hub-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .collection-hub-grid p {
+      min-height: 0;
+    }
+  }
+</style>

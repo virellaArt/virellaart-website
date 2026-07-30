@@ -7,34 +7,63 @@ import {
   localizedPath,
 } from "../i18n/config";
 
+interface Props {
+  languageLinks?: Partial<
+    Record<(typeof languageCodes)[number], string>
+  >;
+}
+
+const { languageLinks } = Astro.props;
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 
+const mobileNavigationLabels: Record<
+  (typeof languageCodes)[number],
+  { menu: string; close: string }
+> = {
+  en: { menu: "MENU", close: "CLOSE" },
+  tr: { menu: "MENÜ", close: "KAPAT" },
+  de: { menu: "MENÜ", close: "SCHLIESSEN" },
+  fr: { menu: "MENU", close: "FERMER" },
+  it: { menu: "MENU", close: "CHIUDI" },
+  ru: { menu: "МЕНЮ", close: "ЗАКРЫТЬ" },
+  ar: { menu: "القائمة", close: "إغلاق" },
+  bg: { menu: "МЕНЮ", close: "ЗАТВОРИ" },
+  ro: { menu: "MENIU", close: "ÎNCHIDE" },
+  el: { menu: "ΜΕΝΟΥ", close: "ΚΛΕΙΣΙΜΟ" },
+  es: { menu: "MENÚ", close: "CERRAR" },
+  sr: { menu: "MENI", close: "ZATVORI" },
+  kk: { menu: "МӘЗІР", close: "ЖАБУ" },
+  uz: { menu: "MENYU", close: "YOPISH" },
+  pt: { menu: "MENU", close: "FECHAR" },
+  pl: { menu: "MENU", close: "ZAMKNIJ" },
+};
+
 const mobileMenuLabel =
-  language === "tr" ? "MEN\u00dc" : "MENU";
+  mobileNavigationLabels[language].menu;
 
 const mobileCloseLabel =
-  language === "tr" ? "KAPAT" : "CLOSE";
+  mobileNavigationLabels[language].close;
 
 const manufacturingLabels: Record<
   (typeof languageCodes)[number],
   string
 > = {
   en: "Manufacturing",
-  tr: "Ãœretim",
+  tr: "Üretim",
   de: "Produktion",
   fr: "Fabrication",
   it: "Produzione",
-  ru: "ĞŸÑ€Ğ¾Ğ¸Ğ·Ğ²Ğ¾Ğ´ÑÑ‚Ğ²Ğ¾",
-  ar: "Ø§Ù„ØªØµÙ†ÙŠØ¹",
-  bg: "ĞŸÑ€Ğ¾Ğ¸Ğ·Ğ²Ğ¾Ğ´ÑÑ‚Ğ²Ğ¾",
-  ro: "ProducÈ›ie",
-  el: "Î Î±ÏÎ±Î³Ï‰Î³Î®",
-  es: "FabricaciÃ³n",
+  ru: "Производство",
+  ar: "التصنيع",
+  bg: "Производство",
+  ro: "Producție",
+  el: "Παραγωγή",
+  es: "Fabricación",
   sr: "Proizvodnja",
-  kk: "Ó¨Ğ½Ğ´Ñ–Ñ€Ñ–Ñ",
+  kk: "Өндіріс",
   uz: "Ishlab chiqarish",
-  pt: "ProduÃ§Ã£o",
+  pt: "Produção",
   pl: "Produkcja",
 };
 ---
@@ -53,7 +82,7 @@ const manufacturingLabels: Record<
       </li>
 
       <li>
-        <a href={`${localizedPath("/", language)}#collections`}>
+        <a href={localizedPath("/collections/luxury-classic", language)}>
           {translations.nav.collections}
         </a>
       </li>
@@ -86,7 +115,10 @@ const manufacturingLabels: Record<
         {
           languageCodes.map((code) => (
             <a
-              href={localizedPath(Astro.url.pathname, code)}
+              href={
+                languageLinks?.[code] ??
+                localizedPath(Astro.url.pathname, code)
+              }
               lang={code}
               dir={languages[code].dir}
               data-language={code}
@@ -124,7 +156,7 @@ const manufacturingLabels: Record<
       <button
         type="button"
         class="mobile-menu-backdrop"
-        aria-label="Close"
+        aria-label={mobileCloseLabel}
       ></button>
 
       <div class="mobile-panel">
@@ -198,7 +230,10 @@ const manufacturingLabels: Record<
             {
               languageCodes.map((code) => (
                 <a
-                  href={localizedPath(Astro.url.pathname, code)}
+                  href={
+                    languageLinks?.[code] ??
+                    localizedPath(Astro.url.pathname, code)
+                  }
                   lang={code}
                   dir={languages[code].dir}
                   data-language={code}

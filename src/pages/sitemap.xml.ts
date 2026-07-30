@@ -4,6 +4,12 @@ import {
 } from "../i18n/config";
 
 import { products } from "../data/products";
+import {
+  getMarketAlternates,
+  getMarketXDefault,
+  marketPagePath,
+  marketPages,
+} from "../data/market-pages";
 
 import {
   allRoutes,
@@ -18,6 +24,12 @@ const staticRouteImages: Record<string, string[]> = {
   "dining-rooms": ["/dining-room.webp"],
   "bedrooms": ["/bedroom.webp"],
   "tv-units": ["/tv-unit.webp"],
+  "collections/luxury-classic": [
+    "/living-room.webp",
+    "/dining-room.webp",
+    "/bedroom.webp",
+    "/tv-unit.webp",
+  ],
   "about": ["/about-factory.webp"],
   "manufacturing": ["/about-factory.webp"],
   "contact": ["/dining-room.webp"],
@@ -91,6 +103,35 @@ export const GET = () => {
       }),
     )
     .join("");
+
+  const marketUrls = marketPages
+    .map((market) => {
+      const location = new URL(
+        marketPagePath(market),
+        site,
+      ).href;
+      const alternates = getMarketAlternates(market)
+        .map(
+          (alternate) =>
+            `<xhtml:link rel="alternate" hreflang="${alternate.language}" href="${alternate.href}" />`,
+        )
+        .join("");
+      const xDefault =
+        `<xhtml:link rel="alternate" hreflang="x-default" href="${getMarketXDefault(market)}" />`;
+      const image =
+        `<image:image><image:loc>${new URL("/queen-02.webp", site).href}</image:loc></image:image>`;
+
+      return `
+        <url>
+          <loc>${location}</loc>
+          ${alternates}
+          ${xDefault}
+          ${image}
+        </url>
+      `;
+    })
+    .join("");
+
   const xml =
     `<?xml version="1.0" encoding="UTF-8"?>` +
     `<urlset
@@ -99,6 +140,7 @@ export const GET = () => {
       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     >
       ${localizedUrls}
+      ${marketUrls}
     </urlset>`;
 
   return new Response(

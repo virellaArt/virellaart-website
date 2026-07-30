@@ -2160,10 +2160,13 @@ function truncateMetaDescription(
   }
 
   const shortened = description
-    .slice(0, 157)
+    .slice(0, 159)
     .replace(/\s+\S*$/, "");
 
-  return `${shortened || description.slice(0, 157)}...`;
+  return `${shortened || description.slice(0, 159)}`.replace(
+    /[,;:\s]+$/,
+    "",
+  ) + ".";
 }
 
 export function getSeoDescription(

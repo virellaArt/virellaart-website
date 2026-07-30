@@ -1,85 +1,35 @@
 ---
 import PolicyLayout from "../../components/PolicyLayout.astro";
+import { getLanguageFromPath } from "../../i18n/config";
+import { privacyPolicies } from "../../i18n/policies/privacy-policy";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const policy = privacyPolicies[language];
 ---
 
 <PolicyLayout
-  title="Privacy Policy for Luxury Furniture | VIRELLAART"
-  description="Learn how VIRELLAART collects, uses and protects information received through its website, WhatsApp and customer communications."
+  title={policy.title}
+  description={policy.description}
 >
-  <p>
-    VIRELLAART respects the privacy of website visitors, customers and business
-    contacts. This policy explains the types of information we may receive and
-    how that information may be used.
-  </p>
+  <p>{policy.intro}</p>
 
-  <h2>Information We May Collect</h2>
+  {
+    policy.sections.map((section) => (
+      <>
+        <h2>{section.heading}</h2>
 
-  <p>
-    We may receive personal and business information when you contact us through
-    the website, WhatsApp, email, social media or another communication channel.
-  </p>
+        {section.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
 
-  <ul>
-    <li>Name and contact details</li>
-    <li>Country, city or delivery destination</li>
-    <li>Product and collection enquiries</li>
-    <li>Project, measurement and customization information</li>
-    <li>Quotation, order and delivery communications</li>
-    <li>Technical website information such as browser and device data</li>
-  </ul>
-
-  <h2>How We Use Information</h2>
-
-  <p>
-    Information may be used to answer enquiries, prepare quotations, coordinate
-    production, manage orders, arrange delivery, provide customer support and
-    improve our website and services.
-  </p>
-
-  <h2>Analytics and Cookies</h2>
-
-  <p>
-    Our website may use analytics technologies and cookies to understand general
-    website usage, improve performance and measure interactions such as page
-    visits and contact-button activity.
-  </p>
-
-  <h2>Information Sharing</h2>
-
-  <p>
-    VIRELLAART does not sell personal information. Information may be shared
-    only when reasonably necessary with service providers involved in payment,
-    production, packaging, logistics, website operation or legal compliance.
-  </p>
-
-  <h2>Data Protection</h2>
-
-  <p>
-    We use reasonable organizational and technical measures to protect the
-    information under our control. However, no internet communication or digital
-    storage method can be guaranteed to be completely secure.
-  </p>
-
-  <h2>Data Retention</h2>
-
-  <p>
-    Information may be retained for as long as reasonably necessary to manage
-    enquiries, quotations, orders, customer service, legal obligations and
-    legitimate business records.
-  </p>
-
-  <h2>Your Privacy Requests</h2>
-
-  <p>
-    You may contact VIRELLAART to request information about personal data you
-    previously provided or to ask for an appropriate correction or deletion,
-    subject to applicable legal and business-record requirements.
-  </p>
-
-  <h2>Policy Updates</h2>
-
-  <p>
-    This Privacy Policy may be updated when our website, services or legal
-    obligations change. The latest version will remain available on this page.
-  </p>
+        {section.items && section.items.length > 0 && (
+          <ul>
+            {section.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+      </>
+    ))
+  }
 </PolicyLayout>
