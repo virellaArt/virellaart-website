@@ -2403,4 +2403,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  burgazSofaSet: {
+    name: "BURGAZ Sofa Set",
+    slug: "burgaz-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Structured Comfort in a Refined Two-Tone Composition",
+    description:
+      "BURGAZ Sofa Set introduces a confident contemporary character through its layered back cushions, broad upholstered arms and refined two-tone composition. The complete 3+3+1+1 arrangement balances charcoal grey and warm taupe seating to create a sophisticated modern living room. A distinctive choice for customers searching for a modern two-tone sofa set, luxury living room furniture and designer seating from VIRELLAART.",
+    images: [
+      "/burgaz-sofa-set-01.webp",
+      "/burgaz-sofa-set-02.webp",
+      "/burgaz-sofa-set-03.webp",
+      "/burgaz-sofa-set-04.webp",
+      "/burgaz-sofa-set-05.webp",
+      "/burgaz-sofa-set-06.webp",
+      "/burgaz-sofa-set-07.webp",
+      "/burgaz-sofa-set-08.webp",
+      "/burgaz-sofa-set-09.webp",
+      "/burgaz-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "BURGAZ modern two-tone sofa set in a refined contemporary living room",
+        "BURGAZ 3+3+1+1 luxury sofa set with grey and warm taupe seating",
+        "BURGAZ three-seat modern sofa with layered back cushions and broad upholstered arms",
+        "BURGAZ contemporary armchair with structured cushions and sculpted side profile",
+        "BURGAZ sofa rear and side detail showing the substantial upholstered back design",
+        "BURGAZ modern living room furniture arrangement with coordinated center table",
+        "BURGAZ luxury accent chair beside a three-seat sofa in a neutral interior",
+        "BURGAZ contemporary sofa viewed from the side with clean architectural proportions",
+        "BURGAZ sofa arm and backrest close-up highlighting the sculpted upholstered form",
+        "BURGAZ two-tone sofa cushion detail with contrasting modern upholstery",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,950",
+        featured: true,
+      },
+    ],
+  },
 };
