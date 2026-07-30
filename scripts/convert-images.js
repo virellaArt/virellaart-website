@@ -49,29 +49,33 @@ function assertInsidePublic(filePath) {
 }
 
 function getCommittedPublicFiles() {
-  const output = execFileSync(
-    "git",
-    [
-      "ls-tree",
-      "-r",
-      "--name-only",
-      "HEAD",
-      "--",
-      "public",
-    ],
-    {
-      cwd: repositoryRoot,
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "pipe"],
-    },
-  );
+  try {
+    const output = execFileSync(
+      "git",
+      [
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "HEAD",
+        "--",
+        "public",
+      ],
+      {
+        cwd: repositoryRoot,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      },
+    );
 
-  return new Set(
-    output
-      .split(/\r?\n/)
-      .map((file) => file.trim())
-      .filter(Boolean),
-  );
+    return new Set(
+      output
+        .split(/\r?\n/)
+        .map((file) => file.trim())
+        .filter(Boolean),
+    );
+  } catch {
+    return null;
+  }
 }
 
 async function collectFiles(inputPath) {
@@ -215,6 +219,17 @@ async function convertImage(sourcePath) {
 async function main() {
   const committedPublicFiles =
     getCommittedPublicFiles();
+
+  if (
+    committedPublicFiles === null &&
+    inputArguments.length === 0
+  ) {
+    console.log(
+      "Git metadata is unavailable; skipping bulk image conversion in this build environment.",
+    );
+    return;
+  }
+
   const inputs =
     inputArguments.length > 0
       ? inputArguments
@@ -241,7 +256,7 @@ async function main() {
 
       return (
         supportedExtensions.has(extension) &&
-        !committedPublicFiles.has(repositoryPath)
+        !committedPublicFiles?.has(repositoryPath)
       );
     },
   );
