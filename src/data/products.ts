@@ -2366,4 +2366,41 @@ sultanGreenDining: {
       },
     ],
   },
+
+  bostonSofaSet: {
+    name: "BOSTON Sofa Set",
+    slug: "boston-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Rounded Architecture in a Refined Two-Tone Composition",
+    description:
+      "BOSTON Sofa Set creates a soft architectural statement with rounded bases, wraparound arms and quilted seating details. Its 3+3+1+1 composition pairs charcoal and cream tones for a balanced contemporary living room. A distinctive choice for customers searching for a modern curved sofa set, luxury living room furniture and designer seating from VIRELLAART.",
+    images: [
+      "/boston-sofa-set-01.webp",
+      "/boston-sofa-set-02.webp",
+      "/boston-sofa-set-03.webp",
+      "/boston-sofa-set-04.webp",
+      "/boston-sofa-set-05.webp",
+      "/boston-sofa-set-06.webp",
+      "/boston-sofa-set-07.webp",
+    ],
+    imageAlts: {
+      en: [
+        "BOSTON modern curved sofa set in a luxury contemporary living room with charcoal and cream seating",
+        "BOSTON 3+3+1+1 sofa set arranged around a wooden center table in a bright modern interior",
+        "BOSTON rounded accent armchair with sculptural arms and quilted seat detail",
+        "BOSTON charcoal three-seat sofa with wraparound arms and softly structured back cushions",
+        "BOSTON contemporary curved sofa collection with a low-profile architectural silhouette",
+        "BOSTON modern three-seat sofa isolated view showing the rounded base and grid-stitched seating",
+        "BOSTON sofa close-up highlighting the curved arm, cushioned back and tailored seat structure",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,100",
+        featured: true,
+      },
+    ],
+  },
 };
