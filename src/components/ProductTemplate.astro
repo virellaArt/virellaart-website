@@ -11,6 +11,7 @@ import {
   getProductDescription,
   getTranslations,
   localizedPath,
+  type Language,
   translatePriceLabel,
   translateProductName,
 } from "../i18n/config";
@@ -141,6 +142,98 @@ const galleryTranslations = {
 
 const galleryText = galleryTranslations[language];
 
+const madeToOrderCopy: Record<
+  Language,
+  {
+    label: string;
+    detail: string;
+  }
+> = {
+  en: {
+    label: "Made to order",
+    detail:
+      "Order requests are accepted now. Production begins after order confirmation.",
+  },
+  tr: {
+    label: "Sipariş üzerine üretim",
+    detail:
+      "Şimdi sipariş talebi alınabilir. Üretim, sipariş onayından sonra başlar.",
+  },
+  de: {
+    label: "Auf Bestellung gefertigt",
+    detail:
+      "Bestellanfragen werden jetzt angenommen. Die Produktion beginnt nach der Auftragsbestätigung.",
+  },
+  fr: {
+    label: "Fabriqué sur commande",
+    detail:
+      "Les demandes de commande sont acceptées dès maintenant. La production commence après confirmation.",
+  },
+  it: {
+    label: "Realizzato su ordinazione",
+    detail:
+      "Le richieste d’ordine sono aperte. La produzione inizia dopo la conferma dell’ordine.",
+  },
+  ru: {
+    label: "Изготавливается на заказ",
+    detail:
+      "Заявки на заказ принимаются сейчас. Производство начинается после подтверждения заказа.",
+  },
+  ar: {
+    label: "يُصنع حسب الطلب",
+    detail:
+      "طلبات الشراء متاحة الآن. يبدأ الإنتاج بعد تأكيد الطلب.",
+  },
+  bg: {
+    label: "Изработва се по поръчка",
+    detail:
+      "Заявки за поръчка се приемат сега. Производството започва след потвърждение.",
+  },
+  ro: {
+    label: "Fabricat la comandă",
+    detail:
+      "Cererile de comandă sunt acceptate acum. Producția începe după confirmarea comenzii.",
+  },
+  el: {
+    label: "Κατασκευάζεται κατόπιν παραγγελίας",
+    detail:
+      "Τα αιτήματα παραγγελίας γίνονται δεκτά τώρα. Η παραγωγή ξεκινά μετά την επιβεβαίωση.",
+  },
+  es: {
+    label: "Fabricado bajo pedido",
+    detail:
+      "Ya se aceptan solicitudes de pedido. La producción comienza tras la confirmación.",
+  },
+  sr: {
+    label: "Izrada po porudžbini",
+    detail:
+      "Zahtevi za porudžbinu se primaju sada. Proizvodnja počinje nakon potvrde porudžbine.",
+  },
+  kk: {
+    label: "Тапсырыс бойынша өндіріледі",
+    detail:
+      "Тапсырыс өтінімдері қазір қабылданады. Өндіріс тапсырыс расталғаннан кейін басталады.",
+  },
+  uz: {
+    label: "Buyurtma asosida ishlab chiqariladi",
+    detail:
+      "Buyurtma so‘rovlari hozir qabul qilinadi. Ishlab chiqarish buyurtma tasdiqlangach boshlanadi.",
+  },
+  pt: {
+    label: "Fabricado por encomenda",
+    detail:
+      "Os pedidos podem ser efetuados agora. A produção começa após a confirmação da encomenda.",
+  },
+  pl: {
+    label: "Produkowany na zamówienie",
+    detail:
+      "Zamówienia są przyjmowane już teraz. Produkcja rozpoczyna się po potwierdzeniu zamówienia.",
+  },
+};
+
+const madeToOrderText =
+  madeToOrderCopy[language];
+
 const fillGalleryLabel = (
   template: string,
   value: string,
@@ -194,6 +287,17 @@ const categoryURL = new URL(
 ========================= */
 
 const images: string[] = product.images ?? [];
+const productOrderModel =
+  product.orderModel ?? "made-to-order";
+
+if (productOrderModel !== "made-to-order") {
+  throw new Error(
+    `Unsupported product order model: ${productOrderModel}`,
+  );
+}
+
+const productAvailability =
+  "https://schema.org/MadeToOrder";
 
 /* VIRELLAART PRODUCT IMAGE ALTS */
 
@@ -619,11 +723,7 @@ const productSchema = {
     priceCurrency: "USD",
     price: primaryPrice,
     itemCondition: "https://schema.org/NewCondition",
-    /*
-     * Availability intentionally omitted.
-     * It must only be added when the real product-level
-     * stock or order status has been verified.
-     */
+    availability: productAvailability,
 
     seller: {
       "@id": "https://www.virellaart.com/#organization",
@@ -1454,6 +1554,21 @@ const productTrust =
           <p class="product-description">
             {productDescription}
           </p>
+
+          <div
+            class="order-availability"
+            data-order-model={productOrderModel}
+          >
+            <span aria-hidden="true"></span>
+
+            <p>
+              <strong>
+                {madeToOrderText.label}
+              </strong>
+
+              {madeToOrderText.detail}
+            </p>
+          </div>
 
           <div class="price-card">
             <div class="price-header">
@@ -2509,6 +2624,44 @@ const productTrust =
       color: #c8beb0;
       font-size: 15px;
       line-height: 1.9;
+    }
+
+    .order-availability {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 15px 17px;
+      border: 1px solid rgba(201, 165, 91, 0.3);
+      background: rgba(201, 165, 91, 0.07);
+    }
+
+    .order-availability > span {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: #c9a55b;
+      box-shadow:
+        0 0 0 4px
+        rgba(201, 165, 91, 0.12);
+    }
+
+    .order-availability p {
+      margin: 0;
+      color: #b9b2aa;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .order-availability strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #e1c486;
+      font-size: 12px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
     }
 
     /* PRICE */

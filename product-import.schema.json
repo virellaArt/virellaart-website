@@ -7,6 +7,7 @@
     "name",
     "style",
     "category",
+    "orderModel",
     "subtitle",
     "description",
     "prices"
@@ -41,6 +42,10 @@
         "bedrooms",
         "tv-units"
       ]
+    },
+    "orderModel": {
+      "const": "made-to-order",
+      "description": "VIRELLAART ürününün fiziksel stok yerine sipariş onayından sonra üretildiğini belirtir."
     },
     "subtitle": {
       "type": "string",

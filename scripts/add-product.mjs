@@ -574,6 +574,17 @@ function normalizeManifest(manifest) {
     );
   }
 
+  const orderModel = requireText(
+    manifest.orderModel,
+    "orderModel",
+  );
+
+  if (orderModel !== "made-to-order") {
+    throw new Error(
+      "orderModel made-to-order olmalı. VIRELLAART ürünleri fiziksel stok yerine sipariş onayından sonra üretilir.",
+    );
+  }
+
   const imagePrefix =
     manifest.imagePrefix?.trim() || slug;
 
@@ -593,6 +604,7 @@ function normalizeManifest(manifest) {
     productKey,
     style,
     category,
+    orderModel,
     imagePrefix,
     subtitle: requireText(
       manifest.subtitle,
@@ -680,6 +692,7 @@ function formatProductEntry(
     `    slug: ${JSON.stringify(product.slug)},`,
     `    category: ${JSON.stringify(product.category.dataCategory)},`,
     `    style: ${JSON.stringify(product.style)},`,
+    `    orderModel: ${JSON.stringify(product.orderModel)},`,
     `    subtitle: ${JSON.stringify(product.subtitle)},`,
     `    description:`,
     `      ${JSON.stringify(product.description)},`,
@@ -884,6 +897,9 @@ async function verifyRenderedProduct(
       (image) => `/${basename(image)}`,
     ),
     `https://www.virellaart.com${routePath}`,
+    `"availability":"https://schema.org/MadeToOrder"`,
+    `data-order-model="made-to-order"`,
+    "Made to order",
   ];
 
   for (const content of requiredContent) {
@@ -1114,6 +1130,7 @@ async function importProduct(
       `Ürün: ${product.name}`,
       `Koleksiyon: ${styleNames[product.style]}`,
       `Kategori: ${product.category.routeCategory}`,
+      "Üretim modeli: sipariş üzerine üretim",
       `Rota: /${route.routeParts.join("/")}/`,
       `Görsel: ${sourceImages.length}`,
       `Fiyat seçeneği: ${product.prices.length}`,
