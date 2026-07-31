@@ -2800,4 +2800,38 @@ sultanGreenDining: {
       },
     ],
   },
+
+  zenaDiningRoom: {
+    name: "ZENA Dining Room",
+    slug: "zena-dining-room",
+    category: "dining-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Modern Dining Elegance with Refined Architectural Details",
+    description:
+      "ZENA Dining Room Set brings contemporary luxury into modern interiors with its elegant dining table, six upholstered chairs, matching console and decorative mirror. Designed with refined proportions and a sophisticated architectural character, ZENA represents modern dining furniture manufactured by VIRELLAART for premium residential spaces.",
+    images: [
+      "/zena-dining-room-01.webp",
+      "/zena-dining-room-02.webp",
+      "/zena-dining-room-03.webp",
+      "/zena-dining-room-04.webp",
+      "/zena-dining-room-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "ZENA modern dining room set with luxury table six chairs console and mirror",
+        "ZENA contemporary dining table design with elegant upholstered dining chairs",
+        "ZENA modern luxury dining room furniture collection by VIRELLAART",
+        "ZENA dining room set displayed in a sophisticated modern interior",
+        "ZENA complete dining room package with console mirror and six chairs",
+      ],
+    },
+    prices: [
+      {
+        label: "Dining Table + 6 Chairs + Console + Mirror",
+        price: "$4,350",
+        featured: true,
+      },
+    ],
+  },
 };
