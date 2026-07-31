@@ -2762,4 +2762,42 @@ sultanGreenDining: {
       },
     ],
   },
+
+  zenaSofaSet: {
+    name: "ZENA Sofa Set",
+    slug: "zena-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Comfort with Architectural Elegance",
+    description:
+      "ZENA Sofa Set creates a sophisticated modern living atmosphere with its balanced 3+3+1+1 seating composition, refined textured upholstery and distinctive black frame accents. Designed and manufactured by VIRELLAART, ZENA combines contemporary elegance with premium comfort for customers searching for luxury modern sofa sets and exclusive living room furniture.",
+    images: [
+      "/zena-sofa-set-01.webp",
+      "/zena-sofa-set-02.webp",
+      "/zena-sofa-set-03.webp",
+      "/zena-sofa-set-04.webp",
+      "/zena-sofa-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "ZENA modern sofa set with textured cream upholstery and elegant black frame details",
+        "ZENA luxury contemporary sofa collection designed for premium modern living rooms",
+        "ZENA 3+3+1+1 modern sofa set manufactured by VIRELLAART",
+        "ZENA designer living room furniture displayed in a luxury villa interior",
+        "ZENA modern seating collection with optional matching center table",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,550",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
