@@ -2667,4 +2667,37 @@ sultanGreenDining: {
       },
     ],
   },
+
+  milanoModernBedroomSet: {
+    name: "MILANO Modern Bedroom Set",
+    slug: "milano-modern-bedroom-set",
+    category: "bedrooms",
+    style: "modern",
+    subtitle: "Contemporary Elegance for Modern Luxury Bedrooms",
+    description:
+      "MILANO Modern Bedroom Set creates a refined contemporary atmosphere with clean architectural lines, balanced proportions and elegant storage solutions. Designed for modern luxury interiors, this bedroom collection combines simplicity with premium visual harmony. A stylish choice for customers searching for modern bedroom furniture, contemporary bedroom sets and luxury bedroom collections from VIRELLAART.",
+    images: [
+      "/milano-modern-bedroom-set-01.webp",
+      "/milano-modern-bedroom-set-02.webp",
+      "/milano-modern-bedroom-set-03.webp",
+      "/milano-modern-bedroom-set-04.webp",
+      "/milano-modern-bedroom-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "MILANO modern bedroom set with elegant contemporary interior design",
+        "MILANO luxury bedroom furniture collection with modern bed and storage units",
+        "MILANO modern bedroom set featuring premium wardrobe and bedside furniture",
+        "MILANO contemporary bedroom interior with refined architectural details",
+        "MILANO luxury modern bedroom collection designed for sophisticated homes",
+      ],
+    },
+    prices: [
+      {
+        label: "Bedroom Set",
+        price: "$2,600",
+        featured: true,
+      },
+    ],
+  },
 };
