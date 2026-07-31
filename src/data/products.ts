@@ -2700,4 +2700,35 @@ sultanGreenDining: {
       },
     ],
   },
+
+  kanoModernBedroomSet: {
+    name: "KANO Modern Bedroom Set",
+    slug: "kano-modern-bedroom-set",
+    category: "bedrooms",
+    style: "modern",
+    subtitle: "Refined Modern Bedroom Design with Luxury Proportions",
+    description:
+      "KANO Modern Bedroom Set creates a sophisticated contemporary bedroom atmosphere with balanced proportions, elegant storage solutions and a refined architectural character. Designed for modern luxury interiors, this collection combines functional comfort with timeless visual harmony. A premium choice for customers searching for modern bedroom furniture, luxury bedroom sets and contemporary bedroom collections from VIRELLAART.",
+    images: [
+      "/kano-modern-bedroom-set-01.webp",
+      "/kano-modern-bedroom-set-02.webp",
+      "/kano-modern-bedroom-set-03.webp",
+      "/kano-modern-bedroom-set-04.webp",
+    ],
+    imageAlts: {
+      en: [
+        "KANO modern bedroom set with elegant contemporary furniture design",
+        "KANO luxury bedroom collection with refined bed and wardrobe composition",
+        "KANO modern bedroom furniture set designed for sophisticated interiors",
+        "KANO contemporary luxury bedroom collection with premium architectural style",
+      ],
+    },
+    prices: [
+      {
+        label: "Bedroom Set",
+        price: "$7,100",
+        featured: true,
+      },
+    ],
+  },
 };
