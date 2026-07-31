@@ -39,7 +39,7 @@ Bu araç Modern ve Luxury & Classic ürünlerini güvenli ve tekrarlanabilir bi�
 - Kaynak görselleri yalnızca ürün build ve bağlantı kontrolleri başarıyla tamamlandıktan sonra siler.
 - `src/data/products.ts` ürün kaydını ve Astro ürün sayfasını oluşturur.
 - Ürün fiyatlarını, ölçüleri, galeri alt metinlerini ve WhatsApp teklif seçeneklerini bağlar.
-- Fiziksel stok veya ön sipariş beyanı oluşturmaz; sipariş üzerine üretim modelini sayfada gösterir ve ürün şemasına `MadeToOrder` olarak aktarır.
+- Fiziksel depo stoku veya ön sipariş beyanı oluşturmaz. Sayfada sipariş üzerine üretim modelini açıkça gösterir; Google'ın desteklediği `InStock` değerini yalnızca ürünün şu anda siparişe açık ve karşılanabilir olduğunu bildirmek için kullanır.
 - Astro build, sitemap, canonical rota, render edilmiş ürün içeriği ve bütün iç bağlantıları doğrular.
 - Bir hata olursa ürün kaydını, rotayı ve yeni hedef görselleri geri alır; kaynak fotoğrafları korur.
 - `--publish` kullanıldığında yalnızca ürün dosyalarını commit eder, GitHub'a gönderir, Vercel production deploy yapar ve canlı ürün URL'sini kontrol eder.

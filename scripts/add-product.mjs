@@ -897,7 +897,7 @@ async function verifyRenderedProduct(
       (image) => `/${basename(image)}`,
     ),
     `https://www.virellaart.com${routePath}`,
-    `"availability":"https://schema.org/MadeToOrder"`,
+    `"availability":"https://schema.org/InStock"`,
     `data-order-model="made-to-order"`,
     "Made to order",
   ];

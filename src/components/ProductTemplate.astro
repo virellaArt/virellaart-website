@@ -296,8 +296,14 @@ if (productOrderModel !== "made-to-order") {
   );
 }
 
+/*
+ * Google maps "InStock" to products that are currently available for
+ * ordering and can be fulfilled. VIRELLAART's separate orderModel and
+ * visible copy make clear that every item is produced after confirmation;
+ * this value does not claim warehouse inventory.
+ */
 const productAvailability =
-  "https://schema.org/MadeToOrder";
+  "https://schema.org/InStock";
 
 /* VIRELLAART PRODUCT IMAGE ALTS */
 
