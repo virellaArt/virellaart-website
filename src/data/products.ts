@@ -2620,4 +2620,51 @@ sultanGreenDining: {
       },
     ],
   },
+
+  orionModernSofaSet: {
+    name: "ORION Modern Sofa Set",
+    slug: "orion-modern-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Contemporary Comfort with Refined Modern Character",
+    description:
+      "ORION Modern Sofa Set brings a sophisticated contemporary atmosphere with its balanced 3+3+1+1 seating arrangement, elegant proportions and refined comfort. Designed for modern living spaces, this collection combines a clean architectural silhouette with a warm and inviting character. A stylish choice for customers searching for modern luxury sofa sets and premium living room furniture from VIRELLAART.",
+    images: [
+      "/orion-modern-sofa-set-01.webp",
+      "/orion-modern-sofa-set-02.webp",
+      "/orion-modern-sofa-set-03.webp",
+      "/orion-modern-sofa-set-04.webp",
+      "/orion-modern-sofa-set-05.webp",
+      "/orion-modern-sofa-set-06.webp",
+      "/orion-modern-sofa-set-07.webp",
+      "/orion-modern-sofa-set-08.webp",
+      "/orion-modern-sofa-set-09.webp",
+      "/orion-modern-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "ORION modern sofa set with elegant neutral upholstery in a luxury living room",
+        "ORION contemporary 3+3+1+1 sofa arrangement designed for refined interiors",
+        "ORION modern living room sofa set with balanced architectural proportions",
+        "ORION luxury sofa side profile with soft curves and premium detailing",
+        "ORION modern armchair design matching the complete living room set",
+        "ORION sofa collection styled in a sophisticated contemporary interior",
+        "ORION modern sofa close-up showing refined fabric texture and craftsmanship",
+        "ORION three-seat sofa set creating a warm luxury atmosphere",
+        "ORION contemporary living room furniture with elegant neutral tones",
+        "ORION modern sofa set complete composition with matching armchairs",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,450",
+        featured: true,
+      },
+      {
+        label: "Coffee Table",
+        price: "$450",
+      },
+    ],
+  },
 };
