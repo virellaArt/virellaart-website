@@ -2577,4 +2577,47 @@ sultanGreenDining: {
       },
     ],
   },
+
+  hunkarSofaSet: {
+    name: "HÜNKAR Sofa Set",
+    slug: "hunkar-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    subtitle: "Warm Wood Framing with Refined Adjustable Comfort",
+    description:
+      "HÜNKAR Sofa Set creates a bright contemporary living room with clean white seating, adjustable headrests and a distinctive warm wood-finished outer frame. Its complete 3+3+1+1 arrangement pairs streamlined sofas with sculptural channel-detailed armchairs, balancing architectural structure with an airy visual character. A refined choice for customers searching for a modern white sofa set, wood frame living room furniture and luxury seating from VIRELLAART.",
+    images: [
+      "/hunkar-sofa-set-01.webp",
+      "/hunkar-sofa-set-02.webp",
+      "/hunkar-sofa-set-03.webp",
+      "/hunkar-sofa-set-04.webp",
+      "/hunkar-sofa-set-05.webp",
+      "/hunkar-sofa-set-06.webp",
+      "/hunkar-sofa-set-07.webp",
+      "/hunkar-sofa-set-08.webp",
+      "/hunkar-sofa-set-09.webp",
+      "/hunkar-sofa-set-10.webp",
+    ],
+    imageAlts: {
+      en: [
+        "HÜNKAR adjustable sofa headrest and tailored white upholstery close-up",
+        "HÜNKAR modern white sofa set with warm wood frame in a bright luxury living room",
+        "HÜNKAR white three-seat sofa and sculptural accent chair in a contemporary interior",
+        "HÜNKAR sofa upholstery and decorative edge stitching close-up",
+        "HÜNKAR modern white sofa side detail with vertical warm wood frame elements",
+        "HÜNKAR sculptural white accent chair with channel detailing and tapered wood legs",
+        "HÜNKAR white sofa with raised adjustable headrests and warm wood exterior frame",
+        "HÜNKAR contemporary three-seat sofa with clean cushions and wood-framed side profile",
+        "HÜNKAR modern white sofa front view with refined architectural proportions",
+        "HÜNKAR sofa arm and warm wood frame detail with angled supporting leg",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$3,700",
+        featured: true,
+      },
+    ],
+  },
 };
