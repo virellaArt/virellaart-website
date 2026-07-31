@@ -2731,4 +2731,35 @@ sultanGreenDining: {
       },
     ],
   },
+
+  sohoModernDiningRoomSet: {
+    name: "SOHO Modern Dining Room Set",
+    slug: "soho-modern-dining-room-set",
+    category: "dining-rooms",
+    style: "modern",
+    subtitle: "Elegant Contemporary Dining Design",
+    description:
+      "SOHO Modern Dining Room Set creates a sophisticated dining atmosphere with clean contemporary lines, refined proportions and a luxurious interior presence. Designed for modern homes, this collection combines elegant dining comfort with timeless architectural details. A premium choice for customers searching for modern dining room furniture and contemporary dining collections from VIRELLAART.",
+    images: [
+      "/soho-modern-dining-room-set-01.webp",
+      "/soho-modern-dining-room-set-02.webp",
+      "/soho-modern-dining-room-set-03.webp",
+      "/soho-modern-dining-room-set-04.webp",
+    ],
+    imageAlts: {
+      en: [
+        "SOHO modern dining room set with elegant table and contemporary chairs",
+        "SOHO luxury dining collection featuring refined console and modern interior design",
+        "SOHO contemporary dining room furniture set designed for sophisticated homes",
+        "SOHO modern dining room collection with premium architectural style",
+      ],
+    },
+    prices: [
+      {
+        label: "Dining Room Set",
+        price: "$6,100",
+        featured: true,
+      },
+    ],
+  },
 };
