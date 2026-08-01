@@ -5,6 +5,7 @@ import {
 } from "../data/catalog-merchandising";
 import { catalogCopy } from "../i18n/catalog";
 import {
+  getTranslations,
   type Language,
   localizedPath,
   translateProductName,
@@ -36,6 +37,18 @@ const {
 } = Astro.props;
 
 const copy = catalogCopy[language];
+const translations = getTranslations(language);
+const categoryWhatsappMessage =
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    categoryName,
+  );
+const categoryWhatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
+const categoryPageURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com",
+).href;
 
 const cards = models.map((model, index) => ({
   ...model,
@@ -78,7 +91,11 @@ function badgeLabel(
 }
 ---
 
-<div class="catalog-page" data-collection-catalog>
+<div
+  class="catalog-page"
+  data-collection-catalog
+  data-category-name={categoryName}
+>
   <header class="catalog-header">
     <span>{eyebrow}</span>
 
@@ -86,6 +103,26 @@ function badgeLabel(
 
     <p>{categoryDescription}</p>
   </header>
+
+  <section class="catalog-lead">
+    <div>
+      <span>{translations.contact.getInTouch}</span>
+      <h2>{translations.contact.hero}</h2>
+      <p>{translations.contact.lead}</p>
+    </div>
+
+    <a
+      href={categoryWhatsappURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-whatsapp-context="category-header"
+      data-page-type="category"
+      data-product-category={categoryName}
+      data-page-url={categoryPageURL}
+    >
+      {translations.contact.button}
+    </a>
+  </section>
 
   <div class="catalog-toolbar">
     <fieldset class="catalog-filters">
@@ -162,6 +199,7 @@ function badgeLabel(
             data-character={card.character}
             data-price={card.priceValue}
             data-name={translatedName}
+            data-key={card.key}
             data-rank={card.index}
           >
             <a
@@ -253,6 +291,10 @@ function badgeLabel(
       const empty = catalog.querySelector(
         "[data-catalog-empty]",
       );
+      const categoryName =
+        catalog instanceof HTMLElement
+          ? catalog.dataset.categoryName ?? "Collection"
+          : "Collection";
 
       if (
         !(grid instanceof HTMLElement) ||
@@ -262,6 +304,88 @@ function badgeLabel(
       }
 
       let activeFilter = "all";
+
+      const analyticsItems = () =>
+        cards
+          .filter(
+            (card) => card instanceof HTMLElement,
+          )
+          .map((card, index) => ({
+            item_id:
+              card.dataset.key ??
+              card.dataset.name ??
+              String(index + 1),
+            item_name:
+              card.dataset.name ?? "VIRELLAART",
+            item_brand: "VIRELLAART",
+            item_category: categoryName,
+            price: Number(card.dataset.price) || 0,
+            index,
+          }));
+
+      const sendViewItemList = () => {
+        if (
+          window.virellaAnalyticsAllowed !== true ||
+          typeof window.gtag !== "function"
+        ) {
+          return;
+        }
+
+        window.gtag("event", "view_item_list", {
+          item_list_name: categoryName,
+          items: analyticsItems(),
+        });
+      };
+
+      if (window.virellaAnalyticsAllowed === true) {
+        sendViewItemList();
+      } else {
+        document.addEventListener(
+          "virella:analytics-ready",
+          sendViewItemList,
+          { once: true },
+        );
+      }
+
+      catalog.addEventListener("click", (event) => {
+        const target = event.target;
+        const productLink =
+          target instanceof Element
+            ? target.closest(
+                ".catalog-image, .catalog-link",
+              )
+            : null;
+        const card =
+          productLink instanceof Element
+            ? productLink.closest(
+                "[data-catalog-card]",
+              )
+            : null;
+
+        if (
+          !(card instanceof HTMLElement) ||
+          window.virellaAnalyticsAllowed !== true ||
+          typeof window.gtag !== "function"
+        ) {
+          return;
+        }
+
+        window.gtag("event", "select_item", {
+          item_list_name: categoryName,
+          items: [
+            {
+              item_id:
+                card.dataset.key ??
+                card.dataset.name,
+              item_name: card.dataset.name,
+              item_brand: "VIRELLAART",
+              item_category: categoryName,
+              price:
+                Number(card.dataset.price) || 0,
+            },
+          ],
+        });
+      });
 
       const applyCatalogState = () => {
         const visible = cards.filter((card) => {
@@ -371,6 +495,73 @@ function badgeLabel(
     color: var(--gray);
     font-size: 16px;
     line-height: 1.75;
+  }
+
+  .catalog-lead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+    margin: 0 0 34px;
+    padding: 26px 28px;
+    border: 1px solid rgba(198, 168, 93, 0.42);
+    background:
+      linear-gradient(
+        110deg,
+        rgba(198, 168, 93, 0.13),
+        rgba(12, 12, 12, 0.94) 58%
+      );
+  }
+
+  .catalog-lead > div {
+    max-width: 740px;
+  }
+
+  .catalog-lead span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+
+  .catalog-lead h2 {
+    margin: 8px 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  .catalog-lead p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .catalog-lead > a {
+    flex: 0 0 auto;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border: 1px solid #1aa65b;
+    background: #178c4e;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .catalog-lead > a:hover {
+    background: #1aa65b;
+    transform: translateY(-2px);
   }
 
   .catalog-toolbar {
@@ -603,6 +794,7 @@ function badgeLabel(
 
   .catalog-image:focus-visible,
   .catalog-link:focus-visible,
+  .catalog-lead > a:focus-visible,
   .catalog-filters button:focus-visible,
   .catalog-sort select:focus-visible {
     outline: 2px solid var(--gold);
@@ -628,6 +820,15 @@ function badgeLabel(
       flex-direction: column;
     }
 
+    .catalog-lead {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .catalog-lead > a {
+      align-self: flex-start;
+    }
+
     .catalog-sort {
       flex-basis: auto;
       width: min(100%, 330px);
@@ -646,6 +847,15 @@ function badgeLabel(
 
     .catalog-header {
       margin-bottom: 28px;
+    }
+
+    .catalog-lead {
+      gap: 22px;
+      padding: 22px 20px;
+    }
+
+    .catalog-lead > a {
+      width: 100%;
     }
 
     .catalog-grid {

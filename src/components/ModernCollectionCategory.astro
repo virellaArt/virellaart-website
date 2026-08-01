@@ -107,6 +107,17 @@ const pageDescription = copy.categoryDescription.replace(
   "{category}",
   details.title,
 );
+const categoryWhatsappMessage =
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    `${copy.modern} ${details.title}`,
+  );
+const categoryWhatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
+const categoryPageURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com",
+).href;
 ---
 
 <BaseLayout
@@ -127,11 +138,42 @@ const pageDescription = copy.categoryDescription.replace(
     </div>
 
     {
+      categoryProducts.length > 0 && (
+        <aside class="modern-category-lead">
+          <div>
+            <span>{translations.contact.getInTouch}</span>
+            <strong>{translations.contact.hero}</strong>
+            <p>{translations.contact.lead}</p>
+          </div>
+
+          <a
+            href={categoryWhatsappURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-whatsapp-context="modern-category-header"
+            data-page-type="category"
+            data-product-category={`${copy.modern} ${details.title}`}
+            data-page-url={categoryPageURL}
+          >
+            {translations.contact.button}
+          </a>
+        </aside>
+      )
+    }
+
+    {
       categoryProducts.length > 0 ? (
-        <div class="modern-product-grid">
+        <div
+          class="modern-product-grid"
+          data-modern-product-grid
+          data-category-name={`${copy.modern} ${details.title}`}
+        >
           {categoryProducts.map((product) => (
             <a
               class="modern-product-card"
+              data-product-key={product.slug}
+              data-product-name={product.translatedName}
+              data-product-price={product.featuredPrice?.price}
               href={localizedPath(
                 `/collections/modern/${category}/${product.slug}`,
                 language,
@@ -217,6 +259,87 @@ const pageDescription = copy.categoryDescription.replace(
   </section>
 </BaseLayout>
 
+<script>
+  document
+    .querySelectorAll("[data-modern-product-grid]")
+    .forEach((grid) => {
+      if (!(grid instanceof HTMLElement)) return;
+
+      const categoryName =
+        grid.dataset.categoryName ?? "Modern";
+      const cards = Array.from(
+        grid.querySelectorAll("[data-product-key]"),
+      );
+      const itemFor = (
+        card: Element,
+        index: number,
+      ) => {
+        const element = card as HTMLElement;
+        const price = Number(
+          (element.dataset.productPrice ?? "")
+            .replace(/[^\d.]/g, ""),
+        );
+
+        return {
+          item_id:
+            element.dataset.productKey ??
+            String(index + 1),
+          item_name:
+            element.dataset.productName ??
+            "VIRELLAART",
+          item_brand: "VIRELLAART",
+          item_category: categoryName,
+          price: Number.isFinite(price) ? price : 0,
+          index,
+        };
+      };
+      const sendViewItemList = () => {
+        if (
+          window.virellaAnalyticsAllowed !== true ||
+          typeof window.gtag !== "function"
+        ) {
+          return;
+        }
+
+        window.gtag("event", "view_item_list", {
+          item_list_name: categoryName,
+          items: cards.map(itemFor),
+        });
+      };
+
+      if (window.virellaAnalyticsAllowed === true) {
+        sendViewItemList();
+      } else {
+        document.addEventListener(
+          "virella:analytics-ready",
+          sendViewItemList,
+          { once: true },
+        );
+      }
+
+      grid.addEventListener("click", (event) => {
+        const target = event.target;
+        const card =
+          target instanceof Element
+            ? target.closest("[data-product-key]")
+            : null;
+
+        if (
+          !(card instanceof HTMLElement) ||
+          window.virellaAnalyticsAllowed !== true ||
+          typeof window.gtag !== "function"
+        ) {
+          return;
+        }
+
+        window.gtag("event", "select_item", {
+          item_list_name: categoryName,
+          items: [itemFor(card, cards.indexOf(card))],
+        });
+      });
+    });
+</script>
+
 <style>
   .modern-category {
     width: min(100% - 56px, 1380px);
@@ -249,6 +372,80 @@ const pageDescription = copy.categoryDescription.replace(
     color: #ddd3c5;
     font-size: 18px;
     line-height: 1.75;
+  }
+
+  .modern-category-lead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+    margin: -18px 0 34px;
+    padding: 26px 28px;
+    border: 1px solid rgba(198, 168, 93, 0.42);
+    background:
+      linear-gradient(
+        110deg,
+        rgba(198, 168, 93, 0.13),
+        rgba(12, 12, 12, 0.94) 58%
+      );
+  }
+
+  .modern-category-lead > div {
+    max-width: 740px;
+  }
+
+  .modern-category-lead span {
+    display: block;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+
+  .modern-category-lead strong {
+    display: block;
+    margin: 8px 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  .modern-category-lead p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .modern-category-lead > a {
+    flex: 0 0 auto;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border: 1px solid #1aa65b;
+    background: #178c4e;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .modern-category-lead > a:hover {
+    background: #1aa65b;
+    transform: translateY(-2px);
+  }
+
+  .modern-category-lead > a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
   }
 
   .modern-product-grid {
@@ -456,6 +653,18 @@ const pageDescription = copy.categoryDescription.replace(
 
     .modern-product-card {
       grid-template-columns: 1fr;
+    }
+
+    .modern-category-lead {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: -24px;
+      padding: 22px 20px;
+    }
+
+    .modern-category-lead > a {
+      width: 100%;
     }
 
     .modern-product-image {

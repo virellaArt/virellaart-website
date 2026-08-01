@@ -270,12 +270,69 @@ document.addEventListener("click", (event) => {
     window.virellaAnalyticsAllowed === true &&
     typeof window.gtag === "function"
   ) {
+    const pathname = window.location.pathname;
+    const pathSegments =
+      pathname.split("/").filter(Boolean);
+    const knownLanguages =
+      new Set([
+        "tr", "de", "fr", "it", "ru", "ar",
+        "bg", "ro", "el", "es", "sr", "kk",
+        "uz", "pt", "pl",
+      ]);
+    const routeSegments =
+      knownLanguages.has(pathSegments[0])
+        ? pathSegments.slice(1)
+        : pathSegments;
+    const pageType =
+      button.dataset.pageType ||
+      (routeSegments.length === 0
+        ? "home"
+        : routeSegments[0] === "markets"
+          ? "market"
+          : routeSegments[0] === "collections" &&
+              routeSegments.length >= 4
+            ? "product"
+            : [
+                "living-rooms",
+                "dining-rooms",
+                "bedrooms",
+                "tv-units",
+              ].includes(routeSegments[0]) &&
+                routeSegments.length >= 2
+              ? "product"
+              : [
+                  "living-rooms",
+                  "dining-rooms",
+                  "bedrooms",
+                  "tv-units",
+                  "collections",
+                ].includes(routeSegments[0])
+                ? "category"
+                : "content");
+    const selectedPrice =
+      button.dataset.price || "";
+    const leadValue = Number(
+      selectedPrice.replace(/[^\d.]/g, ""),
+    );
+    const derivedMarketName =
+      routeSegments[0] === "markets"
+        ? routeSegments[1]
+            ?.replaceAll("-", " ")
+            .replace(/\b\w/g, (letter) =>
+              letter.toUpperCase(),
+            )
+        : undefined;
     const eventData = {
       cta_position:
         button.dataset.whatsappContext ||
         "page",
+      cta_text:
+        button.textContent?.trim() ||
+        button.getAttribute("aria-label") ||
+        "WhatsApp",
       product_name:
         button.dataset.product ||
+        button.dataset.productName ||
         undefined,
       product_category:
         button.dataset.productCategory ||
@@ -284,10 +341,18 @@ document.addEventListener("click", (event) => {
         button.dataset.configuration ||
         undefined,
       selected_price:
-        button.dataset.price ||
+        selectedPrice ||
         undefined,
       page_language:
         document.documentElement.lang,
+      page_type:
+        pageType,
+      page_path:
+        pathname,
+      market_name:
+        button.dataset.market ||
+        derivedMarketName ||
+        undefined,
       page_url:
         button.dataset.pageUrl ||
         window.location.href,
@@ -296,6 +361,8 @@ document.addEventListener("click", (event) => {
         undefined,
       link_url:
         button.href,
+      lead_type:
+        "whatsapp",
       transport_type:
         "beacon"
     }
@@ -308,6 +375,12 @@ document.addEventListener("click", (event) => {
 
     window.gtag("event", "generate_lead", {
       method: "WhatsApp",
+      ...(Number.isFinite(leadValue) && leadValue > 0
+        ? {
+            currency: "USD",
+            value: leadValue,
+          }
+        : {}),
       ...eventData
     });
   }

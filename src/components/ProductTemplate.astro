@@ -678,6 +678,8 @@ const pageDescription =
     productDescription,
     language,
   );
+const pageTitle =
+  `${translatedProductName} | ${categoryName}`;
 
 const canonicalURL = new URL(
   Astro.url.pathname,
@@ -1414,7 +1416,7 @@ const productTrust =
 ---
 
 <BaseLayout
-  title={translatedProductName}
+  title={pageTitle}
   description={pageDescription}
   image={images[0]}
   imageAlt={resolvedImageAlts[0]}
