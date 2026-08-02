@@ -2834,4 +2834,34 @@ sultanGreenDining: {
       },
     ],
   },
+
+  orionDiningRoomSet: {
+    name: "ORION Dining Room Set",
+    slug: "orion-dining-room-set",
+    category: "dining-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Sculptural Dining Elegance with Refined Modern Balance",
+    description:
+      "ORION Dining Room Set creates a sophisticated contemporary setting through its softly rounded dining table, six upholstered chairs and coordinated console with decorative mirror. Balanced cream, black and warm metallic details give the collection a distinctive architectural character. A refined VIRELLAART choice for customers searching for a modern luxury dining room set, six-chair dining collection and elegant console furniture.",
+    images: [
+      "/orion-dining-room-set-01.webp",
+      "/orion-dining-room-set-02.webp",
+      "/orion-dining-room-set-03.webp",
+    ],
+    imageAlts: {
+      en: [
+        "ORION modern dining room set with dining table six upholstered chairs console and mirror",
+        "ORION luxury contemporary dining table with six curved upholstered chairs in a refined interior",
+        "ORION modern dining room console with decorative mirror and elegant premium detailing",
+      ],
+    },
+    prices: [
+      {
+        label: "Dining Table + 6 Chairs + Console + Mirror",
+        price: "$4,350",
+        featured: true,
+      },
+    ],
+  },
 };
