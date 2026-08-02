@@ -2602,6 +2602,7 @@ const productTrust =
     }
 
     .product-information h1 {
+      max-width: 100%;
       margin: 0;
       font-family:
         Georgia,
@@ -2611,6 +2612,10 @@ const productTrust =
       font-weight: 400;
       line-height: 0.92;
       letter-spacing: -0.045em;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+      text-wrap: balance;
     }
 
     .product-information h2 {
@@ -3000,14 +3005,18 @@ const productTrust =
     /* WHATSAPP */
 
     .whatsapp {
+      width: 100%;
+      box-sizing: border-box;
       display: block;
       margin-top: 35px;
       padding: 18px;
       background: #b89555;
       color: #111;
       font-weight: bold;
+      line-height: 1.35;
       text-align: center;
       text-decoration: none;
+      overflow-wrap: break-word;
     }
 
     .note {
@@ -3601,10 +3610,12 @@ const productTrust =
             34px,
             10.5vw,
             44px
-          ) !important;
+        ) !important;
         line-height: 0.98 !important;
         letter-spacing: -0.03em !important;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
         text-wrap: balance;
       }
 
@@ -3744,6 +3755,8 @@ const productTrust =
       }
 
       .whatsapp {
+        width: 100% !important;
+        box-sizing: border-box;
         min-height: 54px;
         display: flex !important;
         align-items: center;
@@ -3762,6 +3775,9 @@ const productTrust =
         font-size: 10px !important;
         font-weight: 700 !important;
         letter-spacing: 1.5px;
+        line-height: 1.35 !important;
+        overflow-wrap: break-word;
+        white-space: normal;
         text-transform: uppercase;
       }
 
@@ -3895,6 +3911,7 @@ const productTrust =
 
       .manufacturing-link,
       .product-trust-whatsapp {
+        box-sizing: border-box;
         width: 100% !important;
         min-height: 48px;
         display: flex !important;
@@ -3905,6 +3922,9 @@ const productTrust =
           14px !important;
         font-size: 8px !important;
         letter-spacing: 1.7px !important;
+        line-height: 1.35 !important;
+        overflow-wrap: break-word;
+        white-space: normal;
         text-align: center;
       }
     }
@@ -3916,7 +3936,7 @@ const productTrust =
       }
 
       .product-information h1 {
-        font-size: 32px !important;
+        font-size: clamp(29px, 8.4vw, 34px) !important;
       }
 
       .thumbnail-button {

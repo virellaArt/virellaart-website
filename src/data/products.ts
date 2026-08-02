@@ -1,7 +1,7 @@
 export const products = {
 
   valencia: {
-    name: "Valencia Living Room",
+    name: "Valencia Sofa Set",
 
     category: "living-rooms",
     style: "luxury-classic",
@@ -51,7 +51,7 @@ export const products = {
   },
   
   vanessa: {
-    name: "Vanessa Living Room",
+    name: "Vanessa Sofa Set",
 
     category: "living-rooms",
     style: "luxury-classic",
@@ -104,7 +104,7 @@ export const products = {
   },
 
   aspendos: {
-  name: "Aspendos Living Room",
+  name: "Aspendos Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -150,7 +150,7 @@ export const products = {
 },
 
   alex: {
-  name: "Alex Living Room",
+  name: "Alex Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -194,7 +194,7 @@ export const products = {
 
   bahar: {
 
-  name: "Bahar Living Room",
+  name: "Bahar Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -235,7 +235,7 @@ export const products = {
 
  delux: {
 
-  name: "Deluxe Living Room",
+  name: "Deluxe Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -280,7 +280,7 @@ export const products = {
 
  lugano: {
 
-  name: "Lugano Living Room",
+  name: "Lugano Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -322,7 +322,7 @@ export const products = {
 
 queen: {
 
-  name: "Queen Living Room",
+  name: "Queen Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -369,7 +369,7 @@ queen: {
 
  sena: {
 
-  name: "Sena Living Room",
+  name: "Sena Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -408,7 +408,7 @@ queen: {
 
   shawl: {
 
-  name: "Shawl Living Room",
+  name: "Shawl Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -454,7 +454,7 @@ queen: {
 },
 
  vizyon: {
-  name: "Vizyon Living Room",
+  name: "Vizyon Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -495,7 +495,7 @@ queen: {
 },
 valenciaBedroom: {
 
-  name: "Valencia Bedroom",
+  name: "Valencia Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -536,7 +536,7 @@ imageAlts: {
 
 aspendosBedroom: {
 
-  name: "Aspendos Bedroom",
+  name: "Aspendos Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -575,7 +575,7 @@ aspendosBedroom: {
 
 deluxBedroom: {
 
-  name: "Deluxe Bedroom",
+  name: "Deluxe Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -613,7 +613,7 @@ deluxBedroom: {
 
 aspendosDining: {
 
-  name: "Aspendos Dining Room",
+  name: "Aspendos Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -652,7 +652,7 @@ aspendosDining: {
 
 deluxDining: {
 
-  name: "Deluxe Dining Room",
+  name: "Deluxe Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -689,7 +689,7 @@ images: [
 
 moonDining: {
 
-  name: "Moon Dining Room",
+  name: "Moon Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -724,7 +724,7 @@ moonDining: {
 
 queenDining: {
 
-  name: "Queen Dining Room",
+  name: "Queen Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -759,7 +759,7 @@ queenDining: {
 
 valenciaDining: {
 
-  name: "Valencia Dining Room",
+  name: "Valencia Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -918,7 +918,7 @@ valenciaTV: {
   ],
 },
 vanessaDining: {
-  name: "Vanessa Dining Room",
+  name: "Vanessa Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -952,7 +952,7 @@ vanessaDining: {
   ],
 },
 valdera: {
-  name: "Valdera Living Room",
+  name: "Valdera Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -995,7 +995,7 @@ valdera: {
   ],
 },
 shawlDining: {
-  name: "Shawl Dining Room",
+  name: "Shawl Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1026,7 +1026,7 @@ shawlDining: {
   ],
 },
 valderaDining: {
-  name: "Valdera Dining Room",
+  name: "Valdera Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1059,18 +1059,18 @@ valderaDining: {
     },
   ],
 },
-versaceBedroom: {
-  name: "Verona Bedroom",
+veronaBedroom: {
+  name: "Verona Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
 
   images: [
-    "/versacebedroom-01.webp",
-    "/versacebedroom-02.webp",
-    "/versacebedroom-03.webp",
-    "/versacebedroom-04.webp",
-    "/versacebedroom-05.webp",
+    "/verona-bedroom-01.webp",
+    "/verona-bedroom-02.webp",
+    "/verona-bedroom-03.webp",
+    "/verona-bedroom-04.webp",
+    "/verona-bedroom-05.webp",
   ],
   imageAlts: {
     en: [
@@ -1094,7 +1094,7 @@ versaceBedroom: {
   ],
 },
 zumrut: {
-  name: "Zumrut Living Room",
+  name: "Zümrüt Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1135,7 +1135,7 @@ zumrut: {
   ],
 },
 zumrutDining: {
-  name: "Zümrüt Dining Room",
+  name: "Zümrüt Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1169,7 +1169,7 @@ zumrutDining: {
   ],
 },
 milano: {
-  name: "Milano Living Room",
+  name: "Milano Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1237,7 +1237,7 @@ zumrutTv: {
   ],
 },
 milanoDining: {
-  name: "Milano Dining Room",
+  name: "Milano Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1267,7 +1267,7 @@ milanoDining: {
   ],
 },
 milanoBedroom: {
-  name: "Milano Bedroom",
+  name: "Milano Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -1301,7 +1301,7 @@ milanoBedroom: {
   ],
 },
 milanoBlue: {
-  name: "Milano Blue Living Room",
+  name: "Milano Blue Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1343,7 +1343,7 @@ milanoBlue: {
   ],
 },
 milanoBlueDining: {
-  name: "Milano Blue Dining Room",
+  name: "Milano Blue Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1377,7 +1377,7 @@ milanoBlueDining: {
   ],
 },
 milanoBlueBedroom: {
-  name: "Milano Bedroom (Blue Edition)",
+  name: "Milano Blue Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -1463,7 +1463,7 @@ milanoTv: {
   ],
 },
 lina: {
-  name: "Lina Living Room",
+  name: "Lina Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1501,7 +1501,7 @@ lina: {
   ],
 },
 linaDining: {
-  name: "Lina Dining Room",
+  name: "Lina Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1535,7 +1535,7 @@ linaDining: {
   ],
 },
 zerafetDining: {
-  name: "Zerafet Dining Room",
+  name: "Zerafet Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1569,7 +1569,7 @@ zerafetDining: {
   ],
 },
 zerafetLiving: {
-  name: "Zerafet Living Room",
+  name: "Zerafet Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1609,7 +1609,7 @@ zerafetLiving: {
   ],
 },
 saltanatBedroom: {
-  name: "Saltanat Bedroom",
+  name: "Saltanat Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -1643,7 +1643,7 @@ saltanatBedroom: {
   ],
 },
 saltanatDining: {
-  name: "Saltanat Dining Room",
+  name: "Saltanat Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1679,7 +1679,7 @@ saltanatDining: {
   ],
 },
 saltanatDiningGreen: {
-  name: "Saltanat Green Dining Room",
+  name: "Saltanat Green Dining Room Set",
 
   category: "dining-rooms",
   style: "luxury-classic",
@@ -1713,7 +1713,7 @@ saltanatDiningGreen: {
   ],
 },
 saltanatLiving: {
-  name: "Saltanat Living Room",
+  name: "Saltanat Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1749,7 +1749,7 @@ saltanatLiving: {
   ],
 },
 saltanatGreenLiving: {
-  name: "Saltanat Green Living Room",
+  name: "Saltanat Green Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1787,7 +1787,7 @@ saltanatGreenLiving: {
   ],
 },
 sultanBedroom: {
-  name: "Sultan Bedroom",
+  name: "Sultan Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -1825,7 +1825,7 @@ sultanBedroom: {
   ],
 },
 sultanGreenBedroom: {
-  name: "Sultan Bedroom (Green Edition)",
+  name: "Sultan Green Bedroom Set",
 
   category: "bedrooms",
   style: "luxury-classic",
@@ -1859,7 +1859,7 @@ sultanGreenBedroom: {
   ],
 },
 sultanLiving: {
-  name: "Sultan Sofa",
+  name: "Sultan Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1899,7 +1899,7 @@ sultanLiving: {
   ],
 },
 sultanSofa: {
-  name: "Sultan Sofa (Green)",
+  name: "Sultan Green Sofa Set",
 
   category: "living-rooms",
   style: "luxury-classic",
@@ -1972,7 +1972,7 @@ sultanGreenDining: {
 },
 
   marsilyaBedroom: {
-    name: "Marsilya Bedroom",
+  name: "Marsilya Bedroom Set",
     category: "bedrooms",
     style: "luxury-classic",
     subtitle: "Contemporary Luxury Bedroom Collection",
@@ -2002,7 +2002,7 @@ sultanGreenDining: {
   },
 
   rioBedroom: {
-    name: "rio Marsilya Bedroom",
+  name: "Rio Bedroom Set",
     category: "bedrooms",
     style: "luxury-classic",
     subtitle: "Contemporary Luxury Bedroom Collection",
@@ -2169,7 +2169,7 @@ sultanGreenDining: {
   },
 
   pradaSofaSet: {
-    name: "PRADA Sofa Set",
+    name: "Prada Sofa Set",
     slug: "prada-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2204,7 +2204,7 @@ sultanGreenDining: {
   },
 
   vitoSofaSet: {
-    name: "VITO Sofa Set",
+    name: "Vito Sofa Set",
     slug: "vito-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2241,7 +2241,7 @@ sultanGreenDining: {
   },
 
   ayIsigiSofaSet: {
-    name: "AY IŞIĞI Sofa Set",
+    name: "Ay Işığı Sofa Set",
     slug: "ay-isigi-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2282,7 +2282,7 @@ sultanGreenDining: {
   },
 
   baharSofaSet: {
-    name: "BAHAR Sofa Set",
+    name: "Bahar Sofa Set",
     slug: "bahar-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2325,7 +2325,7 @@ sultanGreenDining: {
   },
 
   beyrutSofaSet: {
-    name: "BEYRUT Sofa Set",
+    name: "Beyrut Sofa Set",
     slug: "beyrut-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2368,7 +2368,7 @@ sultanGreenDining: {
   },
 
   bostonSofaSet: {
-    name: "BOSTON Sofa Set",
+    name: "Boston Sofa Set",
     slug: "boston-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2405,7 +2405,7 @@ sultanGreenDining: {
   },
 
   burgazSofaSet: {
-    name: "BURGAZ Sofa Set",
+    name: "Burgaz Sofa Set",
     slug: "burgaz-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2448,7 +2448,7 @@ sultanGreenDining: {
   },
 
   dubaiSofaSet: {
-    name: "DUBAİ Sofa Set",
+    name: "Dubai Sofa Set",
     slug: "dubai-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2493,7 +2493,7 @@ sultanGreenDining: {
   },
 
   eftelyaSofaSet: {
-    name: "EFTELYA Sofa Set",
+    name: "Eftelya Sofa Set",
     slug: "eftelya-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2536,7 +2536,7 @@ sultanGreenDining: {
   },
 
   gizemSofaSet: {
-    name: "GIZEM Sofa Set",
+    name: "Gizem Sofa Set",
     slug: "gizem-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2579,7 +2579,7 @@ sultanGreenDining: {
   },
 
   hunkarSofaSet: {
-    name: "HÜNKAR Sofa Set",
+    name: "Hünkar Sofa Set",
     slug: "hunkar-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2622,7 +2622,7 @@ sultanGreenDining: {
   },
 
   orionModernSofaSet: {
-    name: "ORION Modern Sofa Set",
+    name: "Orion Sofa Set",
     slug: "orion-modern-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2669,7 +2669,7 @@ sultanGreenDining: {
   },
 
   milanoModernBedroomSet: {
-    name: "MILANO Modern Bedroom Set",
+    name: "Milano Bedroom Set",
     slug: "milano-modern-bedroom-set",
     category: "bedrooms",
     style: "modern",
@@ -2702,7 +2702,7 @@ sultanGreenDining: {
   },
 
   kanoModernBedroomSet: {
-    name: "KANO Modern Bedroom Set",
+    name: "Kano Bedroom Set",
     slug: "kano-modern-bedroom-set",
     category: "bedrooms",
     style: "modern",
@@ -2733,7 +2733,7 @@ sultanGreenDining: {
   },
 
   sohoModernDiningRoomSet: {
-    name: "SOHO Modern Dining Room Set",
+    name: "Soho Dining Room Set",
     slug: "soho-modern-dining-room-set",
     category: "dining-rooms",
     style: "modern",
@@ -2764,7 +2764,7 @@ sultanGreenDining: {
   },
 
   zenaSofaSet: {
-    name: "ZENA Sofa Set",
+    name: "Zena Sofa Set",
     slug: "zena-sofa-set",
     category: "living-rooms",
     style: "modern",
@@ -2802,7 +2802,7 @@ sultanGreenDining: {
   },
 
   zenaDiningRoom: {
-    name: "ZENA Dining Room",
+    name: "Zena Dining Room Set",
     slug: "zena-dining-room",
     category: "dining-rooms",
     style: "modern",
@@ -2836,7 +2836,7 @@ sultanGreenDining: {
   },
 
   orionDiningRoomSet: {
-    name: "ORION Dining Room Set",
+    name: "Orion Dining Room Set",
     slug: "orion-dining-room-set",
     category: "dining-rooms",
     style: "modern",

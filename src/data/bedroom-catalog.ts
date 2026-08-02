@@ -4,7 +4,7 @@ const bedroomCatalog = [
   { key: "aspendosBedroom", slug: "aspendos" },
   { key: "deluxBedroom", slug: "delux" },
   { key: "valenciaBedroom", slug: "valencia" },
-  { key: "versaceBedroom", slug: "versace" },
+  { key: "veronaBedroom", slug: "verona" },
   { key: "milanoBedroom", slug: "milano" },
   { key: "milanoBlueBedroom", slug: "milano-blue" },
   { key: "saltanatBedroom", slug: "saltanat" },

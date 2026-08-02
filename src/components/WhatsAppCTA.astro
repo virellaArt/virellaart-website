@@ -40,7 +40,7 @@ const whatsappURL =
   .whatsapp-float {
     position: fixed;
     right: 22px;
-    bottom: 22px;
+    bottom: calc(22px + env(safe-area-inset-bottom));
     z-index: 1200;
     min-height: 58px;
     display: inline-flex;
@@ -83,9 +83,10 @@ const whatsappURL =
   @media (max-width: 620px) {
     .whatsapp-float {
       right: 14px;
-      bottom: 14px;
+      bottom: calc(14px + env(safe-area-inset-bottom));
       width: 56px;
       min-height: 56px;
+      box-sizing: border-box;
       padding: 0;
     }
 
