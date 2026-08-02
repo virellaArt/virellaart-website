@@ -268,16 +268,27 @@ const footerMarkets =
     <div class="footer-service">
       <span>{translations.product.worldwideDelivery}</span>
 
-      <p>{translations.product.worldwideDeliveryText}</p>
-
       <strong>{translations.contact.languageValue}</strong>
+
+      <a
+        class="footer-whatsapp"
+        href={`https://wa.me/905539478608?text=${encodeURIComponent(
+          translations.product.whatsappMessage.replace(
+            "{product}",
+            "VIRELLAART",
+          ),
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-whatsapp-context="footer"
+      >
+        {translations.product.whatsapp}
+      </a>
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>© {year} VIRELLAART</p>
-
-    <p>{translations.product.craftsmanship}</p>
   </div>
 </footer>
 
@@ -342,6 +353,30 @@ const footerMarkets =
   }
 
   .footer-column a:hover {
+    color: var(--gold-light);
+  }
+
+  .footer-whatsapp {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    padding: 0 18px;
+    border: 1px solid rgba(195, 161, 104, 0.55);
+    color: #ffffff;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .footer-whatsapp:hover {
+    border-color: var(--gold-light);
+    background: rgba(195, 161, 104, 0.1);
     color: var(--gold-light);
   }
 

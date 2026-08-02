@@ -42,7 +42,8 @@ Bu araç Modern ve Luxury & Classic ürünlerini güvenli ve tekrarlanabilir bi�
 - Fiziksel depo stoku veya ön sipariş beyanı oluşturmaz. Sayfada sipariş üzerine üretim modelini açıkça gösterir; Google'ın desteklediği `InStock` değerini yalnızca ürünün şu anda siparişe açık ve karşılanabilir olduğunu bildirmek için kullanır.
 - Astro build, sitemap, canonical rota, render edilmiş ürün içeriği ve bütün iç bağlantıları doğrular.
 - Bir hata olursa ürün kaydını, rotayı ve yeni hedef görselleri geri alır; kaynak fotoğrafları korur.
-- `--publish` kullanıldığında yalnızca ürün dosyalarını commit eder, GitHub'a gönderir, Vercel production deploy yapar ve canlı ürün URL'sini kontrol eder.
+- `--publish` kullanıldığında yalnızca ürün dosyalarını commit eder, `main` dalını GitHub'a gönderir ve Cloudflare Pages otomatik yayınının canlı ürün URL'sini en fazla 10 dakika doğrular.
+- Kaynak JPG/PNG dosyaları ancak build, iç bağlantı kontrolü ve canlı Cloudflare doğrulaması başarılı olduktan sonra silinir.
 
 ## Yeni Codex sohbetine verilecek kısa talimat
 

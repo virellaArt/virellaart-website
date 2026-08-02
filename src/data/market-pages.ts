@@ -66,12 +66,12 @@ export const marketPages: MarketPage[] = [
     marketName: "United States",
     title: "Luxury Furniture Manufacturer for the USA | VIRELLAART",
     description:
-      "Explore made-to-order luxury furniture for US homes and projects, with manufacturer-direct support and international delivery planning.",
+      "Explore made-to-order luxury furniture for US homes and projects, with direct design consultation and international delivery planning.",
     eyebrow: "VIRELLAART · United States",
     heading: "Statement Luxury Furniture for American Interiors",
     intro:
-      "VIRELLAART supports private residences, villas and design projects across the United States with manufacturer-direct access to luxury furniture collections made in Istanbul.",
-    serviceHeading: "Manufacturer-Direct Product Consultation",
+      "VIRELLAART supports private residences, villas and design projects across the United States with made-to-order luxury furniture collections crafted in Istanbul.",
+    serviceHeading: "Made-to-Order Product Consultation",
     serviceText:
       "Review collection configurations, dimensions, fabrics and finishes directly with our team. Every written quotation identifies the selected products, pricing, production scope, protective packaging and agreed delivery arrangement.",
     planningHeading: "International Delivery Planning to the USA",

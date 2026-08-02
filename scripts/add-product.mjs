@@ -105,7 +105,7 @@ Seçenekler:
   --manifest <dosya> Ürün manifestini seçer.
   --dry-run          Dosya değiştirmeden bütün ön kontrolleri yapar.
   --commit           Başarılı ürünü yerel Git commit'ine alır.
-  --publish          Commit, GitHub push ve Vercel production deploy yapar.
+  --publish          Commit ve GitHub push yapar; Cloudflare Pages canlı yayınını doğrular.
   --help             Bu yardımı gösterir.
 `);
 }
@@ -571,6 +571,22 @@ function normalizeManifest(manifest) {
   if (!category) {
     throw new Error(
       "category sofa-sets, living-rooms, dining-rooms, bedrooms veya tv-units olmalı.",
+    );
+  }
+
+  const requiredNameSuffix = {
+    "living-rooms": "Sofa Set",
+    "dining-rooms": "Dining Room Set",
+    bedrooms: "Bedroom Set",
+    "tv-units": "TV Unit",
+  }[category.dataCategory];
+
+  if (
+    requiredNameSuffix &&
+    !name.endsWith(requiredNameSuffix)
+  ) {
+    throw new Error(
+      `Ürün adı "${requiredNameSuffix}" ile bitmeli. Örnek: Verona ${requiredNameSuffix}`,
     );
   }
 
@@ -1255,52 +1271,83 @@ async function importProduct(
     });
   }
 
-  const deletionFailures = [];
+  const removeOriginalSources =
+    async () => {
+      const deletionFailures = [];
 
-  for (
-    let index = 0;
-    index < sourceImages.length;
-    index += 1
-  ) {
-    const source = sourceImages[index];
+      for (
+        let index = 0;
+        index < sourceImages.length;
+        index += 1
+      ) {
+        const source =
+          sourceImages[index];
 
-    if (
-      isSamePath(
-        source,
-        targetImages[index],
-      )
-    ) {
-      continue;
-    }
+        if (
+          isSamePath(
+            source,
+            targetImages[index],
+          )
+        ) {
+          continue;
+        }
 
-    try {
-      await removeSourceImage(source);
-    } catch (error) {
-      deletionFailures.push({
-        source,
-        error,
-      });
-    }
-  }
+        try {
+          await removeSourceImage(source);
+        } catch (error) {
+          deletionFailures.push({
+            source,
+            error,
+          });
+        }
+      }
 
-  if (deletionFailures.length > 0) {
-    for (const failure of deletionFailures) {
-      console.error(
-        `Kaynak silinemedi: ${failure.source}`,
-        failure.error,
-      );
-    }
+      if (
+        deletionFailures.length > 0
+      ) {
+        for (
+          const failure of
+          deletionFailures
+        ) {
+          console.error(
+            `Kaynak silinemedi: ${failure.source}`,
+            failure.error,
+          );
+        }
 
-    throw new Error(
-      "Ürün eklendi ve doğrulandı; ancak bazı kaynak görseller silinemedi. Commit/yayın yapılmadı.",
-    );
-  }
+        throw new Error(
+          "Ürün eklendi ve doğrulandı; ancak bazı kaynak görseller silinemedi.",
+        );
+      }
+    };
 
   const changedFiles = [
     productsFile,
     route.filePath,
     ...targetImages,
   ];
+
+  if (flags.publish) {
+    const branchResult =
+      await runCommand(
+        "git",
+        [
+          "branch",
+          "--show-current",
+        ],
+        {
+          capture: true,
+        },
+      );
+    const branch =
+      branchResult.stdout.trim();
+
+    if (branch !== "main") {
+      throw new Error(
+        "ERROR: Active branch must be main",
+      );
+    }
+  }
 
   if (flags.commit || flags.publish) {
     await runCommand("git", [
@@ -1327,50 +1374,65 @@ async function importProduct(
   }
 
   if (flags.publish) {
-    const branchResult = await runCommand(
-      "git",
-      [
-        "branch",
-        "--show-current",
-      ],
-      {
-        capture: true,
-      },
-    );
-    const branch =
-      branchResult.stdout.trim();
-
-    if (!branch) {
-      throw new Error(
-        "Aktif Git dalı bulunamadı.",
-      );
-    }
-
     await runCommand("git", [
       "push",
       "origin",
-      branch,
-    ]);
-    await runCommand("npx", [
-      "vercel",
-      "--prod",
-      "--yes",
-      "--archive=tgz",
+      "main",
     ]);
 
     const liveUrl =
       `https://www.virellaart.com${routePath}`;
-    const response = await fetch(
-      `${liveUrl}?verify=${Date.now()}`,
-    );
-    const liveHtml = await response.text();
+    const verificationDeadline =
+      Date.now() + 10 * 60 * 1000;
+    let liveVerified = false;
+    let lastLiveStatus =
+      "Cloudflare yanıtı alınamadı";
 
-    if (
-      !response.ok ||
-      !liveHtml.includes(product.name)
+    while (
+      Date.now() < verificationDeadline
     ) {
+      try {
+        const response = await fetch(
+          `${liveUrl}?verify=${Date.now()}`,
+          {
+            cache: "no-store",
+            signal:
+              AbortSignal.timeout(
+                30_000,
+              ),
+          },
+        );
+        const liveHtml =
+          await response.text();
+
+        lastLiveStatus =
+          `HTTP ${response.status}`;
+
+        if (
+          response.ok &&
+          liveHtml.includes(product.name)
+        ) {
+          liveVerified = true;
+          break;
+        }
+      } catch (error) {
+        lastLiveStatus =
+          error instanceof Error
+            ? error.message
+            : String(error);
+      }
+
+      await delay(8_000);
+    }
+
+    if (!liveVerified) {
       throw new Error(
-        `Canlı doğrulama başarısız: ${liveUrl}`,
+        [
+          "GitHub push başarılı; ancak Cloudflare Pages canlı doğrulaması 10 dakika içinde tamamlanmadı.",
+          `URL: ${liveUrl}`,
+          `Son durum: ${lastLiveStatus}`,
+          "Kaynak görseller korunuyor.",
+        ].join("\n"),
       );
     }
 
@@ -1378,6 +1440,8 @@ async function importProduct(
       `Canlı ürün: ${liveUrl}`,
     );
   }
+
+  await removeOriginalSources();
 
   console.log(
     [
