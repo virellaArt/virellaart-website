@@ -1,0 +1,1231 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Chandelier Size for Your Living Room";
+
+const description =
+  "Learn how to choose living room chandelier dimensions by seating layout, ceiling height, coffee table position, sightlines and room proportions.";
+
+const publishedTime = "2026-08-04T00:37:55+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-chandelier-size-for-your-living-room/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How large should a chandelier be in a living room?",
+    answer:
+      "The chandelier should relate to the complete seating area, ceiling height and central furniture composition. Its visual weight matters as much as its measured width.",
+  },
+  {
+    question:
+      "Should a living room chandelier be centred over the coffee table?",
+    answer:
+      "The coffee table and seating composition are usually the strongest reference. The fixture should align with the visual centre of the furniture rather than an empty room alone.",
+  },
+  {
+    question:
+      "How low should a chandelier hang in a living room?",
+    answer:
+      "The lowest point must preserve walking clearance, seated sightlines and a balanced connection with the furniture. The correct height depends on the ceiling and fixture depth.",
+  },
+  {
+    question:
+      "Can a large chandelier work with a low ceiling?",
+    answer:
+      "A broad but shallow fixture may work better than a deep tiered chandelier. Complete fixture height and suspension length must be checked against the finished ceiling.",
+  },
+  {
+    question:
+      "How can I test chandelier size before ordering?",
+    answer:
+      "Create a temporary outline from paper or cardboard using the proposed width and height, suspend it safely and evaluate it from every sofa, doorway and adjoining room.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/living-room-chandelier-size.webp"
+  imageAlt="Modern luxury living room seating arranged beneath a proportionate chandelier"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Living Room Planning Guides"
+  keywords={[
+    "living room chandelier size",
+    "chandelier size for living room",
+    "luxury living room lighting",
+    "chandelier height living room",
+    "living room ceiling light size",
+    "chandelier over coffee table",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={11}
+  wordCount={1794}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Living Room Chandelier Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Living Room Planning Guide
+        </p>
+
+        <h1 class="living-chandelier-title">
+          How to Choose the Right Chandelier Size
+          <span>for Your Living Room</span>
+        </h1>
+
+        <p class="article-intro">
+          Chandelier dimensions affect lighting, circulation and the
+          visual scale of the entire seating arrangement. This guide
+          explains how to compare sofa placement, ceiling height, fixture
+          width, suspension length and sightlines before ordering.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 4, 2026</span>
+          <span>11 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/living-room-chandelier-size.webp"
+        alt="Modern luxury living room seating arranged beneath a proportionate chandelier"
+        width="1145"
+        height="1374"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li><a href="#measure-room">Measure the room</a></li>
+          <li><a href="#seating-layout">Record the seating layout</a></li>
+          <li><a href="#fixture-width">Choose fixture width</a></li>
+          <li><a href="#hanging-height">Plan hanging height</a></li>
+          <li><a href="#ceiling-height">Evaluate ceiling height</a></li>
+          <li><a href="#fixture-shape">Choose the fixture shape</a></li>
+          <li><a href="#lighting-plan">Plan layered lighting</a></li>
+          <li><a href="#visual-balance">Check visual balance</a></li>
+          <li><a href="#installation">Prepare installation</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Choose the chandelier from the complete seating composition
+            and finished ceiling height. The fixture should define the
+            visual centre without obstructing movement, views or the
+            relationship between sofas and supporting furniture.
+          </p>
+        </section>
+
+        <p>
+          A chandelier can transform a living room by connecting the
+          ceiling with the seating area below. Its dimensions influence
+          whether the room feels balanced, underfurnished or visually
+          crowded.
+        </p>
+
+        <p>
+          The largest available fixture is not automatically the most
+          luxurious choice. Width, depth, suspension length and visual
+          weight must work together with the sofas, armchairs, coffee
+          table and architecture.
+        </p>
+
+        <h2 id="measure-room">
+          1. Measure the complete living room
+        </h2>
+
+        <p>
+          Record the room width, length and finished ceiling height. Mark
+          beams, recessed ceilings, cornices, ceiling roses, air
+          conditioning, sprinklers and existing electrical points.
+        </p>
+
+        <p>
+          Measure from the finished floor to the lowest ceiling detail.
+          Decorative ceiling treatments can reduce the usable suspension
+          height even when the main ceiling is higher.
+        </p>
+
+        <h3>Record entrances and circulation routes</h3>
+
+        <p>
+          Mark doorways, adjoining rooms and the main paths around the
+          seating. A chandelier positioned outside the protected
+          furniture zone may require greater walking clearance.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            room measurement guide
+          </a>
+          explains how to record walls, ceilings and furniture clearances.
+        </p>
+
+        <h2 id="seating-layout">
+          2. Record the complete seating arrangement
+        </h2>
+
+        <p>
+          Draw every sofa, armchair, coffee table and side table from
+          above. Use complete external dimensions, including broad arms,
+          curved frames and decorative projections.
+        </p>
+
+        <p>
+          The chandelier should relate to the visual centre of this
+          furniture group rather than the geometric centre of an empty
+          room.
+        </p>
+
+        <h3>Single-sofa arrangements</h3>
+
+        <p>
+          A single sofa with facing armchairs often creates a clear central
+          zone. The chandelier can align with the coffee table and the
+          midpoint between the seats.
+        </p>
+
+        <h3>Two-sofa arrangements</h3>
+
+        <p>
+          Facing or perpendicular sofas create a larger furniture
+          footprint. The fixture should support the complete conversation
+          area rather than only the principal sofa.
+        </p>
+
+        <h3>Sectional and corner sofas</h3>
+
+        <p>
+          L-shaped seating creates an internal visual centre that may not
+          match the room centre. Confirm the fixture position after the
+          sectional layout is final.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-sofa-size-for-your-living-room",
+              language,
+            )}
+          >
+            sofa size guide
+          </a>
+          explains how to calculate the complete seating footprint.
+        </p>
+
+        <h2 id="fixture-width">
+          3. Choose chandelier width from the seating zone
+        </h2>
+
+        <p>
+          Fixture width should relate to the central furniture composition,
+          especially the coffee table and the open area between the
+          surrounding seats.
+        </p>
+
+        <p>
+          Measure the chandelier at its widest point. Arms, shades,
+          crystals and sculptural branches may extend beyond the main body.
+        </p>
+
+        <h3>Do not use room width alone</h3>
+
+        <p>
+          A large room may contain several zones. A chandelier serving one
+          seating area should be scaled to that arrangement rather than
+          the full open-plan space.
+        </p>
+
+        <p>
+          In a compact room, a wide fixture can still work when its form is
+          visually open and its suspension depth remains controlled.
+        </p>
+
+        <h3>Compare visual weight</h3>
+
+        <p>
+          Dense glass, dark metal and layered crystal can feel larger than
+          open frameworks of the same measured width. Evaluate mass,
+          transparency and shadow as part of the size decision.
+        </p>
+
+        <h2 id="hanging-height">
+          4. Plan chandelier hanging height
+        </h2>
+
+        <p>
+          Unlike a dining chandelier protected by a table, a living-room
+          fixture may hang above an area that people walk through.
+          Placement determines the required clearance.
+        </p>
+
+        <p>
+          When the chandelier is directly above a coffee table, it may sit
+          lower than a fixture positioned within an open circulation path.
+          The lowest point must still preserve sightlines and safety.
+        </p>
+
+        <h3>Test seated sightlines</h3>
+
+        <p>
+          Sit on every sofa and armchair. The chandelier should not block
+          views toward other guests, the television, fireplace or
+          architectural focal points.
+        </p>
+
+        <h3>Test standing viewpoints</h3>
+
+        <p>
+          Evaluate the fixture from the entrance, adjoining rooms and the
+          main walking routes. It should not appear uncomfortably low or
+          disconnected near the ceiling.
+        </p>
+
+        <h3>Include the complete suspension system</h3>
+
+        <p>
+          Chains, cables, rods, ceiling canopies and decorative upper
+          sections are part of the final fixture height. Confirm the
+          shortest and longest adjustable positions.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Explore the
+            <a href={localizedPath("/living-rooms", language)}>
+              VIRELLAART living room collection
+            </a>
+            and read our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-sofa-set",
+                language,
+              )}
+            >
+              luxury sofa buying guide
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="ceiling-height">
+          5. Match fixture depth to the ceiling
+        </h2>
+
+        <p>
+          High ceilings can support taller chandeliers, multiple tiers and
+          dramatic suspension lengths. Standard ceilings usually require
+          shallower forms and controlled vertical depth.
+        </p>
+
+        <p>
+          Measure the complete distance from the ceiling canopy to the
+          lowest decorative element. Product photographs can make deep
+          fixtures appear more compact than they are.
+        </p>
+
+        <h3>Recessed and coffered ceilings</h3>
+
+        <p>
+          Architectural ceiling panels can frame the chandelier and create
+          a clear centre. Confirm that the fixture canopy fits within the
+          flat mounting area.
+        </p>
+
+        <p>
+          Ceiling mouldings, concealed lighting and recessed details
+          should remain visible rather than becoming crowded by an
+          oversized fixture.
+        </p>
+
+        <h3>Double-height living rooms</h3>
+
+        <p>
+          Double-height spaces may require greater fixture depth to connect
+          the ceiling with the furniture. A small chandelier can disappear
+          within the vertical volume.
+        </p>
+
+        <p>
+          Maintenance access, cleaning and lamp replacement should be
+          planned before selecting a very tall installation.
+        </p>
+
+        <h2 id="fixture-shape">
+          6. Choose a shape for the seating arrangement
+        </h2>
+
+        <h3>Round chandeliers</h3>
+
+        <p>
+          Round fixtures can suit balanced conversation areas, round coffee
+          tables and curved sofas. Their diameter creates a clear central
+          focal point.
+        </p>
+
+        <h3>Linear chandeliers</h3>
+
+        <p>
+          Linear fixtures can support long sofas, rectangular coffee
+          tables and elongated rooms. Their ends should remain within the
+          principal seating zone.
+        </p>
+
+        <h3>Clustered pendants</h3>
+
+        <p>
+          Pendant clusters create a sculptural form with multiple hanging
+          levels. Measure the complete outer boundary and the lowest
+          element.
+        </p>
+
+        <h3>Organic and asymmetrical fixtures</h3>
+
+        <p>
+          Irregular chandeliers can complement modern interiors and curved
+          seating. Their visual centre may differ from their electrical
+          mounting point, so use the complete installed outline.
+        </p>
+
+        <h3>Multiple fixtures</h3>
+
+        <p>
+          Large or open-plan rooms may use more than one chandelier to
+          define separate seating zones. Each fixture should correspond to
+          a clear furniture composition.
+        </p>
+
+        <h2 id="lighting-plan">
+          7. Plan the chandelier as part of layered lighting
+        </h2>
+
+        <p>
+          Chandelier size does not determine useful light output. Consider
+          lumen output, shades, lamp direction, colour temperature and
+          dimming compatibility.
+        </p>
+
+        <p>
+          Living rooms often need several lighting layers for conversation,
+          reading, television viewing and evening ambience.
+        </p>
+
+        <h3>Combine ceiling and supporting lights</h3>
+
+        <p>
+          Wall lights, floor lamps, table lamps and concealed architectural
+          lighting can support the chandelier and reduce the need for one
+          excessively bright central fixture.
+        </p>
+
+        <h3>Control glare near sofas</h3>
+
+        <p>
+          Exposed lamps near eye level may create discomfort for seated
+          users. Evaluate the chandelier from every sofa and armchair.
+        </p>
+
+        <p>
+          Reflective coffee tables, mirrors, polished walls and television
+          screens can multiply bright points. Check reflections after dark.
+        </p>
+
+        <h3>Use dimming where compatible</h3>
+
+        <p>
+          Dimming can support different activities and reduce glare.
+          Confirm compatibility between lamps, drivers, switches and home
+          automation systems.
+        </p>
+
+        <h2 id="visual-balance">
+          8. Coordinate with sofas and supporting furniture
+        </h2>
+
+        <p>
+          Compare the chandelier with sofa width, armchair scale, coffee
+          table dimensions, rug size, television furniture and wall
+          architecture.
+        </p>
+
+        <p>
+          The fixture should reinforce the room’s design character without
+          overpowering the furniture that defines the seating area.
+        </p>
+
+        <h3>Coordinate with the coffee table</h3>
+
+        <p>
+          The coffee table often sits directly beneath the visual centre of
+          the chandelier. Round, rectangular and grouped tables create
+          different fixture relationships.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-coffee-table-size-for-your-living-room",
+              language,
+            )}
+          >
+            coffee table size guide
+          </a>
+          explains how to plan the centre of the seating arrangement.
+        </p>
+
+        <h3>Coordinate with the rug</h3>
+
+        <p>
+          The rug defines the horizontal boundary while the chandelier
+          creates the vertical focal point. Both should correspond to the
+          same seating composition.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-rug-size-for-your-living-room",
+              language,
+            )}
+          >
+            living room rug size guide
+          </a>
+          explains how to anchor sofas and armchairs.
+        </p>
+
+        <h3>Coordinate with the television wall</h3>
+
+        <p>
+          The chandelier should not obstruct the television from seated
+          positions or create distracting reflections on the screen.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-tv-unit-size-for-your-living-room",
+              language,
+            )}
+          >
+            TV unit size guide
+          </a>
+          explains how to plan the media wall and viewing area.
+        </p>
+
+        <h3>Avoid common chandelier-sizing mistakes</h3>
+
+        <p>
+          Do not choose the chandelier before the sofa layout is fixed,
+          calculate from room dimensions alone or ignore the complete
+          suspension height.
+        </p>
+
+        <p>
+          Another common mistake is selecting a large fixture for visual
+          impact without checking walking clearance, seated sightlines or
+          television reflections.
+        </p>
+
+        <h2 id="installation">
+          9. Prepare installation and ordering information
+        </h2>
+
+        <p>
+          Record the ceiling construction, electrical position and access
+          conditions. Heavy fixtures may require suitable structural
+          support prepared by qualified professionals.
+        </p>
+
+        <p>
+          Confirm whether the chandelier arrives assembled or in sections.
+          Large installations may require scaffolding, lifting equipment
+          or specialist assembly.
+        </p>
+
+        <h3>Create a temporary fixture model</h3>
+
+        <p>
+          Cut paper or cardboard to the proposed fixture width. Use safe
+          lightweight strings to represent the lowest point and suspend
+          the model above the seating centre.
+        </p>
+
+        <p>
+          View it from every sofa, armchair, doorway and adjoining room.
+          This test can reveal scale, height and sightline issues before
+          ordering.
+        </p>
+
+        <h3>Plan maintenance access</h3>
+
+        <p>
+          Lamps, glass and decorative elements may require periodic
+          cleaning or replacement. Confirm safe access after all furniture
+          is installed.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning.
+        </p>
+
+        <h3>Information to prepare</h3>
+
+        <ul>
+          <li>The complete living-room dimensions</li>
+          <li>The finished ceiling height</li>
+          <li>The sofa and armchair positions</li>
+          <li>The coffee-table dimensions and centre</li>
+          <li>The main circulation routes</li>
+          <li>The existing electrical position</li>
+          <li>Room and ceiling photographs</li>
+          <li>The destination city and country</li>
+        </ul>
+
+        <h2>Final living room chandelier checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            Room and ceiling dimensions are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The complete seating layout is fixed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Fixture width suits the seating zone.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Hanging height preserves walking clearance.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Seated sightlines remain open.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Lighting output and glare are controlled.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Electrical support and installation access are confirmed.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Choose the chandelier from the complete seating composition
+          </h2>
+
+          <p>
+            The right living-room chandelier size balances furniture
+            scale, ceiling height, sightlines and circulation. Evaluate the
+            fixture as part of the complete room rather than as an isolated
+            decorative object.
+          </p>
+
+          <p>
+            VIRELLAART can review room and furniture information when
+            discussing a complete luxury living-room arrangement and
+            made-to-order furniture options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20planning%20my%20luxury%20living%20room."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Living Room Planning
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Living room chandelier size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.sofa-size-title {
+    max-width: 1020px;
+    font-size: clamp(39px, 4.8vw, 66px);
+  }
+
+  .sofa-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .sofa-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.coffee-table-size-title {
+    max-width: 1080px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .coffee-table-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .coffee-table-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.rug-size-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .rug-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .rug-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.dining-rug-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .dining-rug-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-rug-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.living-chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .living-chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .living-chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
