@@ -1,0 +1,1008 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Dining Table Size for Your Space";
+
+const description =
+  "Learn how to choose the right dining table size by room dimensions, seating capacity, chair clearance, table shape and delivery access.";
+
+const publishedTime = "2026-08-03T11:59:28+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-dining-table-size-for-your-space/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How do I know what dining table size will fit my room?",
+    answer:
+      "Measure the usable floor area, doors, windows and surrounding furniture, then compare these dimensions with the complete table footprint and the space required to move each chair.",
+  },
+  {
+    question:
+      "Should I choose table size by the number of chairs?",
+    answer:
+      "Seating capacity is important, but the room must also support chair movement, circulation, serving access and any nearby console or storage furniture.",
+  },
+  {
+    question:
+      "Is a rectangular or round dining table better for a small room?",
+    answer:
+      "The better shape depends on the room proportions, circulation and seating needs. Rectangular tables often suit long rooms, while round tables can support movement in some compact or square spaces.",
+  },
+  {
+    question:
+      "How can I test dining table size before ordering?",
+    answer:
+      "Mark the complete tabletop and chair-use area on the floor with removable masking tape, then test walking routes and chair movement around every side.",
+  },
+  {
+    question:
+      "Can VIRELLAART produce dining tables in custom sizes?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Suitable table dimensions and configurations can be discussed according to the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/dining-table-size.webp"
+  imageAlt="Luxury dining table arranged proportionately with surrounding chairs in an elegant dining room"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Dining Room Planning Guides"
+  keywords={[
+    "dining table size guide",
+    "right dining table size",
+    "luxury dining table dimensions",
+    "dining room measurements",
+    "dining table seating capacity",
+    "dining table room planning",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={10}
+  wordCount={1322}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Dining Table Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Dining Room Planning Guide
+        </p>
+
+        <h1 class="dining-size-title">
+          How to Choose the Right Dining Table Size
+          <span>for Your Space</span>
+        </h1>
+
+        <p class="article-intro">
+          Dining table size affects seating comfort, chair movement and
+          circulation. This guide explains how to compare room
+          measurements, seating capacity, table shape and delivery access.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>10 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/dining-table-size.webp"
+        alt="Luxury dining table arranged proportionately with surrounding chairs in an elegant dining room"
+        width="1086"
+        height="1448"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#measure-room">
+              Measure the room
+            </a>
+          </li>
+
+          <li>
+            <a href="#seating-capacity">
+              Define seating capacity
+            </a>
+          </li>
+
+          <li>
+            <a href="#table-shape">
+              Select table shape
+            </a>
+          </li>
+
+          <li>
+            <a href="#chair-clearance">
+              Plan chair clearance
+            </a>
+          </li>
+
+          <li>
+            <a href="#table-base">
+              Evaluate the table base
+            </a>
+          </li>
+
+          <li>
+            <a href="#other-furniture">
+              Include other furniture
+            </a>
+          </li>
+
+          <li>
+            <a href="#delivery">
+              Check delivery access
+            </a>
+          </li>
+
+          <li>
+            <a href="#quotation">
+              Prepare the quotation
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Select a dining table from the complete usable room rather
+            than seating capacity alone. The correct size must allow
+            chairs to move, people to circulate and nearby furniture to
+            open and function comfortably.
+          </p>
+        </section>
+
+        <p>
+          A dining table can fit inside the room dimensions and still feel
+          oversized once chairs, a console and circulation are included.
+          Table width and length describe only part of the final furniture
+          footprint.
+        </p>
+
+        <p>
+          Begin by measuring the room and identifying the number of people
+          who will use the table regularly. Occasional entertaining needs
+          should be considered without making everyday movement
+          unnecessarily difficult.
+        </p>
+
+        <h2 id="measure-room">
+          1. Measure the complete usable dining area
+        </h2>
+
+        <p>
+          Record the room width, length and ceiling height. Mark doors,
+          windows, radiators, columns, curtains, electrical points and
+          every fixed architectural feature.
+        </p>
+
+        <p>
+          Measure each wall separately and note the opening direction of
+          doors. A long wall may appear suitable for a large table but
+          become restricted by door movement or access to another room.
+        </p>
+
+        <h3>Measure open-plan dining areas</h3>
+
+        <p>
+          In an open-plan interior, identify the practical boundary
+          between dining, living and kitchen areas. The table should not
+          block the route between these zones.
+        </p>
+
+        <p>
+          Use our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            complete room measurement guide
+          </a>
+          to record walls, circulation and delivery access correctly.
+        </p>
+
+        <h2 id="seating-capacity">
+          2. Define realistic seating capacity
+        </h2>
+
+        <p>
+          Start with the number of people who use the table every day.
+          Then consider how frequently additional guests are invited and
+          whether temporary seating can support those occasions.
+        </p>
+
+        <p>
+          Avoid selecting an excessively large table for rare events if
+          it makes the room uncomfortable throughout the rest of the year.
+          Everyday use should remain the primary planning condition.
+        </p>
+
+        <h3>Consider chair width and armrests</h3>
+
+        <p>
+          Seating capacity depends on the actual chairs, not only the
+          tabletop length. Wide dining chairs and chairs with arms require
+          more space than compact armless designs.
+        </p>
+
+        <p>
+          Confirm how many chairs fit comfortably between table legs or
+          base elements. Decorative table supports can reduce usable
+          seating positions even when the tabletop appears sufficiently
+          long.
+        </p>
+
+        <h2 id="table-shape">
+          3. Match the table shape to the room
+        </h2>
+
+        <h3>Rectangular dining tables</h3>
+
+        <p>
+          Rectangular tables often suit long dining rooms and provide a
+          clear relationship with consoles, chandeliers and architectural
+          axes. Their proportions should remain balanced with the room.
+        </p>
+
+        <h3>Round dining tables</h3>
+
+        <p>
+          Round tables can support conversation and may simplify movement
+          in some square or compact spaces. Their complete diameter and
+          chair-use area must still be measured carefully.
+        </p>
+
+        <h3>Oval dining tables</h3>
+
+        <p>
+          Oval tables can soften circulation around the corners while
+          maintaining an elongated seating arrangement. The curved ends
+          affect chair positioning and usable tabletop space.
+        </p>
+
+        <h3>Square dining tables</h3>
+
+        <p>
+          Square tables may suit balanced square rooms but can become
+          visually heavy as their size increases. Confirm that every side
+          remains accessible and proportionate.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Continue with our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-dining-room-set",
+                language,
+              )}
+            >
+              luxury dining room buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/dining-rooms", language)}>
+              VIRELLAART dining room collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="chair-clearance">
+          4. Plan the complete chair-use area
+        </h2>
+
+        <p>
+          Dining chairs require space to move backward before a person can
+          sit or stand. This movement area must be added around every
+          usable side of the table.
+        </p>
+
+        <p>
+          Circulation behind occupied chairs requires additional planning.
+          A route that appears comfortable when chairs are pushed in may
+          become blocked during a meal.
+        </p>
+
+        <h3>Test the layout with masking tape</h3>
+
+        <p>
+          Mark the complete tabletop footprint on the floor with removable
+          masking tape. Then mark the approximate chair positions and
+          movement area around each side.
+        </p>
+
+        <p>
+          Place temporary objects where a console or serving cabinet will
+          stand. Walk through the room and test doors, drawers and nearby
+          circulation before confirming the table size.
+        </p>
+
+        <h2 id="table-base">
+          5. Evaluate the table base and leg position
+        </h2>
+
+        <p>
+          The table base affects seating almost as much as the tabletop.
+          Corner legs, central pedestals and decorative supports create
+          different chair-placement conditions.
+        </p>
+
+        <p>
+          Check whether chair legs, knees or armrests will conflict with
+          the table structure. A visually impressive base should still
+          allow practical seating.
+        </p>
+
+        <h3>Consider the view from every side</h3>
+
+        <p>
+          Luxury dining tables often include sculptural bases or detailed
+          edges. Confirm that the chosen table size allows these elements
+          to remain visible without making the room feel crowded.
+        </p>
+
+        <h2 id="other-furniture">
+          6. Include the console and surrounding furniture
+        </h2>
+
+        <p>
+          Measure the complete depth and width of the dining console,
+          display cabinet or serving furniture. Include doors and drawers
+          in their fully open positions.
+        </p>
+
+        <p>
+          The relationship between table and console should allow serving
+          access while maintaining a clear visual composition. Avoid
+          placing the table so close that storage becomes difficult to use.
+        </p>
+
+        <h3>Coordinate lighting and rugs</h3>
+
+        <p>
+          A chandelier or pendant should relate to the table position and
+          shape. Confirm electrical points before fixing the final table
+          location.
+        </p>
+
+        <p>
+          Rugs should support the full dining arrangement, including chair
+          movement. A rug that ends beneath the chair legs can feel
+          awkward when chairs are pulled outward.
+        </p>
+
+        <h2 id="delivery">
+          7. Measure the complete delivery route
+        </h2>
+
+        <p>
+          Large dining tables must pass through the building entrance,
+          doors, corridors, staircases, landings and lifts. Measure the
+          full route to the dining room.
+        </p>
+
+        <p>
+          Record width and height and photograph difficult corners.
+          Tabletop size and base construction may affect whether separate
+          components can be transported and assembled safely.
+        </p>
+
+        <h3>Communicate access before production</h3>
+
+        <p>
+          International buyers should provide delivery-access information
+          before confirming the order. Access restrictions may influence
+          the suitable table size or production configuration.
+        </p>
+
+        <h2 id="quotation">
+          8. Prepare accurate information for a quotation
+        </h2>
+
+        <p>
+          Provide the selected model, room dimensions, required seating
+          capacity, preferred table shape, chair quantity and destination.
+          Include photographs and a simple floor-plan sketch.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Suitable dimensions depend on the
+          selected model and project requirements.
+        </p>
+
+        <h3>Information to provide</h3>
+
+        <ul>
+          <li>The selected table or dining room model</li>
+          <li>Room width, length and ceiling height</li>
+          <li>Required everyday and occasional seating capacity</li>
+          <li>Preferred table shape</li>
+          <li>Selected chair quantity and style</li>
+          <li>Console and surrounding furniture dimensions</li>
+          <li>Entrance, staircase and lift measurements</li>
+          <li>The destination city and country</li>
+        </ul>
+
+        <h2>Final dining table size checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable dining area is measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Everyday seating capacity is defined.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Table shape suits the room proportions.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Chair movement and occupied-chair circulation are tested.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Table legs or base do not restrict seating.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Console doors and drawers can open comfortably.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Delivery doors, corridors, stairs and lifts are measured.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Choose the table from the complete dining footprint
+          </h2>
+
+          <p>
+            The right dining table size balances seating capacity with
+            chair movement, circulation and surrounding furniture. Measure
+            the complete arrangement rather than the tabletop alone.
+          </p>
+
+          <p>
+            VIRELLAART can review room and seating information when
+            discussing suitable dining table models, dimensions and
+            made-to-order production options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20the%20right%20dining%20table%20size%20for%20my%20space."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Dining Table Sizing
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Dining table size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+
+  .article-hero h1.dining-article-title {
+    max-width: 900px;
+    font-size: clamp(44px, 5.8vw, 72px);
+  }
+
+  .dining-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-article-title span {
+      display: inline;
+    }
+  }</style>
+
+<style>
+  .article-hero h1.dining-size-title {
+    max-width: 1040px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .dining-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-size-title span {
+      display: inline;
+    }
+  }
+</style>
