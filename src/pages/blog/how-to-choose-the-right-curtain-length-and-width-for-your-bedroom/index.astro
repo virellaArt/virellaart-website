@@ -1,0 +1,1285 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Curtain Length and Width for Your Bedroom";
+
+const description =
+  "Learn how to measure bedroom curtain length and width by window size, ceiling height, track position, fabric fullness, blackout lining and furniture clearance.";
+
+const publishedTime = "2026-08-04T01:05:33+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-curtain-length-and-width-for-your-bedroom/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How long should bedroom curtains be?",
+    answer:
+      "Bedroom curtains should be measured from the final track or rod position to the selected floor finish. They may float slightly above the floor, touch it precisely or form a controlled decorative pool.",
+  },
+  {
+    question:
+      "How wide should bedroom curtains be?",
+    answer:
+      "Curtain width should be calculated from the complete working track or rod, including suitable fabric fullness and enough stacking space to clear the window when opened.",
+  },
+  {
+    question:
+      "Should bedroom curtains reach from ceiling to floor?",
+    answer:
+      "Full-height curtains can increase perceived ceiling height and create a luxury appearance, but ceiling details, furniture, heating equipment and track installation must be checked first.",
+  },
+  {
+    question:
+      "Are blackout curtains suitable for every bedroom?",
+    answer:
+      "Blackout lining can improve light control and privacy, but it adds weight and volume. The track, fullness, stacking area and maintenance requirements should support the selected construction.",
+  },
+  {
+    question:
+      "Should curtains sit behind the bed or nightstands?",
+    answer:
+      "Curtains should hang and operate freely without being compressed by the bed, headboard or nightstands. Furniture placement and the deepest curtain folds must be measured together.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/bedroom-curtain-size.webp"
+  imageAlt="Full-height luxury bedroom curtains arranged behind an ornate statement bed"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Bedroom Planning Guides"
+  keywords={[
+    "bedroom curtain size",
+    "bedroom curtain length",
+    "bedroom curtain width",
+    "blackout curtain measurements",
+    "floor length bedroom curtains",
+    "luxury bedroom curtains",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={11}
+  wordCount={1797}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Bedroom Curtain Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Bedroom Planning Guide
+        </p>
+
+        <h1 class="bedroom-curtain-title">
+          How to Choose the Right Curtain Length and Width
+          <span>for Your Bedroom</span>
+        </h1>
+
+        <p class="article-intro">
+          Bedroom-curtain dimensions affect privacy, sleep comfort,
+          natural light and the perceived height of the complete room.
+          This guide explains how to measure finished length, track width,
+          fullness, stacking space and furniture clearance before ordering.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 4, 2026</span>
+          <span>11 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/bedroom-curtain-size.webp"
+        alt="Full-height luxury bedroom curtains arranged behind an ornate statement bed"
+        width="1086"
+        height="1448"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li><a href="#measure-window">Measure the window wall</a></li>
+          <li><a href="#track-position">Choose the track position</a></li>
+          <li><a href="#curtain-length">Choose curtain length</a></li>
+          <li><a href="#curtain-width">Calculate curtain width</a></li>
+          <li><a href="#fullness">Plan fabric fullness</a></li>
+          <li><a href="#blackout">Plan blackout and privacy</a></li>
+          <li><a href="#furniture">Protect furniture clearance</a></li>
+          <li><a href="#stacking">Allow stacking space</a></li>
+          <li><a href="#ordering">Prepare the final order</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Measure bedroom curtains from the final installed track or rod
+            rather than from the window glass alone. Finished length,
+            working width, fullness, lining and furniture clearance should
+            be confirmed together before production.
+          </p>
+        </section>
+
+        <p>
+          Curtains influence sleep quality, privacy and the atmosphere of
+          a bedroom. Their dimensions also affect how tall the ceiling
+          appears and how the bed relates to the window wall.
+        </p>
+
+        <p>
+          Curtains that are too short can make a formal bedroom look
+          unfinished. Panels that are too narrow may fail to close
+          properly, while excessive fabric can obstruct furniture and
+          become difficult to operate.
+        </p>
+
+        <h2 id="measure-window">
+          1. Measure the complete bedroom window wall
+        </h2>
+
+        <p>
+          Record the width and height of the complete window, balcony door
+          or glazed wall. Include the surrounding wall area available for
+          tracks, brackets and stacked curtains.
+        </p>
+
+        <p>
+          Mark opening sections, handles, ventilation elements, radiators,
+          air-conditioning equipment, switches and electrical outlets.
+        </p>
+
+        <h3>Measure at several positions</h3>
+
+        <p>
+          Floors and ceilings may not be perfectly level. Measure the
+          height at the left, centre and right side of the proposed curtain
+          installation.
+        </p>
+
+        <p>
+          Measure the width at the top, middle and lower parts of the wall,
+          especially where mouldings, columns or furniture may reduce the
+          available space.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            complete room measurement guide
+          </a>
+          explains how to document architectural details and furniture
+          clearances.
+        </p>
+
+        <h2 id="track-position">
+          2. Confirm the final track or curtain-rod position
+        </h2>
+
+        <p>
+          Curtain length cannot be measured accurately until the mounting
+          position is fixed. The track may be attached to the ceiling,
+          wall or a concealed recess.
+        </p>
+
+        <h3>Ceiling-mounted tracks</h3>
+
+        <p>
+          Ceiling mounting can create a continuous full-height appearance
+          and make the bedroom feel taller. Confirm the ceiling structure
+          can support the track and curtain weight.
+        </p>
+
+        <h3>Wall-mounted rods and tracks</h3>
+
+        <p>
+          Wall-mounted systems need suitable space above and beside the
+          opening. Decorative brackets and finials increase the complete
+          external width.
+        </p>
+
+        <h3>Concealed curtain recesses</h3>
+
+        <p>
+          Recessed tracks should provide enough depth for gliders,
+          headings, blackout lining, sheers and decorative drapes.
+        </p>
+
+        <p>
+          Measure curtain length from the actual hook or glider position,
+          not only from the visible lower edge of the ceiling detail.
+        </p>
+
+        <h2 id="curtain-length">
+          3. Choose the correct bedroom-curtain length
+        </h2>
+
+        <p>
+          Measure from the final attachment point to the completed floor.
+          Flooring, rugs and thresholds should be installed before final
+          production measurements are approved.
+        </p>
+
+        <h3>Curtains floating above the floor</h3>
+
+        <p>
+          A small controlled gap can support smooth operation and easier
+          cleaning. The gap should remain consistent across the complete
+          installation.
+        </p>
+
+        <p>
+          Excessive space beneath the curtain can allow more light to enter
+          and may make the panels appear visibly too short.
+        </p>
+
+        <h3>Curtains touching the floor</h3>
+
+        <p>
+          A precise floor touch creates a tailored appearance. This finish
+          requires accurate measurements and consideration of fabric
+          behaviour after hanging.
+        </p>
+
+        <h3>Decorative curtain pooling</h3>
+
+        <p>
+          Additional fabric can form a controlled pool on the floor. This
+          approach suits some formal bedrooms but requires more cleaning
+          and careful daily arrangement.
+        </p>
+
+        <h3>Uneven floors and rugs</h3>
+
+        <p>
+          Measure the complete curtain line when floors are uneven. Avoid
+          using one measurement from the centre and assuming it applies to
+          both sides.
+        </p>
+
+        <p>
+          A rug beneath the bed should not create an unexpected raised area
+          within the curtain path.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Continue with our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-bedroom-set",
+                language,
+              )}
+            >
+              luxury bedroom buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/bedrooms", language)}>
+              VIRELLAART bedroom collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="curtain-width">
+          4. Calculate curtain width from the complete track
+        </h2>
+
+        <p>
+          The complete track or working rod width is the starting point for
+          curtain-width calculations. Measuring only the window glass can
+          produce panels that are too narrow.
+        </p>
+
+        <p>
+          Tracks often extend beyond the opening so the curtains can stack
+          away from the glass and provide greater natural light.
+        </p>
+
+        <h3>Measure the usable running area</h3>
+
+        <p>
+          For tracks, record the complete distance available to gliders.
+          For rods, confirm the functional area between brackets or end
+          stops.
+        </p>
+
+        <h3>Include curtain returns</h3>
+
+        <p>
+          Return sections close the side gap between the curtain and wall.
+          They can improve privacy and reduce light entering around the
+          outer edges.
+        </p>
+
+        <p>
+          Add these return dimensions where the heading and track system
+          require them.
+        </p>
+
+        <h2 id="fullness">
+          5. Plan appropriate fabric fullness
+        </h2>
+
+        <p>
+          Fullness describes how much flat fabric is used compared with the
+          installed track width. It creates folds and determines whether
+          the curtain appears minimal, balanced or highly luxurious.
+        </p>
+
+        <p>
+          Fabric weight, heading style, lining and desired privacy all
+          influence the suitable fullness.
+        </p>
+
+        <h3>Sheer bedroom curtains</h3>
+
+        <p>
+          Sheers soften daylight and provide daytime privacy. They may
+          require greater fullness to avoid appearing flat or transparent.
+        </p>
+
+        <h3>Heavy decorative drapes</h3>
+
+        <p>
+          Velvet, lined fabrics and dense textiles create greater volume.
+          Excessive fullness may increase stacking depth and make curtains
+          difficult to move behind furniture.
+        </p>
+
+        <h3>Heading style changes the calculation</h3>
+
+        <p>
+          Wave, pinch-pleat, pencil-pleat and other constructions create
+          different fold patterns. Confirm the heading before ordering
+          fabric.
+        </p>
+
+        <h3>Plan each curtain layer separately</h3>
+
+        <p>
+          Sheers, decorative drapes and blackout curtains may use separate
+          tracks. Each layer needs its own width, fullness and stacking
+          calculation.
+        </p>
+
+        <h2 id="blackout">
+          6. Plan blackout performance and privacy
+        </h2>
+
+        <p>
+          Bedroom curtains often require stronger light control than
+          living-room curtains. Fabric, lining and installation details
+          all affect blackout performance.
+        </p>
+
+        <h3>Control side light gaps</h3>
+
+        <p>
+          Extend the track beyond the window and use suitable side returns
+          where possible. Narrow panels may leave visible gaps even when
+          they meet at the centre.
+        </p>
+
+        <h3>Control light above the curtain</h3>
+
+        <p>
+          Ceiling-mounted or recessed tracks can reduce the gap above the
+          heading. Wall-mounted rods may require careful positioning to
+          limit light entering from the top.
+        </p>
+
+        <h3>Control the centre overlap</h3>
+
+        <p>
+          Centre-opening curtains should close with suitable overlap or
+          contact. Motorised tracks may include specific overlapping
+          components.
+        </p>
+
+        <h3>Consider lining weight</h3>
+
+        <p>
+          Blackout lining adds weight, thickness and stacking volume. The
+          track, brackets and ceiling support must be appropriate for the
+          complete finished curtain.
+        </p>
+
+        <h2 id="furniture">
+          7. Protect clearance around the bed and nightstands
+        </h2>
+
+        <p>
+          Curtains should hang freely without being compressed by the bed,
+          headboard, nightstands, dresser or bench.
+        </p>
+
+        <p>
+          Measure the depth of the curtain folds in both open and closed
+          positions, then compare this with the furniture placement.
+        </p>
+
+        <h3>Allow clearance behind the headboard</h3>
+
+        <p>
+          A bed positioned near a window should not press the curtains
+          against the wall. Fabric contact can interfere with movement and
+          make folds appear uneven.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-bed-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bed size guide
+          </a>
+          explains how to plan the complete bed and circulation footprint.
+        </p>
+
+        <h3>Protect nightstand access</h3>
+
+        <p>
+          Nightstands should not obstruct curtain stacking or prevent
+          panels from closing. Lamps and decorative objects should remain
+          away from moving fabric.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-nightstand-size-for-your-bed-and-bedroom",
+              language,
+            )}
+          >
+            nightstand size guide
+          </a>
+          explains how to coordinate bedside furniture with the bed.
+        </p>
+
+        <h3>Check wardrobes and dressers</h3>
+
+        <p>
+          Curtains should not interfere with wardrobe doors, dresser
+          drawers or mirror positions. Mark the complete movement area of
+          each furniture piece.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-wardrobe-size-for-your-bedroom",
+              language,
+            )}
+          >
+            wardrobe size guide
+          </a>
+          explains how to protect door movement and bedroom circulation.
+        </p>
+
+        <h2 id="stacking">
+          8. Allow enough space for curtain stacking
+        </h2>
+
+        <p>
+          Stacking space is the width occupied by the curtains when fully
+          open. Thick fabrics, lining and greater fullness require more
+          room beside the window.
+        </p>
+
+        <p>
+          Insufficient stacking space can leave the glass partly covered
+          and reduce natural light.
+        </p>
+
+        <h3>Extend the track beyond the window</h3>
+
+        <p>
+          Where wall space allows, extending the track can move the open
+          curtains away from the glass.
+        </p>
+
+        <p>
+          Check for wall lights, switches, artwork, air-conditioning
+          controls and furniture before deciding the final extension.
+        </p>
+
+        <h3>Protect balcony or terrace access</h3>
+
+        <p>
+          Curtains beside balcony doors should open far enough for easy
+          movement. Fabric should not become trapped in handles or sliding
+          mechanisms.
+        </p>
+
+        <h3>Plan motorised systems early</h3>
+
+        <p>
+          Motorised tracks need space for the motor, electrical connection
+          and control equipment. These requirements should be included
+          before ceiling work is completed.
+        </p>
+
+        <h3>Coordinate with the bedroom rug</h3>
+
+        <p>
+          Curtain length and rug placement both influence the lower visual
+          boundary of the bedroom. The rug should not obstruct the curtain
+          path.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-rug-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bedroom rug size guide
+          </a>
+          explains how to anchor the bed while preserving clearance.
+        </p>
+
+        <h3>Coordinate with the chandelier</h3>
+
+        <p>
+          Full-height curtains and the chandelier define the room’s
+          vertical proportions. Their scale should support the complete bed
+          composition.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-chandelier-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bedroom chandelier size guide
+          </a>
+          explains how to plan the ceiling focal point.
+        </p>
+
+        <h3>Avoid common measurement mistakes</h3>
+
+        <p>
+          Do not measure only the window glass, calculate length before the
+          track is installed or order fabric without confirming the
+          heading and fullness.
+        </p>
+
+        <p>
+          Another common mistake is ignoring blackout-lining thickness and
+          the extra stacking space it requires.
+        </p>
+
+        <h2 id="ordering">
+          9. Prepare final measurements and ordering information
+        </h2>
+
+        <p>
+          Record every measurement using one consistent unit. Label each
+          window separately even when several openings appear identical.
+        </p>
+
+        <p>
+          Photograph the complete wall, ceiling, floor, window, track
+          position, bed, nightstands and nearby obstructions.
+        </p>
+
+        <h3>Information to prepare</h3>
+
+        <ul>
+          <li>The complete window or glazed-wall dimensions</li>
+          <li>The final track or rod position</li>
+          <li>The full working track width</li>
+          <li>The finished curtain length</li>
+          <li>The heading and preferred fullness</li>
+          <li>The sheer, decorative and blackout layers</li>
+          <li>The required stacking space</li>
+          <li>The bed and nightstand positions</li>
+        </ul>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning.
+        </p>
+
+        <h2>Final bedroom curtain checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The finished bedroom window wall has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Track or rod position is confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Length is measured from the final attachment point.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Width is calculated from the full working track.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Fullness, heading and lining are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Blackout gaps and stacking space are controlled.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Bed, nightstands and doors remain clear.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Measure bedroom curtains from the complete installed system
+          </h2>
+
+          <p>
+            The right bedroom-curtain dimensions balance privacy, blackout
+            performance, floor clearance, fullness and furniture access.
+            Confirm the final track, floor and bed positions before
+            approving production.
+          </p>
+
+          <p>
+            VIRELLAART can review room and furniture information when
+            discussing a complete luxury bedroom arrangement and
+            made-to-order furniture options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20planning%20my%20luxury%20bedroom."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Bedroom Planning
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Bedroom curtain size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.sofa-size-title {
+    max-width: 1020px;
+    font-size: clamp(39px, 4.8vw, 66px);
+  }
+
+  .sofa-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .sofa-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.coffee-table-size-title {
+    max-width: 1080px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .coffee-table-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .coffee-table-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.rug-size-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .rug-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .rug-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.dining-rug-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .dining-rug-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-rug-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.living-chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .living-chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .living-chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.curtain-size-title {
+    max-width: 1180px;
+    font-size: clamp(35px, 4.3vw, 61px);
+  }
+
+  .curtain-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .curtain-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.bedroom-curtain-title {
+    max-width: 1180px;
+    font-size: clamp(35px, 4.3vw, 61px);
+  }
+
+  .bedroom-curtain-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .bedroom-curtain-title span {
+      display: inline;
+    }
+  }
+</style>
