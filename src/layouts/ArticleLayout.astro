@@ -5,6 +5,16 @@ import {
   localizedPath,
 } from "../i18n/config";
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface AlternateURL {
+  language: string;
+  href: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -16,6 +26,12 @@ interface Props {
   keywords?: string[];
   authorName?: string;
   robots?: string;
+  readingTimeMinutes?: number;
+  wordCount?: number;
+  faqItems?: FAQItem[];
+  alternateURLs?: AlternateURL[];
+  xDefaultURL?: string;
+  includeCanonical?: boolean;
 }
 
 const {
@@ -29,6 +45,12 @@ const {
   keywords = [],
   authorName = "VIRELLAART",
   robots = "index, follow",
+  readingTimeMinutes,
+  wordCount,
+  faqItems = [],
+  alternateURLs,
+  xDefaultURL,
+  includeCanonical = true,
 } = Astro.props;
 
 const siteURL = "https://www.virellaart.com";
@@ -62,6 +84,11 @@ const articleSchema = {
   keywords:
     keywords.length > 0
       ? keywords.join(", ")
+      : undefined,
+  wordCount,
+  timeRequired:
+    readingTimeMinutes
+      ? `PT${readingTimeMinutes}M`
       : undefined,
   author: {
     "@type": "Organization",
@@ -119,6 +146,23 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+const faqSchema =
+  faqItems.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${canonicalURL}#faq`,
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : undefined;
 ---
 
 <BaseLayout
@@ -127,6 +171,9 @@ const breadcrumbSchema = {
   {image}
   {imageAlt}
   {robots}
+  {alternateURLs}
+  {xDefaultURL}
+  {includeCanonical}
   pageType="article"
 >
   <Fragment slot="head">
@@ -154,6 +201,15 @@ const breadcrumbSchema = {
       )
     }
 
+    {
+      keywords.map((keyword) => (
+        <meta
+          property="article:tag"
+          content={keyword}
+        />
+      ))
+    }
+
     <script
       type="application/ld+json"
       set:html={JSON.stringify(articleSchema)}
@@ -163,6 +219,15 @@ const breadcrumbSchema = {
       type="application/ld+json"
       set:html={JSON.stringify(breadcrumbSchema)}
     />
+
+    {
+      faqSchema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(faqSchema)}
+        />
+      )
+    }
   </Fragment>
 
   <slot />

@@ -1,0 +1,831 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title = "How to Choose a Luxury Sofa Set";
+
+const description =
+  "Learn how to choose a luxury sofa set by room size, layout, comfort, style and craftsmanship, with practical guidance from VIRELLAART.";
+
+const publishedTime = "2026-08-03T00:00:00+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-sofa-set/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question: "What should I consider before buying a luxury sofa set?",
+    answer:
+      "Begin with the room dimensions, circulation space, seating capacity and the visual character of the interior. Then compare comfort, proportions, craftsmanship, customization options and delivery requirements.",
+  },
+  {
+    question: "How do I choose the right sofa size for my living room?",
+    answer:
+      "Measure the usable wall length, doorways, corridors and the open space required for comfortable movement. The sofa should anchor the room without blocking circulation or overpowering nearby furniture.",
+  },
+  {
+    question: "Should all pieces in a sofa set be identical?",
+    answer:
+      "The pieces should share a clear design language, but they do not need to be visually identical. Coordinated sofas and armchairs can create a richer and more balanced composition.",
+  },
+  {
+    question: "Is a made-to-order sofa set suitable for international buyers?",
+    answer:
+      "Yes, provided the buyer confirms dimensions, configuration, access conditions, production details, delivery destination and payment terms before the order enters production.",
+  },
+  {
+    question: "Can VIRELLAART sofa sets be customized?",
+    answer:
+      "VIRELLAART offers made-to-order furniture and can discuss suitable dimensions, configurations and design preferences according to the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/living-room.webp"
+  imageAlt="Luxury sofa set arranged in an elegant VIRELLAART living room interior"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury sofa set",
+    "how to choose a sofa",
+    "luxury living room furniture",
+    "modern sofa set",
+    "made-to-order furniture",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={9}
+  wordCount={1560}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until the
+            localized edition is published.
+          </p>
+          <a href={englishArticleURL}>Open the English article</a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Luxury Sofa Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1>How to Choose a Luxury Sofa Set</h1>
+
+        <p class="article-intro">
+          A luxury sofa set should do more than fill a living room.
+          It should establish proportion, support everyday comfort and
+          express the architectural character of the space. This guide
+          explains how to make a considered choice before placing an order.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>9 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/living-room.webp"
+        alt="Luxury sofa set arranged in an elegant VIRELLAART living room interior"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#measure-the-room">Measure the room</a></li>
+          <li><a href="#choose-the-layout">Choose the layout</a></li>
+          <li><a href="#define-the-style">Define the style</a></li>
+          <li><a href="#evaluate-comfort">Evaluate comfort</a></li>
+          <li><a href="#study-the-details">Study the details</a></li>
+          <li><a href="#plan-the-order">Plan the order</a></li>
+          <li><a href="#final-checklist">Final checklist</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+          <p>
+            The best luxury sofa is not simply the largest or most
+            decorative model. It is the model whose scale, seating plan,
+            comfort and design language work together naturally within
+            the room.
+          </p>
+        </section>
+
+        <p>
+          Luxury furniture is a long-term interior decision. A sofa set
+          often becomes the visual centre of the living room, determines
+          how people gather and influences the scale of every surrounding
+          element. Choosing well therefore begins before colours or
+          decorative details are discussed.
+        </p>
+
+        <p>
+          Start with the architecture of the room, continue with the way
+          the space will be used and only then compare models. This order
+          prevents a visually impressive sofa from becoming impractical
+          after delivery.
+        </p>
+
+        <h2 id="measure-the-room">
+          1. Measure the room before comparing sofa models
+        </h2>
+
+        <p>
+          Record the usable width and depth of the seating area rather
+          than relying only on the total room dimensions. Doors, windows,
+          radiators, columns, curtains and circulation routes reduce the
+          area available for furniture.
+        </p>
+
+        <p>
+          Mark the proposed sofa footprint on the floor with removable
+          tape. This simple step helps you understand whether the depth
+          feels comfortable and whether the room still has sufficient
+          space for walking, side tables and a centre table.
+        </p>
+
+        <h3>Do not forget the delivery route</h3>
+
+        <p>
+          Measure the entrance door, internal doors, corridors, stairways
+          and lift access. For international orders, share any narrow or
+          unusual access conditions before production. A perfectly sized
+          sofa for the room still needs a practical route into the home.
+        </p>
+
+        <h2 id="choose-the-layout">
+          2. Choose a layout that reflects how the room is used
+        </h2>
+
+        <p>
+          A formal reception room may benefit from two facing sofas and
+          coordinated armchairs. A family living space may require a
+          more relaxed configuration with generous seating and clear
+          sightlines toward a television or fireplace.
+        </p>
+
+        <p>
+          Common arrangements include two sofas with two armchairs,
+          a sofa with accent chairs, or a corner configuration. The right
+          solution depends on the number of users, the room shape and
+          whether conversation, entertainment or formal presentation is
+          the priority.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Explore VIRELLAART’s complete selection of
+            <a href={localizedPath("/living-rooms", language)}>
+              luxury living room furniture
+            </a>
+            or compare our
+            <a
+              href={localizedPath(
+                "/collections/modern/sofa-sets",
+                language,
+              )}
+            >
+              modern sofa sets
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="define-the-style">
+          3. Define the design character of the interior
+        </h2>
+
+        <p>
+          The sofa should communicate with the architecture rather than
+          compete with it. Consider ceiling height, wall detailing,
+          flooring, lighting and the visual weight of existing furniture.
+        </p>
+
+        <h3>Modern luxury sofa sets</h3>
+
+        <p>
+          Modern interiors generally benefit from disciplined silhouettes,
+          controlled proportions and a clear relationship between the
+          sofa, tables and surrounding negative space. Decorative impact
+          can come from shape, texture and carefully balanced contrast
+          rather than excessive ornament.
+        </p>
+
+        <h3>Luxury classic sofa sets</h3>
+
+        <p>
+          Classical interiors can support more expressive forms and
+          detailed craftsmanship. Even so, proportion remains essential.
+          Decorative elements should create rhythm and refinement without
+          making the composition visually heavy.
+        </p>
+
+        <p>
+          A successful room does not require every object to match.
+          Coordinated pieces with a shared character often create a more
+          sophisticated result than a completely identical arrangement.
+        </p>
+
+        <h2 id="evaluate-comfort">
+          4. Evaluate comfort according to real daily use
+        </h2>
+
+        <p>
+          Comfort is personal. Some buyers prefer an upright and supportive
+          sitting position, while others want a deeper and more relaxed
+          experience. Consider who will use the sofa, how long they
+          normally sit and whether the room is formal or casual.
+        </p>
+
+        <p>
+          Seat depth, back support, arm height and cushion response should
+          feel coherent. A luxury appearance cannot compensate for a
+          seating position that does not suit the household.
+        </p>
+
+        <h3>Think beyond the first impression</h3>
+
+        <p>
+          A very soft seat may feel inviting at first but may not provide
+          the structured support expected in a formal salon. Conversely,
+          an excessively firm composition may not suit a room used for
+          long evenings and family gatherings. The intended use should
+          guide the balance.
+        </p>
+
+        <h2 id="study-the-details">
+          5. Study proportions, finishing and craftsmanship
+        </h2>
+
+        <p>
+          Luxury is often most visible in the transitions between parts:
+          the line of the arm, the relationship between the seat and back,
+          the alignment of decorative details and the consistency of the
+          overall silhouette.
+        </p>
+
+        <p>
+          Review the sofa from the front, side and rear whenever images
+          are available. This reveals whether the design remains balanced
+          from different viewpoints—especially important in open-plan
+          homes where the back of the sofa may remain visible.
+        </p>
+
+        <p>
+          Ask for clear product images and confirm which decorative
+          elements belong to the selected model. Do not assume that every
+          accessory, table or background object shown in a styled image is
+          included in the sofa price.
+        </p>
+
+        <h2 id="plan-the-order">
+          6. Plan customization, production and international delivery
+        </h2>
+
+        <p>
+          Made-to-order furniture gives the buyer more control, but it
+          also requires precise communication. Confirm the selected model,
+          seating configuration, required dimensions, delivery country
+          and access information before production begins.
+        </p>
+
+        <p>
+          When discussing customization, separate essential requirements
+          from optional preferences. Room size and access restrictions are
+          essential. Decorative preferences can then be considered within
+          the possibilities of the selected design.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and supports
+          international clients with made-to-order production and
+          worldwide delivery planning. Final possibilities depend on the
+          selected model and project requirements.
+        </p>
+
+        <h3>Information to provide before requesting a quotation</h3>
+
+        <ul>
+          <li>The sofa model or product link</li>
+          <li>The required seating configuration</li>
+          <li>The destination city and country</li>
+          <li>Room and access measurements</li>
+          <li>Any essential customization request</li>
+          <li>The preferred delivery timeframe</li>
+        </ul>
+
+        <h2 id="final-checklist">
+          7. Final luxury sofa buying checklist
+        </h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete room and usable seating area are measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Doorways, corridors, stairs and lift access are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The seating layout matches the number of users.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The sofa proportions suit the architecture of the room.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Comfort preferences and daily use are clearly defined.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Included pieces and optional items are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Production, payment and delivery details are understood.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">VIRELLAART guidance</p>
+
+          <h2>Choose for the room, not only for the photograph</h2>
+
+          <p>
+            The strongest luxury interiors are created when furniture
+            responds to the room’s proportions and the client’s real
+            lifestyle. Begin with measurements, determine the right
+            arrangement and then select the design that expresses the
+            desired character.
+          </p>
+
+          <p>
+            VIRELLAART can help international clients evaluate suitable
+            models, configurations and delivery requirements before an
+            order is confirmed.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20sofa%20set."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">Frequently asked questions</p>
+          <h2 id="faq-title">Luxury sofa set FAQ</h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
