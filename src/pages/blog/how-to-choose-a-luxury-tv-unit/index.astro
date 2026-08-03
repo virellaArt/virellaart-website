@@ -1,0 +1,1000 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose a Luxury TV Unit";
+
+const description =
+  "Learn how to choose a luxury TV unit by wall size, television dimensions, storage, cable management and interior style with VIRELLAART.";
+
+const publishedTime = "2026-08-03T10:37:42+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-tv-unit/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What should I consider before buying a luxury TV unit?",
+    answer:
+      "Measure the usable wall and floor area, confirm the television dimensions and consider viewing height, storage requirements, cable access, ventilation, circulation and the design character of the room.",
+  },
+  {
+    question:
+      "How wide should a TV unit be compared with the television?",
+    answer:
+      "The TV unit should create visual balance around the television rather than appearing narrower or excessively large. The correct width depends on the television, wall proportions and surrounding furniture.",
+  },
+  {
+    question:
+      "Should a TV unit include closed storage?",
+    answer:
+      "Closed storage can conceal media equipment, cables and everyday objects, while open sections provide display space. The ideal combination depends on the equipment and storage needs of the room.",
+  },
+  {
+    question:
+      "Can a luxury TV unit be used with a wall-mounted television?",
+    answer:
+      "Yes. A wall-mounted television can be coordinated with a freestanding or wall-integrated TV unit, provided that viewing height, cable routing and wall construction are planned correctly.",
+  },
+  {
+    question:
+      "Can VIRELLAART TV units be customized?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Suitable dimensions, configurations and design options can be discussed according to the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/tv-unit.webp"
+  imageAlt="Luxury TV unit with coordinated storage, display surfaces and an elegant living room composition"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury TV unit",
+    "modern TV unit",
+    "luxury TV cabinet",
+    "TV wall unit",
+    "living room media unit",
+    "made-to-order TV furniture",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={9}
+  wordCount={1425}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Luxury TV Unit Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1 class="tv-unit-article-title">
+          How to Choose a
+          <span>Luxury TV Unit</span>
+        </h1>
+
+        <p class="article-intro">
+          A well-designed TV unit must balance technology, storage and
+          interior architecture. This guide explains how to select a
+          luxury TV unit that suits the television, wall proportions and
+          overall character of your living room.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>9 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/tv-unit.webp"
+        alt="Luxury TV unit with coordinated storage, display surfaces and an elegant living room composition"
+        width="1085"
+        height="1450"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#measure-the-space">
+              Measure the space
+            </a>
+          </li>
+
+          <li>
+            <a href="#television-size">
+              Confirm television size
+            </a>
+          </li>
+
+          <li>
+            <a href="#viewing-height">
+              Plan viewing height
+            </a>
+          </li>
+
+          <li>
+            <a href="#storage">
+              Calculate storage needs
+            </a>
+          </li>
+
+          <li>
+            <a href="#cables">
+              Manage cables and equipment
+            </a>
+          </li>
+
+          <li>
+            <a href="#configuration">
+              Choose the configuration
+            </a>
+          </li>
+
+          <li>
+            <a href="#design-style">
+              Coordinate the design
+            </a>
+          </li>
+
+          <li>
+            <a href="#ordering">
+              Prepare the order
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            The right luxury TV unit is not simply a decorative cabinet.
+            It must support the television and media equipment, organize
+            storage, conceal visual clutter and remain proportionate to
+            the wall and surrounding furniture.
+          </p>
+        </section>
+
+        <p>
+          The television wall often becomes one of the principal visual
+          areas of a living room. A unit that is too small can appear
+          disconnected from the screen, while an oversized composition
+          can dominate the room and reduce circulation.
+        </p>
+
+        <p>
+          Begin with the television, wall dimensions and equipment
+          requirements. Decorative preferences should complete the design
+          only after scale, viewing comfort, ventilation and cable access
+          have been planned.
+        </p>
+
+        <h2 id="measure-the-space">
+          1. Measure the complete television area
+        </h2>
+
+        <p>
+          Measure the usable wall width and height as well as the
+          available floor area. Doors, windows, curtains, radiators,
+          columns, switches and architectural details may reduce the
+          practical space available for the TV unit.
+        </p>
+
+        <p>
+          Include surrounding furniture in the plan. The TV unit should
+          have a clear relationship with the sofa, armchairs, coffee table
+          and main circulation routes rather than being evaluated as an
+          isolated object.
+        </p>
+
+        <h3>Check the wall construction</h3>
+
+        <p>
+          Wall-mounted televisions, shelves and upper cabinets require a
+          suitable supporting structure. Confirm the wall type and
+          installation requirements with qualified professionals before
+          drilling, mounting or routing electrical connections.
+        </p>
+
+        <h3>Measure delivery access</h3>
+
+        <p>
+          Long cabinets and large wall panels must pass safely through
+          entrance doors, corridors, staircases and lifts. Communicate any
+          narrow access conditions before production and international
+          delivery are confirmed.
+        </p>
+
+        <h2 id="television-size">
+          2. Confirm the television dimensions
+        </h2>
+
+        <p>
+          Television size is commonly described by the diagonal screen
+          measurement, but furniture planning requires the complete width,
+          height and depth of the television. Include the stand or wall
+          bracket where relevant.
+        </p>
+
+        <p>
+          A balanced composition normally provides visual space around
+          the television. The cabinet should not look narrower than the
+          screen, while decorative panels and storage elements should not
+          crowd the television or restrict ventilation.
+        </p>
+
+        <h3>Consider future television upgrades</h3>
+
+        <p>
+          Buyers who expect to replace the television in the future may
+          benefit from allowing additional width and flexible cable
+          access. However, excessive empty space can weaken the current
+          composition, so future planning should remain realistic.
+        </p>
+
+        <h2 id="viewing-height">
+          3. Plan viewing height and seating alignment
+        </h2>
+
+        <p>
+          The television should be positioned for comfortable viewing
+          from the primary seating area. The correct height depends on
+          sofa dimensions, viewing distance, screen size and whether the
+          television will stand on the cabinet or be mounted on the wall.
+        </p>
+
+        <p>
+          Avoid placing the screen unnecessarily high simply to create
+          space for decoration. Prolonged upward viewing may feel
+          uncomfortable. Follow the television manufacturer’s installation
+          guidance and evaluate the screen from the actual seating
+          position before confirming the layout.
+        </p>
+
+        <h3>Control reflections and daylight</h3>
+
+        <p>
+          Windows and strong lighting can create reflections on the
+          screen. Study the direction of daylight and the position of
+          lamps before fixing the television wall. Curtains and controlled
+          lighting can improve both viewing comfort and atmosphere.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Explore the
+            <a href={localizedPath("/tv-units", language)}>
+              VIRELLAART luxury TV unit collection
+            </a>
+            or discover our
+            <a
+              href={localizedPath(
+                "/collections/modern/tv-units",
+                language,
+              )}
+            >
+              modern TV unit designs
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="storage">
+          4. Calculate storage and display requirements
+        </h2>
+
+        <p>
+          List every item that the TV unit must accommodate. This may
+          include media equipment, controllers, remote controls, books,
+          decorative objects and frequently used living room accessories.
+        </p>
+
+        <p>
+          Closed cabinets help reduce visual clutter, while open shelves
+          provide accessible display space. A combination of both can
+          create practical storage without making the wall appear too
+          heavy.
+        </p>
+
+        <h3>Plan drawers and doors carefully</h3>
+
+        <p>
+          Doors and drawers require clear opening space. Confirm that they
+          will not collide with coffee tables, rugs, speakers or nearby
+          furniture. Handles and decorative projections should also be
+          considered when calculating circulation.
+        </p>
+
+        <h2 id="cables">
+          5. Organize cables, equipment and ventilation
+        </h2>
+
+        <p>
+          Cable management is essential to a refined television wall.
+          Power cables, signal cables and accessory connections should be
+          planned before installation rather than concealed as an
+          afterthought.
+        </p>
+
+        <p>
+          Determine where electrical outlets, internet connections and
+          media devices will be located. Access panels or suitable openings
+          should allow equipment to be connected and maintained without
+          damaging the furniture.
+        </p>
+
+        <h3>Allow heat to escape</h3>
+
+        <p>
+          Media equipment can produce heat. Enclosed storage should
+          provide appropriate ventilation according to the equipment
+          manufacturer’s requirements. Do not block ventilation openings
+          or place heat-producing devices in unsuitable compartments.
+        </p>
+
+        <h2 id="configuration">
+          6. Choose the right TV unit configuration
+        </h2>
+
+        <h3>Freestanding TV cabinets</h3>
+
+        <p>
+          A freestanding cabinet offers a visually lighter and potentially
+          more flexible solution. It can work well where the wall already
+          has a strong architectural character or where extensive storage
+          is unnecessary.
+        </p>
+
+        <h3>Wall-integrated TV units</h3>
+
+        <p>
+          A larger composition may include wall panels, upper cabinets,
+          shelves and coordinated side elements. This approach can create
+          a strong focal point and additional storage, but every component
+          must remain proportionate to the wall.
+        </p>
+
+        <h3>Asymmetrical compositions</h3>
+
+        <p>
+          Modern interiors may use asymmetrical shelving or offset
+          cabinets to create movement. Asymmetry should still feel
+          deliberate and balanced when viewed with the television,
+          seating area and surrounding architecture.
+        </p>
+
+        <h2 id="design-style">
+          7. Coordinate the TV unit with the living room
+        </h2>
+
+        <p>
+          The TV unit should communicate with the sofa set, coffee table,
+          lighting and architectural finishes. It does not need to copy
+          every detail, but the major pieces should share a compatible
+          level of formality and visual weight.
+        </p>
+
+        <h3>Modern luxury TV units</h3>
+
+        <p>
+          Modern designs often rely on controlled geometry, refined
+          surfaces and clean storage solutions. Their impact may come from
+          proportion, contrast and carefully positioned details rather
+          than extensive ornament.
+        </p>
+
+        <h3>Luxury-classic TV units</h3>
+
+        <p>
+          Luxury-classic designs may feature more expressive silhouettes
+          and decorative elements. The composition should still protect
+          the television as the functional centre rather than surrounding
+          it with excessive visual competition.
+        </p>
+
+        <p>
+          Consider the complete wall from floor to ceiling. Artwork,
+          curtains, wall coverings and lighting should support the TV unit
+          instead of making the area feel crowded.
+        </p>
+
+        <h2 id="ordering">
+          8. Prepare customization and delivery information
+        </h2>
+
+        <p>
+          Made-to-order TV furniture requires accurate communication.
+          Confirm the television dimensions, wall measurements, required
+          storage, destination and installation conditions before
+          production begins.
+        </p>
+
+        <p>
+          Separate essential requirements from decorative preferences.
+          Television size, wall dimensions, equipment, cable access and
+          ventilation are essential. Suitable design options can then be
+          discussed according to the selected model.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Available options depend on the
+          selected model and individual project requirements.
+        </p>
+
+        <h3>Information to provide for a quotation</h3>
+
+        <ul>
+          <li>The selected TV unit model or product link</li>
+          <li>The television width, height and depth</li>
+          <li>The complete usable wall dimensions</li>
+          <li>The required media equipment and storage</li>
+          <li>The destination city and country</li>
+          <li>Door, staircase and lift measurements</li>
+          <li>Any essential customization request</li>
+        </ul>
+
+        <h2>Final TV unit buying checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable wall has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Television dimensions have been confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Viewing height and seating alignment are comfortable.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Storage requirements have been listed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Cable routes and electrical points are planned.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Media equipment ventilation has been considered.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Delivery access and destination details are confirmed.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Build the television wall around proportion and function
+          </h2>
+
+          <p>
+            A refined TV unit begins with accurate wall and television
+            measurements. Plan viewing comfort, storage, cables and
+            ventilation before selecting decorative details.
+          </p>
+
+          <p>
+            VIRELLAART helps international clients discuss suitable TV
+            unit models, configurations and delivery requirements before
+            an order is confirmed.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20TV%20unit."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Luxury TV unit FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.tv-unit-article-title {
+    max-width: 900px;
+    font-size: clamp(44px, 5.8vw, 72px);
+  }
+
+  .tv-unit-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .tv-unit-article-title span {
+      display: inline;
+    }
+  }
+</style>
