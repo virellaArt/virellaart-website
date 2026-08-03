@@ -1,0 +1,1275 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Wall Art Size for Your Bedroom";
+
+const description =
+  "Learn how to choose bedroom wall art dimensions by bed width, headboard height, usable wall area, hanging position, grouping and room proportions.";
+
+const publishedTime = "2026-08-04T01:21:35+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-wall-art-size-for-your-bedroom/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How large should wall art be above a bed?",
+    answer:
+      "Wall art should relate clearly to the complete external bed and headboard width without appearing disconnected or extending awkwardly beyond the furniture composition.",
+  },
+  {
+    question:
+      "How high should wall art hang above a headboard?",
+    answer:
+      "The lower edge should remain visually connected to the headboard while preserving safe clearance. Hanging height should be evaluated from the entrance and from the bed.",
+  },
+  {
+    question:
+      "Can wall art be wider than the headboard?",
+    answer:
+      "It can work in some architectural compositions, but the complete wall, nightstands and frame proportions must support the additional width. Oversized artwork should not make the bed appear visually narrow.",
+  },
+  {
+    question:
+      "Is one large artwork better than several smaller pieces?",
+    answer:
+      "One large piece creates a strong focal point, while a coordinated group can follow a wide headboard. The complete outer boundary of several pieces should be measured as one composition.",
+  },
+  {
+    question:
+      "How can I test bedroom wall art size before installation?",
+    answer:
+      "Use removable tape or full-size paper templates to mark the proposed dimensions, then evaluate the arrangement from the entrance, bed, dresser and surrounding circulation.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/bedroom-wall-art-size.webp"
+  imageAlt="Luxury bedroom with an ornate statement bed arranged against a large decorative wall"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Bedroom Planning Guides"
+  keywords={[
+    "bedroom wall art size",
+    "wall art size above bed",
+    "artwork above headboard",
+    "luxury bedroom wall decor",
+    "bedroom gallery wall dimensions",
+    "how high to hang art above bed",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={11}
+  wordCount={1706}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Bedroom Wall Art Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Bedroom Planning Guide
+        </p>
+
+        <h1 class="bedroom-wall-art-title">
+          How to Choose the Right Wall Art Size
+          <span>for Your Bedroom</span>
+        </h1>
+
+        <p class="article-intro">
+          Bedroom wall-art dimensions influence headboard balance,
+          perceived ceiling height and the visual focus of the complete
+          sleeping area. This guide explains how to compare bed width,
+          usable wall size, hanging height and grouped arrangements before
+          installation.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 4, 2026</span>
+          <span>11 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/bedroom-wall-art-size.webp"
+        alt="Luxury bedroom with an ornate statement bed arranged against a large decorative wall"
+        width="1023"
+        height="1364"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li><a href="#measure-wall">Measure the wall</a></li>
+          <li><a href="#bed-width">Record the bed and headboard</a></li>
+          <li><a href="#art-width">Choose artwork width</a></li>
+          <li><a href="#art-height">Choose artwork height</a></li>
+          <li><a href="#hanging-height">Plan hanging height</a></li>
+          <li><a href="#single-or-group">Choose one piece or a group</a></li>
+          <li><a href="#nightstands">Coordinate with nightstands</a></li>
+          <li><a href="#visual-weight">Evaluate visual weight</a></li>
+          <li><a href="#installation">Prepare installation</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Choose bedroom wall art from the complete bed and headboard
+            composition rather than the empty wall alone. The artwork
+            should feel connected to the furniture while preserving safe
+            clearance and balanced space around architectural details.
+          </p>
+        </section>
+
+        <p>
+          Wall art can reinforce the bed as the principal bedroom focal
+          point, introduce colour and create balance across a broad
+          headboard wall.
+        </p>
+
+        <p>
+          Artwork that is too small may disappear above a substantial bed.
+          An oversized composition can compete with the headboard,
+          chandelier, wall mouldings or bedside furniture.
+        </p>
+
+        <h2 id="measure-wall">
+          1. Measure the complete usable bedroom wall
+        </h2>
+
+        <p>
+          Record the wall width and height, then mark windows, curtains,
+          wall lights, switches, sockets, mouldings, columns, ceiling
+          details and air-conditioning elements.
+        </p>
+
+        <p>
+          Measure the usable decorative area rather than the complete wall.
+          Wall panels, niches and extended headboards may create a smaller
+          visual boundary for artwork.
+        </p>
+
+        <h3>Photograph the wall from several viewpoints</h3>
+
+        <p>
+          Take one level photograph directly opposite the bed. Add views
+          from the entrance, dresser and each side of the room.
+        </p>
+
+        <p>
+          These photographs help reveal whether the artwork will be
+          visible, centred and proportionate during everyday use.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            complete room measurement guide
+          </a>
+          explains how to document walls, furniture and circulation.
+        </p>
+
+        <h2 id="bed-width">
+          2. Record the complete bed and headboard dimensions
+        </h2>
+
+        <p>
+          Measure the bed and headboard at their widest external points.
+          Decorative wings, carved frames and upholstered side panels can
+          extend beyond the mattress width.
+        </p>
+
+        <p>
+          The artwork should normally relate to the complete visible
+          furniture composition rather than the mattress alone.
+        </p>
+
+        <h3>Include extended headboard panels</h3>
+
+        <p>
+          Some luxury beds include wall-width upholstered or decorative
+          panels behind the nightstands. Decide whether the artwork should
+          relate to the central headboard or the complete panel system.
+        </p>
+
+        <h3>Confirm the final bed position</h3>
+
+        <p>
+          Artwork should be planned after the bed centre is fixed. Moving
+          the bed later can make a previously centred artwork appear
+          noticeably misaligned.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-bed-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bed size guide
+          </a>
+          explains how to calculate the complete bed and circulation
+          footprint.
+        </p>
+
+        <h2 id="art-width">
+          3. Choose artwork width from the headboard composition
+        </h2>
+
+        <p>
+          Artwork width should establish a visible relationship with the
+          headboard while leaving controlled space at both sides.
+        </p>
+
+        <p>
+          A very narrow piece can appear lost above a broad bed. Artwork
+          wider than the central headboard may work only when the complete
+          wall panels and nightstands support that scale.
+        </p>
+
+        <h3>Measure the external frame</h3>
+
+        <p>
+          Use the complete outer width, including carved, layered or deep
+          frames. The visible image alone does not represent the installed
+          dimensions.
+        </p>
+
+        <h3>Treat grouped pieces as one artwork</h3>
+
+        <p>
+          For diptychs, triptychs and gallery walls, calculate the full
+          width from the first outer frame edge to the last.
+        </p>
+
+        <p>
+          Include every gap between pieces. Uneven spacing can make a
+          balanced group appear visually unstable.
+        </p>
+
+        <h2 id="art-height">
+          4. Choose artwork height from the available vertical area
+        </h2>
+
+        <p>
+          Measure the space between the top of the headboard and the
+          ceiling, cornice, chandelier or upper wall moulding.
+        </p>
+
+        <p>
+          A low space may suit wide and shallow artwork. Taller walls can
+          support portrait pieces or vertically arranged groups.
+        </p>
+
+        <h3>Preserve space above the frame</h3>
+
+        <p>
+          Leave a controlled margin between the artwork and ceiling
+          details. A frame positioned too close to a cornice or recessed
+          ceiling can appear crowded.
+        </p>
+
+        <h3>Protect the headboard design</h3>
+
+        <p>
+          Highly decorative headboards may already provide substantial
+          visual detail. Artwork should complement rather than cover or
+          compete with the furniture silhouette.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Continue with our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-bedroom-set",
+                language,
+              )}
+            >
+              luxury bedroom buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/bedrooms", language)}>
+              VIRELLAART bedroom collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="hanging-height">
+          5. Plan the correct hanging height above the bed
+        </h2>
+
+        <p>
+          Artwork should feel visually connected to the headboard rather
+          than floating near the ceiling. The lower frame edge and upper
+          furniture line should form one composition.
+        </p>
+
+        <p>
+          Safe clearance is essential. The artwork and frame should not
+          create an impact risk for users sitting against the headboard or
+          changing the bedding.
+        </p>
+
+        <h3>Evaluate from the bedroom entrance</h3>
+
+        <p>
+          The entrance often provides the most important first view. Check
+          whether the artwork appears centred and balanced with the bed.
+        </p>
+
+        <h3>Evaluate from the pillows</h3>
+
+        <p>
+          View the frame while sitting and lying on the bed. It should not
+          appear uncomfortably low or create a sense of weight directly
+          above users.
+        </p>
+
+        <h3>Include the hanging hardware</h3>
+
+        <p>
+          Wires, hooks, rails and brackets determine the final frame
+          position. Measure the distance between hardware and the top of
+          the artwork before drilling.
+        </p>
+
+        <h2 id="single-or-group">
+          6. Choose one statement piece or a grouped arrangement
+        </h2>
+
+        <h3>One large artwork</h3>
+
+        <p>
+          A single statement piece creates a clear focal point and reduces
+          visual fragmentation above an ornate bed.
+        </p>
+
+        <h3>Diptych or triptych</h3>
+
+        <p>
+          Two or three coordinated panels can follow a wide headboard and
+          add rhythm. Frame size, alignment and spacing should remain
+          consistent.
+        </p>
+
+        <h3>Gallery-wall composition</h3>
+
+        <p>
+          A bedroom gallery wall can combine art, photographs and
+          decorative objects. Plan the complete arrangement on the floor
+          or with paper templates before installation.
+        </p>
+
+        <p>
+          Treat the outer boundary as one large artwork when comparing it
+          with the bed.
+        </p>
+
+        <h3>Mirrors and sculptural panels</h3>
+
+        <p>
+          Mirrors, metal reliefs and decorative wall panels may project
+          farther from the wall than framed art. Include depth, weight and
+          reflections in the decision.
+        </p>
+
+        <h2 id="nightstands">
+          7. Coordinate artwork with nightstands and bedside lighting
+        </h2>
+
+        <p>
+          The bed, nightstands, lamps and wall art form one central
+          composition. Artwork should remain centred within this complete
+          arrangement where the bedroom is symmetrical.
+        </p>
+
+        <h3>Protect wall-light clearance</h3>
+
+        <p>
+          Sconces should not overlap the frame or cast harsh glare across
+          the artwork. Measure their complete width and projected depth.
+        </p>
+
+        <h3>Include bedside lamps</h3>
+
+        <p>
+          Tall lamps create additional visual height beside the headboard.
+          Artwork should not appear compressed between the lamps and
+          ceiling.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-nightstand-size-for-your-bed-and-bedroom",
+              language,
+            )}
+          >
+            nightstand size guide
+          </a>
+          explains how to coordinate bedside furniture with the bed.
+        </p>
+
+        <h3>Coordinate with curtains</h3>
+
+        <p>
+          Curtain stacking can reduce usable wall width beside the bed.
+          Artwork should not interfere with moving fabric or appear
+          crowded against full-height curtains.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-curtain-length-and-width-for-your-bedroom",
+              language,
+            )}
+          >
+            bedroom curtain size guide
+          </a>
+          explains track width, fullness and stacking space.
+        </p>
+
+        <h2 id="visual-weight">
+          8. Evaluate colour, frame and visual weight
+        </h2>
+
+        <p>
+          Artwork with dark colours, strong contrast and heavy ornament
+          feels visually larger than a light composition with a narrow
+          frame.
+        </p>
+
+        <p>
+          Compare the artwork with the bed upholstery, headboard carving,
+          nightstands, curtains, rug and chandelier.
+        </p>
+
+        <h3>Coordinate with the bedroom rug</h3>
+
+        <p>
+          The rug anchors the lower furniture composition while artwork
+          defines the upper wall. Their colours and patterns should remain
+          balanced.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-rug-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bedroom rug size guide
+          </a>
+          explains how to anchor the complete sleeping area.
+        </p>
+
+        <h3>Coordinate with the chandelier</h3>
+
+        <p>
+          An ornate chandelier and detailed artwork can compete for
+          attention. Decide which element should remain the principal
+          visual focal point.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-chandelier-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bedroom chandelier size guide
+          </a>
+          explains how to plan the ceiling composition.
+        </p>
+
+        <h3>Coordinate with the dresser mirror</h3>
+
+        <p>
+          Mirrors can reflect the artwork and increase its presence.
+          Evaluate reflections from the bed and entrance before final
+          installation.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-dresser-size-for-your-bedroom",
+              language,
+            )}
+          >
+            dresser size guide
+          </a>
+          explains how to plan the dresser and mirror wall.
+        </p>
+
+        <h3>Avoid common wall-art mistakes</h3>
+
+        <p>
+          Do not select art from the empty wall alone, ignore headboard
+          projections or hang several pieces without calculating their
+          complete outer dimensions.
+        </p>
+
+        <p>
+          Another common mistake is positioning heavy artwork too low above
+          the bed without checking safety, fixings and seated clearance.
+        </p>
+
+        <h2 id="installation">
+          9. Test the composition and prepare installation
+        </h2>
+
+        <p>
+          Create full-size paper templates or mark the proposed outer
+          dimensions with removable tape. Include spacing between grouped
+          frames.
+        </p>
+
+        <p>
+          Evaluate the test from the entrance, pillows, nightstands,
+          dresser and both sides of the bedroom.
+        </p>
+
+        <h3>Confirm wall construction</h3>
+
+        <p>
+          Heavy frames, mirrors and sculptural wall panels require suitable
+          fixings for the wall material. Follow the artwork and fixing
+          manufacturer’s installation guidance.
+        </p>
+
+        <h3>Check concealed services</h3>
+
+        <p>
+          Confirm the position of electrical cables, pipes and hidden
+          systems before drilling.
+        </p>
+
+        <h3>Use secure installation above a bed</h3>
+
+        <p>
+          Artwork above sleeping furniture requires reliable mounting and
+          appropriate hardware. Installation should be completed by a
+          qualified professional when weight or wall construction requires
+          specialist assessment.
+        </p>
+
+        <h3>Information to prepare</h3>
+
+        <ul>
+          <li>The complete usable wall width and height</li>
+          <li>The external bed and headboard dimensions</li>
+          <li>The proposed artwork width and height</li>
+          <li>The frame depth and total weight</li>
+          <li>The distance above the headboard</li>
+          <li>The nightstand and wall-light positions</li>
+          <li>Wall photographs from several viewpoints</li>
+          <li>The wall construction and fixing requirements</li>
+        </ul>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning.
+        </p>
+
+        <h2>Final bedroom wall-art checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable headboard wall has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Bed and headboard dimensions are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Artwork width suits the furniture composition.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Artwork height suits the available wall.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Hanging height preserves safe clearance.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Grouped pieces are measured as one composition.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Wall construction and secure fixings are confirmed.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Choose bedroom wall art from the complete bed composition
+          </h2>
+
+          <p>
+            The right bedroom wall-art size balances headboard width,
+            available wall height, hanging position and visual weight.
+            Test the full outline and confirm secure installation before
+            drilling.
+          </p>
+
+          <p>
+            VIRELLAART can review room and furniture information when
+            discussing a complete luxury bedroom arrangement and
+            made-to-order furniture options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20planning%20my%20luxury%20bedroom."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Bedroom Planning
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Bedroom wall-art size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.sofa-size-title {
+    max-width: 1020px;
+    font-size: clamp(39px, 4.8vw, 66px);
+  }
+
+  .sofa-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .sofa-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.coffee-table-size-title {
+    max-width: 1080px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .coffee-table-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .coffee-table-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.rug-size-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .rug-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .rug-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.dining-rug-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .dining-rug-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-rug-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.living-chandelier-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .living-chandelier-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .living-chandelier-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.curtain-size-title {
+    max-width: 1180px;
+    font-size: clamp(35px, 4.3vw, 61px);
+  }
+
+  .curtain-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .curtain-size-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.wall-art-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .wall-art-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .wall-art-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.bedroom-wall-art-title {
+    max-width: 1120px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .bedroom-wall-art-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .bedroom-wall-art-title span {
+      display: inline;
+    }
+  }
+</style>
