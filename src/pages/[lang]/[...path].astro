@@ -7,6 +7,7 @@ import LivingRoomsPage from "../living-rooms.astro";
 import DiningRoomsPage from "../dining-rooms.astro";
 import BedroomsPage from "../bedrooms.astro";
 import TVUnitsPage from "../tv-units.astro";
+import BlogPage from "../blog/index.astro";
 import LuxuryClassicPage from "../collections/luxury-classic.astro";
 import ModernPage from "../collections/modern.astro";
 import ModernSofaSetsPage from "../collections/modern/sofa-sets.astro";
@@ -67,6 +68,7 @@ const product = productKey
 {path === "dining-rooms" && <DiningRoomsPage />}
 {path === "bedrooms" && <BedroomsPage />}
 {path === "tv-units" && <TVUnitsPage />}
+{path === "blog" && <BlogPage />}
 {
   path === "collections/luxury-classic" && (
     <LuxuryClassicPage />

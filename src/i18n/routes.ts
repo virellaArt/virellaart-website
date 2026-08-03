@@ -1,4 +1,4 @@
-﻿type ProductRouteMap = Record<string, string>;
+type ProductRouteMap = Record<string, string>;
 
 const productPageSources = import.meta.glob(
   [
@@ -110,6 +110,7 @@ export const staticRoutes = [
   "dining-rooms",
   "bedrooms",
   "tv-units",
+  "blog",
   "collections/luxury-classic",
   "about",
   "manufacturing",

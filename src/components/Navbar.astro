@@ -197,6 +197,12 @@ const manufacturingLabels: Record<
       </li>
 
       <li>
+        <a href={localizedPath("/blog", language)}>
+          Blog
+        </a>
+      </li>
+
+      <li>
         <a href={localizedPath("/contact", language)}>
           {translations.nav.contact}
         </a>
@@ -334,6 +340,10 @@ const manufacturingLabels: Record<
 
             <a href={localizedPath("/manufacturing", language)}>
               {manufacturingLabels[language]}
+            </a>
+
+            <a href={localizedPath("/blog", language)}>
+              Blog
             </a>
 
             <a href={localizedPath("/contact", language)}>
