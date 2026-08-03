@@ -1,0 +1,1032 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Measure Your Room for Luxury Furniture";
+
+const description =
+  "Learn how to measure a room for luxury furniture, including floor area, circulation, doors, delivery access and category-specific planning.";
+
+const publishedTime = "2026-08-03T10:54:05+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-measure-your-room-for-luxury-furniture/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What measurements are needed before ordering luxury furniture?",
+    answer:
+      "Record the usable room width and length, ceiling height, wall dimensions, door and window positions, circulation routes, electrical points and the complete delivery path.",
+  },
+  {
+    question:
+      "How much circulation space should I leave around furniture?",
+    answer:
+      "The required clearance depends on the room and furniture category. Allow enough space for people to walk comfortably, chairs and doors to open and drawers or storage units to function safely.",
+  },
+  {
+    question:
+      "Should I measure the furniture or only the room?",
+    answer:
+      "Both are necessary. Compare the full external furniture dimensions with the usable room area, including arms, headboards, decorative projections, doors and drawer movement.",
+  },
+  {
+    question:
+      "Why should I measure doors, staircases and lifts?",
+    answer:
+      "Furniture must reach the room safely. Entrance doors, corridors, staircases, corners and lifts may restrict the size of items that can be delivered in one piece.",
+  },
+  {
+    question:
+      "Can VIRELLAART help evaluate room measurements?",
+    answer:
+      "VIRELLAART can review measurements and project information when discussing suitable models, configurations and made-to-order furniture requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/room-measurement.webp"
+  imageAlt="Luxury living room arranged with proportionate furniture and clear circulation space"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Planning Guides"
+  keywords={[
+    "how to measure a room for furniture",
+    "luxury furniture measurements",
+    "furniture room planning",
+    "sofa measurement guide",
+    "dining table room measurements",
+    "bedroom furniture planning",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={10}
+  wordCount={1406}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Room Measurement Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Planning Guide
+        </p>
+
+        <h1 class="measurement-article-title">
+          How to Measure Your Room
+          <span>for Luxury Furniture</span>
+        </h1>
+
+        <p class="article-intro">
+          Accurate measurements protect comfort, proportion and delivery
+          planning. This guide explains how to record your room,
+          circulation routes and access conditions before ordering
+          luxury furniture.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>10 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/room-measurement.webp"
+        alt="Luxury living room arranged with proportionate furniture and clear circulation space"
+        width="1600"
+        height="929"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#prepare">
+              Prepare the room
+            </a>
+          </li>
+
+          <li>
+            <a href="#room-dimensions">
+              Record room dimensions
+            </a>
+          </li>
+
+          <li>
+            <a href="#architectural-features">
+              Mark architectural features
+            </a>
+          </li>
+
+          <li>
+            <a href="#circulation">
+              Plan circulation
+            </a>
+          </li>
+
+          <li>
+            <a href="#delivery-access">
+              Measure delivery access
+            </a>
+          </li>
+
+          <li>
+            <a href="#living-room">
+              Measure living rooms
+            </a>
+          </li>
+
+          <li>
+            <a href="#dining-bedroom-tv">
+              Measure other categories
+            </a>
+          </li>
+
+          <li>
+            <a href="#quotation">
+              Prepare a quotation request
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential principle</h2>
+
+          <p>
+            Measure the usable space rather than only the total room.
+            Furniture must fit around doors, windows and architectural
+            details while leaving enough clearance for movement, storage
+            and everyday use.
+          </p>
+        </section>
+
+        <p>
+          Luxury furniture often has generous proportions, deep seating,
+          extended headboards, broad table bases or decorative details.
+          Looking only at the principal width and length can therefore
+          create costly planning mistakes.
+        </p>
+
+        <p>
+          A reliable room survey records the complete space, the position
+          of fixed features and the route through which every furniture
+          item must travel. These measurements help determine whether a
+          model fits naturally, requires adjustment or should be replaced
+          with a more suitable configuration.
+        </p>
+
+        <h2 id="prepare">
+          1. Prepare the room before measuring
+        </h2>
+
+        <p>
+          Use a reliable tape measure or laser measuring device, a
+          notebook and a simple floor-plan sketch. Measure in centimetres
+          or millimetres and use the same unit throughout the project.
+        </p>
+
+        <p>
+          Remove small movable objects that block walls or corners. Large
+          existing furniture can remain in place, but record its position
+          so that it does not hide an important architectural detail.
+        </p>
+
+        <h3>Create a basic floor-plan sketch</h3>
+
+        <p>
+          Draw the approximate shape of the room from above. The drawing
+          does not need to be architectural, but every wall, door, window,
+          column and projection should appear in the correct sequence.
+        </p>
+
+        <p>
+          Label each wall with a letter or number. This makes it easier to
+          communicate measurements and prevents confusion when discussing
+          a furniture layout remotely.
+        </p>
+
+        <h2 id="room-dimensions">
+          2. Record the complete room dimensions
+        </h2>
+
+        <p>
+          Measure the total width and length of the room at floor level.
+          Then repeat important measurements at different points,
+          especially in older properties where walls may not be perfectly
+          straight or parallel.
+        </p>
+
+        <p>
+          Record the ceiling height and note any lowered sections,
+          beams, decorative mouldings or sloped areas. Tall wardrobes,
+          wall units and extended headboards may be affected by vertical
+          restrictions.
+        </p>
+
+        <h3>Measure every usable wall separately</h3>
+
+        <p>
+          Do not assume that opposite walls have identical dimensions.
+          Measure each wall from corner to corner and then divide it into
+          usable sections between windows, doors and architectural
+          features.
+        </p>
+
+        <p>
+          A wall may appear long enough for a large item but become
+          unsuitable after curtains, door movement or electrical points
+          are considered.
+        </p>
+
+        <h2 id="architectural-features">
+          3. Mark doors, windows and fixed features
+        </h2>
+
+        <p>
+          Record the width and height of every door and window together
+          with its distance from the nearest corner. Note the direction
+          in which doors open and the floor area required by their
+          movement.
+        </p>
+
+        <p>
+          Include radiators, air-conditioning units, fireplaces, columns,
+          recessed areas, switches, sockets and wall-mounted controls.
+          Furniture should not block ventilation, heating or essential
+          access points.
+        </p>
+
+        <h3>Measure curtains and window treatments</h3>
+
+        <p>
+          Curtains may project substantially beyond the window frame.
+          Record the complete curtain width and depth when open and
+          closed, particularly where a sofa, nightstand or console will
+          sit nearby.
+        </p>
+
+        <h2 id="circulation">
+          4. Protect circulation and furniture movement
+        </h2>
+
+        <p>
+          Furniture must fit without turning the room into a narrow
+          obstacle course. Identify the main routes between doors,
+          seating areas, storage units and adjoining spaces.
+        </p>
+
+        <p>
+          Allow space for chairs to move backward, drawers to open,
+          wardrobe doors to swing and people to walk behind occupied
+          seating. Clearance requirements depend on the furniture
+          category and the way the room will be used.
+        </p>
+
+        <h3>Use masking tape to test furniture footprints</h3>
+
+        <p>
+          Mark the proposed external dimensions of a sofa, table, bed or
+          cabinet directly on the floor with removable masking tape.
+          Walk around the outline and test nearby doors and storage.
+        </p>
+
+        <p>
+          This simple method reveals whether a furniture item feels
+          proportionate before an order is placed. Remember that the
+          tape must represent the complete external dimensions, not only
+          the internal seating or mattress area.
+        </p>
+
+        <h2 id="delivery-access">
+          5. Measure the complete delivery route
+        </h2>
+
+        <p>
+          Start at the building entrance and follow the exact path to the
+          destination room. Measure entrance doors, corridors, corners,
+          staircases, landings and lifts.
+        </p>
+
+        <p>
+          Record both width and height. A corridor may be wide enough but
+          too low at a staircase or doorway. Tight turns can also restrict
+          long furniture even when individual openings appear sufficient.
+        </p>
+
+        <h3>Provide photographs and videos</h3>
+
+        <p>
+          Clear images of entrances, staircases, lifts and difficult
+          corners help manufacturers and delivery teams understand access
+          conditions. Include a measuring tape in photographs where scale
+          may not be obvious.
+        </p>
+
+        <p>
+          International clients should communicate access concerns before
+          production. Some items may require separate components or a
+          different configuration to enter the property safely.
+        </p>
+
+        <h2 id="living-room">
+          6. Measure a living room for sofas and tables
+        </h2>
+
+        <p>
+          Record the complete external dimensions of every sofa,
+          including arms, back projections and decorative details.
+          Seating width alone does not show how much floor area the model
+          occupies.
+        </p>
+
+        <p>
+          Confirm the relationship between the sofa, coffee table, side
+          tables and television wall. Leave practical space between pieces
+          while preserving comfortable conversation and viewing distances.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Read our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-sofa-set",
+                language,
+              )}
+            >
+              luxury sofa buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/living-rooms", language)}>
+              VIRELLAART living room collection
+            </a>.
+          </p>
+        </div>
+
+        <h3>Corner and sectional sofas</h3>
+
+        <p>
+          Measure each side of an L-shaped or sectional sofa separately.
+          Confirm whether the corner direction is left or right when
+          viewed from the front, and record any chaise or extended module.
+        </p>
+
+        <h2 id="dining-bedroom-tv">
+          7. Measure dining rooms, bedrooms and TV walls
+        </h2>
+
+        <h3>Dining room furniture</h3>
+
+        <p>
+          Measure the table at its full external size and add the space
+          required for chairs to move backward. Include the depth of any
+          console and the route needed behind occupied chairs.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-a-luxury-dining-room-set",
+              language,
+            )}
+          >
+            luxury dining room guide
+          </a>
+          explains table shape, seating capacity and layout in more
+          detail.
+        </p>
+
+        <h3>Bedroom furniture</h3>
+
+        <p>
+          Compare the complete bed-frame dimensions with the mattress
+          size. Extended headboards, upholstered sides and benches may
+          occupy significantly more space than expected.
+        </p>
+
+        <p>
+          Measure wardrobe door movement, dresser drawers and the walking
+          route around the bed. Continue with our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-a-luxury-bedroom-set",
+              language,
+            )}
+          >
+            luxury bedroom buying guide
+          </a>.
+        </p>
+
+        <h3>TV units</h3>
+
+        <p>
+          Record the complete usable wall, television dimensions,
+          electrical points and media equipment. Include wall height when
+          panels, shelves or upper cabinets are required.
+        </p>
+
+        <p>
+          See our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-a-luxury-tv-unit",
+              language,
+            )}
+          >
+            luxury TV unit guide
+          </a>
+          for viewing height, storage, cable management and ventilation
+          planning.
+        </p>
+
+        <h2 id="quotation">
+          8. Prepare complete information for a quotation
+        </h2>
+
+        <p>
+          Accurate information allows a manufacturer to evaluate whether
+          the selected model and configuration suit the project. Provide
+          measurements in a clear and consistent format.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Available options depend on the
+          selected model and project requirements.
+        </p>
+
+        <h3>Include the following information</h3>
+
+        <ul>
+          <li>The selected product model or link</li>
+          <li>Room width, length and ceiling height</li>
+          <li>Usable wall dimensions</li>
+          <li>Door, window and fixed-feature positions</li>
+          <li>Circulation and furniture-opening requirements</li>
+          <li>Entrance, corridor, staircase and lift dimensions</li>
+          <li>The destination city and country</li>
+          <li>Room and delivery-access photographs</li>
+        </ul>
+
+        <h2>Final room measurement checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            Every wall has been measured separately.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Ceiling height and lowered sections are recorded.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Doors, windows and opening directions are marked.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Electrical, heating and ventilation points are shown.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Furniture footprints and circulation are tested.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Doors, corridors, stairs and lifts are measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Photographs and destination details are prepared.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Measure the entire journey, not only the room
+          </h2>
+
+          <p>
+            Reliable furniture planning combines room dimensions,
+            circulation, architectural features and delivery access.
+            Accurate measurements protect both the visual balance and
+            practical use of the finished interior.
+          </p>
+
+          <p>
+            VIRELLAART can review room information when discussing
+            suitable furniture models, configurations and international
+            delivery requirements.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20with%20room%20measurements%20for%20luxury%20furniture."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send Measurements on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Room measurement FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.measurement-article-title {
+    max-width: 930px;
+    font-size: clamp(42px, 5.4vw, 70px);
+  }
+
+  .measurement-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .measurement-article-title span {
+      display: inline;
+    }
+  }
+</style>
