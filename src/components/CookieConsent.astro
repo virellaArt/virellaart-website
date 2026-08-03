@@ -324,19 +324,20 @@ const consent = consentTranslations[language];
   .cookie-consent {
     position: fixed;
     z-index: 100000;
-    right: 22px;
-    bottom: 22px;
-    left: 22px;
-    width: min(calc(100% - 44px), 880px);
+    right: 16px;
+    bottom: 14px;
+    left: 16px;
+    width: min(calc(100% - 32px), 760px);
     margin-inline: auto;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: 28px;
-    padding: 24px;
-    border: 1px solid rgba(225, 199, 138, 0.55);
-    background: rgba(16, 13, 11, 0.98);
-    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+    gap: 16px;
+    padding: 14px 16px;
+    border: 1px solid rgba(225, 199, 138, 0.48);
+    background: rgba(16, 13, 11, 0.97);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(12px);
   }
 
   .cookie-consent[hidden],
@@ -346,18 +347,20 @@ const consent = consentTranslations[language];
 
   .cookie-consent strong {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     color: #ffffff;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 1.2;
   }
 
   .cookie-consent p {
+    max-width: 500px;
     margin: 0;
     color: #ded6cb;
-    font-size: 13px;
-    line-height: 1.65;
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   .cookie-consent a {
@@ -368,17 +371,19 @@ const consent = consentTranslations[language];
 
   .cookie-actions {
     display: flex;
-    gap: 10px;
+    flex-shrink: 0;
+    gap: 8px;
   }
 
   .cookie-actions button {
-    min-height: 44px;
-    padding: 11px 16px;
-    border: 1px solid rgba(225, 199, 138, 0.7);
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid rgba(225, 199, 138, 0.66);
     color: #ffffff;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.55px;
+    white-space: nowrap;
   }
 
   .cookie-actions .cookie-accept {
@@ -389,31 +394,63 @@ const consent = consentTranslations[language];
   .cookie-settings {
     position: fixed;
     z-index: 9999;
-    bottom: 10px;
-    left: 10px;
-    padding: 8px 10px;
-    border: 1px solid rgba(225, 199, 138, 0.45);
-    background: rgba(16, 13, 11, 0.94);
+    bottom: 8px;
+    left: 8px;
+    padding: 6px 8px;
+    border: 1px solid rgba(225, 199, 138, 0.4);
+    background: rgba(16, 13, 11, 0.93);
     color: #f5efe6;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   @media (max-width: 720px) {
     .cookie-consent {
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
       grid-template-columns: 1fr;
-      gap: 18px;
-      padding: 20px;
+      gap: 11px;
+      padding: 13px;
+    }
+
+    .cookie-consent strong {
+      font-size: 15px;
+    }
+
+    .cookie-consent p {
+      max-width: none;
+      font-size: 10px;
+      line-height: 1.45;
     }
 
     .cookie-actions {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cookie-actions button {
+      min-height: 36px;
+      padding: 7px 8px;
+      white-space: normal;
     }
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 380px) {
+    .cookie-consent {
+      padding: 11px;
+    }
+
+    .cookie-consent p {
+      font-size: 9.5px;
+    }
+
     .cookie-actions {
-      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .cookie-actions button {
+      font-size: 8px;
     }
   }
 </style>
