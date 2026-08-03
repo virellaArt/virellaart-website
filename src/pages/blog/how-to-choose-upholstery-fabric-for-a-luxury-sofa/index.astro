@@ -1,0 +1,999 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose Upholstery Fabric for a Luxury Sofa";
+
+const description =
+  "Learn how to choose upholstery fabric for a luxury sofa by texture, durability, maintenance, colour, comfort and everyday use.";
+
+const publishedTime = "2026-08-03T11:35:55+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-upholstery-fabric-for-a-luxury-sofa/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What should I consider when choosing luxury sofa fabric?",
+    answer:
+      "Consider how frequently the sofa will be used, room conditions, preferred texture, maintenance expectations, colour, weave, sunlight exposure and the complete design of the sofa.",
+  },
+  {
+    question:
+      "Is thicker upholstery fabric always more durable?",
+    answer:
+      "Not necessarily. Durability depends on fibre composition, weave, surface construction, finishing and intended use rather than thickness alone.",
+  },
+  {
+    question:
+      "Should I choose sofa fabric from a photograph?",
+    answer:
+      "Photographs help narrow the options, but a physical sample is more reliable for evaluating colour, texture, softness, scale and appearance under room lighting.",
+  },
+  {
+    question:
+      "Which sofa colours are easiest to coordinate?",
+    answer:
+      "Neutral colours are often flexible, but the best choice depends on flooring, walls, curtains, lighting, other furniture and the atmosphere you want to create.",
+  },
+  {
+    question:
+      "Can VIRELLAART help with upholstery selection?",
+    answer:
+      "VIRELLAART can discuss suitable upholstery and colour options according to the selected sofa model, intended use and available made-to-order production choices.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/sofa-fabric.webp"
+  imageAlt="Close view of refined textured upholstery on a luxury sofa"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Sofa Buying Guides"
+  keywords={[
+    "luxury sofa fabric",
+    "upholstery fabric guide",
+    "sofa fabric selection",
+    "luxury upholstery",
+    "textured sofa fabric",
+    "durable sofa upholstery",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={10}
+  wordCount={1413}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Luxury Sofa Fabric Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Sofa Buying Guide
+        </p>
+
+        <h1 class="fabric-article-title">
+          How to Choose Upholstery Fabric
+          <span>for a Luxury Sofa</span>
+        </h1>
+
+        <p class="article-intro">
+          Upholstery affects the appearance, comfort and everyday use of
+          a sofa. This guide explains how to compare texture, durability,
+          colour and maintenance before confirming a luxury sofa fabric.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>10 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/sofa-fabric.webp"
+        alt="Close view of refined textured upholstery on a luxury sofa"
+        width="1600"
+        height="1067"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#daily-use">
+              Begin with daily use
+            </a>
+          </li>
+
+          <li>
+            <a href="#fibres">
+              Understand fibres
+            </a>
+          </li>
+
+          <li>
+            <a href="#weave">
+              Examine weave and texture
+            </a>
+          </li>
+
+          <li>
+            <a href="#durability">
+              Evaluate durability
+            </a>
+          </li>
+
+          <li>
+            <a href="#colour">
+              Select colour
+            </a>
+          </li>
+
+          <li>
+            <a href="#comfort">
+              Consider comfort
+            </a>
+          </li>
+
+          <li>
+            <a href="#maintenance">
+              Plan maintenance
+            </a>
+          </li>
+
+          <li>
+            <a href="#sample">
+              Approve a sample
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Select upholstery according to the sofa model, room
+            conditions and expected use. Appearance is important, but the
+            most suitable fabric must also support comfort, maintenance
+            and long-term practicality.
+          </p>
+        </section>
+
+        <p>
+          Upholstery covers a large visual surface and strongly influences
+          how a luxury sofa is perceived. The same silhouette can appear
+          soft and relaxed in one textile or structured and formal in
+          another.
+        </p>
+
+        <p>
+          Fabric should therefore be selected as part of the complete sofa
+          design rather than treated as a final colour choice. Texture,
+          weave, pile direction and light reflection can all change the
+          apparent proportions and character of the furniture.
+        </p>
+
+        <h2 id="daily-use">
+          1. Begin with the way the sofa will be used
+        </h2>
+
+        <p>
+          Start by identifying where the sofa will be placed and how
+          frequently it will be used. A formal reception room and a main
+          family living room may require different upholstery priorities.
+        </p>
+
+        <p>
+          Consider the number of users, frequency of entertaining,
+          exposure to food and drinks and whether children or animals will
+          use the room. These conditions help define realistic maintenance
+          and durability requirements.
+        </p>
+
+        <h3>Match the fabric to the room</h3>
+
+        <p>
+          Sunlight, humidity, heating and ventilation may affect how a
+          textile performs and appears. Record direct sunlight exposure
+          and discuss any demanding room conditions before confirming the
+          upholstery.
+        </p>
+
+        <p>
+          A fabric that looks excellent in a showroom may appear different
+          under warm residential lighting or strong natural daylight.
+          Evaluate the sample in the intended room whenever possible.
+        </p>
+
+        <h2 id="fibres">
+          2. Understand the fibre composition
+        </h2>
+
+        <p>
+          Upholstery fabrics may use natural fibres, manufactured fibres
+          or blended constructions. Each option can provide a different
+          balance of softness, appearance, resilience and maintenance.
+        </p>
+
+        <p>
+          Do not judge quality from a single fibre name. Final performance
+          also depends on yarn quality, weave density, surface construction,
+          finishing and how the textile is applied to the furniture.
+        </p>
+
+        <h3>Blended upholstery fabrics</h3>
+
+        <p>
+          Blends may combine visual softness with practical performance.
+          The exact composition should be evaluated together with the
+          available care information and the intended use of the sofa.
+        </p>
+
+        <p>
+          Ask for technical and maintenance information where available
+          rather than relying only on broad descriptions such as premium,
+          soft or stain resistant.
+        </p>
+
+        <h2 id="weave">
+          3. Examine weave, pile and surface texture
+        </h2>
+
+        <p>
+          The structure of the fabric affects visual depth and how it
+          interacts with the sofa shape. Fine weaves can create a clean,
+          controlled appearance, while pronounced textures may make a
+          large sofa feel softer and more tactile.
+        </p>
+
+        <p>
+          Textured or looped surfaces require close evaluation. Their
+          beauty comes from visible depth, but their suitability depends
+          on the room, expected use and maintenance preferences.
+        </p>
+
+        <h3>Check the direction of the surface</h3>
+
+        <p>
+          Some fabrics change appearance when brushed in different
+          directions or viewed from different angles. This effect may be
+          especially visible across wide seat cushions, curved arms and
+          large back panels.
+        </p>
+
+        <p>
+          Confirm how the textile will be positioned and whether changes
+          in shade or direction are part of its natural visual character.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Read our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-sofa-set",
+                language,
+              )}
+            >
+              complete luxury sofa buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/living-rooms", language)}>
+              VIRELLAART living room collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="durability">
+          4. Evaluate durability beyond fabric thickness
+        </h2>
+
+        <p>
+          A heavy-looking fabric is not automatically the most durable.
+          Resistance to wear depends on fibre type, yarn, weave density,
+          surface construction, finishing and the conditions of use.
+        </p>
+
+        <p>
+          Review available technical information for fabrics intended for
+          frequent use. Compare options within the context of the actual
+          sofa instead of selecting a textile from one specification
+          alone.
+        </p>
+
+        <h3>Consider seams and cushion construction</h3>
+
+        <p>
+          Upholstery performance is connected to the complete furniture
+          construction. Curves, seams, removable cushions and decorative
+          details may place different demands on a textile.
+        </p>
+
+        <p>
+          A suitable fabric should follow the form of the sofa cleanly and
+          support the intended tailoring without unnecessary distortion,
+          pulling or visual interruption.
+        </p>
+
+        <h2 id="colour">
+          5. Select colour under the correct lighting
+        </h2>
+
+        <p>
+          Colour should be compared with flooring, wall finishes,
+          curtains, rugs, tables and other upholstered pieces. Avoid
+          evaluating sofa colour from a phone or computer screen alone.
+        </p>
+
+        <p>
+          Neutral shades can provide long-term flexibility, but they are
+          not identical. Warm ivory, cool grey, beige and taupe may react
+          very differently to timber, stone, metal and artificial light.
+        </p>
+
+        <h3>Consider the visual size of the sofa</h3>
+
+        <p>
+          Light colours may emphasize the full silhouette and surface
+          detail of a large sofa. Dark colours can create depth and visual
+          weight. Strong colours may turn the sofa into the main focal
+          point of the room.
+        </p>
+
+        <p>
+          Review colour across a sufficiently large sample because a small
+          swatch may not reveal how the shade will appear over several
+          metres of upholstery.
+        </p>
+
+        <h2 id="comfort">
+          6. Consider touch, temperature and seating comfort
+        </h2>
+
+        <p>
+          Upholstery is in direct contact with the user. Compare the
+          softness, surface temperature and tactile character of suitable
+          samples rather than focusing exclusively on appearance.
+        </p>
+
+        <p>
+          A highly textured fabric may look inviting but feel different
+          against bare skin. A smoother textile may feel cooler or more
+          formal. The correct choice depends on the intended experience
+          and climate of the room.
+        </p>
+
+        <h3>Connect fabric with the sofa design</h3>
+
+        <p>
+          Deep, relaxed seating may suit a softer textile character,
+          whereas sharply tailored forms may benefit from a fabric that
+          supports precise edges. This is a design consideration rather
+          than a universal rule.
+        </p>
+
+        <p>
+          Curved sofas, buttoned upholstery and structured arms may also
+          display texture differently. Evaluate the sample together with
+          photographs of the selected model.
+        </p>
+
+        <h2 id="maintenance">
+          7. Plan cleaning and maintenance before ordering
+        </h2>
+
+        <p>
+          Request the correct care instructions for the selected
+          upholstery. Cleaning methods can differ substantially, and an
+          unsuitable product or technique may permanently affect colour,
+          texture or finish.
+        </p>
+
+        <p>
+          Consider whether removable cushion covers are available for the
+          selected model and whether professional upholstery cleaning may
+          be required. Do not assume that every textile can be washed or
+          treated in the same way.
+        </p>
+
+        <h3>Respond to spills carefully</h3>
+
+        <p>
+          Follow the specific care guidance supplied for the textile.
+          Avoid aggressive rubbing, excessive moisture or unapproved
+          chemicals. When uncertain, obtain professional advice before
+          treating the fabric.
+        </p>
+
+        <p>
+          Regular gentle maintenance can also reduce the accumulation of
+          dust and help preserve the intended appearance of the surface.
+        </p>
+
+        <h2 id="sample">
+          8. Approve the upholstery sample carefully
+        </h2>
+
+        <p>
+          Examine the sample in daylight and evening lighting. Place it
+          beside flooring, curtains, rugs and furniture finishes to assess
+          the complete interior relationship.
+        </p>
+
+        <p>
+          View the textile from several directions and touch the surface.
+          Photographing the sample can be useful for records, but the
+          physical sample should remain the primary reference.
+        </p>
+
+        <h3>Information to provide with an enquiry</h3>
+
+        <ul>
+          <li>The selected sofa model or product link</li>
+          <li>The intended room and frequency of use</li>
+          <li>Preferred colour family and texture</li>
+          <li>Relevant maintenance expectations</li>
+          <li>Room photographs and lighting conditions</li>
+          <li>The destination city and country</li>
+          <li>Any essential customization request</li>
+        </ul>
+
+        <h2>Final upholstery selection checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The room and expected sofa use are defined.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Fibre, weave and surface texture are reviewed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Durability information suits the intended use.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Colour has been checked under room lighting.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The fabric feels comfortable in direct contact.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Cleaning and maintenance guidance is understood.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            A physical sample has been approved.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Select upholstery as part of the complete sofa design
+          </h2>
+
+          <p>
+            The best fabric balances appearance, comfort, maintenance and
+            intended use. Compare its colour and texture together with the
+            full sofa silhouette and surrounding interior.
+          </p>
+
+          <p>
+            VIRELLAART can discuss suitable upholstery and colour options
+            according to the selected model and available made-to-order
+            production choices.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20upholstery%20fabric%20for%20a%20luxury%20sofa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Sofa Fabrics
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Luxury sofa fabric FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.fabric-article-title {
+    max-width: 980px;
+    font-size: clamp(40px, 5vw, 68px);
+  }
+
+  .fabric-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .fabric-article-title span {
+      display: inline;
+    }
+  }
+</style>
