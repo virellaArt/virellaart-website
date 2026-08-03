@@ -34,6 +34,39 @@ import {
   productRoutes,
 } from "../../i18n/routes";
 
+const blogArticlePageModules = import.meta.glob(
+  "../blog/*/index.astro",
+  {
+    eager: true,
+  },
+) as Record<
+  string,
+  { default: any }
+>;
+
+const blogArticlePages = Object.fromEntries(
+  Object.entries(blogArticlePageModules)
+    .flatMap(([filePath, pageModule]) => {
+      const normalizedPath =
+        filePath.replaceAll("\\", "/");
+
+      const routeMatch = normalizedPath.match(
+        /\/blog\/([^/]+)\/index\.astro$/,
+      );
+
+      if (!routeMatch?.[1]) {
+        return [];
+      }
+
+      return [
+        [
+          `blog/${routeMatch[1]}`,
+          pageModule.default,
+        ],
+      ];
+    }),
+) as Record<string, any>;
+
 export function getStaticPaths() {
   return localizedLanguageCodes.flatMap((lang) =>
     allRoutes.map((route) => ({
@@ -58,6 +91,9 @@ const productKey =
 const product = productKey
   ? products[productKey as keyof typeof products]
   : undefined;
+
+const BlogArticlePage =
+  blogArticlePages[path];
 ---
 
 {path === "" && <HomePage />}
@@ -117,4 +153,5 @@ const product = productKey
     <TermsConditionsPage />
   )
 }
+{BlogArticlePage && <BlogArticlePage />}
 {product && <ProductTemplate {product} />}

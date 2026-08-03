@@ -15,6 +15,30 @@ const productPageSources = import.meta.glob(
   },
 ) as Record<string, string>;
 
+const blogArticlePageModules = import.meta.glob(
+  "../pages/blog/*/index.astro",
+);
+
+export const blogArticleRoutes = Object.keys(
+  blogArticlePageModules,
+)
+  .map((filePath) => {
+    const normalizedPath =
+      filePath.replaceAll("\\", "/");
+
+    const routeMatch = normalizedPath.match(
+      /\/pages\/blog\/([^/]+)\/index\.astro$/,
+    );
+
+    return routeMatch?.[1]
+      ? `blog/${routeMatch[1]}`
+      : undefined;
+  })
+  .filter(
+    (route): route is string =>
+      Boolean(route),
+  );
+
 function extractProductKey(
   source: string,
 ): string | undefined {
@@ -111,6 +135,7 @@ export const staticRoutes = [
   "bedrooms",
   "tv-units",
   "blog",
+  ...blogArticleRoutes,
   "collections/luxury-classic",
   "about",
   "manufacturing",

@@ -18,7 +18,7 @@ interface Props {
   description?: string;
   image?: string;
   imageAlt?: string;
-  pageType?: "website" | "product";
+  pageType?: "website" | "product" | "article";
   robots?: string;
   alternateURLs?: {
     language: string;
@@ -571,6 +571,8 @@ content={imageAlt ?? fullTitle}
   )
 }
 
+
+<slot name="head" />
 
 </head>
 
