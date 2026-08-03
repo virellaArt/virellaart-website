@@ -1,0 +1,985 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose a Luxury Bedroom Set";
+
+const description =
+  "Learn how to choose a luxury bedroom set by bed size, room layout, storage, comfort and design style with practical guidance from VIRELLAART.";
+
+const publishedTime = "2026-08-03T04:14:29+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-bedroom-set/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What should I consider before buying a luxury bedroom set?",
+    answer:
+      "Measure the usable room area, confirm the required bed size and consider circulation, wardrobe capacity, nightstand dimensions, lighting, delivery access and the overall design character of the bedroom.",
+  },
+  {
+    question:
+      "How do I choose the correct bed size for my bedroom?",
+    answer:
+      "Select a bed that provides comfortable sleeping space while preserving practical movement around the sides and foot of the bed. The full external dimensions of the frame and headboard must be considered, not only the mattress size.",
+  },
+  {
+    question:
+      "Should all bedroom furniture come from the same collection?",
+    answer:
+      "A coordinated collection creates visual consistency, but every piece should also fit the room and serve a practical purpose. It is better to omit an unnecessary item than to overcrowd the bedroom.",
+  },
+  {
+    question:
+      "How much wardrobe storage should a bedroom have?",
+    answer:
+      "Wardrobe requirements depend on the number of users, clothing volume and available room width. Door movement, internal organization and access space should be planned before confirming the wardrobe size.",
+  },
+  {
+    question:
+      "Can VIRELLAART bedroom furniture be customized?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Suitable dimensions, configurations and design options can be discussed according to the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/bedroom.webp"
+  imageAlt="Luxury bedroom set with an upholstered bed, coordinated nightstands and elegant storage furniture"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury bedroom set",
+    "luxury bedroom furniture",
+    "modern bedroom set",
+    "luxury bed",
+    "bedroom furniture buying guide",
+    "made-to-order bedroom furniture",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={9}
+  wordCount={1454}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Luxury Bedroom Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1 class="bedroom-article-title">
+          How to Choose a
+          <span>Luxury Bedroom Set</span>
+        </h1>
+
+        <p class="article-intro">
+          A successful bedroom combines restful proportions, practical
+          storage and a design character that feels calm rather than
+          crowded. This guide explains how to choose a luxury bedroom set
+          that suits the architecture and daily needs of your home.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>9 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/bedroom.webp"
+        alt="Luxury bedroom set with an upholstered bed, coordinated nightstands and elegant storage furniture"
+        width="1122"
+        height="1402"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#measure-the-bedroom">
+              Measure the bedroom
+            </a>
+          </li>
+
+          <li>
+            <a href="#bed-size">
+              Select the bed size
+            </a>
+          </li>
+
+          <li>
+            <a href="#headboard">
+              Evaluate the headboard
+            </a>
+          </li>
+
+          <li>
+            <a href="#nightstands">
+              Plan nightstands and lighting
+            </a>
+          </li>
+
+          <li>
+            <a href="#wardrobe">
+              Calculate wardrobe storage
+            </a>
+          </li>
+
+          <li>
+            <a href="#supporting-pieces">
+              Add supporting furniture
+            </a>
+          </li>
+
+          <li>
+            <a href="#design-style">
+              Choose the design style
+            </a>
+          </li>
+
+          <li>
+            <a href="#ordering">
+              Prepare the order
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            The best luxury bedroom set is not necessarily the largest
+            collection. It is the composition whose bed, storage pieces
+            and supporting furniture fit comfortably while preserving
+            movement, visual balance and a restful atmosphere.
+          </p>
+        </section>
+
+        <p>
+          The bedroom is one of the most personal areas of a home. It
+          should support sleep, dressing, storage and daily routines
+          without feeling visually heavy. Because the bed and wardrobe
+          usually occupy substantial space, inaccurate planning can make
+          even a generous bedroom feel restricted.
+        </p>
+
+        <p>
+          Begin with measurements and practical requirements. Design
+          preferences should complete the layout after the correct bed
+          size, circulation and storage capacity have been established.
+        </p>
+
+        <h2 id="measure-the-bedroom">
+          1. Measure the complete usable bedroom
+        </h2>
+
+        <p>
+          Record the room width and length, then mark every feature that
+          reduces usable space. Doors, windows, columns, radiators,
+          curtains, wall projections and built-in elements can influence
+          the position of the bed and wardrobe.
+        </p>
+
+        <p>
+          Do not measure only the wall behind the headboard. The complete
+          furniture arrangement must allow doors and drawers to open,
+          chairs or benches to be used and occupants to walk comfortably
+          around the room.
+        </p>
+
+        <h3>Identify the natural bed wall</h3>
+
+        <p>
+          The preferred bed wall should provide enough width for the bed,
+          headboard and nightstands without blocking windows or main
+          circulation routes. Electrical outlets, wall lighting and
+          architectural symmetry should also be considered.
+        </p>
+
+        <h3>Check the delivery route</h3>
+
+        <p>
+          Measure entrance doors, corridors, staircases and lift access.
+          Large headboards, wardrobe panels and dresser units must reach
+          the bedroom safely. International buyers should communicate
+          narrow access conditions before production and delivery are
+          confirmed.
+        </p>
+
+        <h2 id="bed-size">
+          2. Select the correct bed and mattress size
+        </h2>
+
+        <p>
+          Begin with the sleeping space required by the users, but evaluate
+          the full external dimensions of the bed frame. Upholstered sides,
+          decorative details and an extended headboard can make the
+          furniture considerably wider or longer than the mattress.
+        </p>
+
+        <p>
+          A larger bed may appear desirable, but it should not eliminate
+          practical movement or prevent other essential furniture from
+          fitting. Leave enough space to make the bed, access the
+          nightstands and walk around the sides.
+        </p>
+
+        <h3>Confirm mattress compatibility</h3>
+
+        <p>
+          Mattress dimensions vary between markets. Before production,
+          communicate the exact mattress width, length and expected
+          thickness. This helps ensure that the bed frame, mattress
+          platform and headboard proportions work together correctly.
+        </p>
+
+        <h2 id="headboard">
+          3. Evaluate headboard scale and visual weight
+        </h2>
+
+        <p>
+          The headboard often becomes the principal visual feature of a
+          luxury bedroom. Its width and height should correspond to the
+          wall, ceiling and surrounding furniture.
+        </p>
+
+        <p>
+          A tall or extended headboard can create an impressive focal
+          point in a spacious room. In a smaller bedroom, the same design
+          may dominate the wall and reduce the sense of openness. Review
+          both the overall silhouette and the depth of upholstered or
+          decorative elements.
+        </p>
+
+        <p>
+          Consider where wall lights, switches and outlets will sit in
+          relation to the headboard. Planning these details early prevents
+          the furniture from covering important electrical points.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Explore the
+            <a href={localizedPath("/bedrooms", language)}>
+              VIRELLAART luxury bedroom collection
+            </a>
+            or discover our
+            <a
+              href={localizedPath(
+                "/collections/modern/bedrooms",
+                language,
+              )}
+            >
+              modern bedroom sets
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="nightstands">
+          4. Plan nightstands, lighting and bedside access
+        </h2>
+
+        <p>
+          Nightstands should be proportionate to the bed and positioned
+          where they remain easy to use. Their height should relate
+          comfortably to the top of the mattress, while their width must
+          fit between the bed and nearby walls or furniture.
+        </p>
+
+        <p>
+          Confirm that drawers and doors can open without colliding with
+          the bed, curtains or wardrobe. A pair of coordinated nightstands
+          can create symmetry, but bedrooms with limited space may require
+          a more compact arrangement.
+        </p>
+
+        <h3>Coordinate bedside lighting</h3>
+
+        <p>
+          Table lamps, wall lights and pendant lights should provide
+          practical illumination without overwhelming the nightstands.
+          Consider shade width, switch access and cable management before
+          finalizing the bedside composition.
+        </p>
+
+        <h2 id="wardrobe">
+          5. Calculate wardrobe storage realistically
+        </h2>
+
+        <p>
+          Wardrobe size should be based on actual storage requirements,
+          not only visual symmetry. Consider hanging garments, folded
+          clothing, drawers, accessories and any items that need dedicated
+          internal sections.
+        </p>
+
+        <p>
+          Door type affects the required access space. Hinged doors need
+          clear floor area in front of the wardrobe, while sliding systems
+          may suit narrower circulation zones. The available configuration
+          depends on the selected bedroom model.
+        </p>
+
+        <h3>Preserve movement around the wardrobe</h3>
+
+        <p>
+          A wardrobe should not create a narrow passage between itself and
+          the bed. Allow comfortable standing space for opening doors,
+          viewing clothing and using internal drawers.
+        </p>
+
+        <h2 id="supporting-pieces">
+          6. Add the dresser, mirror and bedroom bench carefully
+        </h2>
+
+        <p>
+          A complete bedroom collection may include a dresser, mirror,
+          bench or additional storage unit. Each piece should have a clear
+          purpose and enough room to function properly.
+        </p>
+
+        <p>
+          A dresser requires space for drawers to open and for the user to
+          stand comfortably in front of it. A mirror can increase light
+          and visual depth, but it should not reflect an undesirable view
+          or make the room feel overly busy.
+        </p>
+
+        <p>
+          A bench at the foot of the bed can provide practical seating and
+          complete the composition. Its depth must leave a comfortable
+          route between the bench and the opposite wall or furniture.
+        </p>
+
+        <h2 id="design-style">
+          7. Choose a design character that supports rest
+        </h2>
+
+        <h3>Modern luxury bedrooms</h3>
+
+        <p>
+          Modern bedroom sets often rely on controlled geometry, refined
+          proportions and a calm relationship between the bed and storage
+          pieces. Visual interest may come from silhouette, contrast and
+          carefully placed details rather than extensive decoration.
+        </p>
+
+        <h3>Luxury-classic bedrooms</h3>
+
+        <p>
+          Luxury-classic bedrooms may feature more expressive shapes,
+          decorative headboards and a stronger formal presence. The bed,
+          nightstands, wardrobe and dresser should still share a coherent
+          design language so the room feels composed.
+        </p>
+
+        <p>
+          The bedroom furniture should communicate with the flooring,
+          curtains, wall treatment and lighting. A luxury interior does
+          not require every element to compete for attention. The most
+          successful rooms establish one clear focal point and support it
+          with quieter surrounding details.
+        </p>
+
+        <h2 id="ordering">
+          8. Prepare customization and delivery information
+        </h2>
+
+        <p>
+          Made-to-order bedroom furniture requires accurate communication.
+          Confirm the selected model, mattress dimensions, required
+          furniture pieces, destination and delivery access before
+          production begins.
+        </p>
+
+        <p>
+          Separate essential requirements from decorative preferences.
+          Mattress size, room measurements, storage needs and access
+          conditions are essential. Suitable design options can then be
+          discussed according to the chosen model.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Available options depend on the
+          selected model and individual project requirements.
+        </p>
+
+        <h3>Information to provide when requesting a quotation</h3>
+
+        <ul>
+          <li>The selected bedroom model or product link</li>
+          <li>The exact mattress width and length</li>
+          <li>The required furniture pieces</li>
+          <li>Bedroom and wall measurements</li>
+          <li>The destination city and country</li>
+          <li>Door, staircase and lift measurements</li>
+          <li>Any essential customization request</li>
+        </ul>
+
+        <h2>Final bedroom buying checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable bedroom has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The exact mattress dimensions have been confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Circulation around the bed is comfortable.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Nightstands fit without blocking doors or curtains.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Wardrobe doors and internal drawers can open safely.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Dresser and bench access have been considered.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Delivery access and destination details are confirmed.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Build the bedroom around comfort and proportion
+          </h2>
+
+          <p>
+            A refined bedroom begins with the correct bed size and a
+            practical furniture layout. Measure the space, calculate
+            storage needs and preserve comfortable circulation before
+            selecting decorative details.
+          </p>
+
+          <p>
+            VIRELLAART helps international clients discuss suitable
+            bedroom models, configurations and delivery requirements
+            before an order is confirmed.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20bedroom%20set."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Luxury bedroom set FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.bedroom-article-title {
+    max-width: 900px;
+    font-size: clamp(44px, 5.8vw, 72px);
+  }
+
+  .bedroom-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .bedroom-article-title span {
+      display: inline;
+    }
+  }
+</style>
