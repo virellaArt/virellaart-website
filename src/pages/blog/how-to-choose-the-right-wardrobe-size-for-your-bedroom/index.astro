@@ -1,0 +1,1106 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Wardrobe Size for Your Bedroom";
+
+const description =
+  "Learn how to choose wardrobe dimensions by wall size, storage needs, door clearance, bedroom circulation, ceiling height and delivery access.";
+
+const publishedTime = "2026-08-03T19:27:20+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-wardrobe-size-for-your-bedroom/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How do I know what wardrobe size will fit my bedroom?",
+    answer:
+      "Measure the complete usable wall, ceiling height and available floor depth, then include door movement, drawers, skirting boards and circulation around the bed.",
+  },
+  {
+    question:
+      "Is a sliding-door wardrobe better for a small bedroom?",
+    answer:
+      "Sliding doors can reduce the floor area needed for door movement, but the complete wardrobe depth, internal access and sliding-panel overlap must still be evaluated.",
+  },
+  {
+    question:
+      "How deep should a wardrobe be?",
+    answer:
+      "The required depth depends on hanging direction, internal fittings and door construction. Use the selected model’s complete external dimensions rather than relying on a general estimate.",
+  },
+  {
+    question:
+      "How can I test wardrobe size before ordering?",
+    answer:
+      "Mark the complete width and depth on the wall and floor with removable masking tape, then test doors, drawers, circulation and access to the bed.",
+  },
+  {
+    question:
+      "Can VIRELLAART produce wardrobes in custom sizes?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Suitable dimensions and configurations can be discussed according to the selected bedroom model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/wardrobe-size.webp"
+  imageAlt="Luxury wardrobe proportionately positioned within an elegant bedroom"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Bedroom Planning Guides"
+  keywords={[
+    "wardrobe size guide",
+    "bedroom wardrobe dimensions",
+    "wardrobe depth",
+    "wardrobe width",
+    "luxury wardrobe size",
+    "bedroom storage planning",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={11}
+  wordCount={1646}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Wardrobe Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Bedroom Planning Guide
+        </p>
+
+        <h1 class="wardrobe-title">
+          How to Choose the Right Wardrobe Size
+          <span>for Your Bedroom</span>
+        </h1>
+
+        <p class="article-intro">
+          Wardrobe dimensions affect storage capacity, circulation and the
+          visual balance of the entire bedroom. This guide explains how to
+          compare wall size, depth, height, door movement and internal
+          organization before ordering.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>11 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/wardrobe-size.webp"
+        alt="Luxury wardrobe proportionately positioned within an elegant bedroom"
+        width="1086"
+        height="1448"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li><a href="#measure-wall">Measure the wall</a></li>
+          <li><a href="#wardrobe-width">Choose wardrobe width</a></li>
+          <li><a href="#wardrobe-depth">Plan wardrobe depth</a></li>
+          <li><a href="#wardrobe-height">Evaluate wardrobe height</a></li>
+          <li><a href="#door-type">Select the door type</a></li>
+          <li><a href="#internal-storage">Plan internal storage</a></li>
+          <li><a href="#circulation">Protect circulation</a></li>
+          <li><a href="#visual-balance">Check visual balance</a></li>
+          <li><a href="#delivery">Prepare delivery information</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Choose a wardrobe from the complete usable wall and the actual
+            storage required. The correct size must provide practical
+            internal organization while preserving door movement,
+            circulation and a balanced relationship with the bed.
+          </p>
+        </section>
+
+        <p>
+          A wardrobe is one of the largest vertical furniture elements in
+          a bedroom. Its dimensions influence storage, walking routes,
+          lighting, wall composition and the position of the bed,
+          nightstands and dresser.
+        </p>
+
+        <p>
+          Selecting the largest wardrobe that fits the wall does not
+          always create the best result. Width, depth, height and door type
+          must be evaluated together with everyday use and the complete
+          bedroom layout.
+        </p>
+
+        <h2 id="measure-wall">
+          1. Measure the complete usable wardrobe wall
+        </h2>
+
+        <p>
+          Record the wall width and ceiling height. Then mark doors,
+          windows, curtains, radiators, columns, switches, sockets,
+          skirting boards and decorative wall details.
+        </p>
+
+        <p>
+          Measure every obstruction separately. A wall may appear suitable
+          for a wide wardrobe but become restricted by a bedroom door,
+          curtain movement or an electrical connection.
+        </p>
+
+        <h3>Check the floor and ceiling</h3>
+
+        <p>
+          Record sloping ceilings, beams, cornices and flooring
+          transitions. Uneven walls or floors can affect installation,
+          alignment and the operation of doors.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            complete room measurement guide
+          </a>
+          explains how to document walls, furniture clearances and the
+          delivery path.
+        </p>
+
+        <h2 id="wardrobe-width">
+          2. Choose wardrobe width from storage and room scale
+        </h2>
+
+        <p>
+          Begin by listing the clothing, accessories and other objects the
+          wardrobe must store. Required width depends on hanging space,
+          folded storage, drawers and specialist compartments.
+        </p>
+
+        <p>
+          A wardrobe should relate clearly to the wall without filling
+          every available centimetre. Controlled space around the
+          furniture can preserve architectural balance and installation
+          access.
+        </p>
+
+        <h3>Use the complete external width</h3>
+
+        <p>
+          Decorative frames, side columns, cornices, handles and projecting
+          panels may extend beyond the internal cabinet. Use the widest
+          external measurement when planning the wall.
+        </p>
+
+        <p>
+          Multiple-door wardrobes should be evaluated with every section.
+          The visible door quantity does not automatically reveal the
+          internal storage width.
+        </p>
+
+        <h2 id="wardrobe-depth">
+          3. Plan wardrobe depth carefully
+        </h2>
+
+        <p>
+          Wardrobe depth affects both internal hanging space and bedroom
+          circulation. A cabinet that projects too far into the room can
+          create a narrow route between the wardrobe and bed.
+        </p>
+
+        <p>
+          Compare the complete external depth with the available floor
+          area. Include doors, handles, decorative projections and
+          skirting boards that prevent the cabinet from sitting completely
+          against the wall.
+        </p>
+
+        <h3>Confirm hanging direction and internal fittings</h3>
+
+        <p>
+          Clothes hanging from a conventional rail require sufficient
+          internal depth. Pull-out rails and alternative internal systems
+          may use the space differently.
+        </p>
+
+        <p>
+          Confirm the selected wardrobe’s actual internal arrangement
+          rather than assuming every cabinet has the same usable depth.
+        </p>
+
+        <h2 id="wardrobe-height">
+          4. Evaluate wardrobe height and ceiling clearance
+        </h2>
+
+        <p>
+          Tall wardrobes can maximize vertical storage and create a strong
+          architectural presence. They must still allow suitable
+          installation clearance and remain proportionate to the ceiling.
+        </p>
+
+        <p>
+          Measure cornices, chandeliers, air-conditioning units and wall
+          details that may restrict the upper part of the furniture.
+        </p>
+
+        <h3>Decide whether upper storage is practical</h3>
+
+        <p>
+          High shelves can store seasonal or rarely used items but may be
+          difficult to reach. Vertical capacity should respond to real
+          requirements rather than simply filling the wall.
+        </p>
+
+        <p>
+          Large decorative crowns and top frames add to the external
+          height even when they do not increase internal storage.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Continue with our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-bedroom-set",
+                language,
+              )}
+            >
+              luxury bedroom buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/bedrooms", language)}>
+              VIRELLAART bedroom collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="door-type">
+          5. Compare hinged and sliding wardrobe doors
+        </h2>
+
+        <h3>Hinged wardrobe doors</h3>
+
+        <p>
+          Hinged doors can provide broad access to individual wardrobe
+          sections, but they require clear floor space in front of the
+          cabinet.
+        </p>
+
+        <p>
+          Measure each door in the fully open position. Confirm that it
+          does not strike the bed, nightstand, bench, curtains or another
+          wardrobe door.
+        </p>
+
+        <h3>Sliding wardrobe doors</h3>
+
+        <p>
+          Sliding doors reduce the outward door-movement area and may suit
+          rooms with limited floor space. However, one section remains
+          partially covered as panels overlap.
+        </p>
+
+        <p>
+          Sliding mechanisms and door panels can also increase the
+          wardrobe’s complete depth. Confirm maintenance access and the
+          width of the opening created by each panel position.
+        </p>
+
+        <h3>Mirrored and decorative doors</h3>
+
+        <p>
+          Mirrored doors can increase light and reduce the need for a
+          separate full-length mirror. Their reflections should be checked
+          from the bed and room entrance.
+        </p>
+
+        <p>
+          Heavy decorative panels, carving and applied details may create
+          greater visual weight. Compare them with the bed, dresser and
+          wall architecture.
+        </p>
+
+        <h2 id="internal-storage">
+          6. Plan the internal wardrobe organization
+        </h2>
+
+        <p>
+          Divide storage requirements into long hanging, short hanging,
+          folded clothing, drawers, shoes, bags and accessories. This list
+          helps determine the number and width of wardrobe sections.
+        </p>
+
+        <p>
+          Internal storage should reflect the users rather than a generic
+          arrangement. Different people may require different hanging
+          heights, drawer quantities and shelf spacing.
+        </p>
+
+        <h3>Include drawer-opening space</h3>
+
+        <p>
+          Internal and external drawers require enough room to open while
+          the user stands in front of the wardrobe. Measure the full drawer
+          projection.
+        </p>
+
+        <p>
+          Pull-out shelves, trouser rails and accessory organizers also
+          require clear operation. Their movement should not conflict with
+          wardrobe doors.
+        </p>
+
+        <h3>Consider lighting and visibility</h3>
+
+        <p>
+          Interior lighting can improve visibility in deep or dark
+          cabinets. Electrical requirements should be planned before
+          production and installation.
+        </p>
+
+        <p>
+          Shelves positioned too closely may create many small spaces but
+          reduce flexibility. Adjustable storage can support changing
+          requirements over time.
+        </p>
+
+        <h2 id="circulation">
+          7. Protect circulation between the wardrobe and bed
+        </h2>
+
+        <p>
+          Measure the complete route between the wardrobe and the nearest
+          bed, bench, nightstand or dresser. Include the furniture in its
+          normal daily-use position.
+        </p>
+
+        <p>
+          Users should be able to stand in front of the wardrobe, open
+          doors and access drawers without becoming trapped between
+          furniture pieces.
+        </p>
+
+        <h3>Test the full footprint with masking tape</h3>
+
+        <p>
+          Mark the wardrobe depth on the floor and width on the wall with
+          removable masking tape. Add the open-door and drawer positions.
+        </p>
+
+        <p>
+          Walk through the room, access both sides of the bed and test
+          nearby drawers and doors. This reveals conflicts before the
+          wardrobe is ordered.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-bed-size-for-your-bedroom",
+              language,
+            )}
+          >
+            bed size planning guide
+          </a>
+          explains how to protect the complete bedroom circulation.
+        </p>
+
+        <h2 id="visual-balance">
+          8. Evaluate visual weight and bedroom harmony
+        </h2>
+
+        <p>
+          Two wardrobes with similar dimensions can feel very different.
+          Solid doors, dark finishes and decorative carving create greater
+          visual weight than mirrors, lighter panels or controlled frames.
+        </p>
+
+        <p>
+          Compare the wardrobe with the bed, headboard, nightstands,
+          dresser, rug, flooring and architectural details.
+        </p>
+
+        <h3>View the wardrobe from the entrance</h3>
+
+        <p>
+          Stand at the bedroom entrance and evaluate the wardrobe as part
+          of the complete composition. It should not visually overpower
+          the bed or block an important architectural view.
+        </p>
+
+        <p>
+          In compact rooms, reflective or lighter surfaces can reduce
+          visual heaviness. Large rooms may support wider and more
+          decorative wardrobe designs.
+        </p>
+
+        <h3>Coordinate with bedside furniture</h3>
+
+        <p>
+          The wardrobe does not need to match every bedroom piece exactly,
+          but materials, finishes and design character should feel
+          connected.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-the-right-nightstand-size-for-your-bed-and-bedroom",
+              language,
+            )}
+          >
+            nightstand size guide
+          </a>
+          explains how to plan the supporting furniture around the bed.
+        </p>
+
+        <h3>Avoid common wardrobe-sizing mistakes</h3>
+
+        <p>
+          Do not choose wardrobe width before defining internal storage,
+          ignore door movement or measure only the empty wall.
+        </p>
+
+        <p>
+          Another common mistake is selecting maximum height without
+          allowing installation clearance or checking ceiling details,
+          lighting and air-conditioning equipment.
+        </p>
+
+        <h2 id="delivery">
+          9. Prepare delivery and installation information
+        </h2>
+
+        <p>
+          Measure building entrances, doors, corridors, staircases,
+          landings and lifts from the exterior entrance to the bedroom.
+        </p>
+
+        <p>
+          Tall doors, side panels and decorative top sections can be
+          difficult to turn through narrow access routes. Photograph
+          corners and restricted areas.
+        </p>
+
+        <h3>Confirm installation conditions</h3>
+
+        <p>
+          Record the wall, floor and ceiling condition where the wardrobe
+          will stand. Installation requirements depend on the furniture
+          design and room architecture.
+        </p>
+
+        <p>
+          Provide the selected model, exact wall measurements, storage
+          requirements, door preference and destination when requesting a
+          quotation.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning.
+        </p>
+
+        <h3>Information to provide</h3>
+
+        <ul>
+          <li>The selected wardrobe or bedroom collection</li>
+          <li>The complete usable wall width and ceiling height</li>
+          <li>The available floor depth</li>
+          <li>The distance between wardrobe and bed</li>
+          <li>The preferred hinged or sliding door configuration</li>
+          <li>Required hanging, shelf and drawer storage</li>
+          <li>Room and delivery-access photographs</li>
+          <li>The destination city and country</li>
+        </ul>
+
+        <h2>Final wardrobe size checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable wall has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Wardrobe width matches actual storage requirements.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Depth preserves bedroom circulation.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Ceiling and installation clearance are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Doors and drawers can open completely.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Internal hanging, shelves and drawers are planned.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Delivery and installation access has been measured.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Choose the wardrobe from storage and complete room proportions
+          </h2>
+
+          <p>
+            The right wardrobe size balances storage capacity, door
+            movement, circulation and visual harmony. Compare the complete
+            external dimensions with the bed and room rather than using
+            the empty wall alone.
+          </p>
+
+          <p>
+            VIRELLAART can review bedroom and storage information when
+            discussing suitable wardrobe models, dimensions and
+            made-to-order production options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20the%20right%20wardrobe%20size%20for%20my%20bedroom."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Wardrobe Sizing
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Wardrobe size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.bedroom-article-title {
+    max-width: 900px;
+    font-size: clamp(44px, 5.8vw, 72px);
+  }
+
+  .bedroom-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .bedroom-article-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.nightstand-title {
+    max-width: 1080px;
+    font-size: clamp(37px, 4.6vw, 64px);
+  }
+
+  .nightstand-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .nightstand-title span {
+      display: inline;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.wardrobe-title {
+    max-width: 1080px;
+    font-size: clamp(38px, 4.7vw, 65px);
+  }
+
+  .wardrobe-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .wardrobe-title span {
+      display: inline;
+    }
+  }
+</style>
