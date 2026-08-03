@@ -1,0 +1,1010 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose the Right Sofa Size for Your Living Room";
+
+const description =
+  "Learn how to choose the right sofa size by room measurements, seating capacity, circulation, depth, layout and delivery access.";
+
+const publishedTime = "2026-08-03T11:50:34+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-sofa-size-for-your-living-room/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How do I know what sofa size will fit my living room?",
+    answer:
+      "Measure the usable floor area, walls, doors and circulation routes, then compare them with the sofa’s complete external width, depth and height.",
+  },
+  {
+    question:
+      "Should a sofa fill the entire living room wall?",
+    answer:
+      "Not necessarily. The sofa should feel proportionate to the wall while leaving suitable visual space, circulation and access to nearby furniture or architectural features.",
+  },
+  {
+    question:
+      "Is sofa depth as important as sofa width?",
+    answer:
+      "Yes. Depth affects floor space, circulation, coffee-table clearance, viewing distance and the seating experience.",
+  },
+  {
+    question:
+      "How can I test a sofa size before ordering?",
+    answer:
+      "Mark the complete external sofa footprint on the floor with removable masking tape and test walking routes, doors, tables and surrounding furniture.",
+  },
+  {
+    question:
+      "Can VIRELLAART produce sofas in custom sizes?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Suitable dimensions and configurations can be discussed according to the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/sofa-size.webp"
+  imageAlt="Luxury sofa arrangement positioned proportionately within a spacious living room"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Sofa Planning Guides"
+  keywords={[
+    "right sofa size",
+    "sofa size guide",
+    "living room sofa dimensions",
+    "luxury sofa measurements",
+    "sofa room planning",
+    "sofa depth and width",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={10}
+  wordCount={1393}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Sofa Size Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Sofa Planning Guide
+        </p>
+
+        <h1 class="sofa-size-title">
+          How to Choose the Right Sofa Size
+          <span>for Your Living Room</span>
+        </h1>
+
+        <p class="article-intro">
+          Sofa size affects comfort, circulation and the visual balance of
+          the entire room. This guide explains how to compare width,
+          depth, seating capacity and layout before ordering.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>10 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/sofa-size.webp"
+        alt="Luxury sofa arrangement positioned proportionately within a spacious living room"
+        width="1600"
+        height="1200"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#measure-room">
+              Measure the room
+            </a>
+          </li>
+
+          <li>
+            <a href="#dimensions">
+              Understand dimensions
+            </a>
+          </li>
+
+          <li>
+            <a href="#seating">
+              Define seating capacity
+            </a>
+          </li>
+
+          <li>
+            <a href="#circulation">
+              Protect circulation
+            </a>
+          </li>
+
+          <li>
+            <a href="#configuration">
+              Select configuration
+            </a>
+          </li>
+
+          <li>
+            <a href="#visual-balance">
+              Create visual balance
+            </a>
+          </li>
+
+          <li>
+            <a href="#delivery">
+              Check delivery access
+            </a>
+          </li>
+
+          <li>
+            <a href="#order">
+              Prepare the order
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            Choose the sofa from the usable room area rather than the
+            total floor area. The correct size must preserve circulation,
+            furniture clearances and a balanced relationship with the
+            walls and surrounding pieces.
+          </p>
+        </section>
+
+        <p>
+          A sofa can fit within the physical dimensions of a room and
+          still feel too large. Generous arms, deep seats and broad back
+          cushions may occupy more visual and practical space than a
+          simple width measurement suggests.
+        </p>
+
+        <p>
+          The best result combines accurate measurements with an
+          understanding of how the room will be used. Begin with the
+          walls, circulation and seating requirements before deciding
+          which silhouette or configuration looks most attractive.
+        </p>
+
+        <h2 id="measure-room">
+          1. Measure the complete usable living room
+        </h2>
+
+        <p>
+          Record the room width, length and ceiling height. Measure every
+          wall separately and mark doors, windows, radiators, fireplaces,
+          columns, curtains, switches and electrical points.
+        </p>
+
+        <p>
+          Architectural features can reduce the usable sofa area even
+          when the total room appears spacious. Door movement, curtain
+          depth and access to windows must remain practical after the
+          furniture is installed.
+        </p>
+
+        <h3>Create a simple floor plan</h3>
+
+        <p>
+          Draw the room from above and label each wall. Add the location
+          and opening direction of every door, then mark the main walking
+          routes between entrances and adjoining rooms.
+        </p>
+
+        <p>
+          Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-measure-your-room-for-luxury-furniture",
+              language,
+            )}
+          >
+            complete room measurement guide
+          </a>
+          explains the full survey and delivery-access process.
+        </p>
+
+        <h2 id="dimensions">
+          2. Understand the complete sofa dimensions
+        </h2>
+
+        <p>
+          Compare the full external width, depth and height of the sofa.
+          External dimensions include arms, back projections, decorative
+          elements and any extended seating modules.
+        </p>
+
+        <p>
+          Internal seating width describes usable seating space but does
+          not reveal the complete furniture footprint. Two sofas with
+          similar seating capacity may occupy very different areas because
+          of their arm width and overall construction.
+        </p>
+
+        <h3>Why sofa depth matters</h3>
+
+        <p>
+          Depth affects circulation, coffee-table placement and the
+          distance between the seating and television wall. Deep sofas
+          may provide a relaxed experience but require more floor space.
+        </p>
+
+        <p>
+          Sofa height also influences visual balance. A tall back can
+          divide an open room or interrupt windows, while a low silhouette
+          may create a more open architectural feeling.
+        </p>
+
+        <h2 id="seating">
+          3. Define the required seating capacity
+        </h2>
+
+        <p>
+          Consider the number of people who use the living room daily and
+          how often guests are entertained. Avoid selecting an oversized
+          sofa for occasional situations that could be handled with
+          armchairs or movable seating.
+        </p>
+
+        <p>
+          A combination of sofas and armchairs may provide greater
+          flexibility than one exceptionally large piece. It can also
+          improve conversation and create clearer circulation routes.
+        </p>
+
+        <h3>Compare seating capacity with room scale</h3>
+
+        <p>
+          Large rooms can support wider or deeper seating arrangements,
+          but furniture should still relate to the focal point and other
+          pieces. Small rooms benefit from controlled proportions and
+          carefully selected arm and back shapes.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Continue with our
+            <a
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-sofa-set",
+                language,
+              )}
+            >
+              luxury sofa buying guide
+            </a>
+            and explore the
+            <a href={localizedPath("/living-rooms", language)}>
+              VIRELLAART living room collection
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="circulation">
+          4. Protect circulation and furniture clearances
+        </h2>
+
+        <p>
+          Identify the routes people use most frequently. The sofa should
+          not force users through narrow gaps or block access to doors,
+          storage units, balconies or other rooms.
+        </p>
+
+        <p>
+          Leave enough space for nearby drawers and doors to open. Coffee
+          tables, side tables and floor lamps also require practical
+          clearance without becoming disconnected from the seating.
+        </p>
+
+        <h3>Test the footprint with masking tape</h3>
+
+        <p>
+          Mark the complete external sofa dimensions on the floor using
+          removable masking tape. Include the arms and any chaise or
+          corner module rather than marking only the seating area.
+        </p>
+
+        <p>
+          Walk around the outline, open doors and place temporary objects
+          where the coffee and side tables will stand. This reveals scale
+          and circulation problems before an order is confirmed.
+        </p>
+
+        <h2 id="configuration">
+          5. Select the right sofa configuration
+        </h2>
+
+        <h3>Straight sofas</h3>
+
+        <p>
+          Straight sofas can create a controlled layout and may be easier
+          to combine with armchairs. They suit many rectangular rooms and
+          provide flexibility when the arrangement changes.
+        </p>
+
+        <h3>Corner and sectional sofas</h3>
+
+        <p>
+          Corner sofas provide extensive seating but require accurate
+          measurement of both sides. Confirm the corner direction when
+          viewed from the front and measure every module separately.
+        </p>
+
+        <p>
+          A sectional arrangement should not close important circulation
+          routes or make the centre of the room feel restricted. Consider
+          how each module will reach the room during delivery.
+        </p>
+
+        <h3>Two-sofa arrangements</h3>
+
+        <p>
+          Two sofas facing or meeting each other can create a formal
+          conversation area. This layout requires sufficient room between
+          the seating and enough space around the outside edges.
+        </p>
+
+        <h2 id="visual-balance">
+          6. Evaluate visual balance, not only physical fit
+        </h2>
+
+        <p>
+          Look at the relationship between sofa width and the wall behind
+          it. A very small sofa can appear isolated on a long wall, while
+          a sofa that nearly fills the wall may make the room feel crowded.
+        </p>
+
+        <p>
+          Rugs, coffee tables, side tables and lighting should form one
+          connected composition. The sofa is usually the largest element,
+          but it should not visually overpower every other piece.
+        </p>
+
+        <h3>Consider focal points and viewing direction</h3>
+
+        <p>
+          Position the sofa in relation to the television, fireplace,
+          architectural view or conversation area. Confirm that the
+          seating direction and distance support the main purpose of the
+          room.
+        </p>
+
+        <p>
+          In open-plan interiors, the sofa may also define the boundary
+          between living and dining zones. Check the appearance of the
+          sofa back because it may remain visible from other areas.
+        </p>
+
+        <h2 id="delivery">
+          7. Measure the complete delivery route
+        </h2>
+
+        <p>
+          A sofa that fits the room must also reach it safely. Measure the
+          building entrance, doors, corridors, staircases, landings,
+          corners and lifts from the exterior entrance to the destination.
+        </p>
+
+        <p>
+          Record both width and height and photograph difficult turns.
+          Long sofas can be restricted by corners even when individual
+          door openings appear sufficiently wide.
+        </p>
+
+        <h3>Discuss modular production when necessary</h3>
+
+        <p>
+          Some configurations may be divided into suitable components,
+          depending on the model and production structure. Access
+          limitations should be communicated before the order is approved.
+        </p>
+
+        <h2 id="order">
+          8. Prepare accurate information before ordering
+        </h2>
+
+        <p>
+          Provide the selected model, room measurements, required seating
+          capacity, preferred configuration and destination. Include
+          floor-plan sketches and photographs where possible.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Suitable sizing options depend on
+          the selected sofa and project requirements.
+        </p>
+
+        <p>
+          After dimensions are confirmed, upholstery can be evaluated in
+          relation to the model and room. Our
+          <a
+            href={localizedPath(
+              "/blog/how-to-choose-upholstery-fabric-for-a-luxury-sofa",
+              language,
+            )}
+          >
+            luxury sofa upholstery guide
+          </a>
+          explains colour, texture, comfort and maintenance.
+        </p>
+
+        <h3>Information to provide for a quotation</h3>
+
+        <ul>
+          <li>The selected sofa model or product link</li>
+          <li>Room and usable wall dimensions</li>
+          <li>Required seating capacity</li>
+          <li>Preferred sofa configuration</li>
+          <li>Entrance, corridor, staircase and lift measurements</li>
+          <li>Room and delivery-access photographs</li>
+          <li>The destination city and country</li>
+        </ul>
+
+        <h2>Final sofa size checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The complete usable room has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            External sofa width, depth and height are confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Required seating capacity is realistic.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Walking routes and furniture clearances are protected.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The sofa footprint has been tested on the floor.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Delivery doors, stairs, corridors and lifts are measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Configuration and destination details are prepared.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Choose a sofa that supports the complete room
+          </h2>
+
+          <p>
+            The right sofa size balances seating needs with circulation,
+            visual proportion and surrounding furniture. Compare the full
+            external dimensions rather than relying on seating capacity
+            or wall width alone.
+          </p>
+
+          <p>
+            VIRELLAART can review room information when discussing
+            suitable sofa models, configurations and made-to-order
+            production options.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20the%20right%20sofa%20size%20for%20my%20living%20room."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask About Sofa Sizing
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Sofa size FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
+
+<style>
+  .article-hero h1.sofa-size-title {
+    max-width: 1020px;
+    font-size: clamp(39px, 4.8vw, 66px);
+  }
+
+  .sofa-size-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .sofa-size-title span {
+      display: inline;
+    }
+  }
+</style>
