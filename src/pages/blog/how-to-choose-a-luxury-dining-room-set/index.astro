@@ -1,0 +1,935 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title =
+  "How to Choose a Luxury Dining Room Set";
+
+const description =
+  "Learn how to choose a luxury dining room set by table size, seating capacity, room layout, chair comfort and design style with VIRELLAART.";
+
+const publishedTime = "2026-08-03T03:54:27+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-dining-room-set/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What should I consider before buying a luxury dining room set?",
+    answer:
+      "Measure the usable dining area, determine the required seating capacity and consider table shape, chair dimensions, circulation, storage furniture and the overall design character of the room.",
+  },
+  {
+    question:
+      "How do I choose the correct dining table size?",
+    answer:
+      "Choose a table that accommodates the required number of chairs while leaving sufficient space for guests to sit, move their chairs and walk comfortably around the dining area.",
+  },
+  {
+    question:
+      "Which dining table shape is best for my room?",
+    answer:
+      "Rectangular tables generally suit longer rooms, while round or square tables may work well in more balanced spaces. The correct choice depends on room proportions and seating requirements.",
+  },
+  {
+    question:
+      "Should a luxury dining room include a console?",
+    answer:
+      "A console provides storage, serving space and visual balance, but its depth and placement must not restrict movement around the dining table.",
+  },
+  {
+    question:
+      "Can VIRELLAART dining room furniture be customized?",
+    answer:
+      "VIRELLAART offers made-to-order furniture solutions. Available dimensions, configurations and design options depend on the selected model and project requirements.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/dining-room.webp"
+  imageAlt="Luxury dining room with an elegant table, coordinated chairs and refined interior styling"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury dining room set",
+    "luxury dining table",
+    "dining room furniture",
+    "modern dining room set",
+    "dining room buying guide",
+    "custom dining furniture",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={9}
+  wordCount={1243}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav
+          class="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <a href={localizedPath("/", language)}>
+            Home
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <a href={localizedPath("/blog", language)}>
+            Journal
+          </a>
+
+          <span aria-hidden="true">/</span>
+
+          <span>Luxury Dining Room Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1 class="dining-article-title">
+          How to Choose a
+          <span>Luxury Dining Room Set</span>
+        </h1>
+
+        <p class="article-intro">
+          A refined dining room requires more than a beautiful table.
+          Proportion, seating comfort, circulation and design character
+          must work together. This guide explains how to choose a luxury
+          dining room set that suits both your home and the way you live.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 3, 2026</span>
+          <span>9 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/dining-room.webp"
+        alt="Luxury dining room with an elegant table, coordinated chairs and refined interior styling"
+        width="1086"
+        height="1448"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+
+        <ol>
+          <li>
+            <a href="#measure-the-room">
+              Measure the room
+            </a>
+          </li>
+
+          <li>
+            <a href="#seating-capacity">
+              Determine seating capacity
+            </a>
+          </li>
+
+          <li>
+            <a href="#table-shape">
+              Choose the table shape
+            </a>
+          </li>
+
+          <li>
+            <a href="#dining-chairs">
+              Evaluate dining chairs
+            </a>
+          </li>
+
+          <li>
+            <a href="#complete-layout">
+              Plan the complete layout
+            </a>
+          </li>
+
+          <li>
+            <a href="#design-style">
+              Select the design style
+            </a>
+          </li>
+
+          <li>
+            <a href="#ordering">
+              Prepare the order
+            </a>
+          </li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+
+          <p>
+            The right luxury dining room set is the composition whose
+            table, chairs and supporting furniture fit the room without
+            sacrificing comfort, movement or visual balance.
+          </p>
+        </section>
+
+        <p>
+          A dining room may be used for everyday meals, formal dinners,
+          family gatherings and special occasions. Because the dining
+          table occupies a large visual and physical area, its proportions
+          influence the entire room.
+        </p>
+
+        <p>
+          Begin with measurements and real seating requirements. Style,
+          colour and decorative details should be considered after the
+          correct scale and layout have been established.
+        </p>
+
+        <h2 id="measure-the-room">
+          1. Measure the complete dining area
+        </h2>
+
+        <p>
+          Record the usable width and length of the room rather than only
+          its total dimensions. Doors, windows, columns, radiators,
+          curtains and architectural details may reduce the practical
+          furniture area.
+        </p>
+
+        <p>
+          The table must leave enough space for chairs to move backward
+          and for people to walk behind seated guests. Approximately
+          90 centimetres of circulation around active sides can be a useful
+          planning reference, although the final requirement depends on
+          chair dimensions and the architecture of the room.
+        </p>
+
+        <h3>Check the delivery route</h3>
+
+        <p>
+          Measure entrance doors, corridors, stairways and lift access.
+          The table top, table base, console and chairs must all reach the
+          room safely. Narrow access conditions should be communicated
+          before production and international delivery are planned.
+        </p>
+
+        <h2 id="seating-capacity">
+          2. Determine the seating capacity you need
+        </h2>
+
+        <p>
+          Decide whether the dining room will normally serve four, six,
+          eight or more people. Selecting an oversized table for rare
+          occasions can reduce comfort throughout the rest of the year.
+        </p>
+
+        <p>
+          A six-chair composition often works well in balanced dining
+          areas, while larger rooms may accommodate eight or more chairs.
+          Chair width matters as much as table length because broad
+          upholstered chairs require more space.
+        </p>
+
+        <h3>Check the usable space beneath the table</h3>
+
+        <p>
+          Chairs must fit between the table supports without colliding
+          with legs, bases or decorative elements. Confirm the usable
+          seating area before deciding how many chairs can be placed
+          comfortably.
+        </p>
+
+        <h2 id="table-shape">
+          3. Choose a table shape that supports the room
+        </h2>
+
+        <p>
+          Rectangular tables generally suit long dining rooms and create a
+          clear formal axis. They can also coordinate naturally with a
+          console positioned along a parallel wall.
+        </p>
+
+        <p>
+          Round tables encourage conversation and can soften interiors
+          dominated by straight architectural lines. Square tables may
+          work in compact or nearly square rooms, but oversized square
+          tables can become visually heavy.
+        </p>
+
+        <p>
+          Consider ceiling details, chandelier placement, flooring
+          patterns and the direction from which guests enter. The table
+          should strengthen the architecture rather than compete with it.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            Explore the
+            <a href={localizedPath("/dining-rooms", language)}>
+              VIRELLAART luxury dining room collection
+            </a>
+            or discover our
+            <a
+              href={localizedPath(
+                "/collections/modern/dining-rooms",
+                language,
+              )}
+            >
+              modern dining room sets
+            </a>.
+          </p>
+        </div>
+
+        <h2 id="dining-chairs">
+          4. Evaluate dining chairs for comfort
+        </h2>
+
+        <p>
+          Dining chairs determine both the rhythm and comfort of the room.
+          Consider seat height, back support, chair width and the
+          relationship between chair arms and the underside of the table.
+        </p>
+
+        <p>
+          High-backed chairs create a formal presence but may appear heavy
+          in smaller interiors. Lower silhouettes preserve a more open
+          view. Upholstered chairs can introduce softness and comfort,
+          while structured designs may create a more architectural look.
+        </p>
+
+        <h3>Review every visible angle</h3>
+
+        <p>
+          Dining chairs are seen from the front, side and rear. The back
+          design becomes especially important in open-plan homes where
+          the dining area is visible from the living room.
+        </p>
+
+        <h2 id="complete-layout">
+          5. Plan the console, mirror and lighting
+        </h2>
+
+        <p>
+          A complete dining room may include a table, chairs, console and
+          mirror. Every piece should have a purpose and sufficient space
+          around it. Adding every available component is not always the
+          most elegant solution.
+        </p>
+
+        <p>
+          A console provides storage and a practical serving surface. Its
+          depth must not reduce the circulation route behind the dining
+          chairs. A mirror can introduce light and visual depth, but its
+          proportions should correspond to the console and wall.
+        </p>
+
+        <h3>Align the chandelier with the table</h3>
+
+        <p>
+          The principal light fixture should normally align with the
+          dining table rather than simply the geometric centre of the
+          room. Its scale should complement the table without blocking
+          sightlines between guests.
+        </p>
+
+        <h2 id="design-style">
+          6. Select the right design character
+        </h2>
+
+        <h3>Modern luxury dining rooms</h3>
+
+        <p>
+          Modern dining rooms usually rely on controlled silhouettes,
+          clean geometry and carefully balanced surfaces. Their visual
+          impact may come from proportion and contrast rather than
+          extensive ornament.
+        </p>
+
+        <h3>Luxury-classic dining rooms</h3>
+
+        <p>
+          Luxury-classic interiors may support more expressive shapes,
+          decorative details and a stronger formal presence. The table,
+          chairs and console should still share a consistent design
+          language.
+        </p>
+
+        <p>
+          Furniture should communicate with the architecture, flooring,
+          wall treatment and lighting. The major elements do not need to
+          be identical, but they should appear intentionally related.
+        </p>
+
+        <h2 id="ordering">
+          7. Prepare customization and delivery details
+        </h2>
+
+        <p>
+          Made-to-order furniture requires accurate communication.
+          Confirm the selected model, chair quantity, preferred table
+          dimensions, destination and delivery access before production.
+        </p>
+
+        <p>
+          Separate essential requirements from decorative preferences.
+          Room dimensions, seating capacity and access are essential.
+          Suitable design options can then be discussed according to the
+          chosen model.
+        </p>
+
+        <p>
+          VIRELLAART manufactures furniture in Türkiye and works with
+          international clients through made-to-order production and
+          worldwide delivery planning. Available options depend on the
+          selected model and individual project requirements.
+        </p>
+
+        <h3>Information to provide for a quotation</h3>
+
+        <ul>
+          <li>The selected model or product link</li>
+          <li>The required number of chairs</li>
+          <li>The preferred dining table dimensions</li>
+          <li>The destination city and country</li>
+          <li>Room and delivery-access measurements</li>
+          <li>Any essential customization request</li>
+        </ul>
+
+        <h2>Final dining room buying checklist</h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The usable dining area has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Chair movement and circulation have been considered.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The required seating capacity has been confirmed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The table shape suits the room proportions.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Chair dimensions work with the table structure.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Console depth and storage needs are suitable.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Destination and delivery access are confirmed.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">
+            VIRELLAART guidance
+          </p>
+
+          <h2>
+            Build the dining room around proportion and real use
+          </h2>
+
+          <p>
+            A refined dining room begins with the correct scale. Measure
+            the space, determine the seating capacity and select a table
+            shape that supports the architecture. Style and decorative
+            details should complete this foundation rather than replace it.
+          </p>
+
+          <p>
+            VIRELLAART helps international clients discuss suitable dining
+            room models, configurations and delivery requirements before
+            an order is confirmed.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20dining%20room%20set."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="faq"
+          aria-labelledby="faq-title"
+        >
+          <p class="article-category">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Luxury dining room set FAQ
+          </h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+
+  .article-hero h1.dining-article-title {
+    max-width: 900px;
+    font-size: clamp(44px, 5.8vw, 72px);
+  }
+
+  .dining-article-title span {
+    display: block;
+  }
+
+  @media (max-width: 620px) {
+    .dining-article-title span {
+      display: inline;
+    }
+  }</style>

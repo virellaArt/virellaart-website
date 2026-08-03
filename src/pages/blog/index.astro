@@ -69,7 +69,7 @@ const pageDescription =
     <section class="articles-section">
       <div class="journal-shell">
         <div class="section-heading">
-          <p class="eyebrow dark">Latest guide</p>
+          <p class="eyebrow dark">Latest guides</p>
           <h2>Furniture knowledge for considered decisions</h2>
         </div>
 
@@ -126,7 +126,64 @@ const pageDescription =
               )}
             >
               Read the complete guide
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <a
+            class="article-image"
+            href={localizedPath(
+              "/blog/how-to-choose-a-luxury-dining-room-set",
+              language,
+            )}
+            aria-label="Read How to Choose a Luxury Dining Room Set"
+          >
+            <img
+              src="/dining-room.webp"
+              alt="Luxury dining room with an elegant table, coordinated chairs and refined interior styling"
+              width="1086"
+              height="1448"
+              loading="lazy"
+            />
+          </a>
+
+          <div class="article-card-content">
+            <p class="article-category">
+              Luxury Furniture Buying Guide
+            </p>
+
+            <h2>
+              <a
+                href={localizedPath(
+                  "/blog/how-to-choose-a-luxury-dining-room-set",
+                  language,
+                )}
+              >
+                How to Choose a Luxury Dining Room Set
+              </a>
+            </h2>
+
+            <p>
+              Learn how to evaluate dining table size, seating capacity,
+              chair comfort, room layout and design character before
+              selecting a luxury dining room set.
+            </p>
+
+            <div class="article-meta">
+              <span>August 3, 2026</span>
+              <span>9 min read</span>
+            </div>
+
+            <a
+              class="read-link"
+              href={localizedPath(
+                "/blog/how-to-choose-a-luxury-dining-room-set",
+                language,
+              )}
+            >
+              Read the complete guide
+              <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </article>
@@ -327,4 +384,7 @@ const pageDescription =
       min-height: 310px;
     }
   }
-</style>
+
+  .article-card + .article-card {
+    margin-top: 46px;
+  }</style>
