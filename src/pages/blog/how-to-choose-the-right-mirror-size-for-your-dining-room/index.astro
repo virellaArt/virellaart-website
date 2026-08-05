@@ -1,5 +1,11 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
 
 const title =
   "How to Choose the Right Mirror Size for Your Dining Room";
@@ -7,42 +13,85 @@ const title =
 const description =
   "Learn how to choose the right mirror size for your dining room with expert guidance on proportions, placement, reflections and luxury interior balance.";
 
-const image = "/dining-room-mirror-size.webp";
+const publishedTime = "2026-08-03T00:00:00+03:00";
+const modifiedTime = publishedTime;
 
-const imageAlt =
-  "Luxury dining room with a dining table, elegant chairs and a statement wall mirror by VIRELLAART";
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-the-right-mirror-size-for-your-dining-room/";
 
-const publishedAt = "August 3, 2026";
-const readTime = "10 min read";
-const wordCount = 1733;
-
-const faq = [
+const alternateURLs = [
   {
-    question: "What size mirror should I choose for a dining room wall?",
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "What size mirror should I choose for a dining room wall?",
     answer:
-      "The right size depends on the width of the wall section, the console or sideboard below it and the visual scale of the dining room. In many cases, the mirror should be narrower than the furniture beneath it and large enough to feel intentional."
-  },  {
-    question: "Should a dining room mirror be wider than the console?",
+      "The right size depends on the width of the wall section, the console or sideboard below it and the visual scale of the dining room. In many cases, the mirror should be narrower than the furniture beneath it and large enough to feel intentional.",
+  },
+  {
+    question:
+      "Should a dining room mirror be wider than the console?",
     answer:
-      "Usually no. A dining room mirror generally looks more balanced when it is narrower than the console or sideboard below it. This helps the arrangement feel grounded and proportionate."
-  },  {
-    question: "Can a mirror make a dining room look bigger?",
+      "Usually no. A dining room mirror generally looks more balanced when it is narrower than the console or sideboard below it. This helps the arrangement feel grounded and proportionate.",
+  },
+  {
+    question:
+      "Can a mirror make a dining room look bigger?",
     answer:
-      "Yes. A well-placed mirror can reflect light, expand the sense of depth and make the dining room feel brighter and more spacious, especially when it reflects architectural details or a chandelier."
+      "Yes. A well-placed mirror can reflect light, expand the sense of depth and make the dining room feel brighter and more spacious, especially when it reflects architectural details or a chandelier.",
   },
 ];
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  image={image}
-  imageAlt={imageAlt}
-  publishedAt={publishedAt}
-  readTime={readTime}
-  wordCount={wordCount}
-  faq={faq}
+  {title}
+  {description}
+  image="/dining-room-mirror-size.webp"
+  imageAlt="Luxury dining room with a dining table, elegant chairs and a statement wall mirror by VIRELLAART"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Dining Room Planning Guides"
+  keywords={[
+    "dining room mirror size",
+    "mirror size above console",
+    "dining room wall mirror",
+    "luxury dining room mirror",
+    "mirror proportions",
+    "statement mirror size",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={10}
+  wordCount={1733}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
 >
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until its
+            localized edition is published.
+          </p>
+
+          <a href={englishArticleURL}>
+            Open the English article
+          </a>
+        </aside>
+      )
+    }
+
   <h1>How to Choose the Right Mirror Size for Your Dining Room</h1>
 
   <p>
@@ -302,4 +351,5 @@ const faq = [
     atmosphere of the entire interior. With the correct scale, the mirror
     becomes a quiet but powerful part of the room’s luxury identity.
   </p>
+  </article>
 </ArticleLayout>
