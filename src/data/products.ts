@@ -806,7 +806,7 @@ images: [
 ],
 imageAlts: {
   en: [
-    "Aspendos taupe TV console with rounded corners, marble-look top, textured side panels and sculptural cylindrical pedestal bases in a luxury living room",
+    "Aspendos taupe TV console with rounded corners, a marble-look top, textured panels and cylindrical pedestal bases",
     "Close-up of the Aspendos TV console showing its pale marble-look top, smooth taupe doors, textured side panel and cylindrical pedestal base",
   ],
 },
@@ -870,7 +870,7 @@ moontv: {
 ],
   imageAlts: {
     en: [
-      "Complete Moon TV wall unit with a taupe media panel, integrated display shelving, tall side towers and a coordinated low console with gold-tone details",
+      "Moon TV wall unit with a taupe media panel, display shelves, tall side towers and a coordinated low console",
       "Close-up of the Moon taupe TV console with a pale marble-look top, curved embossed door lines, gold-tone handles and slim metallic legs",
     ],
   },
@@ -1421,7 +1421,7 @@ milanoBlueTv: {
   ],
   imageAlts: {
     en: [
-      "Milano Blue dark blue and cream TV console with a pale marble-look top and doors, ornate classical carving and inset close-ups of panel, surface and leg details",
+      "Milano Blue TV console in dark blue and cream with a pale marble-look top, carved details and panelled doors",
     ],
   },
 
@@ -1447,7 +1447,7 @@ milanoTv: {
   ],
   imageAlts: {
     en: [
-      "Milano cream and gold-tone TV console with richly carved classical framing, decorative panel doors and cabriole legs beneath a large marble-look wall panel",
+      "Milano cream and gold-tone TV console with carved classical framing, panelled doors and cabriole legs",
     ],
   },
 
@@ -1515,7 +1515,7 @@ linaDining: {
   ],
     imageAlts: {
       en: [
-        "Complete Lina dining room set with a rectangular cream marble-look table, six upholstered chairs and a matching fluted console beneath a crystal chandelier",
+        "Lina dining room set with a cream marble-look table, six upholstered chairs and a matching fluted console",
         "Close-up of the Lina dining table corner with a glossy cream top, dark wood trim, fluted pedestal base and gold-tone decorative accents",
         "Lina rectangular dining table with dual fluted pedestal bases, upholstered high-back chairs and matching console in the background",
         "Front view of the Lina dining console with dark wood framing, vertically fluted cream doors, diamond accents and slender decorative legs",
@@ -1839,7 +1839,7 @@ sultanGreenBedroom: {
   ],
   imageAlts: {
     en: [
-      "Complete Sultan Bedroom (Green Edition) collection with an ivory tufted bed, ornate wardrobe, mirrored dressing table, nightstands and upholstered stool",
+      "Sultan Green bedroom set with an ivory tufted bed, ornate wardrobe, mirrored dressing table, nightstands and stool",
       "Sultan Bedroom (Green Edition) arrangement with an ivory button-tufted bed, matching nightstand and large wardrobe with dark green marble-look accents",
       "Close-up of the Sultan Green bedside cabinet with cream panels, dark green marble-look framing, ornate gold-tone carving and mirrored display niche",
       "Sultan Green dressing table with cream cabinetry, dark green marble-look trim, elaborate gold-tone mirror and matching upholstered stool",
@@ -2173,9 +2173,9 @@ sultanGreenDining: {
     slug: "prada-sofa-set",
     category: "living-rooms",
     style: "modern",
-    subtitle: "Organic Curves with a Refined Modern Presence",
+    subtitle: "Sculptural Curves for Refined Modern Living",
     description:
-      "PRADA Sofa Set defines a contemporary living room through low-profile proportions, rounded seating forms and a balanced architectural composition. The 3+3+1+1 arrangement creates an elegant conversation area for spacious modern interiors, while the coordinated center table completes the setting. A distinctive choice for customers searching for a modern curved sofa set, luxury contemporary seating and designer living room furniture from VIRELLAART.",
+      "PRADA Sofa Set brings sculptural comfort to contemporary living spaces with two coordinated three-seat sofas and two matching armchairs. The balanced 3+3+1+1 composition combines softly rounded silhouettes, neutral upholstery and refined dark accents to create an elegant conversation area for modern interiors. Manufactured by VIRELLAART in Istanbul, PRADA offers a sophisticated manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
     images: [
       "/prada-sofa-set-01.webp",
       "/prada-sofa-set-02.webp",
@@ -2184,16 +2184,16 @@ sultanGreenDining: {
     ],
     imageAlts: {
       en: [
-        "PRADA modern curved sofa set in a luxury neutral living room with coordinated round center table",
-        "PRADA 3+3+1+1 living room sofa set with rounded seats and low-profile contemporary design",
-        "PRADA luxury contemporary sofa collection with organic curves viewed from a side angle",
-        "PRADA Sofa Set presentation showing sculptural seating forms and matching modern coffee table",
+        "PRADA modern 3+3+1+1 sofa set in a neutral luxury living room with curved sofas and matching armchairs",
+        "PRADA curved three-seat sofa with rounded upholstery and a sculptural contemporary silhouette",
+        "PRADA modern armchair with rounded neutral upholstery and refined dark trim",
+        "PRADA sofa set arranged around contemporary nesting coffee tables in an elegant living room",
       ],
     },
     prices: [
       {
         label: "3+3+1+1 Sofa Set",
-        price: "$3,100",
+        price: "$2,400",
         featured: true,
       },
       {
@@ -2202,7 +2202,6 @@ sultanGreenDining: {
       },
     ],
   },
-
   vitoSofaSet: {
     name: "Vito Sofa Set",
     slug: "vito-sofa-set",
