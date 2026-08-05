@@ -79,9 +79,14 @@ function routeImages(
 
 export const GET = () => {
   const localizedUrls = indexableRoutes
-    .flatMap((route) =>
-      languageCodes.map((language) => {
-        const alternates = languageCodes
+    .flatMap((route) => {
+      const routeLanguages =
+        route === "blog" || route.startsWith("blog/")
+          ? (["en"] as const)
+          : languageCodes;
+
+      return routeLanguages.map((language) => {
+        const alternates = routeLanguages
           .map(
             (alternateLanguage) =>
               `<xhtml:link rel="alternate" hreflang="${alternateLanguage}" href="${absoluteURL(route, alternateLanguage)}" />`,
@@ -106,8 +111,8 @@ export const GET = () => {
           ${images}
         </url>
         `;
-      }),
-    )
+      });
+    })
     .join("");
 
   const marketUrls = marketPages
