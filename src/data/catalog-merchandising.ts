@@ -1,4 +1,4 @@
-﻿import { products } from "./products";
+import { products } from "./products";
 
 export type ProductKey = keyof typeof products;
 export type CatalogCharacter = "classic" | "contemporary";
@@ -71,6 +71,10 @@ export const featuredCollections = [
   {
     key: "kanoModernBedroomSet",
     href: "/collections/modern/bedrooms/kano-modern-bedroom-set",
+  },
+  {
+    key: "milanoModernBedroomSet",
+    href: "/collections/modern/bedrooms/milano-modern-bedroom-set",
   },
 ] as const satisfies readonly {
   key: ProductKey;
