@@ -670,8 +670,21 @@ const includedPrice =
    SEO DATA
 ========================= */
 
-const productDescription =
+const baseProductDescription =
   getProductDescription(product, language);
+const modernSeoProductName =
+  `${collectionCopy.modern} ${translatedProductName}`;
+const productDescription =
+  productStyle === "modern" && language !== "en"
+    ? baseProductDescription.includes(
+        translatedProductName,
+      )
+      ? baseProductDescription.replace(
+          translatedProductName,
+          modernSeoProductName,
+        )
+      : `${modernSeoProductName}. ${baseProductDescription}`
+    : baseProductDescription;
 
 const pageDescription =
   getSeoDescription(
@@ -679,7 +692,9 @@ const pageDescription =
     language,
   );
 const pageTitle =
-  `${translatedProductName} | ${categoryName}`;
+  productStyle === "modern"
+    ? `${translatedProductName} | ${collectionCopy.modern} ${categoryName}`
+    : `${translatedProductName} | ${categoryName}`;
 
 const canonicalURL = new URL(
   Astro.url.pathname,
