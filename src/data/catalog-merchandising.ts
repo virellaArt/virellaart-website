@@ -1,4 +1,4 @@
-import { products } from "./products";
+﻿import { products } from "./products";
 
 export type ProductKey = keyof typeof products;
 export type CatalogCharacter = "classic" | "contemporary";
@@ -53,36 +53,24 @@ const productBadges: Partial<
 
 export const featuredCollections = [
   {
-    key: "valencia",
-    href: "/living-rooms/valencia",
+    key: "burgazSofaSet",
+    href: "/collections/modern/sofa-sets/burgaz-sofa-set",
   },
   {
-    key: "delux",
-    href: "/living-rooms/delux",
+    key: "hunkarSofaSet",
+    href: "/collections/modern/sofa-sets/hunkar-sofa-set",
   },
   {
-    key: "sultanSofa",
-    href: "/living-rooms/sultan-sofa",
+    key: "ibizaSofaSet",
+    href: "/collections/modern/sofa-sets/ibiza-sofa-set",
   },
   {
-    key: "sultanGreenDining",
-    href: "/dining-rooms/sultan-green",
+    key: "zenaSofaSet",
+    href: "/collections/modern/sofa-sets/zena-sofa-set",
   },
   {
-    key: "milanoBedroom",
-    href: "/bedrooms/milano",
-  },
-  {
-    key: "aspendosDining",
-    href: "/dining-rooms/aspendos",
-  },
-  {
-    key: "milanoTv",
-    href: "/tv-units/milano",
-  },
-  {
-    key: "marsilyaBedroom",
-    href: "/bedrooms/marsilya",
+    key: "kanoModernBedroomSet",
+    href: "/collections/modern/bedrooms/kano-modern-bedroom-set",
   },
 ] as const satisfies readonly {
   key: ProductKey;
