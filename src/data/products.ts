@@ -2937,4 +2937,42 @@ sultanGreenDining: {
       },
     ],
   },
+
+  elegantSofaSet: {
+    name: "Elegant Sofa Set",
+    slug: "elegant-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Sculptural Comfort with Refined Contemporary Lines",
+    description:
+      "ELEGANT Sofa Set brings a sophisticated contemporary character to modern living spaces through softly rounded seating forms, layered cushions and a balanced 3+3+1+1 arrangement. Two coordinated three-seat sofas and two sculptural armchairs create an inviting conversation area, while the neutral upholstery and refined contrasting details strengthen its elegant visual presence. Manufactured by VIRELLAART in Istanbul, ELEGANT offers a manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
+    images: [
+      "/elegant-sofa-set-01.webp",
+      "/elegant-sofa-set-02.webp",
+      "/elegant-sofa-set-03.webp",
+      "/elegant-sofa-set-04.webp",
+      "/elegant-sofa-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "ELEGANT modern 3+3+1+1 sofa set in a luxury neutral living room with a coordinated center table",
+        "ELEGANT three-seat sofa with softly rounded upholstery, layered cushions and refined contrasting details",
+        "ELEGANT sculptural modern armchair with a curved back, deep seat and neutral upholstery",
+        "ELEGANT contemporary three-seat sofa in a soft blue-grey tone with rounded arms and layered cushions",
+        "ELEGANT complete sofa set with two sofas, two armchairs and a center table in a refined modern interior",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,950",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
