@@ -2901,4 +2901,40 @@ sultanGreenDining: {
       },
     ],
   },
+
+  milazzoSofaSet: {
+    name: "Milazzo Sofa Set",
+    slug: "milazzo-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Soft Architectural Lines for Refined Modern Living",
+    description:
+      "MILAZZO Sofa Set brings a calm and sophisticated character to contemporary living spaces with its softly rounded silhouettes, layered cushions and refined contrasting side details. The balanced 3+3+1+1 arrangement combines two coordinated three-seat sofas with two sculptural armchairs to create an elegant conversation area, while the matching center table completes the composition. Manufactured by VIRELLAART in Istanbul, MILAZZO offers a distinctive manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
+    images: [
+      "/milazzo-sofa-set-01.webp",
+      "/milazzo-sofa-set-02.webp",
+      "/milazzo-sofa-set-03.webp",
+      "/milazzo-sofa-set-04.webp",
+    ],
+    imageAlts: {
+      en: [
+        "MILAZZO modern 3+3+1+1 sofa set in an elegant neutral living room with a coordinated center table",
+        "MILAZZO three-seat sofa with rounded ivory upholstery, layered cushions and contrasting side panels",
+        "MILAZZO modern three-seat sofa shown from the front with soft curves and neutral upholstery",
+        "MILAZZO sculptural armchair with a curved high back, ivory seat and contrasting outer upholstery",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,650",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
