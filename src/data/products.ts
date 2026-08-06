@@ -2975,4 +2975,40 @@ sultanGreenDining: {
       },
     ],
   },
+
+  avellaBedroomSet: {
+    name: "Avella Bedroom Set",
+    slug: "avella-bedroom-set",
+    category: "bedrooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Warm Contemporary Elegance for Refined Bedrooms",
+    description:
+      "AVELLA Bedroom Set creates a calm and sophisticated bedroom atmosphere with clean architectural lines, softly rounded forms and warm contrasting accents. The complete set includes a wardrobe, storage bed, dresser, two nightstands, pouf, chest of drawers and full-length mirror. Manufactured by VIRELLAART in Istanbul, AVELLA offers a refined manufacturer-direct solution for customers seeking modern luxury bedroom furniture with worldwide delivery.",
+    images: [
+      "/avella-bedroom-set-01.webp",
+      "/avella-bedroom-set-02.webp",
+      "/avella-bedroom-set-03.webp",
+      "/avella-bedroom-set-04.webp",
+      "/avella-bedroom-set-05.webp",
+      "/avella-bedroom-set-06.webp",
+    ],
+    imageAlts: {
+      en: [
+        "AVELLA modern bedroom set with storage bed, wardrobe and coordinated furniture in a warm luxury interior",
+        "AVELLA bedroom wardrobe and storage furniture with clean modern lines and warm contrasting accents",
+        "AVELLA storage bed with upholstered headboard, coordinated nightstands and contemporary wall panel",
+        "AVELLA dresser with rounded mirror, matching pouf and modern chest of drawers",
+        "AVELLA storage bed detail with upholstered headboard, layered bedding and warm accent bench",
+        "AVELLA complete bedroom set presentation with wardrobe, storage bed, dresser, nightstands, pouf and mirrors",
+      ],
+    },
+    prices: [
+      {
+        label: "Complete Bedroom Set",
+        price: "$3,600",
+        featured: true,
+      },
+    ],
+  },
 };
