@@ -3011,4 +3011,42 @@ sultanGreenDining: {
       },
     ],
   },
+
+  retroBedroomSet: {
+    name: "Retro Bedroom Set",
+    slug: "retro-bedroom-set",
+    category: "bedrooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Minimal Modern Design with Timeless Bedroom Harmony",
+    description:
+      "RETRO Bedroom Set creates a refined modern bedroom atmosphere with clean architectural lines, balanced proportions and elegant storage solutions. The complete set includes a wardrobe, storage bed, dresser, two nightstands and upholstered pouf. Manufactured by VIRELLAART in Istanbul, RETRO offers a premium manufacturer-direct bedroom solution with worldwide delivery.",
+    images: [
+      "/retro-bedroom-set-01.webp",
+      "/retro-bedroom-set-02.webp",
+      "/retro-bedroom-set-03.webp",
+      "/retro-bedroom-set-04.webp",
+      "/retro-bedroom-set-05.webp",
+      "/retro-bedroom-set-06.webp",
+      "/retro-bedroom-set-07.webp",
+    ],
+    imageAlts: {
+      en: [
+        "RETRO modern bedroom set with storage bed, wardrobe and elegant furniture composition in a luxury interior",
+        "RETRO bedroom wardrobe with clean modern lines and premium storage design",
+        "RETRO storage bed with upholstered headboard and coordinated modern bedroom furniture",
+        "RETRO dresser with mirror and matching contemporary bedroom details",
+        "RETRO nightstand and storage bed detail with refined modern bedroom styling",
+        "RETRO wardrobe and bedroom furniture arrangement in a sophisticated interior",
+        "RETRO complete bedroom set presentation with wardrobe, bed, dresser, nightstands and pouf",
+      ],
+    },
+    prices: [
+      {
+        label: "Complete Bedroom Set",
+        price: "$3,800",
+        featured: true,
+      },
+    ],
+  },
 };
