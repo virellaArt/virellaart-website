@@ -3049,4 +3049,40 @@ sultanGreenDining: {
       },
     ],
   },
+
+  lazioBedroomSet: {
+    name: "Lazio Bedroom Set",
+    slug: "lazio-bedroom-set",
+    category: "bedrooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Warm Minimalism with Refined Contemporary Details",
+    description:
+      "LAZIO Bedroom Set creates a calm and sophisticated bedroom atmosphere through softly rounded forms, warm wood accents and clean contemporary lines. The complete set includes a spacious wardrobe, storage bed, dresser, two coordinated nightstands and upholstered pouf. Manufactured by VIRELLAART in Istanbul, LAZIO offers a refined manufacturer-direct solution for customers seeking premium modern bedroom furniture with worldwide delivery.",
+    images: [
+      "/lazio-bedroom-set-01.webp",
+      "/lazio-bedroom-set-02.webp",
+      "/lazio-bedroom-set-03.webp",
+      "/lazio-bedroom-set-04.webp",
+      "/lazio-bedroom-set-05.webp",
+      "/lazio-bedroom-set-06.webp",
+    ],
+    imageAlts: {
+      en: [
+        "LAZIO modern bedroom set with storage bed, wardrobe and coordinated furniture in a warm luxury interior",
+        "LAZIO complete bedroom arrangement with upholstered storage bed, wardrobe, dresser and nightstands",
+        "LAZIO modern nightstand beside an upholstered storage bed with warm wood and neutral finishes",
+        "LAZIO storage bed with a softly upholstered headboard, rounded base and coordinated nightstands",
+        "LAZIO modern wardrobe with mirrored doors, neutral panels and warm wood accent details",
+        "LAZIO dresser with rounded mirror, coordinated drawers and upholstered pouf in a modern bedroom",
+      ],
+    },
+    prices: [
+      {
+        label: "Complete Bedroom Set",
+        price: "$3,900",
+        featured: true,
+      },
+    ],
+  },
 };
