@@ -2863,4 +2863,42 @@ sultanGreenDining: {
       },
     ],
   },
+
+  trendSofaSet: {
+    name: "Trend Sofa Set",
+    slug: "trend-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Soft Contemporary Comfort with Sculptural Curves",
+    description:
+      "TREND Sofa Set creates a refined contemporary living atmosphere with softly rounded silhouettes, generous cushions and a balanced 3+3+1+1 seating arrangement. Two coordinated three-seat sofas and two matching armchairs form an elegant conversation area, while the warm neutral upholstery and subtle dark accents strengthen its modern character. Manufactured by VIRELLAART in Istanbul, TREND is a manufacturer-direct choice for customers seeking sophisticated modern living room furniture with worldwide delivery.",
+    images: [
+      "/trend-sofa-set-01.webp",
+      "/trend-sofa-set-02.webp",
+      "/trend-sofa-set-03.webp",
+      "/trend-sofa-set-04.webp",
+      "/trend-sofa-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "TREND modern 3+3+1+1 sofa set in a bright luxury living room with neutral seating and center table",
+        "TREND three-seat sofa detail with rounded arms, deep cushions and warm ivory upholstery",
+        "TREND modern armchair with a softly curved silhouette, deep seat cushion and dark lower accent",
+        "TREND three-seat sofa with rounded contemporary lines, layered cushions and neutral upholstery",
+        "TREND complete sofa set with two sofas, two armchairs and a center table in a luxury interior",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$2,650",
+        featured: true,
+      },
+      {
+        label: "Center Table",
+        price: "$450",
+      },
+    ],
+  },
 };
