@@ -1388,6 +1388,221 @@ const manufacturingContent: Record<
       "صور التصنيع في هذه الصفحة تمثيلية لمراحل الإنتاج ويمكن استكمالها لاحقاً بصور ومقاطع فيديو أصلية إضافية.",
   },
 
+  de: {
+    seo: {
+      title:
+        "Luxusmöbelherstellung in Istanbul | VIRELLAART",
+      description:
+        "Entdecken Sie die Luxusmöbelherstellung von VIRELLAART in Istanbul – von Designentwicklung und dekorativer Handwerkskunst über Polsterung und Qualitätskontrolle bis zu Schutzverpackung und internationaler Lieferung.",
+    },
+
+    hero: {
+      eyebrow: "VIRELLAART Fertigung",
+      title: "Luxusmöbelherstellung",
+      highlight: "Von Istanbul in die Welt",
+      description:
+        "VIRELLAART verbindet Möbeldesign, Fertigungskompetenz, präzise Handwerkskunst und internationalen Service für exklusive Residenzen, Villen und anspruchsvolle Interior-Projekte weltweit.",
+      processButton: "Unseren Prozess entdecken",
+      projectButton: "Projekt besprechen",
+      location: "Istanbul, Türkiye",
+      manufacturer: "Hersteller von Luxusmöbeln",
+      imageAlt:
+        "VIRELLAART Luxusmöbelfertigung in Istanbul",
+      whatsappMessage:
+        "Hallo VIRELLAART, ich möchte Informationen über Ihre Luxusmöbelherstellung erhalten.",
+    },
+
+    intro: {
+      eyebrow: "Direkter Hersteller",
+      title: "Mehr als ein Möbelanbieter",
+      highlight: "Eine herstellergeführte Erfahrung",
+      lead:
+        "VIRELLAART ist ein in Istanbul ansässiger Hersteller von Luxusmöbeln und entwickelt vollständige Kollektionen für anspruchsvolle Residenzen, Villen und private Interieurs.",
+      paragraphs: [
+        "Unsere Arbeit geht über die Präsentation einzelner Produkte hinaus. Wir entwickeln aufeinander abgestimmte Kollektionen für Wohnzimmer, Esszimmer, Schlafzimmer und TV-Möbel mit einer konsistenten Designsprache.",
+        "Von der ersten Produktanfrage über die Produktionsvorbereitung und Qualitätsprüfung bis zur Schutzverpackung und Planung der internationalen Lieferung begleitet unser Team den gesamten Prozess.",
+      ],
+      facts: [
+        {
+          label: "Standort",
+          value: "Istanbul, Türkiye",
+        },
+        {
+          label: "Spezialisierung",
+          value: "Luxusmöbelkollektionen",
+        },
+        {
+          label: "Kundenprofil",
+          value: "Private und internationale Kunden",
+        },
+        {
+          label: "Service",
+          value: "Unterstützung bei weltweiter Lieferung",
+        },
+      ],
+      imageAlt:
+        "VIRELLAART Design- und Produktionsplanung für Luxusmöbel",
+      imageLabel: "Designentwicklung",
+      imageCaption:
+        "Kollektionen für vollständig abgestimmte Luxusinterieurs",
+    },
+
+    process: {
+      eyebrow: "Unser Fertigungsansatz",
+      title: "Präzision hinter",
+      highlight: "jeder Kollektion",
+      description:
+        "Jede Phase trägt zur Optik, zum Komfort, zur Konsistenz und zur finalen Präsentation der fertigen Möbelkollektion bei.",
+      cards: [
+        {
+          number: "01",
+          label: "Designentwicklung",
+          title:
+            "Möbel für vollständig abgestimmte Interieurs",
+          description:
+            "Jede VIRELLAART Kollektion beginnt mit Proportion, Funktion, visueller Harmonie und koordinierter Produktplanung. Unser Designansatz konzentriert sich auf vollständige Wohnzimmer-, Esszimmer-, Schlafzimmer- und TV-Möbelkollektionen für anspruchsvolle Interieurs.",
+          alt:
+            "VIRELLAART Entwicklung von Luxusmöbeldesign in Istanbul",
+        },
+        {
+          number: "02",
+          label: "Dekorative Handwerkskunst",
+          title:
+            "Detailreiche Verzierungen und ausdrucksstarke Formen",
+          description:
+            "Dekorative Formen und ausgearbeitete Details entstehen mit besonderem Augenmerk auf Balance, Tiefe und den gesamten visuellen Charakter. Jedes Element wird als Teil der vollständigen Möbelkollektion betrachtet.",
+          alt:
+            "Dekorative Detailarbeit bei der Herstellung von Luxusmöbeln",
+        },
+        {
+          number: "03",
+          label: "Polsterung und Veredelung",
+          title:
+            "Komfort bis ins Detail verfeinert",
+          description:
+            "Die Polsterung verbindet konstruktiven Komfort, sorgfältig ausgewählte Stoffe, präzise Nähte und dekorative Veredelungen passend zum Charakter der jeweiligen Kollektion.",
+          alt:
+            "Polsterung und Veredelung von Luxusmöbeln",
+        },
+        {
+          number: "04",
+          label: "Qualitätskontrolle",
+          title:
+            "Jede Kollektion wird vor der Verpackung geprüft",
+          description:
+            "Fertiggestellte Möbel werden vor der Schutzverpackung visuell geprüft. Dekorative Oberflächen, Polsterung, aufeinander abgestimmte Elemente und die Gesamtpräsentation werden vor dem Transport kontrolliert.",
+          alt:
+            "VIRELLAART Qualitätskontrolle für Luxusmöbel",
+        },
+      ],
+    },
+
+    flow: {
+      eyebrow: "Vom Design bis zur Lieferung",
+      title: "Ein strukturierter Prozess",
+      highlight: "für mehr Sicherheit",
+      steps: [
+        {
+          number: "01",
+          title: "Designprüfung",
+          description:
+            "Details der Kollektion, Abmessungen, ausgewählte Optionen und Projektanforderungen werden vor der Produktionsvorbereitung geprüft.",
+        },
+        {
+          number: "02",
+          title: "Produktionsvorbereitung",
+          description:
+            "Konstruktive, dekorative und gepolsterte Komponenten werden entsprechend der bestätigten Möbelkollektion vorbereitet.",
+        },
+        {
+          number: "03",
+          title: "Handwerkskunst und Veredelung",
+          description:
+            "Montage, dekorative Details, Polsterung und Veredelung werden mit besonderem Augenmerk auf eine konsistente Gesamtwirkung ausgeführt.",
+        },
+        {
+          number: "04",
+          title: "Prüfung und Verpackung",
+          description:
+            "Die fertige Kollektion wird geprüft und mit einer für den Transport geeigneten Schutzverpackung vorbereitet.",
+        },
+      ],
+    },
+
+    quality: {
+      eyebrow: "Qualität vor dem Versand",
+      title: "Jedes Detail geprüft",
+      highlight: "vor der Verpackung",
+      description:
+        "Fertiggestellte Möbel werden vor dem Versand geprüft. Ziel ist es, sichtbare Probleme zu erkennen und die abgestimmte Präsentation der Kollektion vor der Schutzverpackung zu kontrollieren.",
+      items: [
+        "Visuelle Prüfung dekorativer Oberflächen",
+        "Kontrolle von Polsterung und Veredelungsdetails",
+        "Prüfung der aufeinander abgestimmten Kollektionselemente",
+        "Vorbereitung für die Schutzverpackung",
+      ],
+      imageAlt:
+        "VIRELLAART Möbelprüfung vor der Schutzverpackung",
+    },
+
+    shipping: {
+      eyebrow: "Internationale Lieferung",
+      title: "Schutzverpackung und",
+      highlight: "Unterstützung beim weltweiten Versand",
+      paragraphs: [
+        "Möbelkollektionen werden mit einer Schutzverpackung für den Transport vorbereitet, die auf Produktform, fertige Oberflächen und dekorative Details abgestimmt ist.",
+        "Versandbedingungen, Lieferzeiten und Kosten werden entsprechend der ausgewählten Kollektion und dem jeweiligen Zielort geprüft.",
+      ],
+      policyButton: "Versandrichtlinie ansehen",
+      imageAlt:
+        "VIRELLAART Schutzverpackung und Versandvorbereitung für Möbel",
+    },
+
+    benefits: {
+      eyebrow: "Warum VIRELLAART",
+      title: "Eine vom Hersteller geprägte",
+      highlight: "Kundenerfahrung",
+      cards: [
+        {
+          title: "Direkte Kommunikation mit dem Hersteller",
+          description:
+            "Kommunizieren Sie während der Auswahl der Kollektion und der Bestellvorbereitung direkt mit einem in Istanbul ansässigen Hersteller von Luxusmöbeln.",
+        },
+        {
+          title: "Vollständig abgestimmte Kollektionen",
+          description:
+            "Wohnzimmer-, Esszimmer-, Schlafzimmer- und TV-Möbelkollektionen mit einer konsistenten Designidentität.",
+        },
+        {
+          title: "Unterstützung bei Individualisierungen",
+          description:
+            "Ausgewählte Anpassungsmöglichkeiten können entsprechend der Kollektion und den Anforderungen des Projekts geprüft werden.",
+        },
+        {
+          title: "Unterstützung bei weltweiter Lieferung",
+          description:
+            "Professionelle Unterstützung bei Schutzverpackung, Transportplanung und internationaler Lieferung.",
+        },
+      ],
+    },
+
+    cta: {
+      eyebrow:
+        "Private Residenzen und Interior-Projekte",
+      title: "Suchen Sie einen Hersteller",
+      highlight: "für Ihr Luxusinterieur?",
+      description:
+        "Kontaktieren Sie VIRELLAART, um Kollektion, Individualisierung, Produktionsvorbereitung und internationale Lieferung zu besprechen.",
+      whatsappButton: "Über WhatsApp kontaktieren",
+      collectionsButton: "Kollektionen entdecken",
+      whatsappMessage:
+        "Hallo VIRELLAART, ich möchte ein Luxusmöbelprojekt besprechen.",
+    },
+
+    disclosure:
+      "VIRELLAART entwirft und fertigt Luxusmöbel in Türkiye und koordiniert Qualitätskontrolle, Individualisierung und internationale Lieferung für jede Bestellung.",
+  },
+
   ro: {
     seo: {
       title:
