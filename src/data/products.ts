@@ -524,7 +524,7 @@ imageAlts: {
 
   prices: [
     {
-      label: "Marsilya Bedroom",
+      label: "Valencia Bedroom",
       price: "$5,450",
       featured: true,
     },
@@ -563,7 +563,7 @@ aspendosBedroom: {
 
   prices: [
     {
-      label: "Marsilya Bedroom",
+      label: "Aspendos Bedroom",
       price: "$5,300",
       featured: true,
     },
@@ -602,7 +602,7 @@ deluxBedroom: {
 
   prices: [
     {
-      label: "Marsilya Bedroom",
+      label: "Deluxe Bedroom",
       price: "$5,500",
       featured: true,
     },
@@ -2007,7 +2007,7 @@ sultanGreenDining: {
     style: "luxury-classic",
     subtitle: "Contemporary Luxury Bedroom Collection",
     description:
-      "The rio Marsilya Bedroom by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for rio Marsilya Bedroom pricing, customization guidance and worldwide delivery planning.",
+      "The Rio Bedroom by VIRELLAART presents a refined contemporary bedroom in warm neutral tones, pairing a softly upholstered statement bed with coordinated wardrobe, bedside and dressing pieces. Its calm architectural lines create an elegant master-suite atmosphere. Contact VIRELLAART on WhatsApp for Rio Bedroom pricing, customization guidance and worldwide delivery planning.",
     images: [
       "/riobedroom-01.webp",
       "/riobedroom-02.webp",
@@ -2026,7 +2026,7 @@ sultanGreenDining: {
     },
     prices: [
       {
-        label: "rio Marsilya Bedroom",
+        label: "Rio Bedroom",
         price: "$5,300",
         featured: true,
       },
