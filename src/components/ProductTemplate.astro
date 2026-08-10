@@ -726,10 +726,21 @@ const englishSultanGreenBedroomSeoTitle =
     ? "Sultan Green Luxury Bedroom Set"
     : null;
 
+const englishValenciaBedroomSeoTitle =
+  language === "en" &&
+  categoryKey === "bedrooms" &&
+  (
+    Astro.url.pathname === "/bedrooms/valencia/" ||
+    Astro.url.pathname === "/bedrooms/valencia"
+  )
+    ? "Valencia Luxury Bedroom Set"
+    : null;
+
 const pageTitle =
   englishAspendosTvSeoTitle ??
   englishDeluxeTvSeoTitle ??
   englishSultanGreenBedroomSeoTitle ??
+  englishValenciaBedroomSeoTitle ??
   defaultPageTitle;
 
 const canonicalURL = new URL(
