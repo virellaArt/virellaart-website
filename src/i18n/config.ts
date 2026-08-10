@@ -106,7 +106,7 @@ const translations = {
       diningRooms: {
         title: "Dining Rooms",
         description:
-          "Explore VIRELLAART luxury dining room collections created for elegant gatherings and exceptional interiors.",
+          "Explore VIRELLAART luxury dining room furniture and complete dining sets crafted in Türkiye, with customization options and worldwide delivery.",
       },
       bedrooms: {
         title: "Bedrooms",
