@@ -1,3 +1,5 @@
+import { extraManufacturingContent } from "./manufacturing-locales";
+
 export type ManufacturingContent = {
   seo: {
     title: string;
@@ -1892,6 +1894,7 @@ export function getManufacturingContent(
 ): ManufacturingContent {
   const baseContent =
     manufacturingContent[language] ??
+    extraManufacturingContent[language] ??
     manufacturingContent.en;
 
   return {
