@@ -696,53 +696,29 @@ const defaultPageTitle =
     ? `${translatedProductName} | ${collectionCopy.modern} ${categoryName}`
     : `${translatedProductName} | ${categoryName}`;
 
-const englishAspendosTvSeoTitle =
-  language === "en" &&
-  categoryKey === "tv-units" &&
-  (
-    Astro.url.pathname === "/tv-units/aspendos/" ||
-    Astro.url.pathname === "/tv-units/aspendos"
-  )
-    ? "Aspendos Luxury TV Unit"
-    : null;
+const englishProductSeoTitleByPath: Record<string, string> = {
+  "/tv-units/aspendos/": "Aspendos Luxury TV Unit",
+  "/tv-units/delux/": "Deluxe Luxury TV Unit",
+  "/bedrooms/sultan-green/": "Sultan Green Luxury Bedroom Set",
+  "/bedrooms/valencia/": "Valencia Luxury Bedroom Set",
+  "/bedrooms/sultan/": "Sultan Luxury Bedroom Set",
+};
 
-const englishDeluxeTvSeoTitle =
-  language === "en" &&
-  categoryKey === "tv-units" &&
-  (
-    Astro.url.pathname === "/tv-units/delux/" ||
-    Astro.url.pathname === "/tv-units/delux"
-  )
-    ? "Deluxe Luxury TV Unit"
-    : null;
+const normalizedProductSeoPath =
+  Astro.url.pathname.endsWith("/")
+    ? Astro.url.pathname
+    : `${Astro.url.pathname}/`;
 
-const englishSultanGreenBedroomSeoTitle =
-  language === "en" &&
-  categoryKey === "bedrooms" &&
-  (
-    Astro.url.pathname === "/bedrooms/sultan-green/" ||
-    Astro.url.pathname === "/bedrooms/sultan-green"
-  )
-    ? "Sultan Green Luxury Bedroom Set"
-    : null;
-
-const englishValenciaBedroomSeoTitle =
-  language === "en" &&
-  categoryKey === "bedrooms" &&
-  (
-    Astro.url.pathname === "/bedrooms/valencia/" ||
-    Astro.url.pathname === "/bedrooms/valencia"
-  )
-    ? "Valencia Luxury Bedroom Set"
+const englishProductSeoTitle =
+  language === "en"
+    ? englishProductSeoTitleByPath[
+        normalizedProductSeoPath
+      ] ?? null
     : null;
 
 const pageTitle =
-  englishAspendosTvSeoTitle ??
-  englishDeluxeTvSeoTitle ??
-  englishSultanGreenBedroomSeoTitle ??
-  englishValenciaBedroomSeoTitle ??
+  englishProductSeoTitle ??
   defaultPageTitle;
-
 const canonicalURL = new URL(
   Astro.url.pathname,
   "https://www.virellaart.com",
