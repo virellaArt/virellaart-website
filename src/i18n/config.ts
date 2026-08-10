@@ -116,7 +116,7 @@ const translations = {
       tvUnits: {
         title: "TV Units",
         description:
-          "Explore VIRELLAART luxury TV unit collections featuring elegant contemporary design and refined details.",
+          "Explore VIRELLAART luxury TV units and designer media furniture crafted in Türkiye, with customization options and worldwide delivery.",
       },
     },
     about: {
