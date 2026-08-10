@@ -2129,13 +2129,28 @@ export function getCategorySeoTitle(
   categoryTitle: string,
   language: Language,
 ): string {
+  if (language === "en") {
+    const englishCategorySeoTitles: Record<string, string> = {
+      "Living Rooms": "Luxury Living Room Furniture",
+      "Dining Rooms": "Luxury Dining Room Furniture",
+      Bedrooms: "Luxury Bedroom Furniture",
+      "TV Units": "Luxury TV Units & Media Furniture",
+    };
+
+    const englishTitle =
+      englishCategorySeoTitles[categoryTitle];
+
+    if (englishTitle) {
+      return `${englishTitle} | VIRELLAART`;
+    }
+  }
+
   const descriptor =
     categorySeoTitleDescriptors[language] ??
     categorySeoTitleDescriptors.en;
 
   return `${categoryTitle} | ${descriptor} | VIRELLAART`;
 }
-
 const seoDescriptionSuffixes: Record<
   Language,
   readonly [string, string]
