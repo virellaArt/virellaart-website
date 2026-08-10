@@ -2213,14 +2213,41 @@ function truncateMetaDescription(
     return description;
   }
 
+  const sentenceWindow = description.slice(0, 160);
+  const sentenceEnds = [
+    ...sentenceWindow.matchAll(/[.!?](?=\s|$)/g),
+  ];
+  const lastSentenceEnd =
+    sentenceEnds.length > 0
+      ? sentenceEnds[sentenceEnds.length - 1].index
+      : undefined;
+
+  if (
+    lastSentenceEnd !== undefined &&
+    lastSentenceEnd >= 119
+  ) {
+    return sentenceWindow
+      .slice(0, lastSentenceEnd + 1)
+      .trim();
+  }
+
   const shortened = description
     .slice(0, 159)
-    .replace(/\s+\S*$/, "");
+    .replace(/\s+\S*$/, "")
+    .replace(/[,;:\s.]+$/, "");
 
-  return `${shortened || description.slice(0, 159)}`.replace(
-    /[,;:\s]+$/,
-    "",
-  ) + ".";
+  const clauseEnd = Math.max(
+    shortened.lastIndexOf(","),
+    shortened.lastIndexOf(";"),
+    shortened.lastIndexOf(":"),
+  );
+
+  const clean =
+    clauseEnd >= 119
+      ? shortened.slice(0, clauseEnd)
+      : shortened.replace(/\s+(?:and|or)$/i, "");
+
+  return `${clean || description.slice(0, 159).trimEnd()}.`;
 }
 
 export function getSeoDescription(
