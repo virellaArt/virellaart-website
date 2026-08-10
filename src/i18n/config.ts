@@ -111,7 +111,7 @@ const translations = {
       bedrooms: {
         title: "Bedrooms",
         description:
-          "Explore VIRELLAART luxury bedroom collections combining comfort, craftsmanship and timeless elegance.",
+          "Explore VIRELLAART luxury bedroom furniture and complete bedroom sets crafted in Türkiye, with customization options and worldwide delivery.",
       },
       tvUnits: {
         title: "TV Units",
