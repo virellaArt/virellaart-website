@@ -101,7 +101,7 @@ const translations = {
       livingRooms: {
         title: "Living Rooms",
         description:
-          "Explore VIRELLAART luxury living room collections with refined design, premium craftsmanship and worldwide delivery.",
+          "Explore VIRELLAART luxury living room furniture and designer sofa collections crafted in Türkiye, with customization and worldwide delivery.",
       },
       diningRooms: {
         title: "Dining Rooms",
