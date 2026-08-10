@@ -1,4 +1,5 @@
 ---
+import { indexableModernCategoryRoutes } from "../../../i18n/routes";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import {
   getLanguageFromPath,
@@ -59,6 +60,12 @@ const faqItems = [
       "VIRELLAART offers made-to-order furniture solutions. Suitable dimensions, configurations and design options can be discussed according to the selected model and project requirements.",
   },
 ];
+
+const hasModernTVUnits =
+  indexableModernCategoryRoutes.includes(
+    "collections/modern/tv-units",
+  );
+
 ---
 
 <ArticleLayout
@@ -342,11 +349,13 @@ const faqItems = [
             or discover our
             <a
               href={localizedPath(
-                "/collections/modern/tv-units",
+                hasModernTVUnits
+                  ? "/collections/modern/tv-units"
+                  : "/tv-units",
                 language,
               )}
             >
-              modern TV unit designs
+              {hasModernTVUnits ? "modern TV unit designs" : "TV unit collection"}
             </a>.
           </p>
         </div>

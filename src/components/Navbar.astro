@@ -7,6 +7,7 @@ import {
   localizedPath,
 } from "../i18n/config";
 import { collectionMenuCopy } from "../i18n/collection-menu";
+import { indexableModernCategoryRoutes } from "../i18n/routes";
 
 interface Props {
   languageLinks?: Partial<
@@ -45,6 +46,14 @@ const collectionMenuCategories = [
     modernPath: "/collections/modern/tv-units",
   },
 ] as const;
+
+const modernCollectionMenuCategories =
+  collectionMenuCategories.filter((category) =>
+    indexableModernCategoryRoutes.some(
+      (route) =>
+        `/${route}` === category.modernPath,
+    ),
+  );
 
 const mobileNavigationLabels: Record<
   (typeof languageCodes)[number],
@@ -167,7 +176,7 @@ const manufacturingLabels: Record<
 
             <div class="collection-category-links">
               {
-                collectionMenuCategories.map((category) => (
+                modernCollectionMenuCategories.map((category) => (
                   <a
                     href={localizedPath(
                       category.modernPath,
@@ -197,7 +206,7 @@ const manufacturingLabels: Record<
       </li>
 
       <li>
-        <a href={localizedPath("/blog", language)}>
+        <a href="/blog/">
           Blog
         </a>
       </li>
@@ -306,7 +315,7 @@ const manufacturingLabels: Record<
 
               <div class="mobile-style-categories">
                 {
-                  collectionMenuCategories.map((category) => (
+                  modernCollectionMenuCategories.map((category) => (
                     <a
                       href={localizedPath(
                         category.modernPath,
@@ -342,7 +351,7 @@ const manufacturingLabels: Record<
               {manufacturingLabels[language]}
             </a>
 
-            <a href={localizedPath("/blog", language)}>
+            <a href="/blog/">
               Blog
             </a>
 

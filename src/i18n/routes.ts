@@ -110,7 +110,7 @@ const modernCategoryRoutes = [
   "collections/modern/tv-units",
 ] as const;
 
-const indexableModernCategoryRoutes =
+export const indexableModernCategoryRoutes =
   modernCategoryRoutes.filter((categoryRoute) =>
     Object.keys(productRoutes).some((productRoute) =>
       productRoute.startsWith(`${categoryRoute}/`),

@@ -58,6 +58,8 @@ const populatedCategories = categories.map(
       productCount: categoryProducts.length,
     };
   },
+).filter(
+  (category) => category.productCount > 0,
 );
 
 const hubImage =
