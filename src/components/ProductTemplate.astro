@@ -706,8 +706,19 @@ const englishAspendosTvSeoTitle =
     ? "Aspendos Luxury TV Unit"
     : null;
 
+const englishDeluxeTvSeoTitle =
+  language === "en" &&
+  categoryKey === "tv-units" &&
+  (
+    Astro.url.pathname === "/tv-units/delux/" ||
+    Astro.url.pathname === "/tv-units/delux"
+  )
+    ? "Deluxe Luxury TV Unit"
+    : null;
+
 const pageTitle =
   englishAspendosTvSeoTitle ??
+  englishDeluxeTvSeoTitle ??
   defaultPageTitle;
 
 const canonicalURL = new URL(
