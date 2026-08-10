@@ -691,10 +691,24 @@ const pageDescription =
     productDescription,
     language,
   );
-const pageTitle =
+const defaultPageTitle =
   productStyle === "modern"
     ? `${translatedProductName} | ${collectionCopy.modern} ${categoryName}`
     : `${translatedProductName} | ${categoryName}`;
+
+const englishAspendosTvSeoTitle =
+  language === "en" &&
+  categoryKey === "tv-units" &&
+  (
+    Astro.url.pathname === "/tv-units/aspendos/" ||
+    Astro.url.pathname === "/tv-units/aspendos"
+  )
+    ? "Aspendos Luxury TV Unit"
+    : null;
+
+const pageTitle =
+  englishAspendosTvSeoTitle ??
+  defaultPageTitle;
 
 const canonicalURL = new URL(
   Astro.url.pathname,
