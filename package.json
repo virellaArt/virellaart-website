@@ -16,7 +16,8 @@
     "convert-images": "node scripts/convert-images.js",
     "check:links": "node scripts/check-internal-links.mjs",
     "build:astro": "astro build",
-    "verify:site": "npm run build"
+    "verify:site": "npm run build",
+    "seo:opportunities": "node scripts/seo-opportunities.mjs"
   },
   "dependencies": {
     "astro": "^7.1.6"
