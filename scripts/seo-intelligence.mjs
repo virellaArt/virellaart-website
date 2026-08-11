@@ -4,7 +4,7 @@ import path from "node:path";
 import os from "node:os";
 import assert from "node:assert/strict";
 
-const ENGINE_VERSION = "1.3.1";
+const ENGINE_VERSION = "1.3.2";
 const SITE_ORIGIN = "https://www.virellaart.com";
 const SITE_HOSTS = new Set(["www.virellaart.com", "virellaart.com"]);
 const CORE_CATEGORIES = new Set([
@@ -12,6 +12,10 @@ const CORE_CATEGORIES = new Set([
   "/bedrooms/",
   "/dining-rooms/",
   "/tv-units/",
+]);
+
+const LOCALE_PREFIXES = new Set([
+  "tr", "de", "fr", "it", "ru", "ar", "bg", "ro", "el", "es", "sr", "kk", "uz", "pt", "pl",
 ]);
 
 const TARGET_MARKETS = [
@@ -132,6 +136,49 @@ function hrefToRoute(href) {
   return normalizeRoute(u.pathname);
 }
 
+
+function stripLocalePrefix(route) {
+  const normalized = normalizeRoute(route);
+  if (!normalized) return null;
+  const parts = normalized.split("/").filter(Boolean);
+  if (parts.length > 0 && LOCALE_PREFIXES.has(parts[0].toLowerCase())) {
+    const rest = parts.slice(1);
+    return rest.length ? `/${rest.join("/")}/` : "/";
+  }
+  return normalized;
+}
+
+function extractMainFragment(html) {
+  const match = String(html).match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  return match ? match[1] : "";
+}
+
+function collectAnchorTargets(html) {
+  const targets = new Set();
+  for (const tag of extractTags(html, "a")) {
+    const a = parseAttrs(tag);
+    const target = hrefToRoute(a.href || "");
+    if (target) targets.add(target);
+  }
+  return targets;
+}
+
+function classifyInternalSource(page, target) {
+  if (!page || !target) return "structural";
+  if (page.route === target) return "self";
+
+  const sourceLogical = stripLocalePrefix(page.route);
+  const targetLogical = stripLocalePrefix(target);
+  if (sourceLogical && targetLogical && sourceLogical === targetLogical) {
+    return "locale-equivalent";
+  }
+
+  if (!page.mainTargets.has(target)) return "structural";
+  if (page.noindex) return "main-noindex";
+  if (sourceLogical && CORE_CATEGORIES.has(sourceLogical)) return "category";
+  return "authority";
+}
+
 function collectSchemaTypes(value, out) {
   if (Array.isArray(value)) {
     for (const item of value) collectSchemaTypes(item, out);
@@ -202,14 +249,14 @@ function parseHtmlString(html, route = "/") {
     }
   }
 
-  const internalTargets = new Set();
+  const internalTargets = collectAnchorTargets(html);
+  const mainFragment = extractMainFragment(html);
+  const mainTargets = mainFragment ? collectAnchorTargets(mainFragment) : new Set();
   let whatsapp = false;
   for (const tag of extractTags(html, "a")) {
     const a = parseAttrs(tag);
     const href = a.href || "";
     if (/https?:\/\/(?:wa\.me|api\.whatsapp\.com)\//i.test(href)) whatsapp = true;
-    const target = hrefToRoute(href);
-    if (target) internalTargets.add(target);
   }
 
   return {
@@ -226,6 +273,8 @@ function parseHtmlString(html, route = "/") {
     jsonLdBlocks,
     jsonLdErrors,
     internalTargets,
+    mainTargets,
+    mainFound: Boolean(mainFragment),
     whatsapp,
   };
 }
@@ -322,16 +371,44 @@ function buildReport({ pages, gsc, gscPath, dataDir }) {
   const routeMap = new Map(pages.map((p) => [p.route, p]));
 
   const incoming = new Map();
+  const localeEquivalentIncoming = new Map();
+  const categoryIncoming = new Map();
+  const authorityIncoming = new Map();
+  const mainIncoming = new Map();
   let graphEdges = 0;
+  let mainEdges = 0;
+  let authorityEdges = 0;
+
+  const addIncoming = (map, target, source) => {
+    const bucket = map.get(target) || new Set();
+    bucket.add(source);
+    map.set(target, bucket);
+  };
+
   for (const page of pages) {
     const seen = new Set();
     for (const target of page.internalTargets) {
       if (!routeMap.has(target) || target === page.route || seen.has(target)) continue;
       seen.add(target);
       graphEdges++;
-      const bucket = incoming.get(target) || new Set();
-      bucket.add(page.route);
-      incoming.set(target, bucket);
+      addIncoming(incoming, target, page.route);
+
+      const kind = classifyInternalSource(page, target);
+      if (kind === "locale-equivalent") {
+        addIncoming(localeEquivalentIncoming, target, page.route);
+      } else if (kind === "category") {
+        addIncoming(categoryIncoming, target, page.route);
+        addIncoming(mainIncoming, target, page.route);
+        mainEdges++;
+      } else if (kind === "authority") {
+        addIncoming(authorityIncoming, target, page.route);
+        addIncoming(mainIncoming, target, page.route);
+        mainEdges++;
+        authorityEdges++;
+      } else if (kind === "main-noindex") {
+        addIncoming(mainIncoming, target, page.route);
+        mainEdges++;
+      }
     }
   }
 
@@ -371,16 +448,21 @@ function buildReport({ pages, gsc, gscPath, dataDir }) {
   const titleDupes = duplicateGroups(indexable, "title");
   const descriptionDupes = duplicateGroups(indexable, "description");
 
-  const incomingValues = enProducts.map((p) => incoming.get(p.route)?.size || 0);
-  const medianIncoming = percentile(incomingValues, 0.5);
-  const p25Incoming = percentile(incomingValues, 0.25);
+  const authorityIncomingValues = enProducts.map((p) => authorityIncoming.get(p.route)?.size || 0);
+  const medianAuthorityIncoming = percentile(authorityIncomingValues, 0.5);
+  const p25AuthorityIncoming = percentile(authorityIncomingValues, 0.25);
   const authoritySignals = [];
 
   for (const page of enProducts) {
     const metrics = gscMap.get(page.route);
     if (!metrics || metrics.impressions < 2) continue;
-    const inCount = incoming.get(page.route)?.size || 0;
-    if (inCount > medianIncoming) continue;
+
+    const allIn = incoming.get(page.route)?.size || 0;
+    const localeIn = localeEquivalentIncoming.get(page.route)?.size || 0;
+    const categoryIn = categoryIncoming.get(page.route)?.size || 0;
+    const mainIn = mainIncoming.get(page.route)?.size || 0;
+    const authorityIn = authorityIncoming.get(page.route)?.size || 0;
+    if (authorityIn > medianAuthorityIncoming) continue;
 
     const demandScore = Math.min(40, metrics.impressions * 3);
     const rankScore =
@@ -388,21 +470,28 @@ function buildReport({ pages, gsc, gscPath, dataDir }) {
       metrics.position <= 20 ? 12 :
       metrics.position <= 35 ? 6 : 0;
     const authorityGap =
-      inCount <= p25Incoming ? 20 :
-      inCount <= medianIncoming ? 10 : 0;
+      authorityIn <= p25AuthorityIncoming ? 20 :
+      authorityIn <= medianAuthorityIncoming ? 10 : 0;
 
     authoritySignals.push({
       score: demandScore + rankScore + authorityGap,
       page: page.route,
       title: page.title,
-      incomingPages: inCount,
+      incomingPages: allIn,
+      localeEquivalentIncomingPages: localeIn,
+      categoryIncomingPages: categoryIn,
+      mainIncomingPages: mainIn,
+      authorityIncomingPages: authorityIn,
+      authoritySources: [...(authorityIncoming.get(page.route) || [])].sort(),
+      categorySources: [...(categoryIncoming.get(page.route) || [])].sort(),
       outgoingPages: page.internalTargets.size,
+      outgoingMainPages: page.mainTargets.size,
       impressions: metrics.impressions,
       clicks: metrics.clicks,
       ctr: metrics.ctr,
       position: metrics.position,
       whatsapp: page.whatsapp,
-      evidence: "GSC demand + below-median internal-link authority; review before changing links.",
+      evidence: "GSC demand + low non-navigation contextual authority; locale-equivalent and category-listing links are reported separately.",
     });
   }
   authoritySignals.sort((a, b) =>
@@ -460,7 +549,7 @@ function buildReport({ pages, gsc, gscPath, dataDir }) {
       "REVIEW",
       "INTERNAL_AUTHORITY_SIGNAL",
       item.page,
-      `${item.impressions} impressions, position ${item.position.toFixed(2)}, ${item.incomingPages} incoming pages.`
+      `${item.impressions} impressions, position ${item.position.toFixed(2)}, authority ${item.authorityIncomingPages}, category ${item.categoryIncomingPages}, locale-equivalent ${item.localeEquivalentIncomingPages}, all ${item.incomingPages}.`
     );
   }
 
@@ -519,8 +608,10 @@ function buildReport({ pages, gsc, gscPath, dataDir }) {
     },
     internalGraph: {
       edges: graphEdges,
-      englishProductMedianIncoming: medianIncoming,
-      englishProductP25Incoming: p25Incoming,
+      mainEdges,
+      authorityEdges,
+      englishProductMedianAuthorityIncoming: medianAuthorityIncoming,
+      englishProductP25AuthorityIncoming: p25AuthorityIncoming,
       authoritySignals: authoritySignals.slice(0, 50),
     },
     cannibalization,
@@ -551,14 +642,14 @@ function printReport(report) {
   console.log(`DUP_TITLE_GROUPS=${t.duplicateTitleGroups} | DUP_DESC_GROUPS=${t.duplicateDescriptionGroups} | COMMERCIAL_NO_WHATSAPP=${t.commercialWithoutWhatsapp}`);
   console.log("");
 
-  console.log("=== INTERNAL LINK AUTHORITY SIGNALS ===");
-  console.log(`GRAPH_EDGES=${report.internalGraph.edges} | PRODUCT_MEDIAN_INCOMING=${report.internalGraph.englishProductMedianIncoming} | PRODUCT_P25_INCOMING=${report.internalGraph.englishProductP25Incoming}`);
+  console.log("=== INTERNAL LINK AUTHORITY SIGNALS v2 ===");
+  console.log(`GRAPH_EDGES=${report.internalGraph.edges} | MAIN_EDGES=${report.internalGraph.mainEdges} | AUTHORITY_EDGES=${report.internalGraph.authorityEdges} | PRODUCT_MEDIAN_AUTHORITY_IN=${report.internalGraph.englishProductMedianAuthorityIncoming} | PRODUCT_P25_AUTHORITY_IN=${report.internalGraph.englishProductP25AuthorityIncoming}`);
   const signals = report.internalGraph.authoritySignals.slice(0, 10);
   if (!signals.length) {
     console.log("No GSC-backed low-authority product signals.");
   } else {
     for (const s of signals) {
-      console.log(`${String(s.score).padStart(3)} | IMP ${String(s.impressions).padStart(3)} | POS ${fmt(s.position).padStart(5)} | IN ${String(s.incomingPages).padStart(3)} | ${s.page}`);
+      console.log(`${String(s.score).padStart(3)} | IMP ${String(s.impressions).padStart(3)} | POS ${fmt(s.position).padStart(5)} | AUTH ${String(s.authorityIncomingPages).padStart(2)} | CAT ${String(s.categoryIncomingPages).padStart(2)} | LOC ${String(s.localeEquivalentIncomingPages).padStart(2)} | ALL ${String(s.incomingPages).padStart(2)} | ${s.page}`);
     }
   }
   console.log("");
@@ -618,6 +709,16 @@ function runSelfTest() {
   check(() => assert.equal(p.schemaTypes.has("BreadcrumbList"), true));
   check(() => assert.equal(p.internalTargets.has("/living-rooms/other/"), true));
   check(() => assert.equal(p.whatsapp, true));
+  check(() => assert.equal(stripLocalePrefix("/fr/living-rooms/test/"), "/living-rooms/test/"));
+
+  const mainSample = parseHtmlString(`<html><body><header><a href="/living-rooms/test/">Header</a></header><main><a href="/living-rooms/other/">Context</a></main></body></html>`, "/fr/living-rooms/test/");
+  check(() => assert.equal(mainSample.mainTargets.has("/living-rooms/other/"), true));
+  check(() => assert.equal(mainSample.mainTargets.has("/living-rooms/test/"), false));
+  check(() => assert.equal(classifyInternalSource(mainSample, "/living-rooms/test/"), "locale-equivalent"));
+  check(() => assert.equal(classifyInternalSource(mainSample, "/living-rooms/other/"), "authority"));
+
+  const categorySample = parseHtmlString(`<html><body><main><a href="/living-rooms/test/">Product</a></main></body></html>`, "/living-rooms/");
+  check(() => assert.equal(classifyInternalSource(categorySample, "/living-rooms/test/"), "category"));
 
   const n = parseHtmlString(`<html><head><meta name="robots" content="noindex,follow"></head><body></body></html>`, "/x/");
   check(() => assert.equal(n.noindex, true));
