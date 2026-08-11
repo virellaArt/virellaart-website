@@ -198,12 +198,14 @@ const findGsc = (repo) => {
 const scoreRow = (x) => {
   const imp=x.impressions, pos=x.position, ctr=x.ctr, type=x.type;
   let score=0;
-  score += Math.min(24, Math.log2(imp+1)*5);
-  if(pos>0 && pos<=3) score+=12; else if(pos<=5) score+=20; else if(pos<=10) score+=25; else if(pos<=15) score+=20; else if(pos<=30) score+=11; else score+=4;
+  // Evidence matters: avoid letting tiny samples outrank stronger GSC signals.
+  score += Math.min(28, Math.log2(imp+1)*6);
+  // For CTR work, positions 4-5 are the strongest immediate opportunity.
+  if(pos>0 && pos<=3) score+=18; else if(pos<=5) score+=25; else if(pos<=10) score+=22; else if(pos<=15) score+=15; else if(pos<=30) score+=8; else score+=2;
   const exp=expectedCtr(pos);
-  if(imp>=3 && clicksSafe(x)===0) score+=18; else if(exp && ctr < exp*0.5) score+=10;
-  if(type==='product') score+=8; else if(type==='category') score+=5; else if(type==='market') score+=6;
-  if(x.genericTitle) score+=20;
+  if(imp>=3 && clicksSafe(x)===0) score+=16; else if(exp && ctr < exp*0.5) score+=9;
+  if(type==='product') score+=7; else if(type==='category') score+=4; else if(type==='market') score+=5;
+  if(x.genericTitle) score+=18;
   if(!x.canonical) score+=25;
   if(x.h1Count!==1) score+=25;
   if(type==='product' && !x.hasProductSchema) score+=22;
@@ -213,6 +215,8 @@ const scoreRow = (x) => {
   return Math.max(0,Math.min(100,Math.round(score)));
 };
 const clicksSafe = (x)=>Number(x.clicks)||0;
+const readyActions = new Set(['TECHNICAL','TITLE_CTR','CONTENT_AUTHORITY','INTERNAL_LINKS','CTA','MARKET_GROWTH']);
+const actionPriority = (action) => ({TECHNICAL:6,TITLE_CTR:5,CONTENT_AUTHORITY:4,INTERNAL_LINKS:3,CTA:2,MARKET_GROWTH:1}[action] || 0);
 const actionFor = (x) => {
   if(x.protected) return x.protectionAction || 'WAIT_GSC_REFRESH';
   if(!x.canonical || x.h1Count!==1 || (x.type==='product' && !x.hasProductSchema)) return 'TECHNICAL';
@@ -262,6 +266,9 @@ function runSelfTest(){
   assert('decision hold active',decisionIsActive(hold,oldEnd)===true);
   assert('decision hold releases',decisionIsActive(hold,freshEnd)===false);
   assert('no action stays protected',decisionIsActive({state:'NO_ACTION'},freshEnd)===true);
+  assert('ready action title',readyActions.has('TITLE_CTR')===true);
+  assert('monitor not ready',readyActions.has('MONITOR')===false);
+  assert('priority title over monitor',actionPriority('TITLE_CTR')>actionPriority('MONITOR'));
   console.log('SELF_TEST_OK='+tests.length);
 }
 
@@ -335,13 +342,15 @@ for(const [p,g] of gsc){
   row.reason=reasonFor(row);
   rows.push(row);
 }
-const actionable=rows.filter(x=>!x.protected);
+const ready=rows.filter(x=>!x.protected && readyActions.has(x.action));
+const watchlist=rows.filter(x=>!x.protected && !readyActions.has(x.action));
 const protectedRows=rows.filter(x=>x.protected);
-actionable.sort((a,b)=>b.score-a.score || b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
+ready.sort((a,b)=>actionPriority(b.action)-actionPriority(a.action) || b.score-a.score || b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
+watchlist.sort((a,b)=>b.impressions-a.impressions || b.score-a.score || a.position-b.position || a.path.localeCompare(b.path));
 protectedRows.sort((a,b)=>b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
 const report={
   engine:'VIRELLAART SEO Opportunity Engine',
-  version:'1.1.0',
+  version:'1.2.0',
   generatedAt:new Date().toISOString(),
   property:gscRaw.Property,
   period:gscRaw.Period,
@@ -351,27 +360,43 @@ const report={
   normalizedGscPages:gsc.size,
   distHtmlFiles:files.length,
   analyzedCommercialPages:rows.length,
-  actionableCount:actionable.length,
+  actionableCount:ready.length,
+  readyCount:ready.length,
+  watchlistCount:watchlist.length,
   protectedCount:protectedRows.length,
-  top:actionable.slice(0,topN),
+  top:ready.slice(0,topN),
+  ready:ready.slice(0,topN),
+  watchlist:watchlist.slice(0,topN),
   protected:protectedRows
 };
 if(jsonOnly){console.log(JSON.stringify(report,null,2)); process.exit(0);}
-console.log('=== VIRELLAART SEO OPPORTUNITY ENGINE v1.1 ===');
+console.log('=== VIRELLAART SEO OPPORTUNITY ENGINE v1.2 ===');
 console.log(`GSC: ${gscFile}`);
 console.log(`DECISIONS: ${decisionsFile || 'none'}`);
 console.log(`PERIOD: ${gscRaw.Period?.Start || '?'} -> ${gscRaw.Period?.End || '?'}`);
-console.log(`GSC_PAGE_ROWS=${gscRaw.Pages.length} | NORMALIZED=${gsc.size} | DIST_HTML=${files.length} | COMMERCIAL_MATCHES=${rows.length} | ACTIONABLE=${actionable.length} | PROTECTED=${protectedRows.length}`);
+console.log(`GSC_PAGE_ROWS=${gscRaw.Pages.length} | NORMALIZED=${gsc.size} | DIST_HTML=${files.length} | COMMERCIAL_MATCHES=${rows.length} | READY=${ready.length} | WATCHLIST=${watchlist.length} | PROTECTED=${protectedRows.length}`);
 console.log('');
-console.log('=== ACTIONABLE OPPORTUNITIES ===');
+console.log('=== READY TO ACT ===');
 console.log('SCORE | IMP | CLK | POS   | CTR   | ACTION               | PAGE');
 console.log('------|-----|-----|-------|-------|----------------------|-----');
-for(const x of actionable.slice(0,topN)){
+for(const x of ready.slice(0,topN)){
   const f=(v,n)=>String(v).padStart(n,' ');
   console.log(`${f(x.score,5)} | ${f(x.impressions,3)} | ${f(x.clicks,3)} | ${f(x.position.toFixed(2),5)} | ${f(x.ctr.toFixed(1)+'%',5)} | ${x.action.padEnd(20,' ')} | ${x.route}`);
   console.log(`      TITLE : ${x.title}`);
   console.log(`      WHY   : ${x.reason}`);
 }
+
+console.log('');
+console.log('=== WATCHLIST / NOT ENOUGH EVIDENCE ===');
+if(!watchlist.length){
+  console.log('none');
+}else{
+  for(const x of watchlist.slice(0,topN)){
+    console.log(`${String(x.impressions).padStart(3,' ')} imp | pos ${x.position.toFixed(2).padStart(5,' ')} | ${x.action.padEnd(20,' ')} | ${x.route}`);
+    console.log(`      WHY   : ${x.reason}`);
+  }
+}
+
 console.log('');
 console.log('=== PROTECTED / WAITING FOR FRESH DATA ===');
 if(!protectedRows.length){
@@ -384,5 +409,7 @@ if(!protectedRows.length){
   if(protectedRows.length>20) console.log(`... +${protectedRows.length-20} more protected pages`);
 }
 console.log('');
-console.log('NOTE: Protected pages are excluded from actionable ranking until their hold condition is released.');
+console.log('NOTE: READY contains only pages with enough evidence for a concrete next action.');
+console.log('NOTE: WATCHLIST is intentionally excluded from READY until stronger evidence appears.');
+console.log('NOTE: Protected pages are excluded until their hold condition is released.');
 console.log('NOTE: Scores prioritize commercial opportunity; they are decision support, not ranking guarantees.');
