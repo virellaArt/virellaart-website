@@ -139,14 +139,48 @@ const loadGsc = (file) => {
   return {raw,origin,agg};
 };
 
+const escapeGitRegex = (s='') => String(s).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const gitRouteChangeDate = (repo, route) => {
   const rel='src/components/ProductTemplate.astro';
-  const r=spawnSync('git',['log','-1','--format=%cI','-S'+route,'--',rel],{cwd:repo,encoding:'utf8',windowsHide:true});
+  const r=spawnSync('git',['log','-1','--format=%cI','-G'+escapeGitRegex(route),'--',rel],{cwd:repo,encoding:'utf8',windowsHide:true});
   if(r.status!==0) return null;
   const v=(r.stdout||'').trim();
   if(!v) return null;
   const d=new Date(v);
   return Number.isNaN(d.getTime()) ? null : d;
+};
+const decisionIsActive = (decision, gscEnd) => {
+  if (!decision || !decision.state) return false;
+  if (decision.state === 'NO_ACTION') return true;
+  if (decision.state !== 'HOLD_GSC') return false;
+  if (!decision.requiresGscAfter) return true;
+  const threshold=new Date(String(decision.requiresGscAfter)+'T23:59:59Z');
+  if (Number.isNaN(threshold.getTime())) return true;
+  return !gscEnd || gscEnd <= threshold;
+};
+const loadDecisions = (file) => {
+  if (!file) return {file:null,map:new Map()};
+  const raw=JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,''));
+  if (!raw || !Array.isArray(raw.decisions)) throw new Error('SEO decisions JSON icinde decisions dizisi yok');
+  const map=new Map();
+  for (const d of raw.decisions) {
+    if (!d || !d.path || !d.state) continue;
+    const key=normalizePath(d.path);
+    if (map.has(key)) throw new Error('SEO decisions duplicate path: '+key);
+    map.set(key,{...d,path:routeWithSlash(key)});
+  }
+  return {file,map};
+};
+const findDecisions = (repo) => {
+  const explicit=argValue('--decisions');
+  const candidates=[
+    explicit,
+    process.env.VIRELLA_SEO_DECISIONS,
+    path.join(path.dirname(repo),'VIRELLAART-SEO-DATA','seo-decisions.json'),
+    path.join(os.homedir(),'Documents','VIRELLAART-SEO-DATA','seo-decisions.json')
+  ].filter(Boolean);
+  for(const c of candidates){const full=path.resolve(c); if(fs.existsSync(full) && fs.statSync(full).isFile()) return full;}
+  return null;
 };
 
 const findGsc = (repo) => {
@@ -162,7 +196,6 @@ const findGsc = (repo) => {
   throw new Error('GSC JSON bulunamadi. --gsc <dosya> kullanin veya Documents\\VIRELLAART-SEO-DATA altina koyun.');
 };
 const scoreRow = (x) => {
-  if (x.recentSeoChange) return Math.max(0, Math.min(100, Math.round(35 + Math.min(20, Math.log2(x.impressions+1)*4))));
   const imp=x.impressions, pos=x.position, ctr=x.ctr, type=x.type;
   let score=0;
   score += Math.min(24, Math.log2(imp+1)*5);
@@ -181,7 +214,7 @@ const scoreRow = (x) => {
 };
 const clicksSafe = (x)=>Number(x.clicks)||0;
 const actionFor = (x) => {
-  if(x.recentSeoChange) return 'WAIT_GSC_REFRESH';
+  if(x.protected) return x.protectionAction || 'WAIT_GSC_REFRESH';
   if(!x.canonical || x.h1Count!==1 || (x.type==='product' && !x.hasProductSchema)) return 'TECHNICAL';
   if(x.type==='product' && x.genericTitle && x.impressions>=3 && x.position>0 && x.position<=15 && x.ctr<1) return 'TITLE_CTR';
   if(x.type==='product' && x.position>15 && x.position<=35 && x.impressions>=5) return 'CONTENT_AUTHORITY';
@@ -194,7 +227,8 @@ const actionFor = (x) => {
 };
 const reasonFor = (x) => {
   const r=[];
-  if(x.recentSeoChange) r.push('SEO title changed after GSC period');
+  if(x.protectedReason) r.push(x.protectedReason);
+  else if(x.recentSeoChange) r.push('SEO title changed after GSC period');
   if(x.genericTitle) r.push('generic title');
   if(x.impressions>=3 && x.ctr<1) r.push('CTR low');
   if(x.position>0 && x.position<=10) r.push('page 1');
@@ -222,6 +256,12 @@ function runSelfTest(){
   assert('canonical parser',a.canonical.includes('/living-rooms/alex/'));
   assert('schema parser',a.hasProductSchema===true);
   assert('whatsapp parser',a.whatsappLinks===1);
+  const oldEnd=new Date('2026-08-07T23:59:59Z');
+  const freshEnd=new Date('2026-08-20T23:59:59Z');
+  const hold={state:'HOLD_GSC',requiresGscAfter:'2026-08-11'};
+  assert('decision hold active',decisionIsActive(hold,oldEnd)===true);
+  assert('decision hold releases',decisionIsActive(hold,freshEnd)===false);
+  assert('no action stays protected',decisionIsActive({state:'NO_ACTION'},freshEnd)===true);
   console.log('SELF_TEST_OK='+tests.length);
 }
 
@@ -233,6 +273,8 @@ const dist=path.join(repo,'dist');
 if(!fs.existsSync(dist)) throw new Error('dist bulunamadi. Once npm.cmd run build:astro calistirin.');
 const gscFile=findGsc(repo);
 const {raw:gscRaw,origin,agg:gsc}=loadGsc(gscFile);
+const decisionsFile=findDecisions(repo);
+const {map:decisions}=loadDecisions(decisionsFile);
 const files=walkHtml(dist);
 const pages=new Map();
 for(const file of files){
@@ -277,39 +319,70 @@ for(const [p,g] of gsc){
   const changedAt=site.type==='product' ? gitRouteChangeDate(repo,routeWithSlash(p)) : null;
   row.seoTitleChangedAt=changedAt ? changedAt.toISOString() : null;
   row.recentSeoChange=Boolean(changedAt && gscEnd && changedAt > gscEnd && !site.genericTitle);
+  const decision=decisions.get(p) || null;
+  const activeDecision=decisionIsActive(decision,gscEnd);
+  row.decision=decision;
+  row.protected=Boolean(row.recentSeoChange || activeDecision);
+  if (activeDecision) {
+    row.protectionAction=decision.state==='NO_ACTION' ? 'REVIEWED_NO_ACTION' : 'WAIT_GSC_REFRESH';
+    row.protectedReason=decision.reason || (decision.state==='NO_ACTION' ? 'reviewed: no action' : 'reviewed: wait for fresh GSC');
+  } else if (row.recentSeoChange) {
+    row.protectionAction='WAIT_GSC_REFRESH';
+    row.protectedReason='SEO title changed after GSC period';
+  }
   row.action=actionFor(row);
   row.score=scoreRow(row);
   row.reason=reasonFor(row);
   rows.push(row);
 }
-rows.sort((a,b)=>b.score-a.score || b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
+const actionable=rows.filter(x=>!x.protected);
+const protectedRows=rows.filter(x=>x.protected);
+actionable.sort((a,b)=>b.score-a.score || b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
+protectedRows.sort((a,b)=>b.impressions-a.impressions || a.position-b.position || a.path.localeCompare(b.path));
 const report={
   engine:'VIRELLAART SEO Opportunity Engine',
-  version:'1.0.0',
+  version:'1.1.0',
   generatedAt:new Date().toISOString(),
   property:gscRaw.Property,
   period:gscRaw.Period,
   gscFile,
+  decisionsFile,
   gscPageRows:gscRaw.Pages.length,
   normalizedGscPages:gsc.size,
   distHtmlFiles:files.length,
   analyzedCommercialPages:rows.length,
-  top:rows.slice(0,topN)
+  actionableCount:actionable.length,
+  protectedCount:protectedRows.length,
+  top:actionable.slice(0,topN),
+  protected:protectedRows
 };
 if(jsonOnly){console.log(JSON.stringify(report,null,2)); process.exit(0);}
-console.log('=== VIRELLAART SEO OPPORTUNITY ENGINE v1.0 ===');
+console.log('=== VIRELLAART SEO OPPORTUNITY ENGINE v1.1 ===');
 console.log(`GSC: ${gscFile}`);
+console.log(`DECISIONS: ${decisionsFile || 'none'}`);
 console.log(`PERIOD: ${gscRaw.Period?.Start || '?'} -> ${gscRaw.Period?.End || '?'}`);
-console.log(`GSC_PAGE_ROWS=${gscRaw.Pages.length} | NORMALIZED=${gsc.size} | DIST_HTML=${files.length} | COMMERCIAL_MATCHES=${rows.length}`);
+console.log(`GSC_PAGE_ROWS=${gscRaw.Pages.length} | NORMALIZED=${gsc.size} | DIST_HTML=${files.length} | COMMERCIAL_MATCHES=${rows.length} | ACTIONABLE=${actionable.length} | PROTECTED=${protectedRows.length}`);
 console.log('');
+console.log('=== ACTIONABLE OPPORTUNITIES ===');
 console.log('SCORE | IMP | CLK | POS   | CTR   | ACTION               | PAGE');
 console.log('------|-----|-----|-------|-------|----------------------|-----');
-for(const x of rows.slice(0,topN)){
+for(const x of actionable.slice(0,topN)){
   const f=(v,n)=>String(v).padStart(n,' ');
   console.log(`${f(x.score,5)} | ${f(x.impressions,3)} | ${f(x.clicks,3)} | ${f(x.position.toFixed(2),5)} | ${f(x.ctr.toFixed(1)+'%',5)} | ${x.action.padEnd(20,' ')} | ${x.route}`);
   console.log(`      TITLE : ${x.title}`);
   console.log(`      WHY   : ${x.reason}`);
 }
 console.log('');
-console.log('NOTE: WAIT_GSC_REFRESH suppresses pages whose SEO title changed after the GSC snapshot ended.');
+console.log('=== PROTECTED / WAITING FOR FRESH DATA ===');
+if(!protectedRows.length){
+  console.log('none');
+}else{
+  for(const x of protectedRows.slice(0,20)){
+    console.log(`${String(x.impressions).padStart(3,' ')} imp | ${x.action.padEnd(20,' ')} | ${x.route}`);
+    console.log(`      WHY   : ${x.reason}`);
+  }
+  if(protectedRows.length>20) console.log(`... +${protectedRows.length-20} more protected pages`);
+}
+console.log('');
+console.log('NOTE: Protected pages are excluded from actionable ranking until their hold condition is released.');
 console.log('NOTE: Scores prioritize commercial opportunity; they are decision support, not ranking guarantees.');
