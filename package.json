@@ -17,7 +17,9 @@
     "check:links": "node scripts/check-internal-links.mjs",
     "build:astro": "astro build",
     "verify:site": "npm run build",
-    "seo:opportunities": "node scripts/seo-opportunities.mjs"
+    "seo:opportunities": "node scripts/seo-opportunities.mjs",
+    "seo:intelligence": "node scripts/seo-intelligence.mjs",
+    "seo:control": "npm run seo:opportunities && npm run seo:intelligence"
   },
   "dependencies": {
     "astro": "^7.1.6"
