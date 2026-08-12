@@ -3085,4 +3085,56 @@ sultanGreenDining: {
       },
     ],
   },
+
+  rivaDiningRoomSet: {
+    name: "Riva Dining Room Set",
+    slug: "riva-dining-room",
+    category: "dining-rooms",
+    style: "luxury-classic",
+    orderModel: "made-to-order",
+    subtitle: "Statement Luxury Classic Dining Collection",
+    description:
+      "The Riva Dining Room Set presents a commanding luxury-classic composition created for sophisticated dining interiors. Its distinctive table, six upholstered dining chairs, coordinated console with mirror and matching vitrine form a complete and visually unified collection. Refined decorative detailing and elegant proportions give Riva a strong architectural presence while maintaining the timeless character of the original design. Available as a complete set or as individual pieces. Contact VIRELLAART for production and international delivery details.",
+    images: [
+      "/riva-dining-room-01.webp",
+      "/riva-dining-room-02.webp",
+      "/riva-dining-room-03.webp",
+      "/riva-dining-room-04.webp",
+      "/riva-dining-room-05.webp",
+      "/riva-dining-room-06.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Riva luxury classic dining room set with table chairs console mirror and vitrine",
+        "Riva luxury classic dining table detailed view",
+        "Riva dining table viewed from above with six upholstered dining chairs",
+        "Riva luxury classic upholstered dining chair detailed rear view",
+        "Riva luxury classic vitrine display cabinet",
+        "Riva luxury classic console and coordinating mirror",
+      ],
+    },
+    prices: [
+      {
+        label: "Full Dining Room Set",
+        price: "$12,400",
+        featured: true,
+      },
+      {
+        label: "Dining Table",
+        price: "$2,250",
+      },
+      {
+        label: "6 Dining Chairs",
+        price: "$3,200",
+      },
+      {
+        label: "Console + Mirror",
+        price: "$3,750",
+      },
+      {
+        label: "Vitrine",
+        price: "$3,200",
+      },
+    ],
+  },
 };
