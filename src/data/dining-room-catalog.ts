@@ -17,6 +17,7 @@ const diningRoomCatalog = [
   { key: "saltanatDining", slug: "saltanat" },
   { key: "saltanatDiningGreen", slug: "saltanat-green" },
   { key: "sultanGreenDining", slug: "sultan-green" },
+  { key: "rivaDiningRoomSet", slug: "riva-dining-room" },
 ] as const;
 
 export const diningRoomModels = diningRoomCatalog.map(
