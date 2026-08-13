@@ -686,87 +686,55 @@ const productDescription =
       : `${modernSeoProductName}. ${baseProductDescription}`
     : baseProductDescription;
 
+const englishCommercialCategoryTitle =
+  ({
+    "living-rooms":
+      productStyle === "modern"
+        ? "Modern Luxury Sofa Set"
+        : "Luxury Living Room Set",
+    "dining-rooms":
+      productStyle === "modern"
+        ? "Modern Luxury Dining Room Set"
+        : "Luxury Dining Room Set",
+    bedrooms:
+      productStyle === "modern"
+        ? "Modern Luxury Bedroom Set"
+        : "Luxury Bedroom Set",
+    "tv-units":
+      productStyle === "modern"
+        ? "Modern Luxury TV Unit"
+        : "Luxury TV Unit",
+  } as const)[categoryKey];
+
+const englishCommercialMeta =
+  ({
+    "living-rooms":
+      "Luxury living room furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+    "dining-rooms":
+      "Luxury dining room furniture with collection prices, coordinated set options and international delivery from Istanbul.",
+    bedrooms:
+      "Luxury bedroom furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+    "tv-units":
+      "Luxury TV and media furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+  } as const)[categoryKey];
+
 const pageDescription =
   getSeoDescription(
-    productDescription,
+    language === "en"
+      ? `${translatedProductName}. ${englishCommercialMeta} ${productDescription}`
+      : productDescription,
     language,
   );
+
 const defaultPageTitle =
   productStyle === "modern"
     ? `${translatedProductName} | ${collectionCopy.modern} ${categoryName}`
     : `${translatedProductName} | ${categoryName}`;
 
-const englishProductSeoTitleByPath: Record<string, string> = {
-  "/tv-units/aspendos/": "Aspendos Luxury TV Unit",
-  "/tv-units/delux/": "Deluxe Luxury TV Unit",
-  "/bedrooms/sultan-green/": "Sultan Green Luxury Bedroom Set",
-  "/bedrooms/valencia/": "Valencia Luxury Bedroom Set",
-  "/bedrooms/sultan/": "Sultan Luxury Bedroom Set",
-  "/bedrooms/marsilya/": "Marsilya Luxury Bedroom Set",
-  "/bedrooms/milano-blue/": "Milano Blue Luxury Bedroom Set",
-  "/bedrooms/marsilya/": "Marsilya Luxury Bedroom Set",
-  "/bedrooms/milano-blue/": "Milano Blue Luxury Bedroom Set",
-  "/bedrooms/marsilya/": "Marsilya Luxury Bedroom Set",
-  "/bedrooms/milano-blue/": "Milano Blue Luxury Bedroom Set",
-
-  "/living-rooms/saltanat/": "Saltanat Luxury Living Room Set",
-  "/living-rooms/queen/": "Queen Luxury Living Room Set",
-  "/tv-units/milano-blue/": "Milano Blue Luxury TV Unit",
-  "/tv-units/valencia/": "Valencia Luxury TV Unit",
-
-
-
-  "/dining-rooms/sultan-green/": "Sultan Green Luxury Dining Room Set",
-  "/dining-rooms/valdera/": "Valdera Luxury Dining Room Set",
-  "/living-rooms/lugano/": "Lugano Luxury Living Room Set",
-  "/dining-rooms/saltanat-green/": "Saltanat Green Luxury Dining Room Set",
-
-  "/dining-rooms/delux/": "Deluxe Luxury Dining Room Set",
-  "/dining-rooms/milano-blue/": "Milano Blue Luxury Dining Room Set",
-  "/dining-rooms/milano/": "Milano Luxury Dining Room Set",
-  "/living-rooms/saltanat-green/": "Saltanat Green Luxury Living Room Set",
-
-  "/bedrooms/saltanat/": "Saltanat Luxury Bedroom Set",
-  "/dining-rooms/queen/": "Queen Luxury Dining Room Set",
-  "/living-rooms/milano/": "Milano Luxury Living Room Set",
-  "/living-rooms/milano-blue/": "Milano Blue Luxury Living Room Set",
-
-  "/living-rooms/shawl/": "Shawl Luxury Living Room Set",
-  "/dining-rooms/shawl/": "Shawl Luxury Dining Room Set",
-  "/dining-rooms/saltanat/": "Saltanat Luxury Dining Room Set",
-  "/living-rooms/sena/": "Sena Luxury Living Room Set",
-  "/tv-units/milano/": "Milano Luxury TV Unit | VIRELLAART",
-  "/bedrooms/milano/": "Milano Luxury Bedroom Set | VIRELLAART",
-  "/living-rooms/valencia/": "Valencia Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/sultan/": "Sultan Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/delux/": "Deluxe Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/zumrut/": "Zümrüt Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/alex/": "Alex Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/valdera/": "Valdera Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/lina/": "Lina Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/bahar/": "Bahar Luxury Living Room Set | VIRELLAART",
-  "/bedrooms/aspendos/": "Aspendos Luxury Bedroom Set | VIRELLAART",
-  "/dining-rooms/zumrut/": "Zümrüt Luxury Dining Room Set | VIRELLAART",
-  "/living-rooms/zerafet/": "Zerafet Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/sultan-sofa/": "Sultan Green Luxury Living Room Set | VIRELLAART",
-  "/living-rooms/vanessa/": "Vanessa Luxury Living Room Set | VIRELLAART",
-};
-
-const normalizedProductSeoPath =
-  Astro.url.pathname.endsWith("/")
-    ? Astro.url.pathname
-    : `${Astro.url.pathname}/`;
-
-const englishProductSeoTitle =
-  language === "en"
-    ? englishProductSeoTitleByPath[
-        normalizedProductSeoPath
-      ] ?? null
-    : null;
-
 const pageTitle =
-  englishProductSeoTitle ??
-  defaultPageTitle;
+  language === "en"
+    ? `${translatedProductName} | ${englishCommercialCategoryTitle}`
+    : defaultPageTitle;
 const canonicalURL = new URL(
   Astro.url.pathname,
   "https://www.virellaart.com",
@@ -1508,6 +1476,16 @@ const productTrust =
   imageAlt={resolvedImageAlts[0]}
   pageType="product"
 >
+  <Fragment slot="head">
+    <meta
+      property="product:price:amount"
+      content={String(primaryPrice)}
+    />
+    <meta
+      property="product:price:currency"
+      content="USD"
+    />
+  </Fragment>
   <script
     type="application/ld+json"
     set:html={JSON.stringify(productSchema)}
