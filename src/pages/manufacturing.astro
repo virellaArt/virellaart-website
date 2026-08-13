@@ -9,6 +9,7 @@ import {
 import {
   getManufacturingContent,
 } from "../i18n/manufacturing";
+import { getProjectQuotePrompt } from "../i18n/project-quote-prompts";
 
 const language =
   getLanguageFromPath(Astro.url.pathname);
@@ -31,14 +32,34 @@ const processCards =
       processImages[0],
   }));
 
+const manufacturingPageURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com",
+).href;
+const projectQuotePrompt = getProjectQuotePrompt(language);
+const heroWhatsappMessage = [
+  content.hero.whatsappMessage,
+  "",
+  projectQuotePrompt,
+  "",
+  manufacturingPageURL,
+].join("\n");
+const ctaWhatsappMessage = [
+  content.cta.whatsappMessage,
+  "",
+  projectQuotePrompt,
+  "",
+  manufacturingPageURL,
+].join("\n");
+
 const heroWhatsappURL =
   `https://wa.me/905539478608?text=${encodeURIComponent(
-    content.hero.whatsappMessage,
+    heroWhatsappMessage,
   )}`;
 
 const ctaWhatsappURL =
   `https://wa.me/905539478608?text=${encodeURIComponent(
-    content.cta.whatsappMessage,
+    ctaWhatsappMessage,
   )}`;
 ---
 

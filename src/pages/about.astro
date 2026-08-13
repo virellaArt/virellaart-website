@@ -5,6 +5,7 @@ import {
   getTranslations,
   localizedPath,
 } from "../i18n/config";
+import { getProjectQuotePrompt } from "../i18n/project-quote-prompts";
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
@@ -343,12 +344,19 @@ const contactURL = localizedPath("/contact", language);
 const collectionsURL = `${homeURL}#collections`;
 
 const whatsappNumber = "905539478608";
+const siteOrigin = "https://www.virellaart.com";
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin).href;
 const fallbackWhatsappMessage = translations.product.whatsappMessage.replace(
   "{product}",
   "VIRELLAART",
 );
-const whatsappMessage =
-  detailed?.whatsappMessage ?? fallbackWhatsappMessage;
+const whatsappMessage = [
+  detailed?.whatsappMessage ?? fallbackWhatsappMessage,
+  "",
+  getProjectQuotePrompt(language),
+  "",
+  canonicalURL,
+].join("\n");
 const whatsappURL =
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage,
@@ -357,9 +365,6 @@ const whatsappURL =
 const pageTitle = aboutSeoEntry.title;
 const pageDescription = aboutSeoEntry.description;
 const imageAlt = detailed?.alts.factory ?? translations.about.imageAlt;
-
-const siteOrigin = "https://www.virellaart.com";
-const canonicalURL = new URL(Astro.url.pathname, siteOrigin).href;
 
 const aboutPageSchema = {
   "@context": "https://schema.org",
