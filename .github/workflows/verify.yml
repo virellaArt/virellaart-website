@@ -44,13 +44,50 @@ jobs:
       - name: Build and validate
         run: npm run build
 
-      - name: Publish validated source changes
+      - name: Publish validated source changes and restore verifier
         shell: bash
         run: |
-          git rm scripts/apply-public-truth-fix.py
+          git rm -f scripts/apply-public-truth-fix.py
+          cat > .github/workflows/verify.yml <<'YAML'
+          name: Verify VIRELLAART Site
+
+          on:
+            pull_request:
+              branches: [main]
+            push:
+              branches: [main]
+
+          permissions:
+            contents: read
+
+          concurrency:
+            group: verify-${{ github.ref }}
+            cancel-in-progress: true
+
+          jobs:
+            verify:
+              runs-on: ubuntu-latest
+              timeout-minutes: 20
+
+              steps:
+                - name: Checkout
+                  uses: actions/checkout@v4
+
+                - name: Setup Node
+                  uses: actions/setup-node@v4
+                  with:
+                    node-version: 24
+                    cache: npm
+
+                - name: Install dependencies
+                  run: npm ci
+
+                - name: Build and validate site
+                  run: npm run build
+          YAML
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/pages/index.astro src/data/market-pages.ts
+          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/pages/index.astro src/data/market-pages.ts .github/workflows/verify.yml
           git diff --cached --check
           git diff --cached --quiet && { echo "No validated changes to publish"; exit 1; }
           git commit -m "fix: align public claims and Switzerland"
