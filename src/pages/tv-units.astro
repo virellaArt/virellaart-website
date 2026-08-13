@@ -14,14 +14,20 @@ const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const categoryTranslations =
   translations.category.tvUnits;
-const pageTitle = getCategorySeoTitle(
-  categoryTranslations.title,
-  language,
-);
-const pageDescription = getSeoDescription(
-  categoryTranslations.description,
-  language,
-);
+const pageTitle =
+  language === "en"
+    ? "Luxury TV Units & Media Furniture"
+    : getCategorySeoTitle(
+        categoryTranslations.title,
+        language,
+      );
+const pageDescription =
+  language === "en"
+    ? "Explore VIRELLAART luxury TV units and coordinated media furniture. Made-to-order designs from Istanbul with premium craftsmanship and international delivery support."
+    : getSeoDescription(
+        categoryTranslations.description,
+        language,
+      );
 const models = tvUnitModels;
 ---
 
