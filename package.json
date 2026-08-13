@@ -18,6 +18,7 @@
     "build:astro": "astro build",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "verify:site": "npm run build",
+    "social:landing": "node scripts/social-landing.mjs",
     "seo:opportunities": "node scripts/seo-opportunities.mjs",
     "seo:intelligence": "node scripts/seo-intelligence.mjs",
     "seo:control": "npm run seo:opportunities && npm run seo:intelligence"
