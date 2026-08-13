@@ -15,6 +15,10 @@ const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const categoryTranslations =
   translations.category.diningRooms;
+const commercialCategoryName =
+  language === "en"
+    ? "Luxury Dining Room Sets"
+    : categoryTranslations.title;
 const pageTitle =
   language === "en"
     ? "Luxury Dining Room Sets | VIRELLAART"
@@ -42,8 +46,8 @@ const models = diningRoomModels;
   <CollectionCatalog
     {models}
     {language}
-    categoryName={categoryTranslations.title}
-    categoryDescription={categoryTranslations.description}
+    categoryName={commercialCategoryName}
+    categoryDescription={pageDescription}
     eyebrow={translations.category.eyebrow}
   />
 
