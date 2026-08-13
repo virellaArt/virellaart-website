@@ -252,6 +252,90 @@ const websiteSchema = {
 </script>
 
 <script is:inline>
+(() => {
+  const attributionKeys = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+  ];
+  const currentParams = new URLSearchParams(window.location.search);
+  const attribution = new Map();
+
+  attributionKeys.forEach((key) => {
+    const value = currentParams.get(key);
+    if (value) attribution.set(key, value);
+  });
+
+  if (!attribution.has("utm_source") && document.referrer) {
+    try {
+      const referrerHost = new URL(document.referrer).hostname.toLowerCase();
+      const inferredSource = referrerHost.includes("instagram")
+        ? "instagram"
+        : referrerHost.includes("facebook") || referrerHost.includes("fb.com")
+          ? "facebook"
+          : referrerHost.includes("pinterest")
+            ? "pinterest"
+            : "";
+
+      if (inferredSource) {
+        attribution.set("utm_source", inferredSource);
+        attribution.set("utm_medium", "social");
+      }
+    } catch {
+      // Ignore malformed referrers.
+    }
+  }
+
+  if (!attribution.has("utm_source")) return;
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      const target = event.target;
+      const link =
+        target instanceof Element
+          ? target.closest("a[href]")
+          : null;
+
+      if (!(link instanceof HTMLAnchorElement)) return;
+
+      const rawHref = link.getAttribute("href")?.trim() || "";
+      if (
+        rawHref === "" ||
+        rawHref.startsWith("#") ||
+        rawHref.startsWith("mailto:") ||
+        rawHref.startsWith("tel:") ||
+        rawHref.startsWith("javascript:") ||
+        link.href.includes("wa.me") ||
+        link.href.includes("api.whatsapp.com")
+      ) {
+        return;
+      }
+
+      let destination;
+      try {
+        destination = new URL(link.href, window.location.href);
+      } catch {
+        return;
+      }
+
+      if (destination.origin !== window.location.origin) return;
+
+      attribution.forEach((value, key) => {
+        if (!destination.searchParams.has(key)) {
+          destination.searchParams.set(key, value);
+        }
+      });
+
+      link.href = destination.href;
+    },
+    { capture: true },
+  );
+})();
+</script>
+
+<script is:inline>
 document.addEventListener("click", (event) => {
   const target = event.target;
   const button =
