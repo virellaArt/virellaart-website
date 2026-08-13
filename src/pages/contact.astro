@@ -937,11 +937,22 @@ const pageDescription =
 
 const extra = extraContent[language] ?? extraContent.en;
 
-const whatsappMessage =
+const contactPageURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com",
+).href;
+
+const whatsappMessage = [
   translations.product.whatsappMessage.replace(
     "{product}",
     "VIRELLAART",
-  );
+  ),
+  "",
+  extra.briefTitle,
+  ...extra.briefItems.map((item) => `• ${item}`),
+  "",
+  contactPageURL,
+].join("\n");
 
 const whatsappURL =
   `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
