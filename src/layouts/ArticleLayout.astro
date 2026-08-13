@@ -69,6 +69,40 @@ const imageURL = new URL(
   siteURL,
 ).href;
 
+const articleIntent = `${title} ${section ?? ""} ${keywords.join(" ")}`.toLowerCase();
+
+const commercialPath = articleIntent.includes("bedroom") || articleIntent.includes(" bed ")
+  ? "/bedrooms"
+  : articleIntent.includes("dining")
+    ? "/dining-rooms"
+    : articleIntent.includes("tv unit") || articleIntent.includes("media furniture")
+      ? "/tv-units"
+      : articleIntent.includes("sofa") || articleIntent.includes("living room")
+        ? "/living-rooms"
+        : "/collections";
+
+const commercialLabel = commercialPath === "/bedrooms"
+  ? "Explore Bedroom Collections"
+  : commercialPath === "/dining-rooms"
+    ? "Explore Dining Room Collections"
+    : commercialPath === "/tv-units"
+      ? "Explore TV Unit Collections"
+      : commercialPath === "/living-rooms"
+        ? "Explore Living Room Collections"
+        : "Explore VIRELLAART Collections";
+
+const commercialURL = localizedPath(commercialPath, language);
+const quotationMessage = [
+  "Hello VIRELLAART, I am reading this buying guide:",
+  title,
+  `Page: ${canonicalURL}`,
+  "I would like a product and delivery quotation.",
+  "Preferred model or collection:",
+  "Delivery country:",
+  "Delivery city:",
+].join("\n");
+const quotationURL = `https://wa.me/905539478608?text=${encodeURIComponent(quotationMessage)}`;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -231,4 +265,107 @@ const faqSchema =
   </Fragment>
 
   <slot />
+
+  <section class="article-commercial-bridge" aria-labelledby="article-commercial-title">
+    <div class="article-commercial-shell">
+      <p class="article-commercial-eyebrow">From guide to quotation</p>
+      <h2 id="article-commercial-title">Ready to compare a real VIRELLAART model?</h2>
+      <p>
+        Continue with the relevant collection, then send the model together with your delivery country and city. Your WhatsApp request will include this guide so the conversation keeps its context.
+      </p>
+      <div class="article-commercial-actions">
+        <a class="article-commercial-secondary" href={commercialURL}>
+          {commercialLabel}
+        </a>
+        <a
+          class="article-commercial-primary"
+          href={quotationURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-whatsapp-context="article-commercial-bridge"
+        >
+          Get Price & Delivery Quote
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .article-commercial-bridge {
+    padding: 56px 20px 72px;
+    background: #17120f;
+    color: #f7f3ed;
+  }
+
+  .article-commercial-shell {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .article-commercial-eyebrow {
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+
+  .article-commercial-shell h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.08;
+  }
+
+  .article-commercial-shell > p:not(.article-commercial-eyebrow) {
+    max-width: 700px;
+    margin: 18px auto 0;
+    line-height: 1.7;
+    opacity: 0.84;
+  }
+
+  .article-commercial-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .article-commercial-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .article-commercial-primary {
+    background: #f7f3ed;
+    color: #17120f;
+  }
+
+  .article-commercial-secondary {
+    border: 1px solid rgba(247, 243, 237, 0.35);
+    color: #f7f3ed;
+  }
+
+  @media (max-width: 640px) {
+    .article-commercial-bridge {
+      padding: 44px 16px 56px;
+    }
+
+    .article-commercial-actions {
+      flex-direction: column;
+    }
+
+    .article-commercial-actions a {
+      width: 100%;
+    }
+  }
+</style>
