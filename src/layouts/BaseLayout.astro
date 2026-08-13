@@ -317,6 +317,26 @@ document.addEventListener("click", (event) => {
               letter.toUpperCase(),
             )
         : undefined;
+    const searchParams =
+      new URLSearchParams(window.location.search);
+    const referrerHost = (() => {
+      if (!document.referrer) return "";
+
+      try {
+        return new URL(document.referrer).hostname.toLowerCase();
+      } catch {
+        return "";
+      }
+    })();
+    const inferredSocialSource =
+      referrerHost.includes("instagram")
+        ? "instagram"
+        : referrerHost.includes("facebook") ||
+            referrerHost.includes("fb.com")
+          ? "facebook"
+          : referrerHost.includes("pinterest")
+            ? "pinterest"
+            : undefined;
     const eventData = {
       cta_position:
         button.dataset.whatsappContext ||
@@ -351,6 +371,21 @@ document.addEventListener("click", (event) => {
       page_url:
         button.dataset.pageUrl ||
         window.location.href,
+      landing_url:
+        window.location.href,
+      utm_source:
+        searchParams.get("utm_source") ||
+        inferredSocialSource ||
+        undefined,
+      utm_medium:
+        searchParams.get("utm_medium") ||
+        (inferredSocialSource ? "social" : undefined),
+      utm_campaign:
+        searchParams.get("utm_campaign") ||
+        undefined,
+      utm_content:
+        searchParams.get("utm_content") ||
+        undefined,
       quote_engine:
         button.dataset.quoteEngine ||
         undefined,
