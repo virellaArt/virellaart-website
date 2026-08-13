@@ -1768,6 +1768,8 @@ const productTrust =
                   autocomplete="country-name"
                   maxlength="80"
                   placeholder={productQuote.country}
+                  required
+                  aria-required="true"
                 />
               </label>
 
@@ -1781,6 +1783,8 @@ const productTrust =
                   autocomplete="address-level2"
                   maxlength="80"
                   placeholder={productQuote.city}
+                  required
+                  aria-required="true"
                 />
               </label>
 
@@ -2215,14 +2219,55 @@ const productTrust =
       ].forEach((field) => {
         field?.addEventListener(
           "input",
-          updateQuoteLinks,
+          () => {
+            if (
+              field instanceof HTMLInputElement &&
+              field.value.trim() !== ""
+            ) {
+              field.removeAttribute("aria-invalid");
+            }
+
+            updateQuoteLinks();
+          },
         );
       });
+
+      function validateDestination(event) {
+        const requiredFields = [
+          countryInput,
+          cityInput,
+        ].filter(
+          (field) => field instanceof HTMLInputElement,
+        );
+
+        const missingField =
+          requiredFields.find(
+            (field) => field.value.trim() === "",
+          );
+
+        if (!missingField) {
+          requiredFields.forEach((field) =>
+            field.removeAttribute("aria-invalid"),
+          );
+          return true;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        missingField.value = missingField.value.trim();
+        missingField.setAttribute("aria-invalid", "true");
+        missingField.focus();
+        missingField.reportValidity();
+        return false;
+      }
 
       quoteLinks.forEach((link) => {
         link.addEventListener(
           "click",
-          updateQuoteLinks,
+          (event) => {
+            updateQuoteLinks();
+            validateDestination(event);
+          },
         );
       });
 
