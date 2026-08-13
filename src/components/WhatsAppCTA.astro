@@ -2,6 +2,7 @@
 import {
   getLanguageFromPath,
   getTranslations,
+  stripLanguagePrefix,
 } from "../i18n/config";
 
 const language = getLanguageFromPath(Astro.url.pathname);
@@ -10,8 +11,39 @@ const message = translations.product.whatsappMessage.replace(
   "{product}",
   "VIRELLAART",
 );
+const pageURL = new URL(
+  Astro.url.pathname,
+  "https://www.virellaart.com",
+).href;
+const isHomePage =
+  stripLanguagePrefix(Astro.url.pathname) === "/";
+
+const homeQuotePrompts: Record<string, string> = {
+  en: "Please send:\n• Collection or model:\n• Delivery country:\n• Delivery city:\n• Preferred configuration / pieces:",
+  tr: "Lütfen gönderin:\n• Koleksiyon veya model:\n• Teslimat ülkesi:\n• Teslimat şehri:\n• İstenen takım / parçalar:",
+  de: "Bitte senden Sie:\n• Kollektion oder Modell:\n• Lieferland:\n• Lieferstadt:\n• Gewünschte Konfiguration / Teile:",
+  fr: "Merci d’indiquer :\n• Collection ou modèle :\n• Pays de livraison :\n• Ville de livraison :\n• Configuration / pièces souhaitées :",
+  it: "Invia per favore:\n• Collezione o modello:\n• Paese di consegna:\n• Città di consegna:\n• Configurazione / pezzi desiderati:",
+  ru: "Пожалуйста, укажите:\n• Коллекция или модель:\n• Страна доставки:\n• Город доставки:\n• Нужная комплектация / предметы:",
+  ar: "يرجى إرسال:\n• المجموعة أو الموديل:\n• بلد التسليم:\n• مدينة التسليم:\n• التكوين / القطع المطلوبة:",
+  bg: "Моля, изпратете:\n• Колекция или модел:\n• Държава за доставка:\n• Град за доставка:\n• Желана конфигурация / артикули:",
+  ro: "Vă rugăm să trimiteți:\n• Colecția sau modelul:\n• Țara de livrare:\n• Orașul de livrare:\n• Configurația / piesele dorite:",
+  el: "Παρακαλώ στείλτε:\n• Συλλογή ή μοντέλο:\n• Χώρα παράδοσης:\n• Πόλη παράδοσης:\n• Επιθυμητή σύνθεση / τεμάχια:",
+  es: "Indique por favor:\n• Colección o modelo:\n• País de entrega:\n• Ciudad de entrega:\n• Configuración / piezas deseadas:",
+  sr: "Molimo pošaljite:\n• Kolekciju ili model:\n• Državu isporuke:\n• Grad isporuke:\n• Željenu konfiguraciju / komade:",
+  kk: "Жіберіңіз:\n• Коллекция немесе модель:\n• Жеткізу елі:\n• Жеткізу қаласы:\n• Қажетті жиынтық / бөлшектер:",
+  uz: "Iltimos, yuboring:\n• Kolleksiya yoki model:\n• Yetkazib berish mamlakati:\n• Yetkazib berish shahri:\n• Kerakli konfiguratsiya / qismlar:",
+  pt: "Por favor indique:\n• Coleção ou modelo:\n• País de entrega:\n• Cidade de entrega:\n• Configuração / peças pretendidas:",
+  pl: "Proszę podać:\n• Kolekcję lub model:\n• Kraj dostawy:\n• Miasto dostawy:\n• Wybraną konfigurację / elementy:",
+};
+
+const homeQuotePrompt =
+  homeQuotePrompts[language] ?? homeQuotePrompts.en;
+const whatsappMessage = isHomePage
+  ? [message, "", homeQuotePrompt, "", pageURL].join("\n")
+  : [message, "", pageURL].join("\n");
 const whatsappURL =
-  `https://wa.me/905539478608?text=${encodeURIComponent(message)}`;
+  `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
 <a
@@ -20,6 +52,8 @@ const whatsappURL =
   target="_blank"
   rel="noopener noreferrer"
   data-whatsapp-context="floating"
+  data-page-url={pageURL}
+  data-home-page={isHomePage ? "true" : "false"}
   aria-label={translations.product.whatsapp}
 >
   <svg
@@ -153,9 +187,21 @@ const whatsappURL =
           "[data-modern-product-grid]",
         );
       const collections = document.querySelector("#collections");
+      const homeHeroWhatsapp = document.querySelector(
+        'a[data-whatsapp-context="home-hero"][href*="wa.me"]',
+      );
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
+
+      if (
+        button.dataset.homePage === "true" &&
+        homeHeroWhatsapp instanceof HTMLAnchorElement
+      ) {
+        homeHeroWhatsapp.href = button.href;
+        homeHeroWhatsapp.dataset.pageUrl =
+          button.dataset.pageUrl || window.location.href;
+      }
 
       const trackFunnel = (step) => {
         if (
@@ -233,18 +279,14 @@ const whatsappURL =
 
         if (
           quoteBuilder instanceof HTMLElement ||
-          categoryTarget instanceof HTMLElement
+          categoryTarget instanceof HTMLElement ||
+          button.dataset.homePage === "true"
         ) {
           shouldShow = window.scrollY > 120;
         } else if (collections instanceof HTMLElement) {
-          const showAfter =
-            collections.offsetTop +
-            collections.offsetHeight -
-            60;
-
-          shouldShow = window.scrollY > showAfter;
+          shouldShow = window.scrollY > 120;
         } else {
-          shouldShow = window.scrollY > 450;
+          shouldShow = window.scrollY > 280;
         }
 
         button.classList.toggle("is-visible", shouldShow);
