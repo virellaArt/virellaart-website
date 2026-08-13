@@ -17,14 +17,19 @@ interface Props {
 
 const { market } = Astro.props;
 const translations = getTranslations(market.language);
-const whatsappMessage =
-  `${market.cta}: ${market.marketName} — ${marketPagePath(market)}`;
-const whatsappURL =
-  `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
 const canonicalURL = new URL(
   marketPagePath(market),
   "https://www.virellaart.com",
 ).href;
+const whatsappMessage = [
+  market.cta,
+  "",
+  market.ctaNote,
+  "",
+  canonicalURL,
+].join("\n");
+const whatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
