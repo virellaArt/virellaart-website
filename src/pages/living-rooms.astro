@@ -14,14 +14,20 @@ const language = getLanguageFromPath(Astro.url.pathname);
 const translations = getTranslations(language);
 const categoryTranslations =
   translations.category.livingRooms;
-const pageTitle = getCategorySeoTitle(
-  categoryTranslations.title,
-  language,
-);
-const pageDescription = getSeoDescription(
-  categoryTranslations.description,
-  language,
-);
+const pageTitle =
+  language === "en"
+    ? "Luxury Living Room Furniture & Sofa Sets"
+    : getCategorySeoTitle(
+        categoryTranslations.title,
+        language,
+      );
+const pageDescription =
+  language === "en"
+    ? "Explore VIRELLAART luxury living room furniture and sofa sets. Made-to-order collections from Istanbul with premium craftsmanship and international delivery support."
+    : getSeoDescription(
+        categoryTranslations.description,
+        language,
+      );
 const models = livingRoomModels;
 ---
 
