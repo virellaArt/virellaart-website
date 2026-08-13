@@ -2744,13 +2744,17 @@ sultanGreenDining: {
       "/soho-modern-dining-room-set-02.webp",
       "/soho-modern-dining-room-set-03.webp",
       "/soho-modern-dining-room-set-04.webp",
+      "/soho-modern-dining-room-set-05.webp",
+      "/soho-modern-dining-room-set-06.webp",
     ],
     imageAlts: {
       en: [
-        "SOHO modern dining room set with elegant table and contemporary chairs",
-        "SOHO luxury dining collection featuring refined console and modern interior design",
-        "SOHO contemporary dining room furniture set designed for sophisticated homes",
-        "SOHO modern dining room collection with premium architectural style",
+        "Soho modern dining room set with contemporary dining table and upholstered chairs",
+        "Soho modern dining table with coordinated upholstered dining chairs",
+        "Soho contemporary dining room collection viewed from above",
+        "Soho upholstered modern dining chair detail",
+        "Soho modern dining room furniture detail in a refined interior",
+        "Soho contemporary dining collection with coordinated console and dining furniture",
       ],
     },
     prices: [
