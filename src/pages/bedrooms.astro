@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionCatalog from "../components/CollectionCatalog.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
+import CommercialCategoryLinks from "../components/CommercialCategoryLinks.astro";
 import { bedroomModels } from "../data/bedroom-catalog";
 import {
   getCategorySeoTitle,
@@ -23,7 +24,7 @@ const pageTitle =
       );
 const pageDescription =
   language === "en"
-    ? "Explore VIRELLAART luxury bedroom furniture and complete bedroom sets. Made to order in Istanbul with coordinated pieces and international delivery support."
+    ? "Explore VIRELLAART luxury bedroom furniture and bedroom sets with collection prices, made-to-order options and international delivery from Istanbul."
     : getSeoDescription(
         categoryTranslations.description,
         language,
@@ -44,5 +45,10 @@ const models = bedroomModels;
     categoryName={categoryTranslations.title}
     categoryDescription={categoryTranslations.description}
     eyebrow={translations.category.eyebrow}
+  />
+
+  <CommercialCategoryLinks
+    {language}
+    currentCategory="bedrooms"
   />
 </BaseLayout>

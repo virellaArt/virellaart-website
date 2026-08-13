@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CollectionCatalog from "../components/CollectionCatalog.astro";
 import CollectionSchema from "../components/CollectionSchema.astro";
+import CommercialCategoryLinks from "../components/CommercialCategoryLinks.astro";
 import { diningRoomModels } from "../data/dining-room-catalog";
 import {
   getCategorySeoTitle,
@@ -16,14 +17,14 @@ const categoryTranslations =
   translations.category.diningRooms;
 const pageTitle =
   language === "en"
-    ? "Luxury Dining Room Sets"
+    ? "Luxury Dining Room Sets | VIRELLAART"
     : getCategorySeoTitle(
         categoryTranslations.title,
         language,
       );
 const pageDescription =
   language === "en"
-    ? "Explore VIRELLAART luxury dining room sets with dining tables, chairs, consoles and coordinated pieces. Made to order in Istanbul with international delivery support."
+    ? "Explore VIRELLAART luxury dining room sets with collection prices, coordinated pieces, made-to-order options and international delivery from Istanbul."
     : getSeoDescription(
         categoryTranslations.description,
         language,
@@ -44,5 +45,10 @@ const models = diningRoomModels;
     categoryName={categoryTranslations.title}
     categoryDescription={categoryTranslations.description}
     eyebrow={translations.category.eyebrow}
+  />
+
+  <CommercialCategoryLinks
+    {language}
+    currentCategory="dining-rooms"
   />
 </BaseLayout>
