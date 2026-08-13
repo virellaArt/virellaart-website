@@ -1824,7 +1824,7 @@ const manufacturingSeoContent: Record<
   ManufacturingContent["seo"]
 > = {
   "en": {
-    "title": "Luxury Furniture Manufacturer in Istanbul | VIRELLAART",
+    "title": "Luxury Furniture Manufacturing in Istanbul | VIRELLAART",
     "description": "Luxury furniture direct from Istanbul with selected customization, upholstery, quality control, secure packaging and worldwide delivery. Request a quote."
   },
   "tr": {
