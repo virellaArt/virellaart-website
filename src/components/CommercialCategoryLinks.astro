@@ -1,0 +1,142 @@
+---
+import {
+  getTranslations,
+  localizedPath,
+  type Language,
+} from "../i18n/config";
+
+type CategoryKey =
+  | "living-rooms"
+  | "dining-rooms"
+  | "bedrooms"
+  | "tv-units";
+
+interface Props {
+  language: Language;
+  currentCategory: CategoryKey;
+}
+
+const { language, currentCategory } = Astro.props;
+const translations = getTranslations(language);
+
+const categories = [
+  {
+    key: "living-rooms",
+    translationKey: "livingRooms",
+    englishLabel: "Luxury Living Room Furniture",
+  },
+  {
+    key: "dining-rooms",
+    translationKey: "diningRooms",
+    englishLabel: "Luxury Dining Room Sets",
+  },
+  {
+    key: "bedrooms",
+    translationKey: "bedrooms",
+    englishLabel: "Luxury Bedroom Sets",
+  },
+  {
+    key: "tv-units",
+    translationKey: "tvUnits",
+    englishLabel: "Luxury TV Units",
+  },
+] as const;
+
+const links = categories
+  .filter((category) => category.key !== currentCategory)
+  .map((category) => ({
+    href: localizedPath(`/${category.key}`, language),
+    label:
+      language === "en"
+        ? category.englishLabel
+        : translations.category[category.translationKey].title,
+  }));
+
+const title =
+  language === "en"
+    ? "Explore More VIRELLAART Luxury Furniture"
+    : translations.nav.collections;
+---
+
+<nav
+  class="commercial-category-links"
+  aria-label={title}
+>
+  <span>{title}</span>
+
+  <div>
+    {
+      links.map((link) => (
+        <a href={link.href}>
+          {link.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<style>
+  .commercial-category-links {
+    width: min(100% - 48px, 1220px);
+    margin: 0 auto 96px;
+    padding: 28px 0 0;
+    border-top: 1px solid rgba(198, 168, 93, 0.28);
+  }
+
+  .commercial-category-links > span {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+  }
+
+  .commercial-category-links > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .commercial-category-links a {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 12px;
+    line-height: 1.4;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .commercial-category-links a > span {
+    flex: 0 0 auto;
+    color: var(--gold);
+  }
+
+  .commercial-category-links a:hover {
+    border-color: rgba(198, 168, 93, 0.55);
+    background: rgba(198, 168, 93, 0.07);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 760px) {
+    .commercial-category-links {
+      width: min(100% - 24px, 1220px);
+      margin-bottom: 64px;
+    }
+
+    .commercial-category-links > div {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
