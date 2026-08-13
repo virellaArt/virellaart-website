@@ -1,0 +1,46 @@
+name: Apply Required Destination Patch
+
+on:
+  push:
+    branches:
+      - agent/product-quote-required-destination
+    paths:
+      - scripts/patch-required-destination.mjs
+      - .github/workflows/patch-required-destination.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: ${{ !contains(github.event.head_commit.message, '[destination-required]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/product-quote-required-destination
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Apply destination validation patch
+        run: node scripts/patch-required-destination.mjs
+
+      - name: Commit ProductTemplate update
+        shell: bash
+        run: |
+          if git diff --quiet -- src/components/ProductTemplate.astro; then
+            echo "No destination validation changes required."
+            exit 0
+          fi
+          git config user.name "VIRELLAART Conversion Automation"
+          git config user.email "info@virellaart.com"
+          git add -- src/components/ProductTemplate.astro
+          git diff --cached --check
+          git commit -m "cro: require delivery destination before WhatsApp [destination-required]"
+          git push origin HEAD:agent/product-quote-required-destination
