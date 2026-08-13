@@ -297,13 +297,10 @@ if (productOrderModel !== "made-to-order") {
 }
 
 /*
- * Google maps "InStock" to products that are currently available for
- * ordering and can be fulfilled. VIRELLAART's separate orderModel and
- * visible copy make clear that every item is produced after confirmation;
- * this value does not claim warehouse inventory.
+ * All current products are made to order. Google defines InStock as an
+ * item that is in stock, so availability is intentionally omitted until
+ * a truthful supported ItemAvailability value applies to the product.
  */
-const productAvailability =
-  "https://schema.org/InStock";
 
 /* VIRELLAART PRODUCT IMAGE ALTS */
 
@@ -786,8 +783,6 @@ const productSchema = {
     priceCurrency: "USD",
     price: primaryPrice,
     itemCondition: "https://schema.org/NewCondition",
-    availability: productAvailability,
-
     seller: {
       "@id": "https://www.virellaart.com/#organization",
     },
