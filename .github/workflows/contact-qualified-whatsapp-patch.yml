@@ -1,0 +1,48 @@
+name: Apply contact qualified WhatsApp patch
+
+on:
+  push:
+    branches:
+      - agent/contact-qualified-whatsapp
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: agent/contact-qualified-whatsapp
+
+      - name: Patch contact quotation message
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/pages/contact.astro';
+          const workflow = '.github/workflows/contact-qualified-whatsapp-patch.yml';
+          let source = fs.readFileSync(path, 'utf8');
+          const before = `const whatsappMessage =\n  translations.product.whatsappMessage.replace(\n    "{product}",\n    "VIRELLAART",\n  );\n\nconst whatsappURL =\n  \`https://wa.me/905539478608?text=\${encodeURIComponent(whatsappMessage)}\`;`;
+          const after = `const contactPageURL = new URL(\n  Astro.url.pathname,\n  "https://www.virellaart.com",\n).href;\n\nconst whatsappMessage = [\n  translations.product.whatsappMessage.replace(\n    "{product}",\n    "VIRELLAART",\n  ),\n  "",\n  extra.briefTitle,\n  ...extra.briefItems.map((item) => \`• \${item}\`),\n  "",\n  contactPageURL,\n].join("\\n");\n\nconst whatsappURL =\n  \`https://wa.me/905539478608?text=\${encodeURIComponent(whatsappMessage)}\`;`;
+          const matches = source.split(before).length - 1;
+          if (matches !== 1) {
+            throw new Error(`Expected one contact WhatsApp block, found ${matches}`);
+          }
+          source = source.replace(before, after);
+          fs.writeFileSync(path, source);
+          fs.unlinkSync(workflow);
+          NODE
+
+      - name: Commit patch only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- src/pages/contact.astro .github/workflows/contact-qualified-whatsapp-patch.yml
+          git diff --cached --check
+          git commit -m "feat: qualify contact WhatsApp requests"
+          git push origin HEAD:agent/contact-qualified-whatsapp
