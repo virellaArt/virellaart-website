@@ -1,23 +1,26 @@
-name: Apply VIRELLAART Public Truth Fix
+name: Verify VIRELLAART Site
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  patch:
-    if: ${{ !startsWith(github.event.head_commit.message, 'fix: align public claims and Switzerland') }}
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -25,180 +28,8 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Apply truth-safe copy and Switzerland route
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          def replace_many(path, pairs):
-              p = Path(path)
-              text = p.read_text(encoding='utf-8-sig')
-              original = text
-              for old, new in pairs:
-                  text = text.replace(old, new)
-              if text != original:
-                  p.write_text(text, encoding='utf-8')
-                  print(f'UPDATED {path}')
-              else:
-                  print(f'NO CHANGE {path}')
-
-          replace_many('src/pages/about.astro', [
-              ('About VIRELLAART | Luxury Furniture Manufacturer', 'About VIRELLAART | Luxury Furniture Brand'),
-              ('Discover VIRELLAART, an Istanbul-based luxury furniture manufacturer combining design expertise, detailed craftsmanship, quality control and worldwide delivery support.', 'Discover VIRELLAART, an Istanbul-based luxury furniture brand coordinating design, made-to-order production with independent manufacturing partners, quality review and worldwide delivery support.'),
-              ('Discover VIRELLAART, an Istanbul-based luxury furniture manufacturer combining design expertise, refined craftsmanship, quality control and worldwide delivery.', 'Discover VIRELLAART, an Istanbul-based luxury furniture brand coordinating refined collections, production with independent manufacturing partners, quality review and worldwide delivery.'),
-              ('A Manufacturer Rooted in Experience, Focused on Excellence', 'A Furniture Brand Rooted in Experience, Focused on Excellence'),
-              ('Our manufacturer-led approach connects design development, production planning, craftsmanship, quality control and international customer service within one coordinated process.', 'Our coordinated approach connects collection planning, independent manufacturing partners, quality review and international customer service within one managed process.'),
-              ('A Manufacturer-Led Customer Experience', 'A Coordinated Customer Experience'),
-              ('Manufacturer-Direct Communication', 'Direct VIRELLAART Communication'),
-              ('Communicate directly with our team for clear product, customization, production and delivery information.', 'Communicate directly with the VIRELLAART team for clear product, customization, production-coordination and delivery information.'),
-              ('VIRELLAART designs and manufactures luxury furniture in Türkiye for residential and commercial interiors worldwide.', 'VIRELLAART is a luxury furniture brand coordinating made-to-order collections produced in Türkiye by independent manufacturing partners for residential and commercial interiors worldwide.'),
-              ('Illustrative VIRELLAART luxury furniture manufacturing facility', 'Illustrative luxury furniture production environment in Türkiye'),
-              ('VIRELLAART Hakkında | Lüks Mobilya Üreticisi', 'VIRELLAART Hakkında | Lüks Mobilya Markası'),
-              ("İstanbul merkezli lüks mobilya üreticisi VIRELLAART'ı; tasarım uzmanlığı, detaylı işçilik, kalite kontrol ve dünya çapında teslimat desteğiyle keşfedin.", "İstanbul merkezli lüks mobilya markası VIRELLAART'ı; koleksiyon planlama, bağımsız üretim ortaklarıyla üretim koordinasyonu, kalite incelemesi ve dünya çapında teslimat desteğiyle keşfedin."),
-              ('Deneyime Dayanan, Mükemmelliğe Odaklanan Bir Üretici', 'Deneyime Dayanan, Mükemmelliğe Odaklanan Bir Mobilya Markası'),
-              ('Üretici odaklı yaklaşımımız; tasarım geliştirme, üretim planlama, işçilik, kalite kontrol ve uluslararası müşteri hizmetlerini koordineli bir süreçte birleştirir.', 'Koordineli yaklaşımımız; koleksiyon planlama, bağımsız üretim ortakları, kalite incelemesi ve uluslararası müşteri hizmetlerini tek süreçte birleştirir.'),
-              ('Üretici Odaklı Müşteri Deneyimi', 'Koordineli Müşteri Deneyimi'),
-              ('Üreticiyle Doğrudan İletişim', 'VIRELLAART ile Doğrudan İletişim'),
-              ('Ürün, kişiselleştirme, üretim ve teslimat bilgileri için doğrudan ekibimizle iletişim kurun.', 'Ürün, kişiselleştirme, üretim koordinasyonu ve teslimat bilgileri için doğrudan VIRELLAART ekibiyle iletişim kurun.'),
-              ('VIRELLAART, konut ve ticari projeler için lüks mobilyalarını Türkiye\'de tasarlar ve üretir.', 'VIRELLAART, konut ve ticari projeler için bağımsız üretim ortakları tarafından Türkiye\'de üretilen lüks mobilya koleksiyonlarını koordine eder.'),
-          ])
-
-          replace_many('src/i18n/manufacturing.ts', [
-              ('Luxury Furniture Manufacturing in Istanbul | VIRELLAART', 'Luxury Furniture Production & Coordination | VIRELLAART'),
-              ('Discover VIRELLAART luxury furniture manufacturing in Istanbul, including design development, decorative craftsmanship, upholstery, quality control, protective packaging and worldwide delivery.', 'Discover how VIRELLAART coordinates luxury furniture production in Türkiye with independent manufacturing partners, including collection planning, craftsmanship, quality review, protective packaging and worldwide delivery.'),
-              ('VIRELLAART Manufacturing', 'VIRELLAART Production'),
-              ('Luxury Furniture Manufacturing', 'Luxury Furniture Production & Coordination'),
-              ('VIRELLAART brings furniture design, production expertise, detailed craftsmanship and international service together for luxury residences, villas and distinguished interior projects worldwide.', 'VIRELLAART coordinates furniture design, made-to-order production with independent manufacturing partners and international service for luxury residences, villas and distinguished interior projects worldwide.'),
-              ('Luxury Furniture Manufacturer', 'Luxury Furniture Brand'),
-              ('VIRELLAART luxury furniture manufacturing facility in Istanbul', 'Illustrative luxury furniture production environment in Türkiye'),
-              ('Direct Manufacturer', 'Direct VIRELLAART Support'),
-              ('More Than a Furniture Seller', 'More Than a Product Catalogue'),
-              ('A Manufacturer-Led Experience', 'A Coordinated Project Experience'),
-              ('VIRELLAART is an Istanbul-based luxury furniture manufacturer developing complete collections for refined residences, villas and private interiors.', 'VIRELLAART is an Istanbul-based luxury furniture brand coordinating complete collections produced in Türkiye by independent manufacturing partners for refined residences, villas and private interiors.'),
-              ('Manufacturer-Direct Communication', 'Direct VIRELLAART Communication'),
-              ('Communicate directly with an Istanbul-based luxury furniture manufacturer throughout collection selection and order preparation.', 'Communicate directly with the VIRELLAART team throughout collection selection, production coordination and order preparation.'),
-              ('A Manufacturer-Led', 'A Coordinated'),
-              ('VIRELLAART designs and manufactures luxury furniture in Türkiye, managing quality control, customization and international delivery for every order.', 'VIRELLAART coordinates made-to-order luxury furniture produced in Türkiye by independent manufacturing partners, together with customization review, quality review and international delivery support.'),
-              ('İstanbul Lüks Mobilya Üretimi | VIRELLAART', 'Lüks Mobilya Üretim Koordinasyonu | VIRELLAART'),
-              ('VIRELLAART İstanbul lüks mobilya üretim sürecini; tasarım geliştirme, dekoratif işçilik, döşeme, kalite kontrol, koruyucu paketleme ve uluslararası teslimat aşamalarıyla keşfedin.', 'VIRELLAART’ın bağımsız üretim ortaklarıyla Türkiye’de koordine ettiği lüks mobilya sürecini; koleksiyon planlama, işçilik, kalite incelemesi, koruyucu paketleme ve uluslararası teslimat aşamalarıyla keşfedin.'),
-              ('VIRELLAART Üretim', 'VIRELLAART Üretim Koordinasyonu'),
-              ('Lüks Mobilya Üretimi', 'Lüks Mobilya Üretim Koordinasyonu'),
-              ('VIRELLAART; mobilya tasarımı, üretim tecrübesi, detaylı işçilik ve uluslararası hizmeti dünyanın farklı bölgelerindeki seçkin konut, villa ve iç mekân projeleri için bir araya getirir.', 'VIRELLAART; koleksiyon planlamasını, bağımsız üretim ortaklarıyla üretim koordinasyonunu ve uluslararası hizmeti dünyanın farklı bölgelerindeki seçkin konut, villa ve iç mekân projeleri için bir araya getirir.'),
-              ('Lüks Mobilya Üreticisi', 'Lüks Mobilya Markası'),
-              ('İstanbul VIRELLAART lüks mobilya üretim tesisi', 'Türkiye’de lüks mobilya üretim sürecini temsil eden görsel'),
-              ('Doğrudan Üretici', 'Doğrudan VIRELLAART Desteği'),
-              ('Bir Mobilya Satıcısından Daha Fazlası', 'Bir Ürün Kataloğundan Daha Fazlası'),
-              ('Üretici Odaklı Bir Deneyim', 'Koordineli Bir Proje Deneyimi'),
-              ('VIRELLAART, seçkin konutlar, villalar ve özel iç mekânlar için komple koleksiyonlar geliştiren İstanbul merkezli bir lüks mobilya üreticisidir.', 'VIRELLAART, seçkin konutlar, villalar ve özel iç mekânlar için bağımsız üretim ortaklarıyla Türkiye’de üretilen komple koleksiyonları koordine eden İstanbul merkezli bir lüks mobilya markasıdır.'),
-              ('Üreticiyle Doğrudan İletişim', 'VIRELLAART ile Doğrudan İletişim'),
-              ('VIRELLAART, konut ve ticari projeler için lüks mobilyalarını Türkiye’de tasarlar ve üretir.', 'VIRELLAART, konut ve ticari projeler için bağımsız üretim ortakları tarafından Türkiye’de üretilen lüks mobilya koleksiyonlarını koordine eder.'),
-          ])
-
-          # Remove ownership wording in additional localized manufacturing copy while preserving production/craft content.
-          replace_many('src/i18n/manufacturing-locales.ts', [
-              ('manufacturer', 'VIRELLAART brand'), ('Manufacturer', 'VIRELLAART Brand'),
-              ('fabricant', 'marque VIRELLAART'), ('Fabricant', 'Marque VIRELLAART'),
-              ('produttore', 'marchio VIRELLAART'), ('Produttore', 'Marchio VIRELLAART'),
-              ('Hersteller', 'VIRELLAART'), ('Herstellerkontakt', 'VIRELLAART-Beratung'),
-              ('производитель', 'бренд VIRELLAART'), ('Производитель', 'Бренд VIRELLAART'),
-              ('مصنّع', 'علامة VIRELLAART'),
-              ('производител', 'марка VIRELLAART'), ('Производител', 'Марка VIRELLAART'),
-              ('producător', 'brand VIRELLAART'), ('Producător', 'Brand VIRELLAART'),
-              ('fabricante', 'marca VIRELLAART'), ('Fabricante', 'Marca VIRELLAART'),
-              ('proizvođač', 'brend VIRELLAART'), ('Proizvođač', 'Brend VIRELLAART'),
-              ('fabricante', 'marca VIRELLAART'),
-              ('producent', 'marka VIRELLAART'), ('Producent', 'Marka VIRELLAART'),
-          ])
-
-          replace_many('src/pages/index.astro', [
-              ('direct manufacturer communication', 'direct VIRELLAART communication'),
-              ('Direct Manufacturer', 'Direct VIRELLAART Support'),
-              ('doğrudan üretici iletişimini', 'doğrudan VIRELLAART iletişimini'),
-              ('Doğrudan Üretici', 'Doğrudan VIRELLAART Desteği'),
-          ])
-
-          market = Path('src/data/market-pages.ts')
-          text = market.read_text(encoding='utf-8-sig')
-          original = text
-          # Primary English-market truth fixes.
-          pairs = [
-              ('Luxury Furniture Manufacturer for the UK | VIRELLAART', 'Luxury Furniture for the UK | VIRELLAART'),
-              ('direct manufacturer support', 'direct VIRELLAART support'),
-              ('Direct Manufacturer Support for the UK', 'Direct VIRELLAART Support for the UK'),
-              ('Luxury Furniture Manufacturer for the USA | VIRELLAART', 'Luxury Furniture for the USA | VIRELLAART'),
-              ('Luxury Furniture Manufacturer for Canada | VIRELLAART', 'Luxury Furniture for Canada | VIRELLAART'),
-              ('connects Canadian homeowners and interior professionals directly with an Istanbul luxury furniture manufacturer', 'supports Canadian homeowners and interior professionals through the VIRELLAART team, coordinating production with independent manufacturing partners in Türkiye'),
-              ('Clear, Manufacturer-Direct Support', 'Clear VIRELLAART Support'),
-              ('Made-to-order luxury furniture from Istanbul', 'Made-to-order luxury furniture produced in Türkiye'),
-              ('collections crafted in Istanbul', 'collections produced in Türkiye by independent manufacturing partners'),
-              ('made in Istanbul', 'produced in Türkiye by independent manufacturing partners'),
-              ('Hersteller VIRELLAART', 'VIRELLAART'),
-              ('direktem Herstellerkontakt', 'direkter VIRELLAART-Beratung'),
-              ('direkt vom Hersteller in Istanbul', 'über VIRELLAART mit unabhängigen Fertigungspartnern in Türkiye'),
-              ('Direkte Beratung durch den Hersteller', 'Direkte Beratung durch VIRELLAART'),
-              ('Accompagnement direct du fabricant', 'Accompagnement direct par VIRELLAART'),
-              ('conseil direct du fabricant', 'conseil direct par VIRELLAART'),
-              ('Conseil multilingue du fabricant', 'Accompagnement multilingue VIRELLAART'),
-              ('Supporto diretto dal produttore', 'Supporto diretto VIRELLAART'),
-          ]
-          for old, new in pairs:
-              text = text.replace(old, new)
-
-          if 'hreflang: "en-CH"' not in text:
-              marker = '  {\n    language: "de",\n    slug: "switzerland",\n    countryCode: "CH",\n'
-              block = '''  {\n    language: "en",\n    slug: "switzerland",\n    countryCode: "CH",\n    hreflang: "en-CH",\n    alternateGroup: "switzerland",\n    marketName: "Switzerland",\n    title: "Luxury Furniture for Switzerland | VIRELLAART",\n    description:\n      "Explore made-to-order luxury furniture for Swiss homes and projects, with VIRELLAART consultation, customization review and delivery planning from Türkiye.",\n    eyebrow: "VIRELLAART · Switzerland",\n    heading: "Luxury Furniture for Distinctive Swiss Interiors",\n    intro:\n      "VIRELLAART supports private clients and interior projects in Switzerland with coordinated furniture collections produced in Türkiye by independent manufacturing partners.",\n    serviceHeading: "Multilingual VIRELLAART Support",\n    serviceText:\n      "Discuss dimensions, fabrics, finishes and configurations with the VIRELLAART team. Written quotations confirm selected products, USD pricing, production coordination, packaging and delivery scope before approval.",\n    planningHeading: "Delivery Planning Across Switzerland",\n    planningText:\n      "Planning considers canton, city, building access and order volume. Transport, customs, import duties and destination services are clarified in the written quotation.",\n    details: [\n      "Made-to-order production with independent manufacturing partners in Türkiye",\n      "Protective packaging for international transport",\n      "Direct multilingual VIRELLAART consultation",\n      "Destination-specific delivery planning",\n    ],\n    collectionHeading: "Collections for Swiss Residences and Projects",\n    collectionText:\n      "Explore coordinated living room, dining room and bedroom collections for refined residences and interior projects across Switzerland.",\n    cta: "Request a Switzerland quotation",\n    ctaNote:\n      "Share your preferred collection, canton, city and project requirements for a detailed review.",\n  },\n'''
-              if marker not in text:
-                  raise SystemExit('Switzerland DE insertion marker not found')
-              text = text.replace(marker, block + marker, 1)
-
-          old_footer = '''market.countryCode === "CH" &&\n      market.language === "de",'''
-          new_footer = '''market.countryCode === "CH" &&\n      market.language === "en",'''
-          if old_footer not in text and new_footer not in text:
-              raise SystemExit('Switzerland footer selector not found')
-          text = text.replace(old_footer, new_footer, 1)
-          if text != original:
-              market.write_text(text, encoding='utf-8')
-              print('UPDATED src/data/market-pages.ts')
-
-          # Guard against the highest-risk ownership claims in the main trust pages.
-          checks = {
-              'src/pages/about.astro': [
-                  'Istanbul-based luxury furniture manufacturer',
-                  'Manufacturer-Direct Communication',
-                  'Lüks Mobilya Üreticisi',
-                  'Üreticiyle Doğrudan İletişim',
-              ],
-              'src/i18n/manufacturing.ts': [
-                  'VIRELLAART luxury furniture manufacturing facility in Istanbul',
-                  'VIRELLAART is an Istanbul-based luxury furniture manufacturer',
-                  'İstanbul VIRELLAART lüks mobilya üretim tesisi',
-                  'İstanbul merkezli bir lüks mobilya üreticisidir',
-              ],
-          }
-          for path, forbidden in checks.items():
-              data = Path(path).read_text(encoding='utf-8')
-              found = [x for x in forbidden if x in data]
-              if found:
-                  raise SystemExit(f'Unsafe claims remain in {path}: {found}')
-
-          print('PUBLIC TRUTH PATCH OK')
-          PY
-
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and validate
+      - name: Build and validate site
         run: npm run build
-
-      - name: Restore normal verifier and publish patch
-        shell: bash
-        run: |
-          git checkout HEAD^ -- .github/workflows/verify.yml
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/i18n/manufacturing-locales.ts src/pages/index.astro src/data/market-pages.ts .github/workflows/verify.yml
-          git diff --cached --check
-          git diff --cached --quiet && { echo "No patch changes to commit"; exit 1; }
-          git commit -m "fix: align public claims and Switzerland"
-          git push origin HEAD:main
