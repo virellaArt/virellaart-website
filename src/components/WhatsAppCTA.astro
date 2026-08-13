@@ -111,8 +111,6 @@ const whatsappURL =
     }
   }
 
-  /* FLOATING WHATSAPP VISIBILITY */
-
   .whatsapp-float {
     opacity: 0;
     pointer-events: none;
@@ -133,72 +131,135 @@ const whatsappURL =
       translateY(0)
       scale(1);
   }
-
 </style>
 
 <script is:inline>
-  /* FLOATING WHATSAPP VISIBILITY */
   (() => {
     const initialize = () => {
-      const button =
-        document.querySelector(
-          ".whatsapp-float"
-        );
+      const button = document.querySelector(".whatsapp-float");
 
-      if (!(button instanceof HTMLElement)) {
+      if (!(button instanceof HTMLAnchorElement)) {
         return;
       }
 
-      const updateVisibility = () => {
-        const collections =
-          document.querySelector(
-            "#collections"
-          );
+      const quoteBuilder = document.querySelector(
+        "[data-quote-builder]",
+      );
+      const categoryTarget =
+        document.querySelector(
+          "[data-collection-catalog] [data-catalog-grid]",
+        ) ??
+        document.querySelector(
+          "[data-modern-product-grid]",
+        );
+      const collections = document.querySelector("#collections");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
+      const trackFunnel = (step) => {
+        if (
+          window.virellaAnalyticsAllowed === true &&
+          typeof window.gtag === "function"
+        ) {
+          window.gtag("event", "funnel_continue", {
+            funnel_step: step,
+            page_path: window.location.pathname,
+            page_language: document.documentElement.lang,
+          });
+        }
+      };
+
+      const moveTo = (target, step) => {
+        if (!(target instanceof HTMLElement)) return;
+
+        target.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "start",
+        });
+
+        trackFunnel(step);
+      };
+
+      const handleProductFunnel = (event) => {
+        if (!(quoteBuilder instanceof HTMLElement)) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        moveTo(quoteBuilder, "product_quote_builder");
+
+        const country = document.querySelector("#quoteCountry");
+        if (
+          country instanceof HTMLInputElement &&
+          country.value.trim() === ""
+        ) {
+          requestAnimationFrame(() => {
+            country.focus({ preventScroll: true });
+          });
+        }
+      };
+
+      const handleCategoryFunnel = (event) => {
+        if (!(categoryTarget instanceof HTMLElement)) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        moveTo(categoryTarget, "category_product_selection");
+      };
+
+      if (quoteBuilder instanceof HTMLElement) {
+        button.dataset.funnelMode = "product-quote";
+        button.addEventListener("click", handleProductFunnel);
+      } else if (categoryTarget instanceof HTMLElement) {
+        button.dataset.funnelMode = "category-products";
+        button.addEventListener("click", handleCategoryFunnel);
+
+        document
+          .querySelectorAll(
+            'a[data-page-type="category"][href*="wa.me"], a[data-whatsapp-context*="category"][href*="wa.me"]',
+          )
+          .forEach((link) => {
+            if (
+              link instanceof HTMLAnchorElement &&
+              link !== button
+            ) {
+              link.addEventListener("click", handleCategoryFunnel);
+            }
+          });
+      }
+
+      const updateVisibility = () => {
         let shouldShow = false;
 
         if (
-          collections instanceof HTMLElement
+          quoteBuilder instanceof HTMLElement ||
+          categoryTarget instanceof HTMLElement
         ) {
+          shouldShow = window.scrollY > 120;
+        } else if (collections instanceof HTMLElement) {
           const showAfter =
             collections.offsetTop +
             collections.offsetHeight -
             60;
 
-          shouldShow =
-            window.scrollY > showAfter;
+          shouldShow = window.scrollY > showAfter;
         } else {
-          shouldShow =
-            window.scrollY > 450;
+          shouldShow = window.scrollY > 450;
         }
 
-        button.classList.toggle(
-          "is-visible",
-          shouldShow,
-        );
+        button.classList.toggle("is-visible", shouldShow);
       };
 
       updateVisibility();
 
-      window.addEventListener(
-        "scroll",
-        updateVisibility,
-        { passive: true },
-      );
-
-      window.addEventListener(
-        "resize",
-        updateVisibility,
-      );
+      window.addEventListener("scroll", updateVisibility, {
+        passive: true,
+      });
+      window.addEventListener("resize", updateVisibility);
     };
 
-    if (
-      document.readyState === "loading"
-    ) {
-      document.addEventListener(
-        "DOMContentLoaded",
-        initialize,
-      );
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initialize);
     } else {
       initialize();
     }
