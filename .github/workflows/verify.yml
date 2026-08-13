@@ -9,14 +9,13 @@ permissions:
 
 jobs:
   patch:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -45,14 +44,13 @@ jobs:
       - name: Build and validate
         run: npm run build
 
-      - name: Publish validated patch
+      - name: Publish validated source changes
         shell: bash
         run: |
-          git checkout HEAD^ -- .github/workflows/verify.yml
           git rm scripts/apply-public-truth-fix.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/pages/index.astro src/data/market-pages.ts .github/workflows/verify.yml
+          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/pages/index.astro src/data/market-pages.ts
           git diff --cached --check
           git diff --cached --quiet && { echo "No validated changes to publish"; exit 1; }
           git commit -m "fix: align public claims and Switzerland"
