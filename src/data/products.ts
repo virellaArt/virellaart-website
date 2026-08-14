@@ -3241,4 +3241,50 @@ sultanGreenDining: {
       },
     ],
   },
+
+  nobuDiningRoomSet: {
+    name: "Nobu Dining Room Set",
+    slug: "nobu-dining-room-set",
+    category: "dining-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Modern Dining Room Collection",
+    description:
+      "The Nobu Dining Room Set brings a refined contemporary character to sophisticated dining interiors. The collection combines a generous 240 cm dining table with six coordinated upholstered dining chairs and a matching console, creating a balanced modern composition for elegant residential spaces. Clean proportions, warm finishes and a distinctive architectural presence make Nobu a strong choice for customers searching for modern dining room furniture, luxury dining sets and made-to-order contemporary furniture with international delivery from VIRELLAART.",
+    images: [
+      "/nobu-dining-room-set-01.webp",
+      "/nobu-dining-room-set-02.webp",
+      "/nobu-dining-room-set-03.webp",
+      "/nobu-dining-room-set-04.webp",
+      "/nobu-dining-room-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Nobu modern dining room set with 240 cm dining table six upholstered chairs and matching console",
+        "Nobu contemporary dining room viewed from above with dining table and six chairs",
+        "Nobu modern dining room console close-up with refined decorative details",
+        "Nobu 240 cm modern dining table with coordinated upholstered dining chairs",
+        "Nobu contemporary dining console with coordinating mirror in a modern luxury interior",
+      ],
+    },
+    prices: [
+      {
+        label: "Dining Room Set",
+        price: "$4,950",
+        featured: true,
+      },
+      {
+        label: "Dining Table 240 cm",
+        price: "$1,450",
+      },
+      {
+        label: "6 Dining Chairs",
+        price: "$1,650",
+      },
+      {
+        label: "Console",
+        price: "$1,850",
+      },
+    ],
+  },
 };
