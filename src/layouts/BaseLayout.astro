@@ -82,7 +82,9 @@ const titleWithBrand =
 const fullTitle =
   titleWithBrand.length <= 65
     ? titleWithBrand
-    : titleWithoutBrand;
+    : titleWithoutBrand.length <= 65
+      ? titleWithoutBrand
+      : `${titleWithoutBrand.slice(0, 64).replace(/\s+\S*$/, "")}…`;
 const basePath = stripLanguagePrefix(Astro.url.pathname);
 const isHomePage = basePath === "/";
 /* VIRELLAART LOCALIZED POLICY SEO */

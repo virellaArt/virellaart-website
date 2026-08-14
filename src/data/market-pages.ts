@@ -37,7 +37,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · United Kingdom",
     heading: "Luxury Furniture Crafted for Exceptional UK Interiors",
     intro:
-      "VIRELLAART works directly with homeowners, designers and furnishing projects across the United Kingdom. Explore statement sofa sets, dining rooms, bedrooms and TV units made in Istanbul with clear product, quotation and international delivery support.",
+      "VIRELLAART works directly with homeowners, designers and furnishing projects across the United Kingdom, from London townhouses in Chelsea and Kensington to residences and villas nationwide. Explore statement sofa sets, dining rooms, bedrooms and TV units made in Istanbul with clear product, quotation and international delivery support.",
     serviceHeading: "Direct Manufacturer Support for the UK",
     serviceText:
       "Discuss dimensions, fabrics, finishes and collection configurations directly with the VIRELLAART team. Written quotations confirm the selected products, USD pricing, production scope, packaging and delivery plan before an order is approved.",
@@ -70,7 +70,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · United States",
     heading: "Statement Luxury Furniture for American Interiors",
     intro:
-      "VIRELLAART supports private residences, villas and design projects across the United States with made-to-order luxury furniture collections crafted in Istanbul.",
+      "VIRELLAART supports private residences, villas and design projects across the United States with made-to-order luxury furniture collections crafted in Istanbul, serving clients from Los Angeles and Beverly Hills to Miami and New York City.",
     serviceHeading: "Made-to-Order Product Consultation",
     serviceText:
       "Review collection configurations, dimensions, fabrics and finishes directly with our team. Every written quotation identifies the selected products, pricing, production scope, protective packaging and agreed delivery arrangement.",
@@ -169,7 +169,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · France",
     heading: "Mobilier de luxe pour les intérieurs d’exception en France",
     intro:
-      "VIRELLAART accompagne directement particuliers, décorateurs et projets en France avec des collections coordonnées de salons, salles à manger, chambres et meubles TV fabriquées à Istanbul.",
+      "VIRELLAART accompagne directement particuliers, décorateurs et projets en France avec des collections coordonnées de salons, salles à manger, chambres et meubles TV fabriquées à Istanbul, avec une livraison internationale organisée vers Paris, Lyon, Nice et Cannes.",
     serviceHeading: "Accompagnement direct du fabricant",
     serviceText:
       "Échangez sur les dimensions, tissus, finitions et configurations avec notre équipe. Le devis écrit confirme les produits, les prix en USD, la production, l’emballage et l’organisation de la livraison.",
@@ -202,7 +202,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · Italia",
     heading: "Mobili di lusso per interni italiani d’eccezione",
     intro:
-      "VIRELLAART supporta clienti privati, interior designer e progetti in Italia con collezioni coordinate per soggiorno, sala da pranzo, camera da letto e zona TV.",
+      "VIRELLAART supporta clienti privati, interior designer e progetti in Italia con collezioni coordinate per soggiorno, sala da pranzo, camera da letto e zona TV, con consegna internazionale organizzata verso Milano, Roma e Firenze.",
     serviceHeading: "Supporto diretto dal produttore",
     serviceText:
       "Valuta misure, tessuti, finiture e configurazioni direttamente con il team. Il preventivo scritto conferma prodotti, prezzi in USD, produzione, imballaggio e piano di consegna.",
@@ -235,7 +235,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · Schweiz",
     heading: "Luxusmöbel für exklusive Interieurs in der Schweiz",
     intro:
-      "VIRELLAART unterstützt Schweizer Privatkunden und Interior-Projekte direkt aus Istanbul mit hochwertigen, koordinierten Möbelkollektionen.",
+      "VIRELLAART unterstützt Schweizer Privatkunden und Interior-Projekte direkt aus Istanbul mit hochwertigen, koordinierten Möbelkollektionen, mit internationaler Lieferung nach Zürich, Genf und Lausanne.",
     serviceHeading: "Mehrsprachige Herstellerberatung",
     serviceText:
       "Maße, Stoffe, Oberflächen und Konfigurationen werden direkt mit unserem Team geprüft. Das schriftliche Angebot nennt Produkte, USD-Preise, Produktion, Verpackung und Lieferumfang.",
@@ -268,7 +268,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · Suisse",
     heading: "Mobilier de luxe pour des intérieurs suisses d’exception",
     intro:
-      "VIRELLAART accompagne les clients privés et projets d’aménagement en Suisse avec des collections coordonnées fabriquées à Istanbul.",
+      "VIRELLAART accompagne les clients privés et projets d’aménagement en Suisse avec des collections coordonnées fabriquées à Istanbul, avec une livraison internationale vers Genève, Lausanne et Zürich.",
     serviceHeading: "Conseil multilingue du fabricant",
     serviceText:
       "Dimensions, tissus, finitions et configurations sont étudiés directement avec notre équipe. Le devis précise produits, prix en USD, production, emballage et périmètre de livraison.",
@@ -301,7 +301,7 @@ export const marketPages: MarketPage[] = [
     eyebrow: "VIRELLAART · Svizzera",
     heading: "Mobili di lusso per interni svizzeri esclusivi",
     intro:
-      "VIRELLAART assiste clienti privati e progetti d’interni in Svizzera con collezioni coordinate prodotte a Istanbul.",
+      "VIRELLAART assiste clienti privati e progetti d’interni in Svizzera con collezioni coordinate prodotte a Istanbul, con consegna internazionale verso Ginevra, Losanna e Zurigo.",
     serviceHeading: "Consulenza multilingue dal produttore",
     serviceText:
       "Misure, tessuti, finiture e configurazioni sono valutati direttamente con il team. Il preventivo indica prodotti, prezzi in USD, produzione, imballaggio e consegna.",

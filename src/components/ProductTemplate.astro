@@ -317,10 +317,18 @@ const productImageAltMap =
 const manualImageAlts =
   productImageAltMap[language] ?? [];
 
+/* Non-English languages don't have hand-written alt text yet. Falling back
+ * to the real, descriptive English alt (rather than a generic repeated
+ * "{product name} {index}" string) keeps every image alt factual and
+ * specific instead of thin boilerplate. */
+const englishImageAlts =
+  productImageAltMap.en ?? [];
+
 const resolvedImageAlts =
   images.map(
     (_image, index) =>
       manualImageAlts[index] ??
+      englishImageAlts[index] ??
       (
         index === 0
           ? translatedProductName
