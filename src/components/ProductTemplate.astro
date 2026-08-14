@@ -1607,6 +1607,34 @@ const productTrust =
     }
   </script>
 
+  <script
+    is:inline
+    define:vars={{
+      pinterestProductContext: {
+        content_ids: [productEvent.items[0].item_id],
+        content_name: productEvent.items[0].item_name,
+        content_category: productEvent.items[0].item_category,
+        ...(productEvent.value > 0
+          ? { value: productEvent.value, currency: productEvent.currency }
+          : {}),
+      },
+    }}
+  >
+    const sendPinterestPageVisit = () => {
+      window.virellaPinterestPageVisit(pinterestProductContext);
+    };
+
+    if (window.virellaAnalyticsAllowed === true) {
+      sendPinterestPageVisit();
+    } else {
+      document.addEventListener(
+        "virella:pinterest-ready",
+        sendPinterestPageVisit,
+        { once: true },
+      );
+    }
+  </script>
+
   <div class="product-page">
     <nav
       class="breadcrumbs"

@@ -5,6 +5,92 @@ import { privacyPolicies } from "../../i18n/policies/privacy-policy";
 
 const language = getLanguageFromPath(Astro.url.pathname);
 const policy = privacyPolicies[language];
+
+const pinterestPolicyTranslations = {
+  en: {
+    heading: "Pinterest measurement and cookie choice",
+    paragraph:
+      "Pinterest measurement is disabled by default. If you choose to allow optional analytics and Pinterest cookies, the Pinterest tag may process page visits and interactions to measure Pinterest traffic and support audience insights. Enhanced-match email data is not enabled in this implementation. You can withdraw your consent at any time through Cookie settings.",
+  },
+  tr: {
+    heading: "Pinterest ölçümü ve çerez tercihi",
+    paragraph:
+      "Pinterest ölçümü varsayılan olarak kapalıdır. İsteğe bağlı analiz ve Pinterest çerezlerine izin verirseniz Pinterest etiketi, Pinterest trafiğini ölçmek ve hedef kitle içgörüleri sağlamak amacıyla sayfa ziyaretlerini ve etkileşimleri işleyebilir. Bu uygulamada e-posta ile gelişmiş eşleştirme etkin değildir. İzninizi Çerez ayarları üzerinden istediğiniz zaman geri çekebilirsiniz.",
+  },
+  de: {
+    heading: "Pinterest-Messung und Cookie-Auswahl",
+    paragraph:
+      "Die Pinterest-Messung ist standardmäßig deaktiviert. Wenn Sie optionalen Analytics- und Pinterest-Cookies zustimmen, kann das Pinterest-Tag Seitenbesuche und Interaktionen verarbeiten, um Pinterest-Traffic zu messen und Zielgruppen-Insights zu unterstützen. Enhanced Match mit E-Mail-Daten ist in dieser Implementierung nicht aktiviert. Ihre Einwilligung können Sie jederzeit über die Cookie-Einstellungen widerrufen.",
+  },
+  fr: {
+    heading: "Mesure Pinterest et choix des cookies",
+    paragraph:
+      "La mesure Pinterest est désactivée par défaut. Si vous autorisez les cookies Analytics et Pinterest facultatifs, la balise Pinterest peut traiter les visites de pages et les interactions afin de mesurer le trafic Pinterest et de fournir des informations d’audience. La correspondance avancée par e-mail n’est pas activée dans cette implémentation. Vous pouvez retirer votre consentement à tout moment via les paramètres des cookies.",
+  },
+  it: {
+    heading: "Misurazione Pinterest e scelta dei cookie",
+    paragraph:
+      "La misurazione Pinterest è disattivata per impostazione predefinita. Se consenti i cookie facoltativi Analytics e Pinterest, il tag Pinterest può elaborare visite e interazioni per misurare il traffico Pinterest e fornire informazioni sul pubblico. La corrispondenza avanzata tramite e-mail non è attiva in questa implementazione. Puoi revocare il consenso in qualsiasi momento dalle impostazioni cookie.",
+  },
+  ru: {
+    heading: "Измерение Pinterest и выбор cookie",
+    paragraph:
+      "Измерение Pinterest по умолчанию отключено. Если вы разрешите необязательные cookie Analytics и Pinterest, тег Pinterest сможет обрабатывать посещения страниц и взаимодействия для измерения трафика Pinterest и получения данных об аудитории. Расширенное сопоставление по электронной почте в этой реализации не включено. Согласие можно отозвать в любое время через настройки cookie.",
+  },
+  ar: {
+    heading: "قياس Pinterest وخيارات ملفات الارتباط",
+    paragraph:
+      "يكون قياس Pinterest معطلاً افتراضيًا. إذا سمحت بملفات تعريف الارتباط الاختيارية للتحليلات وPinterest، فقد تعالج علامة Pinterest زيارات الصفحات والتفاعلات لقياس زيارات Pinterest ودعم رؤى الجمهور. المطابقة المحسنة عبر البريد الإلكتروني غير مفعلة في هذا التطبيق. يمكنك سحب موافقتك في أي وقت من إعدادات ملفات الارتباط.",
+  },
+  bg: {
+    heading: "Измерване чрез Pinterest и избор на бисквитки",
+    paragraph:
+      "Измерването чрез Pinterest е изключено по подразбиране. Ако разрешите незадължителните Analytics и Pinterest бисквитки, Pinterest тагът може да обработва посещения и взаимодействия за измерване на Pinterest трафика и анализ на аудиторията. Разширено съпоставяне чрез имейл не е активирано. Можете да оттеглите съгласието си по всяко време от настройките за бисквитки.",
+  },
+  ro: {
+    heading: "Măsurarea Pinterest și alegerea cookie-urilor",
+    paragraph:
+      "Măsurarea Pinterest este dezactivată implicit. Dacă permiteți cookie-urile opționale Analytics și Pinterest, eticheta Pinterest poate procesa vizitele și interacțiunile pentru a măsura traficul Pinterest și a oferi informații despre audiență. Potrivirea avansată prin e-mail nu este activată în această implementare. Vă puteți retrage consimțământul oricând din Setările cookie.",
+  },
+  el: {
+    heading: "Μέτρηση Pinterest και επιλογή cookies",
+    paragraph:
+      "Η μέτρηση Pinterest είναι απενεργοποιημένη από προεπιλογή. Αν επιτρέψετε τα προαιρετικά cookies Analytics και Pinterest, η ετικέτα Pinterest μπορεί να επεξεργάζεται επισκέψεις και αλληλεπιδράσεις για τη μέτρηση της κίνησης από το Pinterest και την παροχή πληροφοριών κοινού. Η βελτιωμένη αντιστοίχιση μέσω email δεν είναι ενεργοποιημένη. Μπορείτε να ανακαλέσετε τη συγκατάθεσή σας από τις ρυθμίσεις cookies.",
+  },
+  es: {
+    heading: "Medición de Pinterest y elección de cookies",
+    paragraph:
+      "La medición de Pinterest está desactivada de forma predeterminada. Si permites las cookies opcionales de Analytics y Pinterest, la etiqueta de Pinterest puede procesar visitas e interacciones para medir el tráfico de Pinterest y obtener información de audiencia. La coincidencia avanzada mediante correo electrónico no está activada en esta implementación. Puedes retirar tu consentimiento en cualquier momento desde la configuración de cookies.",
+  },
+  sr: {
+    heading: "Pinterest merenje i izbor kolačića",
+    paragraph:
+      "Pinterest merenje je podrazumevano isključeno. Ako dozvolite opcione Analytics i Pinterest kolačiće, Pinterest oznaka može obrađivati posete i interakcije radi merenja Pinterest saobraćaja i uvida u publiku. Napredno povezivanje putem e-pošte nije uključeno. Saglasnost možete povući u bilo kom trenutku kroz podešavanja kolačića.",
+  },
+  kk: {
+    heading: "Pinterest өлшеуі және cookie таңдауы",
+    paragraph:
+      "Pinterest өлшеуі әдепкі бойынша өшірулі. Қосымша Analytics және Pinterest cookie файлдарына рұқсат берсеңіз, Pinterest тегі Pinterest трафигін өлшеу және аудитория туралы мәлімет алу үшін бетке кірулер мен әрекеттерді өңдей алады. Электрондық пошта арқылы кеңейтілген сәйкестендіру қосылмаған. Келісімді Cookie баптаулары арқылы кез келген уақытта қайтарып алуға болады.",
+  },
+  uz: {
+    heading: "Pinterest o‘lchovi va cookie tanlovi",
+    paragraph:
+      "Pinterest o‘lchovi standart holatda o‘chirilgan. Ixtiyoriy Analytics va Pinterest cookie-fayllariga ruxsat bersangiz, Pinterest tegi Pinterest trafikini o‘lchash va auditoriya haqida ma’lumot olish uchun sahifa tashriflari va o‘zaro aloqalarni qayta ishlashi mumkin. Elektron pochta orqali kengaytirilgan moslashtirish yoqilmagan. Roziligingizni Cookie sozlamalari orqali istalgan payt bekor qilishingiz mumkin.",
+  },
+  pt: {
+    heading: "Medição do Pinterest e escolha de cookies",
+    paragraph:
+      "A medição do Pinterest está desativada por predefinição. Se permitir cookies opcionais do Analytics e Pinterest, a etiqueta Pinterest pode processar visitas e interações para medir o tráfego do Pinterest e fornecer informações sobre a audiência. A correspondência avançada por e-mail não está ativada nesta implementação. Pode retirar o consentimento a qualquer momento nas definições de cookies.",
+  },
+  pl: {
+    heading: "Pomiar Pinterest i wybór plików cookie",
+    paragraph:
+      "Pomiar Pinterest jest domyślnie wyłączony. Jeśli zezwolisz na opcjonalne pliki cookie Analytics i Pinterest, tag Pinterest może przetwarzać wizyty i interakcje w celu pomiaru ruchu z Pinterest i uzyskiwania informacji o odbiorcach. Rozszerzone dopasowanie przy użyciu adresu e-mail nie jest w tej implementacji włączone. Zgodę możesz wycofać w dowolnym momencie w ustawieniach plików cookie.",
+  },
+} as const;
+
+const pinterestPolicy =
+  pinterestPolicyTranslations[language];
 ---
 
 <PolicyLayout
@@ -32,4 +118,7 @@ const policy = privacyPolicies[language];
       </>
     ))
   }
+
+  <h2>{pinterestPolicy.heading}</h2>
+  <p>{pinterestPolicy.paragraph}</p>
 </PolicyLayout>

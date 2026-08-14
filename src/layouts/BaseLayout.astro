@@ -347,6 +347,110 @@ const websiteSchema = {
 </script>
 
 <script is:inline>
+(() => {
+  window.dataLayer = window.dataLayer || [];
+
+  window.virellaGenerateEventId = function () {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+
+    return (
+      "e" +
+      Date.now().toString(36) +
+      Math.random().toString(36).slice(2)
+    );
+  };
+
+  function virellaPinterestClickId() {
+    const match = document.cookie.match(/(?:^|;\s*)_epik=([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : undefined;
+  }
+
+  window.virellaPinterestCapi = function (eventName, params) {
+    if (window.virellaAnalyticsAllowed !== true) {
+      return undefined;
+    }
+
+    const payload = Object.assign(
+      {
+        event_name: eventName,
+        url: window.location.href,
+        click_id: virellaPinterestClickId(),
+      },
+      params || {},
+    );
+
+    if (!payload.event_id) {
+      payload.event_id = window.virellaGenerateEventId();
+    }
+
+    try {
+      fetch("https://oauth.virellaart.com/pinterest/capi", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {});
+    } catch {
+      // Ignore network/CAPI relay failures; the browser pixel remains primary.
+    }
+
+    return payload.event_id;
+  };
+
+  window.virellaPinterestPageVisit = function (context) {
+    if (
+      window.virellaAnalyticsAllowed !== true ||
+      window.virellaPinterestPageVisitSent === true
+    ) {
+      return;
+    }
+
+    window.virellaPinterestPageVisitSent = true;
+
+    const eventId = window.virellaGenerateEventId();
+    const pageContext = context || {};
+
+    window.virellaPinterestCapi(
+      "page_visit",
+      Object.assign({ event_id: eventId }, pageContext),
+    );
+
+    window.dataLayer.push(
+      Object.assign(
+        { event: "virella_pinterest_ready", event_id: eventId },
+        pageContext,
+      ),
+    );
+  };
+
+  window.virellaPinterestViewCategory = function (contentCategory) {
+    if (
+      window.virellaAnalyticsAllowed !== true ||
+      !contentCategory
+    ) {
+      return;
+    }
+
+    const eventId = window.virellaGenerateEventId();
+
+    window.virellaPinterestCapi("view_category", {
+      event_id: eventId,
+      content_category: contentCategory,
+    });
+
+    window.dataLayer.push({
+      event: "virella_view_category",
+      event_id: eventId,
+      content_category: contentCategory,
+    });
+  };
+})();
+</script>
+
+
+<script is:inline>
 document.addEventListener("click", (event) => {
   const target = event.target;
   const button =
@@ -507,6 +611,27 @@ document.addEventListener("click", (event) => {
           }
         : {}),
       ...eventData
+    });
+
+    const pinterestLeadEventId = window.virellaPinterestCapi("lead", {
+      content_name: eventData.product_name,
+      content_category: eventData.product_category,
+      ...(Number.isFinite(leadValue) && leadValue > 0
+        ? { value: leadValue, currency: "USD" }
+        : {}),
+    });
+
+    window.dataLayer.push({
+      event: "whatsapp_inquiry_click",
+      event_id: pinterestLeadEventId,
+      lead_type: "whatsapp",
+      content_name: eventData.product_name,
+      content_category: eventData.product_category,
+      page_type: eventData.page_type,
+      page_path: eventData.page_path,
+      ...(Number.isFinite(leadValue) && leadValue > 0
+        ? { value: leadValue, currency: "USD" }
+        : {}),
     });
   }
 });

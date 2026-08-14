@@ -166,7 +166,55 @@ const consentTranslations: Record<
   },
 };
 
+const pinterestDisclosureTranslations: Record<
+  (typeof languageCodes)[number],
+  string
+> = {
+  en: "With your permission, Pinterest measurement may also be enabled to measure visits and interactions and support audience insights.",
+  tr: "İzninizle, ziyaret ve etkileşimleri ölçmek ve hedef kitle içgörüleri oluşturmak için Pinterest ölçümü de etkinleştirilebilir.",
+  de: "Mit Ihrer Einwilligung kann außerdem Pinterest-Messung aktiviert werden, um Besuche und Interaktionen zu messen und Zielgruppen-Insights zu unterstützen.",
+  fr: "Avec votre accord, la mesure Pinterest peut aussi être activée afin de mesurer les visites et interactions et d’obtenir des informations d’audience.",
+  it: "Con il tuo consenso, può essere attivata anche la misurazione Pinterest per misurare visite e interazioni e ottenere informazioni sul pubblico.",
+  ru: "С вашего согласия также может быть включено измерение Pinterest для оценки посещений и взаимодействий и получения данных об аудитории.",
+  ar: "بموافقتك، يمكن أيضًا تفعيل قياس Pinterest لقياس الزيارات والتفاعلات ودعم رؤى الجمهور.",
+  bg: "С ваше съгласие може да се активира и измерване чрез Pinterest за отчитане на посещения и взаимодействия и анализ на аудиторията.",
+  ro: "Cu acordul dvs., poate fi activată și măsurarea Pinterest pentru a măsura vizitele și interacțiunile și a obține informații despre audiență.",
+  el: "Με τη συγκατάθεσή σας, μπορεί επίσης να ενεργοποιηθεί η μέτρηση Pinterest για τη μέτρηση επισκέψεων και αλληλεπιδράσεων και την παροχή πληροφοριών κοινού.",
+  es: "Con tu consentimiento, también se puede activar la medición de Pinterest para medir visitas e interacciones y obtener información de audiencia.",
+  sr: "Uz vašu saglasnost, Pinterest merenje može biti uključeno radi merenja poseta i interakcija i uvida u publiku.",
+  kk: "Келісіміңізбен Pinterest өлшеуі де қосылып, кірулер мен әрекеттерді өлшеуге және аудитория туралы мәлімет алуға көмектеседі.",
+  uz: "Roziligingiz bilan Pinterest o‘lchovi ham yoqilib, tashriflar va o‘zaro aloqalarni o‘lchash hamda auditoriya haqidagi ma’lumotlarni olishga yordam beradi.",
+  pt: "Com o seu consentimento, a medição do Pinterest também pode ser ativada para medir visitas e interações e obter informações sobre a audiência.",
+  pl: "Za Twoją zgodą może zostać włączony również pomiar Pinterest, aby mierzyć wizyty i interakcje oraz uzyskiwać informacje o odbiorcach.",
+};
+
+const optionalConsentTranslations: Record<
+  (typeof languageCodes)[number],
+  string
+> = {
+  en: "Allow analytics & Pinterest",
+  tr: "Analiz ve Pinterest’e izin ver",
+  de: "Analytics & Pinterest erlauben",
+  fr: "Autoriser Analytics et Pinterest",
+  it: "Consenti Analytics e Pinterest",
+  ru: "Разрешить Analytics и Pinterest",
+  ar: "السماح بالتحليلات وPinterest",
+  bg: "Разреши Analytics и Pinterest",
+  ro: "Permite Analytics și Pinterest",
+  el: "Να επιτρέπονται Analytics και Pinterest",
+  es: "Permitir Analytics y Pinterest",
+  sr: "Dozvoli Analytics i Pinterest",
+  kk: "Analytics пен Pinterest-ке рұқсат беру",
+  uz: "Analytics va Pinterestga ruxsat berish",
+  pt: "Permitir Analytics e Pinterest",
+  pl: "Zezwól na Analytics i Pinterest",
+};
+
 const consent = consentTranslations[language];
+const pinterestDisclosure =
+  pinterestDisclosureTranslations[language];
+const optionalConsent =
+  optionalConsentTranslations[language];
 ---
 
 <section
@@ -180,7 +228,7 @@ const consent = consentTranslations[language];
   <div>
     <strong id="cookie-consent-title">{consent.title}</strong>
     <p id="cookie-consent-description">
-      {consent.description}
+      {consent.description} {pinterestDisclosure}
       <a href={localizedPath("/policies/privacy-policy", language)}>
         {consent.privacy}
       </a>
@@ -190,7 +238,7 @@ const consent = consentTranslations[language];
   <div class="cookie-actions">
     <button type="button" data-cookie-reject>{consent.reject}</button>
     <button type="button" class="cookie-accept" data-cookie-accept>
-      {consent.accept}
+      {optionalConsent}
     </button>
   </div>
 </section>
@@ -206,8 +254,10 @@ const consent = consentTranslations[language];
 
 <script is:inline>
   (() => {
-    const storageKey = "virellaart-analytics-consent";
+    const storageKey = "virellaart-consent-v2";
+    const legacyStorageKey = "virellaart-analytics-consent";
     const measurementId = "G-Y8YY6ZBD87";
+
     const banner = document.querySelector("[data-cookie-consent]");
     const acceptButton = document.querySelector("[data-cookie-accept]");
     const rejectButton = document.querySelector("[data-cookie-reject]");
@@ -258,6 +308,7 @@ const consent = consentTranslations[language];
     function persistConsent(choice) {
       try {
         localStorage.setItem(storageKey, choice);
+        localStorage.removeItem(legacyStorageKey);
       } catch {
         // Consent remains valid for the current page session.
       }
@@ -265,11 +316,13 @@ const consent = consentTranslations[language];
 
     function setConsent(choice, persist = true) {
       const granted = choice === "granted";
+
       window.virellaAnalyticsAllowed = granted;
 
       window.gtag("consent", "update", {
-        ad_storage: "denied",
-        analytics_storage: granted ? "granted" : "denied",
+        ad_storage: granted ? "granted" : "denied",
+        analytics_storage:
+          granted ? "granted" : "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
       });
@@ -288,15 +341,27 @@ const consent = consentTranslations[language];
 
       if (granted) {
         loadAnalytics();
+
         document.dispatchEvent(
-          new CustomEvent("virella:analytics-ready"),
+          new CustomEvent(
+            "virella:analytics-ready",
+          ),
+        );
+
+        document.dispatchEvent(
+          new CustomEvent(
+            "virella:pinterest-ready",
+          ),
         );
       }
     }
 
     const storedChoice = readStoredConsent();
 
-    if (storedChoice === "granted" || storedChoice === "denied") {
+    if (
+      storedChoice === "granted" ||
+      storedChoice === "denied"
+    ) {
       setConsent(storedChoice, false);
     } else if (banner instanceof HTMLElement) {
       banner.hidden = false;

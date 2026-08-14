@@ -317,6 +317,20 @@ const categoryPageURL = new URL(
         );
       }
 
+      const sendPinterestViewCategory = () => {
+        window.virellaPinterestViewCategory(categoryName);
+      };
+
+      if (window.virellaAnalyticsAllowed === true) {
+        sendPinterestViewCategory();
+      } else {
+        document.addEventListener(
+          "virella:pinterest-ready",
+          sendPinterestViewCategory,
+          { once: true },
+        );
+      }
+
       grid.addEventListener("click", (event) => {
         const target = event.target;
         const card =
