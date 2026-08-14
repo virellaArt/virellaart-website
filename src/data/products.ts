@@ -3287,4 +3287,50 @@ sultanGreenDining: {
       },
     ],
   },
+
+  portoSofaSet: {
+    name: "Porto Sofa Set",
+    slug: "porto-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Luxury Sofa Collection",
+    description:
+      "The Porto Sofa Set is a refined modern living room collection built around a balanced 3+3+1+1 seating arrangement for sophisticated residential interiors. Its coordinated sofa and armchair composition can be completed with a matching coffee table, corner table and TV unit, creating a unified contemporary atmosphere. Porto is designed for customers searching for modern sofa sets, luxury living room furniture and made-to-order contemporary furniture with international delivery from VIRELLAART.",
+    images: [
+      "/porto-sofa-set-01.webp",
+      "/porto-sofa-set-02.webp",
+      "/porto-sofa-set-03.webp",
+      "/porto-sofa-set-04.webp",
+      "/porto-sofa-set-05.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Porto modern sofa set complete 3+3+1+1 luxury living room collection",
+        "Porto contemporary sofa detail with refined modern living room styling",
+        "Porto modern armchair detail from the coordinated luxury sofa collection",
+        "Porto contemporary living room seating with matching coffee and corner tables",
+        "Porto modern sofa collection with coordinated TV unit and luxury living room furniture",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$4,850",
+        featured: true,
+      },
+      {
+        label: "Coffee Table",
+        price: "$750",
+      },
+      {
+        label: "Corner Table",
+        price: "$300",
+      },
+      {
+        label: "TV Unit",
+        price: "$3,750",
+      },
+    ],
+  },
 };
