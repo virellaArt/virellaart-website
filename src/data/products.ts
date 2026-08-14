@@ -3141,4 +3141,54 @@ sultanGreenDining: {
       },
     ],
   },
+
+  sohoSofaSet: {
+    name: "Soho Sofa Set",
+    slug: "soho-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Modern Living Room Collection",
+    description:
+      "The Soho Sofa Set brings a refined contemporary presence to modern living rooms through a balanced 3+3+1+1 seating composition and coordinated occasional furniture. Designed for elegant residential interiors, the collection can be ordered with its matching coffee table, corner table and TV unit. Contact VIRELLAART via WhatsApp for production, customization and international delivery details.",
+    images: [
+      "/soho-sofa-set-01.webp",
+      "/soho-sofa-set-02.webp",
+      "/soho-sofa-set-03.webp",
+      "/soho-sofa-set-04.webp",
+      "/soho-sofa-set-05.webp",
+      "/soho-sofa-set-06.webp",
+      "/soho-sofa-set-07.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Soho modern sofa set catalog view 01 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 02 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 03 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 04 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 05 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 06 with coordinated contemporary living room furniture",
+        "Soho modern sofa set catalog view 07 with coordinated contemporary living room furniture",
+      ],
+    },
+    prices: [
+      {
+        label: "3+3+1+1 Sofa Set",
+        price: "$5,900",
+        featured: true,
+      },
+      {
+        label: "Coffee Table",
+        price: "$750",
+      },
+      {
+        label: "Corner Table",
+        price: "$300",
+      },
+      {
+        label: "TV Unit",
+        price: "$1,750",
+      },
+    ],
+  },
 };
