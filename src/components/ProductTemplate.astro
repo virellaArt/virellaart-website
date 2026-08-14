@@ -4,6 +4,8 @@ import {
   collectionCategorySlugs,
   type CollectionCategory,
 } from "../data/collection-taxonomy";
+import { products as productCatalog } from "../data/products";
+import { luxuryClassicProductPaths } from "../data/product-routes";
 import { collectionMenuCopy } from "../i18n/collection-menu";
 import {
   getSeoDescription,
@@ -281,6 +283,77 @@ const categoryURL = new URL(
   localizedPath(categoryPath, language),
   "https://www.virellaart.com",
 ).href;
+
+/* VIRELLAART RELATED PRODUCTS (internal linking) */
+
+type CatalogProduct = (typeof productCatalog)[keyof typeof productCatalog];
+
+function relatedProductHref(
+  key: string,
+  candidate: CatalogProduct,
+): string | null {
+  const candidateStyle = candidate.style ?? "luxury-classic";
+
+  if (candidateStyle === "modern") {
+    const slug = (candidate as { slug?: string }).slug;
+    return slug
+      ? `/collections/modern/${collectionCategorySlugs[candidate.category as CollectionCategory]}/${slug}`
+      : null;
+  }
+
+  const mappedPath = luxuryClassicProductPaths[key];
+  return mappedPath ? `/${mappedPath}` : null;
+}
+
+const sameCategoryEntries = (
+  Object.entries(productCatalog) as [string, CatalogProduct][]
+).filter(
+  ([, candidate]) =>
+    candidate.category === product.category &&
+    candidate.name !== product.name,
+);
+
+const relatedEntries = [
+  ...sameCategoryEntries.filter(
+    ([, candidate]) => (candidate.style ?? "luxury-classic") === productStyle,
+  ),
+  ...sameCategoryEntries.filter(
+    ([, candidate]) => (candidate.style ?? "luxury-classic") !== productStyle,
+  ),
+];
+
+const relatedProducts = relatedEntries
+  .map(([key, candidate]) => {
+    const href = relatedProductHref(key, candidate);
+    return href
+      ? {
+          translatedName: translateProductName(candidate.name, language),
+          href: localizedPath(href, language),
+          image: candidate.images?.[0],
+        }
+      : null;
+  })
+  .filter((item): item is NonNullable<typeof item> => Boolean(item))
+  .slice(0, 3);
+
+const relatedProductsCopy: Record<Language, string> = {
+  en: "You May Also Like",
+  tr: "Benzer Koleksiyonlar",
+  de: "Das könnte Ihnen auch gefallen",
+  fr: "Vous aimerez aussi",
+  it: "Potrebbe interessarti anche",
+  ru: "Вам может понравиться",
+  ar: "قد يعجبك أيضاً",
+  bg: "Може да харесате и",
+  ro: "S-ar putea să vă placă și",
+  el: "Μπορεί επίσης να σας αρέσουν",
+  es: "También te puede interesar",
+  sr: "Možda će vam se svideti i",
+  kk: "Сізге мыналар да ұнауы мүмкін",
+  uz: "Sizga bular ham yoqishi mumkin",
+  pt: "Também pode gostar",
+  pl: "Może Ci się również spodobać",
+};
 
 /* =========================
    PRODUCT BASIC DATA
@@ -1964,6 +2037,33 @@ const productTrust =
         </div>
       </div>
     </section>
+
+    {
+      relatedProducts.length > 0 && (
+        <section class="related-products" aria-labelledby="relatedProductsTitle">
+          <h2 id="relatedProductsTitle">
+            {relatedProductsCopy[language]}
+          </h2>
+
+          <div class="related-products-grid">
+            {relatedProducts.map((related) => (
+              <a class="related-product-card" href={related.href}>
+                {related.image && (
+                  <img
+                    src={related.image}
+                    alt={related.translatedName}
+                    loading="lazy"
+                    width="320"
+                    height="320"
+                  />
+                )}
+                <span>{related.translatedName}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
   </div>
 
   <div
@@ -3310,6 +3410,60 @@ const productTrust =
     .product-trust-whatsapp:hover {
       background: transparent;
       color: #d4ad62;
+    }
+
+    /* RELATED PRODUCTS */
+
+    .related-products {
+      padding: 56px 0 0;
+      border-top: 1px solid rgba(184, 149, 85, 0.2);
+      margin-top: 56px;
+    }
+
+    .related-products h2 {
+      margin: 0 0 24px;
+      color: #f4efe6;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .related-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .related-product-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+      color: #d8cfc2;
+      transition: transform 0.25s ease;
+    }
+
+    .related-product-card:hover {
+      transform: translateY(-3px);
+      color: #d4ad62;
+    }
+
+    .related-product-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid rgba(184, 149, 85, 0.25);
+    }
+
+    .related-product-card span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.4;
     }
 
     /* LIGHTBOX */

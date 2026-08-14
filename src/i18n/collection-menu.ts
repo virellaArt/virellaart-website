@@ -15,6 +15,13 @@ export type CollectionMenuCopy = {
   categoryEyebrow: string;
   categoryTitle: string;
   categoryDescription: string;
+  /* Optional per-category authority copy (sofa-sets/dining-rooms/bedrooms/
+   * tv-units). When present for a language, overrides the generic
+   * categoryDescription template so each modern category page carries its
+   * own real intro instead of one sentence reused across all four. */
+  categoryDescriptions?: Partial<
+    Record<"sofa-sets" | "dining-rooms" | "bedrooms" | "tv-units", string>
+  >;
   emptyTitle: string;
   emptyText: string;
   backToModern: string;
@@ -43,6 +50,16 @@ export const collectionMenuCopy: Record<
     categoryTitle: "Modern {category}",
     categoryDescription:
       "Explore VIRELLAART Modern {category}, presented with verified photography, product details and pricing.",
+    categoryDescriptions: {
+      "sofa-sets":
+        "Modern sofa sets from VIRELLAART bring architectural silhouettes, low profiles and a calm contemporary palette to living rooms that want sculptural presence without excess ornament. Every model shown here includes verified photography, configuration options and collection pricing.",
+      "dining-rooms":
+        "VIRELLAART's modern dining room collection favours clean geometric tables, coordinated seating and understated material contrast for entertaining spaces with a confident contemporary character. Browse verified photography, set configurations and pricing for each model.",
+      bedrooms:
+        "Modern bedroom sets from VIRELLAART pair structured headboards and balanced proportions with a restrained, uncluttered palette suited to serene contemporary primary suites. Each published model includes verified photography, configuration details and pricing.",
+      "tv-units":
+        "VIRELLAART's modern TV units focus on low, streamlined cabinetry and integrated storage that keep a contemporary living wall visually calm. Explore verified photography, dimensions and pricing for each design.",
+    },
     emptyTitle: "Modern models are being prepared",
     emptyText:
       "No products are published in this category yet. Every model will be added with verified photographs, configuration details and pricing.",
@@ -115,6 +132,16 @@ export const collectionMenuCopy: Record<
     categoryTitle: "Modern · {category}",
     categoryDescription:
       "Découvrez VIRELLAART Modern · {category}, présenté avec photos, détails produits et prix vérifiés.",
+    categoryDescriptions: {
+      "sofa-sets":
+        "Les ensembles canapés modernes VIRELLAART proposent des silhouettes architecturales, des lignes basses et une palette contemporaine sobre, pour un salon de luxe à l'allure sculpturale sans excès de décor. Chaque modèle présenté inclut des photos vérifiées, les configurations disponibles et les prix.",
+      "dining-rooms":
+        "La collection de salles à manger modernes VIRELLAART privilégie des tables aux lignes géométriques épurées, des sièges coordonnés et un contraste de matières discret, pour une salle à manger de luxe au caractère contemporain affirmé. Photos, configurations et prix vérifiés pour chaque modèle.",
+      bedrooms:
+        "Les chambres modernes VIRELLAART associent têtes de lit structurées et proportions équilibrées à une palette épurée, pensées pour une chambre de luxe contemporaine et sereine. Chaque modèle publié inclut photos, détails de configuration et prix vérifiés.",
+      "tv-units":
+        "Les meubles TV modernes VIRELLAART misent sur des volumes bas et un rangement intégré qui gardent le mur multimédia visuellement apaisé dans un intérieur contemporain. Découvrez photos, dimensions et prix vérifiés pour chaque modèle.",
+    },
     emptyTitle: "Les modèles modernes sont en préparation",
     emptyText:
       "Aucun produit n’est encore publié dans cette catégorie. Chaque modèle sera ajouté avec photos, composition et prix vérifiés.",

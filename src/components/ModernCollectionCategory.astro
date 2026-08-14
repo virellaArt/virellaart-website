@@ -103,10 +103,9 @@ const pageTitle = copy.categoryTitle.replace(
   "{category}",
   details.title,
 );
-const pageDescription = copy.categoryDescription.replace(
-  "{category}",
-  details.title,
-);
+const pageDescription =
+  copy.categoryDescriptions?.[category] ??
+  copy.categoryDescription.replace("{category}", details.title);
 const categoryWhatsappMessage =
   translations.product.whatsappMessage.replace(
     "{product}",
