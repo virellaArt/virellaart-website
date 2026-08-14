@@ -705,16 +705,27 @@ const englishCommercialCategoryTitle =
   } as const)[categoryKey];
 
 const englishCommercialMeta =
-  ({
-    "living-rooms":
-      "Luxury living room furniture with collection prices, made-to-order options and international delivery from Istanbul.",
-    "dining-rooms":
-      "Luxury dining room furniture with collection prices, coordinated set options and international delivery from Istanbul.",
-    bedrooms:
-      "Luxury bedroom furniture with collection prices, made-to-order options and international delivery from Istanbul.",
-    "tv-units":
-      "Luxury TV and media furniture with collection prices, made-to-order options and international delivery from Istanbul.",
-  } as const)[categoryKey];
+  productStyle === "modern"
+    ? ({
+        "living-rooms":
+          "Modern luxury living room furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+        "dining-rooms":
+          "Modern luxury dining room furniture with collection prices, coordinated set options and international delivery from Istanbul.",
+        bedrooms:
+          "Modern luxury bedroom furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+        "tv-units":
+          "Modern luxury TV and media furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+      } as const)[categoryKey]
+    : ({
+        "living-rooms":
+          "Luxury living room furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+        "dining-rooms":
+          "Luxury dining room furniture with collection prices, coordinated set options and international delivery from Istanbul.",
+        bedrooms:
+          "Luxury bedroom furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+        "tv-units":
+          "Luxury TV and media furniture with collection prices, made-to-order options and international delivery from Istanbul.",
+      } as const)[categoryKey];
 
 const pageDescription =
   getSeoDescription(

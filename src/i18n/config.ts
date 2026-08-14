@@ -1,3 +1,5 @@
+import { productDescriptionOverrides } from "./product-descriptions";
+
 export const languages = {
   en: { label: "English", short: "EN", locale: "en_US", dir: "ltr" },
   tr: { label: "Türkçe", short: "TR", locale: "tr_TR", dir: "ltr" },
@@ -1792,6 +1794,7 @@ const productNameReplacements: Record<
   ],
   de: [
     ["Corner Sofa Set", "Ecksofa-Set"],
+    ["Sofa Set", "Sofa-Set"],
     ["Living Room", "Wohnzimmer"],
     ["Dining Room", "Esszimmer"],
     ["Dining", "Esszimmer"],
@@ -1800,6 +1803,7 @@ const productNameReplacements: Record<
   ],
   fr: [
     ["Corner Sofa Set", "Ensemble canapé d’angle"],
+    ["Sofa Set", "Ensemble canapé"],
     ["Living Room", "Salon"],
     ["Dining Room", "Salle à manger"],
     ["Dining", "Salle à manger"],
@@ -1808,6 +1812,7 @@ const productNameReplacements: Record<
   ],
   it: [
     ["Corner Sofa Set", "Set divano angolare"],
+    ["Sofa Set", "Set divano"],
     ["Living Room", "Soggiorno"],
     ["Dining Room", "Sala da pranzo"],
     ["Dining", "Sala da pranzo"],
@@ -2469,12 +2474,33 @@ const categoryDescriptionTemplates: Record<
   },
 };
 
+export function getProductDescriptionOverrideKey(product: {
+  name: string;
+  style?: string;
+}): string {
+  return `${product.style ?? "luxury-classic"}|${product.name}`;
+}
+
 export function getProductDescription(
-  product: { name: string; category: string; description?: string },
+  product: {
+    name: string;
+    category: string;
+    description?: string;
+    style?: string;
+  },
   language: Language,
 ): string {
   if (language === "en" && product.description) {
     return product.description;
+  }
+
+  const override =
+    productDescriptionOverrides[language]?.[
+      getProductDescriptionOverrideKey(product)
+    ];
+
+  if (override) {
+    return override;
   }
 
   const translatedName = translateProductName(product.name, language);
