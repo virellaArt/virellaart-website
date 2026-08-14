@@ -3191,4 +3191,54 @@ sultanGreenDining: {
       },
     ],
   },
+
+  nobuSofaSet: {
+    name: "Nobu Sofa Set",
+    slug: "nobu-sofa-set",
+    category: "living-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Luxury Sofa Collection",
+    description:
+      "The Nobu Sofa Set presents a refined contemporary living room composition built around a spacious 4+3+1+1 seating arrangement. Its coordinated proportions create a polished modern interior while the matching two-piece coffee table, corner table and TV unit complete the collection with a unified architectural character. Designed for sophisticated residential spaces, Nobu is a made-to-order modern sofa collection available with international delivery from VIRELLAART.",
+    images: [
+      "/nobu-sofa-set-01.webp",
+      "/nobu-sofa-set-02.webp",
+      "/nobu-sofa-set-03.webp",
+      "/nobu-sofa-set-04.webp",
+      "/nobu-sofa-set-05.webp",
+      "/nobu-sofa-set-06.webp",
+      "/nobu-sofa-set-07.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Nobu modern sofa set complete living room collection",
+        "Nobu contemporary armchair front view",
+        "Nobu modern sofa side detail",
+        "Nobu contemporary seating detail",
+        "Nobu modern sofa set seating composition",
+        "Nobu coordinated modern TV unit",
+        "Nobu contemporary living room furniture collection",
+      ],
+    },
+    prices: [
+      {
+        label: "4+3+1+1 Sofa Set",
+        price: "$5,200",
+        featured: true,
+      },
+      {
+        label: "2-Piece Coffee Table",
+        price: "$750",
+      },
+      {
+        label: "Corner Table",
+        price: "$300",
+      },
+      {
+        label: "TV Unit",
+        price: "$3,300",
+      },
+    ],
+  },
 };
