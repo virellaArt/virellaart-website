@@ -1,17 +1,22 @@
-name: Apply VIRELLAART Public Truth Patch
+name: Verify VIRELLAART Site
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  patch:
-    if: github.actor != 'github-actions[bot]'
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -23,72 +28,8 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Apply patch
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          path = Path("scripts/apply-public-truth-fix.py")
-          text = path.read_text(encoding="utf-8")
-          old = 'replace_required(\n    "src/i18n/manufacturing.ts",'
-          new = 'replace_optional(\n    "src/i18n/manufacturing.ts",'
-          if old not in text:
-              raise SystemExit("manufacturing patch mode marker not found")
-          path.write_text(text.replace(old, new, 1), encoding="utf-8")
-          PY
-          python3 scripts/apply-public-truth-fix.py
-
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and validate
+      - name: Build and validate site
         run: npm run build
-
-      - name: Publish validated source changes and restore verifier
-        shell: bash
-        run: |
-          git rm -f scripts/apply-public-truth-fix.py
-          cat > .github/workflows/verify.yml <<'YAML'
-          name: Verify VIRELLAART Site
-
-          on:
-            pull_request:
-              branches: [main]
-            push:
-              branches: [main]
-
-          permissions:
-            contents: read
-
-          concurrency:
-            group: verify-${{ github.ref }}
-            cancel-in-progress: true
-
-          jobs:
-            verify:
-              runs-on: ubuntu-latest
-              timeout-minutes: 20
-
-              steps:
-                - name: Checkout
-                  uses: actions/checkout@v4
-
-                - name: Setup Node
-                  uses: actions/setup-node@v4
-                  with:
-                    node-version: 24
-                    cache: npm
-
-                - name: Install dependencies
-                  run: npm ci
-
-                - name: Build and validate site
-                  run: npm run build
-          YAML
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- src/pages/about.astro src/i18n/manufacturing.ts src/pages/index.astro src/data/market-pages.ts .github/workflows/verify.yml
-          git diff --cached --check
-          git diff --cached --quiet && { echo "No validated changes to publish"; exit 1; }
-          git commit -m "fix: align public claims and Switzerland"
-          git push origin HEAD:main
