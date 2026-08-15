@@ -41,22 +41,21 @@ const contemporaryProducts = new Set<ProductKey>([
 const productBadges: Partial<
   Record<ProductKey, CatalogBadge>
 > = {
-  valencia: "bestSeller",
   delux: "signature",
   sultanSofa: "signature",
   sultanGreenDining: "signature",
-  milanoBedroom: "bestSeller",
   marsilyaBedroom: "newArrival",
   rioBedroom: "newArrival",
-  aspendosDining: "bestSeller",
 };
 
-/* VIRELLAART SIGNATURE COLLECTION — Phase 2 (approved by Murat, 2026-08-15)
+/* VIRELLAART SIGNATURE COLLECTION — Phase 2 (approved by Murat, 2026-08-15),
+ * extended in Phase 3 (approved by Murat, 2026-08-15).
  * Order is significant: entries 1-3 are the Hero tier, 4-6 are the Support
- * tier. This data shape has no dedicated tier field, so the hero/support
- * distinction is expressed purely through array order (see
- * seo-architecture-audit.md / signature-collection-candidates.md for the
- * approved rationale). Do not reorder without Murat's sign-off. */
+ * tier, and entry 7 is a Phase 3 Modern Signature addition (Soho). This data
+ * shape has no dedicated tier field, so the hero/support distinction is
+ * expressed purely through array order (see seo-architecture-audit.md /
+ * signature-collection-candidates.md for the approved rationale). Do not
+ * reorder without Murat's sign-off. */
 export const featuredCollections = [
   {
     key: "shawl",
@@ -81,6 +80,10 @@ export const featuredCollections = [
   {
     key: "milanoBedroom",
     href: "/bedrooms/milano",
+  },
+  {
+    key: "sohoSofaSet",
+    href: "/collections/modern/sofa-sets/soho-sofa-set",
   },
 ] as const satisfies readonly {
   key: ProductKey;
