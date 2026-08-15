@@ -3333,4 +3333,48 @@ sultanGreenDining: {
       },
     ],
   },
+
+  portoDiningRoomSet: {
+    name: "Porto Dining Room Set",
+    slug: "porto-dining-room-set",
+    category: "dining-rooms",
+    style: "modern",
+    orderModel: "made-to-order",
+    subtitle: "Contemporary Luxury Dining Room Collection",
+    description:
+      "The Porto Dining Room Set brings refined contemporary character to sophisticated dining interiors with a generous 250 cm dining table, six coordinated upholstered dining chairs and an elegant console with mirror. Balanced proportions, warm modern finishes and a clean architectural presence create a polished setting for luxury residential spaces. Porto is designed for customers searching for modern dining room furniture, luxury dining sets and made-to-order contemporary furniture with international delivery from VIRELLAART.",
+    images: [
+      "/porto-dining-room-set-01.webp",
+      "/porto-dining-room-set-02.webp",
+      "/porto-dining-room-set-03.webp",
+      "/porto-dining-room-set-04.webp",
+    ],
+    imageAlts: {
+      en: [
+        "Porto modern dining room set with 250 cm dining table six upholstered chairs console and mirror",
+        "Porto contemporary 250 cm dining table with coordinated luxury upholstered dining chairs",
+        "Porto modern upholstered dining chair detail from the contemporary dining room collection",
+        "Porto luxury modern dining room with table six chairs and coordinated console furniture",
+      ],
+    },
+    prices: [
+      {
+        label: "Dining Room Set",
+        price: "$6,050",
+        featured: true,
+      },
+      {
+        label: "Dining Table 250 cm",
+        price: "$1,950",
+      },
+      {
+        label: "6 Dining Chairs",
+        price: "$1,800",
+      },
+      {
+        label: "Console + Mirror",
+        price: "$2,300",
+      },
+    ],
+  },
 };
