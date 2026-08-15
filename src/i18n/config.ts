@@ -1898,7 +1898,7 @@ const productNameReplacements: Record<
   ],
   pt: [
     ["Corner Sofa Set", "Conjunto de sofá de canto"],
-    ["Sofa Set", "Conjunto de sofás"],
+    ["Sofa Set", "Conjunto de sofá"],
     ["Living Room Set", "Conjunto de sala de estar"],
     ["Living Room", "Sala de estar"],
     ["Dining Room Set", "Conjunto de sala de jantar"],

@@ -389,7 +389,7 @@ export const collectionMenuCopy: Record<
     contact: "VIRELLAART bilan bog‘lanish",
   },
   pt: {
-    sofaSets: "Conjuntos de sofás",
+    sofaSets: "Conjuntos de sofá",
     luxuryClassic: "Luxury & Classic",
     modern: "Modern",
     hubTitle: "Coleções de mobiliário moderno",
