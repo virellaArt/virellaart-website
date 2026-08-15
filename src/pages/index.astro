@@ -343,23 +343,23 @@ const conversionHero =
   language === "en"
     ? {
         eyebrow:
-          "Manufacturer Direct · Istanbul, Türkiye",
+          "Istanbul Craftsmanship · Worldwide Delivery",
         title:
-          "Luxury Furniture Made in Istanbul, Delivered Worldwide",
+          "Istanbul-Crafted Furniture for Exceptional Residences Worldwide",
         brandLine:
           "VIRELLAART · ISTANBUL",
         lead:
-          "Manufacturer-direct living room, dining room, bedroom and TV unit collections, crafted in Türkiye with custom finishes and delivered worldwide.",
+          "VIRELLAART creates made-to-order furniture collections in Istanbul — from Signature Sofa Sets to complete living, dining and bedroom interiors — for distinctive residences and interior projects across the United States, the United Kingdom, France and Switzerland.",
         primaryButton:
-          "Get Price & Delivery Quote",
+          "Request Your Private Quotation",
         secondaryButton:
-          "Explore Collections",
+          "View the Signature Collection",
         proofOne:
-          "Manufacturer Direct",
+          "Crafted in Istanbul",
         proofTwo:
-          "Custom Finishes",
+          "Made-to-Order & Custom Finishes",
         proofThree:
-          "Worldwide Delivery",
+          "International Delivery Coordination",
       }
     : {
         eyebrow:
@@ -443,7 +443,7 @@ const homePageDescription =
         </a>
 
         <a
-          href="#collections"
+          href={language === "en" ? "#featuredCollectionsTitle" : "#collections"}
           class="hero-button"
         >
           {conversionHero.secondaryButton}
