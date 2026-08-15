@@ -10,6 +10,10 @@ import {
   getTranslations,
   localizedPath,
 } from "../i18n/config";
+import {
+  featuredCollections,
+  getCatalogMerchandising,
+} from "../data/catalog-merchandising";
 
 interface Props {
   market: MarketPage;
@@ -17,6 +21,14 @@ interface Props {
 
 const { market } = Astro.props;
 const translations = getTranslations(market.language);
+const isEnglishSwitzerlandMarket =
+  market.slug === "switzerland" && market.language === "en";
+const signatureCollectionCards = isEnglishSwitzerlandMarket
+  ? featuredCollections.map((entry) => ({
+      ...entry,
+      ...getCatalogMerchandising(entry.key),
+    }))
+  : [];
 const canonicalURL = new URL(
   marketPagePath(market),
   "https://www.virellaart.com",
@@ -115,6 +127,54 @@ const serviceSchema = {
         ))
       }
     </section>
+
+    {
+      isEnglishSwitzerlandMarket && (
+        <section
+          class="market-signature-collection"
+          aria-labelledby="marketSignatureCollectionTitle"
+        >
+          <div class="market-heading">
+            <span>{translations.home.discover}</span>
+            <h2 id="marketSignatureCollectionTitle">
+              The VIRELLAART Signature Collection
+            </h2>
+            <p>
+              The VIRELLAART Signature Collection — the seven models our
+              design team recommends first for Swiss residences and
+              interior projects.
+            </p>
+          </div>
+
+          <div class="market-signature-collection-grid">
+            {
+              signatureCollectionCards.map((card) => (
+                <a
+                  class="market-signature-collection-card"
+                  href={localizedPath(card.href, market.language)}
+                >
+                  <div class="market-signature-collection-image">
+                    <img
+                      src={card.product.images[0]}
+                      alt={`VIRELLAART ${card.product.name}`}
+                      width="800"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div class="market-signature-collection-copy">
+                    <strong>{card.product.name}</strong>
+                    <p>{card.featuredPrice?.price}</p>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      )
+    }
 
     <section id="market-collections" class="market-collections">
       <div class="market-heading">
@@ -327,6 +387,60 @@ const serviceSchema = {
     line-height: 1.35;
   }
 
+  .market-signature-collection {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto;
+    padding: 0 0 100px;
+  }
+
+  .market-signature-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .market-signature-collection-card {
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 93, 0.25);
+    background: #18130f;
+    transition: border-color 0.3s ease;
+  }
+
+  .market-signature-collection-card:hover {
+    border-color: rgba(201, 164, 93, 0.6);
+  }
+
+  .market-signature-collection-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .market-signature-collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .market-signature-collection-copy {
+    padding: 18px 20px 22px;
+  }
+
+  .market-signature-collection-copy strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .market-signature-collection-copy p {
+    margin: 0;
+    color: var(--gold-light);
+    font-size: 15px;
+  }
+
   .market-collections {
     width: min(100% - 56px, 1320px);
     margin: 0 auto;
@@ -384,7 +498,8 @@ const serviceSchema = {
   @media (max-width: 900px) {
     .market-service,
     .market-proof,
-    .market-grid {
+    .market-grid,
+    .market-signature-collection-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -405,7 +520,9 @@ const serviceSchema = {
 
     .market-service,
     .market-proof,
-    .market-grid {
+    .market-grid,
+    .market-signature-collection,
+    .market-signature-collection-grid {
       width: min(100% - 30px, 1320px);
       grid-template-columns: 1fr;
     }

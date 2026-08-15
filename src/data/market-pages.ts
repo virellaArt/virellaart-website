@@ -124,6 +124,39 @@ export const marketPages: MarketPage[] = [
       "Share your destination, preferred collection and room requirements for a detailed response.",
   },
   {
+    language: "en",
+    slug: "switzerland",
+    countryCode: "CH",
+    hreflang: "en-CH",
+    alternateGroup: "switzerland",
+    marketName: "Switzerland",
+    title: "Statement Luxury Furniture for Swiss Residences | VIRELLAART",
+    description:
+      "Explore the VIRELLAART Signature Collection — made-to-order luxury furniture crafted in Istanbul, for homes and projects across Switzerland.",
+    eyebrow: "VIRELLAART · Switzerland",
+    heading: "Statement Luxury Furniture for Swiss Residences",
+    intro:
+      "VIRELLAART supports private residences, villas and design projects across Switzerland with made-to-order luxury furniture collections crafted in Istanbul, serving clients from Geneva and Zurich to Lausanne.",
+    serviceHeading: "Direct Manufacturer Support for Switzerland",
+    serviceText:
+      "Discuss dimensions, fabrics, finishes and collection configurations directly with the VIRELLAART team. Written quotations confirm the selected products, USD pricing, production scope, packaging and delivery plan before an order is approved.",
+    planningHeading: "Delivery Planning Across Switzerland",
+    planningText:
+      "Delivery requirements are reviewed by canton, city, building access and order volume for destinations across Switzerland. Estimated production, transport, customs and any destination charges are clarified in the written quotation.",
+    details: [
+      "Made-to-order luxury furniture from Istanbul",
+      "Protective packaging for international transport",
+      "Direct WhatsApp consultation and quotation",
+      "Canton- and city-specific delivery coordination",
+    ],
+    collectionHeading: "Furniture Collections for Swiss Homes and Projects",
+    collectionText:
+      "Compare complete luxury living room, dining room and bedroom collections or select individual coordinated pieces for a villa, residence or interior project.",
+    cta: "Request a Switzerland quotation",
+    ctaNote:
+      "Share your preferred collection, canton or city and project requirements for a precise review.",
+  },
+  {
     language: "de",
     slug: "germany",
     countryCode: "DE",
