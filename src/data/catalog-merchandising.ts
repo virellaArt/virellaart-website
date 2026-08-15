@@ -51,30 +51,36 @@ const productBadges: Partial<
   aspendosDining: "bestSeller",
 };
 
+/* VIRELLAART SIGNATURE COLLECTION — Phase 2 (approved by Murat, 2026-08-15)
+ * Order is significant: entries 1-3 are the Hero tier, 4-6 are the Support
+ * tier. This data shape has no dedicated tier field, so the hero/support
+ * distinction is expressed purely through array order (see
+ * seo-architecture-audit.md / signature-collection-candidates.md for the
+ * approved rationale). Do not reorder without Murat's sign-off. */
 export const featuredCollections = [
   {
-    key: "burgazSofaSet",
-    href: "/collections/modern/sofa-sets/burgaz-sofa-set",
+    key: "shawl",
+    href: "/living-rooms/shawl",
   },
   {
-    key: "hunkarSofaSet",
-    href: "/collections/modern/sofa-sets/hunkar-sofa-set",
+    key: "saltanatDining",
+    href: "/dining-rooms/saltanat",
   },
   {
-    key: "ibizaSofaSet",
-    href: "/collections/modern/sofa-sets/ibiza-sofa-set",
+    key: "sultanBedroom",
+    href: "/bedrooms/sultan",
   },
   {
-    key: "zenaSofaSet",
-    href: "/collections/modern/sofa-sets/zena-sofa-set",
+    key: "valencia",
+    href: "/living-rooms/valencia",
   },
   {
-    key: "kanoModernBedroomSet",
-    href: "/collections/modern/bedrooms/kano-modern-bedroom-set",
+    key: "zumrutDining",
+    href: "/dining-rooms/zumrut",
   },
   {
-    key: "milanoModernBedroomSet",
-    href: "/collections/modern/bedrooms/milano-modern-bedroom-set",
+    key: "milanoBedroom",
+    href: "/bedrooms/milano",
   },
 ] as const satisfies readonly {
   key: ProductKey;
