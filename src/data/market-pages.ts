@@ -517,7 +517,7 @@ export const marketFooterPages = [
   marketPages.find(
     (market) =>
       market.countryCode === "CH" &&
-      market.language === "de",
+      market.language === "en",
   ),
   marketPages.find((market) => market.countryCode === "RO"),
   marketPages.find((market) => market.countryCode === "RU"),
