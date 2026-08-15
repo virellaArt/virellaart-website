@@ -30,6 +30,25 @@ const signatureCollectionCards = isEnglishSwitzerlandMarket
     }))
   : [];
 
+/* VIRELLAART UK + FRANCE SIGNATURE SHOWCASE — additive, does not
+ * modify the Switzerland block above. Each market.slug guard is
+ * independent and mutually exclusive with the others. */
+const isUnitedKingdomMarket = market.slug === "united-kingdom";
+const signatureCollectionCardsUK = isUnitedKingdomMarket
+  ? featuredCollections.map((entry) => ({
+      ...entry,
+      ...getCatalogMerchandising(entry.key),
+    }))
+  : [];
+
+const isFranceMarket = market.slug === "france";
+const signatureCollectionCardsFR = isFranceMarket
+  ? featuredCollections.map((entry) => ({
+      ...entry,
+      ...getCatalogMerchandising(entry.key),
+    }))
+  : [];
+
 /* VIRELLAART GA4 WHATSAPP CTA TRACKING — scoped to USA/UK/France/
  * Switzerland only via market.slug. No other market page is affected. */
 const gaTrackedMarketSlugs = new Set([
@@ -166,6 +185,102 @@ const serviceSchema = {
           <div class="market-signature-collection-grid">
             {
               signatureCollectionCards.map((card) => (
+                <a
+                  class="market-signature-collection-card"
+                  href={localizedPath(card.href, market.language)}
+                >
+                  <div class="market-signature-collection-image">
+                    <img
+                      src={card.product.images[0]}
+                      alt={`VIRELLAART ${card.product.name}`}
+                      width="800"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div class="market-signature-collection-copy">
+                    <strong>{card.product.name}</strong>
+                    <p>{card.featuredPrice?.price}</p>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      )
+    }
+
+    {
+      isUnitedKingdomMarket && (
+        <section
+          class="market-signature-collection"
+          aria-labelledby="marketSignatureCollectionTitle"
+        >
+          <div class="market-heading">
+            <span>{translations.home.discover}</span>
+            <h2 id="marketSignatureCollectionTitle">
+              The VIRELLAART Signature Collection
+            </h2>
+            <p>
+              The VIRELLAART Signature Collection — the seven models our
+              design team recommends first for British residences and
+              interior projects.
+            </p>
+          </div>
+
+          <div class="market-signature-collection-grid">
+            {
+              signatureCollectionCardsUK.map((card) => (
+                <a
+                  class="market-signature-collection-card"
+                  href={localizedPath(card.href, market.language)}
+                >
+                  <div class="market-signature-collection-image">
+                    <img
+                      src={card.product.images[0]}
+                      alt={`VIRELLAART ${card.product.name}`}
+                      width="800"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div class="market-signature-collection-copy">
+                    <strong>{card.product.name}</strong>
+                    <p>{card.featuredPrice?.price}</p>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      )
+    }
+
+    {
+      isFranceMarket && (
+        <section
+          class="market-signature-collection"
+          aria-labelledby="marketSignatureCollectionTitle"
+        >
+          <div class="market-heading">
+            <span>{translations.home.discover}</span>
+            <h2 id="marketSignatureCollectionTitle">
+              La Collection Signature VIRELLAART
+            </h2>
+            <p>
+              La Collection Signature VIRELLAART — les sept modèles
+              recommandés en priorité par notre équipe pour les
+              résidences et projets français.
+            </p>
+          </div>
+
+          <div class="market-signature-collection-grid">
+            {
+              signatureCollectionCardsFR.map((card) => (
                 <a
                   class="market-signature-collection-card"
                   href={localizedPath(card.href, market.language)}

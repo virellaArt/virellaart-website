@@ -31,9 +31,9 @@ export const marketPages: MarketPage[] = [
     hreflang: "en-GB",
     alternateGroup: "english-markets",
     marketName: "United Kingdom",
-    title: "Luxury Furniture Manufacturer for the UK | VIRELLAART",
+    title: "Statement Luxury Furniture for British Residences | VIRELLAART",
     description:
-      "Discover made-to-order luxury furniture for UK residences, with direct manufacturer support, customization and delivery planning from Istanbul.",
+      "Explore the VIRELLAART Signature Collection — made-to-order luxury furniture crafted in Istanbul, for homes and projects across the United Kingdom.",
     eyebrow: "VIRELLAART · United Kingdom",
     heading: "Luxury Furniture Crafted for Exceptional UK Interiors",
     intro:
@@ -196,9 +196,9 @@ export const marketPages: MarketPage[] = [
     hreflang: "fr-FR",
     alternateGroup: "france",
     marketName: "France",
-    title: "Mobilier de luxe pour la France | VIRELLAART",
+    title: "Mobilier de Luxe pour Résidences Françaises | VIRELLAART",
     description:
-      "Découvrez le mobilier de luxe fabriqué à Istanbul pour la France, avec personnalisation et organisation de la livraison internationale.",
+      "Découvrez la Collection Signature VIRELLAART — mobilier de luxe sur mesure fabriqué à Istanbul, pour vos résidences et projets en France.",
     eyebrow: "VIRELLAART · France",
     heading: "Mobilier de luxe pour les intérieurs d’exception en France",
     intro:
