@@ -1,0 +1,759 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title = "How to Choose a Luxury Bedroom Set for Your Home";
+
+const description =
+  "A practical guide to choosing a luxury bedroom set — proportions, material, and finishes — with examples from the VIRELLAART Signature Collection.";
+
+const publishedTime = "2026-08-15T00:00:00+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-bedroom-set-for-your-home/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "Should bedroom furniture be bought as a matched set or piece by piece?",
+    answer:
+      "A cohesive set, planned together as a bed, wardrobe and dresser or mirror console, avoids the common problem of mismatched wood tones and hardware finishes that comes from sourcing pieces separately from different collections.",
+  },
+  {
+    question:
+      "How much clearance should I leave around a bed and wardrobe?",
+    answer:
+      "Measure not just the bed's footprint but the clearance needed on each side, in front of the wardrobe doors, and around any seating or bench at the foot of the bed. A well-designed bedroom leaves visible floor space rather than feeling full.",
+  },
+  {
+    question:
+      "What's the difference between classic and contemporary bedroom sets?",
+    answer:
+      "Classic sets favor carved detailing, richer wood tones and upholstered headboards with gold or bronze hardware accents. Contemporary sets favor cleaner silhouettes, simpler hardware and a single dominant wood tone with minimal ornamentation.",
+  },
+  {
+    question: "How do I know if a wardrobe has enough storage?",
+    answer:
+      "Look beyond the wardrobe's width to its internal configuration — hanging space, shelving and drawer capacity — relative to what actually needs to be stored, not just its finish and appearance.",
+  },
+  {
+    question:
+      "Is a made-to-order bedroom set worth it for an unusual room?",
+    answer:
+      "Yes. A made-to-order set allows dimensions such as wardrobe width or bed frame size to be adjusted to the exact room, which matters most in bedrooms with non-standard layouts, alcoves, or lower ceiling heights.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/sultanbedroom-01.webp"
+  imageAlt="Sultan luxury bedroom set with hand-finished carved detailing and classic craftsmanship"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury bedroom set",
+    "how to choose a bedroom set",
+    "luxury bedroom furniture",
+    "made-to-order bedroom set",
+    "signature collection",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={7}
+  wordCount={1080}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until the
+            localized edition is published.
+          </p>
+          <a href={englishArticleURL}>Open the English article</a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Luxury Bedroom Set Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1>How to Choose a Luxury Bedroom Set for Your Home</h1>
+
+        <p class="article-intro">
+          A bedroom is the one room in a home that isn't designed for
+          guests. That's exactly why the furniture in it deserves as much
+          thought as anything in a formal living or dining space — its
+          quality is felt rather than performed.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 15, 2026</span>
+          <span>7 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/sultanbedroom-01.webp"
+        alt="Sultan luxury bedroom set with hand-finished carved detailing and classic craftsmanship"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#whole-set">Think in terms of the whole set</a></li>
+          <li><a href="#proportion">Proportion in a bedroom</a></li>
+          <li><a href="#material-and-finish">Material and finish</a></li>
+          <li><a href="#wardrobe-capacity">Wardrobe capacity</a></li>
+          <li><a href="#made-to-order">Made-to-order advantages</a></li>
+          <li><a href="#final-checklist">Final checklist</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+          <p>
+            A luxury bedroom set is judged less by any single striking
+            piece and more by how well the bed, wardrobe and console work
+            together — in proportion, material and finish.
+          </p>
+        </section>
+
+        <p>
+          A bedroom is the one room in a home that isn't designed for
+          guests. That's exactly why the furniture in it deserves as much
+          thought as anything in a formal living or dining space — a
+          bedroom set is lived with daily, seen first thing in the
+          morning and last thing at night, and its quality is felt rather
+          than performed.
+        </p>
+
+        <h2 id="whole-set">
+          1. Think in terms of the whole set, not just the bed
+        </h2>
+
+        <p>
+          The bed is the obvious centerpiece, but a well-proportioned
+          bedroom set is planned as a complete composition: the bed, a
+          wardrobe, and a dresser or mirror console working together in
+          scale and finish. Buying these pieces separately, from
+          different collections, is one of the most common reasons a
+          bedroom feels assembled rather than designed.
+        </p>
+
+        <p>
+          A cohesive set also solves a practical problem — matching wood
+          tones, hardware finishes, and detailing across separately
+          sourced pieces is difficult to get right, even with a good eye.
+          A set designed together removes that risk entirely.
+        </p>
+
+        <h2 id="proportion">
+          2. Proportion matters more in a bedroom than anywhere else
+        </h2>
+
+        <p>
+          Bedrooms are often smaller than living or dining rooms, which
+          makes proportion the single most important factor in choosing
+          a set. A bed frame and headboard that are correctly scaled to
+          the room read as luxurious; the same pieces in a room that's
+          too small read as overwhelming, no matter how well made they
+          are.
+        </p>
+
+        <p>
+          Before choosing a set, measure not just the bed's footprint but
+          the clearance needed on each side, in front of the wardrobe
+          doors, and around any seating or bench at the foot of the bed.
+          The most refined bedrooms leave visible floor space — a
+          genuinely well-designed room rarely feels full.
+        </p>
+
+        <h2 id="material-and-finish">
+          3. Material and finish set the tone
+        </h2>
+
+        <p>
+          <strong>Classic bedroom sets</strong> favor carved detailing,
+          richer wood tones, and upholstered headboards with structured
+          tufting. Gold or bronze hardware accents — on wardrobe handles,
+          bed frame trim, or mirror edges — are typically what separates
+          a genuinely luxury set from a simply well-made one.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            The VIRELLAART
+            <a href={localizedPath("/bedrooms/sultan", language)}>
+              Sultan Bedroom Set
+            </a>
+            is built around exactly this level of detailing: hand-finished
+            in Istanbul with classic carved elements designed as a
+            statement piece for a primary bedroom.
+          </p>
+        </div>
+
+        <p>
+          <strong>Contemporary bedroom sets</strong> favor cleaner
+          silhouettes, simpler hardware, and a more restrained material
+          palette — often a single dominant wood tone with minimal
+          ornamentation. They suit bedrooms with more modern architecture
+          or a calmer, more minimal overall aesthetic.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            For a refined classic option at a slightly more accessible
+            entry point, the
+            <a href={localizedPath("/bedrooms/milano", language)}>
+              Milano Bedroom Set
+            </a>
+            offers the same attention to craftsmanship in a scale that
+            fits most standard primary bedrooms.
+          </p>
+        </div>
+
+        <h2 id="wardrobe-capacity">
+          4. Wardrobe capacity is a practical decision, not just a style
+          one
+        </h2>
+
+        <p>
+          It's easy to choose a wardrobe on appearance alone and only
+          discover its real storage capacity after it's installed.
+          Consider not just the wardrobe's width but its internal
+          configuration — hanging space, shelving, and drawer capacity —
+          relative to what actually needs to be stored. A beautifully
+          finished wardrobe that doesn't hold what's needed becomes a
+          daily source of friction rather than a piece to enjoy.
+        </p>
+
+        <h2 id="made-to-order">
+          5. Made-to-order advantages in a bedroom
+        </h2>
+
+        <p>
+          A made-to-order bedroom set allows dimensions to be adjusted to
+          the room — a wardrobe sized to an exact wall length, or a bed
+          frame matched precisely to available floor space — rather than
+          compromising on proportion to fit an off-the-shelf piece. This
+          matters most in bedrooms with non-standard layouts, alcoves, or
+          lower ceiling heights where fixed dimensions from a
+          mass-produced set often don't work.
+        </p>
+
+        <h2 id="final-checklist">
+          6. Final luxury bedroom set checklist
+        </h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The bed, wardrobe and console are planned as one coordinated
+            set rather than sourced separately.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Clearance around the bed, wardrobe doors and any bench at the
+            foot of the bed has been measured.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The classic-versus-contemporary direction matches the
+            bedroom's architecture and the rest of the home.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Wardrobe internal configuration — hanging space, shelving and
+            drawers — has been checked against real storage needs.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Non-standard layout, alcoves or ceiling height constraints
+            have been identified before ordering.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Made-to-order dimensions and delivery details are confirmed
+            before production begins.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">VIRELLAART guidance</p>
+
+          <h2>Bringing it together</h2>
+
+          <p>
+            A luxury bedroom set is judged less by any single striking
+            piece and more by how well the bed, wardrobe, and console
+            work together — in proportion, material, and finish. Getting
+            that right is what makes a bedroom feel considered rather
+            than furnished.
+          </p>
+
+          <p>
+            Explore the full
+            <a href={localizedPath("/bedrooms", language)}>
+              VIRELLAART Luxury Bedrooms collection
+            </a>
+            to see these principles applied across Signature-level
+            bedroom sets, or reach out via WhatsApp for a private
+            consultation on sizing and finishes for your specific room.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20bedroom%20set."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">Frequently asked questions</p>
+          <h2 id="faq-title">Luxury bedroom set FAQ</h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
