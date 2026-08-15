@@ -29,6 +29,17 @@ const signatureCollectionCards = isEnglishSwitzerlandMarket
       ...getCatalogMerchandising(entry.key),
     }))
   : [];
+
+/* VIRELLAART GA4 WHATSAPP CTA TRACKING — scoped to USA/UK/France/
+ * Switzerland only via market.slug. No other market page is affected. */
+const gaTrackedMarketSlugs = new Set([
+  "united-states",
+  "united-kingdom",
+  "france",
+  "switzerland",
+]);
+const isGaTrackedMarket = gaTrackedMarketSlugs.has(market.slug);
+
 const canonicalURL = new URL(
   marketPagePath(market),
   "https://www.virellaart.com",
@@ -90,6 +101,12 @@ const serviceSchema = {
             data-market={market.marketName}
             data-page-type="market"
             data-page-url={canonicalURL}
+            {...(isGaTrackedMarket
+              ? {
+                  "data-cta-location": "hero",
+                  "data-market-slug": market.slug,
+                }
+              : {})}
           >
             {market.cta}
           </a>
@@ -241,11 +258,54 @@ const serviceSchema = {
         data-market={market.marketName}
         data-page-type="market"
         data-page-url={canonicalURL}
+        {...(isGaTrackedMarket
+          ? {
+              "data-cta-location": "footer",
+              "data-market-slug": market.slug,
+            }
+          : {})}
       >
         {market.cta}
       </a>
     </section>
   </article>
+
+  {
+    isGaTrackedMarket && (
+      <script is:inline>
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          const button =
+            target instanceof Element
+              ? target.closest(
+                  "a[data-cta-location][data-market-slug]",
+                )
+              : null;
+
+          if (!(button instanceof HTMLAnchorElement)) return;
+          if (window.virellaAnalyticsAllowed !== true) return;
+
+          window.dataLayer = window.dataLayer || [];
+
+          const searchParams = new URLSearchParams(
+            window.location.search,
+          );
+
+          window.dataLayer.push({
+            event: "whatsapp_cta_click",
+            market: button.dataset.marketSlug,
+            cta_location: button.dataset.ctaLocation,
+            utm_source:
+              searchParams.get("utm_source") || undefined,
+            utm_medium:
+              searchParams.get("utm_medium") || undefined,
+            utm_campaign:
+              searchParams.get("utm_campaign") || undefined,
+          });
+        });
+      </script>
+    )
+  }
 </BaseLayout>
 
 <style>
