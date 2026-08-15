@@ -1,0 +1,790 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title = "How to Choose a Luxury Sofa Set for Your Living Room";
+
+const description =
+  "A practical guide to choosing a luxury sofa set — scale, material, and style — with examples from the VIRELLAART Signature Collection.";
+
+const publishedTime = "2026-08-15T00:00:00+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-sofa-set-for-your-living-room/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question:
+      "How do I know if a sofa set is the right size for my living room?",
+    answer:
+      "Leave at least 90 cm of walking clearance between the sofa and any coffee table, and enough space around the seating arrangement that the room doesn't feel boxed in. A sofa sized to look impressive in a photograph rather than to fit the room usually reads as cramped, not luxurious.",
+  },
+  {
+    question:
+      "What's the difference between classic and contemporary sofa sets?",
+    answer:
+      "Classic sofa sets favor structured silhouettes, tufted or channel-stitched upholstery and carved wood detailing, often finished in gold or bronze accents. Contemporary sofa sets favor cleaner lines, lower profiles and a single dominant fabric or leather tone with minimal ornamentation.",
+  },
+  {
+    question: "Should I choose fabric or leather for a luxury sofa?",
+    answer:
+      "Neither is inherently more luxurious. Performance fabrics offer genuine stain resistance and are generally more forgiving for households with children or pets, while leather develops character over time but requires more conscious care. The right choice depends on how the room is actually lived in.",
+  },
+  {
+    question:
+      "Does the sofa configuration matter as much as the sofa itself?",
+    answer:
+      "Yes. A sofa set is rarely just the sofa — it's the sofa in relation to accent chairs, a coffee table and how the whole arrangement is configured. Whether the room calls for a straight sofa with separate seating or a more sectional configuration affects the room's flow more than any single upholstery choice.",
+  },
+  {
+    question: "Is a made-to-order sofa set worth it?",
+    answer:
+      "A made-to-order sofa set allows fabric, finish and scale to be matched precisely to the room rather than adjusting the room around a fixed, mass-produced silhouette — particularly valuable for unusual proportions or a specific existing color palette.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/shawl-01.webp"
+  imageAlt="Shawl luxury sofa set with sculptural detailing in a refined VIRELLAART living room"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury sofa set",
+    "how to choose a sofa set",
+    "luxury living room furniture",
+    "made-to-order sofa set",
+    "signature collection",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={8}
+  wordCount={1150}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until the
+            localized edition is published.
+          </p>
+          <a href={englishArticleURL}>Open the English article</a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Luxury Sofa Set Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1>How to Choose a Luxury Sofa Set for Your Living Room</h1>
+
+        <p class="article-intro">
+          A sofa set does more work than any other piece in a living
+          room. It anchors the space, sets the tone for everything
+          around it, and has to perform two roles at once: genuinely
+          comfortable for daily life, and a presence as the room's
+          centerpiece.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 15, 2026</span>
+          <span>8 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/shawl-01.webp"
+        alt="Shawl luxury sofa set with sculptural detailing in a refined VIRELLAART living room"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#scale-the-sofa">Scale the sofa to the room</a></li>
+          <li><a href="#classic-vs-contemporary">Classic vs. contemporary</a></li>
+          <li><a href="#material">Material and how the sofa lives</a></li>
+          <li><a href="#configuration">Configuration matters</a></li>
+          <li><a href="#made-to-order">Made-to-order flexibility</a></li>
+          <li><a href="#final-checklist">Final checklist</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+          <p>
+            The best luxury sofa sets are chosen as the anchor of a room
+            that's already been thought through in scale, material and
+            configuration — not as a standalone statement piece.
+          </p>
+        </section>
+
+        <p>
+          A sofa set does more work than any other piece in a living
+          room. It anchors the space, sets the tone for everything
+          around it, and — more than a dining table or bedroom set — has
+          to perform two roles at once: it needs to be genuinely
+          comfortable for daily life, and it needs to hold its presence
+          as the room's centerpiece.
+        </p>
+
+        <h2 id="scale-the-sofa">
+          1. Scale the sofa to the room, not the other way around
+        </h2>
+
+        <p>
+          The single most common mistake in choosing a sofa set is
+          sizing it to look impressive in a showroom or a photograph,
+          rather than to fit the room it's actually going into. A sofa
+          that's slightly too large for a living room doesn't read as
+          luxurious — it reads as cramped, and it makes every other
+          piece in the room feel like an afterthought.
+        </p>
+
+        <p>
+          As a starting point, leave at least 90 cm of walking clearance
+          between the sofa and any coffee table, and enough space around
+          the seating arrangement that the room doesn't feel boxed in. A
+          well-proportioned sofa set, correctly scaled to the room, will
+          almost always look more considered than an oversized one —
+          regardless of price.
+        </p>
+
+        <h2 id="classic-vs-contemporary">
+          2. Classic vs. contemporary: two different design languages
+        </h2>
+
+        <p>
+          <strong>Classic sofa sets</strong> favor structured
+          silhouettes, tufted or channel-stitched upholstery, and carved
+          wood detailing on legs and arms — often finished in gold or
+          bronze accents. They suit living rooms built around
+          traditional architecture, richer color palettes, and a more
+          formal sense of arrival.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            The VIRELLAART
+            <a href={localizedPath("/living-rooms/shawl", language)}>
+              Shawl Sofa Set
+            </a>
+            takes a slightly different route within this world — a
+            statement, contemporary silhouette with the same level of
+            custom finishing and Istanbul craftsmanship, for living
+            rooms that want presence without leaning fully traditional.
+          </p>
+        </div>
+
+        <p>
+          <strong>Contemporary sofa sets</strong> favor cleaner lines,
+          lower profiles, and simpler material palettes — usually a
+          single dominant fabric or leather tone with minimal
+          ornamentation. They suit open-plan living spaces and rooms
+          with more modern architectural detailing.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            The
+            <a
+              href={localizedPath(
+                "/collections/modern/sofa-sets/soho-sofa-set",
+                language,
+              )}
+            >
+              Soho Sofa Set
+            </a>
+            represents this direction most clearly in the Signature
+            Collection — a modern silhouette built to the same
+            made-to-order standard as VIRELLAART's classic pieces.
+          </p>
+        </div>
+
+        <div class="editorial-link">
+          <p>
+            For a more accessible entry point into either direction, the
+            <a href={localizedPath("/living-rooms/valencia", language)}>
+              Valencia Sofa Set
+            </a>
+            offers a contemporary profile with the same custom-finish
+            craftsmanship, at a scale that suits most standard living
+            rooms.
+          </p>
+        </div>
+
+        <h2 id="material">
+          3. Material determines how the sofa lives, not just how it
+          looks
+        </h2>
+
+        <p>
+          Fabric and leather each carry real practical trade-offs, not
+          just aesthetic ones.
+        </p>
+
+        <p>
+          <strong>Performance fabrics</strong> have improved
+          significantly and now offer genuine stain resistance without
+          sacrificing the soft, tactile quality that makes a sofa
+          inviting. They're generally the more forgiving choice for
+          households with children or pets.
+        </p>
+
+        <p>
+          <strong>Leather</strong> develops character over time and
+          tends to photograph with more depth and richness, particularly
+          in classic sets with structured detailing. It requires more
+          conscious care — away from direct sun, cleaned with the right
+          products — but rewards that care with a finish that only
+          improves with age.
+        </p>
+
+        <p>
+          Neither is inherently more luxurious than the other. The right
+          choice depends on how the room is actually lived in, not on
+          which reads better in a single photograph.
+        </p>
+
+        <h2 id="configuration">
+          4. Configuration matters as much as the sofa itself
+        </h2>
+
+        <p>
+          A sofa set is rarely just the sofa — it's the sofa in relation
+          to accent chairs, a coffee table, and how the whole
+          arrangement is configured within the room. Before finalizing a
+          set, consider whether the room calls for a straight sofa with
+          separate accent seating, or a more sectional configuration
+          that defines the space more assertively. This decision affects
+          the room's flow far more than any single upholstery choice.
+        </p>
+
+        <h2 id="made-to-order">
+          5. Made-to-order flexibility
+        </h2>
+
+        <p>
+          A made-to-order sofa set allows fabric, finish, and — within
+          the manufacturer's parameters — scale to be matched precisely
+          to the room, rather than adjusting the room around a fixed,
+          mass-produced silhouette. This is particularly valuable in
+          living rooms with unusual proportions or a specific existing
+          color palette that a standard fabric range doesn't quite
+          match.
+        </p>
+
+        <h2 id="final-checklist">
+          6. Final luxury sofa set checklist
+        </h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The sofa is scaled to the room, with at least 90 cm of
+            walking clearance around the seating arrangement.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The classic-versus-contemporary direction matches the
+            room's architecture and color palette.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Fabric or leather has been chosen for how the room is
+            actually lived in, not only for how it photographs.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The configuration — straight sofa with accent seating, or
+            sectional — matches how the room needs to flow.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Unusual room proportions or an existing color palette have
+            been identified before ordering.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Made-to-order fabric, finish and scale details are confirmed
+            before production begins.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">VIRELLAART guidance</p>
+
+          <h2>Bringing it together</h2>
+
+          <p>
+            The best luxury sofa sets are chosen the way the best dining
+            tables and bedroom sets are — as the anchor of a room that's
+            already been thought through in scale, material, and
+            configuration, not as a standalone statement piece.
+          </p>
+
+          <p>
+            Explore the full
+            <a href={localizedPath("/living-rooms", language)}>
+              VIRELLAART Luxury Living Rooms collection
+            </a>
+            to see these principles applied across Signature-level sofa
+            sets, or reach out via WhatsApp for a private consultation
+            on fabric, finish, and sizing for your specific space.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20sofa%20set."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">Frequently asked questions</p>
+          <h2 id="faq-title">Luxury sofa set FAQ</h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
