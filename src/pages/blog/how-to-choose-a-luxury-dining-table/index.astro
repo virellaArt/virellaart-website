@@ -1,0 +1,768 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title = "How to Choose a Luxury Dining Table";
+
+const description =
+  "A practical guide to choosing a luxury dining table — size, material, and style — with examples from the VIRELLAART Signature Collection.";
+
+const publishedTime = "2026-08-15T00:00:00+03:00";
+const modifiedTime = publishedTime;
+
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-choose-a-luxury-dining-table/";
+
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+
+const faqItems = [
+  {
+    question: "How much space does a dining table need around it?",
+    answer:
+      "Leave at least 90–100 cm of clearance on every side so chairs can pull out and guests can walk past comfortably. In a smaller dining room, an oversized table doesn't read as luxurious — it reads as crowded.",
+  },
+  {
+    question: "What material should I choose for a luxury dining table?",
+    answer:
+      "Solid wood with hand-finished detailing brings warmth and permanence, marble and stone tops bring a cooler architectural presence suited to contemporary interiors, and metal accents on legs or edges are usually what elevate a set from well-made to genuinely luxurious.",
+  },
+  {
+    question: "Should I choose a classic or contemporary dining table?",
+    answer:
+      "The right direction depends on the rest of the home. Classic dining rooms favor carved detailing, richer wood tones and upholstered seating with structured silhouettes, while contemporary dining rooms favor cleaner lines and a more restrained palette, especially in open-plan homes.",
+  },
+  {
+    question: "Is a made-to-order dining table worth it?",
+    answer:
+      "A made-to-order set lets table dimensions, wood tone and upholstery be matched to the exact room rather than adjusting the room around a fixed, mass-produced piece — this matters most for unusual room proportions or a fully planned interior.",
+  },
+  {
+    question: "Does chair comfort matter as much as the table itself?",
+    answer:
+      "Yes. A beautiful table with uncomfortable chairs undermines the whole room, so seat depth, back support and upholstery durability should match how the household actually uses the space.",
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/saltanatdining-01.webp"
+  imageAlt="Saltanat luxury dining room set with a hand-finished table and classic detailing"
+  {publishedTime}
+  {modifiedTime}
+  section="Luxury Furniture Buying Guides"
+  keywords={[
+    "luxury dining table",
+    "how to choose a dining table",
+    "luxury dining room furniture",
+    "made-to-order dining table",
+    "signature collection",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={7}
+  wordCount={1040}
+  {faqItems}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until the
+            localized edition is published.
+          </p>
+          <a href={englishArticleURL}>Open the English article</a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>Luxury Dining Table Guide</span>
+        </nav>
+
+        <p class="article-category">
+          Luxury Furniture Buying Guide
+        </p>
+
+        <h1>How to Choose a Luxury Dining Table for Your Home</h1>
+
+        <p class="article-intro">
+          A dining table carries more weight in a home than almost any
+          other piece of furniture. Choosing the right one is less about
+          following trends and more about matching the table to how the
+          room — and the people in it — actually live.
+        </p>
+
+        <div class="article-meta">
+          <span>Published August 15, 2026</span>
+          <span>7 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/saltanatdining-01.webp"
+        alt="Saltanat luxury dining room set with a hand-finished table and classic detailing"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#start-with-the-room">Start with the room</a></li>
+          <li><a href="#choose-the-material">Choose the material</a></li>
+          <li><a href="#choose-a-direction">Classic or contemporary</a></li>
+          <li><a href="#evaluate-seating">Evaluate seating</a></li>
+          <li><a href="#made-to-order">Made-to-order vs. off-the-shelf</a></li>
+          <li><a href="#final-checklist">Final checklist</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The essential decision</h2>
+          <p>
+            A dining table is where the household gathers most often, and
+            where guests form their first real impression of a
+            residence's character. It's chosen as the anchor of a room
+            that's already been thought through — not in isolation.
+          </p>
+        </section>
+
+        <p>
+          A dining table carries more weight in a home than almost any
+          other piece of furniture. It's where the household gathers most
+          often, and where guests form their first real impression of a
+          residence's character. Choosing the right one is less about
+          following trends and more about matching the table to how the
+          room — and the people in it — actually live.
+        </p>
+
+        <h2 id="start-with-the-room">
+          1. Start with the room, not the table
+        </h2>
+
+        <p>
+          Before looking at any specific piece, measure the space
+          honestly. A dining table needs at least 90–100 cm of clearance
+          on every side for chairs to pull out and for people to walk
+          past comfortably. In smaller dining rooms, an oversized table
+          doesn't read as luxurious — it reads as crowded. The most
+          refined dining rooms leave breathing room around the table, not
+          just at it.
+        </p>
+
+        <p>
+          Consider also how the table will be used day to day. A
+          household that hosts often may want a table that can extend or
+          accommodate additional seating. A household that dines
+          primarily as a family of four may prioritize a more intimate,
+          tightly proportioned set instead.
+        </p>
+
+        <h2 id="choose-the-material">
+          2. Material defines the room's character
+        </h2>
+
+        <p>
+          Material is where a dining table's personality comes through
+          most clearly.
+        </p>
+
+        <p>
+          <strong>Solid wood</strong> with hand-finished detailing brings
+          warmth and a sense of permanence. It's the classic choice for
+          dining rooms built around craftsmanship and traditional
+          elegance — the kind of piece that's meant to be passed down,
+          not replaced.
+        </p>
+
+        <p>
+          <strong>Marble and stone tops</strong> bring a cooler, more
+          architectural presence. They photograph beautifully and pair
+          well with contemporary interiors, though they demand more
+          careful maintenance than wood.
+        </p>
+
+        <p>
+          <strong>Metal accents and detailing</strong> — gold or bronze
+          finishes on legs, edges, or bases — are what elevate a dining
+          set from simply well-made to genuinely luxurious. Detailing at
+          this level is usually where the difference between a
+          mass-produced set and a made-to-order piece becomes obvious.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            The VIRELLAART
+            <a href={localizedPath("/dining-rooms/saltanat", language)}>
+              Saltanat Dining Room Set
+            </a>
+            is a clear example of this approach: hand-finished in
+            Istanbul with classic detailing designed as a statement piece
+            for residences where the dining room is meant to make an
+            impression.
+          </p>
+        </div>
+
+        <h2 id="choose-a-direction">
+          3. Classic vs. contemporary: choosing a direction
+        </h2>
+
+        <p>
+          There's no universally "correct" answer here — the right
+          direction depends on the rest of the home.
+        </p>
+
+        <p>
+          A <strong>classic dining room</strong> favors carved detailing,
+          richer wood tones, and upholstered seating with structured
+          silhouettes. It suits residences with traditional architecture,
+          higher ceilings, or a formal entertaining style.
+        </p>
+
+        <p>
+          A <strong>contemporary dining room</strong> favors cleaner
+          lines, simpler silhouettes, and a more restrained material
+          palette. It suits open-plan homes and residences where the
+          dining room flows directly into a living space.
+        </p>
+
+        <div class="editorial-link">
+          <p>
+            For a refined classic option with a slightly more accessible
+            entry point into a Signature-level dining set, the
+            <a href={localizedPath("/dining-rooms/zumrut", language)}>
+              Zümrüt Dining Room Set
+            </a>
+            balances traditional detailing with a scale that works well
+            in most standard-sized dining rooms.
+          </p>
+        </div>
+
+        <h2 id="evaluate-seating">
+          4. Seating: comfort is not optional
+        </h2>
+
+        <p>
+          A beautiful table with uncomfortable chairs undermines the
+          whole room. Test seat depth and back support if possible, and
+          make sure upholstery fabric matches how the room will actually
+          be used — a household with children may want a more resilient
+          fabric than one that entertains primarily adults.
+        </p>
+
+        <h2 id="made-to-order">
+          5. Made-to-order vs. off-the-shelf
+        </h2>
+
+        <p>
+          One advantage of a made-to-order dining set is the ability to
+          match table dimensions, wood tone, and upholstery to the exact
+          room — rather than adjusting the room around a fixed,
+          mass-produced piece. This matters most in dining rooms with
+          unusual proportions, or for households assembling a full
+          interior around a specific design direction.
+        </p>
+
+        <h2 id="final-checklist">
+          6. Final luxury dining table checklist
+        </h2>
+
+        <div class="checklist">
+          <label>
+            <input type="checkbox" disabled />
+            The usable dining area is measured, with 90–100 cm of
+            clearance on every side.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The table matches how the household actually uses the
+            room — everyday family use or frequent hosting.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The material — wood, marble or stone — suits the room's
+            maintenance expectations and design character.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            The classic-versus-contemporary direction matches the rest
+            of the home's architecture.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Chair comfort, seat depth and upholstery durability have
+            been tested, not assumed.
+          </label>
+
+          <label>
+            <input type="checkbox" disabled />
+            Made-to-order dimensions, wood tone and delivery details are
+            confirmed before production begins.
+          </label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">VIRELLAART guidance</p>
+
+          <h2>Bringing it together</h2>
+
+          <p>
+            The best luxury dining tables aren't chosen in isolation —
+            they're chosen as the anchor of a room that's already been
+            thought through: proportions, material, seating, and the
+            overall direction of the space.
+          </p>
+
+          <p>
+            Explore the full
+            <a href={localizedPath("/dining-rooms", language)}>
+              VIRELLAART Luxury Dining Rooms collection
+            </a>
+            to see how these principles come together in Signature-level
+            dining sets, or reach out via WhatsApp for a private
+            consultation on sizing and finishes for your specific space.
+          </p>
+
+          <div class="cta-links">
+            <a
+              class="primary-cta"
+              href="https://wa.me/905539478608?text=Hello%20VIRELLAART%2C%20I%20would%20like%20help%20choosing%20a%20luxury%20dining%20table."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask VIRELLAART on WhatsApp
+            </a>
+
+            <a
+              class="secondary-cta"
+              href={localizedPath("/contact", language)}
+            >
+              Contact VIRELLAART
+            </a>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <p class="article-category">Frequently asked questions</p>
+          <h2 id="faq-title">Luxury dining table FAQ</h2>
+
+          {
+            faqItems.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article {
+    min-height: 100vh;
+    background: #f7f3ed;
+    color: #251c17;
+  }
+
+  .article-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .article-shell.narrow {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .language-notice {
+    width: min(1160px, calc(100% - 40px));
+    margin: 100px auto 0;
+    padding: 22px 25px;
+    border: 1px solid rgba(139, 101, 42, 0.25);
+    background: #fffaf1;
+  }
+
+  .language-notice strong {
+    color: #72501e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+  }
+
+  .language-notice p {
+    margin: 7px 0;
+    color: #65584f;
+    line-height: 1.6;
+  }
+
+  .language-notice a {
+    color: #76521d;
+    font-weight: 700;
+  }
+
+  .article-hero {
+    padding: 155px 0 85px;
+    background:
+      radial-gradient(
+        circle at 75% 15%,
+        rgba(201, 164, 93, 0.15),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #1b130f, #090605);
+    color: #ffffff;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .article-category {
+    margin: 0 0 17px;
+    color: #cda960;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.03;
+  }
+
+  .article-intro {
+    max-width: 780px;
+    margin: 30px 0 0;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.75;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 27px;
+    margin-top: 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: min(1380px, calc(100% - 30px));
+    margin: 0 auto;
+    transform: translateY(-1px);
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 760px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 760px);
+    justify-content: center;
+    gap: clamp(45px, 7vw, 95px);
+    padding-top: 95px;
+    padding-bottom: 140px;
+  }
+
+  .contents {
+    position: sticky;
+    top: 115px;
+    align-self: start;
+    padding: 25px;
+    border-top: 1px solid #a77a38;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .contents > p {
+    margin: 0 0 15px;
+    color: #72501e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .contents ol {
+    margin: 0;
+    padding-left: 19px;
+  }
+
+  .contents li {
+    margin: 10px 0;
+    color: #8a7a6f;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contents a {
+    color: #5f5249;
+  }
+
+  .article-body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .article-body > p {
+    margin: 0 0 27px;
+    color: #574b43;
+  }
+
+  .article-body h2 {
+    scroll-margin-top: 120px;
+    margin: 72px 0 22px;
+    color: #241a15;
+    font-size: clamp(31px, 4vw, 43px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    margin: 42px 0 14px;
+    color: #3a2b22;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .article-body ul {
+    margin: 10px 0 32px;
+    padding-left: 25px;
+    color: #574b43;
+  }
+
+  .article-body li {
+    margin: 9px 0;
+  }
+
+  .key-points {
+    margin-bottom: 45px;
+    padding: 32px 35px;
+    border-left: 3px solid #a77a38;
+    background: #eee6da;
+  }
+
+  .key-points h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+  }
+
+  .key-points p {
+    margin: 0;
+    color: #594a40;
+  }
+
+  .editorial-link {
+    margin: 42px 0;
+    padding: 26px 30px;
+    border: 1px solid rgba(126, 89, 37, 0.25);
+    background: #fffdf9;
+  }
+
+  .editorial-link p {
+    margin: 0;
+    color: #5a4b41;
+  }
+
+  .editorial-link a {
+    color: #7c5723;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 11px;
+    margin: 30px 0 55px;
+    padding: 30px;
+    background: #ece4d9;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #51463e;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .checklist input {
+    margin-top: 5px;
+  }
+
+  .conclusion {
+    margin-top: 80px;
+    padding: clamp(35px, 6vw, 65px);
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(201, 164, 93, 0.18),
+        transparent 38%
+      ),
+      #17100c;
+    color: #ffffff;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .conclusion > p:not(.article-category) {
+    color: rgba(255, 255, 255, 0.73);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 21px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-cta {
+    background: #c9a45d;
+    color: #17100c;
+  }
+
+  .secondary-cta {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+  }
+
+  .faq {
+    margin-top: 85px;
+  }
+
+  .faq > h2 {
+    margin-top: 0;
+  }
+
+  .faq details {
+    border-top: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq details:last-child {
+    border-bottom: 1px solid rgba(70, 51, 39, 0.2);
+  }
+
+  .faq summary {
+    padding: 22px 35px 22px 0;
+    color: #30231c;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 0 23px;
+    color: #60534a;
+  }
+
+  @media (max-width: 900px) {
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contents {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .article-hero {
+      padding: 125px 0 70px;
+    }
+
+    .article-grid {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .article-body {
+      font-size: 17px;
+    }
+
+    .key-points,
+    .editorial-link,
+    .checklist {
+      padding: 24px;
+    }
+  }
+</style>
