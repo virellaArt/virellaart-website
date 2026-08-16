@@ -83,6 +83,7 @@ const faqItems = [
   {faqItems}
   robots={isEnglish ? "index, follow" : "noindex, follow"}
   alternateURLs={alternateURLs}
+  switcherFallbackToLocalizedPath
   xDefaultURL={englishArticleURL}
   includeCanonical={isEnglish}
 >
@@ -130,10 +131,7 @@ const faqItems = [
           Luxury Furniture Buying Guide
         </p>
 
-        <h1 class="bedroom-article-title">
-          How to Choose a
-          <span>Luxury Bedroom Set</span>
-        </h1>
+        <h1 class="bedroom-article-title">How to Choose a <span>Luxury Bedroom Set</span></h1>
 
         <p class="article-intro">
           A successful bedroom combines restful proportions, practical
@@ -434,7 +432,19 @@ const faqItems = [
           Modern bedroom sets often rely on controlled geometry, refined
           proportions and a calm relationship between the bed and storage
           pieces. Visual interest may come from silhouette, contrast and
-          carefully placed details rather than extensive decoration.
+          carefully placed details rather than extensive decoration. The
+          {" "}
+          <a
+            href={localizedPath(
+              "/collections/modern/bedrooms/lazio-bedroom-set",
+              language,
+            )}
+          >
+            Lazio Bedroom Set
+          </a>
+          {" "}
+          shows this restraint, combining a spacious wardrobe with warm
+          wood accents and clean contemporary lines.
         </p>
 
         <h3>Luxury-classic bedrooms</h3>

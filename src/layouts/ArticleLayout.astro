@@ -32,6 +32,7 @@ interface Props {
   alternateURLs?: AlternateURL[];
   xDefaultURL?: string;
   includeCanonical?: boolean;
+  switcherFallbackToLocalizedPath?: boolean;
 }
 
 const {
@@ -51,6 +52,7 @@ const {
   alternateURLs,
   xDefaultURL,
   includeCanonical = true,
+  switcherFallbackToLocalizedPath = false,
 } = Astro.props;
 
 const siteURL = "https://www.virellaart.com";
@@ -206,6 +208,7 @@ const faqSchema =
   {imageAlt}
   {robots}
   {alternateURLs}
+  {switcherFallbackToLocalizedPath}
   {xDefaultURL}
   {includeCanonical}
   pageType="article"

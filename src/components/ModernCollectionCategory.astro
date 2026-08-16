@@ -106,17 +106,20 @@ const pageTitle = copy.categoryTitle.replace(
 const pageDescription =
   copy.categoryDescriptions?.[category] ??
   copy.categoryDescription.replace("{category}", details.title);
-const categoryWhatsappMessage =
-  translations.product.whatsappMessage.replace(
-    "{product}",
-    `${copy.modern} ${details.title}`,
-  );
-const categoryWhatsappURL =
-  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 const categoryPageURL = new URL(
   Astro.url.pathname,
   "https://www.virellaart.com",
 ).href;
+const categoryWhatsappMessage = [
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    `${copy.modern} ${details.title}`,
+  ),
+  "",
+  categoryPageURL,
+].join("\n");
+const categoryWhatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 ---
 
 <BaseLayout
@@ -168,7 +171,7 @@ const categoryPageURL = new URL(
           data-modern-product-grid
           data-category-name={`${copy.modern} ${details.title}`}
         >
-          {categoryProducts.map((product) => (
+          {categoryProducts.map((product, index) => (
             <a
               class="modern-product-card"
               data-product-key={product.slug}
@@ -185,6 +188,8 @@ const categoryPageURL = new URL(
                   alt={product.translatedName}
                   width="1200"
                   height="900"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : undefined}
                   decoding="async"
                 />
                 <span>
@@ -222,6 +227,8 @@ const categoryPageURL = new URL(
               alt={details.title}
               width="1200"
               height="900"
+              loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
             <span aria-hidden="true">MODERN</span>
