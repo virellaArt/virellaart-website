@@ -168,7 +168,7 @@ const categoryPageURL = new URL(
           data-modern-product-grid
           data-category-name={`${copy.modern} ${details.title}`}
         >
-          {categoryProducts.map((product) => (
+          {categoryProducts.map((product, index) => (
             <a
               class="modern-product-card"
               data-product-key={product.slug}
@@ -185,6 +185,8 @@ const categoryPageURL = new URL(
                   alt={product.translatedName}
                   width="1200"
                   height="900"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : undefined}
                   decoding="async"
                 />
                 <span>
@@ -222,6 +224,8 @@ const categoryPageURL = new URL(
               alt={details.title}
               width="1200"
               height="900"
+              loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
             <span aria-hidden="true">MODERN</span>
