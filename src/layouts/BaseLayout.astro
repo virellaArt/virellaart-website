@@ -26,6 +26,7 @@ interface Props {
   }[];
   xDefaultURL?: string;
   includeCanonical?: boolean;
+  switcherFallbackToLocalizedPath?: boolean;
 }
 
 const {
@@ -38,6 +39,7 @@ const {
   alternateURLs: customAlternateURLs,
   xDefaultURL: customXDefaultURL,
   includeCanonical = true,
+  switcherFallbackToLocalizedPath = false,
 } = Astro.props;
 
 const language = getLanguageFromPath(Astro.url.pathname);
@@ -132,7 +134,9 @@ const languageLinks = Object.fromEntries(
       return [
         code,
         matchingAlternate?.href ??
-          localizedPath("/", code),
+          (switcherFallbackToLocalizedPath
+            ? localizedPath(basePath, code)
+            : localizedPath("/", code)),
       ];
     }
 
