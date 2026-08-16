@@ -38,17 +38,20 @@ const {
 
 const copy = catalogCopy[language];
 const translations = getTranslations(language);
-const categoryWhatsappMessage =
-  translations.product.whatsappMessage.replace(
-    "{product}",
-    categoryName,
-  );
-const categoryWhatsappURL =
-  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 const categoryPageURL = new URL(
   Astro.url.pathname,
   "https://www.virellaart.com",
 ).href;
+const categoryWhatsappMessage = [
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    categoryName,
+  ),
+  "",
+  categoryPageURL,
+].join("\n");
+const categoryWhatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 
 const cards = models.map((model, index) => ({
   ...model,

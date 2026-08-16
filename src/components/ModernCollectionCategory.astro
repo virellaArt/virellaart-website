@@ -106,17 +106,20 @@ const pageTitle = copy.categoryTitle.replace(
 const pageDescription =
   copy.categoryDescriptions?.[category] ??
   copy.categoryDescription.replace("{category}", details.title);
-const categoryWhatsappMessage =
-  translations.product.whatsappMessage.replace(
-    "{product}",
-    `${copy.modern} ${details.title}`,
-  );
-const categoryWhatsappURL =
-  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 const categoryPageURL = new URL(
   Astro.url.pathname,
   "https://www.virellaart.com",
 ).href;
+const categoryWhatsappMessage = [
+  translations.product.whatsappMessage.replace(
+    "{product}",
+    `${copy.modern} ${details.title}`,
+  ),
+  "",
+  categoryPageURL,
+].join("\n");
+const categoryWhatsappURL =
+  `https://wa.me/905539478608?text=${encodeURIComponent(categoryWhatsappMessage)}`;
 ---
 
 <BaseLayout
