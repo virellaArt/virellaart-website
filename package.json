@@ -10,7 +10,7 @@
     "product:init": "node scripts/add-product.mjs --init product-import.json",
     "product:add": "node scripts/add-product.mjs",
     "dev": "astro dev",
-    "build": "npm run convert-images && npm run build:astro && npm run generate:sitemap && npm run check:seo && npm run check:links",
+    "build": "npm run convert-images && npm run build:astro && npm run catalog:pinterest && npm run generate:sitemap && npm run check:seo && npm run check:links",
     "preview": "astro preview",
     "astro": "astro",
     "convert-images": "node scripts/convert-images.js",
@@ -22,7 +22,8 @@
     "social:landing": "node scripts/social-landing.mjs",
     "seo:opportunities": "node scripts/seo-opportunities.mjs",
     "seo:intelligence": "node scripts/seo-intelligence.mjs",
-    "seo:control": "npm run seo:opportunities && npm run seo:intelligence"
+    "seo:control": "npm run seo:opportunities && npm run seo:intelligence",
+    "catalog:pinterest": "node scripts/generate-pinterest-catalog.mjs"
   },
   "dependencies": {
     "astro": "^7.1.6"
