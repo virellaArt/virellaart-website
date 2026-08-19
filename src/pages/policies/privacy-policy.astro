@@ -121,4 +121,32 @@ const pinterestPolicy =
 
   <h2>{pinterestPolicy.heading}</h2>
   <p>{pinterestPolicy.paragraph}</p>
+
+  {
+    language === "en" && (
+      <>
+        <h2>Pinterest API Integration</h2>
+
+        <p>
+          VIRELLAART Content Manager uses Pinterest OAuth 2.0 to connect to and manage
+          the VIRELLAART Pinterest Business account. With authorized permissions, the
+          application may access account, Board, Pin and analytics data and may create
+          or manage VIRELLAART Pins and Boards.
+        </p>
+
+        <p>
+          Pinterest OAuth access tokens are used only within VIRELLAART&apos;s internal
+          application environment to provide these functions. We do not collect Pinterest
+          passwords or session cookies, and Pinterest-derived data is not sold or used
+          for unrelated third-party purposes.
+        </p>
+
+        <p>
+          Pinterest API data is used solely to manage, analyze and improve VIRELLAART&apos;s
+          own Pinterest presence. Pinterest access permissions can be revoked through
+          Pinterest, and Pinterest API data is not used for unrelated third-party purposes.
+        </p>
+      </>
+    )
+  }
 </PolicyLayout>
