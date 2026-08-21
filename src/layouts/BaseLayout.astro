@@ -366,6 +366,140 @@ const websiteSchema = {
     );
   };
 
+  /* VIRELLAART_PINTEREST_EXTERNAL_ID_V2 */
+  const virellaPinterestTagId = "2613551198916";
+  const virellaPinterestExternalIdStorageKey =
+    "virellaart-pinterest-external-id-v2";
+
+  let virellaPinterestExternalIdPromise;
+
+  function virellaPinterestCreateQueue() {
+    const pintrk = function () {
+      pintrk.queue.push(
+        Array.prototype.slice.call(arguments),
+      );
+    };
+
+    pintrk.queue = [];
+    pintrk.version = "3.0";
+    window.pintrk = pintrk;
+
+    return pintrk;
+  }
+
+  window.virellaPinterestPrepareExternalId =
+    function () {
+      if (window.virellaAnalyticsAllowed !== true) {
+        return Promise.resolve(undefined);
+      }
+
+      if (window.virellaPinterestExternalId) {
+        return Promise.resolve(
+          window.virellaPinterestExternalId,
+        );
+      }
+
+      if (!virellaPinterestExternalIdPromise) {
+        virellaPinterestExternalIdPromise =
+          (async () => {
+            if (
+              !window.crypto ||
+              !window.crypto.subtle ||
+              typeof TextEncoder !== "function"
+            ) {
+              return undefined;
+            }
+
+            let visitSeed;
+
+            try {
+              visitSeed =
+                window.sessionStorage.getItem(
+                  virellaPinterestExternalIdStorageKey,
+                );
+
+              if (!visitSeed) {
+                visitSeed =
+                  typeof window.crypto.randomUUID ===
+                  "function"
+                    ? window.crypto.randomUUID()
+                    : window.virellaGenerateEventId();
+
+                window.sessionStorage.setItem(
+                  virellaPinterestExternalIdStorageKey,
+                  visitSeed,
+                );
+              }
+            } catch {
+              visitSeed =
+                window.virellaGenerateEventId();
+            }
+
+            const encoded =
+              new TextEncoder().encode(visitSeed);
+
+            const digest =
+              await window.crypto.subtle.digest(
+                "SHA-256",
+                encoded,
+              );
+
+            const externalId =
+              Array.from(
+                new Uint8Array(digest),
+              )
+                .map((byte) =>
+                  byte
+                    .toString(16)
+                    .padStart(2, "0"),
+                )
+                .join("");
+
+            if (
+              !/^[a-f0-9]{64}$/.test(externalId)
+            ) {
+              return undefined;
+            }
+
+            window.virellaPinterestExternalId =
+              externalId;
+
+            const pintrkAlreadyExists =
+              typeof window.pintrk === "function";
+
+            const pintrk =
+              pintrkAlreadyExists
+                ? window.pintrk
+                : virellaPinterestCreateQueue();
+
+            if (pintrkAlreadyExists) {
+              pintrk("set", {
+                external_id: externalId,
+              });
+            } else {
+              /*
+               * Queue Pinterest initialization BEFORE
+               * the GTM PageVisit event fires.
+               *
+               * Pinterest's GTM template detects the
+               * existing pintrk queue and does not
+               * create a second initialization.
+               */
+              pintrk(
+                "load",
+                virellaPinterestTagId,
+                {
+                  external_id: externalId,
+                },
+              );
+            }
+
+            return externalId;
+          })().catch(() => undefined);
+      }
+
+      return virellaPinterestExternalIdPromise;
+    };
   function virellaPinterestClickId() {
     const match = document.cookie.match(/(?:^|;\s*)_epik=([^;]+)/);
     return match ? decodeURIComponent(match[1]) : undefined;
@@ -381,6 +515,9 @@ const websiteSchema = {
         event_name: eventName,
         url: window.location.href,
         click_id: virellaPinterestClickId(),
+        external_id:
+          window.virellaPinterestExternalId ||
+          undefined,
       },
       params || {},
     );
@@ -403,7 +540,7 @@ const websiteSchema = {
     return payload.event_id;
   };
 
-  window.virellaPinterestPageVisit = function (context) {
+  window.virellaPinterestPageVisit = async function (context) {
     if (
       window.virellaAnalyticsAllowed !== true ||
       window.virellaPinterestPageVisitSent === true
@@ -412,6 +549,8 @@ const websiteSchema = {
     }
 
     window.virellaPinterestPageVisitSent = true;
+
+    await window.virellaPinterestPrepareExternalId();
 
     const eventId = window.virellaGenerateEventId();
     const pageContext = context || {};
