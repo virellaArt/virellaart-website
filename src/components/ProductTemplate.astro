@@ -154,7 +154,7 @@ const madeToOrderCopy: Record<
   en: {
     label: "Made to order",
     detail:
-      "Order requests are accepted now. Production begins after order confirmation.",
+      "This is a physical furniture product available to order now. Production begins after order confirmation.",
   },
   tr: {
     label: "Sipariş üzerine üretim",
@@ -370,9 +370,12 @@ if (productOrderModel !== "made-to-order") {
 }
 
 /*
- * All current products are made to order. Google defines InStock as an
- * item that is in stock, so availability is intentionally omitted until
- * a truthful supported ItemAvailability value applies to the product.
+ * VIRELLAART_PINTEREST_MERCHANT_PHYSICAL_PRODUCT_V1
+ *
+ * All current products are physical furniture sold on a made-to-order
+ * basis. They are available to order now but are not represented as
+ * stocked inventory. Schema uses PreOrder and the Pinterest retail feed
+ * uses preorder so both surfaces describe the same truthful state.
  */
 
 /* VIRELLAART PRODUCT IMAGE ALTS */
@@ -874,6 +877,7 @@ const productSchema = {
     url: canonicalURL,
     priceCurrency: "USD",
     price: primaryPrice,
+    availability: "https://schema.org/PreOrder",
     itemCondition: "https://schema.org/NewCondition",
     seller: {
       "@id": "https://www.virellaart.com/#organization",
@@ -952,18 +956,18 @@ const productQuoteContent: Record<
   ProductQuoteContent
 > = {
   "en": {
-    "title": "Prepare Your Price & Delivery Request",
-    "intro": "Select a configuration and add your delivery details. Your WhatsApp quotation message will be prepared automatically.",
+    "title": "Order This Furniture Product & Request Delivery",
+    "intro": "Select the physical furniture configuration you want to order and add your delivery details. Your order and delivery request will be prepared for WhatsApp.",
     "selected": "Selected configuration",
     "price": "Displayed collection price",
     "country": "Delivery country",
     "city": "Delivery city",
     "customization": "Customization or project notes",
     "page": "Product page",
-    "button": "Get Price & Delivery Quote",
-    "trustButton": "Prepare WhatsApp Quote",
+    "button": "Order This Product & Get Delivery Quote",
+    "trustButton": "Order Product via WhatsApp",
     "selectAria": "Select configuration",
-    "closing": "Please send me the final product and shipping quotation."
+    "closing": "I would like to order this furniture product. Please confirm the final product price and shipping quotation."
   },
   "tr": {
     "title": "Fiyat ve Teslimat Talebinizi Hazırlayın",
@@ -1263,12 +1267,12 @@ type ProductTrustContent = {
 const productTrustContent: Record<string, ProductTrustContent> = {
   en: {
     eyebrow: "Product & Order Information",
-    title: "Direct Manufacturer Support for Every Order",
+    title: "Physical Furniture, Made to Order",
     lead:
-      "VIRELLAART supports product enquiries, selected customization requests, order review, quality control, secure packaging and international delivery coordination directly from Istanbul.",
+      "VIRELLAART sells physical luxury furniture products. This product is available to order at the displayed price and is produced after order confirmation, with secure packaging and international delivery coordination from Istanbul.",
     manufacturerTitle: "Direct Manufacturer",
     manufacturerText:
-      "Speak directly with the VIRELLAART team for product details, collection prices and order requirements.",
+      "Order this VIRELLAART furniture product directly from our team using the displayed collection price and selected configuration.",
     customizationTitle: "Customization Requests",
     customizationText:
       "Selected models and project requirements can be reviewed according to the order scope and interior concept.",
@@ -1757,6 +1761,39 @@ const productTrust =
               {madeToOrderText.detail}
             </p>
           </div>
+
+          {
+            language === "en" && (
+              <section
+                class="merchant-order-proof"
+                aria-label="Purchase and policy information"
+              >
+                <strong>
+                  Physical furniture product
+                </strong>
+
+                <p>
+                  VIRELLAART sells this item as a physical
+                  furniture product. It is available to order
+                  now at the displayed USD price and is
+                  produced after order confirmation.
+                </p>
+
+                <nav
+                  class="merchant-policy-links"
+                  aria-label="Order policies"
+                >
+                  <a href="/policies/shipping-policy">
+                    Shipping policy
+                  </a>
+
+                  <a href="/policies/return-refund-policy">
+                    Return & refund policy
+                  </a>
+                </nav>
+              </section>
+            )
+          }
 
           <div class="price-card">
             <div class="price-header">
@@ -2927,6 +2964,50 @@ const productTrust =
       font-size: 12px;
       letter-spacing: 1.1px;
       text-transform: uppercase;
+    }
+
+    .merchant-order-proof {
+      margin-top: 12px;
+      padding: 16px 17px;
+      border:
+        1px solid
+        rgba(201, 165, 91, 0.22);
+      background:
+        rgba(255, 255, 255, 0.025);
+    }
+
+    .merchant-order-proof > strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #e1c486;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .merchant-order-proof p {
+      margin: 0;
+      color: #b9b2aa;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .merchant-policy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 10px;
+    }
+
+    .merchant-policy-links a {
+      color: #d8bd84;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .merchant-policy-links a:hover {
+      color: #f0d9a7;
     }
 
     /* PRICE */
