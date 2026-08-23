@@ -844,6 +844,38 @@ const primaryPrice =
       .replace(",", ""),
   ) || 0;
 
+/*
+ * VIRELLAART_GOOGLE_PRODUCT_CATEGORY_V1
+ *
+ * Google Search merchant listing structured data accepts
+ * Product.category as CategoryCode for Google Product
+ * Taxonomy values.
+ *
+ * Current canonical Google Product Category IDs:
+ * 6348 = Furniture > Furniture Sets > Living Room Furniture Sets
+ * 6347 = Furniture > Furniture Sets > Kitchen & Dining Furniture Sets
+ * 6346 = Furniture > Furniture Sets > Bedroom Furniture Sets
+ * 457  = Furniture > Entertainment Centers & TV Stands
+ */
+const googleProductTaxonomyURL =
+  "https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt";
+
+const googleProductCategoryByCategory = {
+  "living-rooms": "6348",
+  "dining-rooms": "6347",
+  bedrooms: "6346",
+  "tv-units": "457",
+} as const;
+
+const googleProductCategory =
+  googleProductCategoryByCategory[categoryKey];
+
+if (!googleProductCategory) {
+  throw new Error(
+    `Missing Google Product Category for: ${product.category}`,
+  );
+}
+
 /* =========================
    PRODUCT SCHEMA
 ========================= */
@@ -856,10 +888,11 @@ const productSchema = {
   url: canonicalURL,
   mainEntityOfPage: canonicalURL,
   sku: productID,
-  category:
-    productStyle === "modern"
-      ? `${collectionCopy.modern} / ${categoryName}`
-      : categoryName,
+  category: {
+    "@type": "CategoryCode",
+    inCodeSet: googleProductTaxonomyURL,
+    codeValue: googleProductCategory,
+  },
   description: productDescription,
   inLanguage: language,
 

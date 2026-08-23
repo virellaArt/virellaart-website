@@ -5,6 +5,18 @@ const rootDirectory = process.cwd();
 const distDirectory = path.join(rootDirectory, "dist");
 const sitemapPath = path.join(distDirectory, "sitemap.xml");
 const baseURL = new URL("https://www.virellaart.com/");
+
+const googleProductTaxonomyURL =
+  "https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt";
+
+const allowedGoogleProductCategoryCodes =
+  new Set([
+    "457",
+    "6346",
+    "6347",
+    "6348",
+  ]);
+
 const allowedHosts = new Set([
   "www.virellaart.com",
   "virellaart.com",
@@ -175,6 +187,81 @@ function extractJsonLd(html) {
   return blocks;
 }
 
+function collectJsonLdNodes(
+  value,
+  output = [],
+) {
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      collectJsonLdNodes(item, output);
+    }
+
+    return output;
+  }
+
+  if (
+    value === null ||
+    typeof value !== "object"
+  ) {
+    return output;
+  }
+
+  output.push(value);
+
+  for (const child of Object.values(value)) {
+    collectJsonLdNodes(child, output);
+  }
+
+  return output;
+}
+
+function hasJsonLdType(node, expectedType) {
+  const type = node?.["@type"];
+
+  return Array.isArray(type)
+    ? type.includes(expectedType)
+    : type === expectedType;
+}
+
+function getBrandName(node) {
+  const brand = node?.brand;
+
+  if (typeof brand === "string") {
+    return brand;
+  }
+
+  if (
+    brand &&
+    typeof brand === "object" &&
+    !Array.isArray(brand)
+  ) {
+    return String(brand.name ?? "");
+  }
+
+  return "";
+}
+
+function hasValidGoogleProductCategory(node) {
+  const categories =
+    Array.isArray(node?.category)
+      ? node.category
+      : [node?.category];
+
+  return categories.some(
+    (category) =>
+      category &&
+      typeof category === "object" &&
+      !Array.isArray(category) &&
+      category["@type"] ===
+        "CategoryCode" &&
+      category.inCodeSet ===
+        googleProductTaxonomyURL &&
+      allowedGoogleProductCategoryCodes.has(
+        String(category.codeValue ?? ""),
+      ),
+  );
+}
+
 function normalizeURL(value, sourceURL) {
   try {
     return new URL(value, sourceURL);
@@ -342,7 +429,36 @@ for (const htmlFile of htmlFiles) {
     }
 
     try {
-      JSON.parse(block);
+      const parsed =
+        JSON.parse(block);
+
+      const productNodes =
+        collectJsonLdNodes(parsed).filter(
+          (node) =>
+            hasJsonLdType(
+              node,
+              "Product",
+            ),
+        );
+
+      for (const productNode of productNodes) {
+        if (
+          getBrandName(productNode) !==
+          "VIRELLAART"
+        ) {
+          continue;
+        }
+
+        if (
+          !hasValidGoogleProductCategory(
+            productNode,
+          )
+        ) {
+          errors.push(
+            `${publicPath}: VIRELLAART Product.category gecersiz veya Google CategoryCode eksik.`,
+          );
+        }
+      }
     } catch (error) {
       errors.push(`${publicPath}: gecersiz JSON-LD #${index + 1}: ${error.message}`);
     }
