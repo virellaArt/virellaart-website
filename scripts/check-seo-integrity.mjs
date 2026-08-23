@@ -9,6 +9,12 @@ const baseURL = new URL("https://www.virellaart.com/");
 const googleProductTaxonomyURL =
   "https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt";
 
+const merchantReturnPolicyId =
+  "https://www.virellaart.com/policies/return-refund-policy#return-policy";
+
+const merchantReturnPolicyURL =
+  "https://www.virellaart.com/policies/return-refund-policy";
+
 const allowedGoogleProductCategoryCodes =
   new Set([
     "457",
@@ -262,6 +268,57 @@ function hasValidGoogleProductCategory(node) {
   );
 }
 
+function getProductOffers(node) {
+  const offers =
+    Array.isArray(node?.offers)
+      ? node.offers
+      : [node?.offers];
+
+  return offers.filter(
+    (offer) =>
+      offer &&
+      typeof offer === "object" &&
+      !Array.isArray(offer),
+  );
+}
+
+function hasValidMerchantAvailability(node) {
+  const offers =
+    getProductOffers(node);
+
+  return (
+    offers.length > 0 &&
+    offers.every(
+      (offer) =>
+        offer.availability ===
+        "https://schema.org/InStock",
+    )
+  );
+}
+
+function hasValidMerchantReturnReference(node) {
+  const offers =
+    getProductOffers(node);
+
+  return (
+    offers.length > 0 &&
+    offers.every(
+      (offer) => {
+        const policy =
+          offer.hasMerchantReturnPolicy;
+
+        return (
+          policy &&
+          typeof policy === "object" &&
+          !Array.isArray(policy) &&
+          policy["@id"] ===
+            merchantReturnPolicyId
+        );
+      },
+    )
+  );
+}
+
 function normalizeURL(value, sourceURL) {
   try {
     return new URL(value, sourceURL);
@@ -319,6 +376,7 @@ let indexableCount = 0;
 let noindexCount = 0;
 let jsonLdBlockCount = 0;
 let hreflangLinkCount = 0;
+let homepageMerchantReturnPolicyValid = false;
 
 for (const htmlFile of htmlFiles) {
   const publicPath = getPublicPath(htmlFile);
@@ -432,6 +490,42 @@ for (const htmlFile of htmlFiles) {
       const parsed =
         JSON.parse(block);
 
+      if (publicPath === "/") {
+        const nodes =
+          collectJsonLdNodes(parsed);
+
+        for (const node of nodes) {
+          if (
+            !hasJsonLdType(
+              node,
+              "Organization",
+            ) ||
+            node?.["@id"] !==
+              "https://www.virellaart.com/#organization"
+          ) {
+            continue;
+          }
+
+          const policy =
+            node.hasMerchantReturnPolicy;
+
+          if (
+            policy &&
+            typeof policy === "object" &&
+            !Array.isArray(policy) &&
+            policy["@type"] ===
+              "MerchantReturnPolicy" &&
+            policy["@id"] ===
+              merchantReturnPolicyId &&
+            policy.merchantReturnLink ===
+              merchantReturnPolicyURL
+          ) {
+            homepageMerchantReturnPolicyValid =
+              true;
+          }
+        }
+      }
+
       const productNodes =
         collectJsonLdNodes(parsed).filter(
           (node) =>
@@ -458,11 +552,37 @@ for (const htmlFile of htmlFiles) {
             `${publicPath}: VIRELLAART Product.category gecersiz veya Google CategoryCode eksik.`,
           );
         }
+
+        if (
+          !hasValidMerchantAvailability(
+            productNode,
+          )
+        ) {
+          errors.push(
+            `${publicPath}: VIRELLAART Offer.availability InStock degil.`,
+          );
+        }
+
+        if (
+          !hasValidMerchantReturnReference(
+            productNode,
+          )
+        ) {
+          errors.push(
+            `${publicPath}: VIRELLAART Offer MerchantReturnPolicy referansi eksik.`,
+          );
+        }
       }
     } catch (error) {
       errors.push(`${publicPath}: gecersiz JSON-LD #${index + 1}: ${error.message}`);
     }
   }
+}
+
+if (!homepageMerchantReturnPolicyValid) {
+  errors.push(
+    "/: Organization MerchantReturnPolicy eksik veya gecersiz.",
+  );
 }
 
 for (const [canonical, owners] of canonicalOwners.entries()) {
