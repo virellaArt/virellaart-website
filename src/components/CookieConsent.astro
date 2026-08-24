@@ -257,6 +257,7 @@ const optionalConsent =
     const storageKey = "virellaart-consent-v2";
     const legacyStorageKey = "virellaart-analytics-consent";
     const measurementId = "G-Y8YY6ZBD87";
+    const tagManagerId = "GTM-KRZGT67P";
 
     const banner = document.querySelector("[data-cookie-consent]");
     const acceptButton = document.querySelector("[data-cookie-accept]");
@@ -295,6 +296,25 @@ const optionalConsent =
       window.gtag("config", measurementId, {
         anonymize_ip: true,
       });
+    }
+
+    function loadTagManager() {
+      if (document.querySelector("[data-virella-tag-manager]")) {
+        return;
+      }
+
+      window.dataLayer.push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src =
+        "https://www.googletagmanager.com/gtm.js?id=" +
+        encodeURIComponent(tagManagerId);
+      script.dataset.virellaTagManager = "true";
+      document.head.append(script);
     }
 
     function readStoredConsent() {
@@ -348,11 +368,21 @@ const optionalConsent =
           ),
         );
 
-        document.dispatchEvent(
-          new CustomEvent(
-            "virella:pinterest-ready",
-          ),
-        );
+        const pinterestPreparation =
+          typeof window.virellaPinterestPrepareExternalId ===
+          "function"
+            ? window.virellaPinterestPrepareExternalId()
+            : Promise.resolve();
+
+        Promise.resolve(pinterestPreparation).finally(() => {
+          loadTagManager();
+
+          document.dispatchEvent(
+            new CustomEvent(
+              "virella:pinterest-ready",
+            ),
+          );
+        });
       }
     }
 
