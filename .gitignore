@@ -20,6 +20,13 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# editor and manual backup files
+*.bak
+*.backup
+*.backup-*
+*.orig
+*.tmp
+
 # jetbrains setting folder
 .idea/
 
