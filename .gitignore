@@ -29,3 +29,6 @@ pnpm-debug.log*
 # local product import workspace
 product-import.json
 public/incoming/
+
+# generated Pinterest catalog audit report
+.pinterest-catalog-report/
