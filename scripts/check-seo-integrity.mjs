@@ -291,7 +291,7 @@ function hasValidMerchantAvailability(node) {
     offers.every(
       (offer) =>
         offer.availability ===
-        "https://schema.org/InStock",
+        "https://schema.org/PreOrder",
     )
   );
 }
@@ -356,6 +356,26 @@ function parseSitemap() {
   return urls;
 }
 
+function inspectSitemapExtensions() {
+  const xml = fs.readFileSync(sitemapPath, "utf8");
+
+  return {
+    bytes: Buffer.byteLength(xml, "utf8"),
+    imageCount:
+      xml.match(/<image:image\b/gi)?.length ?? 0,
+    hreflangCount:
+      xml.match(/<xhtml:link\b[^>]*\bhreflang=/gi)?.length ?? 0,
+    hasImageNamespace:
+      /xmlns:image=["']http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1["']/i.test(
+        xml,
+      ),
+    hasXhtmlNamespace:
+      /xmlns:xhtml=["']http:\/\/www\.w3\.org\/1999\/xhtml["']/i.test(
+        xml,
+      ),
+  };
+}
+
 function addDuplicate(map, value, publicPath) {
   if (!value) return;
   const items = map.get(value) ?? [];
@@ -366,6 +386,7 @@ function addDuplicate(map, value, publicPath) {
 const htmlFiles = walkDirectory(distDirectory)
   .filter((filePath) => filePath.endsWith(".html"));
 const sitemapURLs = parseSitemap();
+const sitemapExtensions = inspectSitemapExtensions();
 const errors = [];
 const warnings = [];
 const canonicalOwners = new Map();
@@ -377,6 +398,30 @@ let noindexCount = 0;
 let jsonLdBlockCount = 0;
 let hreflangLinkCount = 0;
 let homepageMerchantReturnPolicyValid = false;
+
+if (!sitemapExtensions.hasImageNamespace) {
+  errors.push("Sitemap image namespace eksik.");
+}
+
+if (sitemapExtensions.imageCount === 0) {
+  errors.push("Sitemap image:image kaydi icermiyor.");
+}
+
+if (!sitemapExtensions.hasXhtmlNamespace) {
+  errors.push("Sitemap XHTML namespace eksik.");
+}
+
+if (sitemapExtensions.hreflangCount === 0) {
+  errors.push("Sitemap hreflang kaydi icermiyor.");
+}
+
+if (sitemapExtensions.bytes > 50 * 1024 * 1024) {
+  errors.push("Sitemap 50 MB sinirini asiyor.");
+}
+
+if (sitemapURLs.size > 50000) {
+  errors.push("Sitemap 50.000 URL sinirini asiyor.");
+}
 
 for (const htmlFile of htmlFiles) {
   const publicPath = getPublicPath(htmlFile);
@@ -559,7 +604,7 @@ for (const htmlFile of htmlFiles) {
           )
         ) {
           errors.push(
-            `${publicPath}: VIRELLAART Offer.availability InStock degil.`,
+            `${publicPath}: VIRELLAART Offer.availability PreOrder degil.`,
           );
         }
 
@@ -628,6 +673,8 @@ console.log(`HTML pages: ${htmlFiles.length}`);
 console.log(`Indexable pages: ${indexableCount}`);
 console.log(`Noindex pages: ${noindexCount}`);
 console.log(`Sitemap URLs: ${sitemapURLs.size}`);
+console.log(`Sitemap images: ${sitemapExtensions.imageCount}`);
+console.log(`Sitemap hreflang entries: ${sitemapExtensions.hreflangCount}`);
 console.log(`Hreflang links checked: ${hreflangLinkCount}`);
 console.log(`JSON-LD blocks parsed: ${jsonLdBlockCount}`);
 console.log(`Duplicate title/description warnings: ${warnings.length}`);
