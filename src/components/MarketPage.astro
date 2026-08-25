@@ -165,6 +165,32 @@ const serviceSchema = {
     </section>
 
     {
+      market.buyerGuide && (
+        <section
+          class="market-buyer-guide"
+          aria-labelledby="marketBuyerGuideTitle"
+        >
+          <div class="market-heading">
+            <span>{market.buyerGuide.eyebrow}</span>
+            <h2 id="marketBuyerGuideTitle">
+              {market.buyerGuide.heading}
+            </h2>
+            <p>{market.buyerGuide.intro}</p>
+          </div>
+
+          <div class="market-buyer-guide-grid">
+            {market.buyerGuide.items.map((item) => (
+              <article>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
       isEnglishSwitzerlandMarket && (
         <section
           class="market-signature-collection"
@@ -562,6 +588,39 @@ const serviceSchema = {
     line-height: 1.35;
   }
 
+  .market-buyer-guide {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto 110px;
+    padding: clamp(34px, 5vw, 64px);
+    border: 1px solid rgba(201, 164, 93, 0.28);
+    background: #18130f;
+  }
+
+  .market-buyer-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .market-buyer-guide-grid article {
+    padding: 30px;
+    border: 1px solid rgba(201, 164, 93, 0.2);
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  .market-buyer-guide-grid h3 {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .market-buyer-guide-grid p {
+    margin: 0;
+    color: #d8cfc4;
+    line-height: 1.75;
+  }
+
   .market-signature-collection {
     width: min(100% - 56px, 1320px);
     margin: 0 auto;
@@ -673,6 +732,7 @@ const serviceSchema = {
   @media (max-width: 900px) {
     .market-service,
     .market-proof,
+    .market-buyer-guide-grid,
     .market-grid,
     .market-signature-collection-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -695,10 +755,15 @@ const serviceSchema = {
 
     .market-service,
     .market-proof,
+    .market-buyer-guide,
     .market-grid,
     .market-signature-collection,
     .market-signature-collection-grid {
       width: min(100% - 30px, 1320px);
+      grid-template-columns: 1fr;
+    }
+
+    .market-buyer-guide-grid {
       grid-template-columns: 1fr;
     }
 
