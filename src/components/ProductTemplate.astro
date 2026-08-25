@@ -2298,6 +2298,54 @@ const productTrust =
       let selectedPrice =
         defaultPriceValue;
 
+      let quoteStartTracked = false;
+
+      function trackQuoteStart(interactionType) {
+        if (
+          quoteStartTracked ||
+          window.virellaAnalyticsAllowed !== true ||
+          typeof window.gtag !== "function"
+        ) {
+          return;
+        }
+
+        quoteStartTracked = true;
+
+        const eventData = {
+          interaction_type: interactionType,
+          product_name:
+            translatedProductName,
+          product_category:
+            categoryName,
+          selected_configuration:
+            selectedConfiguration,
+          selected_price:
+            selectedPrice,
+          page_language:
+            language,
+          page_path:
+            window.location.pathname,
+          page_url:
+            canonicalURL,
+          quote_engine:
+            "product-quote-v1",
+        };
+
+        window.gtag(
+          "event",
+          "quote_start",
+          eventData,
+        );
+
+        window.dataLayer =
+          window.dataLayer || [];
+
+        window.dataLayer.push({
+          event: "virella_quote_start",
+          ...eventData,
+        });
+      }
+
       function fieldValue(element) {
         if (
           element instanceof HTMLInputElement ||
@@ -2423,7 +2471,12 @@ const productTrust =
       optionButtons.forEach((button) => {
         button.addEventListener(
           "click",
-          () => selectOption(button),
+          () => {
+            selectOption(button);
+            trackQuoteStart(
+              "configuration_selection",
+            );
+          },
         );
       });
 
@@ -2435,6 +2488,14 @@ const productTrust =
         field?.addEventListener(
           "input",
           () => {
+            trackQuoteStart(
+              field === countryInput
+                ? "delivery_country"
+                : field === cityInput
+                  ? "delivery_city"
+                  : "customization_notes",
+            );
+
             if (
               field instanceof HTMLInputElement &&
               field.value.trim() !== ""

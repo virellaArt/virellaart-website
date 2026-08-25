@@ -65,6 +65,24 @@ export const marketPages: MarketPage[] = [
     cta: "Request a UK quotation",
     ctaNote:
       "Share your preferred collection, UK delivery postcode and project requirements for a precise review.",
+    buyerGuide: {
+      eyebrow: "Price & delivery guide",
+      heading: "Ordering VIRELLAART Furniture for the United Kingdom",
+      intro:
+        "Product pricing and delivery are confirmed around the selected collection, configuration and UK destination.",
+      items: [
+        {
+          question: "How much does VIRELLAART furniture cost?",
+          answer:
+            "Available collection prices are displayed in USD on each product page. The written quotation confirms the selected configuration, current product price and any approved customization before the order proceeds.",
+        },
+        {
+          question: "How is delivery to the UK calculated?",
+          answer:
+            "Delivery is reviewed by postcode, city, order volume and building access. The applicable transport scope and destination costs are stated separately in the written quotation before confirmation.",
+        },
+      ],
+    },
   },
   {
     language: "en",
@@ -98,6 +116,24 @@ export const marketPages: MarketPage[] = [
     cta: "Request a US quotation",
     ctaNote:
       "Send the collection name, city, state and project details so our team can review the order accurately.",
+    buyerGuide: {
+      eyebrow: "Price & delivery guide",
+      heading: "Ordering VIRELLAART Furniture for the United States",
+      intro:
+        "Product pricing and delivery are confirmed around the selected collection, configuration and US destination.",
+      items: [
+        {
+          question: "How much does VIRELLAART furniture cost?",
+          answer:
+            "Available collection prices are displayed in USD on each product page. The written quotation confirms the selected configuration, current product price and any approved customization before the order proceeds.",
+        },
+        {
+          question: "How is delivery to the USA calculated?",
+          answer:
+            "Delivery is reviewed by state, city, order volume and property access. The applicable transport scope and destination costs are stated separately in the written quotation before confirmation.",
+        },
+      ],
+    },
   },
   {
     language: "en",
@@ -164,6 +200,24 @@ export const marketPages: MarketPage[] = [
     cta: "Request a Switzerland quotation",
     ctaNote:
       "Share your preferred collection, canton or city and project requirements for a precise review.",
+    buyerGuide: {
+      eyebrow: "Price & delivery guide",
+      heading: "Ordering VIRELLAART Furniture for Switzerland",
+      intro:
+        "Product pricing and delivery are confirmed around the selected collection, configuration and Swiss destination.",
+      items: [
+        {
+          question: "How much does VIRELLAART furniture cost?",
+          answer:
+            "Available collection prices are displayed in USD on each product page. The written quotation confirms the selected configuration, current product price and any approved customization before the order proceeds.",
+        },
+        {
+          question: "How is delivery to Switzerland calculated?",
+          answer:
+            "Delivery is reviewed by canton, city, order volume and building access. The applicable transport scope and destination costs are stated separately in the written quotation before confirmation.",
+        },
+      ],
+    },
   },
   {
     language: "de",
@@ -197,6 +251,24 @@ export const marketPages: MarketPage[] = [
     cta: "Angebot für Deutschland anfragen",
     ctaNote:
       "Senden Sie Kollektion, Lieferort und Projektanforderungen für eine genaue Prüfung.",
+    buyerGuide: {
+      eyebrow: "Preis- und Lieferinformationen",
+      heading: "VIRELLAART Möbel für Deutschland bestellen",
+      intro:
+        "Produktpreis und Lieferung werden anhand der gewählten Kollektion, Konfiguration und Zieladresse bestätigt.",
+      items: [
+        {
+          question: "Was kosten VIRELLAART Möbel?",
+          answer:
+            "Die verfügbaren Kollektionpreise stehen in USD auf der jeweiligen Produktseite. Das schriftliche Angebot bestätigt Konfiguration, aktuellen Produktpreis und genehmigte Anpassungen vor der Bestellung.",
+        },
+        {
+          question: "Wie werden Lieferkosten nach Deutschland berechnet?",
+          answer:
+            "Die Lieferung wird nach Ort, Auftragsvolumen und Gebäudezugang geprüft. Transportumfang und mögliche Zielkosten werden vor der Bestätigung separat im schriftlichen Angebot ausgewiesen.",
+        },
+      ],
+    },
   },
   {
     language: "fr",
@@ -230,6 +302,24 @@ export const marketPages: MarketPage[] = [
     cta: "Demander un devis pour la France",
     ctaNote:
       "Indiquez la collection, la ville de livraison et les besoins du projet pour une étude précise.",
+    buyerGuide: {
+      eyebrow: "Prix et livraison",
+      heading: "Commander du mobilier VIRELLAART pour la France",
+      intro:
+        "Le prix et la livraison sont confirmés selon la collection, la configuration et la destination choisies.",
+      items: [
+        {
+          question: "Combien coûte le mobilier VIRELLAART ?",
+          answer:
+            "Les prix disponibles sont affichés en USD sur chaque page produit. Le devis écrit confirme la configuration, le prix actuel et toute personnalisation approuvée avant la commande.",
+        },
+        {
+          question: "Comment la livraison en France est-elle calculée ?",
+          answer:
+            "La livraison est étudiée selon la ville, le volume de commande et l’accès au bâtiment. Le transport et les éventuels frais à destination sont indiqués séparément dans le devis avant confirmation.",
+        },
+      ],
+    },
   },
   {
     language: "it",
