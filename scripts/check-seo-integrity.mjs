@@ -444,6 +444,18 @@ for (const htmlFile of htmlFiles) {
 
   indexableCount += 1;
 
+  if (!robots.includes("max-image-preview:large")) {
+    errors.push(`${publicPath}: indexable sayfada max-image-preview:large eksik.`);
+  }
+
+  if (
+    publicPath === "/" &&
+    /navigator\.languages/.test(html) &&
+    /window\.location\.replace/.test(html)
+  ) {
+    errors.push("/: otomatik tarayici dili yonlendirmesi bulundu.");
+  }
+
   const titles = extractElementText(html, "title").filter(Boolean);
   const descriptions = extractMeta(html, "description").filter(Boolean);
   const canonicals = extractCanonicalLinks(html).filter(Boolean);

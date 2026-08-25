@@ -1,0 +1,318 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../../../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+
+const title = "How to Order Luxury Furniture from Istanbul";
+const description =
+  "A practical guide to selecting made-to-order furniture in Istanbul, requesting a written quotation and planning delivery to an international destination.";
+const publishedTime = "2026-08-25T00:00:00+03:00";
+const englishArticleURL =
+  "https://www.virellaart.com/blog/how-to-order-luxury-furniture-from-istanbul/";
+const alternateURLs = [
+  {
+    language: "en",
+    href: englishArticleURL,
+  },
+];
+---
+
+<ArticleLayout
+  {title}
+  {description}
+  image="/living-room.webp"
+  imageAlt="VIRELLAART luxury living room furniture for an international interior project"
+  {publishedTime}
+  modifiedTime={publishedTime}
+  section="International Furniture Buying Guides"
+  keywords={[
+    "luxury furniture Istanbul",
+    "order furniture from Turkey",
+    "international furniture order",
+    "made-to-order furniture",
+    "VIRELLAART",
+  ]}
+  readingTimeMinutes={7}
+  wordCount={859}
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={alternateURLs}
+  switcherFallbackToLocalizedPath
+  xDefaultURL={englishArticleURL}
+  includeCanonical={isEnglish}
+>
+  <article class="article">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English edition</strong>
+          <p>
+            This article has not yet been translated into the selected
+            language. It is excluded from search indexing until the
+            localized edition is published.
+          </p>
+          <a href={englishArticleURL}>Open the English article</a>
+        </aside>
+      )
+    }
+
+    <header class="article-hero">
+      <div class="article-shell narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <a href={localizedPath("/blog", language)}>Journal</a>
+          <span aria-hidden="true">/</span>
+          <span>International Ordering Guide</span>
+        </nav>
+
+        <p class="article-category">International Buying Guide</p>
+        <h1>How to Order Luxury Furniture from Istanbul</h1>
+        <p class="article-intro">
+          Ordering made-to-order furniture for another country becomes
+          much easier when product selection, measurements, quotation and
+          delivery planning happen in the right order. This guide gives you
+          a practical framework for a clear conversation with VIRELLAART.
+        </p>
+        <div class="article-meta">
+          <span>Published August 25, 2026</span>
+          <span>7 minute read</span>
+          <span>By VIRELLAART</span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero-image">
+      <img
+        src="/living-room.webp"
+        alt="VIRELLAART luxury living room furniture for an international interior project"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <div class="article-shell article-grid">
+      <aside class="contents">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#choose">Choose the right collection</a></li>
+          <li><a href="#measure">Measure room and access</a></li>
+          <li><a href="#brief">Prepare your request</a></li>
+          <li><a href="#quotation">Review the quotation</a></li>
+          <li><a href="#delivery">Plan international delivery</a></li>
+          <li><a href="#markets">Use your market guide</a></li>
+          <li><a href="#checklist">Final checklist</a></li>
+        </ol>
+      </aside>
+
+      <div class="article-body">
+        <section class="key-points">
+          <h2>The safest ordering sequence</h2>
+          <p>
+            Select a model, confirm its intended configuration, measure the
+            room and every access point, share the destination city and then
+            review a written quotation before making a final decision.
+          </p>
+        </section>
+
+        <p>
+          International furniture buying is not only a design decision. The
+          chosen model must suit the room, pass through the delivery route and
+          be supported by a quotation that clearly reflects the selected
+          configuration and destination. Treat those points as one connected
+          process rather than separate conversations.
+        </p>
+
+        <p>
+          VIRELLAART presents made-to-order furniture collections from
+          Istanbul. Because project requirements and destinations differ, the
+          most useful first step is a precise request—not a vague question
+          about a complete interior. The clearer your brief, the easier it is
+          to compare the available options responsibly.
+        </p>
+
+        <h2 id="choose">1. Choose the room and collection first</h2>
+        <p>
+          Begin with the space you are furnishing. Browse the
+          {" "}<a href={localizedPath("/living-rooms", language)}>living room</a>,
+          {" "}<a href={localizedPath("/dining-rooms", language)}>dining room</a>,
+          {" "}<a href={localizedPath("/bedrooms", language)}>bedroom</a> or
+          {" "}<a href={localizedPath("/tv-units", language)}>TV unit</a>{" "}
+          categories and save the exact model names or page links that fit
+          your project.
+        </p>
+        <p>
+          Next, decide whether the interior direction is closer to the
+          disciplined forms of the
+          {" "}<a href={localizedPath("/collections/modern", language)}>Modern Collection</a>
+          {" "}or the more decorative character of the
+          {" "}<a href={localizedPath("/collections/luxury-classic", language)}>Luxury Classic Collection</a>.
+          A short list of two or three relevant models creates a more focused
+          starting point than requesting every option at once.
+        </p>
+        <div class="editorial-link">
+          <p>
+            If you are still comparing proportions, use the
+            {" "}<a href={localizedPath("/blog/how-to-measure-your-room-for-luxury-furniture", language)}>room measurement guide</a>
+            {" "}before deciding which model best suits the space.
+          </p>
+        </div>
+
+        <h2 id="measure">2. Measure the room and the complete access route</h2>
+        <p>
+          Record the usable room width and depth, not only the total floor
+          area. Note fixed elements such as doors, windows, columns and the
+          circulation paths that must remain open. A floor plan is helpful,
+          but clear photographs can also reveal constraints that numbers do
+          not explain on their own.
+        </p>
+        <p>
+          Then measure the route from the building entrance to the final
+          room: external and internal doors, corridors, turns, stairways and
+          lift openings where relevant. Mention any narrow access, restricted
+          entry or unusual site condition at the beginning of the discussion.
+          A model that fits the room must also have a realistic path into it.
+        </p>
+
+        <h2 id="brief">3. Prepare a useful quotation request</h2>
+        <p>A practical first message should include:</p>
+        <ul>
+          <li>the exact product or collection name and page link;</li>
+          <li>the pieces and configuration you are considering;</li>
+          <li>your delivery country and city;</li>
+          <li>room dimensions and relevant access measurements;</li>
+          <li>photographs or a plan when they clarify the space;</li>
+          <li>any customization request you want evaluated.</li>
+        </ul>
+        <p>
+          Where a product page displays a price, use it as the reference for
+          the configuration shown on that page. A request involving different
+          pieces, customization or another delivery destination should be
+          confirmed in writing rather than inferred from a visual reference.
+        </p>
+
+        <h2 id="quotation">4. Review the written quotation carefully</h2>
+        <p>
+          Check that the quotation identifies the selected products and the
+          agreed scope. Product configuration, current price, any evaluated
+          customization, packaging and destination-specific delivery planning
+          should be clear before the order is confirmed.
+        </p>
+        <p>
+          Do not assume that an item mentioned in an early conversation is
+          included in the final scope. If a room image contains accessories or
+          several coordinated pieces, compare the written list with your own
+          selection. Ask for clarification while the quotation is being
+          reviewed, when changes are easiest to document.
+        </p>
+
+        <h2 id="delivery">5. Plan international delivery by destination</h2>
+        <p>
+          Delivery cost, availability, timing and destination requirements can
+          vary by city, order size, access conditions and current rules. Share
+          the full destination early and rely on the current written quotation
+          for the applicable plan. Avoid treating a general estimate for one
+          country or project as a promise for another.
+        </p>
+        <p>
+          Before confirmation, make sure you understand the stated delivery
+          scope and which destination-side steps, if any, require separate
+          arrangements. Local import, tax or building-access requirements may
+          change, so verify the rules that apply to your destination and
+          circumstances at the time of ordering.
+        </p>
+
+        <h2 id="markets">6. Continue with the guide for your market</h2>
+        <p>
+          VIRELLAART has dedicated buyer information for several priority
+          destinations. Continue with the most relevant page for your project:
+        </p>
+        <ul class="market-links">
+          <li><a href="/markets/united-states/">United States furniture buying guide</a></li>
+          <li><a href="/markets/united-kingdom/">United Kingdom furniture buying guide</a></li>
+          <li><a href="/de/markets/germany/">Germany furniture buying guide</a></li>
+          <li><a href="/fr/markets/france/">France furniture buying guide</a></li>
+          <li><a href="/markets/switzerland/">Switzerland furniture buying guide</a></li>
+        </ul>
+
+        <h2 id="checklist">7. Final checklist before confirmation</h2>
+        <div class="checklist">
+          <label><input type="checkbox" disabled /> <span>I saved the exact model links and selected pieces.</span></label>
+          <label><input type="checkbox" disabled /> <span>I measured the room and the complete access route.</span></label>
+          <label><input type="checkbox" disabled /> <span>I shared the delivery country, city and access conditions.</span></label>
+          <label><input type="checkbox" disabled /> <span>I checked the product list and scope in the written quotation.</span></label>
+          <label><input type="checkbox" disabled /> <span>I reviewed destination-specific delivery information and current local requirements.</span></label>
+        </div>
+
+        <section class="conclusion">
+          <p class="article-category">A clearer first conversation</p>
+          <h2>Turn inspiration into a precise request</h2>
+          <p>
+            Choose the model that fits your space, collect the measurements
+            that affect delivery and send the destination details together.
+            That gives the VIRELLAART team the context needed to prepare a
+            relevant quotation for your project.
+          </p>
+          <div class="cta-links">
+            <a class="primary-cta" href={localizedPath("/living-rooms", language)}>Explore living rooms</a>
+            <a class="secondary-cta" href={localizedPath("/contact", language)}>Contact VIRELLAART</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
+
+<style>
+  .article { min-height: 100vh; background: #f7f3ed; color: #251c17; }
+  .article-shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+  .article-shell.narrow { width: min(900px, calc(100% - 40px)); }
+  .language-notice { width: min(1160px, calc(100% - 40px)); margin: 100px auto 0; padding: 22px 25px; border: 1px solid rgba(139, 101, 42, .25); background: #fffaf1; }
+  .language-notice strong { color: #72501e; font: 20px Georgia, "Times New Roman", serif; }
+  .language-notice p { margin: 7px 0; color: #65584f; line-height: 1.6; }
+  .language-notice a { color: #76521d; font-weight: 700; }
+  .article-hero { padding: 155px 0 85px; background: radial-gradient(circle at 75% 15%, rgba(201,164,93,.15), transparent 34%), linear-gradient(135deg, #1b130f, #090605); color: #fff; }
+  .breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; color: rgba(255,255,255,.55); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .breadcrumbs a { color: rgba(255,255,255,.75); }
+  .article-category { margin: 0 0 17px; color: #cda960; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  .article-hero h1 { max-width: 850px; margin: 0; font: 400 clamp(44px, 7vw, 82px)/1.03 Georgia, "Times New Roman", serif; }
+  .article-intro { max-width: 780px; margin: 30px 0 0; color: rgba(255,255,255,.77); font-size: clamp(18px, 2.5vw, 22px); line-height: 1.75; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 10px 27px; margin-top: 34px; color: rgba(255,255,255,.54); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .hero-image { width: min(1380px, calc(100% - 30px)); margin: 0 auto; }
+  .hero-image img { width: 100%; max-height: 760px; display: block; object-fit: cover; }
+  .article-grid { display: grid; grid-template-columns: 240px minmax(0, 760px); justify-content: center; gap: clamp(45px, 7vw, 95px); padding-top: 95px; padding-bottom: 140px; }
+  .contents { position: sticky; top: 115px; align-self: start; padding: 25px; border-top: 1px solid #a77a38; background: rgba(255,255,255,.55); }
+  .contents > p { margin: 0 0 15px; color: #72501e; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+  .contents ol { margin: 0; padding-left: 19px; }
+  .contents li { margin: 10px 0; color: #8a7a6f; font-size: 13px; line-height: 1.5; }
+  .contents a { color: #5f5249; }
+  .article-body { font: 18px/1.9 Georgia, "Times New Roman", serif; }
+  .article-body > p { margin: 0 0 27px; color: #574b43; }
+  .article-body h2 { scroll-margin-top: 120px; margin: 72px 0 22px; color: #241a15; font-size: clamp(31px, 4vw, 43px); font-weight: 400; line-height: 1.2; }
+  .article-body ul { margin: 10px 0 32px; padding-left: 25px; color: #574b43; }
+  .article-body li { margin: 9px 0; }
+  .article-body a { color: #7c5723; text-decoration: underline; text-underline-offset: 4px; }
+  .key-points { margin-bottom: 45px; padding: 32px 35px; border-left: 3px solid #a77a38; background: #eee6da; }
+  .key-points h2 { margin: 0 0 12px; font-size: 30px; }
+  .key-points p { margin: 0; color: #594a40; }
+  .editorial-link { margin: 42px 0; padding: 26px 30px; border: 1px solid rgba(126,89,37,.25); background: #fffdf9; }
+  .editorial-link p { margin: 0; color: #5a4b41; }
+  .checklist { display: grid; gap: 11px; margin: 30px 0 55px; padding: 30px; background: #ece4d9; }
+  .checklist label { display: grid; grid-template-columns: 22px 1fr; gap: 10px; color: #51463e; font: 16px/1.55 Arial, sans-serif; }
+  .checklist input { margin-top: 5px; }
+  .conclusion { margin-top: 80px; padding: clamp(35px, 6vw, 65px); background: radial-gradient(circle at top right, rgba(201,164,93,.18), transparent 38%), #17100c; color: #fff; }
+  .conclusion h2 { margin-top: 0; color: #fff; }
+  .conclusion > p:not(.article-category) { color: rgba(255,255,255,.73); }
+  .cta-links { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+  .primary-cta, .secondary-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 21px; font: 700 11px Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; text-decoration: none !important; }
+  .primary-cta { background: #c9a45d; color: #17100c !important; }
+  .secondary-cta { border: 1px solid rgba(255,255,255,.35); color: #fff !important; }
+  @media (max-width: 900px) { .article-grid { grid-template-columns: 1fr; } .contents { position: static; } }
+  @media (max-width: 620px) { .article-hero { padding: 125px 0 70px; } .article-grid { padding-top: 65px; padding-bottom: 100px; } .article-body { font-size: 17px; } .key-points, .editorial-link, .checklist { padding: 24px; } }
+</style>

@@ -87,6 +87,10 @@ const fullTitle =
     : titleWithoutBrand.length <= 65
       ? titleWithoutBrand
       : `${titleWithoutBrand.slice(0, 64).replace(/\s+\S*$/, "")}…`;
+const robotsContent =
+  /noindex/i.test(robots) || /max-image-preview/i.test(robots)
+    ? robots
+    : `${robots}, max-image-preview:large`;
 const basePath = stripLanguagePrefix(Astro.url.pathname);
 const isHomePage = basePath === "/";
 /* VIRELLAART LOCALIZED POLICY SEO */
@@ -208,59 +212,6 @@ const websiteSchema = {
 <head>
 <meta name="p:domain_verify" content="fe900002f59408a3063790cd18fab6eb" />
 <meta charset="UTF-8" />
-
-<script
-  is:inline
-  define:vars={{
-    currentLanguage: language,
-    supportedLanguages: languageCodes,
-  }}
->
-  (() => {
-    const storageKey = "virellaart-language";
-    const isBot = /bot|crawler|spider|crawling|google|bing|yandex/i.test(
-      navigator.userAgent,
-    );
-
-    document.addEventListener("click", (event) => {
-      const target = event.target;
-      const link =
-        target instanceof Element
-          ? target.closest("[data-language]")
-          : null;
-
-      if (link instanceof HTMLElement && link.dataset.language) {
-        localStorage.setItem(storageKey, link.dataset.language);
-      }
-    });
-
-    if (
-      isBot ||
-      currentLanguage !== "en" ||
-      window.location.pathname !== "/"
-    ) {
-      return;
-    }
-
-    const savedLanguage = localStorage.getItem(storageKey);
-    const candidates = savedLanguage
-      ? [savedLanguage]
-      : [...navigator.languages, navigator.language];
-    const detectedLanguage = candidates
-      .map((candidate) => candidate?.toLowerCase().split("-")[0])
-      .find((candidate) => supportedLanguages.includes(candidate));
-
-    if (!detectedLanguage || detectedLanguage === "en") {
-      return;
-    }
-
-    const path = `/${detectedLanguage}/`;
-
-    window.location.replace(
-      `${path}${window.location.search}${window.location.hash}`,
-    );
-  })();
-</script>
 
 <script is:inline>
 (() => {
@@ -806,7 +757,7 @@ content={pageDescription}
 
 <meta 
 name="robots"
-content={robots}
+content={robotsContent}
 />
 
 
