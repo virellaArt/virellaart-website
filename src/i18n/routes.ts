@@ -39,6 +39,14 @@ export const blogArticleRoutes = Object.keys(
       Boolean(route),
   );
 
+export const localizedBlogRouteLanguages = {
+  "blog/how-to-order-luxury-furniture-from-istanbul": [
+    "en",
+    "de",
+    "fr",
+  ],
+} as const;
+
 function extractProductKey(
   source: string,
 ): string | undefined {
@@ -139,6 +147,7 @@ export const staticRoutes = [
   "collections/luxury-classic",
   "about",
   "manufacturing",
+  "press",
   "contact",
   ...(hasModernProducts
     ? ["collections/modern"]

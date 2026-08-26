@@ -163,6 +163,17 @@ const footerText =
   footerTranslations[language] ??
   footerTranslations.en;
 
+const pressLabels = {
+  en: "Press & Professionals",
+  tr: "Basın ve Profesyoneller",
+  de: "Presse & Fachpartner",
+  fr: "Presse & Professionnels",
+} as const;
+const pressLabel =
+  language in pressLabels
+    ? pressLabels[language as keyof typeof pressLabels]
+    : pressLabels.en;
+
 const marketHeadings = {
   en: "International Markets",
   tr: "Uluslararası Pazarlar",
@@ -213,6 +224,10 @@ const footerMarkets =
 
   <a href={localizedPath("/manufacturing", language)}>
     {footerText.manufacturing}
+  </a>
+
+  <a href={localizedPath("/press", language)}>
+    {pressLabel}
   </a>
 
   <a href={localizedPath("/contact", language)}>

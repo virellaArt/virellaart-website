@@ -59,6 +59,44 @@ const gaTrackedMarketSlugs = new Set([
 ]);
 const isGaTrackedMarket = gaTrackedMarketSlugs.has(market.slug);
 
+const orderingGuideMarkets = new Set([
+  "united-states",
+  "united-kingdom",
+  "germany",
+  "france",
+  "switzerland",
+]);
+const orderingGuideLanguage =
+  market.language === "de" || market.language === "fr"
+    ? market.language
+    : market.language === "en"
+      ? "en"
+      : undefined;
+const orderingGuideCopy = orderingGuideLanguage
+  ? {
+      en: {
+        eyebrow: "International ordering guide",
+        heading: "Plan your VIRELLAART order step by step",
+        text: "Review product selection, room and access measurements, written quotation and destination-specific delivery planning before confirmation.",
+        link: "Read the international ordering guide",
+      },
+      de: {
+        eyebrow: "Internationaler Bestellratgeber",
+        heading: "Ihre VIRELLAART Bestellung Schritt für Schritt planen",
+        text: "Prüfen Sie Produktauswahl, Raum- und Zugangsmaße, schriftliches Angebot und zielbezogene Lieferplanung vor der Bestätigung.",
+        link: "Internationalen Bestellratgeber lesen",
+      },
+      fr: {
+        eyebrow: "Guide de commande internationale",
+        heading: "Planifier votre commande VIRELLAART étape par étape",
+        text: "Vérifiez la sélection, les mesures de la pièce et des accès, le devis écrit et la livraison liée à la destination avant confirmation.",
+        link: "Lire le guide de commande internationale",
+      },
+    }[orderingGuideLanguage]
+  : undefined;
+const showOrderingGuide =
+  orderingGuideMarkets.has(market.slug) && Boolean(orderingGuideCopy);
+
 const canonicalURL = new URL(
   marketPagePath(market),
   "https://www.virellaart.com",
@@ -186,6 +224,24 @@ const serviceSchema = {
               </article>
             ))}
           </div>
+        </section>
+      )
+    }
+
+    {
+      showOrderingGuide && orderingGuideCopy && orderingGuideLanguage && (
+        <section class="market-ordering-guide" aria-labelledby="marketOrderingGuideTitle">
+          <div>
+            <span>{orderingGuideCopy.eyebrow}</span>
+            <h2 id="marketOrderingGuideTitle">{orderingGuideCopy.heading}</h2>
+            <p>{orderingGuideCopy.text}</p>
+          </div>
+          <a href={localizedPath(
+            "/blog/how-to-order-luxury-furniture-from-istanbul",
+            orderingGuideLanguage,
+          )}>
+            {orderingGuideCopy.link}
+          </a>
         </section>
       )
     }
@@ -621,6 +677,56 @@ const serviceSchema = {
     line-height: 1.75;
   }
 
+  .market-ordering-guide {
+    width: min(100% - 56px, 1320px);
+    margin: 0 auto 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: clamp(34px, 5vw, 58px);
+    border: 1px solid rgba(201, 164, 93, 0.3);
+    background: linear-gradient(135deg, #211914, #15100d);
+  }
+
+  .market-ordering-guide > div {
+    max-width: 800px;
+  }
+
+  .market-ordering-guide span {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .market-ordering-guide h2 {
+    margin: 18px 0 14px;
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.08;
+  }
+
+  .market-ordering-guide p {
+    margin: 0;
+    color: #d9d0c4;
+    line-height: 1.75;
+  }
+
+  .market-ordering-guide > a {
+    flex: 0 0 auto;
+    max-width: 290px;
+    padding: 16px 20px;
+    border: 1px solid rgba(225, 199, 138, 0.72);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   .market-signature-collection {
     width: min(100% - 56px, 1320px);
     margin: 0 auto;
@@ -777,6 +883,17 @@ const serviceSchema = {
       width: min(100% - 30px, 1320px);
       flex-direction: column;
       align-items: stretch;
+    }
+
+    .market-ordering-guide {
+      width: min(100% - 30px, 1320px);
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .market-ordering-guide > a {
+      width: 100%;
+      max-width: none;
     }
   }
 </style>

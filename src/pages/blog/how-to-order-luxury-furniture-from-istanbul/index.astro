@@ -6,18 +6,452 @@ import {
 } from "../../../i18n/config";
 
 const language = getLanguageFromPath(Astro.url.pathname);
-const isEnglish = language === "en";
-
-const title = "How to Order Luxury Furniture from Istanbul";
-const description =
-  "A practical guide to selecting made-to-order furniture in Istanbul, requesting a written quotation and planning delivery to an international destination.";
 const publishedTime = "2026-08-25T00:00:00+03:00";
 const englishArticleURL =
   "https://www.virellaart.com/blog/how-to-order-luxury-furniture-from-istanbul/";
+
+const guideCopy = {
+  en: {
+    title: "How to Order Luxury Furniture from Istanbul",
+    description:
+      "A practical guide to selecting made-to-order furniture in Istanbul, requesting a written quotation and planning delivery to an international destination.",
+    imageAlt:
+      "VIRELLAART luxury living room furniture for an international interior project",
+    section: "International Furniture Buying Guides",
+    keywords: [
+      "luxury furniture Istanbul",
+      "order furniture from Turkey",
+      "international furniture order",
+      "made-to-order furniture",
+      "VIRELLAART",
+    ],
+    home: "Home",
+    journal: "Journal",
+    breadcrumb: "International Ordering Guide",
+    category: "International Buying Guide",
+    intro:
+      "Ordering made-to-order furniture for another country becomes much easier when product selection, measurements, quotation and delivery planning happen in the right order. This guide gives you a practical framework for a clear conversation with VIRELLAART.",
+    published: "Published August 25, 2026",
+    readingTime: "7 minute read",
+    byline: "By VIRELLAART",
+    contents: "In this guide",
+    keyHeading: "The safest ordering sequence",
+    keyText:
+      "Select a model, confirm its intended configuration, measure the room and every access point, share the destination city and then review a written quotation before making a final decision.",
+    opening: [
+      "International furniture buying is not only a design decision. The chosen model must suit the room, pass through the delivery route and be supported by a quotation that clearly reflects the selected configuration and destination. Treat those points as one connected process rather than separate conversations.",
+      "VIRELLAART presents made-to-order furniture collections from Istanbul. Because project requirements and destinations differ, the most useful first step is a precise request—not a vague question about a complete interior. The clearer your brief, the easier it is to compare the available options responsibly.",
+    ],
+    sections: [
+      {
+        id: "choose",
+        heading: "1. Choose the room and collection first",
+        toc: "Choose the right collection",
+        paragraphs: [
+          "Begin with the space you are furnishing. Browse the relevant room category and save the exact model names or page links that fit your project.",
+          "Next, decide whether the interior direction is closer to the disciplined forms of the Modern Collection or the more decorative character of the Luxury Classic Collection. A short list of two or three relevant models creates a more focused starting point than requesting every option at once.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/living-rooms", label: "Luxury living rooms" },
+          { href: "/dining-rooms", label: "Luxury dining rooms" },
+          { href: "/bedrooms", label: "Luxury bedrooms" },
+          { href: "/tv-units", label: "Luxury TV units" },
+          { href: "/collections/modern", label: "Modern Collection" },
+          { href: "/collections/luxury-classic", label: "Luxury Classic Collection" },
+        ],
+      },
+      {
+        id: "measure",
+        heading: "2. Measure the room and the complete access route",
+        toc: "Measure room and access",
+        paragraphs: [
+          "Record the usable room width and depth, not only the total floor area. Note fixed elements such as doors, windows, columns and the circulation paths that must remain open. A floor plan is helpful, but clear photographs can also reveal constraints that numbers do not explain on their own.",
+          "Then measure the route from the building entrance to the final room: external and internal doors, corridors, turns, stairways and lift openings where relevant. Mention narrow access, restricted entry or unusual site conditions at the beginning of the discussion.",
+        ],
+        bullets: [],
+        links: [
+          {
+            href: "/blog/how-to-measure-your-room-for-luxury-furniture",
+            label: "How to measure your room for luxury furniture",
+          },
+        ],
+      },
+      {
+        id: "brief",
+        heading: "3. Prepare a useful quotation request",
+        toc: "Prepare your request",
+        paragraphs: [
+          "A precise first message helps the team review the right collection and delivery context. Include the information below rather than relying only on a room image.",
+          "Where a product page displays a price, use it as the reference for the configuration shown on that page. Different pieces, customization or another delivery destination should be confirmed in writing rather than inferred from a visual reference.",
+        ],
+        bullets: [
+          "The exact product or collection name and page link",
+          "The pieces and configuration you are considering",
+          "Your delivery country and city",
+          "Room dimensions and relevant access measurements",
+          "Photographs or a plan when they clarify the space",
+          "Any customization request you want evaluated",
+        ],
+        links: [],
+      },
+      {
+        id: "quotation",
+        heading: "4. Review the written quotation carefully",
+        toc: "Review the quotation",
+        paragraphs: [
+          "Check that the quotation identifies the selected products and the agreed scope. Product configuration, current price, evaluated customization, packaging and destination-specific delivery planning should be clear before the order is confirmed.",
+          "Do not assume that an item mentioned in an early conversation is included in the final scope. If a room image contains accessories or several coordinated pieces, compare the written list with your own selection and request clarification while the quotation is being reviewed.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "delivery",
+        heading: "5. Plan international delivery by destination",
+        toc: "Plan international delivery",
+        paragraphs: [
+          "Delivery cost, availability, timing and destination requirements can vary by city, order size, access conditions and current rules. Share the full destination early and rely on the current written quotation for the applicable plan.",
+          "Before confirmation, understand the stated delivery scope and which destination-side steps, if any, require separate arrangements. Local import, tax or building-access requirements may change, so verify the rules that apply to your destination and circumstances at the time of ordering.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "markets",
+        heading: "6. Continue with the guide for your market",
+        toc: "Use your market guide",
+        paragraphs: [
+          "VIRELLAART has dedicated buyer information for several priority destinations. Continue with the most relevant page for your project.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/markets/united-states", label: "United States furniture buying guide" },
+          { href: "/markets/united-kingdom", label: "United Kingdom furniture buying guide" },
+          { href: "/de/markets/germany", label: "Germany furniture buying guide", fixed: true },
+          { href: "/fr/markets/france", label: "France furniture buying guide", fixed: true },
+          { href: "/markets/switzerland", label: "Switzerland furniture buying guide" },
+        ],
+      },
+    ],
+    checklistHeading: "7. Final checklist before confirmation",
+    checklistToc: "Final checklist",
+    checklist: [
+      "I saved the exact model links and selected pieces.",
+      "I measured the room and the complete access route.",
+      "I shared the delivery country, city and access conditions.",
+      "I checked the product list and scope in the written quotation.",
+      "I reviewed destination-specific delivery information and current local requirements.",
+    ],
+    conclusionEyebrow: "A clearer first conversation",
+    conclusionHeading: "Turn inspiration into a precise request",
+    conclusionText:
+      "Choose the model that fits your space, collect the measurements that affect delivery and send the destination details together. That gives the VIRELLAART team the context needed to prepare a relevant quotation for your project.",
+    primaryCta: "Explore living rooms",
+    secondaryCta: "Contact VIRELLAART",
+  },
+  de: {
+    title: "Luxusmöbel aus Istanbul bestellen: Ablauf & Lieferung",
+    description:
+      "Praxisleitfaden zur Auswahl maßgefertigter Luxusmöbel aus Istanbul, zum schriftlichen Angebot und zur Lieferplanung nach Deutschland und Europa.",
+    imageAlt:
+      "VIRELLAART Luxusmöbel für ein internationales Einrichtungsprojekt",
+    section: "Internationale Möbel-Kaufratgeber",
+    keywords: [
+      "Luxusmöbel Istanbul",
+      "Möbel aus der Türkei bestellen",
+      "Luxusmöbel Deutschland",
+      "maßgefertigte Möbel",
+      "VIRELLAART",
+    ],
+    home: "Startseite",
+    journal: "Journal",
+    breadcrumb: "Internationaler Bestellratgeber",
+    category: "Internationaler Kaufratgeber",
+    intro:
+      "Die Bestellung maßgefertigter Möbel aus Istanbul wird übersichtlich, wenn Produktauswahl, Maße, Angebot und Lieferplanung in der richtigen Reihenfolge erfolgen. Dieser Leitfaden zeigt, welche Angaben für eine klare Abstimmung mit VIRELLAART wichtig sind.",
+    published: "Veröffentlicht am 25. August 2026",
+    readingTime: "7 Minuten Lesezeit",
+    byline: "Von VIRELLAART",
+    contents: "In diesem Leitfaden",
+    keyHeading: "Die sichere Reihenfolge bei der Bestellung",
+    keyText:
+      "Modell und Konfiguration auswählen, Raum sowie Zugangsweg messen, Zielort mitteilen und anschließend das schriftliche Angebot vollständig prüfen.",
+    opening: [
+      "Der internationale Möbelkauf ist nicht nur eine Designentscheidung. Das gewählte Modell muss zum Raum passen, den Zugangsweg bewältigen können und durch ein Angebot bestätigt werden, das Konfiguration und Zielort eindeutig berücksichtigt. Diese Punkte sollten als zusammenhängender Ablauf betrachtet werden.",
+      "VIRELLAART präsentiert maßgefertigte Möbelkollektionen aus Istanbul. Da Projektanforderungen und Lieferziele unterschiedlich sind, beginnt eine verlässliche Beratung mit einer präzisen Anfrage. Je klarer die Angaben, desto gezielter lassen sich passende Optionen vergleichen.",
+    ],
+    sections: [
+      {
+        id: "choose",
+        heading: "1. Zuerst Raum und Kollektion auswählen",
+        toc: "Kollektion auswählen",
+        paragraphs: [
+          "Beginnen Sie mit dem Raum, den Sie einrichten möchten. Öffnen Sie die passende Kategorie und speichern Sie die exakten Modellnamen oder Seitenlinks, die zu Ihrem Projekt passen.",
+          "Entscheiden Sie anschließend, ob die klare Formensprache der Modern Collection oder der dekorativere Charakter der Luxury Classic Collection besser zum Interieur passt. Zwei oder drei konkrete Modelle sind eine bessere Gesprächsgrundlage als eine allgemeine Anfrage zu allen Kollektionen.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/living-rooms", label: "Luxuriöse Wohnzimmer" },
+          { href: "/dining-rooms", label: "Luxuriöse Esszimmer" },
+          { href: "/bedrooms", label: "Luxuriöse Schlafzimmer" },
+          { href: "/tv-units", label: "Luxuriöse TV-Möbel" },
+          { href: "/collections/modern", label: "Modern Collection" },
+          { href: "/collections/luxury-classic", label: "Luxury Classic Collection" },
+        ],
+      },
+      {
+        id: "measure",
+        heading: "2. Raum und vollständigen Zugangsweg messen",
+        toc: "Raum und Zugang messen",
+        paragraphs: [
+          "Erfassen Sie die nutzbare Breite und Tiefe des Raums, nicht nur die gesamte Grundfläche. Türen, Fenster, Säulen und notwendige Laufwege beeinflussen die tatsächlich verfügbare Fläche. Ein Grundriss ist hilfreich; aussagekräftige Fotos können zusätzliche Einschränkungen zeigen.",
+          "Messen Sie danach den Weg vom Gebäudeeingang bis zum endgültigen Aufstellort: Außen- und Innentüren, Flure, Kurven, Treppen und gegebenenfalls Aufzugöffnungen. Enge Durchgänge oder besondere Zugangsbedingungen sollten gleich zu Beginn genannt werden.",
+        ],
+        bullets: [],
+        links: [
+          {
+            href: "/blog/how-to-measure-your-room-for-luxury-furniture",
+            label: "Leitfaden zum richtigen Ausmessen des Raums",
+          },
+        ],
+      },
+      {
+        id: "brief",
+        heading: "3. Eine aussagekräftige Angebotsanfrage vorbereiten",
+        toc: "Anfrage vorbereiten",
+        paragraphs: [
+          "Eine präzise erste Nachricht hilft dem Team, die passende Kollektion und den Lieferkontext zu prüfen. Senden Sie die folgenden Informationen und verlassen Sie sich nicht ausschließlich auf ein Inspirationsbild.",
+          "Wenn auf der Produktseite ein Preis angezeigt wird, gilt er als Referenz für die dort dargestellte Konfiguration. Abweichende Teile, Anpassungswünsche oder ein anderes Lieferziel müssen im schriftlichen Angebot bestätigt werden.",
+        ],
+        bullets: [
+          "Exakter Produkt- oder Kollektionsname mit Seitenlink",
+          "Gewünschte Einzelteile und Konfiguration",
+          "Lieferland und Lieferort",
+          "Raummaße und relevante Zugangsmaße",
+          "Fotos oder Grundriss, wenn sie den Raum erklären",
+          "Anpassungswünsche, die geprüft werden sollen",
+        ],
+        links: [],
+      },
+      {
+        id: "quotation",
+        heading: "4. Das schriftliche Angebot sorgfältig prüfen",
+        toc: "Angebot prüfen",
+        paragraphs: [
+          "Kontrollieren Sie, ob das Angebot die ausgewählten Produkte und den vereinbarten Umfang eindeutig nennt. Konfiguration, aktueller Preis, geprüfte Anpassungen, Verpackung und zielbezogene Lieferplanung sollten vor der Bestätigung verständlich dokumentiert sein.",
+          "Gehen Sie nicht davon aus, dass jedes in einem Raumfoto gezeigte Zubehör automatisch enthalten ist. Vergleichen Sie die schriftliche Produktliste mit Ihrer Auswahl und klären Sie Abweichungen während der Angebotsprüfung.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "delivery",
+        heading: "5. Internationale Lieferung nach Zielort planen",
+        toc: "Lieferung planen",
+        paragraphs: [
+          "Lieferkosten, Verfügbarkeit, Zeitplanung und Anforderungen am Zielort können je nach Stadt, Auftragsvolumen, Gebäudezugang und aktuellen Bestimmungen variieren. Teilen Sie den vollständigen Zielort frühzeitig mit und orientieren Sie sich am aktuellen schriftlichen Angebot.",
+          "Prüfen Sie vor der Bestätigung den genannten Lieferumfang und welche Schritte am Zielort gegebenenfalls separat organisiert werden müssen. Einfuhr-, Steuer- oder Gebäudezugangsregeln können sich ändern und sollten für den konkreten Zielort aktuell geprüft werden.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "markets",
+        heading: "6. Mit dem passenden Länderratgeber fortfahren",
+        toc: "Länderratgeber nutzen",
+        paragraphs: [
+          "Für wichtige Zielmärkte stehen eigene Informationen zur Verfügung. Wählen Sie die Seite, die zu Ihrem Projekt und Lieferziel passt.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/de/markets/germany", label: "Luxusmöbel für Deutschland", fixed: true },
+          { href: "/de/markets/switzerland", label: "Luxusmöbel für die Schweiz", fixed: true },
+          { href: "/markets/united-kingdom", label: "Kaufratgeber für das Vereinigte Königreich", fixed: true },
+          { href: "/markets/united-states", label: "Kaufratgeber für die USA", fixed: true },
+          { href: "/fr/markets/france", label: "Kaufratgeber für Frankreich", fixed: true },
+        ],
+      },
+    ],
+    checklistHeading: "7. Abschließende Prüfliste vor der Bestätigung",
+    checklistToc: "Abschließende Prüfliste",
+    checklist: [
+      "Ich habe die exakten Modelllinks und ausgewählten Teile gespeichert.",
+      "Ich habe Raum und vollständigen Zugangsweg gemessen.",
+      "Ich habe Lieferland, Lieferort und Zugangsbedingungen mitgeteilt.",
+      "Ich habe Produktliste und Leistungsumfang im Angebot geprüft.",
+      "Ich habe die Lieferinformationen und aktuellen Anforderungen am Zielort geprüft.",
+    ],
+    conclusionEyebrow: "Eine klarere erste Abstimmung",
+    conclusionHeading: "Von der Inspiration zur präzisen Anfrage",
+    conclusionText:
+      "Wählen Sie ein Modell, das zum Raum passt, erfassen Sie alle für die Lieferung wichtigen Maße und senden Sie die Angaben zum Zielort gemeinsam. So erhält das VIRELLAART Team die Grundlage für ein relevantes Angebot.",
+    primaryCta: "Wohnzimmer entdecken",
+    secondaryCta: "VIRELLAART kontaktieren",
+  },
+  fr: {
+    title: "Commander du mobilier de luxe à Istanbul : guide complet",
+    description:
+      "Guide pratique pour choisir du mobilier de luxe sur commande à Istanbul, demander un devis écrit et organiser une livraison vers la France ou l’étranger.",
+    imageAlt:
+      "Mobilier de salon de luxe VIRELLAART pour un projet d’intérieur international",
+    section: "Guides d’achat de mobilier international",
+    keywords: [
+      "mobilier de luxe Istanbul",
+      "commander des meubles en Turquie",
+      "mobilier de luxe France",
+      "meubles sur commande",
+      "VIRELLAART",
+    ],
+    home: "Accueil",
+    journal: "Journal",
+    breadcrumb: "Guide de commande internationale",
+    category: "Guide d’achat international",
+    intro:
+      "Commander du mobilier sur mesure depuis Istanbul devient plus simple lorsque la sélection, les mesures, le devis et la livraison sont traités dans le bon ordre. Ce guide présente les informations nécessaires à un échange clair avec VIRELLAART.",
+    published: "Publié le 25 août 2026",
+    readingTime: "7 minutes de lecture",
+    byline: "Par VIRELLAART",
+    contents: "Dans ce guide",
+    keyHeading: "La séquence de commande la plus sûre",
+    keyText:
+      "Sélectionnez un modèle et sa configuration, mesurez la pièce et tous les accès, indiquez la ville de destination puis vérifiez le devis écrit avant toute décision finale.",
+    opening: [
+      "L’achat international de mobilier ne se limite pas au style. Le modèle doit convenir à la pièce, pouvoir suivre le parcours de livraison et être encadré par un devis qui reprend clairement la configuration et la destination. Ces éléments forment un seul processus.",
+      "VIRELLAART présente des collections de mobilier sur commande depuis Istanbul. Les besoins du projet et les destinations variant d’un client à l’autre, une demande précise constitue le meilleur point de départ. Plus le brief est clair, plus la comparaison des options est pertinente.",
+    ],
+    sections: [
+      {
+        id: "choose",
+        heading: "1. Choisir d’abord la pièce et la collection",
+        toc: "Choisir la collection",
+        paragraphs: [
+          "Commencez par l’espace à aménager. Consultez la catégorie correspondante et conservez le nom exact ou le lien des modèles adaptés à votre projet.",
+          "Déterminez ensuite si votre intérieur correspond davantage aux lignes maîtrisées de la Modern Collection ou au caractère plus décoratif de la Luxury Classic Collection. Une présélection de deux ou trois modèles crée une base d’échange plus efficace qu’une demande portant sur toutes les collections.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/living-rooms", label: "Salons de luxe" },
+          { href: "/dining-rooms", label: "Salles à manger de luxe" },
+          { href: "/bedrooms", label: "Chambres de luxe" },
+          { href: "/tv-units", label: "Meubles TV de luxe" },
+          { href: "/collections/modern", label: "Modern Collection" },
+          { href: "/collections/luxury-classic", label: "Luxury Classic Collection" },
+        ],
+      },
+      {
+        id: "measure",
+        heading: "2. Mesurer la pièce et l’ensemble du parcours d’accès",
+        toc: "Mesurer la pièce et les accès",
+        paragraphs: [
+          "Relevez la largeur et la profondeur réellement utilisables, et pas seulement la surface totale. Les portes, fenêtres, colonnes et zones de circulation réduisent l’espace disponible. Un plan est utile, tandis que des photographies claires peuvent révéler d’autres contraintes.",
+          "Mesurez ensuite le trajet depuis l’entrée du bâtiment jusqu’à la pièce : portes extérieures et intérieures, couloirs, virages, escaliers et ouverture de l’ascenseur le cas échéant. Signalez dès le départ tout passage étroit ou toute condition d’accès particulière.",
+        ],
+        bullets: [],
+        links: [
+          {
+            href: "/blog/how-to-measure-your-room-for-luxury-furniture",
+            label: "Guide pour mesurer une pièce avant de choisir du mobilier",
+          },
+        ],
+      },
+      {
+        id: "brief",
+        heading: "3. Préparer une demande de devis utile",
+        toc: "Préparer la demande",
+        paragraphs: [
+          "Un premier message précis permet à l’équipe d’étudier la bonne collection et le contexte de livraison. Communiquez les éléments ci-dessous au lieu de vous appuyer uniquement sur une image d’inspiration.",
+          "Lorsqu’un prix figure sur la page produit, utilisez-le comme référence pour la configuration présentée. Toute autre composition, personnalisation ou destination doit être confirmée par écrit et non déduite d’une photographie.",
+        ],
+        bullets: [
+          "Nom exact du produit ou de la collection avec son lien",
+          "Éléments et configuration envisagés",
+          "Pays et ville de livraison",
+          "Dimensions de la pièce et mesures d’accès utiles",
+          "Photographies ou plan lorsqu’ils expliquent l’espace",
+          "Demande de personnalisation à faire étudier",
+        ],
+        links: [],
+      },
+      {
+        id: "quotation",
+        heading: "4. Examiner attentivement le devis écrit",
+        toc: "Vérifier le devis",
+        paragraphs: [
+          "Vérifiez que le devis identifie les produits choisis et le périmètre convenu. La configuration, le prix actuel, les adaptations étudiées, l’emballage et la planification liée à la destination doivent être compréhensibles avant confirmation.",
+          "Ne supposez pas qu’un accessoire visible sur une photographie d’ambiance est inclus. Comparez la liste écrite avec votre sélection et demandez les précisions nécessaires pendant l’examen du devis.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "delivery",
+        heading: "5. Planifier la livraison selon la destination",
+        toc: "Planifier la livraison",
+        paragraphs: [
+          "Le coût, la disponibilité, le calendrier et les exigences de livraison peuvent varier selon la ville, le volume de la commande, l’accès au bâtiment et les règles en vigueur. Indiquez la destination complète dès le début et référez-vous au devis écrit actuel.",
+          "Avant confirmation, vérifiez le périmètre de livraison indiqué et les éventuelles démarches à organiser séparément à destination. Les règles d’importation, de fiscalité ou d’accès aux bâtiments pouvant évoluer, elles doivent être contrôlées pour la situation concernée.",
+        ],
+        bullets: [],
+        links: [],
+      },
+      {
+        id: "markets",
+        heading: "6. Continuer avec le guide de votre marché",
+        toc: "Consulter le guide pays",
+        paragraphs: [
+          "Des informations spécifiques sont disponibles pour plusieurs destinations prioritaires. Choisissez la page correspondant à votre projet et à votre lieu de livraison.",
+        ],
+        bullets: [],
+        links: [
+          { href: "/fr/markets/france", label: "Mobilier de luxe pour la France", fixed: true },
+          { href: "/fr/markets/switzerland", label: "Mobilier de luxe pour la Suisse", fixed: true },
+          { href: "/markets/united-kingdom", label: "Guide d’achat pour le Royaume-Uni", fixed: true },
+          { href: "/markets/united-states", label: "Guide d’achat pour les États-Unis", fixed: true },
+          { href: "/de/markets/germany", label: "Guide d’achat pour l’Allemagne", fixed: true },
+        ],
+      },
+    ],
+    checklistHeading: "7. Liste de contrôle avant confirmation",
+    checklistToc: "Liste de contrôle finale",
+    checklist: [
+      "J’ai enregistré les liens exacts des modèles et les éléments choisis.",
+      "J’ai mesuré la pièce et l’ensemble du parcours d’accès.",
+      "J’ai communiqué le pays, la ville et les conditions d’accès.",
+      "J’ai vérifié la liste des produits et le périmètre du devis.",
+      "J’ai examiné les informations de livraison et les règles actuelles à destination.",
+    ],
+    conclusionEyebrow: "Un premier échange plus clair",
+    conclusionHeading: "Transformer l’inspiration en demande précise",
+    conclusionText:
+      "Choisissez le modèle adapté à votre espace, rassemblez les mesures utiles à la livraison et transmettez-les avec les informations de destination. L’équipe VIRELLAART disposera ainsi du contexte nécessaire pour préparer un devis pertinent.",
+    primaryCta: "Découvrir les salons",
+    secondaryCta: "Contacter VIRELLAART",
+  },
+} as const;
+
+const isTranslatedLanguage =
+  language === "en" || language === "de" || language === "fr";
+const contentLanguage = isTranslatedLanguage ? language : "en";
+const copy = guideCopy[contentLanguage];
+const title = copy.title;
+const description = copy.description;
+const wordCount = JSON.stringify(copy)
+  .replace(/[{}[\]",:]/g, " ")
+  .split(/\s+/)
+  .filter(Boolean).length;
 const alternateURLs = [
   {
     language: "en",
     href: englishArticleURL,
+  },
+  {
+    language: "de",
+    href: "https://www.virellaart.com/de/blog/how-to-order-luxury-furniture-from-istanbul/",
+  },
+  {
+    language: "fr",
+    href: "https://www.virellaart.com/fr/blog/how-to-order-luxury-furniture-from-istanbul/",
   },
 ];
 ---
@@ -26,28 +460,22 @@ const alternateURLs = [
   {title}
   {description}
   image="/living-room.webp"
-  imageAlt="VIRELLAART luxury living room furniture for an international interior project"
+  imageAlt={copy.imageAlt}
   {publishedTime}
-  modifiedTime={publishedTime}
-  section="International Furniture Buying Guides"
-  keywords={[
-    "luxury furniture Istanbul",
-    "order furniture from Turkey",
-    "international furniture order",
-    "made-to-order furniture",
-    "VIRELLAART",
-  ]}
+  modifiedTime="2026-08-26T00:00:00+03:00"
+  section={copy.section}
+  keywords={[...copy.keywords]}
   readingTimeMinutes={7}
-  wordCount={859}
-  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  {wordCount}
+  robots={isTranslatedLanguage ? "index, follow" : "noindex, follow"}
   alternateURLs={alternateURLs}
   switcherFallbackToLocalizedPath
   xDefaultURL={englishArticleURL}
-  includeCanonical={isEnglish}
+  includeCanonical={isTranslatedLanguage}
 >
   <article class="article">
     {
-      !isEnglish && (
+      !isTranslatedLanguage && (
         <aside class="language-notice">
           <strong>English edition</strong>
           <p>
@@ -63,25 +491,20 @@ const alternateURLs = [
     <header class="article-hero">
       <div class="article-shell narrow">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href={localizedPath("/", language)}>Home</a>
+          <a href={localizedPath("/", language)}>{copy.home}</a>
           <span aria-hidden="true">/</span>
-          <a href={localizedPath("/blog", language)}>Journal</a>
+          <a href={localizedPath("/blog", language)}>{copy.journal}</a>
           <span aria-hidden="true">/</span>
-          <span>International Ordering Guide</span>
+          <span>{copy.breadcrumb}</span>
         </nav>
 
-        <p class="article-category">International Buying Guide</p>
-        <h1>How to Order Luxury Furniture from Istanbul</h1>
-        <p class="article-intro">
-          Ordering made-to-order furniture for another country becomes
-          much easier when product selection, measurements, quotation and
-          delivery planning happen in the right order. This guide gives you
-          a practical framework for a clear conversation with VIRELLAART.
-        </p>
+        <p class="article-category">{copy.category}</p>
+        <h1>{copy.title}</h1>
+        <p class="article-intro">{copy.intro}</p>
         <div class="article-meta">
-          <span>Published August 25, 2026</span>
-          <span>7 minute read</span>
-          <span>By VIRELLAART</span>
+          <span>{copy.published}</span>
+          <span>{copy.readingTime}</span>
+          <span>{copy.byline}</span>
         </div>
       </div>
     </header>
@@ -89,7 +512,7 @@ const alternateURLs = [
     <figure class="hero-image">
       <img
         src="/living-room.webp"
-        alt="VIRELLAART luxury living room furniture for an international interior project"
+        alt={copy.imageAlt}
         width="1600"
         height="900"
         loading="eager"
@@ -99,169 +522,64 @@ const alternateURLs = [
 
     <div class="article-shell article-grid">
       <aside class="contents">
-        <p>In this guide</p>
+        <p>{copy.contents}</p>
         <ol>
-          <li><a href="#choose">Choose the right collection</a></li>
-          <li><a href="#measure">Measure room and access</a></li>
-          <li><a href="#brief">Prepare your request</a></li>
-          <li><a href="#quotation">Review the quotation</a></li>
-          <li><a href="#delivery">Plan international delivery</a></li>
-          <li><a href="#markets">Use your market guide</a></li>
-          <li><a href="#checklist">Final checklist</a></li>
+          {copy.sections.map((section) => (
+            <li><a href={`#${section.id}`}>{section.toc}</a></li>
+          ))}
+          <li><a href="#checklist">{copy.checklistToc}</a></li>
         </ol>
       </aside>
 
       <div class="article-body">
         <section class="key-points">
-          <h2>The safest ordering sequence</h2>
-          <p>
-            Select a model, confirm its intended configuration, measure the
-            room and every access point, share the destination city and then
-            review a written quotation before making a final decision.
-          </p>
+          <h2>{copy.keyHeading}</h2>
+          <p>{copy.keyText}</p>
         </section>
 
-        <p>
-          International furniture buying is not only a design decision. The
-          chosen model must suit the room, pass through the delivery route and
-          be supported by a quotation that clearly reflects the selected
-          configuration and destination. Treat those points as one connected
-          process rather than separate conversations.
-        </p>
+        {copy.opening.map((paragraph) => <p>{paragraph}</p>)}
 
-        <p>
-          VIRELLAART presents made-to-order furniture collections from
-          Istanbul. Because project requirements and destinations differ, the
-          most useful first step is a precise request—not a vague question
-          about a complete interior. The clearer your brief, the easier it is
-          to compare the available options responsibly.
-        </p>
+        {copy.sections.map((section) => (
+          <section class="guide-section">
+            <h2 id={section.id}>{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets.length > 0 && (
+              <ul>
+                {section.bullets.map((item) => <li>{item}</li>)}
+              </ul>
+            )}
+            {section.links.length > 0 && (
+              <div class="editorial-link">
+                <ul>
+                  {section.links.map((link) => (
+                    <li>
+                      <a href={"fixed" in link && link.fixed
+                        ? link.href
+                        : localizedPath(link.href, contentLanguage)}>
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        ))}
 
-        <h2 id="choose">1. Choose the room and collection first</h2>
-        <p>
-          Begin with the space you are furnishing. Browse the
-          {" "}<a href={localizedPath("/living-rooms", language)}>living room</a>,
-          {" "}<a href={localizedPath("/dining-rooms", language)}>dining room</a>,
-          {" "}<a href={localizedPath("/bedrooms", language)}>bedroom</a> or
-          {" "}<a href={localizedPath("/tv-units", language)}>TV unit</a>{" "}
-          categories and save the exact model names or page links that fit
-          your project.
-        </p>
-        <p>
-          Next, decide whether the interior direction is closer to the
-          disciplined forms of the
-          {" "}<a href={localizedPath("/collections/modern", language)}>Modern Collection</a>
-          {" "}or the more decorative character of the
-          {" "}<a href={localizedPath("/collections/luxury-classic", language)}>Luxury Classic Collection</a>.
-          A short list of two or three relevant models creates a more focused
-          starting point than requesting every option at once.
-        </p>
-        <div class="editorial-link">
-          <p>
-            If you are still comparing proportions, use the
-            {" "}<a href={localizedPath("/blog/how-to-measure-your-room-for-luxury-furniture", language)}>room measurement guide</a>
-            {" "}before deciding which model best suits the space.
-          </p>
-        </div>
-
-        <h2 id="measure">2. Measure the room and the complete access route</h2>
-        <p>
-          Record the usable room width and depth, not only the total floor
-          area. Note fixed elements such as doors, windows, columns and the
-          circulation paths that must remain open. A floor plan is helpful,
-          but clear photographs can also reveal constraints that numbers do
-          not explain on their own.
-        </p>
-        <p>
-          Then measure the route from the building entrance to the final
-          room: external and internal doors, corridors, turns, stairways and
-          lift openings where relevant. Mention any narrow access, restricted
-          entry or unusual site condition at the beginning of the discussion.
-          A model that fits the room must also have a realistic path into it.
-        </p>
-
-        <h2 id="brief">3. Prepare a useful quotation request</h2>
-        <p>A practical first message should include:</p>
-        <ul>
-          <li>the exact product or collection name and page link;</li>
-          <li>the pieces and configuration you are considering;</li>
-          <li>your delivery country and city;</li>
-          <li>room dimensions and relevant access measurements;</li>
-          <li>photographs or a plan when they clarify the space;</li>
-          <li>any customization request you want evaluated.</li>
-        </ul>
-        <p>
-          Where a product page displays a price, use it as the reference for
-          the configuration shown on that page. A request involving different
-          pieces, customization or another delivery destination should be
-          confirmed in writing rather than inferred from a visual reference.
-        </p>
-
-        <h2 id="quotation">4. Review the written quotation carefully</h2>
-        <p>
-          Check that the quotation identifies the selected products and the
-          agreed scope. Product configuration, current price, any evaluated
-          customization, packaging and destination-specific delivery planning
-          should be clear before the order is confirmed.
-        </p>
-        <p>
-          Do not assume that an item mentioned in an early conversation is
-          included in the final scope. If a room image contains accessories or
-          several coordinated pieces, compare the written list with your own
-          selection. Ask for clarification while the quotation is being
-          reviewed, when changes are easiest to document.
-        </p>
-
-        <h2 id="delivery">5. Plan international delivery by destination</h2>
-        <p>
-          Delivery cost, availability, timing and destination requirements can
-          vary by city, order size, access conditions and current rules. Share
-          the full destination early and rely on the current written quotation
-          for the applicable plan. Avoid treating a general estimate for one
-          country or project as a promise for another.
-        </p>
-        <p>
-          Before confirmation, make sure you understand the stated delivery
-          scope and which destination-side steps, if any, require separate
-          arrangements. Local import, tax or building-access requirements may
-          change, so verify the rules that apply to your destination and
-          circumstances at the time of ordering.
-        </p>
-
-        <h2 id="markets">6. Continue with the guide for your market</h2>
-        <p>
-          VIRELLAART has dedicated buyer information for several priority
-          destinations. Continue with the most relevant page for your project:
-        </p>
-        <ul class="market-links">
-          <li><a href="/markets/united-states/">United States furniture buying guide</a></li>
-          <li><a href="/markets/united-kingdom/">United Kingdom furniture buying guide</a></li>
-          <li><a href="/de/markets/germany/">Germany furniture buying guide</a></li>
-          <li><a href="/fr/markets/france/">France furniture buying guide</a></li>
-          <li><a href="/markets/switzerland/">Switzerland furniture buying guide</a></li>
-        </ul>
-
-        <h2 id="checklist">7. Final checklist before confirmation</h2>
+        <h2 id="checklist">{copy.checklistHeading}</h2>
         <div class="checklist">
-          <label><input type="checkbox" disabled /> <span>I saved the exact model links and selected pieces.</span></label>
-          <label><input type="checkbox" disabled /> <span>I measured the room and the complete access route.</span></label>
-          <label><input type="checkbox" disabled /> <span>I shared the delivery country, city and access conditions.</span></label>
-          <label><input type="checkbox" disabled /> <span>I checked the product list and scope in the written quotation.</span></label>
-          <label><input type="checkbox" disabled /> <span>I reviewed destination-specific delivery information and current local requirements.</span></label>
+          {copy.checklist.map((item) => (
+            <label><input type="checkbox" disabled /> <span>{item}</span></label>
+          ))}
         </div>
 
         <section class="conclusion">
-          <p class="article-category">A clearer first conversation</p>
-          <h2>Turn inspiration into a precise request</h2>
-          <p>
-            Choose the model that fits your space, collect the measurements
-            that affect delivery and send the destination details together.
-            That gives the VIRELLAART team the context needed to prepare a
-            relevant quotation for your project.
-          </p>
+          <p class="article-category">{copy.conclusionEyebrow}</p>
+          <h2>{copy.conclusionHeading}</h2>
+          <p>{copy.conclusionText}</p>
           <div class="cta-links">
-            <a class="primary-cta" href={localizedPath("/living-rooms", language)}>Explore living rooms</a>
-            <a class="secondary-cta" href={localizedPath("/contact", language)}>Contact VIRELLAART</a>
+            <a class="primary-cta" href={localizedPath("/living-rooms", language)}>{copy.primaryCta}</a>
+            <a class="secondary-cta" href={localizedPath("/contact", language)}>{copy.secondaryCta}</a>
           </div>
         </section>
       </div>
@@ -294,6 +612,7 @@ const alternateURLs = [
   .contents a { color: #5f5249; }
   .article-body { font: 18px/1.9 Georgia, "Times New Roman", serif; }
   .article-body > p { margin: 0 0 27px; color: #574b43; }
+  .guide-section > p { margin: 0 0 27px; color: #574b43; }
   .article-body h2 { scroll-margin-top: 120px; margin: 72px 0 22px; color: #241a15; font-size: clamp(31px, 4vw, 43px); font-weight: 400; line-height: 1.2; }
   .article-body ul { margin: 10px 0 32px; padding-left: 25px; color: #574b43; }
   .article-body li { margin: 9px 0; }
@@ -303,6 +622,7 @@ const alternateURLs = [
   .key-points p { margin: 0; color: #594a40; }
   .editorial-link { margin: 42px 0; padding: 26px 30px; border: 1px solid rgba(126,89,37,.25); background: #fffdf9; }
   .editorial-link p { margin: 0; color: #5a4b41; }
+  .editorial-link ul { margin: 0; }
   .checklist { display: grid; gap: 11px; margin: 30px 0 55px; padding: 30px; background: #ece4d9; }
   .checklist label { display: grid; grid-template-columns: 22px 1fr; gap: 10px; color: #51463e; font: 16px/1.55 Arial, sans-serif; }
   .checklist input { margin-top: 5px; }

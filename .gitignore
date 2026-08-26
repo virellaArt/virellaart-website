@@ -39,3 +39,7 @@ public/incoming/
 
 # generated Pinterest catalog audit report
 .pinterest-catalog-report/
+
+# local Search Console exports and generated SEO intelligence
+VIRELLAART-SEO-DATA/
+.seo-reports/

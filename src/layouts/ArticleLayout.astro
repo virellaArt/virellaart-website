@@ -57,6 +57,75 @@ const {
 
 const siteURL = "https://www.virellaart.com";
 const language = getLanguageFromPath(Astro.url.pathname);
+const articleUICopy = {
+  en: {
+    home: "Home",
+    journal: "Journal",
+    eyebrow: "From guide to quotation",
+    heading: "Ready to compare a real VIRELLAART model?",
+    text:
+      "Continue with the relevant collection, then send the model together with your delivery country and city. Your WhatsApp request will include this guide so the conversation keeps its context.",
+    primary: "Get Price & Delivery Quote",
+    collections: "Explore VIRELLAART Collections",
+    bedrooms: "Explore Bedroom Collections",
+    dining: "Explore Dining Room Collections",
+    tvUnits: "Explore TV Unit Collections",
+    livingRooms: "Explore Living Room Collections",
+    quoteGreeting:
+      "Hello VIRELLAART, I am reading this buying guide:",
+    quoteRequest:
+      "I would like a product and delivery quotation.",
+    quoteModel: "Preferred model or collection:",
+    quoteCountry: "Delivery country:",
+    quoteCity: "Delivery city:",
+  },
+  de: {
+    home: "Startseite",
+    journal: "Journal",
+    eyebrow: "Vom Ratgeber zum Angebot",
+    heading: "Möchten Sie ein konkretes VIRELLAART Modell vergleichen?",
+    text:
+      "Öffnen Sie die passende Kollektion und senden Sie anschließend das Modell zusammen mit Lieferland und Lieferort. Der Ratgeber wird in Ihrer WhatsApp-Anfrage vermerkt, damit der Zusammenhang erhalten bleibt.",
+    primary: "Preis- und Lieferangebot anfragen",
+    collections: "VIRELLAART Kollektionen entdecken",
+    bedrooms: "Schlafzimmer entdecken",
+    dining: "Esszimmer entdecken",
+    tvUnits: "TV-Möbel entdecken",
+    livingRooms: "Wohnzimmer entdecken",
+    quoteGreeting:
+      "Hallo VIRELLAART, ich lese gerade diesen Kaufratgeber:",
+    quoteRequest:
+      "Ich möchte ein Produkt- und Lieferangebot erhalten.",
+    quoteModel: "Bevorzugtes Modell oder Kollektion:",
+    quoteCountry: "Lieferland:",
+    quoteCity: "Lieferort:",
+  },
+  fr: {
+    home: "Accueil",
+    journal: "Journal",
+    eyebrow: "Du guide au devis",
+    heading: "Prêt à comparer un modèle VIRELLAART précis ?",
+    text:
+      "Consultez la collection adaptée, puis transmettez le modèle avec le pays et la ville de livraison. Votre demande WhatsApp mentionnera ce guide afin de conserver le contexte.",
+    primary: "Demander un devis produit et livraison",
+    collections: "Découvrir les collections VIRELLAART",
+    bedrooms: "Découvrir les chambres",
+    dining: "Découvrir les salles à manger",
+    tvUnits: "Découvrir les meubles TV",
+    livingRooms: "Découvrir les salons",
+    quoteGreeting:
+      "Bonjour VIRELLAART, je consulte ce guide d’achat :",
+    quoteRequest:
+      "Je souhaite recevoir un devis produit et livraison.",
+    quoteModel: "Modèle ou collection souhaité :",
+    quoteCountry: "Pays de livraison :",
+    quoteCity: "Ville de livraison :",
+  },
+} as const;
+const articleUI =
+  language === "de" || language === "fr"
+    ? articleUICopy[language]
+    : articleUICopy.en;
 
 const canonicalPath =
   Astro.url.pathname.replace(/\/?$/, "/");
@@ -84,24 +153,24 @@ const commercialPath = articleIntent.includes("bedroom") || articleIntent.includ
         : "/collections/luxury-classic";
 
 const commercialLabel = commercialPath === "/bedrooms"
-  ? "Explore Bedroom Collections"
+  ? articleUI.bedrooms
   : commercialPath === "/dining-rooms"
-    ? "Explore Dining Room Collections"
+    ? articleUI.dining
     : commercialPath === "/tv-units"
-      ? "Explore TV Unit Collections"
+      ? articleUI.tvUnits
       : commercialPath === "/living-rooms"
-        ? "Explore Living Room Collections"
-        : "Explore VIRELLAART Collections";
+        ? articleUI.livingRooms
+        : articleUI.collections;
 
 const commercialURL = localizedPath(commercialPath, language);
 const quotationMessage = [
-  "Hello VIRELLAART, I am reading this buying guide:",
+  articleUI.quoteGreeting,
   title,
   `Page: ${canonicalURL}`,
-  "I would like a product and delivery quotation.",
-  "Preferred model or collection:",
-  "Delivery country:",
-  "Delivery city:",
+  articleUI.quoteRequest,
+  articleUI.quoteModel,
+  articleUI.quoteCountry,
+  articleUI.quoteCity,
 ].join("\n");
 const quotationURL = `https://wa.me/905539478608?text=${encodeURIComponent(quotationMessage)}`;
 
@@ -159,7 +228,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 1,
-      name: "Home",
+      name: articleUI.home,
       item: new URL(
         localizedPath("/", language),
         siteURL,
@@ -168,7 +237,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Journal",
+      name: articleUI.journal,
       item: new URL(
         localizedPath("/blog", language),
         siteURL,
@@ -271,11 +340,9 @@ const faqSchema =
 
   <section class="article-commercial-bridge" aria-labelledby="article-commercial-title">
     <div class="article-commercial-shell">
-      <p class="article-commercial-eyebrow">From guide to quotation</p>
-      <h2 id="article-commercial-title">Ready to compare a real VIRELLAART model?</h2>
-      <p>
-        Continue with the relevant collection, then send the model together with your delivery country and city. Your WhatsApp request will include this guide so the conversation keeps its context.
-      </p>
+      <p class="article-commercial-eyebrow">{articleUI.eyebrow}</p>
+      <h2 id="article-commercial-title">{articleUI.heading}</h2>
+      <p>{articleUI.text}</p>
       <div class="article-commercial-actions">
         <a class="article-commercial-secondary" href={commercialURL}>
           {commercialLabel}
@@ -287,7 +354,7 @@ const faqSchema =
           rel="noopener noreferrer"
           data-whatsapp-context="article-commercial-bridge"
         >
-          Get Price & Delivery Quote
+          {articleUI.primary}
         </a>
       </div>
     </div>

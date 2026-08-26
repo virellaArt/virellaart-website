@@ -13,6 +13,7 @@ import {
 
 import {
   indexableRoutes,
+  localizedBlogRouteLanguages,
   productRoutes,
 } from "../i18n/routes";
 
@@ -38,6 +39,7 @@ const staticRouteImages: Record<string, string[]> = {
   ],
   "about": ["/about-factory.webp"],
   "manufacturing": ["/about-factory.webp"],
+  "press": ["/living-room.webp"],
   "contact": ["/dining-room.webp"],
 };
 
@@ -81,9 +83,13 @@ export const GET = () => {
   const localizedUrls = indexableRoutes
     .flatMap((route) => {
       const routeLanguages =
-        route === "blog" || route.startsWith("blog/")
-          ? (["en"] as const)
-          : languageCodes;
+        route in localizedBlogRouteLanguages
+          ? localizedBlogRouteLanguages[
+              route as keyof typeof localizedBlogRouteLanguages
+            ]
+          : route === "press" || route === "blog" || route.startsWith("blog/")
+            ? (["en"] as const)
+            : languageCodes;
 
       return routeLanguages.map((language) => {
         const alternates = routeLanguages

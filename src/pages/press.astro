@@ -1,0 +1,263 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getLanguageFromPath,
+  localizedPath,
+} from "../i18n/config";
+
+const language = getLanguageFromPath(Astro.url.pathname);
+const isEnglish = language === "en";
+const canonicalURL = "https://www.virellaart.com/press/";
+const whatsappURL =
+  "https://wa.me/905539478608?text=" +
+  encodeURIComponent(
+    "Hello VIRELLAART, I am contacting you regarding a press, editorial or design-professional collaboration.\n\nOrganization / publication:\nProject or article:\nRequested collection or asset:\nCountry:",
+  );
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonicalURL}#webpage`,
+  name: "VIRELLAART Press & Design Professionals",
+  description:
+    "Verified VIRELLAART brand facts, editorial resources and contact information for press, interior designers and project professionals.",
+  url: canonicalURL,
+  inLanguage: "en",
+  isPartOf: {
+    "@id": "https://www.virellaart.com/#website",
+  },
+  about: {
+    "@id": "https://www.virellaart.com/#organization",
+  },
+};
+---
+
+<BaseLayout
+  title="Press & Design Professionals"
+  description="Verified VIRELLAART brand facts, editorial resources and contact information for press, interior designers and project professionals."
+  image="/living-room.webp"
+  imageAlt="VIRELLAART luxury living room collection for editorial and professional reference"
+  robots={isEnglish ? "index, follow" : "noindex, follow"}
+  alternateURLs={[{ language: "en", href: canonicalURL }]}
+  xDefaultURL={canonicalURL}
+  includeCanonical={isEnglish}
+  switcherFallbackToLocalizedPath
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(webPageSchema)}
+    />
+  </Fragment>
+
+  <main class="press-page">
+    {
+      !isEnglish && (
+        <aside class="language-notice">
+          <strong>English media information</strong>
+          <p>
+            The verified press information is currently available in
+            English. This localized route remains excluded from indexing.
+          </p>
+          <a href={canonicalURL}>Open the English press page</a>
+        </aside>
+      )
+    }
+
+    <header class="press-hero">
+      <div class="press-shell">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={localizedPath("/", language)}>Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Press & Design Professionals</span>
+        </nav>
+        <p class="eyebrow">VIRELLAART Editorial Desk</p>
+        <h1>Press, Editorial & Design Professional Resources</h1>
+        <p class="hero-copy">
+          A verified reference point for editors, interior designers,
+          architects and project professionals who want to feature or
+          specify a VIRELLAART collection.
+        </p>
+        <div class="hero-actions">
+          <a class="primary" href={whatsappURL} target="_blank" rel="noopener noreferrer" data-whatsapp-context="press-hero">
+            Request official assets
+          </a>
+          <a href="#brand-facts">View verified brand facts</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="brand-facts" class="section light">
+      <div class="press-shell split">
+        <div>
+          <p class="eyebrow dark">Verified brand facts</p>
+          <h2>A clear source for accurate editorial coverage</h2>
+        </div>
+        <dl class="facts">
+          <div><dt>Brand</dt><dd>VIRELLAART</dd></div>
+          <div><dt>Location</dt><dd>Istanbul, Türkiye</dd></div>
+          <div><dt>Focus</dt><dd>Luxury furniture collections for residential interiors and design projects</dd></div>
+          <div><dt>Categories</dt><dd>Living rooms, dining rooms, bedrooms and TV units</dd></div>
+          <div><dt>Ordering model</dt><dd>Product selection followed by a written quotation and destination-specific delivery review</dd></div>
+          <div><dt>Official website</dt><dd>www.virellaart.com</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="press-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Editorial use</p>
+          <h2>Protect the product. Preserve the source.</h2>
+          <p>
+            Official collection images may be requested for relevant
+            editorial or professional use. Furniture geometry, proportions,
+            colour, upholstery character and craftsmanship details must not
+            be digitally redesigned or misrepresented.
+          </p>
+        </div>
+        <div class="principles">
+          <article>
+            <span>01</span>
+            <h3>Use the official model name</h3>
+            <p>Reference the exact collection or product page supplied by VIRELLAART.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Credit the source</h3>
+            <p>Credit VIRELLAART and link to the relevant official page when published online.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Do not alter the furniture</h3>
+            <p>Editorial cropping is acceptable when it does not change or conceal the product design.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Confirm commercial details</h3>
+            <p>Use the current product page or written confirmation for prices, scope and delivery information.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="press-shell">
+        <div class="section-heading dark-text">
+          <p class="eyebrow dark">Professional resources</p>
+          <h2>Start with the source most relevant to your work</h2>
+        </div>
+        <div class="resource-grid">
+          <a href="/collections/luxury-classic/">
+            <strong>Luxury Classic Collection</strong>
+            <span>View coordinated statement collections</span>
+          </a>
+          <a href="/collections/modern/">
+            <strong>Modern Collection</strong>
+            <span>View contemporary VIRELLAART models</span>
+          </a>
+          <a href="/blog/how-to-order-luxury-furniture-from-istanbul/">
+            <strong>International Ordering Guide</strong>
+            <span>Understand selection, quotation and delivery planning</span>
+          </a>
+          <a href="/blog/how-to-measure-your-room-for-luxury-furniture/">
+            <strong>Room Measurement Guide</strong>
+            <span>Prepare room and access information</span>
+          </a>
+          <a href="/about/">
+            <strong>About VIRELLAART</strong>
+            <span>Read the official brand introduction</span>
+          </a>
+          <a href="/contact/">
+            <strong>Contact</strong>
+            <span>Request product or project information</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section submissions">
+      <div class="press-shell split">
+        <div>
+          <p class="eyebrow">Project publication standard</p>
+          <h2>Real projects only—never manufactured case studies</h2>
+          <p>
+            A project can be considered for publication when the collection,
+            destination, project context and image-use permission can be
+            verified. Client names or private addresses are not required for
+            a public feature.
+          </p>
+        </div>
+        <ul>
+          <li>Exact VIRELLAART model or collection</li>
+          <li>City and country, without a private street address</li>
+          <li>Verified project or installation photographs</li>
+          <li>Permission from the image rights holder</li>
+          <li>Designer or studio credit when applicable</li>
+          <li>One factual project objective or design challenge</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="press-cta">
+      <div class="press-shell">
+        <p class="eyebrow">Press & professional enquiries</p>
+        <h2>Request the correct collection assets and facts</h2>
+        <p>
+          Include your publication or organization, the intended article or
+          project, the collection requested and the country of use.
+        </p>
+        <a href={whatsappURL} target="_blank" rel="noopener noreferrer" data-whatsapp-context="press-footer">
+          Contact the VIRELLAART editorial desk
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .press-page { background: #f4efe8; color: #211915; }
+  .press-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+  .language-notice { width: min(1180px, calc(100% - 40px)); margin: 100px auto 0; padding: 22px 25px; border: 1px solid rgba(139,101,42,.25); background: #fffaf1; }
+  .language-notice p { margin: 7px 0; color: #65584f; }
+  .language-notice a { color: #76521d; font-weight: 700; }
+  .press-hero { min-height: 78vh; display: grid; align-items: end; padding: 165px 0 90px; color: #fff; background: linear-gradient(90deg, rgba(10,7,5,.95), rgba(10,7,5,.45)), url("/living-room.webp") center/cover; }
+  .breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 46px; color: rgba(255,255,255,.58); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .breadcrumbs a { color: rgba(255,255,255,.8); }
+  .eyebrow { margin: 0 0 16px; color: #d4b06a; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  .eyebrow.dark { color: #7d5923; }
+  .press-hero h1 { max-width: 900px; margin: 0; font: 400 clamp(46px, 7vw, 84px)/1.03 Georgia, "Times New Roman", serif; }
+  .hero-copy { max-width: 760px; margin: 28px 0 0; color: rgba(255,255,255,.8); font-size: clamp(18px, 2vw, 22px); line-height: 1.7; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .hero-actions a, .press-cta a { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; padding: 13px 21px; border: 1px solid rgba(255,255,255,.38); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .hero-actions .primary, .press-cta a { border-color: #c9a45d; background: #c9a45d; color: #17100c; }
+  .section { padding: 105px 0; }
+  .section.light { background: #f4efe8; }
+  .section.dark { background: #15100d; color: #fff; }
+  .split { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(45px, 8vw, 110px); align-items: start; }
+  .section h2, .press-cta h2 { margin: 0; font: 400 clamp(34px, 5vw, 57px)/1.08 Georgia, "Times New Roman", serif; }
+  .facts { margin: 0; display: grid; }
+  .facts div { display: grid; grid-template-columns: 145px 1fr; gap: 25px; padding: 21px 0; border-top: 1px solid rgba(61,43,31,.18); }
+  .facts div:last-child { border-bottom: 1px solid rgba(61,43,31,.18); }
+  .facts dt { color: #7d5923; font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+  .facts dd { margin: 0; color: #4e423a; line-height: 1.6; }
+  .section-heading { max-width: 780px; margin-bottom: 50px; }
+  .section-heading > p:not(.eyebrow) { color: rgba(255,255,255,.72); line-height: 1.75; }
+  .section-heading.dark-text > p { color: #7d5923; }
+  .principles, .resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .principles article { padding: 34px; border: 1px solid rgba(201,164,93,.25); background: rgba(255,255,255,.025); }
+  .principles span { color: #d4b06a; font-size: 11px; }
+  .principles h3 { margin: 20px 0 12px; font: 400 25px/1.2 Georgia, "Times New Roman", serif; }
+  .principles p { margin: 0; color: rgba(255,255,255,.68); line-height: 1.7; }
+  .resource-grid a { display: grid; gap: 10px; padding: 28px; border: 1px solid rgba(96,67,43,.22); background: #fffdf9; color: #2d211a; }
+  .resource-grid strong { font: 400 23px/1.2 Georgia, "Times New Roman", serif; }
+  .resource-grid span { color: #6b5b50; line-height: 1.5; }
+  .submissions { background: #211813; color: #fff; }
+  .submissions p:not(.eyebrow), .submissions li { color: rgba(255,255,255,.72); line-height: 1.75; }
+  .submissions ul { margin: 0; padding: 25px 30px 25px 48px; border: 1px solid rgba(201,164,93,.28); }
+  .submissions li { margin: 9px 0; }
+  .press-cta { padding: 105px 0; text-align: center; color: #fff; background: #0d0907; }
+  .press-cta h2 { max-width: 800px; margin: 0 auto; }
+  .press-cta p:not(.eyebrow) { max-width: 680px; margin: 22px auto 30px; color: rgba(255,255,255,.7); line-height: 1.7; }
+  @media (max-width: 760px) { .split, .principles, .resource-grid { grid-template-columns: 1fr; } .press-hero { min-height: 82vh; padding: 135px 0 65px; } .section, .press-cta { padding: 75px 0; } .facts div { grid-template-columns: 1fr; gap: 8px; } }
+</style>
