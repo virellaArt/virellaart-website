@@ -21,7 +21,7 @@ const isHomePage =
 const homeQuotePrompts: Record<string, string> = {
   en: "Please send:\n• Collection or model:\n• Delivery country:\n• Delivery city:\n• Preferred configuration / pieces:",
   tr: "Lütfen gönderin:\n• Koleksiyon veya model:\n• Teslimat ülkesi:\n• Teslimat şehri:\n• İstenen takım / parçalar:",
-  de: "Bitte senden Sie:\n• Kollektion oder Modell:\n• Lieferland:\n• Lieferstadt:\n• Gewünschte Konfiguration / Teile:",
+  de: "Ich möchte den Liefer- und Zollpreis für ein Modell nach Deutschland erhalten.\n• Modell oder Produktlink:\n• Lieferstadt / PLZ:",
   fr: "Merci d’indiquer :\n• Collection ou modèle :\n• Pays de livraison :\n• Ville de livraison :\n• Configuration / pièces souhaitées :",
   it: "Invia per favore:\n• Collezione o modello:\n• Paese di consegna:\n• Città di consegna:\n• Configurazione / pezzi desiderati:",
   ru: "Пожалуйста, укажите:\n• Коллекция или модель:\n• Страна доставки:\n• Город доставки:\n• Нужная комплектация / предметы:",
@@ -179,6 +179,9 @@ const whatsappURL =
       const quoteBuilder = document.querySelector(
         "[data-quote-builder]",
       );
+      const quickProductQuote = document.querySelector(
+        "[data-quick-product-quote]",
+      );
       const categoryTarget =
         document.querySelector(
           "[data-collection-catalog] [data-catalog-grid]",
@@ -227,24 +230,6 @@ const whatsappURL =
         trackFunnel(step);
       };
 
-      const handleProductFunnel = (event) => {
-        if (!(quoteBuilder instanceof HTMLElement)) return;
-
-        event.preventDefault();
-        event.stopPropagation();
-        moveTo(quoteBuilder, "product_quote_builder");
-
-        const country = document.querySelector("#quoteCountry");
-        if (
-          country instanceof HTMLInputElement &&
-          country.value.trim() === ""
-        ) {
-          requestAnimationFrame(() => {
-            country.focus({ preventScroll: true });
-          });
-        }
-      };
-
       const handleCategoryFunnel = (event) => {
         if (!(categoryTarget instanceof HTMLElement)) return;
 
@@ -254,8 +239,36 @@ const whatsappURL =
       };
 
       if (quoteBuilder instanceof HTMLElement) {
-        button.dataset.funnelMode = "product-quote";
-        button.addEventListener("click", handleProductFunnel);
+        button.dataset.funnelMode = "product-whatsapp-direct";
+
+        if (quickProductQuote instanceof HTMLAnchorElement) {
+          const syncQuickProductQuote = () => {
+            button.href = quickProductQuote.href;
+            button.dataset.whatsappContext = "floating-product-quick";
+            button.dataset.product = quickProductQuote.dataset.product || "";
+            button.dataset.productCategory =
+              quickProductQuote.dataset.productCategory || "";
+            button.dataset.configuration =
+              quickProductQuote.dataset.configuration || "";
+            button.dataset.price = quickProductQuote.dataset.price || "";
+            button.dataset.pageUrl =
+              quickProductQuote.dataset.pageUrl || window.location.href;
+            button.dataset.quoteEngine = "product-quote-quick-v1";
+            button.setAttribute(
+              "aria-label",
+              quickProductQuote.textContent?.trim() || "WhatsApp",
+            );
+
+            const label = button.querySelector("span");
+            if (label instanceof HTMLElement) {
+              label.textContent =
+                quickProductQuote.textContent?.trim() || "WhatsApp";
+            }
+          };
+
+          syncQuickProductQuote();
+          button.addEventListener("click", syncQuickProductQuote);
+        }
       } else if (categoryTarget instanceof HTMLElement) {
         button.dataset.funnelMode = "category-products";
         button.addEventListener("click", handleCategoryFunnel);

@@ -248,9 +248,9 @@ export const marketPages: MarketPage[] = [
     collectionHeading: "Kollektionen für Residenzen und Projekte",
     collectionText:
       "Entdecken Sie vollständige Luxuskollektionen oder abgestimmte Einzelstücke für repräsentative Wohn- und Projektbereiche.",
-    cta: "Angebot für Deutschland anfragen",
+    cta: "Liefer- und Zollpreis per WhatsApp erhalten",
     ctaNote:
-      "Senden Sie Kollektion, Lieferort und Projektanforderungen für eine genaue Prüfung.",
+      "Senden Sie uns nur die gewünschte Kollektion und Ihre Stadt oder PLZ. Die persönliche Liefer- und Zollprüfung erhalten Sie direkt auf WhatsApp.",
     buyerGuide: {
       eyebrow: "Preis- und Lieferinformationen",
       heading: "VIRELLAART Möbel für Deutschland bestellen",

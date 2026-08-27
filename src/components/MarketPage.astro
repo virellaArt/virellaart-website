@@ -101,13 +101,23 @@ const canonicalURL = new URL(
   marketPagePath(market),
   "https://www.virellaart.com",
 ).href;
-const whatsappMessage = [
-  market.cta,
-  "",
-  market.ctaNote,
-  "",
-  canonicalURL,
-].join("\n");
+const whatsappMessage =
+  market.countryCode === "DE"
+    ? [
+        "Hallo VIRELLAART, ich möchte den Liefer- und Zollpreis nach Deutschland erhalten.",
+        "",
+        "Gewünschte Kollektion:",
+        "Lieferstadt / PLZ:",
+        "",
+        canonicalURL,
+      ].join("\n")
+    : [
+        market.cta,
+        "",
+        market.ctaNote,
+        "",
+        canonicalURL,
+      ].join("\n");
 const whatsappURL =
   `https://wa.me/905539478608?text=${encodeURIComponent(whatsappMessage)}`;
 const serviceSchema = {

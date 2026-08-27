@@ -88,6 +88,19 @@ for (const filePath of htmlFiles) {
       "urun teklif motoru etiketi eksik",
     ],
     [
+      countMatches(html, /\sdata-quick-product-quote(?:\s|>)/g) === 1,
+      "tek tik WhatsApp teklif baglantisi eksik veya yinelenmis",
+    ],
+    [
+      /data-quote-engine="product-quote-quick-v1"/.test(html),
+      "tek tik WhatsApp teklif motoru etiketi eksik",
+    ],
+    [
+      /product-whatsapp-direct/.test(html) &&
+        !/handleProductFunnel/.test(html),
+      "sabit WhatsApp dugmesi dogrudan WhatsApp akisini kullanmiyor",
+    ],
+    [
       /window\.gtag\("event", "view_item", productEvent\)/.test(html),
       "GA4 view_item olayi eksik",
     ],
