@@ -434,6 +434,33 @@ const salesPositioningChecks = [
   },
 ];
 
+const unverifiedLocalizedClaims = [
+  "Produttore diretto",
+  "Прямой производитель",
+  "المصنّع مباشرة",
+  "Директен производител",
+  "Producător direct",
+  "Άμεσος κατασκευαστής",
+  "Fabricante directo",
+  "Direktan proizvođač",
+  "Тікелей өндіруші",
+  "Bevosita ishlab chiqaruvchi",
+  "Fabricante direto",
+  "Bezpośredni producent",
+  "Produttore di Mobili di Lusso",
+  "Производитель Элитной Мебели",
+  "مُصنّع الأثاث الفاخر",
+  "Производител на Луксозни Мебели",
+  "Producător de Mobilier de Lux",
+  "Κατασκευαστής Πολυτελών Επίπλων",
+  "Fabricante de Muebles de Lujo",
+  "Произвођач Луксузног Намештаја",
+  "Сәнді Жиһаз Өндірушісі",
+  "Hashamatli Mebel Ishlab Chiqaruvchi",
+  "Fabricante de Móveis de Luxo",
+  "Producent Luksusowych Mebli",
+];
+
 let indexableCount = 0;
 let noindexCount = 0;
 let jsonLdBlockCount = 0;
@@ -472,6 +499,21 @@ for (const htmlFile of htmlFiles) {
   const robotsValues = extractMeta(html, "robots");
   const robots = robotsValues.join(",").toLowerCase();
   const isNoindex = robots.includes("noindex");
+
+  const protectsBrandPositioning =
+    publicPath.endsWith("/about/") ||
+    publicPath.endsWith("/contact/") ||
+    /\"@type\":\"Product\"/.test(html);
+
+  if (protectsBrandPositioning) {
+    for (const phrase of unverifiedLocalizedClaims) {
+      if (html.includes(phrase)) {
+        errors.push(
+          `${publicPath}: doğrulanmamış yerel üretici iddiası bulundu (${phrase}).`,
+        );
+      }
+    }
+  }
 
   const salesPositioningCheck =
     salesPositioningChecks.find(

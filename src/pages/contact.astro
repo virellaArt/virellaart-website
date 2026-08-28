@@ -935,7 +935,82 @@ const pageTitle =
 const pageDescription =
   contactSeoEntry.description;
 
-const extra = extraContent[language] ?? extraContent.en;
+const extraBase = extraContent[language] ?? extraContent.en;
+
+const truthfulContactCopy: Record<
+  string,
+  { overviewEyebrow: string; finalTitle: string }
+> = {
+  en: {
+    overviewEyebrow: "Direct Sales & Order Contact",
+    finalTitle: "Luxury Furniture With Direct Order Support",
+  },
+  tr: {
+    overviewEyebrow: "Doğrudan Satış ve Sipariş İletişimi",
+    finalTitle: "Doğrudan Sipariş Desteğiyle Lüks Mobilya",
+  },
+  de: {
+    overviewEyebrow: "Direkter Verkaufs- und Bestellkontakt",
+    finalTitle: "Luxusmöbel mit direkter Bestellberatung",
+  },
+  fr: {
+    overviewEyebrow: "Contact direct pour ventes et commandes",
+    finalTitle: "Mobilier de luxe avec accompagnement de commande",
+  },
+  it: {
+    overviewEyebrow: "Contatto diretto per vendite e ordini",
+    finalTitle: "Mobili di lusso con assistenza diretta agli ordini",
+  },
+  ru: {
+    overviewEyebrow: "Прямая связь по продажам и заказам",
+    finalTitle: "Элитная мебель с прямой поддержкой заказа",
+  },
+  ar: {
+    overviewEyebrow: "تواصل مباشر للمبيعات والطلبات",
+    finalTitle: "أثاث فاخر مع دعم مباشر للطلبات",
+  },
+  bg: {
+    overviewEyebrow: "Директен контакт за продажби и поръчки",
+    finalTitle: "Луксозни мебели с директна помощ при поръчка",
+  },
+  ro: {
+    overviewEyebrow: "Contact direct pentru vânzări și comenzi",
+    finalTitle: "Mobilier de lux cu asistență directă pentru comandă",
+  },
+  el: {
+    overviewEyebrow: "Άμεση επικοινωνία για πωλήσεις και παραγγελίες",
+    finalTitle: "Πολυτελή έπιπλα με άμεση υποστήριξη παραγγελίας",
+  },
+  es: {
+    overviewEyebrow: "Contacto directo para ventas y pedidos",
+    finalTitle: "Muebles de lujo con asistencia directa de pedidos",
+  },
+  sr: {
+    overviewEyebrow: "Direktan kontakt za prodaju i porudžbine",
+    finalTitle: "Luksuzni nameštaj uz direktnu podršku za porudžbine",
+  },
+  kk: {
+    overviewEyebrow: "Сату және тапсырыс бойынша тікелей байланыс",
+    finalTitle: "Тапсырысқа тікелей қолдауы бар сәнді жиһаз",
+  },
+  uz: {
+    overviewEyebrow: "Savdo va buyurtma bo‘yicha bevosita aloqa",
+    finalTitle: "Bevosita buyurtma yordami bilan hashamatli mebel",
+  },
+  pt: {
+    overviewEyebrow: "Contacto direto para vendas e encomendas",
+    finalTitle: "Móveis de luxo com apoio direto à encomenda",
+  },
+  pl: {
+    overviewEyebrow: "Bezpośredni kontakt sprzedażowy i zamówieniowy",
+    finalTitle: "Luksusowe meble z bezpośrednim wsparciem zamówienia",
+  },
+};
+
+const extra = {
+  ...extraBase,
+  ...(truthfulContactCopy[language] ?? truthfulContactCopy.en),
+};
 
 const contactPageURL = new URL(
   Astro.url.pathname,

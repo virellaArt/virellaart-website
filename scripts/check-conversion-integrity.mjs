@@ -118,6 +118,25 @@ const htmlFiles = walkHtml(distRoot);
 const productPages = [];
 const errors = [];
 
+const paymentApprovalChecks = [
+  {
+    prefix: "/collections/",
+    title: "Payment &amp; Pre-Shipment Approval",
+  },
+  {
+    prefix: "/tr/collections/",
+    title: "Ödeme ve Sevkiyat Öncesi Onay",
+  },
+  {
+    prefix: "/de/collections/",
+    title: "Zahlung &amp; Freigabe vor Versand",
+  },
+  {
+    prefix: "/fr/collections/",
+    title: "Paiement &amp; validation avant expédition",
+  },
+];
+
 for (const filePath of htmlFiles) {
   const html = fs.readFileSync(filePath, "utf8");
 
@@ -127,6 +146,24 @@ for (const filePath of htmlFiles) {
 
   const route = routeFor(filePath);
   productPages.push(route);
+
+  const paymentCheck = paymentApprovalChecks.find(
+    (check) => route.startsWith(check.prefix),
+  );
+
+  if (
+    paymentCheck &&
+    (
+      !html.includes(paymentCheck.title) ||
+      !html.includes("50 %") &&
+      !html.includes("50%") &&
+      !html.includes("%50")
+    )
+  ) {
+    errors.push(
+      `${route}: ödeme ve sevkiyat öncesi onay bilgisi eksik.`,
+    );
+  }
 
   const checks = [
     [

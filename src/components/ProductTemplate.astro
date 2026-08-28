@@ -1636,9 +1636,133 @@ const productTrustContent: Record<string, ProductTrustContent> = {
   },
 };
 
-const productTrust =
+const productTrustBase =
   productTrustContent[language] ??
   productTrustContent.en;
+
+const truthfulProductTrustCopy: Record<
+  string,
+  Partial<ProductTrustContent>
+> = {
+  it: {
+    title: "Assistenza diretta per ogni ordine",
+    manufacturerTitle: "Assistenza vendite e ordini",
+    manufacturerText:
+      "Richiedi dettagli sul prodotto, prezzi della collezione e un preventivo di consegna direttamente al team VIRELLAART.",
+    manufacturingButton: "Ordine e consegna",
+  },
+  ru: {
+    title: "Прямая поддержка каждого заказа",
+    manufacturerTitle: "Поддержка продаж и заказов",
+    manufacturerText:
+      "Запросите у команды VIRELLAART сведения о товаре, цену коллекции и расчёт доставки.",
+    manufacturingButton: "Заказ и доставка",
+  },
+  ar: {
+    title: "دعم مباشر لكل طلب",
+    manufacturerTitle: "دعم المبيعات والطلبات",
+    manufacturerText:
+      "اطلب تفاصيل المنتج وسعر المجموعة وعرض التوصيل مباشرة من فريق VIRELLAART.",
+    manufacturingButton: "الطلب والتوصيل",
+  },
+  bg: {
+    title: "Директна помощ за всяка поръчка",
+    manufacturerTitle: "Помощ за продажби и поръчки",
+    manufacturerText:
+      "Поискайте продуктови детайли, цена на колекцията и оферта за доставка директно от екипа на VIRELLAART.",
+    manufacturingButton: "Поръчка и доставка",
+  },
+  ro: {
+    title: "Asistență directă pentru fiecare comandă",
+    manufacturerTitle: "Asistență pentru vânzări și comenzi",
+    manufacturerText:
+      "Solicitați direct echipei VIRELLAART detalii despre produs, prețul colecției și o ofertă de livrare.",
+    manufacturingButton: "Comandă și livrare",
+  },
+  el: {
+    title: "Άμεση υποστήριξη για κάθε παραγγελία",
+    manufacturerTitle: "Υποστήριξη πωλήσεων και παραγγελιών",
+    manufacturerText:
+      "Ζητήστε απευθείας από την ομάδα VIRELLAART στοιχεία προϊόντος, τιμή συλλογής και προσφορά παράδοσης.",
+    manufacturingButton: "Παραγγελία και παράδοση",
+  },
+  es: {
+    title: "Asistencia directa para cada pedido",
+    manufacturerTitle: "Asistencia de ventas y pedidos",
+    manufacturerText:
+      "Solicite directamente al equipo VIRELLAART detalles del producto, precio de la colección y presupuesto de entrega.",
+    manufacturingButton: "Pedido y entrega",
+  },
+  sr: {
+    title: "Direktna podrška za svaku porudžbinu",
+    manufacturerTitle: "Podrška za prodaju i porudžbine",
+    manufacturerText:
+      "Zatražite detalje o proizvodu, cenu kolekcije i ponudu za dostavu direktno od VIRELLAART tima.",
+    manufacturingButton: "Porudžbina i dostava",
+  },
+  kk: {
+    title: "Әр тапсырысқа тікелей қолдау",
+    manufacturerTitle: "Сату және тапсырыс қолдауы",
+    manufacturerText:
+      "Өнім мәліметін, коллекция бағасын және жеткізу ұсынысын VIRELLAART тобынан тікелей сұраңыз.",
+    manufacturingButton: "Тапсырыс және жеткізу",
+  },
+  uz: {
+    title: "Har bir buyurtma uchun bevosita yordam",
+    manufacturerTitle: "Savdo va buyurtma yordami",
+    manufacturerText:
+      "Mahsulot tafsilotlari, kolleksiya narxi va yetkazib berish taklifini VIRELLAART jamoasidan bevosita so‘rang.",
+    manufacturingButton: "Buyurtma va yetkazib berish",
+  },
+  pt: {
+    title: "Apoio direto para cada encomenda",
+    manufacturerTitle: "Apoio a vendas e encomendas",
+    manufacturerText:
+      "Solicite diretamente à equipa VIRELLAART detalhes do produto, preço da coleção e orçamento de entrega.",
+    manufacturingButton: "Encomenda e entrega",
+  },
+  pl: {
+    title: "Bezpośrednie wsparcie każdego zamówienia",
+    manufacturerTitle: "Wsparcie sprzedaży i zamówień",
+    manufacturerText:
+      "Poproś zespół VIRELLAART o szczegóły produktu, cenę kolekcji i wycenę dostawy.",
+    manufacturingButton: "Zamówienie i dostawa",
+  },
+};
+
+const productTrust = {
+  ...productTrustBase,
+  ...(truthfulProductTrustCopy[language] ?? {}),
+};
+
+const paymentApprovalContent: Record<
+  string,
+  { title: string; text: string }
+> = {
+  en: {
+    title: "Payment & Pre-Shipment Approval",
+    text:
+      "A 50% down payment starts the confirmed order. The remaining balance is paid after photo and video approval, before shipment. Payment is available by online credit card or bank transfer to company accounts.",
+  },
+  tr: {
+    title: "Ödeme ve Sevkiyat Öncesi Onay",
+    text:
+      "Onaylanan sipariş %50 ön ödeme ile başlar. Kalan ödeme, fotoğraf ve video onayından sonra sevkiyat öncesinde yapılır. Ödeme online kredi kartı veya şirket hesaplarına banka havalesiyle alınır.",
+  },
+  de: {
+    title: "Zahlung & Freigabe vor Versand",
+    text:
+      "Die bestätigte Bestellung beginnt mit 50 % Anzahlung. Der Restbetrag wird nach Foto- und Videofreigabe vor dem Versand bezahlt. Die Zahlung ist per Online-Kreditkarte oder Banküberweisung auf Firmenkonten möglich.",
+  },
+  fr: {
+    title: "Paiement & validation avant expédition",
+    text:
+      "La commande confirmée débute avec un acompte de 50 %. Le solde est réglé après validation des photos et vidéos, avant l’expédition. Le paiement est possible par carte bancaire en ligne ou virement vers les comptes de l’entreprise.",
+  },
+};
+
+const paymentApproval =
+  paymentApprovalContent[language] ?? null;
 
 ---
 
@@ -2177,6 +2301,18 @@ const productTrust =
             }
           </p>
         </article>
+
+        {
+          paymentApproval && (
+            <article class="product-trust-card">
+              <span>05</span>
+
+              <h3>{paymentApproval.title}</h3>
+
+              <p>{paymentApproval.text}</p>
+            </article>
+          )
+        }
       </div>
 
       <div class="product-trust-footer">
