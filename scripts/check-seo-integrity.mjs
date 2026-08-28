@@ -393,6 +393,36 @@ const canonicalOwners = new Map();
 const titleOwners = new Map();
 const descriptionOwners = new Map();
 
+const salesPositioningChecks = [
+  {
+    language: "en",
+    homePath: "/",
+    productPrefix: "/collections/",
+    bannedPhrases: [
+      "Direct Manufacturer",
+      "Luxury Furniture Manufacturer in Istanbul",
+    ],
+  },
+  {
+    language: "tr",
+    homePath: "/tr/",
+    productPrefix: "/tr/collections/",
+    bannedPhrases: ["Doğrudan Üretici"],
+  },
+  {
+    language: "de",
+    homePath: "/de/",
+    productPrefix: "/de/collections/",
+    bannedPhrases: ["Direkter Hersteller"],
+  },
+  {
+    language: "fr",
+    homePath: "/fr/",
+    productPrefix: "/fr/collections/",
+    bannedPhrases: ["Fabricant direct"],
+  },
+];
+
 let indexableCount = 0;
 let noindexCount = 0;
 let jsonLdBlockCount = 0;
@@ -431,6 +461,26 @@ for (const htmlFile of htmlFiles) {
   const robotsValues = extractMeta(html, "robots");
   const robots = robotsValues.join(",").toLowerCase();
   const isNoindex = robots.includes("noindex");
+
+  const salesPositioningCheck =
+    salesPositioningChecks.find(
+      (check) =>
+        publicPath === check.homePath ||
+        (
+          publicPath.startsWith(check.productPrefix) &&
+          /\"@type\":\"Product\"/.test(html)
+        ),
+    );
+
+  if (salesPositioningCheck) {
+    for (const phrase of salesPositioningCheck.bannedPhrases) {
+      if (html.includes(phrase)) {
+        errors.push(
+          `${publicPath}: doğrulanmamış satış konumlandırması bulundu (${phrase}).`,
+        );
+      }
+    }
+  }
 
   if (isNoindex) {
     noindexCount += 1;
