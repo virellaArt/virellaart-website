@@ -1,1 +1,208 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíãŽzõ:-jZ.¶›­–)Þ³r2÷W7"ö&–âöVçbæöFP ¦–×÷'Bg2g&öÒ&æöFS¦g2#°¦–×÷'BF‚g&öÒ&æöFS§F‚#° ¦6öç7B&W÷6—F÷'•&ö÷BÒ&ö6W72æ7vB‚“°¦6öç7BF—7E&ö÷BÒF‚æ¦ö–â‡&W÷6—F÷'•&ö÷BÂ&F—7B"“°¦6öç7B&öGV7EFV×ÆFUF‚ÒF‚æ¦ö–â€¢&W÷6—F÷'•&ö÷BÀ¢'7&2"À¢&6ö×öæVçG2"À¢%&öGV7EFV×ÆFRæ7G&ò"À¢“° ¦gVæ7F–öâf–Â†ÖW76vR’°¢6öç6öÆRæW'&÷"†4ôådU%4”ôâ”åDTu$•E’U%$õ#¢G¶ÖW76vWÖ“°¢&ö6W72æW†—Bƒ“°§Ð ¦gVæ7F–öâvÆ´‡FÖÂ‡&ö÷B’°¢6öç7Bf–ÆW2ÒµÓ°¢6öç7B7F6²Ò·&ö÷EÓ° ¢v†–ÆR‡7F6²æÆVæwF‚â’°¢6öç7B7W'&VçBÒ7F6²ç÷‚“° ¢f÷"†6öç7BVçG'’öbg2ç&VFF—%7–æ2†7W'&VçBÂ°¢v—F„f–ÆUG—W3¢G'VRÀ¢Ò’’°¢6öç7BgVÆÅF‚ÒF‚æ¦ö–â†7W'&VçBÂVçG'’ææÖR“° ¢–b†VçG'’æ—4F—&V7F÷'’‚’’°¢7F6²çW6‚†gVÆÅF‚“°¢ÒVÇ6R–b€¢VçG'’æ—4f–ÆR‚’b`¢VçG'’ææÖRçFôÆ÷vW$66R‚’æVæG5v—F‚‚"æ‡FÖÂ"¢’°¢f–ÆW2çW6‚†gVÆÅF‚“°¢Ð¢Ð¢Ð ¢&WGW&âf–ÆW2ç6÷'B‚“°§Ð ¦gVæ7F–öâ&÷WFTf÷"†f–ÆUF‚’°¢6öç7B&VÆF—fRÒF€¢ç&VÆF—fR†F—7E&ö÷BÂf–ÆUF‚¢ç7Æ—B‡F‚ç6W¢æ¦ö–â‚"ò"“° ¢–b‡&VÆF—fRÓÓÒ&–æFW‚æ‡FÖÂ"’&WGW&â"ò#° ¢&WGW&âòG·&VÆF—fRç&WÆ6R‚ö–æFW…Âæ‡FÖÂBòÂ""—Ö°§Ð ¦gVæ7F–öâ6÷VçDÖF6†W2‡fÇVRÂGFW&â’°¢&WGW&â²ââçfÇVRæÖF6„ÆÂ‡GFW&â•ÒæÆVæwFƒ°§Ð ¦–b‚g2æW†—7G57–æ2†F—7E&ö÷B’’°¢f–Â‚&F—7B'VÇVæÖF’âöæ6R7G&ò'V–ÆB6Æ—7F—&–ââ"“°§Ð ¦–b‚g2æW†—7G57–æ2‡&öGV7EFV×ÆFUF‚’’°¢f–Â‚%&öGV7EFV×ÆFRæ7G&ò'VÇVæÖF’â"“°§Ð ¦6öç7B&öGV7EFV×ÆFU6÷W&6RÒg2ç&VDf–ÆU7–æ2€¢&öGV7EFV×ÆFUF‚À¢'WFc‚"À¢“° ¦6öç7BV–6µV÷FUFV×ÆFTÖF6‚Ð¢&öGV7EFV×ÆFU6÷W&6RæÖF6‚€¢ö6öç7BV–6µV÷FTÖW76vUFV×ÆFRÒÅ²…µÇ5Å5Ò£ò•ÅÕÂæ¦ö–åÂ‚%ÅÆâ%Â“²òÀ¢“° ¦–b‚V–6µV÷FUFV×ÆFTÖF6‚’°¢f–Â‚'FV²F–²v†G4ÖW6¢6&ÆöçR'VÇVæÖF’â"“°§Ð ¦f÷"†6öç7B&WV—&VDf–VÆBöb°¢'&öGV7EV÷FRç&–6R"À¢'&öGV7EV÷FRæ6÷VçG'’"À¢'&öGV7EV÷FRæ6—G’"À¢'&öGV7EV÷FRçvR"À¥Ò’°¢–b‚V–6µV÷FUFV×ÆFTÖF6…³Òæ–æ6ÇVFW2‡&WV—&VDf–VÆB’’°¢f–Â€¢FV²F–²v†G4ÖW6¦–æFG·&WV—&VDf–VÆGÒV·6–²æÀ¢“°¢Ð§Ð ¦6öç7BV–6µV÷FU'VçF–ÖTÖF6‚Ð¢&öGV7EFV×ÆFU6÷W&6RæÖF6‚€¢ögVæ7F–öâ'V–ÆEV–6´ÖW76vUÂ…Â’Ç²…µÇ5Å5Ò£ò–gVæ7F–öâWFFUV÷FTÆ–æ·2òÀ¢“° ¦–b‚V–6µV÷FU'VçF–ÖTÖF6‚’°¢f–Â‚'FV²F–²v†G46Æ—6Ö¦Öæ’ÖW6¦’'VÇVæÖF’â"“°§Ð ¦f÷"†6öç7B&WV—&VEfÇVRöb°¢'&–6S¢6VÆV7FVE&–6R"À¢&6÷VçG'“¢f–VÆEfÇVR†6÷VçG'”–çWB’"À¢&6—G“¢f–VÆEfÇVR†6—G”–çWB’"À¥Ò’°¢–b‚V–6µV÷FU'VçF–ÖTÖF6…³Òæ–æ6ÇVFW2‡&WV—&VEfÇVR’’°¢f–Â€¢FV²F–²v†G46Æ—6Ö¦Öæ’ÖW6¦–æFG·&WV—&VEfÇVWÒV·6–²æÀ¢“°¢Ð§Ð ¦6öç7B‡FÖÄf–ÆW2ÒvÆ´‡FÖÂ†F—7E&ö÷B“°¦6öç7B&öGV7EvW2ÒµÓ°¦6öç7BW'&÷'2ÒµÓ° ¦f÷"†6öç7Bf–ÆUF‚öb‡FÖÄf–ÆW2’°¢6öç7B‡FÖÂÒg2ç&VDf–ÆU7–æ2†f–ÆUF‚Â'WFc‚"“° ¢–b‚ò$G—R#¢%&öGV7B"òçFW7B†‡FÖÂ’’°¢6öçF–çVS°¢Ð ¢6öç7B&÷WFRÒ&÷WFTf÷"†f–ÆUF‚“°¢&öGV7EvW2çW6‚‡&÷WFR“° ¢6öç7B6†V6·2Ò°¢°¢6÷VçDÖF6†W2†‡FÖÂÂõÇ6FF×V÷FRÖ'V–ÆFW"ƒó¥Ç7Ãâ’ör’ÓÓÒÀ¢'FÒöÆ&²&—"FV¶Æ–bf÷&×RöÆÖÆ’"À¢ÒÀ¢°¢öæÖSÒ&FVÆ—fW'’Ö6÷VçG'’%µãåÒ¥Ç7&WV—&VBƒó¥Ç7Ãâ’òçFW7B†‡FÖÂ’À¢'FW6Æ–ÖBVÆ¶W6’¦÷'VæÇRöÆÖÆ’"À¢ÒÀ¢°¢öæÖSÒ&FVÆ—fW'’Ö6—G’%µãåÒ¥Ç7&WV—&VBƒó¥Ç7Ãâ’òçFW7B†‡FÖÂ’À¢'FW6Æ–ÖB6V‡&’¦÷'VæÇRöÆÖÆ’"À¢ÒÀ¢°¢öFF×V÷FRÖVæv–æSÒ'&öGV7B×V÷FR×c"òçFW7B†‡FÖÂ’À¢'W'VâFV¶Æ–bÖ÷F÷'RWF–¶WF’V·6–²"À¢ÒÀ¢°¢6÷VçDÖF6†W2†‡FÖÂÂõÇ6FF×V–6²×&öGV7B×V÷FRƒó¥Ç7Ãâ’ör’ÓÓÒÀ¢'FV²F–²v†G4FV¶Æ–b&vÆçF—6’V·6–²fW–––æVÆVæÖ—2"À¢ÒÀ¢°¢öFF×V÷FRÖVæv–æSÒ'&öGV7B×V÷FR×V–6²×c"òçFW7B†‡FÖÂ’À¢'FV²F–²v†G4FV¶Æ–bÖ÷F÷'RWF–¶WF’V·6–²"À¢ÒÀ¢°¢÷&öGV7B×v†G6ÖF—&V7BòçFW7B†‡FÖÂ’b`¢ö†æFÆU&öGV7DgVææVÂòçFW7B†‡FÖÂ’À¢'6&—Bv†G4GVvÖW6’Föw'VFâv†G4¶—6–æ’·VÆÆæÖ—–÷""À¢ÒÀ¢°¢÷v–æF÷uÂæwFuÂ‚&WfVçB"Â'f–Wuö—FVÒ"Â&öGV7DWfVçEÂ’òçFW7B†‡FÖÂ’À¢$tBf–Wuö—FVÒöÆ–’V·6–²"À¢ÒÀ¢°¢ò'V÷FU÷7F'B"òçFW7B†‡FÖÂ’b`¢öWfVçC¢'f—&VÆÆ÷V÷FU÷7F'B"òçFW7B†‡FÖÂ’À¢'FV¶Æ–b&6Ææv–6’öÆ7V×RV·6–²"À¢ÒÀ¢°¢÷v–æF÷uÂæwFuÂ‚&WfVçB"Â&vVæW&FUöÆVB"òçFW7B†‡FÖÂ’À¢%v†G4ÆVBöÆ7V×RV·6–²"À¢ÒÀ¢°¢÷v–æF÷uÂçf—&VÆÆæÇ—F–74ÆÆ÷vVBÓÓÒG'VRòçFW7B†‡FÖÂ’À¢&æÆ—F–²—¦–â¶—6’V·6–²"À¢ÒÀ¢Ó° ¢f÷"†6öç7B·76VBÂÖW76vUÒöb6†V6·2’°¢–b‚76VB’°¢W'&÷'2çW6‚†G·&÷WFWÓ¢G¶ÖW76vWÖ“°¢Ð¢Ð§Ð ¦–b‡&öGV7EvW2æÆVæwF‚ÓÓÒ’°¢f–Â‚%&öGV7B66†VÖ–6W&VâW'Vâ6–f6’'VÇVæÖF’â"“°§Ð ¦–b†W'&÷'2æÆVæwF‚â’°¢W'&÷'2ç6Æ–6RƒÂ3’æf÷$V6‚‚†W'&÷"’Óà¢6öç6öÆRæW'&÷"†ÒG¶W'&÷'Ö’À¢“° ¢–b†W'&÷'2æÆVæwF‚â3’°¢6öç6öÆRæW'&÷"†ÒfRG¶W'&÷'2æÆVæwF‚Ò3ÒV²†F“°¢Ð ¢f–Â†G¶W'&÷'2æÆVæwF‡ÒFöçW7VÒ'WGVæÇVwR†F6’'VÇVæGRæ“°§Ð ¦6öç6öÆRæÆör‚%d•$TÄÄ%B4ôådU%4”ôâ”åDTu$•E’"“°¦6öç6öÆRæÆör†…DÔÂvW3¢G¶‡FÖÄf–ÆW2æÆVæwF‡Ö“°¦6öç6öÆRæÆör†&öGV7BvW3¢G·&öGV7EvW2æÆVæwF‡Ö“°¦6öç6öÆRæÆör‚%V÷FRgVææVÃ¢f–Wuö—FVÒÓâV÷FU÷7F'BÓâvVæW&FUöÆVB"“°¦6öç6öÆRæÆör‚$6öç6VçBvFS¢&W6VçB"“°¦6öç6öÆRæÆör‚$4ôådU%4”ôâ”åDTu$•E’ô²"“°
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+
+const repositoryRoot = process.cwd();
+const distRoot = path.join(repositoryRoot, "dist");
+const productTemplatePath = path.join(
+  repositoryRoot,
+  "src",
+  "components",
+  "ProductTemplate.astro",
+);
+
+function fail(message) {
+  console.error(`CONVERSION INTEGRITY ERROR: ${message}`);
+  process.exit(1);
+}
+
+function walkHtml(root) {
+  const files = [];
+  const stack = [root];
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+
+    for (const entry of fs.readdirSync(current, {
+      withFileTypes: true,
+    })) {
+      const fullPath = path.join(current, entry.name);
+
+      if (entry.isDirectory()) {
+        stack.push(fullPath);
+      } else if (
+        entry.isFile() &&
+        entry.name.toLowerCase().endsWith(".html")
+      ) {
+        files.push(fullPath);
+      }
+    }
+  }
+
+  return files.sort();
+}
+
+function routeFor(filePath) {
+  const relative = path
+    .relative(distRoot, filePath)
+    .split(path.sep)
+    .join("/");
+
+  if (relative === "index.html") return "/";
+
+  return `/${relative.replace(/index\.html$/, "")}`;
+}
+
+function countMatches(value, pattern) {
+  return [...value.matchAll(pattern)].length;
+}
+
+if (!fs.existsSync(distRoot)) {
+  fail("dist bulunamadi. Once Astro build calistirin.");
+}
+
+if (!fs.existsSync(productTemplatePath)) {
+  fail("ProductTemplate.astro bulunamadi.");
+}
+
+const productTemplateSource = fs.readFileSync(
+  productTemplatePath,
+  "utf8",
+);
+
+const quickQuoteTemplateMatch =
+  productTemplateSource.match(
+    /const quickQuoteMessageTemplate = \[([\s\S]*?)\]\.join\("\\n"\);/,
+  );
+
+if (!quickQuoteTemplateMatch) {
+  fail("tek tik WhatsApp mesaj sablonu bulunamadi.");
+}
+
+for (const requiredField of [
+  "productQuote.price",
+  "productQuote.country",
+  "productQuote.city",
+  "productQuote.page",
+]) {
+  if (!quickQuoteTemplateMatch[1].includes(requiredField)) {
+    fail(
+      `tek tik WhatsApp mesajinda ${requiredField} eksik.`,
+    );
+  }
+}
+
+const quickQuoteRuntimeMatch =
+  productTemplateSource.match(
+    /function buildQuickMessage\(\) \{([\s\S]*?)function updateQuoteLinks/,
+  );
+
+if (!quickQuoteRuntimeMatch) {
+  fail("tek tik WhatsApp calisma zamani mesaji bulunamadi.");
+}
+
+for (const requiredValue of [
+  "price: selectedPrice",
+  "country: fieldValue(countryInput)",
+  "city: fieldValue(cityInput)",
+]) {
+  if (!quickQuoteRuntimeMatch[1].includes(requiredValue)) {
+    fail(
+      `tek tik WhatsApp calisma zamani mesajinda ${requiredValue} eksik.`,
+    );
+  }
+}
+
+const htmlFiles = walkHtml(distRoot);
+const productPages = [];
+const errors = [];
+
+for (const filePath of htmlFiles) {
+  const html = fs.readFileSync(filePath, "utf8");
+
+  if (!/"@type":"Product"/.test(html)) {
+    continue;
+  }
+
+  const route = routeFor(filePath);
+  productPages.push(route);
+
+  const checks = [
+    [
+      countMatches(html, /\sdata-quote-builder(?:\s|>)/g) === 1,
+      "tam olarak bir teklif formu olmali",
+    ],
+    [
+      /name="delivery-country"[^>]*\srequired(?:\s|>)/.test(html),
+      "teslimat ulkesi zorunlu olmali",
+    ],
+    [
+      /name="delivery-city"[^>]*\srequired(?:\s|>)/.test(html),
+      "teslimat sehri zorunlu olmali",
+    ],
+    [
+      /data-quote-engine="product-quote-v1"/.test(html),
+      "urun teklif motoru etiketi eksik",
+    ],
+    [
+      countMatches(html, /\sdata-quick-product-quote(?:\s|>)/g) === 1,
+      "tek tik WhatsApp teklif baglantisi eksik veya yinelenmis",
+    ],
+    [
+      /data-quote-engine="product-quote-quick-v1"/.test(html),
+      "tek tik WhatsApp teklif motoru etiketi eksik",
+    ],
+    [
+      /product-whatsapp-direct/.test(html) &&
+        !/handleProductFunnel/.test(html),
+      "sabit WhatsApp dugmesi dogrudan WhatsApp akisini kullanmiyor",
+    ],
+    [
+      /window\.gtag\("event", "view_item", productEvent\)/.test(html),
+      "GA4 view_item olayi eksik",
+    ],
+    [
+      /"quote_start"/.test(html) &&
+        /event: "virella_quote_start"/.test(html),
+      "teklif baslangici olcumu eksik",
+    ],
+    [
+      /window\.gtag\("event", "generate_lead"/.test(html),
+      "WhatsApp lead olcumu eksik",
+    ],
+    [
+      /window\.virellaAnalyticsAllowed === true/.test(html),
+      "analitik izin kapisi eksik",
+    ],
+  ];
+
+  for (const [passed, message] of checks) {
+    if (!passed) {
+      errors.push(`${route}: ${message}`);
+    }
+  }
+}
+
+if (productPages.length === 0) {
+  fail("Product schema iceren urun sayfasi bulunamadi.");
+}
+
+if (errors.length > 0) {
+  errors.slice(0, 30).forEach((error) =>
+    console.error(`- ${error}`),
+  );
+
+  if (errors.length > 30) {
+    console.error(`- ve ${errors.length - 30} ek hata`);
+  }
+
+  fail(`${errors.length} donusum butunlugu hatasi bulundu.`);
+}
+
+console.log("VIRELLAART CONVERSION INTEGRITY");
+console.log(`HTML pages: ${htmlFiles.length}`);
+console.log(`Product pages: ${productPages.length}`);
+console.log("Quote funnel: view_item -> quote_start -> generate_lead");
+console.log("Consent gate: present");
+console.log("CONVERSION INTEGRITY OK");
