@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
 /* VIRELLAART FOOTER I18N */
 
 type FooterTranslation = {
-  manufacturing: string;
+  orderProcess: string;
   policies: string;
   shipping: string;
   returns: string;
@@ -30,7 +30,7 @@ const footerTranslations: Record<
   FooterTranslation
 > = {
   "en": {
-    "manufacturing": "Manufacturing",
+    "orderProcess": "Order Process",
     "policies": "Policies",
     "shipping": "Shipping Policy",
     "returns": "Return & Refund Policy",
@@ -38,7 +38,7 @@ const footerTranslations: Record<
     "terms": "Terms & Conditions"
   },
   "tr": {
-    "manufacturing": "Üretim",
+    "orderProcess": "Sipariş Süreci",
     "policies": "Politikalar",
     "shipping": "Teslimat Politikası",
     "returns": "İade ve Geri Ödeme Politikası",
@@ -46,7 +46,7 @@ const footerTranslations: Record<
     "terms": "Şartlar ve Koşullar"
   },
   "de": {
-    "manufacturing": "Herstellung",
+    "orderProcess": "Bestellablauf",
     "policies": "Richtlinien",
     "shipping": "Versandrichtlinie",
     "returns": "Rückgabe- und Erstattungsrichtlinie",
@@ -54,7 +54,7 @@ const footerTranslations: Record<
     "terms": "Allgemeine Geschäftsbedingungen"
   },
   "fr": {
-    "manufacturing": "Fabrication",
+    "orderProcess": "Processus de commande",
     "policies": "Politiques",
     "shipping": "Politique d’expédition",
     "returns": "Politique de retour et de remboursement",
@@ -62,7 +62,7 @@ const footerTranslations: Record<
     "terms": "Conditions générales"
   },
   "it": {
-    "manufacturing": "Produzione",
+    "orderProcess": "Procedura d’ordine",
     "policies": "Politiche",
     "shipping": "Politica di spedizione",
     "returns": "Politica di reso e rimborso",
@@ -70,7 +70,7 @@ const footerTranslations: Record<
     "terms": "Termini e condizioni"
   },
   "ru": {
-    "manufacturing": "Производство",
+    "orderProcess": "Процесс заказа",
     "policies": "Политики",
     "shipping": "Политика доставки",
     "returns": "Политика возврата и возмещения",
@@ -78,7 +78,7 @@ const footerTranslations: Record<
     "terms": "Условия использования"
   },
   "ar": {
-    "manufacturing": "التصنيع",
+    "orderProcess": "عملية الطلب",
     "policies": "السياسات",
     "shipping": "سياسة الشحن",
     "returns": "سياسة الإرجاع والاسترداد",
@@ -86,7 +86,7 @@ const footerTranslations: Record<
     "terms": "الشروط والأحكام"
   },
   "bg": {
-    "manufacturing": "Производство",
+    "orderProcess": "Процес на поръчка",
     "policies": "Политики",
     "shipping": "Политика за доставка",
     "returns": "Политика за връщане и възстановяване",
@@ -94,7 +94,7 @@ const footerTranslations: Record<
     "terms": "Общи условия"
   },
   "ro": {
-    "manufacturing": "Producție",
+    "orderProcess": "Procesul comenzii",
     "policies": "Politici",
     "shipping": "Politica de livrare",
     "returns": "Politica de retur și rambursare",
@@ -102,7 +102,7 @@ const footerTranslations: Record<
     "terms": "Termeni și condiții"
   },
   "el": {
-    "manufacturing": "Κατασκευή",
+    "orderProcess": "Διαδικασία παραγγελίας",
     "policies": "Πολιτικές",
     "shipping": "Πολιτική αποστολών",
     "returns": "Πολιτική επιστροφών και επιστροφής χρημάτων",
@@ -110,7 +110,7 @@ const footerTranslations: Record<
     "terms": "Όροι και προϋποθέσεις"
   },
   "es": {
-    "manufacturing": "Fabricación",
+    "orderProcess": "Proceso de pedido",
     "policies": "Políticas",
     "shipping": "Política de envíos",
     "returns": "Política de devoluciones y reembolsos",
@@ -118,7 +118,7 @@ const footerTranslations: Record<
     "terms": "Términos y condiciones"
   },
   "sr": {
-    "manufacturing": "Proizvodnja",
+    "orderProcess": "Proces poručivanja",
     "policies": "Politike",
     "shipping": "Politika dostave",
     "returns": "Politika povrata i refundacije",
@@ -126,7 +126,7 @@ const footerTranslations: Record<
     "terms": "Uslovi korišćenja"
   },
   "kk": {
-    "manufacturing": "Өндіріс",
+    "orderProcess": "Тапсырыс рәсімі",
     "policies": "Саясаттар",
     "shipping": "Жеткізу саясаты",
     "returns": "Қайтару және ақшаны өтеу саясаты",
@@ -134,7 +134,7 @@ const footerTranslations: Record<
     "terms": "Шарттар мен талаптар"
   },
   "uz": {
-    "manufacturing": "Ishlab chiqarish",
+    "orderProcess": "Buyurtma jarayoni",
     "policies": "Siyosatlar",
     "shipping": "Yetkazib berish siyosati",
     "returns": "Qaytarish va pulni qaytarish siyosati",
@@ -142,7 +142,7 @@ const footerTranslations: Record<
     "terms": "Shartlar va qoidalar"
   },
   "pt": {
-    "manufacturing": "Fabrico",
+    "orderProcess": "Processo de encomenda",
     "policies": "Políticas",
     "shipping": "Política de envio",
     "returns": "Política de devolução e reembolso",
@@ -150,7 +150,7 @@ const footerTranslations: Record<
     "terms": "Termos e condições"
   },
   "pl": {
-    "manufacturing": "Produkcja",
+    "orderProcess": "Proces zamówienia",
     "policies": "Polityki",
     "shipping": "Polityka wysyłki",
     "returns": "Polityka zwrotów i refundacji",
@@ -222,8 +222,11 @@ const footerMarkets =
     {translations.nav.about}
   </a>
 
-  <a href={localizedPath("/manufacturing", language)}>
-    {footerText.manufacturing}
+  <a href={localizedPath(
+    "/blog/how-to-order-luxury-furniture-from-istanbul",
+    language,
+  )}>
+    {footerText.orderProcess}
   </a>
 
   <a href={localizedPath("/press", language)}>

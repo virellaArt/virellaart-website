@@ -38,7 +38,6 @@ const staticRouteImages: Record<string, string[]> = {
     "/aura-corner-01.webp",
   ],
   "about": ["/about-factory.webp"],
-  "manufacturing": ["/about-factory.webp"],
   "press": ["/living-room.webp"],
   "contact": ["/dining-room.webp"],
 };
@@ -81,6 +80,7 @@ function routeImages(
 
 export const GET = () => {
   const localizedUrls = indexableRoutes
+    .filter((route) => route !== "manufacturing")
     .flatMap((route) => {
       const routeLanguages =
         route in localizedBlogRouteLanguages

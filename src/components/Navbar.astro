@@ -83,27 +83,30 @@ const mobileMenuLabel =
 const mobileCloseLabel =
   mobileNavigationLabels[language].close;
 
-const manufacturingLabels: Record<
+const orderProcessLabels: Record<
   (typeof languageCodes)[number],
   string
 > = {
-  en: "Manufacturing",
-  tr: "Üretim",
-  de: "Produktion",
-  fr: "Fabrication",
-  it: "Produzione",
-  ru: "Производство",
-  ar: "التصنيع",
-  bg: "Производство",
-  ro: "Producție",
-  el: "Παραγωγή",
-  es: "Fabricación",
-  sr: "Proizvodnja",
-  kk: "Өндіріс",
-  uz: "Ishlab chiqarish",
-  pt: "Produção",
-  pl: "Produkcja",
+  en: "Order Process",
+  tr: "Sipariş Süreci",
+  de: "Bestellablauf",
+  fr: "Processus de commande",
+  it: "Procedura d’ordine",
+  ru: "Процесс заказа",
+  ar: "عملية الطلب",
+  bg: "Процес на поръчка",
+  ro: "Procesul comenzii",
+  el: "Διαδικασία παραγγελίας",
+  es: "Proceso de pedido",
+  sr: "Proces poručivanja",
+  kk: "Тапсырыс рәсімі",
+  uz: "Buyurtma jarayoni",
+  pt: "Processo de encomenda",
+  pl: "Proces zamówienia",
 };
+
+const orderGuidePath =
+  "/blog/how-to-order-luxury-furniture-from-istanbul";
 ---
 
 <nav class="navbar">
@@ -200,8 +203,8 @@ const manufacturingLabels: Record<
       </li>
 
       <li>
-        <a href={localizedPath("/manufacturing", language)}>
-          {manufacturingLabels[language]}
+        <a href={localizedPath(orderGuidePath, language)}>
+          {orderProcessLabels[language]}
         </a>
       </li>
 
@@ -347,8 +350,8 @@ const manufacturingLabels: Record<
               {translations.nav.about}
             </a>
 
-            <a href={localizedPath("/manufacturing", language)}>
-              {manufacturingLabels[language]}
+            <a href={localizedPath(orderGuidePath, language)}>
+              {orderProcessLabels[language]}
             </a>
 
             <a href={localizedPath("/blog", language)}>
