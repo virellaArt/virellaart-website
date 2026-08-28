@@ -47,7 +47,7 @@ export const marketPages: MarketPage[] = [
     heading: "Luxury Furniture Crafted for Exceptional UK Interiors",
     intro:
       "VIRELLAART works directly with homeowners, designers and furnishing projects across the United Kingdom, from London townhouses in Chelsea and Kensington to residences and villas nationwide. Explore statement sofa sets, dining rooms, bedrooms and TV units made in Istanbul with clear product, quotation and international delivery support.",
-    serviceHeading: "Direct Manufacturer Support for the UK",
+    serviceHeading: "Direct Sales & Order Support for the UK",
     serviceText:
       "Discuss dimensions, fabrics, finishes and collection configurations directly with the VIRELLAART team. Written quotations confirm the selected products, USD pricing, production scope, packaging and delivery plan before an order is approved.",
     planningHeading: "Delivery Planning Across the United Kingdom",
@@ -91,7 +91,7 @@ export const marketPages: MarketPage[] = [
     hreflang: "en-US",
     alternateGroup: "english-markets",
     marketName: "United States",
-    title: "Luxury Furniture Manufacturer for the USA | VIRELLAART",
+    title: "Luxury Furniture from Turkey for the USA | VIRELLAART",
     description:
       "Explore made-to-order luxury furniture for US homes and projects, with direct design consultation and international delivery planning.",
     eyebrow: "VIRELLAART · United States",
@@ -142,14 +142,14 @@ export const marketPages: MarketPage[] = [
     hreflang: "en-CA",
     alternateGroup: "english-markets",
     marketName: "Canada",
-    title: "Luxury Furniture Manufacturer for Canada | VIRELLAART",
+    title: "Luxury Furniture from Turkey for Canada | VIRELLAART",
     description:
       "Discover luxury furniture made in Istanbul for Canadian homes, with customization, protective packaging and delivery planning.",
     eyebrow: "VIRELLAART · Canada",
     heading: "Luxury Furniture Made for Distinctive Canadian Homes",
     intro:
-      "VIRELLAART connects Canadian homeowners and interior professionals directly with an Istanbul luxury furniture manufacturer for coordinated living room, dining room, bedroom and TV-unit collections.",
-    serviceHeading: "Clear, Manufacturer-Direct Support",
+      "VIRELLAART supports Canadian homeowners and interior professionals with coordinated living room, dining room, bedroom and TV-unit collections from Istanbul.",
+    serviceHeading: "Clear Sales & Order Support",
     serviceText:
       "Our team reviews selected models, dimensions, finishes and project requirements before issuing a written quotation with product scope, pricing, estimated production and packaging details.",
     planningHeading: "Delivery Planning to Canadian Destinations",
@@ -182,7 +182,7 @@ export const marketPages: MarketPage[] = [
     heading: "Statement Luxury Furniture for Swiss Residences",
     intro:
       "VIRELLAART supports private residences, villas and design projects across Switzerland with made-to-order luxury furniture collections crafted in Istanbul, serving clients from Geneva and Zurich to Lausanne.",
-    serviceHeading: "Direct Manufacturer Support for Switzerland",
+    serviceHeading: "Direct Sales & Order Support for Switzerland",
     serviceText:
       "Discuss dimensions, fabrics, finishes and collection configurations directly with the VIRELLAART team. Written quotations confirm the selected products, USD pricing, production scope, packaging and delivery plan before an order is approved.",
     planningHeading: "Delivery Planning Across Switzerland",
@@ -363,7 +363,7 @@ export const marketPages: MarketPage[] = [
     marketName: "Schweiz",
     title: "Luxusmöbel für die Schweiz | VIRELLAART",
     description:
-      "Entdecken Sie maßgefertigte Luxusmöbel für die Schweiz mit direkter Herstellerberatung und Lieferplanung aus Istanbul.",
+      "Entdecken Sie auf Bestellung erhältliche Luxusmöbel für die Schweiz mit direkter Verkaufsberatung und Lieferplanung aus Istanbul.",
     eyebrow: "VIRELLAART · Schweiz",
     heading: "Luxusmöbel für exklusive Interieurs in der Schweiz",
     intro:

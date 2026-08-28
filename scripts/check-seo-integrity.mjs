@@ -398,28 +398,39 @@ const salesPositioningChecks = [
     language: "en",
     homePath: "/",
     productPrefix: "/collections/",
+    protectedPaths: ["/about/", "/contact/"],
+    protectedPrefixes: ["/markets/"],
     bannedPhrases: [
       "Direct Manufacturer",
       "Luxury Furniture Manufacturer in Istanbul",
+      "Manufactured by VIRELLAART",
+      "manufacturer-direct",
+      "luxury furniture manufacturer serving",
     ],
   },
   {
     language: "tr",
     homePath: "/tr/",
     productPrefix: "/tr/collections/",
-    bannedPhrases: ["Doğrudan Üretici"],
+    protectedPaths: ["/tr/about/", "/tr/contact/"],
+    protectedPrefixes: ["/tr/markets/", "/tr/policies/shipping-policy/"],
+    bannedPhrases: ["Doğrudan Üretici", "lüks mobilya üreticisidir"],
   },
   {
     language: "de",
     homePath: "/de/",
     productPrefix: "/de/collections/",
-    bannedPhrases: ["Direkter Hersteller"],
+    protectedPaths: ["/de/about/", "/de/contact/"],
+    protectedPrefixes: ["/de/markets/"],
+    bannedPhrases: ["Direkter Hersteller", "Luxusmöbelhersteller"],
   },
   {
     language: "fr",
     homePath: "/fr/",
     productPrefix: "/fr/collections/",
-    bannedPhrases: ["Fabricant direct"],
+    protectedPaths: ["/fr/about/", "/fr/contact/"],
+    protectedPrefixes: ["/fr/markets/"],
+    bannedPhrases: ["Fabricant direct", "fabricant de mobilier de luxe"],
   },
 ];
 
@@ -466,6 +477,10 @@ for (const htmlFile of htmlFiles) {
     salesPositioningChecks.find(
       (check) =>
         publicPath === check.homePath ||
+        check.protectedPaths.includes(publicPath) ||
+        check.protectedPrefixes.some((prefix) =>
+          publicPath.startsWith(prefix)
+        ) ||
         (
           publicPath.startsWith(check.productPrefix) &&
           /\"@type\":\"Product\"/.test(html)

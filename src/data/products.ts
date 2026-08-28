@@ -2175,7 +2175,7 @@ sultanGreenDining: {
     style: "modern",
     subtitle: "Sculptural Curves for Refined Modern Living",
     description:
-      "PRADA Sofa Set brings sculptural comfort to contemporary living spaces with two coordinated three-seat sofas and two matching armchairs. The balanced 3+3+1+1 composition combines softly rounded silhouettes, neutral upholstery and refined dark accents to create an elegant conversation area for modern interiors. Manufactured by VIRELLAART in Istanbul, PRADA offers a sophisticated manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
+      "PRADA Sofa Set brings sculptural comfort to contemporary living spaces with two coordinated three-seat sofas and two matching armchairs. The balanced 3+3+1+1 composition combines softly rounded silhouettes, neutral upholstery and refined dark accents to create an elegant conversation area for modern interiors. Available through VIRELLAART with direct order support from Istanbul, PRADA is a sophisticated choice for customers seeking luxury modern living room furniture with worldwide delivery coordination.",
     images: [
       "/prada-sofa-set-01.webp",
       "/prada-sofa-set-02.webp",
@@ -2876,7 +2876,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Soft Contemporary Comfort with Sculptural Curves",
     description:
-      "TREND Sofa Set creates a refined contemporary living atmosphere with softly rounded silhouettes, generous cushions and a balanced 3+3+1+1 seating arrangement. Two coordinated three-seat sofas and two matching armchairs form an elegant conversation area, while the warm neutral upholstery and subtle dark accents strengthen its modern character. Manufactured by VIRELLAART in Istanbul, TREND is a manufacturer-direct choice for customers seeking sophisticated modern living room furniture with worldwide delivery.",
+      "TREND Sofa Set creates a refined contemporary living atmosphere with softly rounded silhouettes, generous cushions and a balanced 3+3+1+1 seating arrangement. Two coordinated three-seat sofas and two matching armchairs form an elegant conversation area, while the warm neutral upholstery and subtle dark accents strengthen its modern character. Available through VIRELLAART with direct order support from Istanbul, TREND is a refined choice for customers seeking sophisticated modern living room furniture with worldwide delivery coordination.",
     images: [
       "/trend-sofa-set-01.webp",
       "/trend-sofa-set-02.webp",
@@ -2914,7 +2914,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Soft Architectural Lines for Refined Modern Living",
     description:
-      "MILAZZO Sofa Set brings a calm and sophisticated character to contemporary living spaces with its softly rounded silhouettes, layered cushions and refined contrasting side details. The balanced 3+3+1+1 arrangement combines two coordinated three-seat sofas with two sculptural armchairs to create an elegant conversation area, while the matching center table completes the composition. Manufactured by VIRELLAART in Istanbul, MILAZZO offers a distinctive manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
+      "MILAZZO Sofa Set brings a calm and sophisticated character to contemporary living spaces with its softly rounded silhouettes, layered cushions and refined contrasting side details. The balanced 3+3+1+1 arrangement combines two coordinated three-seat sofas with two sculptural armchairs to create an elegant conversation area, while the matching center table completes the composition. Available through VIRELLAART with direct order support from Istanbul, MILAZZO is a distinctive choice for customers seeking luxury modern living room furniture with worldwide delivery coordination.",
     images: [
       "/milazzo-sofa-set-01.webp",
       "/milazzo-sofa-set-02.webp",
@@ -2950,7 +2950,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Sculptural Comfort with Refined Contemporary Lines",
     description:
-      "ELEGANT Sofa Set brings a sophisticated contemporary character to modern living spaces through softly rounded seating forms, layered cushions and a balanced 3+3+1+1 arrangement. Two coordinated three-seat sofas and two sculptural armchairs create an inviting conversation area, while the neutral upholstery and refined contrasting details strengthen its elegant visual presence. Manufactured by VIRELLAART in Istanbul, ELEGANT offers a manufacturer-direct choice for customers seeking luxury modern living room furniture with worldwide delivery.",
+      "ELEGANT Sofa Set brings a sophisticated contemporary character to modern living spaces through softly rounded seating forms, layered cushions and a balanced 3+3+1+1 arrangement. Two coordinated three-seat sofas and two sculptural armchairs create an inviting conversation area, while the neutral upholstery and refined contrasting details strengthen its elegant visual presence. Available through VIRELLAART with direct order support from Istanbul, ELEGANT is a refined choice for customers seeking luxury modern living room furniture with worldwide delivery coordination.",
     images: [
       "/elegant-sofa-set-01.webp",
       "/elegant-sofa-set-02.webp",
@@ -2988,7 +2988,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Warm Contemporary Elegance for Refined Bedrooms",
     description:
-      "AVELLA Bedroom Set creates a calm and sophisticated bedroom atmosphere with clean architectural lines, softly rounded forms and warm contrasting accents. The complete set includes a wardrobe, storage bed, dresser, two nightstands, pouf, chest of drawers and full-length mirror. Manufactured by VIRELLAART in Istanbul, AVELLA offers a refined manufacturer-direct solution for customers seeking modern luxury bedroom furniture with worldwide delivery.",
+      "AVELLA Bedroom Set creates a calm and sophisticated bedroom atmosphere with clean architectural lines, softly rounded forms and warm contrasting accents. The complete set includes a wardrobe, storage bed, dresser, two nightstands, pouf, chest of drawers and full-length mirror. Available through VIRELLAART with direct order support from Istanbul, AVELLA is a refined choice for customers seeking modern luxury bedroom furniture with worldwide delivery coordination.",
     images: [
       "/avella-bedroom-set-01.webp",
       "/avella-bedroom-set-02.webp",
@@ -3024,7 +3024,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Minimal Modern Design with Timeless Bedroom Harmony",
     description:
-      "RETRO Bedroom Set creates a refined modern bedroom atmosphere with clean architectural lines, balanced proportions and elegant storage solutions. The complete set includes a wardrobe, storage bed, dresser, two nightstands and upholstered pouf. Manufactured by VIRELLAART in Istanbul, RETRO offers a premium manufacturer-direct bedroom solution with worldwide delivery.",
+      "RETRO Bedroom Set creates a refined modern bedroom atmosphere with clean architectural lines, balanced proportions and elegant storage solutions. The complete set includes a wardrobe, storage bed, dresser, two nightstands and upholstered pouf. Available through VIRELLAART with direct order support from Istanbul, RETRO is a premium bedroom choice with worldwide delivery coordination.",
     images: [
       "/retro-bedroom-set-01.webp",
       "/retro-bedroom-set-02.webp",
@@ -3062,7 +3062,7 @@ sultanGreenDining: {
     orderModel: "made-to-order",
     subtitle: "Warm Minimalism with Refined Contemporary Details",
     description:
-      "LAZIO Bedroom Set creates a calm and sophisticated bedroom atmosphere through softly rounded forms, warm wood accents and clean contemporary lines. The complete set includes a spacious wardrobe, storage bed, dresser, two coordinated nightstands and upholstered pouf. Manufactured by VIRELLAART in Istanbul, LAZIO offers a refined manufacturer-direct solution for customers seeking premium modern bedroom furniture with worldwide delivery.",
+      "LAZIO Bedroom Set creates a calm and sophisticated bedroom atmosphere through softly rounded forms, warm wood accents and clean contemporary lines. The complete set includes a spacious wardrobe, storage bed, dresser, two coordinated nightstands and upholstered pouf. Available through VIRELLAART with direct order support from Istanbul, LAZIO is a refined choice for customers seeking premium modern bedroom furniture with worldwide delivery coordination.",
     images: [
       "/lazio-bedroom-set-01.webp",
       "/lazio-bedroom-set-02.webp",
