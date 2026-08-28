@@ -1302,6 +1302,13 @@ const quickQuoteMessageTemplate = [
   productQuote.selected + ":",
   "{configuration}",
   "",
+  productQuote.price + ":",
+  "{price}",
+  "",
+  productQuote.country + ":",
+  "",
+  productQuote.city + ":",
+  "",
   productQuote.page + ":",
   canonicalURL,
   "",
@@ -1310,7 +1317,10 @@ const quickQuoteMessageTemplate = [
 
 const quickQuoteMessage = fillQuoteTemplate(
   quickQuoteMessageTemplate,
-  { configuration: defaultConfiguration },
+  {
+    configuration: defaultConfiguration,
+    price: defaultPriceValue,
+  },
 );
 
 const quickWhatsappUrl =

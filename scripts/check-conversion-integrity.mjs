@@ -5,6 +5,12 @@ import path from "node:path";
 
 const repositoryRoot = process.cwd();
 const distRoot = path.join(repositoryRoot, "dist");
+const productTemplatePath = path.join(
+  repositoryRoot,
+  "src",
+  "components",
+  "ProductTemplate.astro",
+);
 
 function fail(message) {
   console.error(`CONVERSION INTEGRITY ERROR: ${message}`);
@@ -54,6 +60,37 @@ function countMatches(value, pattern) {
 
 if (!fs.existsSync(distRoot)) {
   fail("dist bulunamadi. Once Astro build calistirin.");
+}
+
+if (!fs.existsSync(productTemplatePath)) {
+  fail("ProductTemplate.astro bulunamadi.");
+}
+
+const productTemplateSource = fs.readFileSync(
+  productTemplatePath,
+  "utf8",
+);
+
+const quickQuoteTemplateMatch =
+  productTemplateSource.match(
+    /const quickQuoteMessageTemplate = \[([\s\S]*?)\]\.join\("\\n"\);/,
+  );
+
+if (!quickQuoteTemplateMatch) {
+  fail("tek tik WhatsApp mesaj sablonu bulunamadi.");
+}
+
+for (const requiredField of [
+  "productQuote.price",
+  "productQuote.country",
+  "productQuote.city",
+  "productQuote.page",
+]) {
+  if (!quickQuoteTemplateMatch[1].includes(requiredField)) {
+    fail(
+      `tek tik WhatsApp mesajinda ${requiredField} eksik.`,
+    );
+  }
 }
 
 const htmlFiles = walkHtml(distRoot);
