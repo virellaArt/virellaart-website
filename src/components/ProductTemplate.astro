@@ -985,8 +985,6 @@ type ProductQuoteContent = {
   trustButton: string;
   selectAria: string;
   closing: string;
-  quickButton?: string;
-  quickNote?: string;
 };
 
 const productQuoteContent: Record<
@@ -999,15 +997,13 @@ const productQuoteContent: Record<
     "selected": "Selected configuration",
     "price": "Displayed collection price",
     "country": "Delivery country",
-    "city": "Delivery city",
-    "customization": "Customization or project notes",
+    "city": "Delivery city / ZIP",
+    "customization": "Customization or project notes (optional)",
     "page": "Product page",
     "button": "Order This Product & Get Delivery Quote",
     "trustButton": "Order Product via WhatsApp",
     "selectAria": "Select configuration",
-    "closing": "I would like to order this furniture product. Please confirm the final product price and shipping quotation.",
-    "quickButton": "Ask on WhatsApp — No Form Needed",
-    "quickNote": "The product and page link are added automatically. We will ask for your delivery city on WhatsApp."
+    "closing": "I would like to order this furniture product. Please confirm the final product price and shipping quotation."
   },
   "tr": {
     "title": "Fiyat ve Teslimat Talebinizi Hazırlayın",
@@ -1015,15 +1011,13 @@ const productQuoteContent: Record<
     "selected": "Seçilen konfigürasyon",
     "price": "Görüntülenen koleksiyon fiyatı",
     "country": "Teslimat ülkesi",
-    "city": "Teslimat şehri",
-    "customization": "Kişiselleştirme veya proje notları",
+    "city": "Teslimat şehri / posta kodu",
+    "customization": "Kişiselleştirme veya proje notları (isteğe bağlı)",
     "page": "Ürün sayfası",
     "button": "Fiyat ve Teslimat Teklifi Alın",
     "trustButton": "WhatsApp Teklifi Hazırlayın",
     "selectAria": "Konfigürasyon seçin",
-    "closing": "Lütfen nihai ürün ve nakliye teklifini gönderin.",
-    "quickButton": "Forma Gerek Yok — WhatsApp'tan Sorun",
-    "quickNote": "Ürün ve sayfa bağlantısı otomatik eklenir. Teslimat şehrinizi WhatsApp'ta soracağız."
+    "closing": "Lütfen nihai ürün ve nakliye teklifini gönderin."
   },
   "de": {
     "title": "Preis- und Lieferanfrage vorbereiten",
@@ -1031,15 +1025,13 @@ const productQuoteContent: Record<
     "selected": "Ausgewählte Konfiguration",
     "price": "Angezeigter Kollektionpreis",
     "country": "Lieferland",
-    "city": "Lieferstadt",
-    "customization": "Anpassungs- oder Projektnotizen",
+    "city": "Lieferstadt / PLZ",
+    "customization": "Anpassungs- oder Projektnotizen (optional)",
     "page": "Produktseite",
     "button": "Preis- und Lieferangebot anfordern",
     "trustButton": "WhatsApp-Angebot vorbereiten",
     "selectAria": "Konfiguration auswählen",
-    "closing": "Bitte senden Sie mir den endgültigen Produktpreis sowie die Liefer- und Zollkosten nach Deutschland.",
-    "quickButton": "Liefer- und Zollpreis per WhatsApp erhalten",
-    "quickNote": "Ohne Formular: Produkt und Seitenlink werden automatisch eingefügt. Ihre Stadt oder PLZ fragen wir direkt auf WhatsApp ab."
+    "closing": "Bitte senden Sie mir den endgültigen Produktpreis sowie die Liefer- und Zollkosten nach Deutschland."
   },
   "fr": {
     "title": "Préparez votre demande de prix et de livraison",
@@ -1047,15 +1039,13 @@ const productQuoteContent: Record<
     "selected": "Configuration sélectionnée",
     "price": "Prix affiché de la collection",
     "country": "Pays de livraison",
-    "city": "Ville de livraison",
-    "customization": "Personnalisation ou notes de projet",
+    "city": "Ville / code postal",
+    "customization": "Personnalisation ou notes de projet (facultatif)",
     "page": "Page du produit",
     "button": "Obtenir un devis prix et livraison",
     "trustButton": "Préparer le devis WhatsApp",
     "selectAria": "Sélectionner la configuration",
-    "closing": "Merci de m’envoyer le devis final du produit et de la livraison.",
-    "quickButton": "Demander sur WhatsApp — sans formulaire",
-    "quickNote": "Le produit et son lien sont ajoutés automatiquement. Nous vous demanderons la ville de livraison sur WhatsApp."
+    "closing": "Merci de m’envoyer le devis final du produit et de la livraison."
   },
   "it": {
     "title": "Prepara la richiesta di prezzo e consegna",
@@ -1295,41 +1285,6 @@ const whatsappUrl =
   whatsappNumber +
   "?text=" +
   encodeURIComponent(defaultWhatsappMessage);
-
-const quickQuoteMessageTemplate = [
-  quoteGreeting,
-  "",
-  productQuote.selected + ":",
-  "{configuration}",
-  "",
-  productQuote.price + ":",
-  "{price}",
-  "",
-  productQuote.country + ":",
-  "{country}",
-  productQuote.city + ":",
-  "{city}",
-  productQuote.page + ":",
-  canonicalURL,
-  "",
-  productQuote.closing,
-].join("\n");
-
-const quickQuoteMessage = fillQuoteTemplate(
-  quickQuoteMessageTemplate,
-  {
-    configuration: defaultConfiguration,
-    price: defaultPriceValue,
-    country: "",
-    city: "",
-  },
-);
-
-const quickWhatsappUrl =
-  "https://wa.me/" +
-  whatsappNumber +
-  "?text=" +
-  encodeURIComponent(quickQuoteMessage);
 
 type ProductTrustContent = {
   eyebrow: string;
@@ -2114,34 +2069,6 @@ const paymentApproval =
               </small>
             </div>
 
-            <a
-              href={quickWhatsappUrl}
-              class="quote-quick-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-quick-product-quote
-              data-whatsapp-context="product-quote-quick"
-              data-product={translatedProductName}
-              data-product-category={categoryName}
-              data-configuration={defaultConfiguration}
-              data-price={defaultPriceValue}
-              data-page-url={canonicalURL}
-              data-quote-engine="product-quote-quick-v1"
-            >
-              {
-                productQuote.quickButton ??
-                  productQuote.trustButton
-              }
-            </a>
-
-            {
-              productQuote.quickNote && (
-                <p class="quote-quick-note">
-                  {productQuote.quickNote}
-                </p>
-              )
-            }
-
             <div class="quote-fields">
               <label class="quote-field">
                 <span>{productQuote.country}</span>
@@ -2191,6 +2118,22 @@ const paymentApproval =
                 ></textarea>
               </label>
             </div>
+
+            <a
+              href={whatsappUrl}
+              class="whatsapp js-product-quote"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-whatsapp-context="product-quote"
+              data-product={translatedProductName}
+              data-product-category={categoryName}
+              data-configuration={defaultConfiguration}
+              data-price={defaultPriceValue}
+              data-page-url={canonicalURL}
+              data-quote-engine="product-quote-v1"
+            >
+              {productQuote.button}
+            </a>
           </section>
 
           <div class="services">
@@ -2223,22 +2166,6 @@ const paymentApproval =
               </p>
             </div>
           </div>
-
-          <a
-            href={whatsappUrl}
-            class="whatsapp js-product-quote"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-whatsapp-context="product-quote"
-            data-product={translatedProductName}
-            data-product-category={categoryName}
-            data-configuration={defaultConfiguration}
-            data-price={defaultPriceValue}
-            data-page-url={canonicalURL}
-            data-quote-engine="product-quote-v1"
-          >
-            {productQuote.button}
-          </a>
 
           <p class="note">
             {translations.product.note}
@@ -2452,7 +2379,6 @@ const paymentApproval =
     is:inline
     define:vars={{
       quoteMessageTemplate,
-      quickQuoteMessageTemplate,
       whatsappNumber,
       translatedProductName,
       categoryName,
@@ -2475,15 +2401,6 @@ const paymentApproval =
       const quoteLinks = Array.from(
         document.querySelectorAll(
           ".js-product-quote",
-        ),
-      ).filter(
-        (item) =>
-          item instanceof HTMLAnchorElement,
-      );
-
-      const quickQuoteLinks = Array.from(
-        document.querySelectorAll(
-          "[data-quick-product-quote]",
         ),
       ).filter(
         (item) =>
@@ -2600,19 +2517,6 @@ const paymentApproval =
         });
       }
 
-      function buildQuickMessage() {
-        return fillTemplate(
-          quickQuoteMessageTemplate,
-          {
-            configuration:
-              selectedConfiguration,
-            price: selectedPrice,
-            country: fieldValue(countryInput),
-            city: fieldValue(cityInput),
-          },
-        );
-      }
-
       function updateQuoteLinks() {
         const message = buildMessage();
 
@@ -2638,21 +2542,6 @@ const paymentApproval =
             "product-quote-v1";
         });
 
-        const quickHref =
-          "https://wa.me/" +
-          whatsappNumber +
-          "?text=" +
-          encodeURIComponent(
-            buildQuickMessage(),
-          );
-
-        quickQuoteLinks.forEach((link) => {
-          link.href = quickHref;
-          link.dataset.configuration =
-            selectedConfiguration;
-          link.dataset.price =
-            selectedPrice;
-        });
       }
 
       function selectOption(button) {
@@ -2791,17 +2680,6 @@ const paymentApproval =
           (event) => {
             updateQuoteLinks();
             validateDestination(event);
-          },
-        );
-      });
-
-      quickQuoteLinks.forEach((link) => {
-        link.addEventListener(
-          "click",
-          () => {
-            trackQuoteStart(
-              "quick_whatsapp",
-            );
           },
         );
       });
@@ -3586,46 +3464,6 @@ const paymentApproval =
         repeat(2, minmax(0, 1fr));
       gap: 13px;
       margin-top: 14px;
-    }
-
-    .quote-quick-whatsapp {
-      min-height: 52px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 14px;
-      padding: 13px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      background: #178c4e;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.35px;
-      line-height: 1.4;
-      text-align: center;
-      text-decoration: none;
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .quote-quick-whatsapp:hover {
-      background: #1aa65b;
-      transform: translateY(-1px);
-    }
-
-    .quote-quick-whatsapp:focus-visible {
-      outline: 3px solid #d4ad62;
-      outline-offset: 3px;
-    }
-
-    .quote-quick-note {
-      margin: 9px 0 0;
-      color: #c9b89f;
-      font-size: 11px;
-      line-height: 1.55;
-      text-align: center;
     }
 
     .quote-field {

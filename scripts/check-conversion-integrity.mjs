@@ -71,13 +71,13 @@ const productTemplateSource = fs.readFileSync(
   "utf8",
 );
 
-const quickQuoteTemplateMatch =
+const quoteTemplateMatch =
   productTemplateSource.match(
-    /const quickQuoteMessageTemplate = \[([\s\S]*?)\]\.join\("\\n"\);/,
+    /const quoteMessageTemplate = \[([\s\S]*?)\]\.join\("\\n"\);/,
   );
 
-if (!quickQuoteTemplateMatch) {
-  fail("tek tik WhatsApp mesaj sablonu bulunamadi.");
+if (!quoteTemplateMatch) {
+  fail("WhatsApp teklif mesaj sablonu bulunamadi.");
 }
 
 for (const requiredField of [
@@ -86,20 +86,20 @@ for (const requiredField of [
   "productQuote.city",
   "productQuote.page",
 ]) {
-  if (!quickQuoteTemplateMatch[1].includes(requiredField)) {
+  if (!quoteTemplateMatch[1].includes(requiredField)) {
     fail(
-      `tek tik WhatsApp mesajinda ${requiredField} eksik.`,
+      `WhatsApp teklif mesajinda ${requiredField} eksik.`,
     );
   }
 }
 
-const quickQuoteRuntimeMatch =
+const quoteRuntimeMatch =
   productTemplateSource.match(
-    /function buildQuickMessage\(\) \{([\s\S]*?)function updateQuoteLinks/,
+    /function buildMessage\(\) \{([\s\S]*?)function updateQuoteLinks/,
   );
 
-if (!quickQuoteRuntimeMatch) {
-  fail("tek tik WhatsApp calisma zamani mesaji bulunamadi.");
+if (!quoteRuntimeMatch) {
+  fail("WhatsApp calisma zamani teklif mesaji bulunamadi.");
 }
 
 for (const requiredValue of [
@@ -107,9 +107,9 @@ for (const requiredValue of [
   "country: fieldValue(countryInput)",
   "city: fieldValue(cityInput)",
 ]) {
-  if (!quickQuoteRuntimeMatch[1].includes(requiredValue)) {
+  if (!quoteRuntimeMatch[1].includes(requiredValue)) {
     fail(
-      `tek tik WhatsApp calisma zamani mesajinda ${requiredValue} eksik.`,
+      `WhatsApp calisma zamani mesajinda ${requiredValue} eksik.`,
     );
   }
 }
@@ -183,17 +183,9 @@ for (const filePath of htmlFiles) {
       "urun teklif motoru etiketi eksik",
     ],
     [
-      countMatches(html, /\sdata-quick-product-quote(?:\s|>)/g) === 1,
-      "tek tik WhatsApp teklif baglantisi eksik veya yinelenmis",
-    ],
-    [
-      /data-quote-engine="product-quote-quick-v1"/.test(html),
-      "tek tik WhatsApp teklif motoru etiketi eksik",
-    ],
-    [
-      /product-whatsapp-direct/.test(html) &&
-        !/handleProductFunnel/.test(html),
-      "sabit WhatsApp dugmesi dogrudan WhatsApp akisini kullanmiyor",
+      /product-quote-builder/.test(html) &&
+        /product_quote_details/.test(html),
+      "sabit WhatsApp dugmesi kisa teklif akisini kullanmiyor",
     ],
     [
       /window\.gtag\("event", "view_item", productEvent\)/.test(html),

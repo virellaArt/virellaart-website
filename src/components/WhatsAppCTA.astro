@@ -186,9 +186,6 @@ const whatsappURL =
       const quoteBuilder = document.querySelector(
         "[data-quote-builder]",
       );
-      const quickProductQuote = document.querySelector(
-        "[data-quick-product-quote]",
-      );
       const categoryTarget =
         document.querySelector(
           "[data-collection-catalog] [data-catalog-grid]",
@@ -246,31 +243,13 @@ const whatsappURL =
       };
 
       if (quoteBuilder instanceof HTMLElement) {
-        button.dataset.funnelMode = "product-whatsapp-direct";
-
-        if (quickProductQuote instanceof HTMLAnchorElement) {
-          const syncQuickProductQuote = () => {
-            button.href = quickProductQuote.href;
-            button.dataset.whatsappContext = "floating-product-quick";
-            button.dataset.product = quickProductQuote.dataset.product || "";
-            button.dataset.productCategory =
-              quickProductQuote.dataset.productCategory || "";
-            button.dataset.configuration =
-              quickProductQuote.dataset.configuration || "";
-            button.dataset.price = quickProductQuote.dataset.price || "";
-            button.dataset.pageUrl =
-              quickProductQuote.dataset.pageUrl || window.location.href;
-            button.dataset.quoteEngine = "product-quote-quick-v1";
-            button.setAttribute(
-              "aria-label",
-              quickProductQuote.textContent?.trim() || "WhatsApp",
-            );
-
-          };
-
-          syncQuickProductQuote();
-          button.addEventListener("click", syncQuickProductQuote);
-        }
+        button.dataset.funnelMode = "product-quote-builder";
+        button.dataset.whatsappContext = "floating-product-quote";
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          moveTo(quoteBuilder, "product_quote_details");
+        });
       } else if (categoryTarget instanceof HTMLElement) {
         button.dataset.funnelMode = "category-products";
         button.addEventListener("click", handleCategoryFunnel);
