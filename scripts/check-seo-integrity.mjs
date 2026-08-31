@@ -435,6 +435,8 @@ const salesPositioningChecks = [
 ];
 
 const unverifiedLocalizedClaims = [
+  "VIRELLAART manufactures furniture",
+  "VIRELLAART designs and manufactures",
   "Produttore diretto",
   "Прямой производитель",
   "المصنّع مباشرة",
@@ -500,12 +502,7 @@ for (const htmlFile of htmlFiles) {
   const robots = robotsValues.join(",").toLowerCase();
   const isNoindex = robots.includes("noindex");
 
-  const protectsBrandPositioning =
-    publicPath.endsWith("/about/") ||
-    publicPath.endsWith("/contact/") ||
-    /\"@type\":\"Product\"/.test(html);
-
-  if (protectsBrandPositioning) {
+  if (!isNoindex) {
     for (const phrase of unverifiedLocalizedClaims) {
       if (html.includes(phrase)) {
         errors.push(

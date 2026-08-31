@@ -309,33 +309,116 @@ const whyChooseContent: Record<string, WhyChooseContent> = {
   },
 };
 
+const truthfulWhyChooseOverrides: Record<
+  string,
+  Partial<WhyChooseContent>
+> = {
+  it: {
+    intro:
+      "VIRELLAART unisce collezioni distintive, assistenza diretta alla vendita e coordinamento degli ordini internazionali.",
+    manufacturerTitle: "Assistenza diretta a vendite e ordini",
+    manufacturingButton: "Ordini e consegne",
+  },
+  ru: {
+    intro:
+      "VIRELLAART объединяет выразительные мебельные коллекции, прямую поддержку продаж и координацию международных заказов.",
+    manufacturerTitle: "Поддержка продаж и заказов",
+    manufacturingButton: "Заказ и доставка",
+  },
+  ar: {
+    intro:
+      "تجمع VIRELLAART بين مجموعات الأثاث المميزة ودعم المبيعات المباشر وتنسيق الطلبات الدولية.",
+    manufacturerTitle: "دعم مباشر للمبيعات والطلبات",
+    manufacturingButton: "الطلب والتوصيل",
+  },
+  bg: {
+    intro:
+      "VIRELLAART съчетава отличителни мебелни колекции, директна помощ при продажба и координация на международни поръчки.",
+    manufacturerTitle: "Помощ за продажби и поръчки",
+    manufacturingButton: "Поръчка и доставка",
+  },
+  ro: {
+    intro:
+      "VIRELLAART combină colecții distinctive, asistență directă pentru vânzări și coordonarea comenzilor internaționale.",
+    manufacturerTitle: "Asistență pentru vânzări și comenzi",
+    manufacturingButton: "Comandă și livrare",
+  },
+  el: {
+    intro:
+      "Η VIRELLAART συνδυάζει ξεχωριστές συλλογές επίπλων, άμεση υποστήριξη πωλήσεων και συντονισμό διεθνών παραγγελιών.",
+    manufacturerTitle: "Υποστήριξη πωλήσεων και παραγγελιών",
+    manufacturingButton: "Παραγγελία και παράδοση",
+  },
+  es: {
+    intro:
+      "VIRELLAART combina colecciones distintivas, asistencia directa de ventas y coordinación de pedidos internacionales.",
+    manufacturerTitle: "Asistencia de ventas y pedidos",
+    manufacturingButton: "Pedido y entrega",
+  },
+  sr: {
+    intro:
+      "VIRELLAART kombinuje prepoznatljive kolekcije, direktnu prodajnu podršku i koordinaciju međunarodnih porudžbina.",
+    manufacturerTitle: "Podrška za prodaju i porudžbine",
+    manufacturingButton: "Porudžbina i dostava",
+  },
+  kk: {
+    intro:
+      "VIRELLAART ерекше жиһаз топтамаларын, тікелей сату қолдауын және халықаралық тапсырыстарды үйлестіруді біріктіреді.",
+    manufacturerTitle: "Сату және тапсырыс қолдауы",
+    manufacturingButton: "Тапсырыс және жеткізу",
+  },
+  uz: {
+    intro:
+      "VIRELLAART o‘ziga xos kolleksiyalar, bevosita savdo yordami va xalqaro buyurtmalarni muvofiqlashtirishni birlashtiradi.",
+    manufacturerTitle: "Savdo va buyurtma yordami",
+    manufacturingButton: "Buyurtma va yetkazib berish",
+  },
+  pt: {
+    intro:
+      "A VIRELLAART combina coleções distintas, apoio direto às vendas e coordenação de encomendas internacionais.",
+    manufacturerTitle: "Apoio a vendas e encomendas",
+    manufacturingButton: "Encomenda e entrega",
+  },
+  pl: {
+    intro:
+      "VIRELLAART łączy charakterystyczne kolekcje, bezpośrednie wsparcie sprzedaży i koordynację zamówień międzynarodowych.",
+    manufacturerTitle: "Wsparcie sprzedaży i zamówień",
+    manufacturingButton: "Zamówienie i dostawa",
+  },
+};
+
 
 const manufacturingImageDisclosure: Record<string, string> = {
-  en: "Luxury furniture production, quality control and international delivery managed by VIRELLAART in Türkiye.",
-  tr: "VIRELLAART tarafından Türkiye'de yönetilen lüks mobilya üretimi, kalite kontrolü ve uluslararası teslimat süreci.",
-  de: "Luxusmöbelproduktion, Qualitätskontrolle und internationale Lieferung werden von VIRELLAART in Türkiye koordiniert.",
-  fr: "La production de mobilier de luxe, le contrôle qualité et la livraison internationale sont gérés par VIRELLAART en Türkiye.",
-  it: "La produzione di mobili di lusso, il controllo qualità e la consegna internazionale sono gestiti da VIRELLAART in Türkiye.",
-  ru: "Производство элитной мебели, контроль качества и международная доставка осуществляются VIRELLAART в Türkiye.",
-  ar: "تدير VIRELLAART في Türkiye إنتاج الأثاث الفاخر ومراقبة الجودة والتوصيل الدولي.",
-  bg: "Производството на луксозни мебели, контролът на качеството и международната доставка се управляват от VIRELLAART в Türkiye.",
-  ro: "Producția de mobilier de lux, controlul calității și livrarea internațională sunt gestionate de VIRELLAART în Türkiye.",
-  el: "Η παραγωγή πολυτελών επίπλων, ο ποιοτικός έλεγχος και η διεθνής παράδοση διαχειρίζονται από τη VIRELLAART στην Türkiye.",
-  es: "La producción de muebles de lujo, el control de calidad y la entrega internacional son gestionados por VIRELLAART en Türkiye.",
-  sr: "Proizvodnju luksuznog nameštaja, kontrolu kvaliteta i međunarodnu dostavu vodi VIRELLAART u Türkiye.",
-  kk: "Сәнді жиһаз өндірісін, сапаны бақылауды және халықаралық жеткізуді Türkiye-дегі VIRELLAART басқарады.",
-  uz: "Hashamatli mebel ishlab chiqarish, sifat nazorati va xalqaro yetkazib berish Türkiye-dagi VIRELLAART tomonidan boshqariladi.",
-  pt: "A produção de mobiliário de luxo, o controlo de qualidade e a entrega internacional são geridos pela VIRELLAART em Türkiye.",
-  pl: "Produkcja luksusowych mebli, kontrola jakości i dostawa międzynarodowa są zarządzane przez VIRELLAART w Türkiye.",
+  en: "Order planning, pre-shipment review and international delivery coordination supported by VIRELLAART from Istanbul.",
+  tr: "VIRELLAART tarafından İstanbul'dan desteklenen sipariş planlama, sevkiyat öncesi kontrol ve uluslararası teslimat koordinasyonu.",
+  de: "Bestellplanung, Prüfung vor dem Versand und internationale Lieferkoordination mit Unterstützung von VIRELLAART aus Istanbul.",
+  fr: "Planification des commandes, contrôle avant expédition et coordination des livraisons internationales avec l’accompagnement de VIRELLAART depuis Istanbul.",
+  it: "Pianificazione dell’ordine, verifica prima della spedizione e coordinamento della consegna internazionale con il supporto di VIRELLAART da Istanbul.",
+  ru: "Планирование заказа, проверка перед отправкой и координация международной доставки при поддержке VIRELLAART из Стамбула.",
+  ar: "تخطيط الطلب ومراجعته قبل الشحن وتنسيق التوصيل الدولي بدعم من VIRELLAART من إسطنبول.",
+  bg: "Планиране на поръчката, проверка преди изпращане и координация на международната доставка с помощта на VIRELLAART от Истанбул.",
+  ro: "Planificarea comenzii, verificarea înainte de expediere și coordonarea livrării internaționale cu sprijinul VIRELLAART din Istanbul.",
+  el: "Σχεδιασμός παραγγελίας, έλεγχος πριν από την αποστολή και συντονισμός διεθνούς παράδοσης με την υποστήριξη της VIRELLAART από την Κωνσταντινούπολη.",
+  es: "Planificación del pedido, revisión previa al envío y coordinación de la entrega internacional con el apoyo de VIRELLAART desde Estambul.",
+  sr: "Planiranje porudžbine, provera pre slanja i koordinacija međunarodne dostave uz podršku VIRELLAART tima iz Istanbula.",
+  kk: "VIRELLAART Стамбұлдан қолдайтын тапсырысты жоспарлау, жөнелту алдындағы тексеру және халықаралық жеткізуді үйлестіру.",
+  uz: "VIRELLAART Istanbuldan qo‘llab-quvvatlaydigan buyurtmani rejalashtirish, jo‘natishdan oldingi tekshiruv va xalqaro yetkazib berishni muvofiqlashtirish.",
+  pt: "Planeamento da encomenda, verificação antes do envio e coordenação da entrega internacional com o apoio da VIRELLAART a partir de Istambul.",
+  pl: "Planowanie zamówienia, kontrola przed wysyłką i koordynacja dostawy międzynarodowej przy wsparciu VIRELLAART ze Stambułu.",
 };
 
 const factoryImageDisclosure =
   manufacturingImageDisclosure[language] ??
   manufacturingImageDisclosure.en;
 
-const why =
+const whyBase =
   whyChooseContent[language] ??
   whyChooseContent.en;
+
+const why = {
+  ...whyBase,
+  ...(truthfulWhyChooseOverrides[language] ?? {}),
+};
 
 /* VIRELLAART CONVERSION HERO FINAL */
 
@@ -343,23 +426,23 @@ const conversionHero =
   language === "en"
     ? {
         eyebrow:
-          "Istanbul Craftsmanship · Worldwide Delivery",
+          "Luxury Furniture · Istanbul",
         title:
-          "Istanbul-Crafted Furniture for Exceptional Residences Worldwide",
+          "Luxury Furniture from Istanbul",
         brandLine:
           "VIRELLAART · ISTANBUL",
         lead:
-          "VIRELLAART creates made-to-order furniture collections in Istanbul — from Signature Sofa Sets to complete living, dining and bedroom interiors — for distinctive residences and interior projects across the United States, the United Kingdom, France and Switzerland.",
+          "Explore made-to-order living, dining and bedroom collections, with worldwide delivery planning and a final quotation prepared for your city.",
         primaryButton:
-          "Get Price + Delivery Quote",
+          "Get Final Price + Delivery Quote",
         secondaryButton:
-          "View the Signature Collection",
+          "Explore Collections",
         proofOne:
-          "Crafted in Istanbul",
+          "Made to Order",
         proofTwo:
-          "Made-to-Order & Custom Finishes",
+          "Collection Prices Displayed",
         proofThree:
-          "International Delivery Coordination",
+          "Worldwide Delivery Planning",
       }
     : {
         eyebrow:
