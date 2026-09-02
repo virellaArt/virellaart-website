@@ -1,0 +1,457 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { products } from "../data/products";
+import { productRoutes } from "../i18n/routes";
+
+const siteURL = "https://www.virellaart.com";
+const whatsappNumber = "905539478608";
+const categoryLabels = {
+  "living-rooms": "Sofa Sets",
+  "dining-rooms": "Dining Rooms",
+  bedrooms: "Bedrooms",
+  "tv-units": "TV Units",
+} as const;
+
+const catalogProducts = Object.entries(productRoutes)
+  .map(([route, key]) => {
+    const product = products[key as keyof typeof products];
+
+    if (!product) return null;
+
+    const productPath = `/${route}/`;
+    const productURL = `${siteURL}${productPath}`;
+    const message = [
+      "Hello VIRELLAART, I would like the final price and delivery quote for this model.",
+      "",
+      `Product: ${product.name}`,
+      `Product URL: ${productURL}`,
+      "",
+      "Delivery country:",
+      "City / ZIP:",
+    ].join("\n");
+
+    return {
+      name: product.name,
+      category: product.category as keyof typeof categoryLabels,
+      style: product.style ?? "luxury-classic",
+      image: product.images[0],
+      imageAlt:
+        product.imageAlts?.en?.[0] ??
+        `${product.name} luxury furniture collection by VIRELLAART`,
+      productPath,
+      productURL,
+      whatsappURL: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+    };
+  })
+  .filter((product): product is NonNullable<typeof product> => Boolean(product))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "VIRELLAART Luxury Furniture Catalog",
+  description:
+    "Browse 88 made-to-order VIRELLAART furniture models and request the final product and delivery quote for your city on WhatsApp.",
+  url: `${siteURL}/catalog/`,
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: catalogProducts.length,
+    itemListElement: catalogProducts.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: product.name,
+      url: product.productURL,
+    })),
+  },
+};
+---
+
+<BaseLayout
+  title="Luxury Furniture Catalog | VIRELLAART"
+  description="Browse 88 VIRELLAART sofa, dining, bedroom and TV-unit models. Ask on WhatsApp for the final product, delivery and destination quote."
+  image={catalogProducts[0]?.image}
+  alternateURLs={[
+    {
+      language: "en",
+      href: `${siteURL}/catalog/`,
+    },
+  ]}
+  xDefaultURL={`${siteURL}/catalog/`}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(collectionSchema)}
+  />
+
+  <main class="catalog-shell">
+    <header class="catalog-hero">
+      <span>VIRELLAART · Istanbul</span>
+      <h1>Luxury Furniture Catalog</h1>
+      <p>
+        Explore all {catalogProducts.length} made-to-order models. Choose a
+        collection, then request the final product and delivery quote for your
+        country and city on WhatsApp.
+      </p>
+
+      <div class="catalog-assurance" aria-label="Ordering information">
+        <span>Made to order</span>
+        <span>Worldwide delivery coordination</span>
+        <span>Personal quotation</span>
+      </div>
+    </header>
+
+    <section class="quote-note" aria-labelledby="quote-note-title">
+      <div>
+        <span>Why request a personal quote?</span>
+        <h2 id="quote-note-title">One clear price for your selected model and destination</h2>
+      </div>
+      <p>
+        Your final quotation depends on the selected pieces, finish and delivery
+        destination. Send only the model, country and city or ZIP code; our team
+        will continue with you on WhatsApp.
+      </p>
+    </section>
+
+    <div class="catalog-toolbar">
+      <p><strong data-result-count>{catalogProducts.length}</strong> models</p>
+
+      <div class="catalog-filters" aria-label="Filter catalog">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="living-rooms" aria-pressed="false">Sofa Sets</button>
+        <button type="button" data-filter="dining-rooms" aria-pressed="false">Dining</button>
+        <button type="button" data-filter="bedrooms" aria-pressed="false">Bedrooms</button>
+        <button type="button" data-filter="tv-units" aria-pressed="false">TV Units</button>
+      </div>
+    </div>
+
+    <section class="catalog-grid" aria-label="VIRELLAART furniture models">
+      {
+        catalogProducts.map((product, index) => (
+          <article class="catalog-card" data-product-card data-category={product.category}>
+            <a class="catalog-image" href={product.productPath}>
+              <img
+                src={product.image}
+                alt={product.imageAlt}
+                width="900"
+                height="675"
+                loading={index < 2 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : undefined}
+                decoding="async"
+              />
+            </a>
+
+            <div class="catalog-card-copy">
+              <div class="catalog-meta">
+                <span>{categoryLabels[product.category]}</span>
+                <span>{product.style === "modern" ? "Modern" : "Luxury & Classic"}</span>
+              </div>
+
+              <h2><a href={product.productPath}>{product.name}</a></h2>
+
+              <div class="catalog-actions">
+                <a class="view-model" href={product.productPath}>View model</a>
+                <a
+                  class="quote-button"
+                  href={product.whatsappURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-whatsapp-context="catalog-product"
+                  data-cta-position="catalog-card"
+                  data-product-name={product.name}
+                  data-product-category={categoryLabels[product.category]}
+                  data-product-price="quote"
+                  data-page-language="en"
+                  data-page-url={product.productURL}
+                >
+                  Get price + delivery quote
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <p class="catalog-empty" data-catalog-empty hidden>No models found in this category.</p>
+  </main>
+</BaseLayout>
+
+<script>
+  const filterButtons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>("[data-filter]"),
+  );
+  const productCards = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-product-card]"),
+  );
+  const resultCount = document.querySelector<HTMLElement>("[data-result-count]");
+  const emptyMessage = document.querySelector<HTMLElement>("[data-catalog-empty]");
+
+  for (const button of filterButtons) {
+    button.addEventListener("click", () => {
+      const selectedCategory = button.dataset.filter ?? "all";
+      let visibleCount = 0;
+
+      for (const card of productCards) {
+        const isVisible =
+          selectedCategory === "all" || card.dataset.category === selectedCategory;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      }
+
+      for (const candidate of filterButtons) {
+        candidate.setAttribute(
+          "aria-pressed",
+          String(candidate === button),
+        );
+      }
+
+      if (resultCount) resultCount.textContent = String(visibleCount);
+      if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
+    });
+  }
+</script>
+
+<style>
+  .catalog-shell {
+    width: min(100% - 48px, 1480px);
+    margin: 0 auto;
+    padding: 150px 0 110px;
+  }
+
+  .catalog-hero {
+    max-width: 980px;
+    padding: 54px 0 64px;
+  }
+
+  .catalog-hero > span,
+  .quote-note > div > span,
+  .catalog-meta {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    text-transform: uppercase;
+  }
+
+  .catalog-hero h1 {
+    max-width: 900px;
+    margin: 20px 0 26px;
+    color: #fff;
+    font-size: clamp(52px, 8vw, 104px);
+    line-height: 0.95;
+  }
+
+  .catalog-hero > p {
+    max-width: 780px;
+    color: #ddd3c5;
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.75;
+  }
+
+  .catalog-assurance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 34px;
+  }
+
+  .catalog-assurance span {
+    border: 1px solid rgba(201, 164, 93, 0.35);
+    padding: 10px 14px;
+    color: #eadfcf;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .quote-note {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(30px, 6vw, 90px);
+    align-items: center;
+    margin-bottom: 58px;
+    border: 1px solid rgba(201, 164, 93, 0.28);
+    background: linear-gradient(130deg, #1b1511, #100d0b);
+    padding: clamp(30px, 5vw, 58px);
+  }
+
+  .quote-note h2 {
+    margin: 14px 0 0;
+    color: #fff;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.08;
+  }
+
+  .quote-note p {
+    margin: 0;
+    color: #d8cec0;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .catalog-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 22px;
+  }
+
+  .catalog-toolbar p {
+    margin: 0;
+    color: #cfc4b6;
+  }
+
+  .catalog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .catalog-filters button {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: transparent;
+    padding: 11px 16px;
+    color: #eee6dc;
+    cursor: pointer;
+  }
+
+  .catalog-filters button[aria-pressed="true"] {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+    color: #110d09;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .catalog-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #15110e;
+  }
+
+  .catalog-card[hidden] {
+    display: none;
+  }
+
+  .catalog-image {
+    display: block;
+    overflow: hidden;
+  }
+
+  .catalog-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  .catalog-card:hover .catalog-image img {
+    transform: scale(1.025);
+  }
+
+  .catalog-card-copy {
+    padding: 24px;
+  }
+
+  .catalog-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .catalog-card h2 {
+    min-height: 58px;
+    margin: 15px 0 22px;
+    font-size: clamp(24px, 2.2vw, 32px);
+    line-height: 1.05;
+  }
+
+  .catalog-card h2 a {
+    color: #fff;
+  }
+
+  .catalog-actions {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+
+  .catalog-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .view-model {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #e8dfd4;
+  }
+
+  .quote-button {
+    background: #1f8f4e;
+    color: #fff;
+  }
+
+  .quote-button:hover {
+    background: #27a85d;
+  }
+
+  .catalog-empty {
+    padding: 60px 0;
+    color: #d7ccbf;
+    text-align: center;
+  }
+
+  @media (max-width: 1050px) {
+    .catalog-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .catalog-shell {
+      width: min(100% - 28px, 1480px);
+      padding-top: 110px;
+    }
+
+    .catalog-hero {
+      padding-bottom: 44px;
+    }
+
+    .quote-note,
+    .catalog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .catalog-toolbar {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .catalog-filters {
+      justify-content: flex-start;
+    }
+
+    .catalog-card-copy {
+      padding: 20px;
+    }
+
+    .catalog-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

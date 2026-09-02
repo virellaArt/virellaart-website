@@ -526,10 +526,12 @@ const homePageDescription =
         </a>
 
         <a
-          href={language === "en" ? "#featuredCollectionsTitle" : "#collections"}
+          href={language === "en" ? "/catalog/" : "#collections"}
           class="hero-button"
         >
-          {conversionHero.secondaryButton}
+          {language === "en"
+            ? "Browse all 88 models"
+            : conversionHero.secondaryButton}
         </a>
       </div>
     </div>

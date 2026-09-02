@@ -21,6 +21,7 @@ const site = "https://www.virellaart.com";
 
 const staticRouteImages: Record<string, string[]> = {
   "": ["/living-room.webp"],
+  "catalog": ["/living-room.webp"],
   "living-rooms": ["/living-room.webp"],
   "dining-rooms": ["/dining-room.webp"],
   "bedrooms": ["/bedroom.webp"],
@@ -79,11 +80,20 @@ function routeImages(
 }
 
 export const GET = () => {
-  const localizedUrls = indexableRoutes
-    .filter((route) => route !== "manufacturing")
+  const sitemapRoutes = Array.from(
+    new Set([
+      ...indexableRoutes.filter(
+        (route) => route !== "manufacturing",
+      ),
+      "catalog",
+    ]),
+  );
+  const localizedUrls = sitemapRoutes
     .flatMap((route) => {
       const routeLanguages =
-        route in localizedBlogRouteLanguages
+        route === "catalog"
+          ? (["en"] as const)
+          : route in localizedBlogRouteLanguages
           ? localizedBlogRouteLanguages[
               route as keyof typeof localizedBlogRouteLanguages
             ]
